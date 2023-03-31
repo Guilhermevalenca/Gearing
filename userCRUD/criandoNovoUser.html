@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criando usuario</title>
+</head>
+<body>
+    <form method="POST" action="./adicionarDados.php">
+        <label for="user">Seu usuario:</label>
+        <input type="text" name="user" placeholder="Digite aqui seu nome de usuario" required><br>
+        <label for="nome">Seu nome:</label>
+        <input type="text" name="nome" placeholder="Digite aqui seu nome" required><br>
+        <label for="email">Seu email:</label>
+        <input type="text" name="email" placeholder="Digite aqui seu email" required><br>
+        <label for="senha">Sua senha:</label>
+        <input type="password" name="senha" placeholder="Digite aqui sua senha" required><br>
+        <label for="confirmarSenha">Confirme sua senha:</label>
+        <input type="password" name="confirmaSenha" placeholder="Digite novamente sua senha" required><br>
+        <input type="submit">
+    </form>
+</body>
+</html>
