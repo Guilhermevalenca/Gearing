@@ -5,7 +5,8 @@
     $fp = fopen('usuarios.csv','r');
     while ( ($linha = fgetcsv($fp)) !== false){
         if ($linha[2] == $_POST['login'] && $linha[3] == $_POST['senha']) {
-            header("location:/src/menu.php?user='$linha[0]' ");
+            setcookie("user",$linha[0]);
+            header("location: /src/menu.php");
             exit();
         }
     }

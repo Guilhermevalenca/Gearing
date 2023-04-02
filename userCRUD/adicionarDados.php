@@ -11,6 +11,6 @@
     $fp = fopen('usuarios.csv','a');
     fputcsv($fp,array($_POST['user'],$_POST['nome'],$_POST['email'],$_POST['senha']));
     fclose($fp);
-    $user = $_POST['user'];
-    header("location:/src/menu.php?user=$user");
+    setcookie("user",$_POST['user']);
+    header("location:/src/menu.php");
 ?>

@@ -7,8 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-
-    <h1>Seja bem vindo a nossa plataforma: <?= $_GET['user'] ?></h1>
+    <?php 
+        $user = $_COOKIE['user'];
+    ?>
+    <h1>Seja bem vindo a nossa plataforma: <?= $user ?></h1>
     <a href="/">Deseja voltar para o inicio?</a>
     <button onclick="window.location.href = './cronograma.html'">Crie aqui seu cronograma</button>
 
