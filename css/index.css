@@ -9,14 +9,14 @@
 .apresentacao {
     color: black;
     border-style: solid;
-    border-width: 1px;
-    border-radius: 5px;
-    width: 910px;
-    height: 600px;
+    border-width: 0.1vw;
+    border-radius: 0.5vw;
+    width: 50vw;
+    height: 30vw;
     background-color:  #ccffff;
     border-color:  black;
     position: fixed;
-    font-size: 40px;
+    font-size: 2.5vw;
     top: 200px;
     text-align: center;
 }
@@ -53,16 +53,15 @@ body {
     font-family:'px sans nouveaux', sans-serif;
 }
 .logo{
-    position: fixed;
-   width: 180px;
-   left: 670px;
-   top: -50px;
+    position: absolute;
+    width: 10vw;
+    left: 35vw;
+    top: -2vw;
 }
 .descricao{
-    margin-top: 70px;
-    margin-left: 50px;
-    margin-right: 100px;
-    font-size: 20px;
+    margin-top: 2vw;
+    margin-left: 2vw;
+    margin-right: 2.5vw;
+    font-size: 1vw;
     text-align: justify;
-    
 }
