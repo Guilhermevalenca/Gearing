@@ -11,6 +11,5 @@
     $fp = fopen('usuarios.csv','a');
     fputcsv($fp,array($_POST['user'],$_POST['nome'],$_POST['email'],$_POST['senha']));
     fclose($fp);
-    setcookie("user",$_POST['user']);
-    header("location:/src/menu.php");
 ?>
+<h1>Sua conta foi criada <button onclick="window.location.href = '/' ">Tela inicial</button></h1>

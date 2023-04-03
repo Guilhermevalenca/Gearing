@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="POST" action="./verificarUser.php">
+    <form method="POST" action="/src/verificarUser.php">
         <input type="text" name="login" placeholder="Digite seu email" required><br>
         <input type="password" name="senha" placeholder="Digite sua senha" required><br>
         <input type="submit">

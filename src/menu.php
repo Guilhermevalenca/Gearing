@@ -8,7 +8,8 @@
 </head>
 <body>
     <?php 
-        $user = $_COOKIE['user'];
+        session_start();
+        $user = $_SESSION['username'];
     ?>
     <h1>Seja bem vindo a nossa plataforma: <?= $user ?></h1>
     <a href="/">Deseja voltar para o inicio?</a>
