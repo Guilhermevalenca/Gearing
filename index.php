@@ -16,9 +16,7 @@
         </ul>
     
     </div>
-    <div class="botoes">
         <button class="criarRealizarLogin" onclick="window.location.href = './src/userCRUD/login.php' ">Login</button>
-        <button class="criarRealizarLogin" onclick="window.location.href = './src/userCRUD/criandoNovoUser.html' ">Criar Conta</button>
-    </div>
-    </body>
+        <button id="criarConta" class="criarRealizarLogin" onclick="window.location.href = './src/userCRUD/criandoNovoUser.html' ">Criar Conta</button>
+</body>
 </html>

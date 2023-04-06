@@ -9,7 +9,7 @@
             $_SESSION['username'] = $linha[0];
             $_SESSION['nome'] = $linha[1];
             $_SESSION['email'] = $linha[2];
-            header("Location: /src/menu.php");
+            header("Location: ./menu.php");
             exit();
         }
     }
