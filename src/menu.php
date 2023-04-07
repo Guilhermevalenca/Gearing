@@ -15,7 +15,7 @@
     ?>
     <h1>Seja bem vindo a nossa plataforma: <?= $user ?></h1>
     <a href="/">Deseja voltar para o inicio?</a>
-    <button onclick="window.location.href = './cronograma.html'">Crie aqui seu cronograma</button>
+    <button onclick="window.location.href = './criarCronograma.php'">Crie aqui seu cronograma</button>
 
 </body>
 </html>

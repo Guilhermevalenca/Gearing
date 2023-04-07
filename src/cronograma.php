@@ -8,13 +8,15 @@
     <link rel="stylesheet" href="/css/cronograma.css">
 </head>
 <body>
-<?php 
+<?php session_start();
     if($_SERVER['REQUEST_METHOD'] != 'POST'){
         exit();
-    }
-    if(!isset($_POST['horario']) || !isset($_POST['materia'])){
+    } 
+    if(!isset($_POST['horario']) || !isset($_POST['materia'])):
+        $_SESSION['mensagem'] = "Exite ou existem perguntas sem respostas!!!";
+        header('location: ./criarCronograma.php');
         exit();
-    }
+    endif;        
 ?>
 <table>
     <tr>

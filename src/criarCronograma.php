@@ -7,6 +7,7 @@
     <title>cronograma</title>
 </head>
 <body>
+    <?php session_start(); ?>
     <h1>Aqui você ira criar seu cronograma</h1>
     <form method="POST" action="./cronograma.php">
         <h2>Em qual momento você se encontra mais disponivel:</h2>
@@ -40,5 +41,8 @@
         <input type="submit">
     </form>
     <button onclick="window.location.href='./menu.php'">Voltar para o menu</button>
+    <?php if(isset($_SESSION['mensagem'])): ?>
+        <h2>Alerta: <?= $_SESSION['mensagem'] ?></h2>
+    <?php session_destroy(); endif ?>
 </body>
 </html>
