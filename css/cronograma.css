@@ -1,0 +1,9 @@
+table,td{
+    border-style: solid;
+}
+table{
+    border-width: 2px;
+}
+td{
+    border-width: 1px;
+}
