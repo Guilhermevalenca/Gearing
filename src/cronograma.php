@@ -8,16 +8,27 @@
 </head>
 <body>
 <?php 
-    $horario = $_POST['horario'];
-    $materia = $_POST['materia'];
+    if($_SERVER['REQUEST_METHOD'] != 'POST'){
+        exit();
+    }
+    if(!isset($_POST['horario']) || !isset($_POST['materia'])){
+        exit();
+    }
 ?>
 <table>
     <tr>
-        <th><?= $horario ?></th>
+        <th>Horarios:</th>
+        <?php foreach($_POST['horario'] as $horario): ?>
+            <td><?= $horario ?></td>
+        <?php endforeach ?>
     </tr>
     <tr>
-        <th><?= $materia ?></th>
+        <th>materias:</th>
+        <?php foreach($_POST['materia'] as $materia): ?>
+            <td><?= $materia ?></td>
+        <?php endforeach ?>
     </tr>
 </table>
+<button onclick="window.location.href='./menu.php'">Voltar para o menu</button>
 </body>
 </html>

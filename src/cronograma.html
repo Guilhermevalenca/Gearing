@@ -11,33 +11,34 @@
     <form method="POST" action="./cronograma.php">
         <h2>Em qual momento você se encontra mais disponivel:</h2>
         <label>
-            <input type="radio" name="horario" value="manha">
+            <input type="checkbox" name="horario[]" value="manha">
             manha
         </label>
         <label>
-            <input type="radio" name="horario" value="tarde">
+            <input type="checkbox" name="horario[]" value="tarde">
             tarde
         </label>
         <label>
-            <input type="radio" name="horario" value="noite">
+            <input type="checkbox" name="horario[]" value="noite">
             noite
         </label>
 
         <h2>Qual area voce sente ter mais dificuldade:</h2>
         <label>
-            <input type="radio" name="materia" value='exatas'>
-            exatas
+            <input type="checkbox" name="materia[]" value='matematica'>
+            matematica
         </label>
         <label>
-            <input type="radio" name="materia" value='humanas'>
-            humanas
+            <input type="checkbox" name="materia[]" value='portugues'>
+            portugues
         </label>
         <label>
-            <input type="radio" name="materia" value='saude'>
-            saude
+            <input type="checkbox" name="materia[]" value='geografia'>
+            geografia
         </label>
         <h2></h2>
         <input type="submit">
     </form>
+    <button onclick="window.location.href='./menu.php'">Voltar para o menu</button>
 </body>
 </html>
