@@ -24,7 +24,7 @@
             noite
         </label>
 
-        <h2>Qual area voce sente ter mais dificuldade:</h2>
+        <h2>Qual materia voce sente ter mais dificuldade:</h2>
         <label>
             <input type="checkbox" name="materia[]" value='matematica'>
             matematica

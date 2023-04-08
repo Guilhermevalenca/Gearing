@@ -12,5 +12,6 @@
         <input type="password" name="senha" placeholder="Digite sua senha" required><br>
         <input type="submit">
     </form>
+    <button onclick="window.location.href = '/' ">Tela de inicio</button>
 </body>
 </html>
