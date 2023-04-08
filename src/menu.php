@@ -16,10 +16,21 @@
     <h1>Seja bem vindo a nossa plataforma: <?= $user ?></h1>
     <button onclick="window.location.href = '/'">Pagina Inicial</button><br>
     <button onclick="window.location.href = './criarCronograma.php'">Crie aqui seu cronograma</button>
-    <form action="./usersCronograma.php" method="GET">
+    <form action="./usersCronograma.php" method="POST">
         <input type="hidden" name='user' value="<?= $user ?>">
         <button>Ver meus cronogramas</button>
     </form>
-
+    <form action="./userCRUD/mostrarDados.php" method="POST">
+        <input type="hidden" name="user" value="<?= $user ?>">
+        <button>Informações da conta</button>
+    </form>
+    <h2>
+        <?php 
+            if($_SESSION['mensagem'] != ''){
+                echo $_SESSION['mensagem'];
+                $_SESSION['mensagem'] = '';
+            }
+        ?>
+    </h2>
 </body>
 </html>

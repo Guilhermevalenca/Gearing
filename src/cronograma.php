@@ -22,7 +22,7 @@
     $dadosMateria = [];
     $dadosHorario[0] = $_POST['user'];
     $dadosMateria[0] = $_POST['user'];
-    $fp = fopen('dadosUsers.csv','r');
+    $fp = fopen('./userCRUD/dadosUsers.csv','r');
     while( ($linha = fgetcsv($fp)) !== false ){
         if($linha[1] == $id && $linha[0] == $dadosHorario[0]){
             $id++;
@@ -43,7 +43,7 @@
         $dadosMateria[$i] = $materia;
         $i++; 
     }
-    $fp = fopen('dadosUsers.csv','a');
+    $fp = fopen('./userCRUD/dadosUsers.csv','a');
     fputcsv($fp,$dadosHorario);
     fputcsv($fp,$dadosMateria);
     fclose($fp);

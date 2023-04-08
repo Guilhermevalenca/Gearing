@@ -18,3 +18,7 @@ Cl4udAnne,1,horario,tarde,noite
 Cl4udAnne,1,materia,portugues,geografia
 Cl4udAnne,2,horario,tarde
 Cl4udAnne,2,materia,matematica,portugues
+"Donquixote Gui",1,horario,manha,tarde
+"Donquixote Gui",1,materia,matematica,portugues
+"Donquixote Gui",2,horario,noite
+"Donquixote Gui",2,materia,geografia

@@ -10,24 +10,24 @@
 <body>
 <?php 
     $quantidadeTable = 0;
-    $fp = fopen('dadosUsers.csv','r');
+    $fp = fopen('./userCRUD/dadosUsers.csv','r');
     while( ($linha = fgetcsv($fp)) !== false ){
-        if($quantidadeTable < $linha[1] && $linha[0] == $_GET['user']){
+        if($quantidadeTable < $linha[1] && $linha[0] == $_POST['user']){
             $quantidadeTable++;
         }
     }
     fclose($fp);
     $id = 1;
 ?>
-<h2><?= $_GET['user'] ?>, Aqui estar seus cronogramas:</h2>
+<h2><?= $_POST['user'] ?>, Aqui estar seus cronogramas:</h2>
 <?php for($i = 0; $i < $quantidadeTable; $i++): ?>
 <table>
     <tr>
         <th>Horario:</th>
         <?php
-        $fp = fopen('dadosUsers.csv','r'); 
+        $fp = fopen('./userCRUD/dadosUsers.csv','r'); 
         while( ($linha = fgetcsv($fp)) !== false ): ?>
-            <?php if($linha[0] == $_GET['user'] && $linha[1] == $id && $linha[2] == "horario"): ?>
+            <?php if($linha[0] == $_POST['user'] && $linha[1] == $id && $linha[2] == "horario"): ?>
                 <?php for($j = 3; $j < sizeof($linha); $j++): ?>
                     <td><?= $linha[$j] ?></td>
                 <?php endfor ?>
@@ -37,9 +37,9 @@
     <tr>
         <th>Materias:</th>
         <?php 
-        $fp = fopen('dadosUsers.csv','r');
+        $fp = fopen('./userCRUD/dadosUsers.csv','r');
         while( ($linha = fgetcsv($fp)) !== false ): ?>
-            <?php if($linha[0] == $_GET['user'] && $linha[1] == $id && $linha[2] == "materia"): ?>
+            <?php if($linha[0] == $_POST['user'] && $linha[1] == $id && $linha[2] == "materia"): ?>
                 <?php for($j = 3; $j < sizeof($linha); $j++): ?>
                     <td><?= $linha[$j] ?></td>
                 <?php endfor ?>
