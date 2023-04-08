@@ -38,11 +38,12 @@
             geografia
         </label>
         <h2></h2>
+        <input type="hidden" name="user" value="<?= $_SESSION['username'] ?>">
         <input type="submit">
     </form>
     <button onclick="window.location.href='./menu.php'">Voltar para o menu</button>
-    <?php if(isset($_SESSION['mensagem'])): ?>
+    <?php if($_SESSION['mensagem'] != ''): ?>
         <h2>Alerta: <?= $_SESSION['mensagem'] ?></h2>
-    <?php session_destroy(); endif ?>
+    <?php $_SESSION['mensagem'] = ''; endif ?>
 </body>
 </html>

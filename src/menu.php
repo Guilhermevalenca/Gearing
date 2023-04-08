@@ -14,8 +14,12 @@
         $email = $_SESSION['email'];
     ?>
     <h1>Seja bem vindo a nossa plataforma: <?= $user ?></h1>
-    <a href="/">Deseja voltar para o inicio?</a>
+    <button onclick="window.location.href = '/'">Pagina Inicial</button><br>
     <button onclick="window.location.href = './criarCronograma.php'">Crie aqui seu cronograma</button>
+    <form action="./usersCronograma.php" method="GET">
+        <input type="hidden" name='user' value="<?= $user ?>">
+        <button>Ver meus cronogramas</button>
+    </form>
 
 </body>
 </html>
