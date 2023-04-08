@@ -28,11 +28,9 @@
         $fp = fopen('dadosUsers.csv','r'); 
         while( ($linha = fgetcsv($fp)) !== false ): ?>
             <?php if($linha[0] == $_GET['user'] && $linha[1] == $id && $linha[2] == "horario"): ?>
-                <?php foreach($linha as $elementos): ?>
-                    <?php if($elementos != $linha[2] && $elementos != $_GET['user'] && $elementos != $id): ?>
-                        <td><?= $elementos ?></td>
-                    <?php endif ?>
-                <?php endforeach ?>
+                <?php for($j = 3; $j < sizeof($linha); $j++): ?>
+                    <td><?= $linha[$j] ?></td>
+                <?php endfor ?>
             <?php endif ?>
         <?php endwhile ?>
     </tr>
@@ -42,11 +40,9 @@
         $fp = fopen('dadosUsers.csv','r');
         while( ($linha = fgetcsv($fp)) !== false ): ?>
             <?php if($linha[0] == $_GET['user'] && $linha[1] == $id && $linha[2] == "materia"): ?>
-                <?php foreach($linha as $elementos): ?>
-                    <?php if($elementos != $linha[2] && $elementos != $_GET['user'] && $elementos != $id): ?>
-                        <td><?= $elementos ?></td>
-                    <?php endif ?>
-                <?php endforeach ?>
+                <?php for($j = 3; $j < sizeof($linha); $j++): ?>
+                    <td><?= $linha[$j] ?></td>
+                <?php endfor ?>
             <?php endif ?>
         <?php endwhile ?> 
     </tr>
