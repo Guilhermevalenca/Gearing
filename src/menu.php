@@ -10,8 +10,6 @@
     <?php 
         session_start();
         $user = $_SESSION['username'];
-        $nome = $_SESSION['nome'];
-        $email = $_SESSION['email'];
     ?>
     <h1>Seja bem vindo a nossa plataforma: <?= $user ?></h1>
     <button onclick="window.location.href = './criarCronograma.php'">Crie aqui seu cronograma</button>
@@ -23,6 +21,7 @@
         <input type="hidden" name="user" value="<?= $user ?>">
         <button>Informações da conta</button>
     </form>
+    <button onclick="window.location.href = './forum/paginaPrincipal.php' ">Acesse o forum</button><br>
     <button onclick="window.location.href = '/'">Sair da conta</button>
     <h2>
         <?php 
