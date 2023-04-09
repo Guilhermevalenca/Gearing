@@ -1,6 +1,6 @@
 <?php 
     if($_SERVER['REQUEST_METHOD'] != 'POST'){
-        exit();
+       exit();
     }
     $fp = fopen('usuarios.csv','r');
     while ( ($linha = fgetcsv($fp)) !== false){
@@ -11,6 +11,6 @@
             exit();
         }
     }
+    echo "tudoErrado";
+    return;
 ?>
-<h1>Login ou senha incorreta</h1>
-<a href="./login.php">Voltar</a>

@@ -7,27 +7,56 @@
     <title>Criando usuario</title>
 </head>
 <body>
-    <form method="POST" action="./adicionarDados.php">
-        <label for="user">Seu usuario:
-            <input type="text" name="user" placeholder="Digite aqui seu nome de usuario" required>
+    <script>
+
+    </script>
+    <form id="formulario" method="POST" action="./adicionarDados.php" >
+        <label>Seu usuario:
+            <input type="text" id="user" name="user" placeholder="Digite aqui seu nome de usuario" required>
         </label><br>
-        <label for="nome">Seu nome:
+        <label>Seu nome:
             <input type="text" name="nome" placeholder="Digite aqui seu nome" required>
         </label><br>
-        <label for="sobrenome">Seu sobrenome:
+        <label>Seu sobrenome:
             <input type="text" name="sobrenome" placeholder="Digite aqui seu sobrenome" required>
         </label><br>
-        <label for="email">Seu email:
-            <input type="text" name="email" placeholder="Digite aqui seu email" required>
+        <label>Seu email:
+            <input type="email" id="email" name="email" placeholder="Digite aqui seu email" required>
         </label><br>
-        <label for="senha">Sua senha:
-            <input type="password" name="senha" placeholder="Digite aqui sua senha" required>
+        <label>Sua senha:
+            <input type="password" id="senha" name="senha" placeholder="Digite aqui sua senha" required>
         </label><br>
-        <label for="confirmarSenha">Confirme sua senha:
-            <input type="password" name="confirmaSenha" placeholder="Digite novamente sua senha" required>
+        <label>Confirme sua senha:
+            <input type="password" id="confirme" name="confirmaSenha" placeholder="Digite novamente sua senha" required>
         </label><br>
         <input type="submit">
     </form>
+    <script>
+        const form = document.getElementById('formulario');
+        const user = document.getElementById('user');
+        const email = document.getElementById('email');
+        const senha = document.getElementById('senha');
+        const confirme = document.getElementById('confirme');
+        
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            if(senha.value !== confirme.value) {
+                alert('Senhas diferentes, porfavor tente novamente');
+            }
+            const test = new XMLHttpRequest();
+            test.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    if(this.responseText == 'jaCadastrado') {
+                        alert('Este email ou usuario já está registrado.');
+                    } else {
+                        form.submit();
+                    }
+                }
+            }
+            test.open('GET','./verificarEmailUser.php?email=' + email.value + '&user=' + user.value, true);
+            test.send();
+        });
+    </script>
     <button onclick="window.location.href = '/' ">Tela de inicio</button>
 </body>
 </html>
