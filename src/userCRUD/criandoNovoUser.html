@@ -7,9 +7,6 @@
     <title>Criando usuario</title>
 </head>
 <body>
-    <script>
-
-    </script>
     <form id="formulario" method="POST" action="./adicionarDados.php" >
         <label>Seu usuario:
             <input type="text" id="user" name="user" placeholder="Digite aqui seu nome de usuario" required>
@@ -53,8 +50,11 @@
                     }
                 }
             }
-            test.open('GET','./verificarEmailUser.php?email=' + email.value + '&user=' + user.value, true);
-            test.send();
+            const dados = new FormData();
+            dados.append('email',email.value);
+            dados.append('user',user.value);
+            test.open('POST','./verificarEmailUser.php', true);
+            test.send(dados);
         });
     </script>
     <button onclick="window.location.href = '/' ">Tela de inicio</button>
