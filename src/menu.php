@@ -21,8 +21,10 @@
         <input type="hidden" name="user" value="<?= $user ?>">
         <button>Informações da conta</button>
     </form>
-    <button onclick="window.location.href = './forum/paginaPrincipal.php' ">Acesse o forum</button><br>
-    <button onclick="window.location.href = '/'">Sair da conta</button>
+    <button onclick="window.location.href = './forum/paginaPrincipal.php' ">Acesse o forum</button>
+    <form action="./sair.php" method="GET">
+        <button>Sair da conta</button>
+    </form>
     <h2>
         <?php 
             if($_SESSION['mensagem'] != ''){
