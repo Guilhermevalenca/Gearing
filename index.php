@@ -1,9 +1,10 @@
 <?php 
     session_start();
-    if($_SESSION['username'] != ''){
-    header('location: /src/menu.php');
-    exit();
-} ?>
+    if(isset($_SESSION['username'])){
+        header('location: ./src/menu.php');
+        exit();
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

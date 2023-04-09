@@ -1,3 +1,6 @@
+<?php 
+    include 'verificacaoExistUser.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

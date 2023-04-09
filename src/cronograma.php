@@ -1,3 +1,6 @@
+<?php 
+    include 'verificacaoExistUser.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,6 +13,7 @@
 <body>
 <?php session_start();
     if($_SERVER['REQUEST_METHOD'] != 'POST'){
+        header('location:menu.php');
         exit();
     } 
     if(!isset($_POST['horario']) || !isset($_POST['materia'])):

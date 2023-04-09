@@ -1,3 +1,6 @@
+<?php 
+    include '/src/verificacaoExistUser.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,7 +10,7 @@
     <title>Document</title>
 </head>
 <body>
-<?php session_start(); ?>
+<?php session_start();?>
     <h1>Aqui estão suas informações:</h1>
     <table>
     <?php
@@ -51,9 +54,9 @@
         <?php endif ?>
         <?php endwhile ?>
     </table>
-    <?php if($_SESSION['mensagem'] != ''): ?>
-        <h2><?= $_SESSION['mensagem'] ?></h2>
-    <?php $_SESSION['mensagem'] = ''; endif ?>
     <button onclick="window.location.href = '/src/menu.php'">Voltar</button>
+    <?php if($_SESSION['mensagem'] != ''): ?>
+        <h2>Alerta: <?= $_SESSION['mensagem'] ?></h2>
+    <?php $_SESSION['mensagem'] = ''; endif ?>
 </body>
 </html>

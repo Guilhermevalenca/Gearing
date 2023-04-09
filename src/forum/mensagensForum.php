@@ -11,7 +11,7 @@
     function atualizar(){
         recarregar = setInterval(() => {
             location.reload();
-        }, 3000);
+        }, 5000);
     }
     atualizar();
 </script>
