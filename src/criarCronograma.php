@@ -61,10 +61,11 @@
     <?php $_SESSION['mensagem'] = ''; endif ?>
 </body>
 </html>
-
+<!--
 Quantas horas por dia você pode dedicar aos seus estudos?
 Quais são os dias da semana em que você pode estudar?
 Quais são os seus horários disponíveis para estudar em cada dia da semana?
 Você precisa incluir algum tempo extra para revisões ou exercícios práticos?
 Você possui algum prazo específico para concluir esses estudos?
 Qual é o método de estudo que você costuma usar (ex: leitura, prática, resumos, etc.)?
+-->
