@@ -27,3 +27,13 @@
         <button id="criarConta" class="criarRealizarLogin" onclick="window.location.href = './src/userCRUD/criandoNovoUser.html' ">Criar Conta</button>
 </body>
 </html>
+<!-- 
+    texto a ser ignorado:
+
+    async function carregarPage(){
+		const response = await fetch('/API/index.php');
+    	const content = await response.text();
+    	document.querySelector('#index').innerHTML = content;
+	}
+
+-->
