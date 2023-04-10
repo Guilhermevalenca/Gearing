@@ -40,7 +40,6 @@
             <input type="checkbox" name="materia[]" value='geografia'>
             geografia
         </label>
-        <h2></h2>
         <input type="hidden" name="user" value="<?= $_SESSION['username'] ?>">
         <input type="submit">
     </form>

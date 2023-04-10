@@ -24,3 +24,9 @@ Cl4udAnne,2,materia,matematica,portugues
 "Donquixote Gui",2,materia,geografia
 Guilherm3vrp,9,horario,tarde
 Guilherm3vrp,9,materia,portugues
+Cl4udAnne,3,horario,tarde
+Cl4udAnne,3,materia,portugues
+Cl4udAnne,4,horario,manha,tarde,noite
+Cl4udAnne,4,materia,matematica,portugues
+Guilherm3vrp,10,horario,noite
+Guilherm3vrp,10,materia,portugues,geografia
