@@ -13,7 +13,7 @@
     <?php session_start(); ?>
     <h1>Aqui você ira criar seu cronograma</h1>
     <form method="POST" action="./cronograma.php">
-        <h2>Em qual momento você se encontra mais disponivel:</h2>
+        <h2>Quais são os seus horários disponíveis para estudar em cada dia da semana?:</h2>
         <label>
             <input type="checkbox" name="horario[]" value="manha">
             manha
@@ -25,6 +25,15 @@
         <label>
             <input type="checkbox" name="horario[]" value="noite">
             noite
+        </label>
+
+        <h2>Quantas horas por dia você pode dedicar aos seus estudos?:</h2>
+        <label>
+            <input type="checkbox" name="tempo[]" value="">
+
+            <input type="checkbox" name="tempo[]" value="">
+
+            <input type="checkbox" name="tempo[]" value="">
         </label>
 
         <h2>Qual materia voce sente ter mais dificuldade:</h2>
@@ -50,3 +59,10 @@
     <?php $_SESSION['mensagem'] = ''; endif ?>
 </body>
 </html>
+
+Quantas horas por dia você pode dedicar aos seus estudos?
+Quais são os dias da semana em que você pode estudar?
+Quais são os seus horários disponíveis para estudar em cada dia da semana?
+Você precisa incluir algum tempo extra para revisões ou exercícios práticos?
+Você possui algum prazo específico para concluir esses estudos?
+Qual é o método de estudo que você costuma usar (ex: leitura, prática, resumos, etc.)?
