@@ -10,7 +10,7 @@
     <title>Document</title>
 </head>
 <body>
-<?php session_start();?>
+<?php session_start(); ?>
     <h1>Aqui estão suas informações:</h1>
     <table>
     <?php

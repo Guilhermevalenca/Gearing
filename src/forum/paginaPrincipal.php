@@ -3,6 +3,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+<?php session_start(); ?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +12,6 @@
     <link rel="stylesheet" href="/css/forum.css">
 </head>
 <body>
-    <?php session_start(); ?>
     <iframe src="./mensagensForum.php" width="700vw" height="500vw"></iframe>
     <form action="./adicionar.php" method="GET">
         <input class="escreverMensagem" type="text" name="mensagem" placeholder="Digite aqui sua mensagem" required>
