@@ -11,21 +11,18 @@
     <link rel="stylesheet" href="/css/cronograma.css">
 </head>
 <body>
-<?php session_start();
+<?php 
+    session_start();
+    $user = $_SESSION['username'];
     if($_SERVER['REQUEST_METHOD'] != 'POST'){
         header('location:menu.php');
         exit();
-    } 
-    if(!isset($_POST['horario']) || !isset($_POST['materia'])):
-        $_SESSION['mensagem'] = "Exite ou existem perguntas sem respostas!!!";
-        header('location: ./criarCronograma.php');
-        exit();
-    endif;
+    }
     $id = 1;
     $dadosHorario = [];
     $dadosMateria = [];
-    $dadosHorario[0] = $_POST['user'];
-    $dadosMateria[0] = $_POST['user'];
+    $dadosHorario[0] = $user;
+    $dadosMateria[0] = $user;
     $fp = fopen('./userCRUD/dadosUsers.csv','r');
     while( ($linha = fgetcsv($fp)) !== false ){
         if($linha[1] == $id && $linha[0] == $dadosHorario[0]){

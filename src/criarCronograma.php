@@ -12,7 +12,7 @@
 <body>
     <?php session_start(); ?>
     <h1>Aqui você ira criar seu cronograma</h1>
-    <form method="POST" action="./cronograma.php">
+    <form id="form" method="POST" action="./cronograma.php">
         <h2>Quais são os seus horários disponíveis para estudar em cada dia da semana?:</h2>
         <label>
             <input type="checkbox" name="horario[]" value="manha">
@@ -29,11 +29,16 @@
 
         <h2>Quantas horas por dia você pode dedicar aos seus estudos?:</h2>
         <label>
-            <input type="checkbox" name="tempo[]" value="">
-
-            <input type="checkbox" name="tempo[]" value="">
-
-            <input type="checkbox" name="tempo[]" value="">
+            <input type="checkbox" name="tempo[]" value="umaH">
+            Uma horas
+        </label>
+        <label>    
+            <input type="checkbox" name="tempo[]" value="duasH">
+            Duas horas
+        </label>
+        <label>
+            <input type="checkbox" name="tempo[]" value="tresH">
+            Tres horas
         </label>
 
         <h2>Qual materia voce sente ter mais dificuldade:</h2>
@@ -49,16 +54,50 @@
             <input type="checkbox" name="materia[]" value='geografia'>
             geografia
         </label>
-        <br>
-        <label>
-            <input type="hidden" name="user" value="<?= $_SESSION['username'] ?>">
+        <h2></h2>
             <input type="submit">
-        </label>
     </form>
+    <script>
+        var form = document.getElementById("form");
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            var horarios = form.elements["horario[]"];
+            var materias = form.elements["materia[]"];
+            var tempoEstudar = form.elements["tempo[]"];
+            function testehorario(){
+                for (let i = 0; i < horarios.length; i++) {
+                    if(horarios[i].checked) {
+                        return true;
+                    }
+                }
+            }
+            function testeMateria(){
+                for (let i = 0; i < materias.length; i++) {
+                    if(materias[i].checked) {
+                        return true;
+                    }
+                }
+            }
+            function testeTempo(){
+                for (let i = 0; i < tempoEstudar.length; i++) {
+                    if(tempoEstudar[i].checked) {
+                        return true;
+                    }
+                }
+            }
+            if(!testeHorario){
+                alert("Por favor, escolha uma disponibilidade");
+            }if else(!testeMateria){
+                alert("Por favor, escolha uma materia");
+            }if else(!testeTempo){
+                alert("Por favor, escolha um horario");
+            }else{
+                alert("conseguiu");
+            }
+        });
+</script>
     <button onclick="window.location.href='./menu.php'">Voltar para o menu</button>
-    <?php if($_SESSION['mensagem'] != ''): ?>
-        <h2>Alerta: <?= $_SESSION['mensagem'] ?></h2>
-    <?php $_SESSION['mensagem'] = ''; endif ?>
 </body>
 </html>
 <!--

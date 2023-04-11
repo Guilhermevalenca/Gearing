@@ -10,16 +10,13 @@
     <title>Document</title>
 </head>
 <body>
-<?php session_start(); ?>
+<?php 
+    session_start();
+    $user = $_SESSION['username'];
+?>
     <h1>Aqui estão suas informações:</h1>
     <table>
     <?php
-        if(isset($_SESSION["user"])){
-            $user = $_SESSION['user'];
-        } 
-        if($_SERVER['REQUEST_METHOD'] == "POST"){
-            $user = $_POST['user'];
-        }
         $fp = fopen('usuarios.csv','r');
         while( ($linha = fgetcsv($fp)) !== false ): ?>
         <?php if($linha[0] == $user): ?>
