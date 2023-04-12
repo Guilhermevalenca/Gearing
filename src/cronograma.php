@@ -18,44 +18,30 @@
         header('location:menu.php');
         exit();
     }
-    $id = 1;
-    function addUsersDados($addHorario,$alocacao){
-        $dados = [];
-        $dados[0] = $user;
-        $fp = fopen('./userCRUD/dadosUsers.csv');
+    function addUsersDados($dadosAlocacao,$alocacao){
+        $user = $_SESSION['username'];
+        $dados = array();
+        array_push($dados,$user);
+        $id = 1;
+        $fp = fopen('./userCRUD/dadosUsers.csv','r');
         while( ($linha = fgetcsv($fp)) !== false){
-            if($linha[0] == $user && $linha[1] == $id){
+            if($linha[0] == $user && $linha[1] == $id && $linha[2] == $alocacao){
                 $id++;
             }
         }
-        $dados[1] = $id;
-        $dados[2] = $alocacao;
-    }
-    $dadosHorario = [];
-    $dadosMateria = [];
-    $dadosHorario[0] = $user;
-    $dadosMateria[0] = $user;
-    $fp = fopen('./userCRUD/dadosUsers.csv','r');
-    while( ($linha = fgetcsv($fp)) !== false ){
-        if($linha[1] == $id && $linha[0] == $dadosHorario[0]){
-            $id++;
+        fclose($fp);
+        array_push($dados,$id);
+        array_push($dados,$alocacao);
+        foreach ($dadosAlocacao as $novosElementos) {
+            array_push($dados,$novosElementos);
         }
+        $fp = fopen('./userCRUD/dadosUsers.csv','a');
+        fputcsv($fp,$dados);
+        fclose($fp);
     }
-    fclose($fp);
-    $dadosHorario[1] = $id;
-    $dadosHorario[2] = "horario";
-    foreach($_POST['horario'] as $horario){
-        array_push($dadosHorario,$horario);
-    }
-    $dadosMateria[1] = $id;
-    $dadosMateria[2] = "materia";
-    foreach($_POST['materia'] as $materia){
-        array_push($dadosMateria,$materia);
-    }
-    $fp = fopen('./userCRUD/dadosUsers.csv','a');
-    fputcsv($fp,$dadosHorario);
-    fputcsv($fp,$dadosMateria);
-    fclose($fp);
+    addUsersDados($_POST['horario'],"horario");
+    addUsersDados($_POST['tempo'],"tempo");
+    addUsersDados($_POST['materia'],"materia");
 ?>
 <h1>Seu novo Cronograma ja foi criado!</h1>
 <h2>De uma olhada nele:</h2>
@@ -64,6 +50,12 @@
         <th>Horarios:</th>
         <?php foreach($_POST['horario'] as $horario): ?>
             <td><?= $horario ?></td>
+        <?php endforeach ?>
+    </tr>
+    <tr>
+        <th>Tempo:</th>
+        <?php foreach($_POST['tempo'] as $tempo): ?>
+            <td><?= $tempo ?></td>
         <?php endforeach ?>
     </tr>
     <tr>

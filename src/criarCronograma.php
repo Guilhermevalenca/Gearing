@@ -29,13 +29,16 @@
 
         <h2>Quantas horas por dia você pode dedicar aos seus estudos?:</h2>
         <label>
-            <input type="checkbox" name="tempo[]" value="">
+            <input type="checkbox" name="tempo[]" value="a">
+            a
         </label>
         <label>    
-            <input type="checkbox" name="tempo[]" value="">
+            <input type="checkbox" name="tempo[]" value="b">
+            b
         </label>
         <label>
-            <input type="checkbox" name="tempo[]" value="">
+            <input type="checkbox" name="tempo[]" value="c">
+            c
         </label>
 
         <h2>Qual materia voce sente ter mais dificuldade:</h2>
