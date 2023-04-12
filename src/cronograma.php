@@ -19,6 +19,18 @@
         exit();
     }
     $id = 1;
+    function addUsersDados($addHorario,$alocacao){
+        $dados = [];
+        $dados[0] = $user;
+        $fp = fopen('./userCRUD/dadosUsers.csv');
+        while( ($linha = fgetcsv($fp)) !== false){
+            if($linha[0] == $user && $linha[1] == $id){
+                $id++;
+            }
+        }
+        $dados[1] = $id;
+        $dados[2] = $alocacao;
+    }
     $dadosHorario = [];
     $dadosMateria = [];
     $dadosHorario[0] = $user;
@@ -32,17 +44,13 @@
     fclose($fp);
     $dadosHorario[1] = $id;
     $dadosHorario[2] = "horario";
-    $i = 3;
     foreach($_POST['horario'] as $horario){
-        $dadosHorario[$i] = $horario;
-        $i++; 
+        array_push($dadosHorario,$horario);
     }
     $dadosMateria[1] = $id;
     $dadosMateria[2] = "materia";
-    $i = 3;
     foreach($_POST['materia'] as $materia){
-        $dadosMateria[$i] = $materia;
-        $i++; 
+        array_push($dadosMateria,$materia);
     }
     $fp = fopen('./userCRUD/dadosUsers.csv','a');
     fputcsv($fp,$dadosHorario);
