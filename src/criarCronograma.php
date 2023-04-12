@@ -29,16 +29,13 @@
 
         <h2>Quantas horas por dia você pode dedicar aos seus estudos?:</h2>
         <label>
-            <input type="checkbox" name="tempo[]" value="umaH">
-            Uma horas
+            <input type="checkbox" name="tempo[]" value="">
         </label>
         <label>    
-            <input type="checkbox" name="tempo[]" value="duasH">
-            Duas horas
+            <input type="checkbox" name="tempo[]" value="">
         </label>
         <label>
-            <input type="checkbox" name="tempo[]" value="tresH">
-            Tres horas
+            <input type="checkbox" name="tempo[]" value="">
         </label>
 
         <h2>Qual materia voce sente ter mais dificuldade:</h2>
@@ -65,35 +62,21 @@
             var horarios = form.elements["horario[]"];
             var materias = form.elements["materia[]"];
             var tempoEstudar = form.elements["tempo[]"];
-            function testehorario(){
-                for (let i = 0; i < horarios.length; i++) {
-                    if(horarios[i].checked) {
+            function teste(parametro){
+                for (let i = 0; i < parametro.length; i++) {
+                    if(parametro[i].checked) {
                         return true;
                     }
                 }
             }
-            function testeMateria(){
-                for (let i = 0; i < materias.length; i++) {
-                    if(materias[i].checked) {
-                        return true;
-                    }
-                }
-            }
-            function testeTempo(){
-                for (let i = 0; i < tempoEstudar.length; i++) {
-                    if(tempoEstudar[i].checked) {
-                        return true;
-                    }
-                }
-            }
-            if(!testeHorario){
+            if(!teste(horarios)){
                 alert("Por favor, escolha uma disponibilidade");
-            }if else(!testeMateria){
+            }else if(!teste(materias)){
                 alert("Por favor, escolha uma materia");
-            }if else(!testeTempo){
+            }else if(!teste(tempoEstudar)){
                 alert("Por favor, escolha um horario");
             }else{
-                alert("conseguiu");
+                form.submit();
             }
         });
 </script>
