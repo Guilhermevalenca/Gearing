@@ -1,5 +1,5 @@
 <?php 
-    include 'verificacaoExistUser.php';
+    include '../verificacaoExistUser.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -19,13 +19,13 @@
 <!-- 
     Gerando tabelas dos cronograma do usuario
  -->
-<?php $lendoArquivo = fopen("./userCRUD/dadosUsers.csv",'r') ?>
+<?php $lendoArquivo = fopen("../userCRUD/dadosUsers.csv",'r') ?>
 <?php while( ($table = fgetcsv($lendoArquivo)) !== false ): ?>
 <table>
     <tr>
         <th>Horario:</th>
         <?php
-        $fp = fopen('./userCRUD/dadosUsers.csv','r'); 
+        $fp = fopen('../userCRUD/dadosUsers.csv','r'); 
         while( ($linha = fgetcsv($fp)) !== false ): ?>
             <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "horario"): ?>
                 <?php for($j = 3; $j < sizeof($linha); $j++): ?>
@@ -37,7 +37,7 @@
     <tr>
         <th>Materias:</th>
         <?php 
-        $fp = fopen('./userCRUD/dadosUsers.csv','r');
+        $fp = fopen('../userCRUD/dadosUsers.csv','r');
         while( ($linha = fgetcsv($fp)) !== false ): ?>
             <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "materia"): ?>
                 <?php for($j = 3; $j < sizeof($linha); $j++): ?>
@@ -48,6 +48,6 @@
     </tr>
 </table>
 <?php $id++; endwhile; fclose($lendoArquivo); ?>
-<button onclick="window.location.href = './menu.php'">Voltar</button>
+<button onclick="window.location.href = '/src/menu.php'">Voltar</button>
 </body>
 </html>

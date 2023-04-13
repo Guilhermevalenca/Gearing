@@ -1,5 +1,5 @@
 <?php 
-    include '/src/verificacaoExistUser.php';
+    include '../verificacaoExistUser.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -22,37 +22,59 @@
             <tr>
                 <th>Username:</th>
                 <td><?= $linha[0] ?></td>
-                <td><form action="./editarDados.php" method="POST">
-                    <input type="hidden" name="userAtual" value="<?= $linha[0] ?>">
-                    <input type="text" name='userNovo' placeholder="Escreva aqui para editar" required>
-                    <button>Editar</button>
+                <td><form id="form" action="./editarDados.php" method="POST">
+                    <input id="editar" type="text" name='userNovo' placeholder="Escreva aqui para editar" required>
+                    <input type="submit" value="editar">
                 </form></td>
             </tr>
             <tr>
                 <th>Seu nome:</th>
                 <td><?= $linha[1] ?></td>
-                <td><form action="./editarDados.php" method="POST">
+                <td><form id="form" action="./editarDados.php" method="POST">
                     <input type="hidden" name="nomeAtual" value="<?= $linha[1] ?>">
                     <input type="text" name='nomeNovo' placeholder="Escreva aqui para editar" required>
-                    <button>Editar</button>
+                    <input type="submit" value="editar">
                 </form></td>
             </tr>
             <tr>
                 <th>Seu email:</th>
                 <td><?= $linha[2] ?></td>
-                <td><form action="./editarDados.php" method="POST">
+                <td><form id="form" action="./editarDados.php" method="POST">
                     <input type="hidden" name="emailAtual" value="<?= $linha[2] ?>">
-                    <input type="hidden" name="userAtual" value="<?= $linha[0] ?>">
-                    <input type="text" name='emailNovo' placeholder="Escreva aqui para editar" required>
-                    <button>Editar</button>
+                    <input id="editar" type="text" name='emailNovo' placeholder="Escreva aqui para editar" required>
+                    <input type="submit" value="editar">
                 </form></td>
             </tr>
         <?php endif ?>
         <?php endwhile ?>
     </table>
+    <script>
+        const form = getElementById("form");
+        const editar = getElementById("editar");
+        
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            const validandoRecurso = new XMLHttpRequest();
+            validandoRecurso.onreadystatechange = () => {
+                if(this.readyState === 4 && this.status === 200){
+                    if(this.ResponseText == "Realize o alert"){
+                        alert("A informação que voce quer editar ela ja esta sendo utilizada em outra conta");
+                    }else{
+                        form.submit();
+                    }
+                }
+            }
+            const enviarDados = new FormData();
+            enviarDados.append('edicao',editar.value);
+            if(editar.name == "emailNovo"){
+                enviarDados.append('numeracao',2);
+            }else if(editar.name == "userNovo"){
+                enviarDados.append('numeracao',0);
+            }
+            validandoRecurso.open("POST",'./editarDados.php',true);
+            validandoRecurso.send(enviarDados);
+        })
+    </script>
     <button onclick="window.location.href = '/src/menu.php'">Voltar</button>
-    <?php if($_SESSION['mensagem'] != ''): ?>
-        <h2>Alerta: <?= $_SESSION['mensagem'] ?></h2>
-    <?php $_SESSION['mensagem'] = ''; endif ?>
 </body>
 </html>

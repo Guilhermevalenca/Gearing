@@ -14,9 +14,9 @@
         $user = $_SESSION['username'];
     ?>
     <h1>Seja bem vindo a nossa plataforma: <?= $user ?></h1>
-    <button onclick="window.location.href = './criarCronograma.php'">Crie aqui seu cronograma</button>
+    <button onclick="window.location.href = './cronograma/criarCronograma.php'">Crie aqui seu cronograma</button>
     <br>
-    <button onclick="window.location.href = './usersCronograma.php' " >Ver meus cronogramas</button>
+    <button onclick="window.location.href = './cronograma/usersCronograma.php' " >Ver meus cronogramas</button>
     <br>
     <button onclick="window.location.href = './userCRUD/mostrarDados.php' ">Informações da conta</button>
     <br>
