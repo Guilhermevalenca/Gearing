@@ -18,6 +18,7 @@
         header('location:menu.php');
         exit();
     }
+    //function para adicionar dados:
     function addUsersDados($dadosAlocacao,$alocacao){
         $user = $_SESSION['username'];
         $dados = array();
@@ -39,12 +40,16 @@
         fputcsv($fp,$dados);
         fclose($fp);
     }
+    //adicionar dados:
     addUsersDados($_POST['horario'],"horario");
     addUsersDados($_POST['tempo'],"tempo");
     addUsersDados($_POST['materia'],"materia");
 ?>
 <h1>Seu novo Cronograma ja foi criado!</h1>
 <h2>De uma olhada nele:</h2>
+<!-- 
+    Gerando tabela da nova criação de cronograma do usuario:
+ -->
 <table>
     <tr>
         <th>Horarios:</th>

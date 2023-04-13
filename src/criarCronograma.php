@@ -12,6 +12,7 @@
 <body>
     <?php session_start(); ?>
     <h1>Aqui você ira criar seu cronograma</h1>
+    <!-- formulario do cronograma -->
     <form id="form" method="POST" action="./cronograma.php">
         <h2>Quais são os seus horários disponíveis para estudar em cada dia da semana?:</h2>
         <label>
@@ -58,6 +59,7 @@
             <input type="submit">
     </form>
     <script>
+        //script para verificar se todas as perguntas tiveram ao menos uma resposta
         var form = document.getElementById("form");
 
         form.addEventListener('submit', (event) => {

@@ -14,18 +14,14 @@
 <?php
     session_start();
     $user = $_SESSION['username'];
-    $quantidadeTable = 0;
-    $fp = fopen('./userCRUD/dadosUsers.csv','r');
-    while( ($linha = fgetcsv($fp)) !== false ){
-        if($quantidadeTable < $linha[1] && $linha[0] == $user){
-            $quantidadeTable++;
-        }
-    }
-    fclose($fp);
     $id = 1;
 ?>
 <h2><?= $user ?>, Aqui estar seus cronogramas:</h2>
-<?php for($i = 0; $i < $quantidadeTable; $i++): ?>
+<!-- 
+    Gerando tabelas dos cronograma do usuario
+ -->
+<?php $lendoArquivo = fopen("./userCRUD/dadosUsers.csv",'r') ?>
+<?php while( ($table = fgetcsv($lendoArquivo)) !== false ): ?>
 <table>
     <tr>
         <th>Horario:</th>
@@ -52,7 +48,7 @@
         <?php endwhile ?> 
     </tr>
 </table>
-<?php $id++; endfor ?>
+<?php $id++; endwhile; fclose($lendoArquivo); ?>
 <button onclick="window.location.href = './menu.php'">Voltar</button>
 </body>
 </html>
