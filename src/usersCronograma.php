@@ -12,7 +12,6 @@
 </head>
 <body>
 <?php
-    session_start();
     $user = $_SESSION['username'];
     $id = 1;
 ?>

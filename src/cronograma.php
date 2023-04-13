@@ -11,8 +11,7 @@
     <link rel="stylesheet" href="/css/cronograma.css">
 </head>
 <body>
-<?php 
-    session_start();
+<?php
     $user = $_SESSION['username'];
     if($_SERVER['REQUEST_METHOD'] != 'POST'){
         header('location:menu.php');

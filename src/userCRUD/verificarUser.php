@@ -7,7 +7,7 @@
         if ($linha[2] == $_POST['login'] && $linha[3] == $_POST['senha']) {
             session_start();
             $_SESSION['username'] = $linha[0];
-            header("Location: /src/menu.php");
+            header("location: /src/menu.php");
             exit();
         }
     }

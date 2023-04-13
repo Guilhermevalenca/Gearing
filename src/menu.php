@@ -10,8 +10,7 @@
     <title>Document</title>
 </head>
 <body>
-    <?php 
-        session_start();
+    <?php
         $user = $_SESSION['username'];
     ?>
     <h1>Seja bem vindo a nossa plataforma: <?= $user ?></h1>
@@ -22,7 +21,7 @@
     <button onclick="window.location.href = './userCRUD/mostrarDados.php' ">Informações da conta</button>
     <br>
     <button onclick="window.location.href = './forum/paginaPrincipal.php' ">Acesse o forum</button>
-    <form action="./sair.php" method="GET">
+    <form action="./sair.php">
         <input type="submit" value="Sair da conta">
     </form>
 </body>

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/css/forum.css">
 </head>
 <body>
+    <!-- -->
     <iframe src="./mensagensForum.php" width="700vw" height="500vw"></iframe>
     <form action="./adicionar.php" method="GET">
         <input class="escreverMensagem" type="text" name="mensagem" placeholder="Digite aqui sua mensagem" required>

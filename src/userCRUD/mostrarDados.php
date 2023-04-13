@@ -11,7 +11,6 @@
 </head>
 <body>
 <?php 
-    session_start();
     $user = $_SESSION['username'];
 ?>
     <h1>Aqui estão suas informações:</h1>

@@ -10,7 +10,6 @@
     <title>cronograma</title>
 </head>
 <body>
-    <?php session_start(); ?>
     <h1>Aqui você ira criar seu cronograma</h1>
     <!-- formulario do cronograma -->
     <form id="form" method="POST" action="./cronograma.php">
