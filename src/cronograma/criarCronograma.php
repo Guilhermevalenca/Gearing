@@ -119,7 +119,7 @@
         <label>
             <input type="checkbox" name="tempo[]" value='nao'>
             Não
-        </label>
+        </label><br>
         <input type="submit">
     </form>
     <script>
