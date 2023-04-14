@@ -1,14 +1,11 @@
 <?php
-function verificacao($dado,$indice){
+if(isset($_POST['edicao'])){
     $fp = fopen('usuarios.csv','r');
-    while( ($linha = fgetcsv($fp)) !== false ){
-        if($linha[$indice] == $dado){
+    while ( $linha = fgetcsv($fp) !== false){
+        if($linha[$_POST['indice']] == $_POST['edicao']){
             echo "Realize o alert";
         }
     }
-}
-if(isset($_POST['edicao'])){
-    verificacao($_POST['edicao'],$_POST['numeracao']);
     exit();
 }
     function alterarDados($dadoDesejado,$i,$alteracao){

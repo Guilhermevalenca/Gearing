@@ -37,7 +37,7 @@
         const confirme = document.getElementById('confirme');
         
         form.addEventListener('submit', (event) => {
-            
+            event.preventDefault();
             if(senha.value !== confirme.value) {
                 alert('Senhas diferentes, porfavor tente novamente');
             }

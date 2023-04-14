@@ -67,13 +67,13 @@
             const enviarDados = new FormData();
             enviarDados.append('edicao',editar.value);
             if(editar.name == "emailNovo"){
-                enviarDados.append('numeracao',2);
+                enviarDados.append('indice',2);
             }else if(editar.name == "userNovo"){
-                enviarDados.append('numeracao',0);
+                enviarDados.append('indice',0);
             }
             validandoRecurso.open("POST",'./editarDados.php',true);
             validandoRecurso.send(enviarDados);
-        })
+        });
     </script>
     <button onclick="window.location.href = '/src/menu.php'">Voltar</button>
 </body>
