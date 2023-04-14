@@ -3,7 +3,6 @@
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
-<?php session_start(); ?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,8 +11,13 @@
     <link rel="stylesheet" href="/css/forum.css">
 </head>
 <body>
-    <!-- -->
+    <!-- 
+        iframe utilizado para a modelagem do forum e atualização de mensagens
+    -->
     <iframe src="./mensagensForum.php" width="700vw" height="500vw"></iframe>
+    <!-- 
+        Formulario para enviar mensagens para o forum
+    -->
     <form action="./adicionar.php" method="GET">
         <input class="escreverMensagem" type="text" name="mensagem" placeholder="Digite aqui sua mensagem" required>
         <input type="hidden" name="user" value="<?= $_SESSION['username'] ?>">
