@@ -13,49 +13,114 @@
     <h1>Aqui você ira criar seu cronograma</h1>
     <!-- formulario do cronograma -->
     <form id="form" method="POST" action="./cronograma.php">
-        <h2>Quais são os seus horários disponíveis para estudar em cada dia da semana?:</h2>
+        <h2>Quais são seus dias e horários disponíveis para estudar na semana?:</h2>
         <label>
-            <input type="checkbox" name="horario[]" value="manha">
-            manha
+            <input type="checkbox" name="dia[]" value="segunda">
+            Segunda
         </label>
         <label>
-            <input type="checkbox" name="horario[]" value="tarde">
-            tarde
+            <input type="checkbox" name="dia[]" value="terca">
+            Terça
         </label>
         <label>
-            <input type="checkbox" name="horario[]" value="noite">
-            noite
+            <input type="checkbox" name="dia[]" value="quarta">
+            Quarta
+        </label>
+        <label>
+            <input type="checkbox" name="dia[]" value="quinta">
+            Quinta
+        </label>
+        <label>
+            <input type="checkbox" name="dia[]" value="sexta">
+            Sexta
+        </label>
+        <label>
+            <input type="checkbox" name="dia[]" value="sabado">
+            Sábado
+        </label>
+        <label>
+            <input type="checkbox" name="dia[]" value="domingo">
+            Domingo
         </label>
 
-        <h2>Quantas horas por dia você pode dedicar aos seus estudos?:</h2>
+        <h2>Qual carga horária diária você pode disponibilizar para seus estudos?:</h2>
         <label>
-            <input type="checkbox" name="tempo[]" value="a">
-            a
+            <input type="checkbox" name="horario[]" value="a">
+            30min - 1h
         </label>
         <label>    
-            <input type="checkbox" name="tempo[]" value="b">
-            b
+            <input type="checkbox" name="horario[]" value="b">
+            2h 
         </label>
         <label>
-            <input type="checkbox" name="tempo[]" value="c">
-            c
+            <input type="checkbox" name="horario[]" value="c">
+            3h
+        </label>
+        <label>
+            <input type="checkbox" name="horario[]" value="d">
+            4h
+        </label>
+        <label>
+            <input type="checkbox" name="horario[]" value="e">
+            5h +
         </label>
 
-        <h2>Qual materia voce sente ter mais dificuldade:</h2>
+        <h2>Qual matéria voce sente ter mais dificuldade:</h2>
         <label>
             <input type="checkbox" name="materia[]" value='matematica'>
-            matematica
+            Matemática
+        </label>
+        <label>
+            <input type="checkbox" name="materia[]" value='fisica'>
+            Física
+        </label>
+        <label>
+            <input type="checkbox" name="materia[]" value='quimica'>
+            Química
+        </label>
+        <label>
+            <input type="checkbox" name="materia[]" value='biologia'>
+            Biologia
         </label>
         <label>
             <input type="checkbox" name="materia[]" value='portugues'>
-            portugues
+            Português
+        </label>
+        <label>
+            <input type="checkbox" name="materia[]" value='historia'>
+            História
         </label>
         <label>
             <input type="checkbox" name="materia[]" value='geografia'>
-            geografia
+            Geografia
         </label>
-        <h2></h2>
-            <input type="submit">
+        <label>
+            <input type="checkbox" name="materia[]" value='filosofia'>
+            Filosofia
+        </label>
+        <label>
+            <input type="checkbox" name="materia[]" value='sociologia'>
+            Sociologia
+        </label>
+        <label>
+            <input type="checkbox" name="materia[]" value='artes'>
+            Artes
+        </label>
+        <label>
+            <input type="checkbox" name="materia[]" value='Ingles'>
+            Inglês
+        </label>
+
+        <h2>Você precisa incluir algum tempo extra para revisões ou exercícios práticos?</h2>
+        <label>
+            <input type="checkbox" name="tempo[]" value='sim'>
+            Sim <!-- adicionar a opção revisões e exercícios -->
+        </label>
+        <label>
+            <input type="checkbox" name="tempo[]" value='nao'>
+            Não
+        </label>
+        <input type="submit">
     </form>
     <script>
         //script para verificar se todas as perguntas tiveram ao menos uma resposta
@@ -87,11 +152,7 @@
     <button onclick="window.location.href='/src/menu.php'">Voltar para o menu</button>
 </body>
 </html>
+
 <!--
-Quantas horas por dia você pode dedicar aos seus estudos?
-Quais são os dias da semana em que você pode estudar?
-Quais são os seus horários disponíveis para estudar em cada dia da semana?
-Você precisa incluir algum tempo extra para revisões ou exercícios práticos?
-Você possui algum prazo específico para concluir esses estudos?
-Qual é o método de estudo que você costuma usar (ex: leitura, prática, resumos, etc.)?
--->
+    Dica de Rômulo é fazer uma página para cada pergunta
+    -->
