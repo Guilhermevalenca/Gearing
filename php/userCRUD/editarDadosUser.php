@@ -1,16 +1,6 @@
-<?php
-if(isset($_POST['edicao'])){
-    $fp = fopen('usuarios.csv','r');
-    while ( $linha = fgetcsv($fp) !== false){
-        if($linha[$_POST['indice']] == $_POST['edicao']){
-            echo "Realize o alert";
-        }
-    }
-    exit();
-}
-    function alterarDados($dadoDesejado,$i,$alteracao){
-        
-        $fp = fopen('usuarios.csv','r');
+    <?php
+    function alterarDados($dadoDesejado,$i,$alteracao){        
+        $fp = fopen('../../src/userCRUD/usuarios.csv','r');
         $backup = fopen('backup.csv','w');
         while( ($linha = fgetcsv($fp)) !== false ){
             if($linha[$i] != $dadoDesejado){
@@ -23,13 +13,13 @@ if(isset($_POST['edicao'])){
         }
         fclose($fp);
         fclose($backup);
-        rename('backup.csv','usuarios.csv');
-        header('location: ./mostrarDados.php');
+        rename('backup.csv','../../src/userCRUD/usuarios.csv');
+        
     }
     if(isset($_POST['userNovo'])){
 
         alterarDados($_SESSION['username'],0,$_POST['userNovo']);
-        $fp = fopen('dadosUsers.csv','r');
+        $fp = fopen('../../src/cronograma/cronograma.csv','r');
         $backup = fopen('backup.csv','w');
         while( ($linha = fgetcsv($fp)) !== false ){
             if($linha[0] != $_SESSION['username']){
@@ -42,7 +32,7 @@ if(isset($_POST['edicao'])){
         }
         fclose($fp);
         fclose($backup);
-        rename('backup.csv','dadosUsers.csv');
+        rename('backup.csv','../../src/cronograma/cronograma.csv');
         $_SESSION['username'] = $_POST['userNovo'];
     
     }else if(isset($_POST['nomeNovo'])){
@@ -54,4 +44,5 @@ if(isset($_POST['edicao'])){
         alterarDados($_POST['emailAtual'],2,$_POST['emailNovo']);
 
     }
+    header('location:../../src/userCRUD/mostrarDados.php ');
 ?>

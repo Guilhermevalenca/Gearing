@@ -1,5 +1,5 @@
 <?php 
-    include '/src/verificacaoExistUser.php';
+    include '/src/verificacaoExistSession.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -18,7 +18,7 @@
     <!-- 
         Formulario para enviar mensagens para o forum
     -->
-    <form action="./adicionar.php" method="GET">
+    <form action="/php/forum/adicionarDadosForum.php" method="GET">
         <input class="escreverMensagem" type="text" name="mensagem" placeholder="Digite aqui sua mensagem" required>
         <input type="hidden" name="user" value="<?= $_SESSION['username'] ?>">
         <button>Enviar</button>

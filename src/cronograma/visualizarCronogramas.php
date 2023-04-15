@@ -1,5 +1,5 @@
 <?php 
-    include '../verificacaoExistUser.php';
+    include '../verificacaoExistSession.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -11,21 +11,20 @@
     <link rel="stylesheet" href="/css/cronograma.css">
 </head>
 <body>
+<button onclick="window.location.href = '/src/menu.php'">Voltar</button>
 <?php
-    $user = $_SESSION['username'];
-    $id = 1;
+    include '../../php/cronograma/visualizarCronogramas.php';
 ?>
 <h2><?= $user ?>, Aqui estar seus cronogramas:</h2>
 <!-- 
     Gerando tabelas dos cronograma do usuario
  -->
-<?php $lendoArquivo = fopen("../userCRUD/dadosUsers.csv",'r') ?>
-<?php while( ($table = fgetcsv($lendoArquivo)) !== false ): ?>
+<?php for($i = 0; $i < $quantasTable; $i++ ): ?>
 <table>
     <tr>
         <th>Horario:</th>
         <?php
-        $fp = fopen('../userCRUD/dadosUsers.csv','r'); 
+        $fp = fopen('cronograma.csv','r'); 
         while( ($linha = fgetcsv($fp)) !== false ): ?>
             <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "horario"): ?>
                 <?php for($j = 3; $j < sizeof($linha); $j++): ?>
@@ -35,9 +34,21 @@
         <?php endwhile ?>
     </tr>
     <tr>
+        <th>tempo:</th>
+        <?php
+        $fp = fopen('cronograma.csv','r');
+        while( ($linha = fgetcsv($fp)) !== false ): ?>
+            <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "tempo"): ?>
+                <?php for($j = 3; $j < sizeof($linha); $j++): ?>
+                    <td><?= $linha[$j] ?></td>
+                <?php endfor ?>
+            <?php endif ?>
+        <?php endwhile ?>
+    </tr>
+    <tr>
         <th>Materias:</th>
         <?php 
-        $fp = fopen('../userCRUD/dadosUsers.csv','r');
+        $fp = fopen('cronograma.csv','r');
         while( ($linha = fgetcsv($fp)) !== false ): ?>
             <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "materia"): ?>
                 <?php for($j = 3; $j < sizeof($linha); $j++): ?>
@@ -47,7 +58,6 @@
         <?php endwhile ?> 
     </tr>
 </table>
-<?php $id++; endwhile; fclose($lendoArquivo); ?>
-<button onclick="window.location.href = '/src/menu.php'">Voltar</button>
+<?php $id++; endfor ?>
 </body>
 </html>

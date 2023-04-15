@@ -24,7 +24,7 @@
     
     </div>
         <button class="criarRealizarLogin" onclick="window.location.href = './src/userCRUD/login.php' ">Login</button>
-        <button id="criarConta" class="criarRealizarLogin" onclick="window.location.href = './src/userCRUD/criandoNovoUser.html' ">Criar Conta</button>
+        <button id="criarConta" class="criarRealizarLogin" onclick="window.location.href = './src/userCRUD/criandoNovoUser.php' ">Criar Conta</button>
 </body>
 </html>
 <!-- 

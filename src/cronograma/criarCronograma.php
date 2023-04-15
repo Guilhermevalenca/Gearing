@@ -1,5 +1,5 @@
 <?php 
-    include "../verificacaoExistUser.php";
+    include "../verificacaoExistSession.php";
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -12,7 +12,7 @@
 <body>
     <h1>Aqui você ira criar seu cronograma</h1>
     <!-- formulario do cronograma -->
-    <form id="form" method="POST" action="./cronograma.php">
+    <form id="form" method="POST" action="./visualizarNovoCronograma.php">
         <h2>Quais são seus dias e horários disponíveis para estudar na semana?:</h2>
         <label>
             <input type="checkbox" name="dia[]" value="segunda">
@@ -45,23 +45,23 @@
 
         <h2>Qual carga horária diária você pode disponibilizar para seus estudos?:</h2>
         <label>
-            <input type="checkbox" name="horario[]" value="a">
+            <input type="checkbox" name="horario[]" value="1 Hora e 30 minutos">
             30min - 1h
         </label>
         <label>    
-            <input type="checkbox" name="horario[]" value="b">
+            <input type="checkbox" name="horario[]" value="2 Horas">
             2h 
         </label>
         <label>
-            <input type="checkbox" name="horario[]" value="c">
+            <input type="checkbox" name="horario[]" value="3 Horas">
             3h
         </label>
         <label>
-            <input type="checkbox" name="horario[]" value="d">
+            <input type="checkbox" name="horario[]" value="4 Horas">
             4h
         </label>
         <label>
-            <input type="checkbox" name="horario[]" value="e">
+            <input type="checkbox" name="horario[]" value="5 Horas">
             5h +
         </label>
 
@@ -122,33 +122,7 @@
         </label><br>
         <input type="submit">
     </form>
-    <script>
-        //script para verificar se todas as perguntas tiveram ao menos uma resposta
-        var form = document.getElementById("form");
-
-        form.addEventListener('submit', (event) => {
-            event.preventDefault();
-            var horarios = form.elements["horario[]"];
-            var materias = form.elements["materia[]"];
-            var tempoEstudar = form.elements["tempo[]"];
-            function teste(parametro){
-                for (let i = 0; i < parametro.length; i++) {
-                    if(parametro[i].checked) {
-                        return true;
-                    }
-                }
-            }
-            if(!teste(horarios)){
-                alert("Por favor, escolha uma disponibilidade");
-            }else if(!teste(materias)){
-                alert("Por favor, escolha uma materia");
-            }else if(!teste(tempoEstudar)){
-                alert("Por favor, escolha um horario");
-            }else{
-                form.submit();
-            }
-        });
-</script>
+    <script defer src="/script/cronograma/criarCronograma.js"></script>
     <button onclick="window.location.href='/src/menu.php'">Voltar para o menu</button>
 </body>
 </html>

@@ -7,7 +7,7 @@
     <title>Criando usuario</title>
 </head>
 <body>
-    <form id="formulario" method="POST" action="./adicionarDados.php" >
+    <form id="formulario" method="POST" action="/php/userCRUD/adicionarUser.php">
         <label>Seu usuario:
             <input type="text" id="user" name="user" placeholder="Digite aqui seu nome de usuario" required>
         </label><br>
@@ -29,35 +29,7 @@
         <input type="submit">
         <!-- Pergunta: Qual método você costuma usar para estudar? -->
     </form>
-    <script>
-        const form = document.getElementById('formulario');
-        const user = document.getElementById('user');
-        const email = document.getElementById('email');
-        const senha = document.getElementById('senha');
-        const confirme = document.getElementById('confirme');
-        
-        form.addEventListener('submit', (event) => {
-            event.preventDefault();
-            if(senha.value !== confirme.value) {
-                alert('Senhas diferentes, porfavor tente novamente');
-            }
-            const test = new XMLHttpRequest();
-            test.onreadystatechange = function() {
-                if (this.readyState === 4 && this.status === 200) {
-                    if(this.responseText == 'jaCadastrado') {
-                        alert('Este email ou usuario já está registrado.');
-                    } else {
-                        form.submit();
-                    }
-                }
-            }
-            const dados = new FormData();
-            dados.append('email',email.value);
-            dados.append('user',user.value);
-            test.open('POST','./verificarEmailUser.php', true);
-            test.send(dados);
-        });
-    </script>
+    <script defer src='/script/userCRUD/criandoNovoUser.js'></script>
     <button onclick="window.location.href = '/' ">Tela de inicio</button>
 </body>
 </html>

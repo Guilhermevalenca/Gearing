@@ -1,5 +1,5 @@
 <?php 
-    include '../verificacaoExistUser.php';
+    include '../verificacaoExistSession.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -22,59 +22,39 @@
             <tr>
                 <th>Username:</th>
                 <td><?= $linha[0] ?></td>
-                <td><form id="form" action="./editarDados.php" method="POST">
+                <td>
+                    <form id="formulario" action="/php/userCRUD/editarDadosUser.php" method="POST">
                     <input id="editar" type="text" name='userNovo' placeholder="Escreva aqui para editar" required>
                     <input type="submit" value="editar">
-                </form></td>
+                </form>
+            </td>
             </tr>
             <tr>
                 <th>Seu nome:</th>
                 <td><?= $linha[1] ?></td>
-                <td><form id="form" action="./editarDados.php" method="POST">
+                <td>
+                    <form id="formulario" action="/php/userCRUD/editarDadosUser.php" method="POST">
                     <input type="hidden" name="nomeAtual" value="<?= $linha[1] ?>">
                     <input type="text" name='nomeNovo' placeholder="Escreva aqui para editar" required>
                     <input type="submit" value="editar">
-                </form></td>
+                </form>
+                </td>
             </tr>
             <tr>
                 <th>Seu email:</th>
                 <td><?= $linha[2] ?></td>
-                <td><form id="form" action="./editarDados.php" method="POST">
+                <td>
+                    <form id="formulario" action="/php/userCRUD/editarDadosUser.php" method="POST">
                     <input type="hidden" name="emailAtual" value="<?= $linha[2] ?>">
-                    <input id="editar" type="text" name='emailNovo' placeholder="Escreva aqui para editar" required>
+                    <input id="editar" type="email" name='emailNovo' placeholder="Escreva aqui para editar" required>
                     <input type="submit" value="editar">
-                </form></td>
+                </form>
+                </td>
             </tr>
         <?php endif ?>
         <?php endwhile ?>
     </table>
-    <script>
-        const form = getElementById("form");
-        const editar = getElementById("editar");
-        
-        form.addEventListener('submit', (event) => {
-            event.preventDefault();
-            const validandoRecurso = new XMLHttpRequest();
-            validandoRecurso.onreadystatechange = () => {
-                if(this.readyState === 4 && this.status === 200){
-                    if(this.ResponseText == "Realize o alert"){
-                        alert("A informação que voce quer editar ela ja esta sendo utilizada em outra conta");
-                    }else{
-                        form.submit();
-                    }
-                }
-            }
-            const enviarDados = new FormData();
-            enviarDados.append('edicao',editar.value);
-            if(editar.name == "emailNovo"){
-                enviarDados.append('indice',2);
-            }else if(editar.name == "userNovo"){
-                enviarDados.append('indice',0);
-            }
-            validandoRecurso.open("POST",'./editarDados.php',true);
-            validandoRecurso.send(enviarDados);
-        });
-    </script>
+    <script defer src="/script/userCRUD/mostrarDados.js"></script>
     <button onclick="window.location.href = '/src/menu.php'">Voltar</button>
 </body>
 </html>

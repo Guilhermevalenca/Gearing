@@ -1,5 +1,5 @@
 <?php 
-    include 'verificacaoExistUser.php';
+    include 'verificacaoExistSession.php';
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -16,7 +16,7 @@
     <h1>Seja bem vindo a nossa plataforma: <?= $user ?></h1>
     <button onclick="window.location.href = './cronograma/criarCronograma.php'">Crie aqui seu cronograma</button>
     <br>
-    <button onclick="window.location.href = './cronograma/usersCronograma.php' " >Ver meus cronogramas</button>
+    <button onclick="window.location.href = './cronograma/visualizarCronogramas.php' " >Ver meus cronogramas</button>
     <br>
     <button onclick="window.location.href = './userCRUD/mostrarDados.php' ">Informações da conta</button>
     <br>

@@ -2,7 +2,7 @@
     if($_SERVER['REQUEST_METHOD'] != 'POST'){
        exit();
     }
-    $fp = fopen('usuarios.csv','r');
+    $fp = fopen('../../src/userCRUD/usuarios.csv','r');
     while ( ($linha = fgetcsv($fp)) !== false){
         if ($linha[2] == $_POST['login'] && $linha[3] == $_POST['senha']) {
             session_start();
