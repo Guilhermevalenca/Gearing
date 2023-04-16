@@ -1,6 +1,4 @@
-<?php 
-    include 'verificacaoExistSession.php';
-?>
+<?php include 'verificacaoExistSession.php' ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -24,5 +22,6 @@
     <form action="./sair.php">
         <input type="submit" value="Sair da conta">
     </form>
+
 </body>
 </html>
