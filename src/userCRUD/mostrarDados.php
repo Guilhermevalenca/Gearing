@@ -56,5 +56,28 @@
     </table>
     <script defer src="/script/userCRUD/mostrarDados.js"></script>
     <button onclick="window.location.href = '/src/menu.php'">Voltar</button>
+    <h2>Deseja apaga sua conta? 
+        <button id="buttonApagaConta" value="<?= $_SESSION['username'] ?>" onclick="apagarConta()">Sair da conta</button>
+    </h2>
+    <script>
+        function apagarConta(){
+            const button = document.getElementById("buttonApagaConta");
+            button.addEventListener('click', (event) => {
+                const apagar = new XMLHttpRequest();
+                apagar.onreadystatechange = () => {
+                    if(this.readyState === 4 && this.status === 200){
+                        if(this.responseText == "usuario apagado"){
+                            alert("Sua conta foi apaga, com sucesso!");
+                            window.location.href = "/";    
+                        }
+                    }
+                }
+                const dados = new FormData;
+                dados.append("user",button.value);
+                apagar.open("POST","/php/userCRUD/deletarUser.php",true);
+                apagar.send(dados);
+            });
+        }
+    </script>
 </body>
 </html>

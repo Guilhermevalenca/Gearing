@@ -1,6 +1,3 @@
-<?php 
-    include 'verificacaoExistSession.php';
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

@@ -3,7 +3,7 @@
         exit();
     }
     $nome = $_POST['nome'] . " " . $_POST['sobrenome'];
-    $fp = fopen('usuarios.csv','a');
+    $fp = fopen('../../src/userCRUD/usuarios.csv','a');
     fputcsv($fp,array($_POST['user'],$nome,$_POST['email'],$_POST['senha']));
     fclose($fp);
     session_start();
