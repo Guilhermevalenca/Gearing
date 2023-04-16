@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $_SESSION['username'] ?></title>
     <link rel="stylesheet" href="/css/forum.css">
+
 </head>
 <body>
     <!-- 
@@ -25,5 +26,15 @@
     </form>
     <h2>As mensagens são atualizadas a cada 5 segundos</h2>
     <button onclick="window.location.href='/src/menu.php'">Voltar</button>
+
+    <table>
+        <h1>Usuários</h1><br>
+    <?php $mostrarusers = fopen('../userCRUD/usuarios.csv','r');?>
+    <?php while (($linha = fgetcsv($mostrarusers)) !== false): ?>
+        <tr>
+            <td><?= $linha[0] ?></td>
+        </tr>
+    <?php endwhile?>
+    </table>
 </body>
 </html>
