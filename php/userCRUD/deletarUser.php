@@ -7,11 +7,11 @@
     while( ($linha = fgetcsv($fp)) !== false){
                 if($linha[0] != $user){
                     fputcsv($backup,$linha);
-                }else{
-                    echo "usuario apagado";
                 }
     }
     fclose($fp);
     fclose($backup);
     rename("backup.csv",'../../src/userCRUD/usuarios.csv');
+    echo "usuario apagado";
+    return;
 ?>
