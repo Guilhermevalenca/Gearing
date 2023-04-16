@@ -18,13 +18,5 @@
     </tr>
 <?php endwhile ?>
 </table>  
-<table>
-    <?php $mostrarusers = fopen('/userCRUD/usuarios.csv','r');?>
-    <?php while (($linha = fgetcsv($mostrarusers)) !== false): ?>
-        <tr>
-            <th><?= $linha[0] ?></th>
-        </tr>
-    <?php endwhile?>
-    </table>  
 </body>
 </html>
