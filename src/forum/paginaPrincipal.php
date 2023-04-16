@@ -27,6 +27,10 @@
     <h2>As mensagens são atualizadas a cada 5 segundos</h2>
     <button onclick="window.location.href='/src/menu.php'">Voltar</button>
 
+    <!--
+    Listando Usuários na pagina do fórum
+     -->
+
     <table>
         <h1>Usuários</h1><br>
     <?php $mostrarusers = fopen('../userCRUD/usuarios.csv','r');?>
