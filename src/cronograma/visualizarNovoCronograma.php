@@ -26,16 +26,24 @@
             <td><?= $horario ?></td>
         <?php endforeach ?>
     </tr>
+    <!-- Não sei o objetivo disso por enquanto mas não ta fazendo sentido na tabela 
     <tr>
         <th>Tempo:</th>
-        <?php foreach($_POST['tempo'] as $tempo): ?>
+     <?php foreach($_POST['tempo'] as $tempo): ?>
             <td><?= $tempo ?></td>
-        <?php endforeach ?>
+     <?php endforeach ?>
     </tr>
+-->
     <tr>
         <th>Materias:</th>
         <?php foreach($_POST['materia'] as $materia): ?>
             <td><?= $materia ?></td>
+        <?php endforeach ?>
+    </tr>
+     <tr>
+        <th>Dias:</th>
+        <?php foreach($_POST['dias'] as $dias): ?>
+            <td><?= $dias ?></td>
         <?php endforeach ?>
     </tr>
 </table>

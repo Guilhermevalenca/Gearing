@@ -15,31 +15,31 @@
     <form id="form" method="POST" action="./visualizarNovoCronograma.php">
         <h2>Quais são seus dias e horários disponíveis para estudar na semana?:</h2>
         <label>
-            <input type="checkbox" name="dia[]" value="segunda">
+            <input type="checkbox" name="dias[]" value="segunda">
             Segunda
         </label>
         <label>
-            <input type="checkbox" name="dia[]" value="terca">
+            <input type="checkbox" name="dias[]" value="terca">
             Terça
         </label>
         <label>
-            <input type="checkbox" name="dia[]" value="quarta">
+            <input type="checkbox" name="dias[]" value="quarta">
             Quarta
         </label>
         <label>
-            <input type="checkbox" name="dia[]" value="quinta">
+            <input type="checkbox" name="dias[]" value="quinta">
             Quinta
         </label>
         <label>
-            <input type="checkbox" name="dia[]" value="sexta">
+            <input type="checkbox" name="dias[]" value="sexta">
             Sexta
         </label>
         <label>
-            <input type="checkbox" name="dia[]" value="sabado">
+            <input type="checkbox" name="dias[]" value="sabado">
             Sábado
         </label>
         <label>
-            <input type="checkbox" name="dia[]" value="domingo">
+            <input type="checkbox" name="dias[]" value="domingo">
             Domingo
         </label>
 
@@ -111,15 +111,16 @@
             Inglês
         </label>
 
+<!--
         <h2>Você precisa incluir algum tempo extra para revisões ou exercícios práticos?</h2>
         <label>
             <input type="checkbox" name="tempo[]" value='sim'>
-            Sim <!-- adicionar a opção revisões e exercícios -->
+            Sim        adicionar a opção revisões e exercícios 
         </label>
         <label>
             <input type="checkbox" name="tempo[]" value='nao'>
             Não
-        </label><br>
+        </label><br> -->
         <input type="submit">
     </form>
     <script defer src="/script/cronograma/criarCronograma.js"></script>
