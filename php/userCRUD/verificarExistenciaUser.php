@@ -2,7 +2,8 @@
     if($_SERVER['REQUEST_METHOD'] != 'POST'){
        exit();
     }
-    $fp = fopen('../../src/userCRUD/usuarios.csv','r');
+    require("../dataSource.php");
+    $fp = fopen(usuarios,'r');
     while ( ($linha = fgetcsv($fp)) !== false){
         if ($linha[2] == $_POST['login'] && $linha[3] == $_POST['senha']) {
             session_start();

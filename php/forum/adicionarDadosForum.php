@@ -1,6 +1,7 @@
-<?php  
-    $fp = fopen('chatForum.csv','a');
+<?php 
+    require("../dataSource.php");
+    $fp = fopen(forum,'a');
     fputcsv($fp,array($_GET['user'],$_GET['mensagem']));
     fclose($fp);
-    header('location: ./paginaPrincipal.php');
+    header('location: /src/forum/paginaPrincipal.php');
 ?>

@@ -1,8 +1,9 @@
 <?php 
+    require("../dataSource.php");
     session_start();
     session_destroy();
     $user = $_POST['user'];
-    $fp = fopen("../../src/userCRUD/usuarios.csv",'r');
+    $fp = fopen(usuarios,'r');
     $backup = fopen("backup.csv",'w');
     while( ($linha = fgetcsv($fp)) !== false){
                 if($linha[0] != $user){
@@ -11,7 +12,7 @@
     }
     fclose($fp);
     fclose($backup);
-    rename("backup.csv",'../../src/userCRUD/usuarios.csv');
+    rename("backup.csv",usuarios);
     echo "usuario apagado";
     return;
 ?>

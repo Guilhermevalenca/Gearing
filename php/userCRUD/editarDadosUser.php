@@ -1,6 +1,7 @@
     <?php
+    require("../dataSource.php");
     function alterarDados($dadoDesejado,$i,$alteracao){        
-        $fp = fopen('../../src/userCRUD/usuarios.csv','r');
+        $fp = fopen(usuarios,'r');
         $backup = fopen('backup.csv','w');
         while( ($linha = fgetcsv($fp)) !== false ){
             if($linha[$i] != $dadoDesejado){
@@ -13,13 +14,13 @@
         }
         fclose($fp);
         fclose($backup);
-        rename('backup.csv','../../src/userCRUD/usuarios.csv');
+        rename('backup.csv',usuarios);
         
     }
     if(isset($_POST['userNovo'])){
 
         alterarDados($_SESSION['username'],0,$_POST['userNovo']);
-        $fp = fopen('../../src/cronograma/cronograma.csv','r');
+        $fp = fopen(cronograma,'r');
         $backup = fopen('backup.csv','w');
         while( ($linha = fgetcsv($fp)) !== false ){
             if($linha[0] != $_SESSION['username']){
@@ -32,7 +33,7 @@
         }
         fclose($fp);
         fclose($backup);
-        rename('backup.csv','../../src/cronograma/cronograma.csv');
+        rename('backup.csv',cronograma);
         $_SESSION['username'] = $_POST['userNovo'];
     
     }else if(isset($_POST['nomeNovo'])){
