@@ -121,6 +121,7 @@
             <input type="checkbox" name="tempo[]" value='nao'>
             Não
         </label><br> -->
+        <br>
         <input type="submit">
     </form>
     <script defer src="/script/cronograma/criarCronograma.js"></script>

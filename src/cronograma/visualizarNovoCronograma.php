@@ -11,9 +11,6 @@
     <link rel="stylesheet" href="/css/cronograma.css">
 </head>
 <body>
-<?php
-    include '../../php/cronograma/adicionarDadosCronograma.php';
-?>
 <h1>Seu novo Cronograma ja foi criado!</h1>
 <h2>De uma olhada nele:</h2>
 <!-- 
@@ -47,6 +44,13 @@
         <?php endforeach ?>
     </tr>
 </table>
+<form action="/php/cronograma/adicionarDadosCronograma.php" method="POST">
+    <input type="hidden" name="horario[]" value="<?= $_POST['horario'] ?>">
+    <input type="hidden" name="tempo[]" value="<?= $_POST['tempo'] ?>">
+    <input type="hidden" name="materia[]" value="<?= $_POST['materia'] ?>">
+    <input type="hidden" name="dias[]" value="<?= $_POST['dias'] ?>">
+    <input type="submit" value="Salvar Cronograma!!!">
+</form>
 <button onclick="window.location.href='/src/menu.php'">Voltar para o menu</button>
 </body>
 </html>

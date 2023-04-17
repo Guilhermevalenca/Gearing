@@ -57,6 +57,15 @@
             <?php endif ?>
         <?php endwhile ?> 
     </tr>
+    <tr>
+        <td>
+            <form action="/php/cronograma/deletarCronograma.php" method="GET">
+                <input type="hidden" name="user" value="<?= $user ?>">
+                <input type="hidden" name="id" value="<?= $id ?>">
+                <input type="submit" value="Deletar este Cronograma">
+            </form>
+        </td>
+    </tr>
 </table>
 <?php $id++; endfor ?>
 </body>
