@@ -1,5 +1,5 @@
 <?php 
-    include 'verificacaoExistSession.php';
+    require("./verificacaoExistSession.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -21,6 +21,8 @@
     <button onclick="window.location.href = './userCRUD/mostrarDados.php' ">Informações da conta</button>
     <br>
     <button onclick="window.location.href = './forum/paginaPrincipal.php' ">Acesse o forum</button>
+    <br>
+    <button onclick="window.location.href = './userCRUD/listarUsuarios.php' ">Listar usuarios</button>
     <form action="./sair.php">
         <input type="submit" value="Sair da conta">
     </form>

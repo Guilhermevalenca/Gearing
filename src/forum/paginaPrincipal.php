@@ -1,5 +1,5 @@
 <?php 
-    include '/src/verificacaoExistSession.php';
+    require('../verificacaoExistSession.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -28,7 +28,7 @@
     <button onclick="window.location.href='/src/menu.php'">Voltar</button>
 
     <!--
-    Listando Usuários na pagina do fórum
+    Listando Usuários na pagina do fórum (não funcional);
      -->
 
     <table>
