@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +8,22 @@
     <title>Gearing</title>
     <link rel="stylesheet" href="/css/login.css">
 </head>
+
 <body>
-    <form id="form" method="POST" action="/php/userCRUD/verificarExistenciaUser.php">
-        <input id="login" type="text" name="login" placeholder="Digite seu email" required><br>
-        <input id="senha" type="password" name="senha" placeholder="Digite sua senha" required><br>
-        <input type="submit">
-    </form>
+    
+    <section class="sessao_principal">
+        <img class="logo_sessao_principal" src="/logos/LET'S DANCE.gif">
+        <div class="formulario_sessao_principal">
+            <form id="form" method="POST" action="/php/userCRUD/verificarExistenciaUser.php">
+                <input id="login" type="text" name="login" placeholder="Digite seu email" required><br>
+                <input id="senha" type="password" name="senha" placeholder="Digite sua senha" required><br>
+                <button type="submit">Entrar</button>
+                <button onclick="window.location.href = '/' ">Voltar</button>
+            </form>
+        </div>
+    </section>
     <script defer src="/script/userCRUD/login.js"></script>
-    <button onclick="window.location.href = '/' ">Voltar</button>
+
 </body>
+
 </html>
