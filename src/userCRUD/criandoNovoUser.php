@@ -30,6 +30,6 @@
         <!-- Pergunta: Qual método você costuma usar para estudar? -->
     </form>
     <script defer src='/script/userCRUD/criandoNovoUser.js'></script>
-    <button onclick="window.location.href = '/' ">Tela de inicio</button>
+    <button onclick="window.location.href = '/' ">Voltar</button>
 </body>
 </html>

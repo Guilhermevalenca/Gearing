@@ -14,6 +14,6 @@
         <input type="submit">
     </form>
     <script defer src="/script/userCRUD/login.js"></script>
-    <button onclick="window.location.href = '/' ">Tela de inicio</button>
+    <button onclick="window.location.href = '/' ">Voltar</button>
 </body>
 </html>
