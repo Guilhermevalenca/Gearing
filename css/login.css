@@ -44,7 +44,7 @@ width: 40%;
   justify-content: center;
 }
 
-input[type="text"], input[type="password"] {
+input[type="email"], input[type="password"] {
   width: 200px;
   border: none;
   border-radius: 4px;
@@ -88,7 +88,7 @@ button:focus {
   }
 }
 
-input[type="text"]::placeholder,
+input[type="email"]::placeholder,
 input[type="password"]::placeholder {
   color: #aaa;
   font-size: 14px;
