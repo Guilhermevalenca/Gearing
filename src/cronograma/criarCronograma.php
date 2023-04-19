@@ -112,7 +112,7 @@
         </label>
         <h2>Quanto tempo você pretende estudar para cada materia?</h2>
         <label>
-            <input type="number" name="tempomateria[]" min="15" max="60" step="5"'>
+            <input type="number" name="tempomateria[]" min="15" max="60" step="5">
             minutos
         </label><br><br>
         <input type="submit">
