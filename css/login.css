@@ -81,12 +81,6 @@ button:focus {
   outline: none;
 }
 
-@media only screen and (max-width: 480px) {
-  .form {
-    width: 100%;
-    padding: 20px;
-  }
-}
 
 input[type="email"]::placeholder,
 input[type="password"]::placeholder {
