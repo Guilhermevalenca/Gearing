@@ -1,5 +1,6 @@
 <?php
 require("../dataSource.php");
+session_start();
 $user = $_SESSION['username'];
     if($_SERVER['REQUEST_METHOD'] != 'POST'){
         header('location:/');
@@ -8,7 +9,7 @@ $user = $_SESSION['username'];
     //function para adicionar dados:
     function addUsersDados($dadosAlocacao,$alocacao){
         $user = $_SESSION['username'];
-        $dados = array();
+        $dados = [];
         array_push($dados,$user);
         $id = 1;
         $fp = fopen(cronograma,'r');
@@ -29,8 +30,10 @@ $user = $_SESSION['username'];
     }
     //adicionar dados:
     addUsersDados($_POST['horario'],"horario");
-    addUsersDados($_POST['tempo'],"tempo");
+    ///addUsersDados($_POST['tempo'],"tempo");
     addUsersDados($_POST['materia'],"materia");
     addUsersDados($_POST['dias'],"dias");
+    addUsersDados($_POST['tempomateria'],"tempomateria");
+    echo "dadosSalvos";
     header("location: /src/cronograma/visualizarCronogramas.php");
-    ?>
+?>

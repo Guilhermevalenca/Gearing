@@ -110,21 +110,14 @@
             <input type="checkbox" name="materia[]" value='Ingles'>
             Inglês
         </label>
-
-<!--
-        <h2>Você precisa incluir algum tempo extra para revisões ou exercícios práticos?</h2>
+        <h2>Quanto tempo você pretende estudar para cada materia?</h2>
         <label>
-            <input type="checkbox" name="tempo[]" value='sim'>
-            Sim        adicionar a opção revisões e exercícios 
-        </label>
-        <label>
-            <input type="checkbox" name="tempo[]" value='nao'>
-            Não
-        </label><br> -->
-        <br>
+            <input type="number" name="tempomateria[]" min="15" max="60" step="5"'>
+            minutos
+        </label><br><br>
         <input type="submit">
     </form>
-    <script defer src="/script/cronograma/criarCronograma.js"></script>
+    <script defer src="/script/cronograma/verificarCronogramaValido.js"></script>
     <button onclick="window.location.href='/src/menu.php'">Voltar para o menu</button>
 </body>
 </html>
