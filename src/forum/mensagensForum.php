@@ -16,7 +16,7 @@
         <th><?= $linha[0] ?>:</th>
         <td><?= $linha[1] ?></td>
     </tr>
-<?php endwhile ?>
+<?php endwhile ?>   
 </table>  
 </body>
 </html>
