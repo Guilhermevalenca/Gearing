@@ -16,10 +16,13 @@
 <!-- 
     Gerando tabela da nova criação de cronograma do usuario:
  -->
+
 <table>
+    <form action="/php/cronograma/adicionarDadosCronograma.php" method="POST">
     <tr>
         <th>Horarios:</th>
         <?php foreach($_POST['horario'] as $horario): ?>
+            <input type="hidden" id="horario" name="horario[]" value="<?= $horario ?>">
             <td><?= $horario ?></td>
         <?php endforeach ?>
     </tr>
@@ -34,23 +37,20 @@
     <tr>
         <th>Materias:</th>
         <?php foreach($_POST['materia'] as $materia): ?>
+            <input type="hidden" id="materia" name="materia[]" value="<?= $materia ?>">
             <td><?= $materia ?></td>
         <?php endforeach ?>
     </tr>
      <tr>
         <th>Dias:</th>
         <?php foreach($_POST['dias'] as $dias): ?>
+            <input type="hidden" id="dias" name="dias[]" value="<?= $dias ?>">
             <td><?= $dias ?></td>
         <?php endforeach ?>
     </tr>
+    <input type="submit" value="Salvar Cronogramas">
+    </form>
 </table>
-<form action="/php/cronograma/adicionarDadosCronograma.php" method="POST">
-    <input type="hidden" name="horario[]" value="<?= $_POST['horario'] ?>">
-    <input type="hidden" name="tempo[]" value="<?= $_POST['tempo'] ?>">
-    <input type="hidden" name="materia[]" value="<?= $_POST['materia'] ?>">
-    <input type="hidden" name="dias[]" value="<?= $_POST['dias'] ?>">
-    <input type="submit" value="Salvar Cronograma!!!">
-</form>
 <button onclick="window.location.href='/src/menu.php'">Voltar para o menu</button>
 </body>
 </html>

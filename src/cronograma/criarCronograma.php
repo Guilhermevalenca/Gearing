@@ -124,7 +124,7 @@
         <br>
         <input type="submit">
     </form>
-    <script defer src="/script/cronograma/criarCronograma.js"></script>
+    <script defer src="/script/cronograma/verificarCronogramaValido.js"></script>
     <button onclick="window.location.href='/src/menu.php'">Voltar para o menu</button>
 </body>
 </html>
