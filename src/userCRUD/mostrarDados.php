@@ -13,6 +13,7 @@
 <?php 
     $user = $_SESSION['username'];
 ?>
+    <button onclick="window.location.href = '/src/menu.php'">Voltar</button>
     <h1>Aqui estão suas informações:</h1>
     <table>
     <?php
@@ -55,28 +56,8 @@
         <?php endwhile ?>
     </table>
     <script defer src="/script/userCRUD/mostrarDados.js"></script>
-    <button onclick="window.location.href = '/src/menu.php'">Voltar</button>
     <h2>Deseja apaga sua conta? 
-        <button id="buttonApagaConta" value="<?= $_SESSION['username'] ?>">Apagar sua conta</button>
+        <button id="buttonApagaConta" onclick="window.location.href='/php/userCRUD/deletarUser.php?user=<?= $user ?>'">Apagar sua conta</button>
     </h2>
-    <script>
-            const button = document.getElementById("buttonApagaConta");
-            button.addEventListener('click', (event) => {
-                const apagar = new XMLHttpRequest();
-                apagar.onreadystatechange = () => {
-                    //so funciona se retirar as condições, mas ta apagando a conta todas as vezes...
-                    if(this.readyState === 4 && this.status === 200){
-                        if(this.responseText == "usuario apagado"){
-                            alert("Sua conta foi apaga, com sucesso!");
-                            window.location.href = "/";
-                        }
-                    }
-                }
-                const dados = new FormData();
-                dados.append("user",button.value);
-                apagar.open("POST","/php/userCRUD/deletarUser.php",true);
-                apagar.send(dados);
-            });
-    </script>
 </body>
 </html>

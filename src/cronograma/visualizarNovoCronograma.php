@@ -11,25 +11,34 @@
     <link rel="stylesheet" href="/css/cronograma.css">
 </head>
 <body>
-<h1>Seu novo Cronograma ja foi criado!</h1>
-<h2>De uma olhada nele:</h2>
+<h1>Seu novo Cronograma já foi criado!</h1>
+<h2>Dê uma olhada nele:</h2>
+<button onclick="window.location.href='/src/menu.php'">Voltar para o menu</button>
+
 <!-- 
     Gerando tabela da nova criação de cronograma do usuario:
  -->
 <table>
     <form action="/php/cronograma/adicionarDadosCronograma.php" method="POST">
+          <tr>
+        <th>Dias:</th>
+        <?php foreach($_GET['dias'] as $dias): ?>
+            <input type="hidden" id="dias" name="dias[]" value="<?= $dias ?>">
+            <td><?= $dias ?></td>
+        <?php endforeach ?>
+    </tr>
     <tr>
-        <th>Horarios:</th>
-        <?php foreach($_GET['horario'] as $horario): ?>
-            <input type="hidden" id="horario" name="horario[]" value="<?= $horario ?>">
-            <td><?= $horario ?></td>
+        <th>Disponibilidade:</th>
+        <?php foreach($_GET['disponibilidade'] as $disponibilidade): ?>
+            <input type="hidden" id="disponibilidade" name="disponibilidade[]" value="<?= $disponibilidade ?>">
+            <td><?= $disponibilidade ?></td>
         <?php endforeach ?>
     </tr>
     <tr>
         <th>Tempo:</th>
-     <?php foreach($_GET['tempomateria'] as $tempomateria): ?>
-        <input type="hidden" id="tempomateria" name="tempomateria[]" value="<?= $tempomateria ?>">
-            <td><?= $tempomateria ?></td>
+     <?php foreach($_GET['tempoMateria'] as $tempoMateria): ?>
+        <input type="hidden" id="tempomateria" name="tempoMateria[]" value="<?= $tempoMateria ?>">
+            <td><?= $tempoMateria ?></td>
      <?php endforeach ?>
     </tr>
     <tr>
@@ -38,17 +47,9 @@
             <input type="hidden" id="materia" name="materia[]" value="<?= $materia ?>">
             <td><?= $materia ?></td>
         <?php endforeach ?>
-    </tr>
-     <tr>
-        <th>Dias:</th>
-        <?php foreach($_GET['dias'] as $dias): ?>
-            <input type="hidden" id="dias" name="dias[]" value="<?= $dias ?>">
-            <td><?= $dias ?></td>
-        <?php endforeach ?>
-    </tr>
+    </tr>   
     <input type="submit" value="Salvar Cronogramas">
     </form>
 </table>
-<button onclick="window.location.href='/src/menu.php'">Voltar para o menu</button>
 </body>
 </html>

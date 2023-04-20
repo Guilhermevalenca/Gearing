@@ -10,10 +10,11 @@
     <title>cronograma</title>
 </head>
 <body>
-    <h1>Aqui você ira criar seu cronograma</h1>
+    <h1>Aqui você irá criar seu cronograma</h1>
+    <button onclick="window.location.href='/src/menu.php'">Voltar para o menu</button>
     <!-- formulario do cronograma -->
     <form id="form" method="GET" action="./visualizarNovoCronograma.php">
-        <h2>Quais são seus dias e horários disponíveis para estudar na semana?:</h2>
+        <h2>Quais são os  dias da semana que você tem disponíveis para estudar?:</h2>
         <label>
             <input type="checkbox" name="dias[]" value="segunda">
             Segunda
@@ -45,27 +46,27 @@
 
         <h2>Qual carga horária diária você pode disponibilizar para seus estudos?:</h2>
         <label>
-            <input type="radio" name="horario[]" value="1 Hora e 30 minutos">
+            <input type="radio" name="disponibilidade[]" value="1 Hora e 30 minutos">
             30min - 1h
         </label>
         <label>    
-            <input type="radio" name="horario[]" value="2 Horas">
+            <input type="radio" name="disponibilidade[]" value="2 Horas">
             2h 
         </label>
         <label>
-            <input type="radio" name="horario[]" value="3 Horas">
+            <input type="radio" name="disponibilidade[]" value="3 Horas">
             3h
         </label>
         <label>
-            <input type="radio" name="horario[]" value="4 Horas">
+            <input type="radio" name="disponibilidade[]" value="4 Horas">
             4h
         </label>
         <label>
-            <input type="radio" name="horario[]" value="5 Horas">
+            <input type="radio" name="disponibilidade[]" value="5 Horas">
             5h +
         </label>
 
-        <h2>Qual matéria voce sente ter mais dificuldade:</h2>
+        <h2>Em quais matérias você sente ter mais dificuldade?</h2>
         <label>
             <input type="checkbox" name="materia[]" value='matematica'>
             Matemática
@@ -112,13 +113,12 @@
         </label>
         <h2>Quanto tempo você pretende estudar para cada materia?</h2>
         <label>
-            <input type="number" name="tempomateria[]" min="15" max="60" step="5" required>
+            <input type="number" name="tempoMateria[]" min="15" max="60" step="5" required>
             minutos
         </label><br><br>
         <input type="submit">
     </form>
     <script defer src="/script/cronograma/verificarCronogramaValido.js"></script>
-    <button onclick="window.location.href='/src/menu.php'">Voltar para o menu</button>
 </body>
 </html>
 

@@ -12,6 +12,7 @@
 
 </head>
 <body>
+    <button onclick="window.location.href='/src/menu.php'">Voltar</button><br>
     <!-- 
         iframe utilizado para a modelagem do forum e atualização de mensagens
     -->
@@ -24,9 +25,6 @@
         <input type="hidden" name="user" value="<?= $_SESSION['username'] ?>">
         <button>Enviar</button>
     </form>
-    <h2>As mensagens são atualizadas a cada 5 segundos</h2>
-    <button onclick="window.location.href='/src/menu.php'">Voltar</button>
-
     <!--
     Listando Usuários na pagina do fórum (não funcional);
      -->

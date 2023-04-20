@@ -27,17 +27,17 @@
         while( ($linha = fgetcsv($fp)) !== false ): ?>
             <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "dias"): ?>
                 <?php for($j = 3; $j < sizeof($linha); $j++): ?>
-                    <th><td><?= $linha[$j] ?></td></th>
+                    <th><?= $linha[$j] ?></th>
                 <?php endfor ?>
             <?php endif ?>
         <?php endwhile ?>
     </tr>
     <tr>
-        <th>Horario:</th>
+        <th>Disponibilidade:</th>
         <?php
         $fp = fopen('cronograma.csv','r'); 
         while( ($linha = fgetcsv($fp)) !== false ): ?>
-            <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "horario"): ?>
+            <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "disponibilidade"): ?>
                 <?php for($j = 3; $j < sizeof($linha); $j++): ?>
                     <td><?= $linha[$j] ?></td>
                 <?php endfor ?>
@@ -45,11 +45,11 @@
         <?php endwhile ?>
     </tr>
     <tr>
-        <th>tempo:</th>
+        <th>Tempo:</th>
         <?php
         $fp = fopen('cronograma.csv','r');
         while( ($linha = fgetcsv($fp)) !== false ): ?>
-            <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "tempomateria"): ?>
+            <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "tempoMateria"): ?>
                 <?php for($j = 3; $j < sizeof($linha); $j++): ?>
                     <td><?= $linha[$j] ?></td>
                 <?php endfor ?>
