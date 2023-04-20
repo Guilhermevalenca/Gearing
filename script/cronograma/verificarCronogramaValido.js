@@ -17,13 +17,7 @@
                     }
                 }
             }
-            /*
-            function teste2(tempomateria){
-                if(tempomateria <= 15){
-                    alert ("Voce precisa estudar irmão!");
-                }
-            }
-            */
+           
             if(!teste(horarios)){
                 alert("Por favor, escolha uma disponibilidade");
             }else if(!teste(materias)){
