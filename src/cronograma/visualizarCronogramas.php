@@ -38,7 +38,7 @@
         <?php
         $fp = fopen('cronograma.csv','r');
         while( ($linha = fgetcsv($fp)) !== false ): ?>
-            <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "tempo"): ?>
+            <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "tempomateria"): ?>
                 <?php for($j = 3; $j < sizeof($linha); $j++): ?>
                     <td><?= $linha[$j] ?></td>
                 <?php endfor ?>

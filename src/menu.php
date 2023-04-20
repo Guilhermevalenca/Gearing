@@ -22,7 +22,6 @@
     <br>
     <button onclick="window.location.href = './forum/paginaPrincipal.php' ">Acesse o forum</button>
     <br>
-    <button onclick="window.location.href = './userCRUD/listarUsuarios.php' ">Listar usuarios</button>
     <form action="./sair.php">
         <input type="submit" value="Sair da conta">
     </form>
