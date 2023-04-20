@@ -1,11 +1,13 @@
 <?php
     require("../dataSource.php");
-    $fp = fopen(usuarios,'r');
     $indice = $_POST['indice'];
-    while ( $linha = fgetcsv($fp) !== false){
-        if($linha[$indice] == $_POST['edicao']){
+    $edicao = $_POST['edicao'];
+    $fp = fopen(usuarios,'r');
+    while ( ($linha = fgetcsv($fp)) !== false){
+        if($linha[$indice] == $edicao){
             echo "Realize o alert";
             return;
         }
     }
+    fclose($fp);
 ?>

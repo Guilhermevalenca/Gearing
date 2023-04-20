@@ -45,5 +45,5 @@
         alterarDados($_POST['emailAtual'],2,$_POST['emailNovo']);
 
     }
-    header('location:../../src/userCRUD/mostrarDados.php ');
+    header('location:/src/userCRUD/mostrarDados.php');
 ?>
