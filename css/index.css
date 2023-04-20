@@ -1,4 +1,4 @@
-
+@import url('https://fonts.cdnfonts.com/css/yielding-timber');
 
 .titulo {
     color: aliceblue;
@@ -7,8 +7,6 @@
     font-size: 4vw;
     
 }
-
-@import url('https://fonts.cdnfonts.com/css/yielding-timber');
 
 h1{
     text-shadow: -2px 2px #66ffff;
@@ -39,7 +37,8 @@ h1{
 }
 
 body {
-    font-family:'px sans nouveaux', sans-serif;
+    /*font-family:'px sans nouveaux', sans-serif;*/
+    font-family: 'Yielding Timber',sans-serif; 
     /*
     background-image:linear-gradient(to right, #b3ffff, #b9f6dc, #ceeabb, #e5daa6, #f8c8a1, #ffc2a9, #ffbcb4, #ffb9c0, #ffbdc9, #ffc2d2, #ffc7db, #ffcce3);
     background-image: linear-gradient(to right, #ffb3b3, #fcc2a3, #ecd4a2, #d5e5b2, #bff3d0, #baf3d0, #b5f3d1, #b0f3d2, #bfe6ad, #d6d58f, #edc17e, #ffaa80);
@@ -69,8 +68,9 @@ height: 100vh;
     margin-top: 0.5vw;
     font-size: 1vw;
     top: 10vw;
-    font-family:'px sans nouveaux', sans-serif;
-}
+    font-family: 'Yielding Timber',sans-serif; 
+    /*font-family:'px sans nouveaux', sans-serif;
+*/}
 .logo{
     position: absolute;
     width: 10vw;
@@ -130,7 +130,7 @@ height: 100vh;
         background-color:  #ccffff;
         font-size: 1vw;
         top: 15vw;
-        font-family:'px sans nouveaux', sans-serif;
+        /*font-family:'px sans nouveaux', sans-serif; */
     }
     #criarConta{
         margin-top: -10vw;
