@@ -18,7 +18,7 @@
                 }
             }
             function teste2(tempomateria){
-                if(tempomateria < 15){
+                if(tempomateria <= 0){
                     alert ("Voce precisa estudar irmão!");
                 }
             }

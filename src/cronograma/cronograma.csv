@@ -1,9 +1,3 @@
-Cl4udAnne,1,horario,"2 Horas"
-Cl4udAnne,1,tempo,nao
-Cl4udAnne,1,materia,matematica,fisica,quimica,biologia,portugues,historia
-Cl4udAnne,2,horario,"2 Horas"
-Cl4udAnne,2,tempo,nao
-Cl4udAnne,2,materia,matematica,fisica,quimica,biologia,portugues,historia
 Guilherm3vrp,1,horario,"3 Horas"
 Guilherm3vrp,1,materia,quimica
 Guilherm3vrp,1,dias,quarta
@@ -11,3 +5,7 @@ Guilherm3vrp,2,horario,"2 Horas"
 Guilherm3vrp,2,materia,fisica
 Guilherm3vrp,2,dias,terca
 Guilherm3vrp,1,tempomateria
+Cl4udAnne,1,horario,"5 Horas"
+Cl4udAnne,1,materia,matematica,fisica,quimica,biologia
+Cl4udAnne,1,dias,segunda,terca,quarta,quinta,sexta,sabado
+Cl4udAnne,1,tempomateria,40

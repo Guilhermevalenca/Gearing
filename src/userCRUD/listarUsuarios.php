@@ -7,7 +7,7 @@
 	<title>Document</title>
 </head>
 <body>
-	<button onclick="window.location.href = '/'">Voltar</button><br><br>
+	<button onclick="window.location.href = '../forum/paginaPrincipal.php'">Voltar</button><br><br>
 	<?php $usuarios = fopen('usuarios.csv','r') ?>
 	<form action="/php/userCRUD/deleteMultipleUsers.php" method="POST">
 		<table>

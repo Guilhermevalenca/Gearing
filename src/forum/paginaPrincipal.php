@@ -31,14 +31,6 @@
     Listando Usuários na pagina do fórum (não funcional);
      -->
 
-    <table>
-        <h1>Usuários</h1><br>
-    <?php $mostrarusers = fopen('../userCRUD/usuarios.csv','r');?>
-    <?php while (($linha = fgetcsv($mostrarusers)) !== false): ?>
-        <tr>
-            <td><?= $linha[0] ?></td>
-        </tr>
-    <?php endwhile?>
-    </table>
+    <button onclick="window.location.href = '../userCRUD/listarUsuarios.php' ">Listar usuarios</button>
 </body>
 </html>
