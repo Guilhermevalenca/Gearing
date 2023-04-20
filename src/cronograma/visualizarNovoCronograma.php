@@ -16,12 +16,11 @@
 <!-- 
     Gerando tabela da nova criação de cronograma do usuario:
  -->
-
 <table>
     <form action="/php/cronograma/adicionarDadosCronograma.php" method="POST">
     <tr>
         <th>Horarios:</th>
-        <?php foreach($_POST['horario'] as $horario): ?>
+        <?php foreach($_GET['horario'] as $horario): ?>
             <input type="hidden" id="horario" name="horario[]" value="<?= $horario ?>">
             <td><?= $horario ?></td>
         <?php endforeach ?>
@@ -35,14 +34,14 @@
     </tr>
     <tr>
         <th>Materias:</th>
-        <?php foreach($_POST['materia'] as $materia): ?>
+        <?php foreach($_GET['materia'] as $materia): ?>
             <input type="hidden" id="materia" name="materia[]" value="<?= $materia ?>">
             <td><?= $materia ?></td>
         <?php endforeach ?>
     </tr>
      <tr>
         <th>Dias:</th>
-        <?php foreach($_POST['dias'] as $dias): ?>
+        <?php foreach($_GET['dias'] as $dias): ?>
             <input type="hidden" id="dias" name="dias[]" value="<?= $dias ?>">
             <td><?= $dias ?></td>
         <?php endforeach ?>
