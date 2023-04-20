@@ -1,7 +1,11 @@
-Guilherm3vrp,1,horario,"3 Horas"
-Guilherm3vrp,1,materia,quimica
-Guilherm3vrp,1,dias,quarta
 Guilherm3vrp,2,horario,"2 Horas"
 Guilherm3vrp,2,materia,fisica
 Guilherm3vrp,2,dias,terca
+Guilherm3vrp,3,horario,"3 Horas"
+Guilherm3vrp,3,materia,quimica
+Guilherm3vrp,3,dias,terca
+Guilherm3vrp,2,tempomateria
+Guilherm3vrp,1,horario,"3 Horas"
+Guilherm3vrp,1,materia,quimica
+Guilherm3vrp,1,dias,quarta
 Guilherm3vrp,1,tempomateria

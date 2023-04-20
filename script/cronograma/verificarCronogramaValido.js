@@ -8,7 +8,7 @@
             var horarios = form.elements["horario[]"];
             var materias = form.elements["materia[]"];
              var dias = form.elements["dias[]"];
-             var tempomateria = form.elements["tempomateria[]"];
+             var tempoMateria = form.elements["tempomateria[]"];
 
             function teste(parametro){
                 for (let i = 0; i < parametro.length; i++) {
@@ -28,7 +28,10 @@
                 alert("Por favor, escolha uma materia");
             }else if(!teste(dias)){
                 alert("Você não selecionou nenhum dia!");
-            }else{
+            }else if(!teste(tempoMateria)){
+                alert("tempo para cada materia nao escolhido");
+            }
+            else{
                 form.submit();
             }
         });
