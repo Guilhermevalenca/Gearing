@@ -13,6 +13,8 @@
 <body>
 <h1>Seu novo Cronograma já foi criado!</h1>
 <h2>Dê uma olhada nele:</h2>
+<button onclick="window.location.href='/src/menu.php'">Voltar para o menu</button>
+
 <!-- 
     Gerando tabela da nova criação de cronograma do usuario:
  -->
@@ -45,10 +47,9 @@
             <input type="hidden" id="materia" name="materia[]" value="<?= $materia ?>">
             <td><?= $materia ?></td>
         <?php endforeach ?>
-    </tr>
+    </tr>   
     <input type="submit" value="Salvar Cronogramas">
     </form>
 </table>
-<button onclick="window.location.href='/src/menu.php'">Voltar para o menu</button>
 </body>
 </html>

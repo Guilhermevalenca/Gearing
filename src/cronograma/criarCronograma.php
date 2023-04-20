@@ -11,6 +11,7 @@
 </head>
 <body>
     <h1>Aqui você irá criar seu cronograma</h1>
+    <button onclick="window.location.href='/src/menu.php'">Voltar para o menu</button>
     <!-- formulario do cronograma -->
     <form id="form" method="GET" action="./visualizarNovoCronograma.php">
         <h2>Quais são os  dias da semana que você tem disponíveis para estudar?:</h2>
@@ -118,7 +119,6 @@
         <input type="submit">
     </form>
     <script defer src="/script/cronograma/verificarCronogramaValido.js"></script>
-    <button onclick="window.location.href='/src/menu.php'">Voltar para o menu</button>
 </body>
 </html>
 
