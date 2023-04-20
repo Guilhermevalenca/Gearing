@@ -1,20 +1,21 @@
 
 @import url('https://fonts.cdnfonts.com/css/px-sans-nouveaux');
 .titulo {
+    color: aliceblue;
     text-align: center;
     margin-top: 1vw;
     font-size: 3vw;
 }
 
 .apresentacao {
-    color: black;
+    color: rgb(254, 252, 255);
     border-style: solid;
     border-width: 0.1vw;
     border-radius: 0.5vw;
     width: 50vw;
     height: 30vw;
-    background-color:  #ccffff;
-    border-color:  black;
+    background-color:  #c573e800;
+    border-color:  rgba(0, 0, 0, 0);
     position: fixed;
     font-size: 2.5vw;
     top: 12vw;
@@ -33,7 +34,13 @@ body {
     background-image:linear-gradient(to right, #b3ffff, #b9f6dc, #ceeabb, #e5daa6, #f8c8a1, #ffc2a9, #ffbcb4, #ffb9c0, #ffbdc9, #ffc2d2, #ffc7db, #ffcce3);
     background-image: linear-gradient(to right, #ffb3b3, #fcc2a3, #ecd4a2, #d5e5b2, #bff3d0, #baf3d0, #b5f3d1, #b0f3d2, #bfe6ad, #d6d58f, #edc17e, #ffaa80);
     */
-    background-image: linear-gradient(to right, #ffb3b3, #fcc2a3, #ecd4a2, #d5e5b2, #bff3d0, #a8f3dd, #93f1ee, #86eeff, #6adfff, #6dcdff, #8fb5ff, #bb99ff);
+background: rgb(100,2,223);
+background: linear-gradient(80deg, rgba(100,2,223,1) 9%, rgba(133,26,186,1) 54%, rgba(0,212,255,1) 100%);
+background-image: url("/logos/wpp2.jpeg");
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+height: 100vh;
 }
 
 .criarRealizarLogin {
