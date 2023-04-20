@@ -27,8 +27,8 @@
     </tr>
     <tr>
         <th>Tempo:</th>
-     <?php foreach($_POST['tempomateria'] as $tempoMateria): ?>
-        <input type="hidden" id="tempomateria" name="tempomateria[]" value="<?= $tempoMateria ?>">
+     <?php foreach($_GET['tempomateria'] as $tempomateria): ?>
+        <input type="hidden" id="tempomateria" name="tempomateria[]" value="<?= $tempomateria ?>">
             <td><?= $tempomateria ?></td>
      <?php endforeach ?>
     </tr>
