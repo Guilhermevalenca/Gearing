@@ -12,7 +12,7 @@
 <body>
     <h1>Aqui você ira criar seu cronograma</h1>
     <!-- formulario do cronograma -->
-    <form id="form" method="POST" action="./visualizarNovoCronograma.php">
+    <form id="form" method="GET" action="./visualizarNovoCronograma.php">
         <h2>Quais são seus dias e horários disponíveis para estudar na semana?:</h2>
         <label>
             <input type="checkbox" name="dias[]" value="segunda">

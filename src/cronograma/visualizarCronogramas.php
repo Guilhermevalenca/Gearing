@@ -13,7 +13,7 @@
 <body>
 <button onclick="window.location.href = '/src/menu.php'">Voltar</button>
 <?php
-    include '../../php/cronograma/visualizarCronogramas.php';
+    require('../../php/cronograma/visualizarCronogramas.php');
 ?>
 <h2><?= $user ?>, Aqui estar seus cronogramas:</h2>
 <!-- 
