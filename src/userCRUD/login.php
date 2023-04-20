@@ -12,7 +12,7 @@
 <body>
     
     <section class="sessao_principal">
-        <img class="logo_sessao_principal" src="/logos/LET'S DANCE.gif">
+        <img class="logo_sessao_principal" src="/logos/logo.gif">
         <div class="formulario_sessao_principal">
             <form id="form" method="POST" action="/php/userCRUD/verificarExistenciaUser.php">
                 <input id="login" type="email" name="login" placeholder="Digite seu email" required><br>
