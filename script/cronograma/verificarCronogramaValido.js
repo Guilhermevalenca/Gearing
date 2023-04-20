@@ -30,8 +30,6 @@
                 alert("Por favor, escolha uma materia");
             }else if(!teste(dias)){
                 alert("Você não selecionou nenhum dia!"); 
-            }else if(!teste(tempomateria)){
-                alert("Voce precisa estudar irmão");
             }else{
                 form.submit();
             }
