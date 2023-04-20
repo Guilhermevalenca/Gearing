@@ -10,6 +10,7 @@
     <title>cronograma</title>
 </head>
 <body>
+    <button onclick="window.location.href='/src/menu.php'">Voltar para o menu</button>
     <h1>Aqui você ira criar seu cronograma</h1>
     <!-- formulario do cronograma -->
     <form id="form" method="GET" action="./visualizarNovoCronograma.php">
@@ -118,7 +119,6 @@
         <input type="submit">
     </form>
     <script defer src="/script/cronograma/verificarCronogramaValido.js"></script>
-    <button onclick="window.location.href='/src/menu.php'">Voltar para o menu</button>
 </body>
 </html>
 

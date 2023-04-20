@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/css/cronograma.css">
 </head>
 <body>
+<button onclick="window.location.href='/src/menu.php'">Voltar para o menu</button>
 <h1>Seu novo Cronograma ja foi criado!</h1>
 <h2>De uma olhada nele:</h2>
 <!-- 
@@ -38,7 +39,7 @@
             <input type="hidden" id="materia" name="materia[]" value="<?= $materia ?>">
             <td><?= $materia ?></td>
         <?php endforeach ?>
-    </tr>
+    </tr>   
      <tr>
         <th>Dias:</th>
         <?php foreach($_GET['dias'] as $dias): ?>
@@ -49,6 +50,5 @@
     <input type="submit" value="Salvar Cronogramas">
     </form>
 </table>
-<button onclick="window.location.href='/src/menu.php'">Voltar para o menu</button>
 </body>
 </html>
