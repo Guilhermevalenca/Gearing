@@ -15,12 +15,23 @@
 <?php
     require('../../php/cronograma/visualizarCronogramas.php');
 ?>
-<h2><?= $user ?>, Aqui estar seus cronogramas:</h2>
+<h2><?= $user ?>, Aqui estão seus cronogramas:</h2>
 <!-- 
     Gerando tabelas dos cronograma do usuario
  -->
 <?php for($i = 0; $i < $quantasTable; $i++ ): ?>
 <table>
+    <tr>
+        <?php
+        $fp = fopen('cronograma.csv','r'); 
+        while( ($linha = fgetcsv($fp)) !== false ): ?>
+            <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "dias"): ?>
+                <?php for($j = 3; $j < sizeof($linha); $j++): ?>
+                    <th><td><?= $linha[$j] ?></td></th>
+                <?php endfor ?>
+            <?php endif ?>
+        <?php endwhile ?>
+    </tr>
     <tr>
         <th>Horario:</th>
         <?php
