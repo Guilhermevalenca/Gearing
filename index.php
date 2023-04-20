@@ -18,7 +18,7 @@
     <img src="./css/archive/logo.gif" class="logo">
     <h1 class="titulo">Gearing</h1>
     <div class="apresentacao">
-        <ul>Bem-vindos ao Gearing!</ul>
+        <ul>Bem Vindes!</ul>
         <ul class="descricao">Olá, sou o Gearing! Estou aqui para te ajudar a encontrar um método de estudo que mais se aplique a você; vou te apresentar algumas formas de começar e/ou complementar seus estudos, sinta-se a vontade para compartilhar as sugestões de metodologias de aprendizagem que você conhece em nosso fórum, e assim, ajudar outros estudantes a montar seu próprio cronograma de estudos.
         </ul>
     

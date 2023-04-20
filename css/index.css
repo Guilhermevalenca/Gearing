@@ -1,12 +1,22 @@
 
-@import url('https://fonts.cdnfonts.com/css/px-sans-nouveaux');
+
 .titulo {
     color: aliceblue;
     text-align: center;
     margin-top: 1vw;
-    font-size: 3vw;
+    font-size: 4vw;
+    
 }
 
+@import url('https://fonts.cdnfonts.com/css/yielding-timber');
+
+h1{
+    text-shadow: -2px 2px #66ffff;
+    color:#e600e6;
+    font-family: 'Yielding Timber',sans-serif; 
+    text-align: center;
+    font-size: 8vw;
+}
 .apresentacao {
     color: rgb(254, 252, 255);
     border-style: solid;
@@ -17,7 +27,7 @@
     background-color:  #c573e800;
     border-color:  rgba(0, 0, 0, 0);
     position: fixed;
-    font-size: 2.5vw;
+    font-size: 3vw;
     top: 12vw;
     text-align: center;
     padding: 0px;
@@ -64,14 +74,14 @@ height: 100vh;
 .logo{
     position: absolute;
     width: 10vw;
-    left: 35vw;
+    left: 33vw;
     top: -2vw;
 }
 .descricao{
     margin-top: 2vw;
     margin-left: 2vw;
     margin-right: 2.5vw;
-    font-size: 1vw;
+    font-size: 2vw;
     text-align: justify;
     padding: 0xp;
 }
