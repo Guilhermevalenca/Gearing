@@ -12,7 +12,7 @@ form.addEventListener('submit', (event) => {
     const validandoRecurso = new XMLHttpRequest();
     validandoRecurso.onreadystatechange = function() {
             if (this.readyState === 4 && this.status === 200) {
-                if(this.responseText == "Realize o alert") {
+                if(this.responseText == "naoProssiga") {
                     alert('email ou usuario ja existente, tente novamente!');
                 } else {
                     alert("ola, voce editou suas informações");

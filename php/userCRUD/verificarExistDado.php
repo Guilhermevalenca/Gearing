@@ -5,7 +5,7 @@
     $fp = fopen(usuarios,'r');
     while ( ($linha = fgetcsv($fp)) !== false){
         if($linha[$indice] == $edicao){
-            echo "Realize o alert";
+            echo "naoProssiga";
             return;
         }
     }
