@@ -1,5 +1,5 @@
 <?php 
-    include '../verificacaoExistSession.php';
+    require( '../verificacaoExistSession.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -48,7 +48,7 @@
             <td><?= $materia ?></td>
         <?php endforeach ?>
     </tr>   
-    <input type="submit" value="Salvar Cronogramas">
+    <input type="submit" value="Salvar Cronograma">
     </form>
 </table>
 </body>

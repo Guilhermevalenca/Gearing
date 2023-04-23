@@ -1,5 +1,5 @@
 <?php 
-    include "../verificacaoExistSession.php";
+    require( "../verificacaoExistSession.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
