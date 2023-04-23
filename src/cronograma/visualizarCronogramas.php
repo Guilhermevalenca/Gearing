@@ -1,5 +1,5 @@
 <?php 
-    include '../verificacaoExistSession.php';
+    require( '../verificacaoExistSession.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -15,18 +15,29 @@
 <?php
     require('../../php/cronograma/visualizarCronogramas.php');
 ?>
-<h2><?= $user ?>, Aqui estar seus cronogramas:</h2>
+<h2><?= $user ?>, Aqui estão seus cronogramas:</h2>
 <!-- 
     Gerando tabelas dos cronograma do usuario
  -->
 <?php for($i = 0; $i < $quantasTable; $i++ ): ?>
 <table>
     <tr>
-        <th>Horario:</th>
         <?php
         $fp = fopen('cronograma.csv','r'); 
         while( ($linha = fgetcsv($fp)) !== false ): ?>
-            <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "horario"): ?>
+            <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "dias"): ?>
+                <?php for($j = 3; $j < sizeof($linha); $j++): ?>
+                    <th><?= $linha[$j] ?></th>
+                <?php endfor ?>
+            <?php endif ?>
+        <?php endwhile ?>
+    </tr>
+    <tr>
+        <th>Disponibilidade:</th>
+        <?php
+        $fp = fopen('cronograma.csv','r'); 
+        while( ($linha = fgetcsv($fp)) !== false ): ?>
+            <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "disponibilidade"): ?>
                 <?php for($j = 3; $j < sizeof($linha); $j++): ?>
                     <td><?= $linha[$j] ?></td>
                 <?php endfor ?>
@@ -34,11 +45,11 @@
         <?php endwhile ?>
     </tr>
     <tr>
-        <th>tempo:</th>
+        <th>Tempo:</th>
         <?php
         $fp = fopen('cronograma.csv','r');
         while( ($linha = fgetcsv($fp)) !== false ): ?>
-            <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "tempomateria"): ?>
+            <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "tempoMateria"): ?>
                 <?php for($j = 3; $j < sizeof($linha); $j++): ?>
                     <td><?= $linha[$j] ?></td>
                 <?php endfor ?>

@@ -13,6 +13,7 @@
 <?php 
     $user = $_SESSION['username'];
 ?>
+    <button onclick="window.location.href = '/src/menu.php'">Voltar</button>
     <h1>Aqui estão suas informações:</h1>
     <table>
     <?php
@@ -55,7 +56,6 @@
         <?php endwhile ?>
     </table>
     <script defer src="/script/userCRUD/mostrarDados.js"></script>
-    <button onclick="window.location.href = '/src/menu.php'">Voltar</button>
     <h2>Deseja apaga sua conta? 
         <button id="buttonApagaConta" onclick="window.location.href='/php/userCRUD/deletarUser.php?user=<?= $user ?>'">Apagar sua conta</button>
     </h2>

@@ -29,11 +29,10 @@ $user = $_SESSION['username'];
         fclose($fp);
     }
     //adicionar dados:
-    addUsersDados($_POST['horario'],"horario");
-    ///addUsersDados($_POST['tempo'],"tempo");
+    addUsersDados($_POST['disponibilidade'],"disponibilidade");
     addUsersDados($_POST['materia'],"materia");
     addUsersDados($_POST['dias'],"dias");
-    addUsersDados($_POST['tempomateria'],"tempomateria");
+    addUsersDados($_POST['tempoMateria'],"tempoMateria");
     echo "dadosSalvos";
     header("location: /src/cronograma/visualizarCronogramas.php");
 ?>

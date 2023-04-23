@@ -5,10 +5,10 @@
         form.addEventListener('submit', (event) => {
             event.preventDefault();
            
-            var horarios = form.elements["horario[]"];
+            var disponibilidade = form.elements["disponibilidade[]"];
             var materias = form.elements["materia[]"];
             var dias = form.elements["dias[]"];
-            var tempomateria = form.elements["tempomateria[]"];
+            var tempomateria = form.elements["tempoMateria[]"];
 
             function teste(parametro){
                 for (let i = 0; i < parametro.length; i++) {
@@ -17,14 +17,8 @@
                     }
                 }
             }
-            /*
-            function teste2(tempomateria){
-                if(tempomateria <= 15){
-                    alert ("Voce precisa estudar irmão!");
-                }
-            }
-            */
-            if(!teste(horarios)){
+           
+            if(!teste(disponibilidade)){
                 alert("Por favor, escolha uma disponibilidade");
             }else if(!teste(materias)){
                 alert("Por favor, escolha uma materia");
