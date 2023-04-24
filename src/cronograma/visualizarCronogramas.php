@@ -22,52 +22,25 @@
 <?php for($i = 0; $i < $quantasTable; $i++ ): ?>
 <table>
     <tr>
+    <td>                 </td>
         <?php
-        $fp = fopen('cronograma.csv','r'); 
-        while( ($linha = fgetcsv($fp)) !== false ): ?>
-            <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "dias"): ?>
-                <?php for($j = 3; $j < sizeof($linha); $j++): ?>
-                    <th><?= $linha[$j] ?></th>
-                <?php endfor ?>
-            <?php endif ?>
-        <?php endwhile ?>
+     $arrayDeDias = ["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"];
+     for($j = 0; $j < sizeof($arrayDeDias);$j++):?>
+        <td><?= $arrayDeDias[$j] ?></td>
+    <?php endfor ?>
     </tr>
-    <tr>
-        <th>Disponibilidade:</th>
+    
         <?php
-        $fp = fopen('cronograma.csv','r'); 
-        while( ($linha = fgetcsv($fp)) !== false ): ?>
-            <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "disponibilidade"): ?>
-                <?php for($j = 3; $j < sizeof($linha); $j++): ?>
-                    <td><?= $linha[$j] ?></td>
-                <?php endfor ?>
-            <?php endif ?>
-        <?php endwhile ?>
-    </tr>
-    <tr>
-        <th>Tempo:</th>
-        <?php
-        $fp = fopen('cronograma.csv','r');
-        while( ($linha = fgetcsv($fp)) !== false ): ?>
-            <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "tempoMateria"): ?>
-                <?php for($j = 3; $j < sizeof($linha); $j++): ?>
-                    <td><?= $linha[$j] ?></td>
-                <?php endfor ?>
-            <?php endif ?>
-        <?php endwhile ?>
-    </tr>
-    <tr>
-        <th>Materias:</th>
-        <?php 
-        $fp = fopen('cronograma.csv','r');
-        while( ($linha = fgetcsv($fp)) !== false ): ?>
-            <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "materia"): ?>
-                <?php for($j = 3; $j < sizeof($linha); $j++): ?>
-                    <td><?= $linha[$j] ?></td>
-                <?php endfor ?>
-            <?php endif ?>
-        <?php endwhile ?> 
-    </tr>
+        $arrayDeHoras= ["00:00","01:00","02:00","03:00","04:00","05:00","06:00","07:00","08:00","09:00","11:00","12:00","13:00","14:00",
+        "15:00","16:00","17:00","18:00","19:00","20:00","21:00","22:00","23:00"];
+
+          for($j = 0; $j < sizeof($arrayDeHoras);$j++):?>
+          <tr>
+            <td><?= $arrayDeHoras[$j] ?></td>
+          </tr>
+            <?php endfor ?>
+
+    
     <tr>
         <td>
             <form action="/php/cronograma/deletarCronograma.php" method="GET">

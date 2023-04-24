@@ -3,7 +3,11 @@ table,td{
 }
 table{
     border-width: 2px;
+    size: 20px;
 }
 td{
     border-width: 1px;
+}
+.dias{
+    text-size-adjust:  20px;
 }
