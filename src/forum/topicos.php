@@ -14,7 +14,6 @@
 <button onclick="window.location.href='./paginaPrincipal.php' ">Voltar</button>
 <h1>Topico: <?= $topico ?></h1>
 <iframe src="./vizualizarInformacaoTopico.php?user=<?= $user ?>" frameborder="0"></iframe>
-<button onclick="window.location.href='./vizualizarInformacaoTopico.php?user=<?= $user ?>' ">testar</button>
 <form action="/php/forum/adicionarMensagemTopico.php" method="POST">
     <input type="text" placeholder="Escreva sua mensagem" name="mensagem">
     <input type="hidden" name='topico' value="<?= $topico ?>">

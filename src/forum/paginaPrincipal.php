@@ -17,10 +17,11 @@
         criar topicos:
     -->
     <h2>Crie seu proprio topico:</h2>
-    <form action="/php/forum/addNovoTopico.php" method="POST">
+    <form id="form" action="/php/forum/addNovoTopico.php" method="POST">
         <input type="text" placeholder="Qual assunto você deseja aborda?" name="topico">
         <input type="submit">
     </form>
+    <script defer src="/script/forum/verificacaoUserCreateTopico.js"></script>
     <h2>Aqui estão os topicos criados por outros usuarios:</h2>
     <?php 
         $fp = fopen("topicos.csv",'r');
