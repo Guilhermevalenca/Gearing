@@ -12,23 +12,24 @@
 
 </head>
 <body>
-    <button onclick="window.location.href='/src/menu.php'">Voltar</button><br>
-    <!-- 
-        iframe utilizado para a modelagem do forum e atualização de mensagens
+    <button onclick = "window.location.href='/src/menu.php' ">Voltar</button><br>
+    <!-- funcionalidades:
+        criar topicos:
     -->
-    <iframe src="./mensagensForum.php" width="700vw" height="500vw"></iframe>
-    <!-- 
-        Formulario para enviar mensagens para o forum
-    -->
-    <form action="/php/forum/adicionarDadosForum.php" method="GET">
-        <input class="escreverMensagem" type="text" name="mensagem" placeholder="Digite aqui sua mensagem" required>
-        <input type="hidden" name="user" value="<?= $_SESSION['username'] ?>">
-        <button>Enviar</button>
+    <h2>Crie seu proprio topico:</h2>
+    <form action="/php/forum/addNovoTopico.php" method="POST">
+        <input type="text" placeholder="Qual assunto você deseja aborda?" name="topico">
+        <input type="submit">
     </form>
-    <!--
-    Listando Usuários na pagina do fórum (não funcional);
-     -->
-
-    <button onclick="window.location.href = '../userCRUD/listarUsuarios.php' ">Listar usuarios</button>
+    <h2>Aqui estão os topicos criados por outros usuarios:</h2>
+    <?php 
+        $fp = fopen("topicos.csv",'r');
+        while( ($linha = fgetcsv($fp)) !== false):
+    ?>
+    <h4>Topico criado por <?= $linha[0] ?>:</h4>
+    <button onclick = "window.location.href = './topicos.php?user=<?= $linha[0] ?>&topico=<?= $linha[1] ?>' "><?= $linha[1] ?></button>
+    <?php endwhile; fclose($fp); ?>
+    <h2>Veja aqui topicos gerenciados pelos criadores/administradores:</h2>
+    <button onclick= "window.location.href = '../userCRUD/listarUsuarios.php' ">Listar usuarios</button>
 </body>
 </html>
