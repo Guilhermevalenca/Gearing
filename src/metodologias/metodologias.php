@@ -80,7 +80,8 @@
         <br>
         <label>
             <input type="checkbox" name="estudos[]" value="explicacao">
-
+            explicações
+        </label>
         <h2> Aprendo quando: </h2>
         <label>
             <input type="checkbox" name="estudar[]" value="sinto">

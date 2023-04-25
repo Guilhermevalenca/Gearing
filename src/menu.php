@@ -13,7 +13,7 @@
     <?php
         $user = $_SESSION['username'];
     ?>
-    <h1>Seja bem vindo a nossa plataforma <?= $user ?> !</h1>
+    <h1>Seja bem vindo a nossa plataforma <?= $user ?>!</h1>
     <button onclick="window.location.href = './metodologias/metodologias.php' ">Questionário de Metodologias</button>
     <br>
     <button onclick="window.location.href = './cronograma/criarCronograma.php'">Crie aqui seu cronograma</button>
@@ -24,8 +24,6 @@
     <br>
     <button onclick="window.location.href = './forum/paginaPrincipal.php' ">Acesse o forum</button>
     <br>
-    <form action="./sair.php">
-        <input type="submit" value="Sair da conta">
-    </form>
+    <button onclick="window.location.href = './sair.php' ">Sair da conta</button>
 </body>
 </html>
