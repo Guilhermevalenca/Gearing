@@ -8,22 +8,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/menu.css">
 </head>
 <body>
     <?php
         $user = $_SESSION['username'];
     ?>
-    <h1>Seja bem vindo a nossa plataforma <?= $user ?>!</h1>
-    <button onclick="window.location.href = './metodologias/metodologias.php' ">Questionário de Metodologias</button>
-    <br>
-    <button onclick="window.location.href = './cronograma/criarCronograma.php'">Crie aqui seu cronograma</button>
-    <br>
-    <button onclick="window.location.href = './cronograma/visualizarCronogramas.php' " >Ver meus cronogramas</button>
-    <br>
-    <button onclick="window.location.href = './userCRUD/mostrarDados.php' ">Informações da conta</button>
-    <br>
-    <button onclick="window.location.href = './forum/paginaPrincipal.php' ">Acesse o forum</button>
-    <br>
-    <button onclick="window.location.href = './sair.php' ">Sair da conta</button>
+    <h1 class="Titulo">Seja bem vindo a nossa plataforma <?= $user ?>!</h1>
+    <section class="sessao_principal">
+    <div class="botao_sessao_principal">
+        <button onclick="window.location.href = './metodologias/metodologias.php' ">Questionário de Metodologias</button>
+        <br>
+        <button onclick="window.location.href = './cronograma/criarCronograma.php'">Crie aqui seu cronograma</button>
+        <br>
+        <button onclick="window.location.href = './cronograma/visualizarCronogramas.php' " >Ver meus cronogramas</button>
+        <br>
+        <button onclick="window.location.href = './userCRUD/mostrarDados.php' ">Informações da conta</button>
+        <br>
+        <button onclick="window.location.href = './forum/paginaPrincipal.php' ">Acesse o forum</button>
+        <br>
+        <button onclick="window.location.href = './sair.php' ">Sair da conta</button>
+    </section>
 </body>
 </html>
