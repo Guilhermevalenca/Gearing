@@ -3,6 +3,8 @@
     if(isset($_SESSION['username'])){
         header('location: ./src/menu.php');
         exit();
+    }else{
+        session_destroy();
     }
 ?>
 <!DOCTYPE html>
