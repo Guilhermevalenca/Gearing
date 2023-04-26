@@ -29,7 +29,7 @@
         <th>Seu topico:</th>
         <?php while( ($linha = fgetcsv($fp)) !== false): ?>
             <?php if($linha[0] == $_SESSION['username']): ?>
-                <td><button onclick="window.location.href='./topicos.php?user=<?= $linha[0] ?>%topico<?= $linha[1] ?>' "><?= $linha[1] ?></button></td>
+                <td><button onclick="window.location.href='./topicos.php?user=<?= $linha[0] ?>&topico=<?= $linha[1] ?>' "><?= $linha[1] ?></button></td>
             <?php endif ?>
         <?php endwhile ?>
         <td>
