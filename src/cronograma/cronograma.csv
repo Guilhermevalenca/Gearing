@@ -1,7 +1,3 @@
-Cl4udAnne,1,disponibilidade,"4 Horas"
-Cl4udAnne,1,materia,quimica,biologia,portugues,historia,geografia
-Cl4udAnne,1,dias,terca,quarta,quinta
-Cl4udAnne,1,tempomateria,35
 Cl4udAnne,2,horario,"4 Horas"
 Cl4udAnne,2,materia,geografia,filosofia,sociologia
 Cl4udAnne,2,dias,terca,quarta,quinta
@@ -13,4 +9,25 @@ Guilherm3vrp,1,tempoMateria,25
 Cl4udAnne,2,disponibilidade,"3 Horas"
 Cl4udAnne,3,materia,fisica,quimica
 Cl4udAnne,3,dias,quarta,quinta
-Cl4udAnne,1,tempoMateria,25
+Cl4udAnne,3,disponibilidade,"2 Horas"
+Cl4udAnne,2,tempoMateria,15
+Cl4udAnne,1,disponibilidade,"3 Horas"
+Cl4udAnne,1,materia,quimica,biologia,portugues
+Cl4udAnne,1,dias,terca,quarta,quinta,sexta
+Cl4udAnne,1,tempoMateria,15
+Cl4udAnne,1,turnos
+Cl4udAnne,2,disponibilidade,"2 Horas"
+Cl4udAnne,2,materia,fisica
+Cl4udAnne,2,dias,terca
+Cl4udAnne,2,tempoMateria,20
+Cl4udAnne,2,turnos
+Cl4udAnne,3,disponibilidade,"2 Horas"
+Cl4udAnne,3,materia,fisica
+Cl4udAnne,3,dias,terca
+Cl4udAnne,3,tempoMateria,20
+Cl4udAnne,3,turnos
+Cl4udAnne,4,disponibilidade,"2 Horas"
+Cl4udAnne,4,materia,fisica
+Cl4udAnne,4,dias,segunda,terca
+Cl4udAnne,4,tempoMateria,20
+Cl4udAnne,4,turnos,Manhã,Tarde

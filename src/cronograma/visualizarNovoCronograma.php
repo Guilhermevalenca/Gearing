@@ -47,7 +47,14 @@
             <input type="hidden" id="materia" name="materia[]" value="<?= $materia ?>">
             <td><?= $materia ?></td>
         <?php endforeach ?>
-    </tr>   
+    </tr>
+    <tr>
+        <th>Turnos:</th>
+    <?php foreach($_GET['turnos'] as $turno): ?>
+        <input type="hidden" name="turnos[]" value="<?= $turno ?>">
+        <td><?= $turno ?></td>
+    <?php endforeach ?>
+    </tr>
     <input type="submit" value="Salvar Cronograma">
     </form>
 </table>
