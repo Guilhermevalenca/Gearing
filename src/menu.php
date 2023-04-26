@@ -1,5 +1,10 @@
 <?php 
     require("./verificacaoExistSession.php");
+    if($_SESSION['executeOne']){
+        require("./session/session.php");
+        $_SESSION['executeOne'] = false;
+    }
+    
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -25,5 +30,23 @@
     <button onclick="window.location.href = './forum/paginaPrincipal.php' ">Acesse o forum</button>
     <br>
     <button onclick="window.location.href = './sair.php' ">Sair da conta</button>
+    <h1>Usuarios logados rescentemente:</h1>
+    <table>
+    <?php 
+        $fp = fopen('./session/session.csv','r');
+        while( ($linha = fgetcsv($fp)) !== false):
+    ?>
+    <tr>
+        <th>Username:</th>
+        <th>Data:</th>
+        <th>Hora:</th>
+    </tr>
+    <tr>
+        <td><?= $linha[0] ?></td>
+        <td><?= $linha[1] ?></td>
+        <td><?= $linha[2] ?></td>
+    </tr>
+    <?php endwhile ?>
+    </table>
 </body>
 </html>

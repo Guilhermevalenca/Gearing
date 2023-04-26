@@ -9,5 +9,6 @@
     fclose($fp);
     session_start();
     $_SESSION['username'] = $_POST['user'];
+    $_SESSION['executeOne'] = true;
     header('location: /src/menu.php');
 ?>
