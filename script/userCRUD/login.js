@@ -9,7 +9,7 @@ const form = document.getElementById('form');
                 if(this.readyState === 4 && this.status === 200){
                     if(this.responseText == 'tudoErrado'){
                         alert('você errou sua senha ou seu email!');
-                    }else{
+                    }else if(this.responseText == "tudoCerto"{
                         form.submit();
                     }
                 }
@@ -17,6 +17,7 @@ const form = document.getElementById('form');
             const dados = new FormData();
             dados.append('login',login.value);
             dados.append('senha',senha.value);
+            dados.append('script',"vimDoScript");
             teste.open('POST','/php/userCRUD/verificarExistenciaUser.php',true);
             teste.send(dados);
         });
