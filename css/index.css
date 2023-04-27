@@ -29,7 +29,7 @@ h1{
     height: 30vw;
     background-color:  #c573e800;
     border-color:  rgba(0, 0, 0, 0);
-    position: fixed;
+    position: absolute;
     font-size: 3vw;
     top: 12vw;
     text-align: center;
@@ -91,7 +91,7 @@ height: 100vh;
     text-align: justify;
     padding: 0xp;
 }
-
+/*
 @media (max-width: 640px) {
     .titulo {
         text-align: center;
@@ -137,7 +137,9 @@ height: 100vh;
         font-size: 1vw;
         top: 15vw;
         /*font-family:'px sans nouveaux', sans-serif; */
+    /*
     }
+    
     button {
         width: 120px;
         height: 40px;
@@ -173,3 +175,4 @@ height: 100vh;
         padding: 0px;
     }
 }
+*/
