@@ -3,11 +3,9 @@
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background: rgb(100,2,223);
-background: linear-gradient(80deg, rgba(100,2,223,1) 9%, rgba(133,26,186,1) 54%, rgba(0,212,255,1) 100%);
+margin: 0;
+padding: 0;
+font-family: Arial, sans-serif;
 background-image: url("/logos/wpp2.jpeg");
 background-position: center;
 background-repeat: no-repeat;

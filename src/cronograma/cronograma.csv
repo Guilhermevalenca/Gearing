@@ -1,12 +1,3 @@
-Guilherm3vrp,1,disponibilidade,"2 Horas"
-Guilherm3vrp,1,materia,fisica
-Guilherm3vrp,1,dias,terca
-Guilherm3vrp,1,tempoMateria,25
-Cl4udAnne,4,disponibilidade,"2 Horas"
-Cl4udAnne,4,materia,fisica
-Cl4udAnne,4,dias,segunda,terca
-Cl4udAnne,4,tempoMateria,20
-Cl4udAnne,4,turnos,Manhã,Tarde
 Cl4udAnne,1,disponibilidade,"1 Hora e 30 minutos"
 Cl4udAnne,1,materia,matematica,fisica,quimica,biologia
 Cl4udAnne,1,dias,segunda,terca,quarta,quinta,sexta
