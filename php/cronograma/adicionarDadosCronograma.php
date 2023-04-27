@@ -34,6 +34,5 @@ $user = $_SESSION['username'];
     addUsersDados($_POST['dias'],"dias");
     addUsersDados($_POST['tempoMateria'],"tempoMateria");
     addUsersDados($_POST['turnos'],"turnos");
-    echo "dadosSalvos";
     header("location: /src/cronograma/visualizarCronogramas.php");
 ?>
