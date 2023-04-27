@@ -128,6 +128,10 @@
         <label>
             <input type="checkbox" name="turnos[]" value='Noite'>
             Noite
+        </label>
+        <label>
+            <input type="checkbox" name="turnos[]" value='Madrugada'>
+            Madrugada
         </label><br><br>
         <input type="submit">
     </form>
