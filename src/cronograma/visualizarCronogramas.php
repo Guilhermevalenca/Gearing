@@ -22,53 +22,46 @@
 <?php for($i = 0; $i < $quantasTable; $i++ ): ?>
 <table>
     <tr>
+    <td>                 </td>
         <?php
-        $fp = fopen('cronograma.csv','r'); 
-        while( ($linha = fgetcsv($fp)) !== false ): ?>
-            <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "dias"): ?>
-                <?php for($j = 3; $j < sizeof($linha); $j++): ?>
-                    <th><?= $linha[$j] ?></th>
-                <?php endfor ?>
-            <?php endif ?>
-        <?php endwhile ?>
+     $arrayDeDias = ["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"];
+     for($j = 0; $j < sizeof($arrayDeDias);$j++):?>
+        <td><?= $arrayDeDias[$j] ?></td>
+    <?php endfor ?>
     </tr>
-    <tr>
-        <th>Disponibilidade:</th>
+    
         <?php
-        $fp = fopen('cronograma.csv','r'); 
-        while( ($linha = fgetcsv($fp)) !== false ): ?>
-            <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "disponibilidade"): ?>
-                <?php for($j = 3; $j < sizeof($linha); $j++): ?>
-                    <td><?= $linha[$j] ?></td>
-                <?php endfor ?>
-            <?php endif ?>
-        <?php endwhile ?>
-    </tr>
+        $arrayMadrugada= ["00:00","01:00","02:00","03:00","04:00","05:00","06:00"];
+        $arrayManha= ["06:00","07:00","08:00","09:00","10:00","11:00","12:00"];
+        $arrayTarde= ["12:00","13:00","14:00","15:00","16:00","17:00","18:00"];
+        $arrayNoite= ["18:00","19:00","20:00","21:00","22:00","23:00","00:00"];
+
+        $ler = fopen("cronograma.csv","r");
+        while( ($linha = fgetcsv($ler)) !== false):
+            if($linha[2] == "turnos"):
+                for($j = 3 ;$j < sizeof($linha);$j++):
+                    foreach($arrayManha as $horarioManha):
+                    if($linha[$j] == "Manhã"):?>
+                            <tr>
+            <td> <?= $horarioManha ?></td>
+          </tr>
+
+
+      <?php endif;endforeach; endfor; endif ;endwhile ?>
+
+          <?php $ler = fopen("cronograma.csv","r");
+        while( ($linha = fgetcsv($ler)) !== false):
+            if($linha[2] == "turnos"):
+                for($j = 3 ;$j < sizeof($linha);$j++):
+                       foreach($arrayTarde as $horarioTarde):
+                    if($linha[$j] == "Tarde"):?>
+                              <tr>
+            <td> <?= $horarioTarde ?></td>
+          </tr>
+
+<?php endif;endforeach; endfor; endif ;endwhile ?>
     <tr>
-        <th>Tempo:</th>
-        <?php
-        $fp = fopen('cronograma.csv','r');
-        while( ($linha = fgetcsv($fp)) !== false ): ?>
-            <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "tempoMateria"): ?>
-                <?php for($j = 3; $j < sizeof($linha); $j++): ?>
-                    <td><?= $linha[$j] ?></td>
-                <?php endfor ?>
-            <?php endif ?>
-        <?php endwhile ?>
-    </tr>
-    <tr>
-        <th>Materias:</th>
-        <?php 
-        $fp = fopen('cronograma.csv','r');
-        while( ($linha = fgetcsv($fp)) !== false ): ?>
-            <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "materia"): ?>
-                <?php for($j = 3; $j < sizeof($linha); $j++): ?>
-                    <td><?= $linha[$j] ?></td>
-                <?php endfor ?>
-            <?php endif ?>
-        <?php endwhile ?> 
-    </tr>
-    <tr>
+    
         <td>
             <form action="/php/cronograma/deletarCronograma.php" method="GET">
                 <input type="hidden" name="user" value="<?= $user ?>">
