@@ -34,8 +34,8 @@
         <br>
         <button onclick="window.location.href = './sair.php' ">Sair da conta</button>
     </section>
-    <h1>Usuarios logados rescentemente:</h1>
-    <table>
+    <h1 class="listaUsuarios">Usuarios logados rescentemente:</h1>
+    <table class="listaUsuarios">
     <?php 
         $fp = fopen('./session/session.csv','r');
         while( ($linha = fgetcsv($fp)) !== false):

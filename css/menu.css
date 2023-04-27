@@ -4,7 +4,7 @@
   }
 body {
   background-image: url("/logos/wpp2.jpeg");
-  background-position: center;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -49,3 +49,6 @@ button {
       
       }
 
+.listaUsuarios{
+    color: white;
+}
