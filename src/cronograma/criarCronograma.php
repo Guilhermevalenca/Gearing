@@ -115,6 +115,23 @@
         <label>
             <input type="number" name="tempoMateria[]" min="15" max="60" step="5" required>
             minutos
+        </label>
+        <h2>Qual turno você tem disponivel para estudar?</h2>
+        <label>
+            <input type="checkbox" name="turnos[]" value='Manhã'>
+            Manhã
+        </label>
+        <label>
+            <input type="checkbox" name="turnos[]" value='Tarde'>
+            Tarde
+        </label>
+        <label>
+            <input type="checkbox" name="turnos[]" value='Noite'>
+            Noite
+        </label>
+        <label>
+            <input type="checkbox" name="turnos[]" value='Madrugada'>
+            Madrugada
         </label><br><br>
         <input type="submit">
     </form>

@@ -19,65 +19,67 @@
 <!-- 
     Gerando tabelas dos cronograma do usuario
  -->
-<?php for($i = 0; $i < $quantasTable; $i++ ): ?>
+<?php
+    $arrayDeDias = ["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"];
+    $arrayMadrugada= ["00:00","01:00","02:00","03:00","04:00","05:00"];
+    $arrayManha= ["06:00","07:00","08:00","09:00","10:00","11:00"];
+    $arrayTarde= ["12:00","13:00","14:00","15:00","16:00","17:00"];
+    $arrayNoite= ["18:00","19:00","20:00","21:00","22:00","23:00"];
+
+?>
+<?php for($i = 1; $i <= $quantasTable; $i++): ?>
 <table>
     <tr>
+    <td>                 </td>
         <?php
-        $fp = fopen('cronograma.csv','r'); 
-        while( ($linha = fgetcsv($fp)) !== false ): ?>
-            <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "dias"): ?>
-                <?php for($j = 3; $j < sizeof($linha); $j++): ?>
-                    <th><?= $linha[$j] ?></th>
-                <?php endfor ?>
-            <?php endif ?>
-        <?php endwhile ?>
+     for($j = 0; $j < sizeof($arrayDeDias);$j++):?>
+        <td><?= $arrayDeDias[$j] ?></td>
+    <?php endfor ?>
     </tr>
-    <tr>
-        <th>Disponibilidade:</th>
+    
         <?php
-        $fp = fopen('cronograma.csv','r'); 
-        while( ($linha = fgetcsv($fp)) !== false ): ?>
-            <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "disponibilidade"): ?>
-                <?php for($j = 3; $j < sizeof($linha); $j++): ?>
-                    <td><?= $linha[$j] ?></td>
-                <?php endfor ?>
-            <?php endif ?>
-        <?php endwhile ?>
-    </tr>
+        
+        $ler = fopen("cronograma.csv","r");
+        while( ($linha = fgetcsv($ler)) !== false):
+            if($linha[2] == "turnos" && $linha[1] == $i && $linha[0] == $_SESSION['username']):
+                for($j = 3 ;$j < sizeof($linha);$j++):
+                    if($linha[$j] == "Manhã"):
+                    foreach($arrayManha as $horarioManha):
+                    ?>
+                                     <tr>
+            <td> <?= $horarioManha ?></td>
+          </tr>
+          <?php endforeach ?>
+          <?php elseif($linha[$j] == "Tarde"):
+            foreach($arrayTarde as $horarioTarde): ?>
+                                 <tr>
+            <td> <?= $horarioTarde ?></td>
+          </tr>
+          <?php endforeach ?>
+          <?php elseif($linha[$j] == "Noite"):
+          foreach($arrayNoite as $horarioNoite): ?>
+                                 <tr>
+            <td> <?= $horarioNoite ?></td>
+          </tr>
+          <?php endforeach ?>
+          <?php elseif($linha[$j] == "Madrugada"):
+          foreach($arrayMadrugada as $horarioMadrugada): ?>
+                                 <tr>
+            <td> <?= $horarioMadrugada ?></td>
+          </tr>
+          <?php endforeach ?>
+      <?php endif; endfor; endif ;endwhile ?>
     <tr>
-        <th>Tempo:</th>
-        <?php
-        $fp = fopen('cronograma.csv','r');
-        while( ($linha = fgetcsv($fp)) !== false ): ?>
-            <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "tempoMateria"): ?>
-                <?php for($j = 3; $j < sizeof($linha); $j++): ?>
-                    <td><?= $linha[$j] ?></td>
-                <?php endfor ?>
-            <?php endif ?>
-        <?php endwhile ?>
-    </tr>
-    <tr>
-        <th>Materias:</th>
-        <?php 
-        $fp = fopen('cronograma.csv','r');
-        while( ($linha = fgetcsv($fp)) !== false ): ?>
-            <?php if($linha[0] == $user && $linha[1] == $id && $linha[2] == "materia"): ?>
-                <?php for($j = 3; $j < sizeof($linha); $j++): ?>
-                    <td><?= $linha[$j] ?></td>
-                <?php endfor ?>
-            <?php endif ?>
-        <?php endwhile ?> 
-    </tr>
-    <tr>
+    
         <td>
             <form action="/php/cronograma/deletarCronograma.php" method="GET">
                 <input type="hidden" name="user" value="<?= $user ?>">
-                <input type="hidden" name="id" value="<?= $id ?>">
+                <input type="hidden" name="id" value="<?= $i ?>">
                 <input type="submit" value="Deletar este Cronograma">
             </form>
         </td>
     </tr>
 </table>
-<?php $id++; endfor ?>
+<?php endfor ?>
 </body>
 </html>

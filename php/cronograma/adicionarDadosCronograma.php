@@ -33,6 +33,6 @@ $user = $_SESSION['username'];
     addUsersDados($_POST['materia'],"materia");
     addUsersDados($_POST['dias'],"dias");
     addUsersDados($_POST['tempoMateria'],"tempoMateria");
-    echo "dadosSalvos";
+    addUsersDados($_POST['turnos'],"turnos");
     header("location: /src/cronograma/visualizarCronogramas.php");
 ?>
