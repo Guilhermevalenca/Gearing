@@ -1,5 +1,6 @@
 let materiaExtra = document.getElementById("outrasMaterias");
 let labelInput = document.getElementById('gerarInputs');
+let adicionarMateria = document.getElementById('adicionarMateria');
 
 function novoInput(){
     let newInput = document.createElement('input');
