@@ -111,6 +111,10 @@
             <input type="checkbox" name="materia[]" value='Ingles'>
             Inglês
         </label>
+        <br><label>
+            Outras materias:
+            <input id="outrasMaterias" type="text" name="materia[]" placeholder="Digite aqui a matéria" >
+        </label>
         <h2>Quanto tempo você pretende estudar para cada materia?</h2>
         <label>
             <input type="number" name="tempoMateria[]" min="15" max="60" step="5" required>
