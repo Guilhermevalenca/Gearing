@@ -111,9 +111,11 @@
             <input type="checkbox" name="materia[]" value='Ingles'>
             Inglês
         </label>
-        <br><label>
+        <br>
+        <label id="gerarInputs">
             Outras materias:
             <input id="outrasMaterias" type="text" name="materia[]" placeholder="Digite aqui a matéria" >
+            <button type="text" onclick="novoInput()">Adicionar uma nova materia</button>
         </label>
         <h2>Quanto tempo você pretende estudar para cada materia?</h2>
         <label>
@@ -140,6 +142,7 @@
         <input type="submit">
     </form>
     <script defer src="/script/cronograma/verificarCronogramaValido.js"></script>
+    <script defer src="/script/cronograma/adicionarOutrasMaterias.js"></script>
 </body>
 </html>
 

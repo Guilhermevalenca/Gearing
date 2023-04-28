@@ -1,5 +1,10 @@
 let materiaExtra = document.getElementById("outrasMaterias");
+let labelInput = document.getElementById('gerarInputs');
 
-if(materiaExtra.value != null){
-    //fazer aparecer outro input;
+function novoInput(){
+    let newInput = document.createElement('input');
+    newInput.type = "text";
+    newInput.placeholder = "Digite aqui a matéria";
+    newInput.name = "materia[]";
+    labelInput.appendChild(newInput);
 }
