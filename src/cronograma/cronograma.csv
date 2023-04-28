@@ -3,3 +3,13 @@ Cl4udAnne,1,materia,matematica,fisica,Alemão
 Cl4udAnne,1,dias,terca,quarta,quinta
 Cl4udAnne,1,tempoMateria,30
 Cl4udAnne,1,turnos,Tarde,Madrugada
+Cl4udAnne,2,disponibilidade,"2 Horas"
+Cl4udAnne,2,materia,fisica,abacate,banana,laranja,morango
+Cl4udAnne,2,dias,terca,quarta,quinta
+Cl4udAnne,2,tempoMateria,25
+Cl4udAnne,2,turnos,Tarde,Madrugada
+Cl4udAnne,3,disponibilidade,"3 Horas"
+Cl4udAnne,3,materia,on,ai,ui
+Cl4udAnne,3,dias,segunda,terca,quarta
+Cl4udAnne,3,tempoMateria,25
+Cl4udAnne,3,turnos,Manhã,Madrugada

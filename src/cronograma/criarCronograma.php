@@ -112,11 +112,14 @@
             Inglês
         </label>
         <br>
+        <label>
+            <input type="checkbox" name="materia[]">
         <label id="gerarInputs">
             Outras materias:
             <input id="outrasMaterias" type="text" name="materia[]" placeholder="Digite aqui a matéria" >
         </label>
-        <button id="adicionarMateria" type="text" onclick="novoInput()">Adicionar uma nova materia</button>
+    </label>
+        <button type="text" onclick="novoInput()">Adicionar uma nova materia</button>
         <h2>Quanto tempo você pretende estudar para cada materia?</h2>
         <label>
             <input type="number" name="tempoMateria[]" min="15" max="60" step="5" required>
