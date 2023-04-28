@@ -9,6 +9,7 @@
             var materias = form.elements["materia[]"];
             var dias = form.elements["dias[]"];
             var tempomateria = form.elements["tempoMateria[]"];
+            var turnos= form.elements["turnos[]"];
 
             function teste(parametro){
                 for (let i = 0; i < parametro.length; i++) {
@@ -24,6 +25,8 @@
                 alert("Por favor, escolha uma materia");
             }else if(!teste(dias)){
                 alert("Você não selecionou nenhum dia!"); 
+            }else if(!teste(turnos)){
+                alert("Escolha um turno para montar seu cronograma!")
             }else{
                 form.submit();
             }
