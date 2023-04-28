@@ -8,10 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>metodologias</title>
+    <script defer src="/script/cabecalho.js"></script>
 </head>
 <body>
+    <div id="cabecalho"></div>
     <h1> Questionário de Metodologias de Aprendizagem </h1>
-    <button onclick="window.location.href='/src/menu.php'">Voltar para o menu</button>
     <form id="form" method="GET" action="./suaMetodologia.php">
 
         <h2>Enquanto estou estudando gosto de:</h2>

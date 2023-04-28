@@ -9,9 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/cronograma.css">
+    <script defer src="/script/cabecalho.js"></script>
 </head>
 <body>
-<button onclick="window.location.href = '/src/menu.php'">Voltar</button>
+<div id="cabecalho"></div>
 <?php
     require('../../php/cronograma/visualizarCronogramas.php');
 ?>

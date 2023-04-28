@@ -9,11 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/cronograma.css">
+    <script defer src="/script/cabecalho.js"></script>
 </head>
 <body>
+    <div id="cabecalho"></div>
 <h1>Seu novo Cronograma já foi criado!</h1>
 <h2>Dê uma olhada nele:</h2>
-<button onclick="window.location.href='/src/menu.php'">Voltar para o menu</button>
 
 <!-- 
     Gerando tabela da nova criação de cronograma do usuario:
