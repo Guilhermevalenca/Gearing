@@ -12,7 +12,7 @@
     <script defer src="/script/cabecalho.js"></script>
 </head>
 <body>
-<div id="cabecalho"></div>
+<div id="cabecalho"></div><br>
 <?php
     require('../../php/cronograma/visualizarCronogramas.php');
 ?>

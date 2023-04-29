@@ -11,11 +11,10 @@
     <script defer src="/script/cabecalho.js"></script>
 </head>
 <body>
-    <div id="cabecalho"></div>
+    <div id="cabecalho"></div><br>
 <?php 
     $user = $_SESSION['username'];
 ?>
-    <button onclick="window.location.href = '/src/menu.php'">Voltar</button>
     <h1>Aqui estão suas informações:</h1>
     <table>
     <?php

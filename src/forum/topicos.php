@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script defer src="/script/cabecalho.js"></script>
 </head>
 <body>
+    <div id="cabecalho"></div><br>
 <?php 
     $user = $_GET['user'];
     $topico = $_GET['topico'];
 ?>
-<button onclick="window.location.href='./paginaPrincipal.php' ">Voltar</button>
 <h1>Topico: <?= $topico ?></h1>
 <iframe src="./vizualizarInformacaoTopico.php?user=<?= $user ?>" frameborder="0"></iframe>
 <form action="/php/forum/adicionarMensagemTopico.php" method="POST">

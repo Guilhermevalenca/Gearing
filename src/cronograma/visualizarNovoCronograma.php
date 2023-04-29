@@ -12,7 +12,7 @@
     <script defer src="/script/cabecalho.js"></script>
 </head>
 <body>
-    <div id="cabecalho"></div>
+    <div id="cabecalho"></div><br>
 <h1>Seu novo Cronograma já foi criado!</h1>
 <h2>Dê uma olhada nele:</h2>
 

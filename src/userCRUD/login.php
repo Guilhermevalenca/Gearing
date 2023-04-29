@@ -18,7 +18,7 @@
                 <input id="login" type="email" name="login" placeholder="Digite seu email" required><br>
                 <input id="senha" type="password" name="senha" placeholder="Digite sua senha" required><br>
                 <button type="submit">Entrar</button>
-                <button onclick="window.location.href = '/' ">Voltar</button>
+                <button id="voltar" onclick="window.location.href = '/' ">Voltar</button>
             </form>
         </div>
     </section>

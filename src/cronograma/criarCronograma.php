@@ -11,7 +11,7 @@
     <script defer src="/script/cabecalho.js"></script>
 </head>
 <body>
-    <div id="cabecalho"></div>
+    <div id="cabecalho"></div><br>
     <h1>Aqui você irá criar seu cronograma</h1>
     <!-- formulario do cronograma -->
     <form id="form" method="GET" action="./visualizarNovoCronograma.php">
