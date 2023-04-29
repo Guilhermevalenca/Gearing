@@ -30,7 +30,7 @@
                     <input type="password" id="confirme" name="confirmaSenha" placeholder="Digite novamente sua senha" required>
                 </label><br>
                 <button type="submit">Entrar</button>
-                <button onclick="window.location.href = '/' ">Voltar</button>
+                <button id="voltar" onclick="window.location.href = '/' ">Voltar</button>
                 <!-- Pergunta: Qual método você costuma usar para estudar? -->
         </div>
         </form>
