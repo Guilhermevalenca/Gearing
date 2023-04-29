@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criando usuario</title>
     <link rel="stylesheet" href="/css/criandoNovoUser.css">
+    <link rel="stylesheet" href="/css/global.css">
 </head>
 <body>
     <section class="sessao_principal"> 

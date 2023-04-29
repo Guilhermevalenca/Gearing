@@ -11,7 +11,8 @@
     <script defer src="/script/cabecalho.js"></script>
 </head>
 <body>
-    <div id="cabecalho"></div><br>
+    <div id="cabecalho"></div>
+    <br><br><br>
 <?php 
     $user = $_SESSION['username'];
 ?>

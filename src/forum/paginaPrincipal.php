@@ -12,7 +12,8 @@
     <script defer src="/script/cabecalho.js"></script>
 </head>
 <body>
-    <div id="cabecalho"></div><br>
+    <div id="cabecalho"></div>
+    <br><br><br>
     <!-- funcionalidades:
         criar topicos:
     -->

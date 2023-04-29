@@ -43,18 +43,19 @@ h1{
 
 body {
     /*font-family:'px sans nouveaux', sans-serif;*/
-    font-family: 'Share Tech Mono', sans-serif; 
+   font-family: 'Share Tech Mono', sans-serif; 
     /*
     background-image:linear-gradient(to right, #b3ffff, #b9f6dc, #ceeabb, #e5daa6, #f8c8a1, #ffc2a9, #ffbcb4, #ffb9c0, #ffbdc9, #ffc2d2, #ffc7db, #ffcce3);
     background-image: linear-gradient(to right, #ffb3b3, #fcc2a3, #ecd4a2, #d5e5b2, #bff3d0, #baf3d0, #b5f3d1, #b0f3d2, #bfe6ad, #d6d58f, #edc17e, #ffaa80);
     */
+    /*
 background: rgb(100,2,223);
 background: linear-gradient(80deg, rgba(100,2,223,1) 9%, rgba(133,26,186,1) 54%, rgba(0,212,255,1) 100%);
 background-image: url("/logos/wpp2.jpeg");
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
-height: 100vh;
+height: 100vh; */
 }
 
 .criarRealizarLogin {

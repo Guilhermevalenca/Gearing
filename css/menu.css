@@ -2,13 +2,7 @@
 * {
     box-sizing: border-box;
   }
-body {
-  background-image: url("/logos/wpp2.jpeg");
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-}
+
 
 button {
     width: 20vw;
@@ -25,29 +19,29 @@ button {
     align-items: center;
     margin-top: 5px;
     font-family: 'Share Tech Mono', sans-serif; 
-    }
+}
 
-    .Titulo {
-        color:blueviolet;
-        text-align: center;
-        margin-top: 1vw;
-        font-size: 3vw;
-        font-family: 'Share Tech Mono', sans-serif;
-        background: -webkit-linear-gradient(80deg, rgba(100,2,223,1) 9%, rgba(133,26,186,1) 54%, rgba(0,212,255,1) 100%);
-    background-clip:text;
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-        
-    }
-    .botao_sessao_principal {
-        height: 639px;
-        display: flex;
-        flex-flow: column wrap;
-        align-content: center;
-        justify-content: center;
-        align-items: center;
-      
-      }
+.Titulo {
+  color:blueviolet;
+  text-align: center;
+  margin-top: 1vw;
+  font-size: 3vw;
+  font-family: 'Share Tech Mono', sans-serif;
+  background: -webkit-linear-gradient(80deg, rgba(100,2,223,1) 9%, rgba(133,26,186,1) 54%, rgba(0,212,255,1) 100%);
+  background-clip:text;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+    
+}
+.botao_sessao_principal {
+  height: 639px;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  
+}
 
 .listaUsuarios{
     color: white;

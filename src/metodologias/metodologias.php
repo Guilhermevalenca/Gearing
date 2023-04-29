@@ -11,7 +11,8 @@
     <script defer src="/script/cabecalho.js"></script>
 </head>
 <body>
-    <div id="cabecalho"></div><br>
+    <div id="cabecalho"></div>
+    <br><br><br>
     <h1> Questionário de Metodologias de Aprendizagem </h1>
     <form id="form" method="GET" action="./suaMetodologia.php">
 
