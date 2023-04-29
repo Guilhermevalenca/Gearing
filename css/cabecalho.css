@@ -1,6 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/source-sans-pro');
 #cabecalho {
-    display: flex;
+    display: none;
     justify-content: center; /* alinhar os itens para o centro da div */
     align-items: center; /* alinhar os itens verticalmente */
     height: 80px;
@@ -20,9 +20,12 @@ button.cabecalho {
   color: #fff;
   cursor: pointer;
 }
+#expandir{
+  position: fixed;
+}
 @media (max-width: 640px){
   #cabecalho{
-    display: grid;
+    display: none;
     justify-content: end;
     position: fixed;
     margin: 0em;
