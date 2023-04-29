@@ -26,8 +26,11 @@
         </ul>
     
     </div>
+    <div class="relacaoCRUD">
         <button class="criarRealizarLogin" onclick="window.location.href = './src/userCRUD/login.php' ">Login</button>
-        <button id="criarConta" class="criarRealizarLogin" onclick="window.location.href = './src/userCRUD/criandoNovoUser.php' ">Criar Conta</button>
+        <button class="criarRealizarLogin" onclick="window.location.href = './src/userCRUD/criandoNovoUser.php' ">Criar Conta</button>
+    </div>
+        
 </body>
 </html>
 <!-- 

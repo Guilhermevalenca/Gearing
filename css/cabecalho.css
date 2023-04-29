@@ -20,3 +20,18 @@ button.cabecalho {
   color: #fff;
   cursor: pointer;
 }
+@media (max-width: 640px){
+  #cabecalho{
+    display: grid;
+    justify-content: end;
+    position: fixed;
+    margin: 0em;
+    padding: 0em;
+  }
+  button.cabecalho{
+    margin: 0px;
+    padding: 0px;
+    width: 6em;
+    height: 6em;
+  }
+}
