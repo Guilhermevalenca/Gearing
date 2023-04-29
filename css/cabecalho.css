@@ -1,3 +1,4 @@
+@import url('https://fonts.cdnfonts.com/css/source-sans-pro');
 #cabecalho {
     display: flex;
     justify-content: center; /* alinhar os itens para o centro da div */
@@ -9,6 +10,7 @@
 }
 .cabecalho {
   margin: 0 10px; /* espaço entre os botões */
+  font-family: 'Source Sans Pro', sans-serif;
 }
 button.cabecalho {
   padding: 10px 20px;

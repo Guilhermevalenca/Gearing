@@ -9,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script defer src="/script/cabecalho.js"></script>
+    <link rel="stylesheet" href="/css/mostrarDados.css">
+    <link rel="stylesheet" href="/css/global.css">
 </head>
 <body>
     <div id="cabecalho"></div>
@@ -16,6 +18,7 @@
 <?php 
     $user = $_SESSION['username'];
 ?>
+<div class="superCaixa">
     <h1>Aqui estão suas informações:</h1>
     <table>
     <?php
@@ -61,5 +64,6 @@
     <h2>Deseja apaga sua conta? 
         <button id="buttonApagaConta" onclick="window.location.href='/php/userCRUD/deletarUser.php?user=<?= $user ?>'">Apagar sua conta</button>
     </h2>
+</div>
 </body>
 </html>
