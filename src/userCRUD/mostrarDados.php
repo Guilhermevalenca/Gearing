@@ -25,8 +25,8 @@
                 <th>Username:</th>
                 <td><?= $linha[0] ?></td>
                 <td>
-                    <form id="formulario" action="/php/userCRUD/editarDadosUser.php" method="POST">
-                    <input id="editar" type="text" name='userNovo' placeholder="Escreva aqui para editar" required>
+                    <form id="formularioUser" action="/php/userCRUD/editarDadosUser.php" method="POST">
+                    <input id="editarUser" type="text" name='userNovo' placeholder="Escreva aqui para editar" required>
                     <input type="submit" value="editar">
                 </form>
             </td>
@@ -35,7 +35,7 @@
                 <th>Seu nome:</th>
                 <td><?= $linha[1] ?></td>
                 <td>
-                    <form id="formulario" action="/php/userCRUD/editarDadosUser.php" method="POST">
+                    <form action="/php/userCRUD/editarDadosUser.php" method="POST">
                     <input type="hidden" name="nomeAtual" value="<?= $linha[1] ?>">
                     <input type="text" name='nomeNovo' placeholder="Escreva aqui para editar" required>
                     <input type="submit" value="editar">
@@ -46,9 +46,9 @@
                 <th>Seu email:</th>
                 <td><?= $linha[2] ?></td>
                 <td>
-                    <form id="formulario" action="/php/userCRUD/editarDadosUser.php" method="POST">
+                    <form id="formularioEmail" action="/php/userCRUD/editarDadosUser.php" method="POST">
                     <input type="hidden" name="emailAtual" value="<?= $linha[2] ?>">
-                    <input id="editar" type="email" name='emailNovo' placeholder="Escreva aqui para editar" required>
+                    <input id="editarEmail" type="email" name='emailNovo' placeholder="Escreva aqui para editar" required>
                     <input type="submit" value="editar">
                 </form>
                 </td>
