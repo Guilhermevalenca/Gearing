@@ -10,6 +10,7 @@
             var dias = form.elements["dias[]"];
             var tempomateria = form.elements["tempoMateria[]"];
             var turnos= form.elements["turnos[]"];
+            var outraMateria = document.getElementById("outrasMaterias");
 
             function teste(parametro){
                 for (let i = 0; i < parametro.length; i++) {
@@ -21,12 +22,12 @@
            
             if(!teste(disponibilidade)){
                 alert("Por favor, escolha uma disponibilidade");
-            }else if(!teste(materias)){
+            }else if(!teste(materias && outraMateria.value != null)){
                 alert("Por favor, escolha uma materia");
             }else if(!teste(dias)){
                 alert("Você não selecionou nenhum dia!"); 
             }else if(!teste(turnos)){
-                alert("Escolha um turno para montar seu cronograma!")
+                alert("Escolha um turno para montar seu cronograma!");
             }else{
                 form.submit();
             }
