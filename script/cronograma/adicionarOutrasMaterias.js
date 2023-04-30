@@ -22,8 +22,10 @@ function novoInput(){
     labelInput.appendChild(newInput);
 }
 function deletarInput(){
-    let ultimoInput = labelInput.children[labelInput.children.length - 1];
-    if(ultimoInput != deleteInput){
-        labelInput.removeChild(ultimoInput);
+    for(let i = 0; i < 2; i++){
+        let ultimoInput = labelInput.children[labelInput.children.length - 1];
+        if(ultimoInput != deleteInput){
+            labelInput.removeChild(ultimoInput);
+        }
     }
 }
