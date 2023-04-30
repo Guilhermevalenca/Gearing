@@ -18,7 +18,7 @@
                 }
             }
            
-            if(!teste(materias) && outraMateria.value != null){
+            if(!teste(materias) && outraMateria.value == null){
                 alert("Por favor, escolha uma materia");
             }else if(!teste(dias)){
                 alert("Você não selecionou nenhum dia!"); 

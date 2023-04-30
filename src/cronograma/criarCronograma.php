@@ -94,7 +94,11 @@
         <br>
         <label id="gerarInputs">
             Outras materias:
-         <button id="outrasMaterias" type="text" name="materia[]" onclick="novoInput()">Adicionar uma nova materia</button><br>
+         <button id="outrasMaterias" onclick="novoInput()">Adicionar uma nova materia</button>
+         <button id="apagarNovaMateria" onclick="deletarInput()">Retirar uma nova materia</button><br>
+        </label>
+        <label>
+        
         </label>
         <h2>Quanto tempo você pretende estudar para cada materia?</h2>
         <label>

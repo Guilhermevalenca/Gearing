@@ -21,6 +21,9 @@
 <!-- 
     Gerando tabela da nova criação de cronograma do usuario:
  -->
+<?php 
+    print_r($_GET['materia']);
+?>
 <table>
     <tr>
         <th>Domingo</th>
