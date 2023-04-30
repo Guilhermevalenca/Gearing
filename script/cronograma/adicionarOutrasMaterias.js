@@ -7,5 +7,6 @@ function novoInput(){
     newInput.type = "text";
     newInput.placeholder = "Digite aqui a matéria";
     newInput.name = "materia[]";
+    newInput.required = true;
     labelInput.appendChild(newInput);
 }

@@ -96,7 +96,7 @@
             <input type="checkbox" name="materia[]">
         <label id="gerarInputs">
             Outras materias:
-            <input id="outrasMaterias" type="text" name="materia[]" placeholder="Digite aqui a matéria" >
+            <input id="outrasMaterias" type="text" name="materia[]" placeholder="Digite aqui a matéria">
         </label>
     </label>
         <button type="text" onclick="novoInput()">Adicionar uma nova materia</button>
