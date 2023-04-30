@@ -19,9 +19,7 @@
                 }
             }
            
-            if(!teste(disponibilidade)){
-                alert("Por favor, escolha uma disponibilidade");
-            }else if(!teste(materias)){
+            if(!teste(materias)){
                 alert("Por favor, escolha uma materia");
             }else if(!teste(dias)){
                 alert("Você não selecionou nenhum dia!"); 
