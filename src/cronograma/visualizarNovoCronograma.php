@@ -29,13 +29,6 @@
         <?php endforeach ?>
     </tr>
     <tr>
-        <th>Disponibilidade:</th>
-        <?php foreach($_GET['disponibilidade'] as $disponibilidade): ?>
-            <input type="hidden" id="disponibilidade" name="disponibilidade[]" value="<?= $disponibilidade ?>">
-            <td><?= $disponibilidade ?></td>
-        <?php endforeach ?>
-    </tr>
-    <tr>
         <th>Tempo:</th>
      <?php foreach($_GET['tempoMateria'] as $tempoMateria): ?>
         <input type="hidden" id="tempomateria" name="tempoMateria[]" value="<?= $tempoMateria ?>">
