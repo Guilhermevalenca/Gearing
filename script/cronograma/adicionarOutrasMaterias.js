@@ -1,6 +1,5 @@
 let materiaExtra = document.getElementById("outrasMaterias");
 let labelInput = document.getElementById('gerarInputs');
-let adicionarMateria = document.getElementById('adicionarMateria');
 let deleteInput = document.getElementById('apagarNovaMateria');
 
 deleteInput.addEventListener('click', (event) => {
@@ -24,8 +23,8 @@ function novoInput(){
 }
 
 function deletarInput(){
-    let ultimoInput = labelInput.children.[labelInput.children.length -1];
-if(ultimoInput != deleteInput){
-labelInput.removeChild(ultimoInput);
- }
+    let ultimoInput = labelInput.children[labelInput.children.length -1];
+    if(ultimoInput != deleteInput){
+        labelInput.removeChild(ultimoInput);
+    }
 }
