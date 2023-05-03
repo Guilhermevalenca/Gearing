@@ -9,10 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $_SESSION['username'] ?></title>
     <link rel="stylesheet" href="/css/forum.css">
-
+    <script defer src="/script/cabecalho.js"></script>
 </head>
 <body>
-    <button onclick = "window.location.href='/src/menu.php' ">Voltar</button><br>
+<button id="expandir"><i>opções</i></button><br>
+    <div id="cabecalho"></div>
     <!-- funcionalidades:
         criar topicos:
     -->

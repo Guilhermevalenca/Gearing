@@ -4,6 +4,12 @@ const user = document.getElementById('user');
 const email = document.getElementById('email');
 const senha = document.getElementById('senha');
 const confirme = document.getElementById('confirme');
+const buttonVoltar = document.getElementById('voltar');
+
+buttonVoltar.addEventListener('click', (event) => {
+    event.preventDefault();
+    form.disabled = true;
+})
 //tratando as informações antes de enviar o formulario:
 form.addEventListener('submit', (event) => {
     event.preventDefault();

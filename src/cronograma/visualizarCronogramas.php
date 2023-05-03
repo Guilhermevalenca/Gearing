@@ -9,9 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/cronograma.css">
+    <script defer src="/script/cabecalho.js"></script>
 </head>
 <body>
-<button onclick="window.location.href = '/src/menu.php'">Voltar</button>
+<button id="expandir"><i>opções</i></button><br>
+<div id="cabecalho"></div>
 <?php
     require('../../php/cronograma/visualizarCronogramas.php');
 ?>
@@ -19,58 +21,67 @@
 <!-- 
     Gerando tabelas dos cronograma do usuario
  -->
-<?php for($i = 0; $i < $quantasTable; $i++ ): ?>
+<?php
+    $arrayDeDias = ["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"];
+    $arrayMadrugada= ["00:00","01:00","02:00","03:00","04:00","05:00"];
+    $arrayManha= ["06:00","07:00","08:00","09:00","10:00","11:00"];
+    $arrayTarde= ["12:00","13:00","14:00","15:00","16:00","17:00"];
+    $arrayNoite= ["18:00","19:00","20:00","21:00","22:00","23:00"];
+
+?>
+<?php for($i = 1; $i <= $quantasTable; $i++): ?>
 <table>
     <tr>
     <td>                 </td>
         <?php
-     $arrayDeDias = ["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"];
      for($j = 0; $j < sizeof($arrayDeDias);$j++):?>
         <td><?= $arrayDeDias[$j] ?></td>
     <?php endfor ?>
     </tr>
     
         <?php
-        $arrayMadrugada= ["00:00","01:00","02:00","03:00","04:00","05:00","06:00"];
-        $arrayManha= ["06:00","07:00","08:00","09:00","10:00","11:00","12:00"];
-        $arrayTarde= ["12:00","13:00","14:00","15:00","16:00","17:00","18:00"];
-        $arrayNoite= ["18:00","19:00","20:00","21:00","22:00","23:00","00:00"];
-
+        
         $ler = fopen("cronograma.csv","r");
         while( ($linha = fgetcsv($ler)) !== false):
-            if($linha[2] == "turnos"):
+            if($linha[2] == "turnos" && $linha[1] == $i && $linha[0] == $_SESSION['username']):
                 for($j = 3 ;$j < sizeof($linha);$j++):
+                    if($linha[$j] == "Manhã"):
                     foreach($arrayManha as $horarioManha):
-                    if($linha[$j] == "Manhã"):?>
-                            <tr>
+                    ?>
+                                     <tr>
             <td> <?= $horarioManha ?></td>
           </tr>
-
-
-      <?php endif;endforeach; endfor; endif ;endwhile ?>
-
-          <?php $ler = fopen("cronograma.csv","r");
-        while( ($linha = fgetcsv($ler)) !== false):
-            if($linha[2] == "turnos"):
-                for($j = 3 ;$j < sizeof($linha);$j++):
-                       foreach($arrayTarde as $horarioTarde):
-                    if($linha[$j] == "Tarde"):?>
-                              <tr>
+          <?php endforeach ?>
+          <?php elseif($linha[$j] == "Tarde"):
+            foreach($arrayTarde as $horarioTarde): ?>
+                                 <tr>
             <td> <?= $horarioTarde ?></td>
           </tr>
-
-<?php endif;endforeach; endfor; endif ;endwhile ?>
+          <?php endforeach ?>
+          <?php elseif($linha[$j] == "Noite"):
+          foreach($arrayNoite as $horarioNoite): ?>
+                                 <tr>
+            <td> <?= $horarioNoite ?></td>
+          </tr>
+          <?php endforeach ?>
+          <?php elseif($linha[$j] == "Madrugada"):
+          foreach($arrayMadrugada as $horarioMadrugada): ?>
+                                 <tr>
+            <td> <?= $horarioMadrugada ?></td>
+          </tr>
+          <?php endforeach ?>
+      <?php endif; endfor; endif ;endwhile ?>
     <tr>
     
         <td>
             <form action="/php/cronograma/deletarCronograma.php" method="GET">
                 <input type="hidden" name="user" value="<?= $user ?>">
-                <input type="hidden" name="id" value="<?= $id ?>">
+                <input type="hidden" name="id" value="<?= $i ?>">
                 <input type="submit" value="Deletar este Cronograma">
             </form>
         </td>
     </tr>
 </table>
-<?php $id++; endfor ?>
+<?php endfor ?>
 </body>
 </html>

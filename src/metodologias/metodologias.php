@@ -13,11 +13,13 @@
     <script>
 
     </script>
+    <script defer src="/script/cabecalho.js"></script>
 
 </head>
 <body>
+    <button id="expandir"><i>opções</i></button><br>
+    <div id="cabecalho"></div>
     <h1> Questionário de Metodologias de Aprendizagem </h1>
-    <button onclick="window.location.href='/src/menu.php'">Voltar para o menu</button>
     <form id="form" method="GET" action="./suaMetodologia.php">
 
         <h2>Enquanto estou estudando gosto de:</h2>
