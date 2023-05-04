@@ -58,5 +58,6 @@
     </table>
     <h2>Veja aqui topicos gerenciados pelos criadores/administradores:</h2>
     <button onclick= "window.location.href = '../userCRUD/listarUsuarios.php' ">Listar usuarios</button>
+    <button id="voltar" onclick="window.location.href = '/src/menu.php' ">Voltar</button>
 </body> 
 </html>
