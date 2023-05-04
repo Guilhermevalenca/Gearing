@@ -13,6 +13,12 @@ buttonVoltar.addEventListener('click', (event) => {
 //tratando as informações antes de enviar o formulario:
 form.addEventListener('submit', (event) => {
     event.preventDefault();
+    function verificaCaracteresEspeciais(inputStr) {
+        const regex = /[!@#$%^&*(),.?":{}|<>]/;
+        return regex.test(inputStr);
+      }
+      if(!verificaCaracteresEspeciais(senha.value)){
+        alert("Sua senha deve conter caracteres especiais");
     if(senha.value !== confirme.value) {
         alert('Senhas diferentes, porfavor tente novamente');
     }else{
@@ -26,6 +32,7 @@ form.addEventListener('submit', (event) => {
                 } else {
                     form.submit();
                 }
+            }
             }
         }
         //enviando dados via metodo post para verificar a existencia de um usuario ja existente.
