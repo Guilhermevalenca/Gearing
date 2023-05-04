@@ -7,7 +7,7 @@
 	$backup = fopen("backup.csv",'w');
 	while( ($linha = fgetcsv($fp)) !== false){
 		if($_SESSION['username'] != $linha[0]){
-			fputcsv($fp,$linha);
+			fputcsv($backup,$linha);
 		}
 	}
 	fclose($fp);
