@@ -22,7 +22,9 @@
     Gerando tabela da nova criação de cronograma do usuario:
  -->
 <?php 
-    print_r($_GET['materia']);
+    foreach($_GET['materia'] as $materia){
+        echo $materia . "<br>";
+    }
 ?>
 <table>
     <tr>
