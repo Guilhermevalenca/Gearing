@@ -24,14 +24,14 @@
         <label class="materias"> 
         <?= $materia ?>
         <input type="hidden" name="materia[]" value="<?= $materia ?>">
-        <input type="hidden" name="diaSemana[]">
-        <input type="hidden" name="horario[]">    
+        <input class="diaSemana" type="hidden" name="diaSemana[]">
+        <input class="horario" type="hidden" name="horario[]">    
         </label>
     <?php endforeach ?>
 </div>
 <h2>Adicione suas materias a tabela</h2>
-<form action="addCronograma.php" method="POST" >
-<table>
+<form id="form" action="addCronograma.php" method="POST" >
+<table id="table">
     <thead>
         <tr>
         <?php 
@@ -117,6 +117,23 @@
         new Sortable(destino, {
             group: 'shared',
             animation: 150
+        })
+    })
+    const form = document.getElementById('form');
+    const table = document.getElementById('table');
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const diaSemana = table.querySelectorAll('.diaSemana');
+        const horario = table.querySelectorAll('.horario');
+        diaSemana.forEach(coluna => {
+          const tdIndex = Array.from(coluna.parentElement.children).indexOf(coluna);
+          coluna.value = tdIndex;
+          console.log("coluna =",coluna.value);
+        })
+        horario.forEach(linha => {
+          const trIndex = Array.from(linha.parentElement.parentElement.children).indexOf(linha.parentElement);
+          linha.value = trIndex;
+          console.log("linha =",linha.value);
         })
     })
 

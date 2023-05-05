@@ -7,7 +7,12 @@ const divOption = document.getElementById('expandir');
 const option = document.getElementById('cabecalho');
 const tamanhoTela = window.innerWidth;
 if(tamanhoTela <= 640){
-    let newButtonOption = createElement('button');
+    let newButtonOption = document.createElement('button');
+    newButtonOption.style = "display:grid";
+    for(let i = 0; i < 3; i++){
+        let newButton = document.createElement('button');
+        newButtonOption.appendChild(newButton);
+    }
     divOption.appendChild(newButtonOption);
     newButtonOption.addEventListener('click', (event) => {
     
