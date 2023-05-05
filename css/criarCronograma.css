@@ -1,0 +1,30 @@
+@import url('https://fonts.cdnfonts.com/css/share-tech-mono');
+.div{
+  position: absolute;
+  left: 25% ;
+}
+body {
+    background-image: url("/logos/wpp2.jpeg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+   h1,h2{
+    font-family: 'Share Tech Mono', sans-serif; 
+    background: -webkit-linear-gradient(90deg, rgba(188,251,255,1) 47%, rgba(24,237,242,1) 100%);
+    background-clip:text;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  label{
+    font-family: 'Share Tech Mono', sans-serif; 
+    background: -webkit-linear-gradient(90deg, rgba(188,251,255,1) 47%, rgba(24,237,242,1) 100%);
+    font-weight: bold;
+    background-clip:text;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+  }
+ 
+  

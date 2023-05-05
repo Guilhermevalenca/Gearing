@@ -1,0 +1,15 @@
+@import url('https://fonts.cdnfonts.com/css/source-sans-pro');
+.superCaixa{
+    color: white;
+    border-style: solid;
+    background: linear-gradient(80deg, rgba(100,2,223,1) 9%, rgba(133,26,186,1) 54%, rgba(0,212,255,1) 100%);
+    border-color: transparent;
+    margin: 0px;
+    padding: 0px;
+    width: 35em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Source Sans Pro', sans-serif;
+}

@@ -6,9 +6,12 @@ require("../verificacaoExistSession.php") ?>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
+	<script defer src="/script/cabecalho.js"></script>
 </head>
 <body>
-	<button onclick="window.location.href = '../forum/paginaPrincipal.php'">Voltar</button><br><br>
+<button id="expandir"><i>opções</i></button><br>
+	<div id="cabecalho"></div>
+	<h1>Gerenciando usuarios:</h1>
 	<?php $usuarios = fopen('usuarios.csv','r') ?>
 	<form action="/php/userCRUD/deleteMultipleUsers.php" method="POST">
 		<table>

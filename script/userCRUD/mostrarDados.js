@@ -1,27 +1,33 @@
-const form = document.getElementById("formulario");
-const editar = document.getElementById("editar");
+const formUser = document.getElementById("formularioUser");
+const formEmail = document.getElementById("formularioEmail");
+const editarUser = document.getElementById("editarUser");
+const editarEmail = document.getElementById("editarEmail");
 
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    if(editar.name == "emailNovo"){
-        $indice = 2;
-    }else if(editar.name == "userNovo"){
-        $indice = 0;
-    }
-
+function executeTeste(editar,indice){
     const validandoRecurso = new XMLHttpRequest();
     validandoRecurso.onreadystatechange = function() {
             if (this.readyState === 4 && this.status === 200) {
                 if(this.responseText == "naoProssiga") {
                     alert('email ou usuario ja existente, tente novamente!');
-                } else {
+                } else if(this.responseText == "prossiga"){
                     alert("ola, voce editou suas informações");
                 }
             }
         }
+        
         const dados = new FormData();
         dados.append('edicao',editar.value);
-        dados.append('indice',$indice);
-        test.open('POST','/php/userCRUD/verificarExistDado.php', true);
-        test.send(dados);
+        dados.append('indice',indice);
+        validandoRecurso.open('POST','/php/userCRUD/verificarEdicaoDados.php', true);
+        validandoRecurso.send(dados);
+}
+
+formUser.addEventListener('submit', (event) => {
+    event.preventDefault();
+    executeTeste(editarUser,0);
 });
+formEmail.addEventListener('submit', (event) => {
+    event.preventDefault();
+    executeTeste(editarEmail,2);
+})
+

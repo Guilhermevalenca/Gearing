@@ -1,5 +1,21 @@
+
 Guilherm3vrp,1,disponibilidade,"3 Horas"
 Guilherm3vrp,1,materia,quimica
 Guilherm3vrp,1,dias,quarta
 Guilherm3vrp,1,tempoMateria,25
 Guilherm3vrp,1,turnos,Tarde
+Cl4udAnne,1,disponibilidade
+Cl4udAnne,1,materia,agiotagem
+Cl4udAnne,1,dias,segunda
+Cl4udAnne,1,tempoMateria,15
+Cl4udAnne,1,turnos,Manhã
+Cl4udAnne,2,disponibilidade
+Cl4udAnne,2,materia,agiotagem,roubalheira
+Cl4udAnne,2,dias,segunda,terca,quarta,quinta,sexta,sabado
+Cl4udAnne,2,tempoMateria,15
+Cl4udAnne,2,turnos,Manhã,Tarde,Noite
+Cl4udAnne,3,disponibilidade
+Cl4udAnne,3,materia,ai,ui,on,an
+Cl4udAnne,3,dias,segunda
+Cl4udAnne,3,tempoMateria,15
+Cl4udAnne,3,turnos,Manhã,Noite

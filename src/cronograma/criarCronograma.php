@@ -1,6 +1,3 @@
-<?php 
-    require( "../verificacaoExistSession.php");
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,13 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cronograma</title>
+
+    <link rel="stylesheet" href="/css/criarCronograma.css">
+    <script defer src="/script/cabecalho.js"></script>
+
 </head>
 <body>
-    <h1>Aqui você irá criar seu cronograma</h1>
-    <button onclick="window.location.href='/src/menu.php'">Voltar para o menu</button>
+<button id="expandir"><i>opções</i></button><br>
+    <div id="cabecalho"></div>
+    
     <!-- formulario do cronograma -->
+    <div class="div">
+    <h1>Aqui você irá criar seu cronograma</h1><br>
+
     <form id="form" method="GET" action="./visualizarNovoCronograma.php">
-        <h2>Quais são os  dias da semana que você tem disponíveis para estudar?:</h2>
+        <h2 >Quais são os  dias da semana que você tem disponíveis para estudar?:</h2>
         <label>
             <input type="checkbox" name="dias[]" value="segunda">
             Segunda
@@ -42,28 +47,6 @@
         <label>
             <input type="checkbox" name="dias[]" value="domingo">
             Domingo
-        </label>
-
-        <h2>Qual carga horária diária você pode disponibilizar para seus estudos?:</h2>
-        <label>
-            <input type="radio" name="disponibilidade[]" value="1 Hora e 30 minutos">
-            30min - 1h
-        </label>
-        <label>    
-            <input type="radio" name="disponibilidade[]" value="2 Horas">
-            2h 
-        </label>
-        <label>
-            <input type="radio" name="disponibilidade[]" value="3 Horas">
-            3h
-        </label>
-        <label>
-            <input type="radio" name="disponibilidade[]" value="4 Horas">
-            4h
-        </label>
-        <label>
-            <input type="radio" name="disponibilidade[]" value="5 Horas">
-            5h +
         </label>
 
         <h2>Em quais matérias você sente ter mais dificuldade?</h2>
@@ -111,6 +94,15 @@
             <input type="checkbox" name="materia[]" value='Ingles'>
             Inglês
         </label>
+        <br>
+        <label id="gerarInputs">
+            Outras materias:
+
+         <button id="outrasMaterias" type="text" onclick="novoInput()">Adicionar uma nova materia</button>
+         <button id="apagarNovaMateria" onclick="deletarInput()">Apagar Materia</button><br>
+
+
+        </label>
         <h2>Quanto tempo você pretende estudar para cada materia?</h2>
         <label>
             <input type="number" name="tempoMateria[]" min="15" max="60" step="5" required>
@@ -135,7 +127,9 @@
         </label><br><br>
         <input type="submit">
     </form>
+    </div>
     <script defer src="/script/cronograma/verificarCronogramaValido.js"></script>
+    <script defer src="/script/cronograma/adicionarOutrasMaterias.js"></script>
 </body>
 </html>
 

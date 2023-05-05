@@ -3,14 +3,18 @@
 }
 
 body {
+  /*
 margin: 0;
 padding: 0;
+*/
 font-family: Arial, sans-serif;
+/*
 background-image: url("/logos/wpp2.jpeg");
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
 height: 100vh;
+*/
 }
 
 .formulario_sessao_principal {
@@ -23,9 +27,7 @@ height: 100vh;
 
 }
 
-.logo_sessao_principal {
-width: 40%;
-}
+
 
 .sessao_principal {
   height: 750px;
@@ -46,6 +48,7 @@ width: 40%;
   align-content: center;
   align-items: center;
   justify-content: center;
+  background-image: url(/logos/2.gif);
 }
 
 input[type="email"], input[type="password"] {
