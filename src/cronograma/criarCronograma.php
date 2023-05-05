@@ -8,15 +8,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cronograma</title>
+
     <script defer src="/script/cabecalho.js"></script>
 </head>
 <body>
 <button id="expandir"><i>opções</i></button><br>
     <div id="cabecalho"></div>
     <h1>Aqui você irá criar seu cronograma</h1>
+
     <!-- formulario do cronograma -->
     <form id="form" method="GET" action="./visualizarNovoCronograma.php">
-        <h2>Quais são os  dias da semana que você tem disponíveis para estudar?:</h2>
+        <h2 >Quais são os  dias da semana que você tem disponíveis para estudar?:</h2>
         <label>
             <input type="checkbox" name="dias[]" value="segunda">
             Segunda
