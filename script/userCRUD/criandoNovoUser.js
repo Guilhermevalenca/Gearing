@@ -17,12 +17,11 @@ form.addEventListener('submit', (event) => {
  function verificaCaracteresEspeciais(inputStr) {
         const regex = /[!@#$%^&*(),.?":{}|<>]/;
         return regex.test(inputStr);
-      }
+ }
       if(!verificaCaracteresEspeciais(senha.value)){
         alert('Sua senha deve conter caracteres especiais');
-    }
-if(senha.value !== confirme.value) {
-        alert('Senhas diferentes, porfavor tente novamente');
+      }else if(senha.value !== confirme.value) {
+        alert('As senhas não correspondem');
     }else{
         //req http:
         const test = new XMLHttpRequest();
@@ -36,11 +35,12 @@ if(senha.value !== confirme.value) {
                 }
             }
             }
-        }
-        //enviando dados via metodo post para verificar a existencia de um usuario ja existente.
-        const dados = new FormData();
-        dados.append('email',email.value);
-        dados.append('user',user.value);
-        test.open('POST','/php/userCRUD/verificarEmailUser.php', true);
-        test.send(dados);
+            //enviando dados via metodo post para verificar a existencia de um usuario ja existente.
+            const dados = new FormData();
+            dados.append('email',email.value);
+            dados.append('user',user.value);
+            test.open('POST','/php/userCRUD/verificarEmailUser.php', true);
+            test.send(dados);
+            }
+        
 });

@@ -25,7 +25,7 @@
                     <input type="email" id="email" name="email" placeholder="Digite aqui seu email" required>
                 </label><br>
                 <label>senha:
-                    <input type="password" id="senha" name="senha" placeholder="Digite aqui sua senha" required>
+                    <input type="password" id="senha" name="senha" placeholder="Digite aqui sua senha" minlength="8" required>
                 </label><br>
                 <label>Confirme sua senha:
                     <input type="password" id="confirme" name="confirmaSenha" placeholder="Digite novamente sua senha" required>
