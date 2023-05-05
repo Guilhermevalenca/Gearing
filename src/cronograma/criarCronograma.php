@@ -5,14 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cronograma</title>
+
+    <link rel="stylesheet" href="/css/criarCronograma.css">
+    <script defer src="/script/cabecalho.js"></script>
+
 </head>
 <body>
 <button id="expandir"><i>opções</i></button><br>
     <div id="cabecalho"></div>
-    <h1>Aqui você irá criar seu cronograma</h1>
+    
     <!-- formulario do cronograma -->
+    <div class="div">
+    <h1>Aqui você irá criar seu cronograma</h1><br>
+
     <form id="form" method="GET" action="./visualizarNovoCronograma.php">
-        <h2>Quais são os  dias da semana que você tem disponíveis para estudar?:</h2>
+        <h2 >Quais são os  dias da semana que você tem disponíveis para estudar?:</h2>
         <label>
             <input type="checkbox" name="dias[]" value="segunda">
             Segunda
@@ -90,8 +97,10 @@
         <br>
         <label id="gerarInputs">
             Outras materias:
+
          <button id="outrasMaterias" type="text" onclick="novoInput()">Adicionar uma nova materia</button>
          <button id="apagarNovaMateria" onclick="deletarInput()">Apagar Materia</button><br>
+
 
         </label>
         <h2>Quanto tempo você pretende estudar para cada materia?</h2>
@@ -118,6 +127,7 @@
         </label><br><br>
         <input type="submit">
     </form>
+    </div>
     <script defer src="/script/cronograma/verificarCronogramaValido.js"></script>
     <script defer src="/script/cronograma/adicionarOutrasMaterias.js"></script>
 </body>

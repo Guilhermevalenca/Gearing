@@ -1,49 +1,61 @@
-    <?php
+<?php
     require("../dataSource.php");
-    function alterarDados($dadoDesejado,$i,$alteracao){        
+
+    if(isset($_POST['userNovo'])){
+        function editar($arquivo){
+            $fp = fopen($arquivo,'r');
+            $backup = fopen('backup.csv','w');
+            while( ($linha = fgetcsv($fp)) !== false){
+                if($linha[0] != $_SESSION['username']){
+                    fputcsv($backup,$linha);
+                }else{
+                    $linha[0] = $_POST['userNovo'];
+                    fputcsv($backup,$linha);
+                }
+            }
+            fclose($fp);
+            fclose($backup);
+            rename('backup.csv',$arquivo);
+        }
+        editar(usuarios);
+        editar(topicos);
+        editar(cronograma);
+        editar(session);
+        $atualReferenciaTopico = geraTopico . $_SESSION['username'] . ".csv";
+        $novaReferenciaTopico = geraTopico . $_POST['userNovo'] . ".csv";
+        rename($atualReferenciaTopico,$novaReferenciaTopico);
+        $_SESSION['username'] = $_POST['userNovo'];
+
+    }else if(isset($_POST['nomeNovo'])){
+
         $fp = fopen(usuarios,'r');
         $backup = fopen('backup.csv','w');
-        while( ($linha = fgetcsv($fp)) !== false ){
-            if($linha[$i] != $dadoDesejado){
+        while( ($linha = fgetcsv($fp)) !== false){
+            if($linha[1] != $_POST['nomeAtual']){
                 fputcsv($backup,$linha);
             }else{
-                $dadosAlterados = $linha;
-                $dadosAlterados[$i] = $alteracao;
-                fputcsv($backup,$dadosAlterados);
+                $linha[1] = $_POST['nomeNovo'];
+                fputcsv($backup,$linha);
             }
         }
         fclose($fp);
         fclose($backup);
         rename('backup.csv',usuarios);
-        
-    }
-    if(isset($_POST['userNovo'])){
 
-        alterarDados($_SESSION['username'],0,$_POST['userNovo']);
-        $fp = fopen(cronograma,'r');
+    }else if(isset($_POST['emailNovo'])){
+        $fp = fopen(usuarios,'r');
         $backup = fopen('backup.csv','w');
-        while( ($linha = fgetcsv($fp)) !== false ){
-            if($linha[0] != $_SESSION['username']){
+        while( ($linha = fgetcsv($fp)) !== false){
+            if($linha[2] != $_POST['emailAtual']){
                 fputcsv($backup,$linha);
             }else{
-                $dadosAlterados = $linha;
-                $dadosAlterados[0] = $_POST['userNovo'];
-                fputcsv($backup,$dadosAlterados);
+                $linha[2] = $_POST['emailNovo'];
+                fputcsv($backup,$linha);
             }
         }
         fclose($fp);
         fclose($backup);
-        rename('backup.csv',cronograma);
-        $_SESSION['username'] = $_POST['userNovo'];
-    
-    }else if(isset($_POST['nomeNovo'])){
-
-        alterarDados($_POST['nomeAtual'],1,$_POST['nomeNovo']);
-
-    }else if(isset($_POST['emailNovo'])){
-
-        alterarDados($_POST['emailAtual'],2,$_POST['emailNovo']);
-
+        rename('backup.csv',usuarios);
     }
-    header('location:/src/userCRUD/mostrarDados.php');
+    header('location: /src/userCRUD/mostrarDados.php');
 ?>

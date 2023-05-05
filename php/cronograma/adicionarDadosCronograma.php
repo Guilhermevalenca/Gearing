@@ -29,7 +29,6 @@ $user = $_SESSION['username'];
         fclose($fp);
     }
     //adicionar dados:
-    addUsersDados($_POST['disponibilidade'],"disponibilidade");
     addUsersDados($_POST['materia'],"materia");
     addUsersDados($_POST['dias'],"dias");
     addUsersDados($_POST['tempoMateria'],"tempoMateria");

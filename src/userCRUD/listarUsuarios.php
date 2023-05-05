@@ -9,7 +9,9 @@ require("../verificacaoExistSession.php") ?>
 	<script defer src="/script/cabecalho.js"></script>
 </head>
 <body>
+<button id="expandir"><i>opções</i></button><br>
 	<div id="cabecalho"></div>
+	<h1>Gerenciando usuarios:</h1>
 	<?php $usuarios = fopen('usuarios.csv','r') ?>
 	<form action="/php/userCRUD/deleteMultipleUsers.php" method="POST">
 		<table>

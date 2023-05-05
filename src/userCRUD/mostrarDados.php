@@ -9,13 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script defer src="/script/cabecalho.js"></script>
+    <link rel="stylesheet" href="/css/mostrarDados.css">
+    <link rel="stylesheet" href="/css/global.css">
 </head>
 <body>
+<button id="expandir"><i>opções</i></button><br>
     <div id="cabecalho"></div>
 <?php 
     $user = $_SESSION['username'];
 ?>
-    <button onclick="window.location.href = '/src/menu.php'">Voltar</button>
+<div class="superCaixa">
     <h1>Aqui estão suas informações:</h1>
     <table>
     <?php
@@ -26,8 +29,8 @@
                 <th>Username:</th>
                 <td><?= $linha[0] ?></td>
                 <td>
-                    <form id="formulario" action="/php/userCRUD/editarDadosUser.php" method="POST">
-                    <input id="editar" type="text" name='userNovo' placeholder="Escreva aqui para editar" required>
+                    <form id="formularioUser" action="/php/userCRUD/editarDadosUser.php" method="POST">
+                    <input id="editarUser" type="text" name='userNovo' placeholder="Escreva aqui para editar" required>
                     <input type="submit" value="editar">
                 </form>
             </td>
@@ -36,7 +39,7 @@
                 <th>Seu nome:</th>
                 <td><?= $linha[1] ?></td>
                 <td>
-                    <form id="formulario" action="/php/userCRUD/editarDadosUser.php" method="POST">
+                    <form action="/php/userCRUD/editarDadosUser.php" method="POST">
                     <input type="hidden" name="nomeAtual" value="<?= $linha[1] ?>">
                     <input type="text" name='nomeNovo' placeholder="Escreva aqui para editar" required>
                     <input type="submit" value="editar">
@@ -47,9 +50,9 @@
                 <th>Seu email:</th>
                 <td><?= $linha[2] ?></td>
                 <td>
-                    <form id="formulario" action="/php/userCRUD/editarDadosUser.php" method="POST">
+                    <form id="formularioEmail" action="/php/userCRUD/editarDadosUser.php" method="POST">
                     <input type="hidden" name="emailAtual" value="<?= $linha[2] ?>">
-                    <input id="editar" type="email" name='emailNovo' placeholder="Escreva aqui para editar" required>
+                    <input id="editarEmail" type="email" name='emailNovo' placeholder="Escreva aqui para editar" required>
                     <input type="submit" value="editar">
                 </form>
                 </td>
@@ -61,5 +64,6 @@
     <h2>Deseja apaga sua conta? 
         <button id="buttonApagaConta" onclick="window.location.href='/php/userCRUD/deletarUser.php?user=<?= $user ?>'">Apagar sua conta</button>
     </h2>
+</div>
 </body>
 </html>

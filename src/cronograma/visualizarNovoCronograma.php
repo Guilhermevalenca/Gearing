@@ -10,8 +10,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="/css/cronograma.css">
     <script defer src="/script/cabecalho.js"></script>
+    
 </head>
 <body>
+<button id="expandir"><i>opções</i></button><br>
     <div id="cabecalho"></div>
 <h1>Seu novo Cronograma já foi criado!</h1>
 <h2>Dê uma olhada nele:</h2>
@@ -19,7 +21,13 @@
 <!-- 
     Gerando tabela da nova criação de cronograma do usuario:
  -->
+<?php 
+    foreach($_GET['materia'] as $materia){
+        echo $materia . "<br>";
+    }
+?>
 <table>
+
     <form action="/php/cronograma/adicionarDadosCronograma.php" method="POST">
           <tr>
         <th>Dias:</th>
@@ -35,22 +43,9 @@
             <td><?= $tempoMateria ?></td>
      <?php endforeach ?>
     </tr>
-    <tr>
-        <th>Materias:</th>
-        <?php foreach($_GET['materia'] as $materia): ?>
-            <input type="hidden" id="materia" name="materia[]" value="<?= $materia ?>">
-            <td><?= $materia ?></td>
-        <?php endforeach ?>
-    </tr>
-    <tr>
-        <th>Turnos:</th>
-    <?php foreach($_GET['turnos'] as $turno): ?>
-        <input type="hidden" name="turnos[]" value="<?= $turno ?>">
-        <td><?= $turno ?></td>
-    <?php endforeach ?>
-    </tr>
-    <input type="submit" value="Salvar Cronograma">
-    </form>
 </table>
+<div id="infoTable">
+
+</div>
 </body>
 </html>
