@@ -12,15 +12,6 @@ materiaExtra.addEventListener('click', (event) => {
     form.disabled = true;
 });
 
-
-materiaExtra.addEventListener('click', (event) => {
-    event.preventDefault();
-    form.disabled = true;
-});
-deleteInput.addEventListener('click', (event) =>{
-    event.preventDefault();
-    form.disabled = true;
-})
 function novoInput(){
     var newInput = document.createElement('input');
     newInput.type = "text";

@@ -12,8 +12,8 @@
     <script defer src="/script/cabecalho.js"></script>
 </head>
 <body>
-<button id="expandir"><i>opções</i></button><br>
-<div id="cabecalho"></div>
+<div id="expandir"></div>
+<div id="cabecalho"></div><br><br><br>
 <?php
     require('../../php/cronograma/visualizarCronogramas.php');
 ?>
@@ -23,7 +23,7 @@
  -->
 <?php
     $arrayDeDias = ["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"];
-    $arrayMadrugada= ["00:00","01:00","02:00","03:00","04:00","05:00"];
+    $arrayMadrugada = ["00:00","01:00","02:00","03:00","04:00","05:00"];
     $arrayManha= ["06:00","07:00","08:00","09:00","10:00","11:00"];
     $arrayTarde= ["12:00","13:00","14:00","15:00","16:00","17:00"];
     $arrayNoite= ["18:00","19:00","20:00","21:00","22:00","23:00"];
@@ -40,10 +40,9 @@
     </tr>
     
         <?php
-        
-        $ler = fopen("cronograma.csv","r");
+        $ler = fopen('cronograma.csv','r');
         while( ($linha = fgetcsv($ler)) !== false):
-            if($linha[2] == "turnos" && $linha[1] == $i && $linha[0] == $_SESSION['username']):
+            if( $linha[2] == "turnos" && $linha[1] == $i && $linha[0] == $_SESSION['username'] ):
                 for($j = 3 ;$j < sizeof($linha);$j++):
                     if($linha[$j] == "Manhã"):
                     foreach($arrayManha as $horarioManha):
@@ -70,7 +69,7 @@
             <td> <?= $horarioMadrugada ?></td>
           </tr>
           <?php endforeach ?>
-      <?php endif; endfor; endif ;endwhile ?>
+      <?php endif; endfor; endif; endwhile; fclose($ler); ?>
     <tr>
     
         <td>

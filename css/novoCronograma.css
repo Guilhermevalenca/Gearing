@@ -1,0 +1,8 @@
+td{
+    border-style: solid;
+    width: 9em;
+    height: 1.5em;
+}
+.destinoMateria{
+    display: grid;
+}

@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="/css/topicos.css">
 </head>
 <body>
-<button id="expandir"><i>opções</i></button><br>
-    <div id="cabecalho"></div>
+<div id="expandir"></div>
+    <div id="cabecalho"></div><br><br><br>
 <?php 
     $user = $_GET['user'];
     $topico = $_GET['topico'];

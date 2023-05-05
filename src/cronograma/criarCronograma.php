@@ -11,44 +11,15 @@
 
 </head>
 <body>
-<button id="expandir"><i>opções</i></button><br>
-    <div id="cabecalho"></div>
+    <div id="expandir"></div>
+    <div id="cabecalho"></div><br><br><br>
     
     <!-- formulario do cronograma -->
     <div class="div">
     <h1>Aqui você irá criar seu cronograma</h1><br>
 
     <form id="form" method="GET" action="./visualizarNovoCronograma.php">
-        <h2 >Quais são os  dias da semana que você tem disponíveis para estudar?:</h2>
-        <label>
-            <input type="checkbox" name="dias[]" value="segunda">
-            Segunda
-        </label>
-        <label>
-            <input type="checkbox" name="dias[]" value="terca">
-            Terça
-        </label>
-        <label>
-            <input type="checkbox" name="dias[]" value="quarta">
-            Quarta
-        </label>
-        <label>
-            <input type="checkbox" name="dias[]" value="quinta">
-            Quinta
-        </label>
-        <label>
-            <input type="checkbox" name="dias[]" value="sexta">
-            Sexta
-        </label>
-        <label>
-            <input type="checkbox" name="dias[]" value="sabado">
-            Sábado
-        </label>
-        <label>
-            <input type="checkbox" name="dias[]" value="domingo">
-            Domingo
-        </label>
-
+       
         <h2>Em quais matérias você sente ter mais dificuldade?</h2>
         <label>
             <input type="checkbox" name="materia[]" value='matematica'>
@@ -98,7 +69,7 @@
         <label>
         Outras materias:
         </label>
-        <label id="gerarInputs">
+        <label class="textBug" id="gerarInputs">
 
          <button id="outrasMaterias" type="text" onclick="novoInput()">Adicionar uma nova materia</button>
          <button id="apagarNovaMateria" onclick="deletarInput()">Apagar Materia</button><br>
@@ -106,10 +77,10 @@
 
         </label>
         <h2>Quanto tempo você pretende estudar para cada materia?</h2>
-        <label>
+        <label class="textBug">
             <input type="number" name="tempoMateria[]" min="15" max="60" step="5" required>
-            minutos
         </label>
+        <label>minutos</label>
         <h2>Qual turno você tem disponivel para estudar?</h2>
         <label>
             <input type="checkbox" name="turnos[]" value='Manhã'>
