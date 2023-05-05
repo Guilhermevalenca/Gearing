@@ -13,12 +13,17 @@ buttonVoltar.addEventListener('click', (event) => {
 //tratando as informações antes de enviar o formulario:
 form.addEventListener('submit', (event) => {
     event.preventDefault();
-    function verificaCaracteresEspeciais(inputStr) {
+
+ function verificaCaracteresEspeciais(inputStr) {
         const regex = /[!@#$%^&*(),.?":{}|<>]/;
         return regex.test(inputStr);
       }
       if(!verificaCaracteresEspeciais(senha.value)){
-        alert("Sua senha deve conter caracteres especiais");
+        alert('Sua senha deve conter caracteres especiais');
+    }
+    if(senha.value < 8){
+         alert('Sua senha deve ter no minimo 8 carateres')
+    }
     if(senha.value !== confirme.value) {
         alert('Senhas diferentes, porfavor tente novamente');
     }else{
@@ -31,7 +36,7 @@ form.addEventListener('submit', (event) => {
                     alert('Este email ou usuario já está registrado.');
                 } else {
                     form.submit();
-                }
+               } 
             }
             }
         }
@@ -41,5 +46,4 @@ form.addEventListener('submit', (event) => {
         dados.append('user',user.value);
         test.open('POST','/php/userCRUD/verificarEmailUser.php', true);
         test.send(dados);
-    }
 });

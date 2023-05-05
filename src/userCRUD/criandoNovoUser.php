@@ -25,7 +25,7 @@
                     <input type="email" id="email" name="email" placeholder="Digite aqui seu email" required>
                 </label><br>
                 <label>senha:
-                    <input type="password" id="senha" name="senha" placeholder="Digite aqui sua senha" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}" required this.setCustomValidity('A senha deve conter pelo menos 8 caracteres, incluindo pelo menos uma letra maiúscula, uma letra minúscula e um número.')>
+                    <input type="password" id="senha" name="senha" placeholder="Digite aqui sua senha" required>
                 </label><br>
                 <label>Confirme sua senha:
                     <input type="password" id="confirme" name="confirmaSenha" placeholder="Digite novamente sua senha" required>
