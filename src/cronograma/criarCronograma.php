@@ -98,7 +98,7 @@
         <label>
         Outras materias:
         </label>
-        <label id="gerarInputs">
+        <label class="textBug" id="gerarInputs">
 
          <button id="outrasMaterias" type="text" onclick="novoInput()">Adicionar uma nova materia</button>
          <button id="apagarNovaMateria" onclick="deletarInput()">Apagar Materia</button><br>
@@ -106,10 +106,10 @@
 
         </label>
         <h2>Quanto tempo você pretende estudar para cada materia?</h2>
-        <label>
+        <label class="textBug">
             <input type="number" name="tempoMateria[]" min="15" max="60" step="5" required>
-            minutos
         </label>
+        <label>minutos</label>
         <h2>Qual turno você tem disponivel para estudar?</h2>
         <label>
             <input type="checkbox" name="turnos[]" value='Manhã'>
