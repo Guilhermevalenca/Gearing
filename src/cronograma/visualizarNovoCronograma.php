@@ -21,11 +21,6 @@
 <!-- 
     Gerando tabela da nova criação de cronograma do usuario:
  -->
-<?php 
-    foreach($_GET['materia'] as $materia){
-        echo $materia . "<br>";
-    }
-?>
 <table>
 
     <form action="/php/cronograma/adicionarDadosCronograma.php" method="POST">
@@ -41,6 +36,20 @@
      <?php foreach($_GET['tempoMateria'] as $tempoMateria): ?>
         <input type="hidden" id="tempomateria" name="tempoMateria[]" value="<?= $tempoMateria ?>">
             <td><?= $tempoMateria ?></td>
+     <?php endforeach ?>
+    </tr>
+    <tr>
+        <th>Materias:</th>
+     <?php foreach($_GET['materia'] as $materia): ?>
+        <input type="hidden" id="materia" name="materia[]" value="<?= $tempoMateria ?>">
+            <td><?= $materia ?></td>
+     <?php endforeach ?>
+    </tr>
+    <tr>
+        <th>Turnos:</th>
+     <?php foreach($_GET['turnos'] as $turnos): ?>
+        <input type="hidden" id="turnos" name="turnos[]" value="<?= $turnos ?>">
+            <td><?= $turnos ?></td>
      <?php endforeach ?>
     </tr>
 </table>

@@ -70,7 +70,7 @@
             <td> <?= $horarioMadrugada ?></td>
           </tr>
           <?php endforeach ?>
-      <?php endif; endfor; endif ;endwhile ?>
+      <?php endif; endfor; endif ;endwhile; fclose($ler); ?>
     <tr>
     
         <td>
