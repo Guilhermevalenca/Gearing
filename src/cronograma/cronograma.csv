@@ -3,3 +3,13 @@ Guilherm3vrp,1,materia,quimica
 Guilherm3vrp,1,dias,quarta
 Guilherm3vrp,1,tempoMateria,25
 Guilherm3vrp,1,turnos,Tarde
+"Anderson Ricardo",1,disponibilidade,"5 Horas"
+"Anderson Ricardo",1,materia,biologia
+"Anderson Ricardo",1,dias,domingo
+"Anderson Ricardo",1,tempoMateria,15
+"Anderson Ricardo",1,turnos,Tarde
+"Anderson Ricardo",2,disponibilidade,"5 Horas"
+"Anderson Ricardo",2,materia,biologia
+"Anderson Ricardo",2,dias,domingo
+"Anderson Ricardo",2,tempoMateria,15
+"Anderson Ricardo",2,turnos,Manhã,Noite,Madrugada

@@ -8,6 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>metodologias</title>
+    <link rel="stylesheet" href="/css/metodologias.css">
 </head>
 <body>
     <h1> Questionário de Metodologias de Aprendizagem </h1>

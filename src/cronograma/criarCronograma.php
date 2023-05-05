@@ -8,13 +8,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cronograma</title>
+    <link rel="stylesheet" href="/css/criarCronograma.css">
 </head>
 <body>
-    <h1>Aqui você irá criar seu cronograma</h1>
+    <h1 >Aqui você irá criar seu cronograma</h1>
     <button onclick="window.location.href='/src/menu.php'">Voltar para o menu</button>
     <!-- formulario do cronograma -->
     <form id="form" method="GET" action="./visualizarNovoCronograma.php">
-        <h2>Quais são os  dias da semana que você tem disponíveis para estudar?:</h2>
+        <h2 >Quais são os  dias da semana que você tem disponíveis para estudar?:</h2>
         <label>
             <input type="checkbox" name="dias[]" value="segunda">
             Segunda
