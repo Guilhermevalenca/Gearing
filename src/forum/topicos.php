@@ -5,13 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script defer src="/script/cabecalho.js"></script>
+    <link rel="stylesheet" href="/css/topicos.css">
 </head>
 <body>
+<button id="expandir"><i>opções</i></button><br>
+    <div id="cabecalho"></div>
 <?php 
     $user = $_GET['user'];
     $topico = $_GET['topico'];
 ?>
-<button onclick="window.location.href='./paginaPrincipal.php' ">Voltar</button>
 <h1>Topico: <?= $topico ?></h1>
 <iframe src="./vizualizarInformacaoTopico.php?user=<?= $user ?>" frameborder="0"></iframe>
 <form action="/php/forum/adicionarMensagemTopico.php" method="POST">
@@ -20,5 +23,6 @@
     <input type="hidden" name="arquivo" value="<?= $user ?>">
     <input type="submit">
 </form>
+<button id="voltar" onclick="window.location.href = '/src/forum/paginaPrincipal.php' ">Voltar</button>
 </body>
 </html>

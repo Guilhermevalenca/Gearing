@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criando usuario</title>
     <link rel="stylesheet" href="/css/criandoNovoUser.css">
+    <link rel="stylesheet" href="/css/global.css">
 </head>
 <body>
     <section class="sessao_principal"> 
@@ -24,13 +25,13 @@
                     <input type="email" id="email" name="email" placeholder="Digite aqui seu email" required>
                 </label><br>
                 <label>senha:
-                    <input type="password" id="senha" name="senha" placeholder="Digite aqui sua senha" required>
+                    <input type="password" id="senha" name="senha" placeholder="Digite aqui sua senha" minlength="8" required>
                 </label><br>
                 <label>Confirme sua senha:
                     <input type="password" id="confirme" name="confirmaSenha" placeholder="Digite novamente sua senha" required>
                 </label><br>
                 <button type="submit">Entrar</button>
-                <button onclick="window.location.href = '/' ">Voltar</button>
+                <button id="voltar" onclick="window.location.href = '/' ">Voltar</button>
                 <!-- Pergunta: Qual método você costuma usar para estudar? -->
         </div>
         </form>

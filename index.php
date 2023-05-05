@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gearing</title>
     <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/global.css">
 </head>
 <body>
     <img src="./css/archive/logo.gif" class="logo">
@@ -25,8 +26,11 @@
         </ul>
     
     </div>
+    <div class="relacaoCRUD">
         <button class="criarRealizarLogin" onclick="window.location.href = './src/userCRUD/login.php' ">Login</button>
-        <button id="criarConta" class="criarRealizarLogin" onclick="window.location.href = './src/userCRUD/criandoNovoUser.php' ">Criar Conta</button>
+        <button class="criarRealizarLogin" onclick="window.location.href = './src/userCRUD/criandoNovoUser.php' ">Criar Conta</button>
+    </div>
+        
 </body>
 </html>
 <!-- 
