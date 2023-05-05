@@ -95,8 +95,10 @@
             Inglês
         </label>
         <br>
+        <label>
+        Outras materias:
+        </label>
         <label id="gerarInputs">
-            Outras materias:
 
          <button id="outrasMaterias" type="text" onclick="novoInput()">Adicionar uma nova materia</button>
          <button id="apagarNovaMateria" onclick="deletarInput()">Apagar Materia</button><br>
