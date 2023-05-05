@@ -14,9 +14,11 @@
 <body>
 <button id="expandir"><i>opções</i></button><br>
     <div id="cabecalho"></div>
-    <h1>Aqui você irá criar seu cronograma</h1>
-
+    
     <!-- formulario do cronograma -->
+    <div class="div">
+    <h1>Aqui você irá criar seu cronograma</h1><br>
+
     <form id="form" method="GET" action="./visualizarNovoCronograma.php">
         <h2 >Quais são os  dias da semana que você tem disponíveis para estudar?:</h2>
         <label>
@@ -126,6 +128,7 @@
         </label><br><br>
         <input type="submit">
     </form>
+    </div>
     <script defer src="/script/cronograma/verificarCronogramaValido.js"></script>
     <script defer src="/script/cronograma/adicionarOutrasMaterias.js"></script>
 </body>
