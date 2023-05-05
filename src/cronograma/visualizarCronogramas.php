@@ -12,8 +12,8 @@
     <script defer src="/script/cabecalho.js"></script>
 </head>
 <body>
-<button id="expandir"><i>opções</i></button><br>
-<div id="cabecalho"></div>
+<div id="expandir"></div>
+<div id="cabecalho"></div><br><br><br>
 <?php
     require('../../php/cronograma/visualizarCronogramas.php');
 ?>

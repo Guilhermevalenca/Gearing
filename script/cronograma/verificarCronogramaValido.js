@@ -20,8 +20,6 @@
            
             if(!teste(materias) && outraMateria.value == null){
                 alert("Por favor, escolha uma materia");
-            }else if(!teste(dias)){
-                alert("Você não selecionou nenhum dia!"); 
             }else if(!teste(turnos)){
                 alert("Escolha um turno para montar seu cronograma!");
             }else{

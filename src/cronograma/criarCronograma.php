@@ -11,44 +11,15 @@
 
 </head>
 <body>
-<button id="expandir"><i>opções</i></button><br>
-    <div id="cabecalho"></div>
+    <div id="expandir"></div>
+    <div id="cabecalho"></div><br><br><br>
     
     <!-- formulario do cronograma -->
     <div class="div">
     <h1>Aqui você irá criar seu cronograma</h1><br>
 
     <form id="form" method="GET" action="./visualizarNovoCronograma.php">
-        <h2 >Quais são os  dias da semana que você tem disponíveis para estudar?:</h2>
-        <label>
-            <input type="checkbox" name="dias[]" value="segunda">
-            Segunda
-        </label>
-        <label>
-            <input type="checkbox" name="dias[]" value="terca">
-            Terça
-        </label>
-        <label>
-            <input type="checkbox" name="dias[]" value="quarta">
-            Quarta
-        </label>
-        <label>
-            <input type="checkbox" name="dias[]" value="quinta">
-            Quinta
-        </label>
-        <label>
-            <input type="checkbox" name="dias[]" value="sexta">
-            Sexta
-        </label>
-        <label>
-            <input type="checkbox" name="dias[]" value="sabado">
-            Sábado
-        </label>
-        <label>
-            <input type="checkbox" name="dias[]" value="domingo">
-            Domingo
-        </label>
-
+       
         <h2>Em quais matérias você sente ter mais dificuldade?</h2>
         <label>
             <input type="checkbox" name="materia[]" value='matematica'>
