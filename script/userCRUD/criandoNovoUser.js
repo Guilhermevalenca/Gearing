@@ -21,10 +21,7 @@ form.addEventListener('submit', (event) => {
       if(!verificaCaracteresEspeciais(senha.value)){
         alert('Sua senha deve conter caracteres especiais');
     }
-    if(senha.value < 8){
-         alert('Sua senha deve ter no minimo 8 carateres')
-    }
-    if(senha.value !== confirme.value) {
+if(senha.value !== confirme.value) {
         alert('Senhas diferentes, porfavor tente novamente');
     }else{
         //req http:
@@ -36,7 +33,7 @@ form.addEventListener('submit', (event) => {
                     alert('Este email ou usuario já está registrado.');
                 } else {
                     form.submit();
-               } 
+                }
             }
             }
         }
