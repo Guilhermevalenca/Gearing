@@ -1,6 +1,3 @@
-<?php 
-    require( "../verificacaoExistSession.php");
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cronograma</title>
+
     <link rel="stylesheet" href="/css/criarCronograma.css">
     <script defer src="/script/cabecalho.js"></script>
+
 </head>
 <body>
 <button id="expandir"><i>opções</i></button><br>
@@ -98,11 +97,11 @@
         <br>
         <label id="gerarInputs">
             Outras materias:
-         <button id="outrasMaterias" onclick="novoInput()">Adicionar uma nova materia</button>
-         <button id="apagarNovaMateria" onclick="deletarInput()">Retirar uma nova materia</button><br>
-        </label>
-        <label>
-        
+
+         <button id="outrasMaterias" type="text" onclick="novoInput()">Adicionar uma nova materia</button>
+         <button id="apagarNovaMateria" onclick="deletarInput()">Apagar Materia</button><br>
+
+
         </label>
         <h2>Quanto tempo você pretende estudar para cada materia?</h2>
         <label>

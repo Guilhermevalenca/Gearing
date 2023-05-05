@@ -1,7 +1,17 @@
 let materiaExtra = document.getElementById("outrasMaterias");
 let labelInput = document.getElementById('gerarInputs');
-let adicionarMateria = document.getElementById('adicionarMateria');
+
 let deleteInput = document.getElementById('apagarNovaMateria');
+
+deleteInput.addEventListener('click', (event) => {
+    event.preventDefault();
+    form.disabled = true;
+});
+materiaExtra.addEventListener('click', (event) => {
+    event.preventDefault();
+    form.disabled = true;
+});
+
 
 materiaExtra.addEventListener('click', (event) => {
     event.preventDefault();
@@ -21,11 +31,12 @@ function novoInput(){
     labelInput.appendChild(br);
     labelInput.appendChild(newInput);
 }
+
+
 function deletarInput(){
-    for(let i = 0; i < 2; i++){
-        let ultimoInput = labelInput.children[labelInput.children.length - 1];
-        if(ultimoInput != deleteInput){
-            labelInput.removeChild(ultimoInput);
-        }
+    let ultimoInput = labelInput.children[labelInput.children.length -1];
+    if(ultimoInput != deleteInput){
+        labelInput.removeChild(ultimoInput);
     }
 }
+

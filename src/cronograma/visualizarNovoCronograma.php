@@ -27,14 +27,21 @@
     }
 ?>
 <table>
+
+    <form action="/php/cronograma/adicionarDadosCronograma.php" method="POST">
+          <tr>
+        <th>Dias:</th>
+        <?php foreach($_GET['dias'] as $dias): ?>
+            <input type="hidden" id="dias" name="dias[]" value="<?= $dias ?>">
+            <td><?= $dias ?></td>
+        <?php endforeach ?>
+    </tr>
     <tr>
-        <th>Domingo</th>
-        <th>Segunda</th>
-        <th>Terça</th>
-        <th>Quarta</th>
-        <th>Quinta</th>
-        <th>Sexta</th>
-        <th>Sabado</th>
+        <th>Tempo:</th>
+     <?php foreach($_GET['tempoMateria'] as $tempoMateria): ?>
+        <input type="hidden" id="tempomateria" name="tempoMateria[]" value="<?= $tempoMateria ?>">
+            <td><?= $tempoMateria ?></td>
+     <?php endforeach ?>
     </tr>
 </table>
 <div id="infoTable">
