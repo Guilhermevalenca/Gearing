@@ -14,12 +14,26 @@ buttonVoltar.addEventListener('click', (event) => {
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
+
+function verificaLetras(inputStr){
+    const letter = /[a-z]/
+    return letter.test(inputStr)
+}
+function verificaNumeros(inputStr) {
+    const number = /[*\d]/
+    return number.test(inputStr)
+}
  function verificaCaracteresEspeciais(inputStr) {
         const regex = /[!@#$%^&*(),.?":{}|<>]/;
         return regex.test(inputStr);
  }
+
       if(!verificaCaracteresEspeciais(senha.value)){
-        alert('Sua senha deve conter caracteres especiais');
+        alert('Sua senha deve conter pelo menos um caractere especial [ ! @ # $ % ^ & * ( ) , . ? " : { } | < >]');
+      }else if(!verificaNumeros(senha.value)){
+        alert('Sua senha deve conter letras e numeros!')
+      }else if(!verificaLetras(senha.value)){
+        alert('Sua senha deve conter letras e numeros!')
       }else if(senha.value !== confirme.value) {
         alert('As senhas não correspondem');
     }else{
