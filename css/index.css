@@ -71,12 +71,12 @@ height: 100vh; */
     background-color:  #ccffff;
     margin-left: 60vw;
     margin-top: 0.5vw;
+    position: relative;
     font-size: 1vw;
-    top: 10vw;
+    top: 15vw;
     font-family: 'Yielding Timber',sans-serif; 
     cursor: pointer;
     transition: all 0.3s ease;
-    display: flex;
     justify-content: center;
     align-items: center;
     /*font-family:'px sans nouveaux', sans-serif;
