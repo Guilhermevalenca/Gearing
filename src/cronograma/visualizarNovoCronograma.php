@@ -123,18 +123,32 @@
     const table = document.getElementById('table');
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        const diaSemana = table.querySelectorAll('.diaSemana');
-        const horario = table.querySelectorAll('.horario');
-        diaSemana.forEach(coluna => {
-          const tdIndex = Array.from(coluna.parentElement.children).indexOf(coluna);
-          coluna.value = tdIndex;
-          console.log("coluna =",coluna.value);
+        let linha = 0;
+        let coluna = 0;
+        destinoMateria.forEach(divUnica =>{
+            const diaSemana = divUnica.querySelectorAll('.diaSemana');
+            const horario = divUnica.querySelectorAll('.horario');
+            
+            diaSemana.forEach(dia => {
+                if(dia){
+                    dia.value = coluna;
+                    console.log(dia.value)
+                }
+            })
+            horario.forEach(hora => {
+                if(hora){
+                    hora.value = linha;
+                    console.log(hora.value)
+                }
+            })
+
+            coluna++;
+            if(coluna == 7){
+                coluna = 0;
+                linha++;
+            }
         })
-        horario.forEach(linha => {
-          const trIndex = Array.from(linha.parentElement.parentElement.children).indexOf(linha.parentElement);
-          linha.value = trIndex;
-          console.log("linha =",linha.value);
-        })
+        form.submit();
     })
 
 </script>
