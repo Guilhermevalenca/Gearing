@@ -18,9 +18,7 @@
                 <label>nome:
                     <input type="text" name="nome" placeholder="Digite aqui seu nome" required>
                 </label><br>
-                <label>sobrenome:
-                    <input type="text" name="sobrenome" placeholder="Digite aqui seu sobrenome" required>
-                </label><br>
+                <label>
                 <label>email:
                     <input type="email" id="email" name="email" placeholder="Digite aqui seu email" required>
                 </label><br>
