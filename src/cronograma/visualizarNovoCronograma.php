@@ -122,7 +122,6 @@
     const form = document.getElementById('form');
     const table = document.getElementById('table');
     form.addEventListener('submit', (event) => {
-        event.preventDefault();
         let linha = 0;
         let coluna = 0;
         destinoMateria.forEach(divUnica =>{
@@ -148,7 +147,12 @@
                 linha++;
             }
         })
-        form.submit();
+        $verificacao = prompt('tem certeza que fez todas as alterações necessarias? Por hora nosso site nao suporta edições de cronograma no momento. Responda ok para continuar');
+        if($verificacao == "ok"){
+            form.submit();
+        }else{
+            event.preventDefault();
+        }
     })
 
 </script>
