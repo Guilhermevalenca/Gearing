@@ -147,8 +147,8 @@
                 linha++;
             }
         })
-        $verificacao = prompt('tem certeza que fez todas as alterações necessarias? Por hora nosso site nao suporta edições de cronograma no momento. Responda ok para continuar');
-        if($verificacao == "ok"){
+        $verificacao = confirm('tem certeza que fez todas as alterações necessarias? Por hora nosso site nao suporta edições de cronograma no momento. Clique em "ok" para continuar');
+        if($verificacao == true){
             form.submit();
         }else{
             event.preventDefault();
