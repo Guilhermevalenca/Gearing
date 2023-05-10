@@ -1,6 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/source-sans-pro');
 #cabecalho {
-    display: none;
+    display: flex;
     justify-content: center; /* alinhar os itens para o centro da div */
     align-items: center; /* alinhar os itens verticalmente */
     height: 80px;

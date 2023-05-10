@@ -3,7 +3,7 @@
         exit();
     }
     require("../dataSource.php");
-    $nome = $_POST['nome'] . " " . $_POST['sobrenome'];
+    $nome = $_POST['nome'];
     $fp = fopen(usuarios,'a');
     fputcsv($fp,array($_POST['user'],$nome,$_POST['email'],$_POST['senha']));
     fclose($fp);
