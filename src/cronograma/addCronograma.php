@@ -1,22 +1,15 @@
 <?php 
+    session_start();
     $horario = $_POST['horario'];
     $dia = $_POST['diaSemana'];
-?>
-<table>
-    <thead>
-        <th>Materias:</th>
-        <th>Horario:</th>
-        <th>Dias da semana:</th>
-    </thead>
-    <tbody>
-    <?php 
-        foreach($_POST['materia'] as $indice => $materia):
+    $data = [];
+    $data[0] = $_SESSION['username'];
+    $data[1] = 'materia';
+    foreach($_POST['materia'] as $indice => $materia){
+        array_push($data,$materia,$horario[$indice],$dia[$indice]);
+    }
+    $fp = fopen('cronograma.csv','a');
+    fputcsv($fp,$data);
+    fclose($fp);
+    header('location: /src/cronograma/montandoCronograma.php');
     ?>
-    <tr>
-        <th><?= $materia ?></th>
-        <td><?= $horario[$indice] ?></td>
-        <td><?= $dia[$indice] ?></td>
-    </tr>
-    <?php endforeach ?>
-    </tbody>
-</table>
