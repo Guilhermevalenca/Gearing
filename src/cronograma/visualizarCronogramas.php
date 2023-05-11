@@ -17,12 +17,25 @@
 <?php
     require('../../php/cronograma/visualizarCronogramas.php');
 ?>
-<h2><?= $user ?>, Aqui estão seus cronogramas:</h2>
+<h2><?= $user ?>, Aqui estar seu cronograma:</h2>
 <!-- 
     Gerando tabelas dos cronograma do usuario
  -->
-<?php for($i = 0; $i < $id; $i++): ?>
-    <button onclick="window.location.href='./montandoCronograma.php?id=<?= $i ?>'">Cronograma <?= $i + 1 ?></button>
+ <?php for($i = 0; $i < $id; $i++): ?>
+    <button class="mostrarCronograma">Cronograma <?= $i + 1 ?></button>
 <?php endfor ?>
+<div class="cronograma"></div>
+<script>
+    const buttons = document.querySelectorAll('.mostrarCronograma');
+    buttons.forEach( (button,indice) => {
+        button.addEventListener('click', () => {
+            fetch(`./montandoCronograma.php?id=${indice}`)
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('.cronograma').innerHTML = data
+            })
+        })
+    })
+</script>
 </body>
 </html>
