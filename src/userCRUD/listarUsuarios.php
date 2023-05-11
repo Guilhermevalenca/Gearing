@@ -9,7 +9,6 @@ require("../verificacaoExistSession.php") ?>
 	<script defer src="/script/cabecalho.js"></script>
 </head>
 <body>
-<div id="expandir"></div>
 	<div id="cabecalho"></div><br><br><br>
 	<h1>Gerenciando usuarios:</h1>
 	<?php $usuarios = fopen('usuarios.csv','r') ?>
