@@ -6,7 +6,7 @@
     $fp = fopen('cronograma.csv','r');
     $id = 0;
     while( ($linha = fgetcsv($fp)) !== false){
-        if($dataMateria[0] == $linha[0] && $id == $linha[1]){
+        if($_SESSION['username'] == $linha[0] && $id == $linha[1]){
             $id++;
         }
     }

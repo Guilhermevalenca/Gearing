@@ -32,7 +32,7 @@
             fetch(`./montandoCronograma.php?id=${indice}`)
             .then(response => response.text())
             .then(data => {
-                document.querySelector('.cronograma').innerHTML = data
+                document.querySelector('.cronograma').innerHTML = data;
             })
         })
     })

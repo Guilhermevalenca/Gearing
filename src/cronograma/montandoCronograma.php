@@ -122,7 +122,7 @@ materias.forEach(materia => {
     let i = 0;
     let j = 0;
     recebendo.forEach( (valor) => {
-        if(horario.value == i && diaSemana.value == j){ 
+        if(horario.value == i && diaSemana.value == j){
             valor.appendChild(materia);
         }
         j++;
