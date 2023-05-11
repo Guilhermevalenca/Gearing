@@ -39,7 +39,7 @@
         </tr>
     <?php endif ?>
     </table>
-    <h2>Aqui estão os topicos criados por outros usuarios:</h2>
+    <h1>Aqui estão os topicos criados por outros usuarios:</h1>
     <table>
     <?php 
         $fp = fopen("topicos.csv",'r');
