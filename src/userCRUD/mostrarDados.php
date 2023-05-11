@@ -13,8 +13,7 @@
     <link rel="stylesheet" href="/css/global.css">
 </head>
 <body>
-<button id="expandir"><i>opções</i></button><br>
-    <div id="cabecalho"></div>
+<div id="cabecalho"></div><br><br><br>
 <?php 
     $user = $_SESSION['username'];
 ?>

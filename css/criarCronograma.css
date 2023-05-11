@@ -3,6 +3,14 @@
   position: absolute;
   left: 25% ;
 }
+
+.cabecalho {
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 body {
     background-image: url("/logos/wpp2.jpeg");
     background-attachment: fixed;
@@ -12,6 +20,8 @@ body {
   }
    h1,h2{
     font-family: 'Share Tech Mono', sans-serif; 
+    font-size: 30px;
+    color: aqua;
     background: -webkit-linear-gradient(90deg, rgba(188,251,255,1) 47%, rgba(24,237,242,1) 100%);
     background-clip:text;
     -webkit-background-clip:text;
@@ -28,7 +38,9 @@ body {
   }
   
 .textBug{
+  display: flex;
+  margin-top: 6px;
   background-clip:text;
     -webkit-background-clip:text;
-    -webkit-text-fill-color:black;
+    -webkit-text-fill-color:rgb(255, 255, 255);
 }
