@@ -40,7 +40,6 @@
             <label for="input1"><br>Observar e ouvir
         </label><br>
             <input type="range" id="input1" name="inputRange" min='1' max="4">
-        
 
         <h2> Costumo ter facilidade em aprender, principalmente quando: </h2>
         
