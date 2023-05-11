@@ -284,8 +284,9 @@
             <input class="opcao" type="range" id="12D" name="doze[]" min='1' max="4"> 
 
             </label><br>
-            <input type="submit">
+            <button>Calcular resultado</button>
             </form>
+            <script defer src="/script/testeMetodologia/testeMetodologias.js"></script>
 
 </body>
 </html>
