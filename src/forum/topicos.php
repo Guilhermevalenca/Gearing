@@ -11,7 +11,6 @@
 </head>
 
 <body>
-    <div id="expandir"></div>
     <div id="cabecalho"></div><br><br><br>
     <?php
     $user = $_GET['user'];
