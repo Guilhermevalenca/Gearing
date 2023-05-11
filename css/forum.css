@@ -1,4 +1,5 @@
 @import url('https://fonts.cdnfonts.com/css/share-tech-mono');
+
 body {
   font-family: 'Share Tech Mono', sans-serif;
   color: #333;
@@ -12,13 +13,19 @@ body {
 
 /* Estilo para o botão de expandir */
 #expandir {
-  background: linear-gradient(80deg, rgba(100,2,223,1) 9%, rgba(133,26,186,1) 54%, rgba(0,212,255,1) 100%);
+  background: linear-gradient(80deg, rgba(100, 2, 223, 1) 9%, rgba(133, 26, 186, 1) 54%, rgba(0, 212, 255, 1) 100%);
   color: white;
   border: none;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
   border-radius: 5px;
+}
+
+@media(min-width: 650px) {
+  #expandir {
+    padding: 0px;
+  }
 }
 
 /* Estilo para o cabeçalho */
@@ -29,10 +36,14 @@ body {
 }
 
 /* Estilo para o título do formulário */
+h1,
 h2 {
   font-size: 24px;
   margin-top: 20px;
-  color: #9229a7;
+  background: -webkit-linear-gradient(90deg, rgba(188, 251, 255, 1) 47%, rgba(24, 237, 242, 1) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Estilo para os campos de entrada no formulário */
@@ -47,7 +58,7 @@ input[type="submit"] {
 
 /* Estilo para o botão de envio do formulário */
 input[type="submit"] {
-  background: linear-gradient(80deg, rgba(100,2,223,1) 9%, rgba(133,26,186,1) 54%, rgba(0,212,255,1) 100%);
+  background: linear-gradient(80deg, rgba(100, 2, 223, 1) 9%, rgba(133, 26, 186, 1) 54%, rgba(0, 212, 255, 1) 100%);
   color: white;
   border: none;
   cursor: pointer;
@@ -55,14 +66,14 @@ input[type="submit"] {
 
 /* Estilo para os botões dos tópicos */
 button {
-  background: linear-gradient(80deg, rgba(100,2,223,1) 9%, rgba(133,26,186,1) 54%, rgba(0,212,255,1) 100%);
+  background: linear-gradient(80deg, rgba(100, 2, 223, 1) 9%, rgba(133, 26, 186, 1) 54%, rgba(0, 212, 255, 1) 100%);
   color: white;
   border: none;
   padding: 10px 10px;
   font-size: 16px;
   cursor: pointer;
   border-radius: 5px;
-} 
+}
 
 /* Estilo para a tabela */
 table {
@@ -78,12 +89,15 @@ td {
   font-size: 25px;
   text-align: left;
   border-bottom: 1px solid #ccc;
-  color: #9229a7;
+  background: -webkit-linear-gradient(90deg, rgba(188, 251, 255, 1) 47%, rgba(24, 237, 242, 1) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Estilo para o botão de listar usuários */
 button.listar-usuarios {
-  background: linear-gradient(80deg, rgba(100,2,223,1) 9%, rgba(133,26,186,1) 54%, rgba(0,212,255,1) 100%);
+  background: linear-gradient(80deg, rgba(100, 2, 223, 1) 9%, rgba(133, 26, 186, 1) 54%, rgba(0, 212, 255, 1) 100%);
   color: white;
   border: none;
   padding: 10px 20px;
@@ -96,4 +110,8 @@ button.listar-usuarios {
 /* Estilo para o ícone de opções */
 button#expandir i {
   margin-right: 5px;
+}
+
+.topico-botao {
+  color: white;
 }

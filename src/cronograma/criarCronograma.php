@@ -11,8 +11,7 @@
 
 </head>
 <body>
-    <div id="expandir"></div>
-    <div id="cabecalho"></div><br><br><br>
+    <header id="cabecalho"></header><br><br><br>
     
     <!-- formulario do cronograma -->
     <div class="div">
