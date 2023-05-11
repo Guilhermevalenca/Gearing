@@ -15,7 +15,6 @@ require('../verificacaoExistSession.php');
 
 <body>
     <section class="conteudo-principal">
-        <div id="expandir"></div>
         <div id="cabecalho"></div><br><br><br>
         <!-- funcionalidades:
         criar topicos:

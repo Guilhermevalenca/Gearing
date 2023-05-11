@@ -13,7 +13,6 @@
     <script src="/bibliotecas/sortable.js"></script>
 </head>
 <body>
-<div id="expandir"></div>
     <div id="cabecalho"></div><br><br><br>
 <h1>Termine de organizar seu cronograma:</h1>
 <h2>Aqui estão suas materias:</h2>
