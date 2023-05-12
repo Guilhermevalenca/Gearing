@@ -262,6 +262,8 @@
         </label><br>
             <input class="opcao" type="range" id="11D" name="onze[]" min='1' max="4">
 
+        </label>
+
         <label class="pergunta">
 
         <h2>12. Aprendo melhor quando: </h2>
