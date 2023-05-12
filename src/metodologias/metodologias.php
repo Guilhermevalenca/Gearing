@@ -286,6 +286,7 @@
             <button>Calcular resultado</button>
             </form>
             <script defer src="/script/testeMetodologia/testeMetodologias.js"></script>
+            <script defer src="/script/testeMetodologia/testeNoValueRepeat.js"></script>
 
 </body>
 </html>
