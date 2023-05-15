@@ -10,7 +10,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="/css/cronograma.css">
     <script defer src="/script/cabecalho.js"></script>
-    <script defer src="/script/cronograma/mostrarCronogramas.js"></script>
 </head>
 <body>
 <div id="cabecalho"></div><br><br><br>
@@ -25,6 +24,6 @@
     <button class="mostrarCronograma">Cronograma <?= $i + 1 ?></button>
 <?php endfor ?>
 <div class="cronograma"></div>
-
+<script defer src="/script/cronograma/mostrarCronogramas.js"></script>
 </body>
 </html>

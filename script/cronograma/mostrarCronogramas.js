@@ -19,13 +19,19 @@ function mostrarMaterias(){
     })
 }
 const buttons = document.querySelectorAll('.mostrarCronograma');
+const montarTabela = document.querySelector('.cronograma');
 buttons.forEach( (button,indice) => {
     button.addEventListener('click', () => {
         fetch(`./montandoCronograma.php?id=${indice}`)
         .then(response => response.text())
         .then(data => {
-            document.querySelector('.cronograma').innerHTML = data;
+            montarTabela.innerHTML = data;
             mostrarMaterias();
+            const editarConograma = document.createElement('button');
+            editarConograma.onclick = () => {
+                window.location.href = `./editCronogram.php?id=${indice}` 
+            }
+            montarTabela.appendChild(editarConograma);
         })
     })
 })
