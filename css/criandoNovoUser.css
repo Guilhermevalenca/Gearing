@@ -53,7 +53,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
-    color: #aaa;
+    color: #f0f8ff;
     }
     
     #formulario input[type="text"],
@@ -67,12 +67,12 @@
     padding: 10px;
     outline: none;
     font-style: italic;
-    color: #aaa;
+    color: #000;
     text-align: center;
     }
     #formulario input[type="email"]::placeholder,
     #formulario input[type="password"]::placeholder {
-    color: #aaa;
+    color: #000;
     font-size: 14px;
     font-style: italic;
     text-align: center;
