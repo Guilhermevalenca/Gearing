@@ -10,18 +10,22 @@
     <title>metodologias</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
-    <script>
-
-    </script>
     <script defer src="/script/cabecalho.js"></script>
-
+    <style>
+        .opcao {
+        -webkit-appearance: none;
+        background: #d3d3d3;
+        outline: none;
+        border-radius: 9px;   
+        }
+    </style>
 </head>
 <body>
     <div id="cabecalho"></div><br><br><br>
     <h1> Questionário de Metodologias de Aprendizagem </h1>
     <form id="form" method="GET" action="./suaMetodologia.php">
 
-        <label class="pergunta">
+        <div class="pergunta">
 
         <h2>1. Enquanto estou estudando gosto de:</h2>
         <!-- <input id="" type="checkbox" name="fazer[]" value="sentimentos">
@@ -42,9 +46,9 @@
         </label><br>
             <input class="opcao" type="range" id="1D" name="um[]" min='1' max="4">
 
-        </label>
+        </div>
 
-        <label class="pergunta">
+        <div class="pergunta">
 
         <h2>2. Costumo ter facilidade em aprender, principalmente quando: </h2>
         
@@ -64,9 +68,9 @@
         </label><br>
             <input class="opcao" type="range" id="2D" name="dois[]" min='1' max="4">
 
-        </label>
+        </div>
 
-        <label class="pergunta">
+        <div class="pergunta">
         
         <h2>3. Quando estou aprendendo costumo: </h2>
         
@@ -86,9 +90,9 @@
         </label><br>
             <input class="opcao" type="range" id="3D" name="tres[]" min='1' max="4">
 
-        </label>
+        </div>
 
-       <label class="pergunta">
+       <div class="pergunta">
 
         <h2>4. Aprendo: </h2>
             
@@ -108,9 +112,9 @@
         </label><br>
             <input class="opcao" type="range" id="4D" name="quatro[]" min='1' max="4">
 
-        </label>
+        </div>
 
-        <label class="pergunta">
+        <div class="pergunta">
 
         <h2>5. Enquanto aprendo gosto de: </h2>
 
@@ -130,9 +134,9 @@
         </label><br>
             <input class="opcao" type="range" id="5D" name="cinco[]" min='1' max="4">
 
-        </label>
+        </div>
 
-        <label class="pergunta">
+        <div class="pergunta">
 
         <h2>6. Enquanto estudo sou: </h2>
         
@@ -152,9 +156,9 @@
         </label><br>
             <input class="opcao" type="range" id="6D" name="seis[]" min='1' max="4">
         
-        </label>
+        </div>
 
-        <label class="pergunta">
+        <div class="pergunta">
 
         <h2>7. Aprendo melhor através de: </h2>
         
@@ -174,9 +178,9 @@
         </label><br>
             <input class="opcao" type="range" id="7D" name="sete[]" min='1' max="4">
 
-        </label>
+        </div>
 
-        <label class="pergunta">
+        <div class="pergunta">
 
         <h2>8. Enquanto aprendo:</h2>
         
@@ -196,9 +200,9 @@
         </label><br>
             <input class="opcao" type="range" id="8D" name="oito[]" min='1' max="4">
 
-        </label>
+        </div>
 
-        <label class="pergunta">
+        <div class="pergunta">
 
         <h2>9. Aprendo melhor quando me apoio em: </h2>
         
@@ -218,9 +222,9 @@
         </label><br>
             <input class="opcao" type="range" id="9D" name="nove[]" min='1' max="4">
 
-        </label>
+        </div>
 
-        <label class="pergunta">
+        <div class="pergunta">
 
         <h2>10. Quando estou aprendendo costumo ser: </h2>
         
@@ -240,9 +244,9 @@
         </label><br>
             <input class="opcao" type="range" id="10D" name="dez[]" min='1' max="4">
 
-        </label>
+        </div>
 
-        <label class="pergunta">
+        <div class="pergunta">
 
         <h2>11. Enquanto aprendo costumo: </h2>
         
@@ -262,7 +266,9 @@
         </label><br>
             <input class="opcao" type="range" id="11D" name="onze[]" min='1' max="4">
 
-        <label class="pergunta">
+        </div>
+
+        <div class="pergunta">
 
         <h2>12. Aprendo melhor quando: </h2>
         
@@ -282,7 +288,7 @@
             </label><br>
             <input class="opcao" type="range" id="12D" name="doze[]" min='1' max="4"> 
 
-            </label><br>
+        </div><br>
             <button>Calcular resultado</button>
             </form>
             <script defer src="/script/testeMetodologia/testeMetodologias.js"></script>

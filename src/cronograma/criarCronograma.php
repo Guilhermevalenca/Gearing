@@ -68,15 +68,15 @@
         <label>
         Outras materias:
         </label>
-        <label class="textBug" id="gerarInputs">
+        <label id="gerarInputs">
 
          <button id="outrasMaterias" type="text" onclick="novoInput()">Adicionar uma nova materia</button>
          <button id="apagarNovaMateria" onclick="deletarInput()">Apagar Materia</button><br>
 
-
         </label>
+        <label class="novosInput"></label>
         <h2>Quanto tempo você pretende estudar para cada materia?</h2>
-        <label class="textBug">
+        <label class="textBug"> 
             <input type="number" name="tempoMateria[]" min="15" max="60" step="5" required>
         </label>
         <label>minutos</label>
