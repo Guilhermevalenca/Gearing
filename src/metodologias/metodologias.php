@@ -10,11 +10,15 @@
     <title>metodologias</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
-    <script>
-
-    </script>
     <script defer src="/script/cabecalho.js"></script>
-
+    <style>
+        .opcao {
+        -webkit-appearance: none;
+        background: #d3d3d3;
+        outline: none;
+        border-radius: 9px;   
+        }
+    </style>
 </head>
 <body>
     <div id="cabecalho"></div><br><br><br>
@@ -288,6 +292,7 @@
             <button>Calcular resultado</button>
             </form>
             <script defer src="/script/testeMetodologia/testeMetodologias.js"></script>
+            <script defer src="/script/testeMetodologia/testeNoValueRepeat.js"></script>
 
 </body>
 </html>
