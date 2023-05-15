@@ -14,7 +14,7 @@ form.addEventListener('submit', (event) => {
     teste.onreadystatechange = function () {
         if(this.readyState === 4 && this.status === 200){
             if(this.responseText == 'tudoErrado'){
-                alert('você errou sua senha ou seu email!');
+                alert('Email ou senha incorreto!!!');
             }else if(this.responseText == "tudoCerto"){
                 form.submit();
             }

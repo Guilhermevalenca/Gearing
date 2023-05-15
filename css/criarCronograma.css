@@ -37,8 +37,13 @@ body {
 
   }
   
-.textBug{
-  display: flex;
+.textBug, .novosInput{
+  margin-top: 6px;
+  background-clip:text;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:black;
+}
+#gerarInputs{
   margin-top: 6px;
   background-clip:text;
     -webkit-background-clip:text;
