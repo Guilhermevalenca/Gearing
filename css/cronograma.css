@@ -15,3 +15,12 @@ td{
 .dias{
     text-size-adjust:  20px;
 }
+.alojamento{
+    border-style: solid;
+    width: 9em;
+    height: 1.5em;
+}
+.origemMateria{
+    font-size: 0px;
+    width: 0px;
+}

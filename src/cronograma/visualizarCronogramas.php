@@ -10,6 +10,29 @@
     <title>Document</title>
     <link rel="stylesheet" href="/css/cronograma.css">
     <script defer src="/script/cabecalho.js"></script>
+<script>
+function mostrarMaterias(){
+    const materias = document.querySelectorAll('.materias');
+    const recebendo = document.querySelectorAll('.recebendoMaterias');
+    materias.forEach(materia => {
+        const horario = materia.querySelector('.horario');
+        const diaSemana = materia.querySelector('.dia');
+        let i = 0;
+        let j = 0;
+        recebendo.forEach( (valor) => {
+            if(horario.value == i && diaSemana.value == j){
+                valor.appendChild(materia);
+            }
+            j++;
+            if(j == 7){
+                j = 0;
+                i++;
+            }
+        })
+    })
+}
+
+</script>
 </head>
 <body>
 <div id="cabecalho"></div><br><br><br>
@@ -32,9 +55,11 @@
             .then(response => response.text())
             .then(data => {
                 document.querySelector('.cronograma').innerHTML = data;
+                mostrarMaterias();
             })
         })
     })
 </script>
+
 </body>
 </html>
