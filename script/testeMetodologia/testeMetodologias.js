@@ -10,10 +10,10 @@
 -Experimentação Ativa: EA = 1C + 2D + 3B + 4B + 5D + 6B + 7D + 8A + 9C + 10C + 11D + 12D; 
 */
 //Variaveis para armazenar as somas dos pesos das repostas;
-let EC = 0;
-let CA = 0;
-let OR = 0;
-let EA = 0;
+let resultadoEC = 0;
+let resultadoCA = 0;
+let resultadoOR = 0;
+let resultadoEA = 0;
 //Esses são os arrays de combinações de respostas;
 let respostasEC = [0,2,3,0,0,2,1,3,1,1,0,1];
 let respostasCA = [1,1,0,3,2,3,2,1,3,3,2,0];
@@ -29,14 +29,14 @@ perguntas.forEach( (pergunta,indice) =>{
     const respostas = pergunta.querySelectorAll('.opcao');
 //Computando as somas dos pesos.
 
-    EC += parseInt(respostas[respostasEC[indice]].value)
-    CA += parseInt(respostas[respostasCA[indice]].value)
-    OR += parseInt(respostas[respostasOR[indice]].value)
-    EA += parseInt(respostas[respostasEA[indice]].value)
+    resultadoEC += parseInt(respostas[respostasEC[indice]].value)
+    resultadoCA += parseInt(respostas[respostasCA[indice]].value)
+    resultadoOR += parseInt(respostas[respostasOR[indice]].value)
+    resultadoEA += parseInt(respostas[respostasEA[indice]].value)
 });
 //Definindo os quadrantes.
-let eixoY= (CA - EC);
-let eixoX= (EA - OR);
+let eixoY = (resultadoCA - resultadoEC);
+let eixoX = (resultadoEA - resultadoOR);
 //Tratando as informações.
 if(eixoX < 0 && eixoY < 0){ //convergente
     alert("tu és convergente")
@@ -52,5 +52,7 @@ alert("tu és assimilador")
 }
 
 });
-
-
+//ec = 32
+//ca = 30
+//or = 18
+//ea = 40
