@@ -5,35 +5,19 @@ body {
   color: #333;
   margin: 0;
   padding: 0;
-  background-image: url(/logos/wpp2.jpeg);
+  background-image: url(/logos/gearingBackground.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
 }
 
-/* Estilo para o botão de expandir */
-#expandir {
-  background: linear-gradient(80deg, rgba(100, 2, 223, 1) 9%, rgba(133, 26, 186, 1) 54%, rgba(0, 212, 255, 1) 100%);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-@media(min-width: 650px) {
-  #expandir {
-    padding: 0px;
-  }
-}
-
-/* Estilo para o cabeçalho */
+/* Estilo para o cabeçalho
 #cabecalho {
   height: 100px;
   background-color: #f2f2f2;
   border-bottom: 1px solid #ccc;
-}
+}*/
+
 
 /* Estilo para o título do formulário */
 h1,

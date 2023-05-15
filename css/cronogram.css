@@ -1,0 +1,17 @@
+
+table,td{
+ 
+    border-style: solid;
+}
+table{
+    border-width: 2px;
+    size: 20px;
+}
+td{
+    text-align: center;
+    border-width: 1px;
+    width: 5vw;
+}
+.dias{
+    text-size-adjust:  20px;
+}

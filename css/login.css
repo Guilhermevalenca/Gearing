@@ -48,7 +48,7 @@ height: 100vh;
   align-content: center;
   align-items: center;
   justify-content: center;
-  background-image: url(/logos/2.gif);
+  background-image: url(/logos/gearing.gif);
 }
 
 input[type="email"], input[type="password"] {

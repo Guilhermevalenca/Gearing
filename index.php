@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="/css/global.css">
 </head>
 <body>
-    <img src="./css/archive/logo.gif" class="logo">
+    <img src="./logos/gearingLogo.gif" class="logo">
     <h1 class="titulo">Gearing</h1>
     <div class="apresentacao">
         <ul>Bem Vindos!</ul>

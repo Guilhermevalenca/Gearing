@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" href="/css/cabecalho.css">
+    <link rel="stylesheet" href="/css/header.css">
 </head>
 <header class="cabecalho">
 <button onclick="window.location.href = '/src/menu.php' ">Menu</button>
