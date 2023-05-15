@@ -1,5 +1,5 @@
 let materiaExtra = document.getElementById("outrasMaterias");
-let labelInput = document.getElementById('gerarInputs');
+let labelInput = document.querySelector('.novosInput');
 
 let deleteInput = document.getElementById('apagarNovaMateria');
 
