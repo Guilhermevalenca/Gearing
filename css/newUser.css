@@ -5,7 +5,7 @@
     body {
       background: rgb(100,2,223);
       background: linear-gradient(80deg, rgba(100,2,223,1) 9%, rgba(133,26,186,1) 54%, rgba(0,212,255,1) 100%);
-      background-image: url("/logos/wpp2.jpeg");
+      background-image: url("/logos.jpeg");
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -31,7 +31,7 @@
         align-content: center;
         align-items: center;
         justify-content: center;
-        background-image: url(/logos/2.gif);
+        background-image: url(/logos/gearing.gif);
         background-repeat: no-repeat;
         background-size: cover;
         height: 100vh;

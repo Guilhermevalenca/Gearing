@@ -28,6 +28,7 @@ h2 {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+
 }
 
 /* Estilo para os campos de entrada no formulário */
@@ -72,11 +73,10 @@ td {
   padding: 10px;
   font-size: 25px;
   text-align: left;
-  border-bottom: 1px solid #ccc;
   background: -webkit-linear-gradient(90deg, rgba(188, 251, 255, 1) 47%, rgba(24, 237, 242, 1) 100%);
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: white;
 }
 
 /* Estilo para o botão de listar usuários */

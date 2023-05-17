@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script defer src="/script/cabecalho.js"></script>
-    <link rel="stylesheet" href="/css/topicos.css">
+    <link rel="stylesheet" href="/css/topics.css">
 </head>
 
 <body>
