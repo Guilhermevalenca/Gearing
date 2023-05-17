@@ -1,5 +1,5 @@
 <?php 
-    require("./verificacaoExistSession.php");
+    require("./verifyUserAuthentication.php");
     if($_SESSION['executeOne']){
         require("./session/session.php");
         $_SESSION['executeOne'] = false;
@@ -29,11 +29,11 @@
         <br>
         <button onclick="window.location.href = '/src/cronograma/visualizarCronogramas.php' " >Ver meus cronogramas</button>
         <br>
-        <button onclick="window.location.href = '/src/userCRUD/mostrarDados.php' ">Informações da conta</button>
+        <button onclick="window.location.href = '/src/user/showData.php' ">Informações da conta</button>
         <br>
         <button onclick="window.location.href = '/src/forum/paginaPrincipal.php' ">Acesse o forum</button>
         <br>
-        <button onclick="window.location.href = '/src/sair.php' ">Sair da conta</button>
+        <button onclick="window.location.href = '/src/toGoOut.php' ">Sair da conta</button>
     </section>
     <h1 class="listaUsuarios">Usuarios logados rescentemente:</h1>
     <table class="listaUsuarios">

@@ -1,5 +1,5 @@
 <?php 
-    require( '../verificacaoExistSession.php');
+    require("./verifyUserAuthentication.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/novoCronograma.css">
-    <script defer src="/script/cabecalho.js"></script>
+    <script defer src="/script/header.js"></script>
     <script src="/bibliotecas/sortable.js"></script>
 </head>
 <body>

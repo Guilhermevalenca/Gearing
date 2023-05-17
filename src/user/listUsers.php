@@ -1,17 +1,18 @@
 <?php 
-require("../verificacaoExistSession.php") ?>
+require("./verifyUserAuthentication.php"); 
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<script defer src="/script/cabecalho.js"></script>
+	<script defer src="/script/header.js"></script>
 </head>
 <body>
 	<div id="cabecalho"></div><br><br><br>
 	<h1>Gerenciando usuarios:</h1>
-	<?php $usuarios = fopen('usuarios.csv','r') ?>
+	<?php $usuarios = fopen('users.csv','r') ?>
 	<form action="/php/user/deleteMultipleUsers.php" method="POST">
 		<table>
 			<tr>
@@ -34,6 +35,6 @@ require("../verificacaoExistSession.php") ?>
 			<?php endwhile ?>
 		</table>
 	</form>
-	<script defer src="/script/userCRUD/selecionarTodosUsuarios.js"></script>
+	<script defer src="/script/user/selectAllUsers.js"></script>
 </body>
 </html>

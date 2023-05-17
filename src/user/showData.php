@@ -1,5 +1,5 @@
 <?php 
-    require('../verificacaoExistSession.php');
+    require("./verifyUserAuthentication.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script defer src="/script/cabecalho.js"></script>
+    <script defer src="/script/header.js"></script>
     <link rel="stylesheet" href="/css/showData.css">
     <link rel="stylesheet" href="/css/global.css">
 </head>
@@ -21,14 +21,14 @@
     <h1>Aqui estão suas informações:</h1>
     <table>
     <?php
-        $fp = fopen('usuarios.csv','r');
+        $fp = fopen('users.csv','r');
         while( ($linha = fgetcsv($fp)) !== false ): ?>
         <?php if($linha[0] == $user): ?>
             <tr>
                 <th>Username:</th>
                 <td><?= $linha[0] ?></td>
                 <td>
-                    <form id="formularioUser" action="/php/userCRUD/editarDadosUser.php" method="POST">
+                    <form id="formularioUser" action="/php/user/editUserData.php" method="POST">
                     <input id="editarUser" type="text" name='userNovo' placeholder="Escreva aqui para editar" required>
                     <input type="submit" value="editar">
                 </form>
@@ -38,7 +38,7 @@
                 <th>Seu nome:</th>
                 <td><?= $linha[1] ?></td>
                 <td>
-                    <form action="/php/userCRUD/editarDadosUser.php" method="POST">
+                    <form action="/php/user/editUserData.php" method="POST">
                     <input type="hidden" name="nomeAtual" value="<?= $linha[1] ?>">
                     <input type="text" name='nomeNovo' placeholder="Escreva aqui para editar" required>
                     <input type="submit" value="editar">
@@ -49,7 +49,7 @@
                 <th>Seu email:</th>
                 <td><?= $linha[2] ?></td>
                 <td>
-                    <form id="formularioEmail" action="/php/userCRUD/editarDadosUser.php" method="POST">
+                    <form id="formularioEmail" action="/php/user/editUserData.php" method="POST">
                     <input type="hidden" name="emailAtual" value="<?= $linha[2] ?>">
                     <input id="editarEmail" type="email" name='emailNovo' placeholder="Escreva aqui para editar" required>
                     <input type="submit" value="editar">
@@ -59,9 +59,9 @@
         <?php endif ?>
         <?php endwhile ?>
     </table>
-    <script defer src="/script/userCRUD/mostrarDados.js"></script>
+    <script defer src="/script/user/showData.js"></script>
     <h2>Deseja apaga sua conta? 
-        <button id="buttonApagaConta" onclick="window.location.href='/php/userCRUD/deletarUser.php?user=<?= $user ?>'">Apagar sua conta</button>
+        <button id="buttonApagaConta" onclick="window.location.href='/php/user/deleteUser.php?user=<?= $user ?>'">Apagar sua conta</button>
     </h2>
 </div>
 </body>

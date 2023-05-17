@@ -1,5 +1,5 @@
 <?php
-require('../verificacaoExistSession.php');
+require("./verifyUserAuthentication.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -10,7 +10,7 @@ require('../verificacaoExistSession.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $_SESSION['username'] ?></title>
     <link rel="stylesheet" href="/css/forum.css">
-    <script defer src="/script/cabecalho.js"></script>
+    <script defer src="/script/header.js"></script>
 </head>
 
 <body>
@@ -60,7 +60,7 @@ require('../verificacaoExistSession.php');
 
         </table>
         <h2>Veja aqui topicos gerenciados pelos criadores/administradores:</h2>
-        <button onclick="window.location.href = '../userCRUD/listarUsuarios.php' ">Listar usuarios</button>
+        <button onclick="window.location.href = '/src/user/listUsers.php' ">Listar usuarios</button>
         <button id="voltar" onclick="window.location.href = '/src/menu.php' ">Voltar</button>
     </section>
 </body>

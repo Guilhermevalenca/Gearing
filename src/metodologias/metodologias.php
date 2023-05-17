@@ -1,5 +1,5 @@
 <?php
-    require("../verificacaoExistSession.php") 
+   require("./verifyUserAuthentication.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -13,7 +13,7 @@
     <script>
         
     </script>
-    <script defer src="/script/cabecalho.js"></script>
+    <script defer src="/script/header.js"></script>
     <link rel="stylesheet" href="/css/methodology.css">
     
 
