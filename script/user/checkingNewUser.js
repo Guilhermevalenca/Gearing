@@ -53,7 +53,7 @@ function verificaNumeros(inputStr) {
             const dados = new FormData();
             dados.append('email',email.value);
             dados.append('user',user.value);
-            test.open('POST','/php/userCRUD/verificarEmailUser.php', true);
+            test.open('POST','/php/user/checkExistenceRegister.php', true);
             test.send(dados);
             }
         

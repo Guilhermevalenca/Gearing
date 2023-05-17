@@ -23,7 +23,6 @@ form.addEventListener('submit', (event) => {
     const dados = new FormData();
     dados.append('login',login.value);
     dados.append('senha',senha.value);
-    dados.append('script',"vimDoScript");
-    teste.open('POST','/php/userCRUD/verificarExistenciaUser.php',true);
+    teste.open('POST','/php/user/checkingUserExists.php',true);
     teste.send(dados);
 });

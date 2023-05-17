@@ -11,7 +11,7 @@
 <body>
     <section class="sessao_principal"> 
         <div class="formulario_sessao_principal">
-            <form id="formulario" method="POST" action="/php/userCRUD/adicionarUser.php">
+            <form id="formulario" method="POST" action="/php/user/addUser.php">
                 <label class="test">usuario:
                     <input type="text" id="user" name="user" placeholder="Digite aqui seu nome de usuario" required>
                 </label><br>

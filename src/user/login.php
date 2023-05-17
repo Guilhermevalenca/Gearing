@@ -14,7 +14,7 @@
     
     <section class="sessao_principal">
         <div class="formulario_sessao_principal">
-            <form id="form" method="POST" action="/php/userCRUD/verificarExistenciaUser.php">
+            <form id="form" method="POST" action="/php/user/authenticateUser.php">
                 <input id="login" type="email" name="login" placeholder="Digite seu email" required><br>
                 <input id="senha" type="password" name="senha" placeholder="Digite sua senha" required><br>
                 <button type="submit">Entrar</button>
