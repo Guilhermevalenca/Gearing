@@ -1,9 +1,9 @@
-@import url('https://fonts.cdnfonts.com/css/source-sans-pro');
+@import url('https://fonts.cdnfonts.com/css/share-tech-mono');
 .superCaixa{
     color: white;
     border-style: solid;
     background: linear-gradient(80deg, rgba(100,2,223,1) 9%, rgba(133,26,186,1) 54%, rgba(0,212,255,1) 100%);
-    border-color: transparent;
+    border: none;
     margin: 0px;
     padding: 0px;
     width: 35em;
@@ -11,5 +11,14 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Share Tech Mono', sans-serif;
 }
+h1,h2{
+    font-family: 'Share Tech Mono', sans-serif; 
+    font-size: 30px;
+    color: aqua;
+    background: -webkit-linear-gradient(90deg, rgba(188,251,255,1) 47%, rgba(24,237,242,1) 100%);
+    background-clip:text;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:white;
+  }
