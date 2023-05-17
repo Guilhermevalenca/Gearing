@@ -22,7 +22,7 @@
             </form>
         </div>
     </section>
-    <script defer src="/script/userCRUD/login.js"></script>
+    <script defer src="/script/user/login.js"></script>
 
 </body>
 
