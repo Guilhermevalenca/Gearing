@@ -18,28 +18,17 @@
     <link rel="stylesheet" href="/css/global.css">
 </head>
 <body>
-    <img src="./logos/gearingLogo.gif" class="logo">
-    <h1 class="titulo">Gearing</h1>
-    <div class="apresentacao">
-        <ul>Bem Vindos!</ul>
-        <ul class="descricao">Olá, sou o Gearing! Estou aqui para te ajudar a encontrar um método de estudo que mais se aplique a você; vou te apresentar algumas formas de começar e/ou complementar seus estudos, sinta-se a vontade para compartilhar as sugestões de metodologias de aprendizagem que você conhece em nosso fórum, e assim, ajudar outros estudantes a montar seu próprio cronograma de estudos.
-        </ul>
-    
-    </div>
-    <div class="relacaoCRUD">
-        <button class="criarRealizarLogin" onclick="window.location.href = './src/userCRUD/login.php' ">Login</button>
-        <button class="criarRealizarLogin" onclick="window.location.href = './src/userCRUD/criandoNovoUser.php' ">Criar Conta</button>
-    </div>
-        
+<img src="./logos/gearingLogo.gif" class="logo">
+<h1 class="titulo">Gearing</h1>
+<div class="apresentacao">
+    <ul>Bem Vindos!</ul>
+    <ul class="descricao">Olá, sou o Gearing! Estou aqui para te ajudar a encontrar um método de estudo que mais se aplique a você; vou te apresentar algumas formas de começar e/ou complementar seus estudos, sinta-se a vontade para compartilhar as sugestões de metodologias de aprendizagem que você conhece em nosso fórum, e assim, ajudar outros estudantes a montar seu próprio cronograma de estudos.
+    </ul>
+
+</div>
+<div class="relacaoCRUD">
+    <button class="criarRealizarLogin" onclick="window.location.href = './src/user/login.php' ">Login</button>
+    <button class="criarRealizarLogin" onclick="window.location.href = './src/user/createUser.php' ">Criar Conta</button>
+</div> 
 </body>
 </html>
-<!-- 
-    texto a ser ignorado:
-
-    async function carregarPage(){
-		const response = await fetch('/API/index.php');
-    	const content = await response.text();
-    	document.querySelector('#index').innerHTML = content;
-	}
-
--->

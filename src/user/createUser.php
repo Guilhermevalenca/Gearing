@@ -34,6 +34,6 @@
         </div>
         </form>
     </section>
-    <script defer src='/script/userCRUD/criandoNovoUser.js'></script>
+    <script defer src='/script/user/checkingNewUser.js'></script>
 </body>
 </html>
