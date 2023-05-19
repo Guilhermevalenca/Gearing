@@ -7,6 +7,7 @@
     <title>cronograma</title>
 
     <link rel="stylesheet" href="/css/criarCronograma.css">
+    <link rel="stylesheet" href="/css/global.css">
     <script defer src="/script/cabecalho.js"></script>
 
 </head>

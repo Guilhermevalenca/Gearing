@@ -27,11 +27,7 @@ buttons.forEach( (button,indice) => {
         .then(data => {
             montarTabela.innerHTML = data;
             mostrarMaterias();
-            const editarConograma = document.createElement('button');
-            editarConograma.onclick = () => {
-                window.location.href = `./editCronogram.php?id=${indice}` 
-            }
-            montarTabela.appendChild(editarConograma);
+        
         })
     })
 })

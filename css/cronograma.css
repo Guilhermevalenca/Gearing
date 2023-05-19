@@ -4,6 +4,7 @@ table,td{
     border-style: solid;
 }
 table{
+    color:aliceblue;
     border-width: 2px;
     size: 20px;
 }

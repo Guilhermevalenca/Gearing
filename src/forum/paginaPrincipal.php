@@ -10,6 +10,7 @@ require('../verificacaoExistSession.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $_SESSION['username'] ?></title>
     <link rel="stylesheet" href="/css/forum.css">
+    <link rel="stylesheet" href="/css/global.css">
     <script defer src="/script/cabecalho.js"></script>
 </head>
 
