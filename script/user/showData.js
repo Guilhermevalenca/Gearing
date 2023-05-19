@@ -18,7 +18,7 @@ function executeTeste(editar,indice){
         const dados = new FormData();
         dados.append('edicao',editar.value);
         dados.append('indice',indice);
-        validandoRecurso.open('POST','/php/userCRUD/verificarEdicaoDados.php', true);
+        validandoRecurso.open('POST','/php/user/checkEditability.php', true);
         validandoRecurso.send(dados);
 }
 

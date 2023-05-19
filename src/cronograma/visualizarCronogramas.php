@@ -1,5 +1,5 @@
 <?php 
-    require("./verifyUserAuthentication.php");
+    require("../verifyUserAuthentication.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

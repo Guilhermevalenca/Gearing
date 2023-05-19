@@ -1,5 +1,5 @@
 <?php
-   require("./verifyUserAuthentication.php");
+   require("../verifyUserAuthentication.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -21,7 +21,7 @@
 <body>
     <div id="cabecalho"></div><br><br><br>
     <h1> Questionário de Metodologias de Aprendizagem </h1>
-    <form id="form" method="GET" action="./suaMetodologia.php">
+    <form id="form" method="GET" action="./yourMethodology.php">
 
         <div class="pergunta">
 
@@ -289,7 +289,7 @@
         </div><br>
             <button>Calcular resultado</button>
             </form>
-            <script defer src="/script/testeMetodologia/testeMetodologias.js"></script>
+            <script defer src="/script/testMethodology/testMethodology.js"></script>
 
 </body>
 </html>

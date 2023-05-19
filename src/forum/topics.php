@@ -17,7 +17,7 @@
     $topico = $_GET['topico'];
     ?>
     <h1>Topico: <?= $topico ?></h1>
-    <iframe src="./vizualizarInformacaoTopico.php?user=<?= $user ?>" frameborder="0"></iframe>
+    <iframe src="./viewTopicInformation.php?user=<?= $user ?>" frameborder="0"></iframe>
     <form action="/php/forum/adicionarMensagemTopico.php" method="POST">
         <input type="text" placeholder="Escreva sua mensagem" name="mensagem">
         <input type="hidden" name='topico' value="<?= $topico ?>">

@@ -11,7 +11,7 @@
 <body>
     <table>
     <?php 
-        $caminhoDoArquivo = "./vizualizarTopicos/" . $_GET['user'] . ".csv";
+        $caminhoDoArquivo = "./viewTopic/" . $_GET['user'] . ".csv";
         $fp = fopen($caminhoDoArquivo,'r');
         while( ($linha = fgetcsv($fp)) !== false):
     ?>

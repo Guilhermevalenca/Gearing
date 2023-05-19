@@ -1,5 +1,5 @@
 <?php
-require("./verifyUserAuthentication.php");
+require("../verifyUserAuthentication.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -26,13 +26,13 @@ require("./verifyUserAuthentication.php");
         </form>
         <script defer src="/script/forum/verificacaoUserCreateTopico.js"></script>
         <table>
-            <?php if (file_exists("./vizualizarTopicos/" . $_SESSION['username'] . ".csv")) : ?>
-                <?php $fp = fopen("topicos.csv", 'r') ?>
+            <?php if (file_exists("./viewTopic/" . $_SESSION['username'] . ".csv")) : ?>
+                <?php $fp = fopen("topics.csv", 'r') ?>
                 <tr>
                     <th>Seu topico:</th>
                     <?php while (($linha = fgetcsv($fp)) !== false) : ?>
                         <?php if ($linha[0] == $_SESSION['username']) : ?>
-                            <td><button onclick="window.location.href='./topicos.php?user=<?= $linha[0] ?>&topico=<?= $linha[1] ?>' "><?= $linha[1] ?></button></td>
+                            <td><button onclick="window.location.href='./topics.php?user=<?= $linha[0] ?>&topico=<?= $linha[1] ?>' "><?= $linha[1] ?></button></td>
                         <?php endif ?>
                     <?php endwhile ?>
                     <td>
@@ -44,14 +44,14 @@ require("./verifyUserAuthentication.php");
         <h1>Aqui estão os topicos criados por outros usuarios:</h1>
         <table>
             <?php
-            $fp = fopen("topicos.csv", 'r');
+            $fp = fopen("topics.csv", 'r');
             while (($linha = fgetcsv($fp)) !== false) :
             ?>
                 <?php if ($linha[0] != $_SESSION['username']) : ?>
                     <tr>
                         <th>Topico criado por <?= $linha[0] ?>:</th>
                         <td>
-                            <button class="topico-botao" onclick="window.location.href = './topicos.php?user=<?= $linha[0] ?>&topico=<?= $linha[1] ?>' "><?= $linha[1] ?></button>
+                            <button class="topico-botao" onclick="window.location.href = './topics.php?user=<?= $linha[0] ?>&topico=<?= $linha[1] ?>' "><?= $linha[1] ?></button>
                         </td>
                     </tr>
                 <?php endif ?>

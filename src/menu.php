@@ -23,7 +23,7 @@
     <h1 class="Titulo">Seja bem vindo a nossa plataforma <?= $user ?>!</h1>
     <section class="sessao_principal">
     <div class="botao_sessao_principal">
-        <button onclick="window.location.href = '/src/metodologias/metodologias.php' ">Questionário de Metodologias</button>
+        <button onclick="window.location.href = '/src/methodology/methodology.php' ">Questionário de Metodologias</button>
         <br>
         <button onclick="window.location.href = '/src/cronograma/criarCronograma.php'">Crie aqui seu cronograma</button>
         <br>
@@ -31,7 +31,7 @@
         <br>
         <button onclick="window.location.href = '/src/user/showData.php' ">Informações da conta</button>
         <br>
-        <button onclick="window.location.href = '/src/forum/paginaPrincipal.php' ">Acesse o forum</button>
+        <button onclick="window.location.href = '/src/forum/mainPage.php' ">Acesse o forum</button>
         <br>
         <button onclick="window.location.href = '/src/toGoOut.php' ">Sair da conta</button>
     </section>

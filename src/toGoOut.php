@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    require('./session/apagarSession.php');
+    require('./session/deleteSession.php');
     session_destroy();
     header('location: /');
 ?>
