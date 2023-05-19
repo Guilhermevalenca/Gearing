@@ -1,9 +1,27 @@
 formulario = document.getElementById(form);
 const perguntas = document.querySelectorAll('.pergunta');
-perguntas.forEach( (pergunta,indice) =>{
+perguntas.forEach( (pergunta) =>{
 const respostas = pergunta.querySelectorAll('.opcao');
-if(respostas[0].value == respostas[1].value || respostas[0].value == respostas[2].value || respostas[0].value == respostas[3].value){
-}
-else if(respostas[1].value == respostas[2].value || respostas[1].value == respostas[3].value){
-}
+    function inputRangeCor(indiceRespostaPrimaria){
+        respostas[indiceRespostaPrimaria].addEventListener('click', (event) => {
+            event.preventDefault();
+            respostas.forEach( (resposta, indiceOutrasRespostas) => {
+                if(indiceRespostaPrimaria != indiceOutrasRespostas){
+                    if(resposta.value == respostas[indiceRespostaPrimaria].value){
+                        resposta.style="background: red;";
+                        respostas[indiceRespostaPrimaria].style="background: red;";
+                    }else{
+                        resposta.style="";
+                        respostas[indiceRespostaPrimaria].style="";
+                    }
+                }
+            })
+        });
+    }
+    respostas.forEach( (resposta, indice) => {
+        resposta.addEventListener('click', (event) => {
+            event.preventDefault();
+            inputRangeCor(indice);
+        })
+    })
 });

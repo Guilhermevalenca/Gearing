@@ -15,6 +15,14 @@
     </script>
     <script defer src="/script/header.js"></script>
     <link rel="stylesheet" href="/css/methodology.css">
+    <style>
+        .opcao {
+        -webkit-appearance: none;
+        background: #d3d3d3;
+        outline: none;
+        border-radius: 9px;   
+        }
+    </style>
     
 
 </head>
@@ -290,6 +298,7 @@
             <button>Calcular resultado</button>
             </form>
             <script defer src="/script/testMethodology/testMethodology.js"></script>
+            <script defer src="/script/testMethodology/testNoValueRepeat.js"></script>
 
 </body>
 </html>
