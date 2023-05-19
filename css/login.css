@@ -96,3 +96,6 @@ input[type="password"]::placeholder {
   font-style: italic;
   text-align: center;
 }
+label{
+  color: aliceblue;
+}
