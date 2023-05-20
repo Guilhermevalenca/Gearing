@@ -1,7 +1,10 @@
 <template>
   <TheHeader 
-    v-if="showHeader"
+    v-show="showHeader"
   />
+  <ModelConcept v-if="false"/>
+  <TestEvent v-if="false" />
+  <ComputedProperties />
   <div 
     v-if="accessLevel === 'admin'"
   >
@@ -18,16 +21,22 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import TheHeader from './components/TheHeader.vue'
+import ModelConcept from './components/ModelConcept.vue'
+import TestEvent from './components/TestEvent.vue'
+import ComputedProperties from './components/ComputedProperties.vue'
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    TheHeader
-  },
+    TheHeader,
+    ModelConcept,
+    TestEvent,
+    ComputedProperties
+},
   data() {
     return{
-      showHeader: true,
+      showHeader: false,
       accessLevel: 'admin'
     }
   }

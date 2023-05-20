@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Resposta HTML</h1>
+    <h1>Resposta vinda do server:</h1>
     <div>
       {{ respostaHTML }}
     </div>
