@@ -1,34 +1,26 @@
 <template>
-  <div>
-    <BaseAlert v-if="showAlert" variant="success" @close="onClose()">
-      Seu formulario foi enviado com sucesso
-    </BaseAlert>
-  </div>
+  <img alt="Vue logo" src="./assets/logo.png">
+  <HelloWorld msg="Welcome to Your Vue.js App"/>
 </template>
-<script>
-import BaseAlert from './components/testArea/BaseAlert.vue';
 
+<script>
+import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: { BaseAlert },
-  data() {
-    return{
-      showAlert: true
-    }
-  },
-  beforeCreate() {},
-  created() {},
-  beforeMount() {},
-  mounted() {},
-  watch: {},
-  computed: {},
-  methods: {
-    onClose() {
-      this.showAlert = false
-      console.log('on close')
-    }
+  components: {
+    HelloWorld
   }
 }
 </script>
 
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
