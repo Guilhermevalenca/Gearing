@@ -1,0 +1,28 @@
+Anotando nomes:
+
+export default {
+  name: 'App',
+  components: {},
+  data() {
+    return{
+      
+    }
+  },
+  beforeCreate() {},
+  created() {},
+  beforeMount() {},
+  mounted() {},
+  watch: {},
+  computed: {},
+  methods: {},
+  props: {}
+}
+
+para css's que serão aplicados a um unico component utiliza o scoped ao lado da tag style. dessa forma:
+<style scoped > </style
+
+//hieraquia:
+  pai para filho == props
+  filho para pai == emit - atraves de um event
+props: diretorio pai define uma variante que será tratada no diretorio filho
+emit: diretorio filho envia um event para ser tratado no diretorio pai
