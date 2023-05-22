@@ -1,36 +1,32 @@
 <template>
-  <img src="./assets/logo.png">
-  <TheHeader 
-    v-show="showHeader"
-  />
-  <ModelConcept v-if="false"/>
-  <TestEvent v-if="false" />
-  <ComputedProperties v-if="false" />
-  <TestWatch />
-  <HelloWorld v-if="false" />
+  <div>
+    <BaseAlert v-if="showAlert" variant="success" @close="onClose()">
+      Seu formulario foi enviado com sucesso
+    </BaseAlert>
+  </div>
 </template>
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import TheHeader from './components/TheHeader.vue'
-import ModelConcept from './components/ModelConcept.vue'
-import TestEvent from './components/TestEvent.vue'
-import ComputedProperties from './components/ComputedProperties.vue'
-import TestWatch from './components/TestWatch.vue'
+import BaseAlert from './components/testArea/BaseAlert.vue';
+
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld,
-    TheHeader,
-    ModelConcept,
-    TestEvent,
-    ComputedProperties,
-    TestWatch
-},
+  components: { BaseAlert },
   data() {
     return{
-      showHeader: false,
-      accessLevel: 'admin'
+      showAlert: true
+    }
+  },
+  beforeCreate() {},
+  created() {},
+  beforeMount() {},
+  mounted() {},
+  watch: {},
+  computed: {},
+  methods: {
+    onClose() {
+      this.showAlert = false
+      console.log('on close')
     }
   }
 }
