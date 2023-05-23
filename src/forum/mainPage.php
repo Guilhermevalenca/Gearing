@@ -20,11 +20,11 @@ require("../verifyUserAuthentication.php");
         criar topicos:
     -->
         <h2 class="topico-titutlo">Crie seu proprio topico:</h2>
-        <form id="form" action="/php/forum/addNovoTopico.php" method="POST">
+        <form id="form" action="/php/forum/addNewTopic.php" method="POST">
             <input type="text" placeholder="Qual assunto você deseja aborda?" name="topico">
             <input type="submit">
         </form>
-        <script defer src="/script/forum/verificacaoUserCreateTopico.js"></script>
+        <script defer src="/script/forum/checkingUserTopicExists.js"></script>
         <table>
             <?php if (file_exists("./viewTopic/" . $_SESSION['username'] . ".csv")) : ?>
                 <?php $fp = fopen("topics.csv", 'r') ?>
@@ -36,7 +36,7 @@ require("../verifyUserAuthentication.php");
                         <?php endif ?>
                     <?php endwhile ?>
                     <td>
-                        <button onclick="window.location.href='/php/forum/apagarTopico.php' ">Deletar Topico</button>
+                        <button onclick="window.location.href='/php/forum/deleteTopic.php' ">Deletar Topico</button>
                     </td>
                 </tr>
             <?php endif ?>

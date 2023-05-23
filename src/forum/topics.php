@@ -24,7 +24,7 @@
         <input type="hidden" name="arquivo" value="<?= $user ?>">
         <input type="submit">
     </form>
-    <button id="voltar" onclick="window.location.href = '/src/forum/paginaPrincipal.php' ">Voltar</button>
+    <button id="voltar" onclick="window.location.href = '/src/forum/mainPage.php' ">Voltar</button>
 </body>
 
 </html>

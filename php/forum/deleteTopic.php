@@ -13,5 +13,5 @@
 	fclose($fp);
 	fclose($backup);
 	rename("backup.csv",topicos);
-	header("location: /src/forum/paginaPrincipal.php");
+	header("location: /src/forum/mainPage.php");
 ?>

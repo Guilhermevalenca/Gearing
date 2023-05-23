@@ -8,5 +8,5 @@
     $fp = fopen(topicos,"a");
     fputcsv($fp,array($_SESSION['username'],$_POST['topico']));
     fclose($fp);
-    header("location: /src/forum/paginaPrincipal.php");
+    header("location: /src/forum/mainPage.php");
     ?>
