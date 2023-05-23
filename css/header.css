@@ -5,6 +5,10 @@
   border: none;
 }
 
+body {
+  margin: 0;
+}
+
 #cabecalho {
   display: flex;
   justify-content: center;
@@ -19,6 +23,8 @@
   box-sizing: border-box;
   background-color: transparent;
   border: none;
+  background-color: rgb(0, 0, 0);
+  margin-bottom: 40px;
 }
 
 .cabecalho {

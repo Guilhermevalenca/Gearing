@@ -7,5 +7,5 @@
     fclose($fp);
     $user = $_POST['arquivo'];
     $topico = $_POST['topico'];
-    header("location: /src/forum/topicos.php?user=$user&topico=$topico");
+    header("location: /src/forum/topics.php?user=$user&topico=$topico");
 ?>

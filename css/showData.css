@@ -1,4 +1,9 @@
 @import url("https://fonts.cdnfonts.com/css/share-tech-mono");
+
+body {
+  margin: 0;
+}
+
 .superCaixa {
   color: white;
   border-style: solid;

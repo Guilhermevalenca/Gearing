@@ -3,12 +3,12 @@
 body {
   font-family: "Share Tech Mono", sans-serif;
   color: #333;
-  margin: 0;
   padding: 0;
   background-image: url(/logos/gearingBackground.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  margin: 0;
 }
 
 /* Estilo para o cabeçalho
@@ -22,7 +22,7 @@ body {
 h1,
 h2 {
   font-size: 24px;
-  margin-top: 20px;
+  margin-top: 50px;
   background: -webkit-linear-gradient(
     90deg,
     rgba(188, 251, 255, 1) 47%,

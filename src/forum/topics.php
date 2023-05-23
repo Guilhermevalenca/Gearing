@@ -18,7 +18,7 @@
     ?>
     <h1>Topico: <?= $topico ?></h1>
     <iframe src="./viewTopicInformation.php?user=<?= $user ?>" frameborder="0"></iframe>
-    <form action="/php/forum/adicionarMensagemTopico.php" method="POST">
+    <form action="/php/forum/addMessageTopic.php" method="POST">
         <input type="text" placeholder="Escreva sua mensagem" name="mensagem">
         <input type="hidden" name='topico' value="<?= $topico ?>">
         <input type="hidden" name="arquivo" value="<?= $user ?>">

@@ -1,16 +1,10 @@
 * {
   box-sizing: border-box;
-} /*
-    body {
-      background: rgb(100,2,223);
-      background: linear-gradient(80deg, rgba(100,2,223,1) 9%, rgba(133,26,186,1) 54%, rgba(0,212,255,1) 100%);
-      background-image: url("/logos.jpeg");
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 100vh;
-    }
-    */
+}
+body {
+  margin: 0;
+}
+
 .sessao_principal {
   display: flex;
   flex-direction: row;
