@@ -1,7 +1,7 @@
 <?php 
-	define("usuarios","../../src/userCRUD/usuarios.csv");
-	define("cronograma","../../src/cronograma/cronograma.csv");
-	define("topicos","../../src/forum/topicos.csv");
-	define("geraTopico","../../src/forum/vizualizarTopicos/");
+	define("usuarios","../../src/user/users.csv");
+	define("cronogram","../../src/cronogram/cronogram.csv");
+	define("topicos","../../src/forum/topics.csv");
+	define("geraTopico","../../src/forum/viewTopic/");
 	define("session",'../../src/session/session.csv');
 ?>
