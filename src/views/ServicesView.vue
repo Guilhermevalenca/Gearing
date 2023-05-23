@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="formulario">
         login:
         <input type="text" v-model="login"><br>
         senha:
@@ -17,7 +17,6 @@ import axios from 'axios';
 export default{
     data() {
         return {
-            resposta: '',
             login: '',
             senha: ''
         }
@@ -25,12 +24,16 @@ export default{
     methods: {
         req() {
             axios.post('http://localhost:8000', {
-                login: `${this.login}`,
-                senha:  `${this.senha}`
+                login: this.login,
+                password:  this.senha
             })
             .then(response => {
-                this.resposta = response.data;
-                console.log(this.resposta)
+                let dataJson = response.data;
+                console.log(dataJson);
+                if(dataJson.usersData){
+                    localStorage.setItem('auth-users',dataJson.usersData);
+                    console.log(dataJson.usersData);
+                }
             })
             .catch(error => {
                 console.error(error);

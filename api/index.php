@@ -1,23 +1,27 @@
-<?php
-// Defina o cabeçalho para indicar que a resposta será um JSON
-require('./accept.php');
-header('Content-Type: application/json');
+<?php 
+    header('Content-Type: application/json');
+    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        $json = file_get_contents('php://input');
+        $data = json_decode($json,true);
 
-$data = fopen('data.csv','r');
-while( ($linha = fgetcsv($data)) !== false){
-    if($linha[0] == $_POST["login"] && $linha[1] == $_POST["senha"]){
-        $objeto = [
-            'name' => 'Guilherme Valença'
-        ];
+        require('generateToken.php');
+
+        $response = [];
+        if(!empty( $data['login'] ) && !empty( $data['password'] ) ){
+            $fp = fopen('data.csv','r');
+            if($fp){
+                while( ($row = fgetcsv($fp)) !== false){
+                    if($row[0] == $data['login'] && $row[1] == $data['password']){
+                        $response['usersData'] = generateToken([
+                            'nome' => $row[0],
+                            'senha' => $row[1]
+                        ]);
+                        break;
+                    }
+                }
+            }
+            fclose($fp);
+            echo json_encode($response);
+        }
     }
-}
-if(!isset($objeto)){
-    $objeto = [
-        'name' => "falha"
-    ];
-}
-// Converte o objeto em JSON
-$json = json_encode($objeto);
-
-// Retorna o JSON como resposta
-echo $json;
+?>
