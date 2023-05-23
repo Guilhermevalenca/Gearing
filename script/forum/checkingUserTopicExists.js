@@ -12,6 +12,6 @@ form.addEventListener('submit', (event) => {
 			}
 		}
 	}
-	verificar.open('GET','/php/forum/verificarExistenciaTopico.php',true);
+	verificar.open('GET','/php/forum/checkIfTopicExists.php',true);
 	verificar.send();
 })
