@@ -9,18 +9,34 @@ require("../verifyUserAuthentication.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/css/novoCronograma.css">
+    <link rel="stylesheet" href="/css/newCronogram.css">
     <script defer src="/script/header.js"></script>
     <script src="/bibliotecas/sortable.js"></script>
 </head>
 
 <body>
     <div id="cabecalho"></div><br><br><br>
-    <h1>Termine de organizar seu cronograma:</h1>
-    <h2>Aqui estão suas materias:</h2>
-    <div id="origemMateria">
-        <?php
-        foreach ($_GET['materia'] as $materia) :
+<h1>Termine de organizar seu cronograma:</h1>
+<h2>Aqui estão suas materias:</h2>
+<div id="origemMateria">
+    <?php 
+        foreach($_GET['materia'] as $materia):
+    ?>
+        <label class="materias"> 
+        <?= $materia ?>
+        <input type="hidden" name="materia[]" value="<?= $materia ?>">
+        <input class="diaSemana" type="hidden" name="diaSemana[]">
+        <input class="horario" type="hidden" name="horario[]">    
+        </label>
+    <?php endforeach ?>
+</div>
+<h2>Adicione suas materias a tabela</h2>
+<form id="form" action="addCronogram.php" method="POST" >
+<table id="table">
+    <thead>
+        <tr>
+        <?php 
+            foreach($_GET['turnos'] as $turnos):
         ?>
             <label class="materias">
                 <?= $materia ?>

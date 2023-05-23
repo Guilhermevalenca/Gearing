@@ -24,18 +24,18 @@ if ($_SESSION['executeOne']) {
     ?>
     <h1 class="Titulo">Seja bem vindo a nossa plataforma <?= $user ?>!</h1>
     <section class="sessao_principal">
-        <div class="botao_sessao_principal">
-            <button onclick="window.location.href = '/src/methodology/methodology.php' ">Questionário de Metodologias</button>
-            <br>
-            <button onclick="window.location.href = '/src/cronograma/criarCronograma.php'">Crie aqui seu cronograma</button>
-            <br>
-            <button onclick="window.location.href = '/src/cronograma/visualizarCronogramas.php' ">Ver meus cronogramas</button>
-            <br>
-            <button onclick="window.location.href = '/src/user/showData.php' ">Informações da conta</button>
-            <br>
-            <button onclick="window.location.href = '/src/forum/mainPage.php' ">Acesse o forum</button>
-            <br>
-            <button onclick="window.location.href = '/src/toGoOut.php' ">Sair da conta</button>
+    <div class="botao_sessao_principal">
+        <button onclick="window.location.href = '/src/methodology/methodology.php' ">Questionário de Metodologias</button>
+        <br>
+        <button onclick="window.location.href = '/src/cronogram/createCronogram.php'">Crie aqui seu cronograma</button>
+        <br>
+        <button onclick="window.location.href = '/src/cronogram/viewCronogram.php' " >Ver meus cronogramas</button>
+        <br>
+        <button onclick="window.location.href = '/src/user/showData.php' ">Informações da conta</button>
+        <br>
+        <button onclick="window.location.href = '/src/forum/mainPage.php' ">Acesse o forum</button>
+        <br>
+        <button onclick="window.location.href = '/src/toGoOut.php' ">Sair da conta</button>
     </section>
     <h1 class="listaUsuarios">Usuarios logados rescentemente:</h1>
     <table class="listaUsuarios">
