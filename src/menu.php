@@ -1,13 +1,14 @@
-<?php 
-    require("./verifyUserAuthentication.php");
-    if($_SESSION['executeOne']){
-        require("./session/session.php");
-        $_SESSION['executeOne'] = false;
-    }
-    
+<?php
+require("./verifyUserAuthentication.php");
+if ($_SESSION['executeOne']) {
+    require("./session/session.php");
+    $_SESSION['executeOne'] = false;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,9 +17,10 @@
     <link rel="stylesheet" href="/css/menu.css">
     <link rel="stylesheet" href="/css/global.css">
 </head>
+
 <body>
     <?php
-        $user = $_SESSION['username'];
+    $user = $_SESSION['username'];
     ?>
     <h1 class="Titulo">Seja bem vindo a nossa plataforma <?= $user ?>!</h1>
     <section class="sessao_principal">
@@ -37,21 +39,22 @@
     </section>
     <h1 class="listaUsuarios">Usuarios logados rescentemente:</h1>
     <table class="listaUsuarios">
-    <?php 
-        $fp = fopen('./session/session.csv','r');
-        while( ($linha = fgetcsv($fp)) !== false):
-    ?>
-    <tr>
-        <th>Username:</th>
-        <th>Data:</th>
-        <th>Hora:</th>
-    </tr>
-    <tr>
-        <td><?= $linha[0] ?></td>
-        <td><?= $linha[1] ?></td>
-        <td><?= $linha[2] ?></td>
-    </tr>
-    <?php endwhile ?>
+        <?php
+        $fp = fopen('./session/session.csv', 'r');
+        while (($linha = fgetcsv($fp)) !== false) :
+        ?>
+            <tr>
+                <th>Username:</th>
+                <th>Data:</th>
+                <th>Hora:</th>
+            </tr>
+            <tr>
+                <td><?= $linha[0] ?></td>
+                <td><?= $linha[1] ?></td>
+                <td><?= $linha[2] ?></td>
+            </tr>
+        <?php endwhile ?>
     </table>
 </body>
+
 </html>

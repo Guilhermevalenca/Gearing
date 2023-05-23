@@ -1,8 +1,9 @@
-<?php 
-    require("../verifyUserAuthentication.php");
+<?php
+require("../verifyUserAuthentication.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="/css/cronogram.css">
     <script defer src="/script/header.js"></script>
 </head>
+
 <body>
 <div id="cabecalho"></div><br><br><br>
 <?php
@@ -32,9 +34,11 @@
             .then(response => response.text())
             .then(data => {
                 document.querySelector('.cronograma').innerHTML = data;
+
+                    })
             })
         })
-    })
-</script>
+    </script>
 </body>
+
 </html>

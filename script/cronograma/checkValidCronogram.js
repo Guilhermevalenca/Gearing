@@ -1,5 +1,4 @@
 //script para verificar se todas as perguntas tiveram ao menos uma resposta
-
         var form = document.getElementById("form");
         
         form.addEventListener('submit', (event) => {
