@@ -3,7 +3,7 @@
     $horario = $_POST['horario'];
     $dia = $_POST['diaSemana'];
     //descobrindo nova id:
-    $fp = fopen('cronograma.csv','r');
+    $fp = fopen('cronogram.csv','r');
     $id = 0;
     while( ($linha = fgetcsv($fp)) !== false){
         if($_SESSION['username'] == $linha[0] && $id == $linha[1]){
@@ -28,9 +28,9 @@
         array_push($dataTurnos,$turnos);
     }
     //adicionando todos os dados:
-    $fp = fopen('cronograma.csv','a');
+    $fp = fopen('cronogram.csv','a');
     fputcsv($fp,$dataMateria);
     fputcsv($fp,$dataTurnos);
     fclose($fp);
-    header('location: /src/cronograma/visualizarCronogramas.php');
+    header('location: /src/cronogram/viewCronogram.php');
     ?>

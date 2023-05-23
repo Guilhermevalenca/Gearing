@@ -1,4 +1,4 @@
-let materiaExtra = document.getElementById("outrasMaterias");
+let extraSubject = document.getElementById("outrasMaterias");
 let labelInput = document.querySelector('.novosInput');
 
 let deleteInput = document.getElementById('apagarNovaMateria');
@@ -7,7 +7,7 @@ deleteInput.addEventListener('click', (event) => {
     event.preventDefault();
     form.disabled = true;
 });
-materiaExtra.addEventListener('click', (event) => {
+extraSubject.addEventListener('click', (event) => {
     event.preventDefault();
     form.disabled = true;
 });
@@ -25,9 +25,9 @@ function novoInput(){
 
 
 function deletarInput(){
-    let ultimoInput = labelInput.children[labelInput.children.length -1];
-    if(ultimoInput != deleteInput){
-        labelInput.removeChild(ultimoInput);
+    let lastInput = labelInput.children[labelInput.children.length -1];
+    if(lastInput != deleteInput){
+        labelInput.removeChild(lastInput);
     }
 }
 

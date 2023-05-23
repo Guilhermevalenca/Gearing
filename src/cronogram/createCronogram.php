@@ -21,7 +21,7 @@ require("../verifyUserAuthentication.php");
     <div class="div">
     <h1>Aqui você irá criar seu cronograma</h1><br>
 
-    <form id="form" method="GET" action="./visualizarNovoCronograma.php">
+    <form id="form" method="GET" action="./viewCronogram.php">
        
         <h2>Em quais matérias você sente ter mais dificuldade?</h2>
         <label>
@@ -104,8 +104,8 @@ require("../verifyUserAuthentication.php");
         <input type="submit">
     </form>
     </div>
-    <script defer src="/script/cronograma/verificarCronogramaValido.js"></script>
-    <script defer src="/script/cronograma/adicionarOutrasMaterias.js"></script>
+    <script defer src="/script/cronogram/checkValidCronogram.js"></script>
+    <script defer src="/script/cronogram/addOthersSubjects.js"></script>
 </body>
 </html>
 

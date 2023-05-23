@@ -14,7 +14,7 @@
 <body>
 <div id="cabecalho"></div><br><br><br>
 <?php
-    require('../../php/cronograma/visualizarCronogramas.php');
+    require('../../php/cronogram/viewCronogram.php');
 ?>
 <h2><?= $user ?>, Aqui estar seu cronograma:</h2>
 <!-- 
@@ -28,7 +28,7 @@
     const buttons = document.querySelectorAll('.mostrarCronograma');
     buttons.forEach( (button,indice) => {
         button.addEventListener('click', () => {
-            fetch(`./montandoCronograma.php?id=${indice}`)
+            fetch(`./settingUpCronogram.php?id=${indice}`)
             .then(response => response.text())
             .then(data => {
                 document.querySelector('.cronograma').innerHTML = data;

@@ -5,22 +5,22 @@
         form.addEventListener('submit', (event) => {
             event.preventDefault();
            
-            var materias = form.elements["materia[]"];
-            var dias = form.elements["dias[]"];
-            var turnos= form.elements["turnos[]"];
-            var outraMateria = document.getElementById("outrasMaterias");
+            var subject = form.elements["materia[]"];
+            var days = form.elements["dias[]"];
+            var shifts= form.elements["turnos[]"];
+            var otherSubjects = document.getElementById("outrasMaterias");
 
-            function teste(parametro){
-                for (let i = 0; i < parametro.length; i++) {
-                    if(parametro[i].checked) {
+            function test(parameter){
+                for (let i = 0; i < parameter.length; i++) {
+                    if(parameter[i].checked) {
                         return true;
                     }
                 }
             }
            
-            if(!teste(materias) && outraMateria.value == null){
+            if(!test(subject) && otherSubjects.value == null){
                 alert("Por favor, escolha uma materia");
-            }else if(!teste(turnos)){
+            }else if(!test(shifts)){
                 alert("Escolha um turno para montar seu cronograma!");
             }else{
                 form.submit();

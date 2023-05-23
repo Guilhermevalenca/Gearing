@@ -28,7 +28,7 @@
     $turnoTarde= ["12:00","13:00","14:00","15:00","16:00","17:00"];
     $turnoNoite= ["18:00","19:00","20:00","21:00","22:00","23:00"];
 ?>
-<?php $fp = fopen('cronograma.csv','r') ?>
+<?php $fp = fopen('cronogram.csv','r') ?>
 <div class="origemMateria">
     <?php while( ($linha = fgetcsv($fp)) !== false): ?>
         <?php if($linha[1] == $_GET['id'] && $linha[0] == $_SESSION['username']): ?>
@@ -54,7 +54,7 @@
     <?php endforeach ?>
     </thead>
     <tbody>
-        <?php $fp = fopen('cronograma.csv','r'); ?>
+        <?php $fp = fopen('cronogram.csv','r'); ?>
             <?php while( ($linha = fgetcsv($fp)) !== false): ?>
                 <?php if($linha[0] == $_SESSION['username'] && $linha[1] == $_GET['id']): ?>
                     <?php if($linha[2] == "turnos"): ?>

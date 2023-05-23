@@ -25,9 +25,9 @@
     <div class="botao_sessao_principal">
         <button onclick="window.location.href = '/src/methodology/methodology.php' ">Questionário de Metodologias</button>
         <br>
-        <button onclick="window.location.href = '/src/cronograma/criarCronograma.php'">Crie aqui seu cronograma</button>
+        <button onclick="window.location.href = '/src/cronogram/createCronogram.php'">Crie aqui seu cronograma</button>
         <br>
-        <button onclick="window.location.href = '/src/cronograma/visualizarCronogramas.php' " >Ver meus cronogramas</button>
+        <button onclick="window.location.href = '/src/cronogram/viewCronogram.php' " >Ver meus cronogramas</button>
         <br>
         <button onclick="window.location.href = '/src/user/showData.php' ">Informações da conta</button>
         <br>
