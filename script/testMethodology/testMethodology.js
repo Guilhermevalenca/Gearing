@@ -37,18 +37,30 @@ perguntas.forEach( (pergunta,indice) =>{
 let eixoX= (CA - EC);
 let eixoY= (EA - OR);
 //Tratando as informações.
+
+let input = document.createElement("input");
+input.name = "finalResult";
+
 if(eixoX < 0 && eixoY < 0){ //convergente
     alert("tu és convergente")
+    input.value = "convergente";
 }
 else if(eixoX > 0 && eixoY > 0){ //divergente
- alert("tu és divergente")
+    alert("tu és divergente")
+    input.value = "divergente";
 }
 else if(eixoX < 0 && eixoY > 0){ // acomodador
-alert("tu és acomodador")
+    alert("tu és acomodador")
+    input.value = "acomodador";
 }
 else if(eixoX > 0 && eixoY < 0){ //assimilador
-alert("tu és assimilador")
+    alert("tu és assimilador")
+    input.value = "assimilador";
 }
+
+input.type = "hidden";
+form.appendChild(input);
+form.submit();
 
 });
 

@@ -29,7 +29,7 @@
 <body>
     <div id="cabecalho"></div><br><br><br>
     <h1> Questionário de Metodologias de Aprendizagem </h1>
-    <form id="form" method="GET" action="./yourMethodology.php">
+    <form id="form" method="POST" action="/php/testMethodology/addMethodology.php">
 
         <div class="pergunta">
 
@@ -293,12 +293,10 @@
             <label><br> Sou prático (Busco formas de tornar o aprendizado mais significativo e relevante, e aplicar o que está sendo estudado na prática)
             </label><br>
             <input class="opcao" type="range" id="12D" name="doze[]" min='1' max="4"> 
-
         </div><br>
             <button>Calcular resultado</button>
             </form>
-            <script defer src="/script/testMethodology/testMethodology.js"></script>
             <script defer src="/script/testMethodology/testNoValueRepeat.js"></script>
-
+            <script defer src="/script/testMethodology/testMethodology.js"></script>
 </body>
 </html>
