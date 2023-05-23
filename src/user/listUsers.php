@@ -1,18 +1,20 @@
-<?php 
-require("../verifyUserAuthentication.php"); 
+<?php
+require("../verifyUserAuthentication.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<script defer src="/script/header.js"></script>
 </head>
+
 <body>
 	<div id="cabecalho"></div><br><br><br>
 	<h1>Gerenciando usuarios:</h1>
-	<?php $usuarios = fopen('users.csv','r') ?>
+	<?php $usuarios = fopen('users.csv', 'r') ?>
 	<form action="/php/user/deleteMultipleUsers.php" method="POST">
 		<table>
 			<tr>
@@ -24,7 +26,7 @@ require("../verifyUserAuthentication.php");
 					Selecionar todos os usuarios
 				</td>
 			</tr>
-			<?php while( ($linha = fgetcsv($usuarios)) !== false): ?>
+			<?php while (($linha = fgetcsv($usuarios)) !== false) : ?>
 				<tr>
 					<th><?= $linha[0] ?></th>
 					<td>
@@ -37,4 +39,5 @@ require("../verifyUserAuthentication.php");
 	</form>
 	<script defer src="/script/user/selectAllUsers.js"></script>
 </body>
+
 </html>

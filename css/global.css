@@ -1,7 +1,7 @@
 body {
-    background-image: url("/logos/gearingBackground.jpeg");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
+  background-image: url("/logos/gearingBackground.jpeg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
 }

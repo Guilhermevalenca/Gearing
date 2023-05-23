@@ -1,5 +1,5 @@
-@import url('https://fonts.cdnfonts.com/css/share-tech-mono');
-@import url('https://fonts.cdnfonts.com/css/source-sans-pro');
+@import url("https://fonts.cdnfonts.com/css/share-tech-mono");
+@import url("https://fonts.cdnfonts.com/css/source-sans-pro");
 
 * {
   border: none;
@@ -36,14 +36,19 @@
 button {
   margin: 0 10px;
   /* espaço entre os botões */
-  font-family: 'Share Tech Mono', sans-serif;
+  font-family: "Share Tech Mono", sans-serif;
   padding: 10px 20px;
   font-size: 16px;
   border: none;
   width: 180px;
   height: 52px;
   border-radius: 5px;
-  background: linear-gradient(80deg, rgba(100, 2, 223, 1) 9%, rgba(133, 26, 186, 1) 54%, rgba(0, 212, 255, 1) 100%);
+  background: linear-gradient(
+    80deg,
+    rgba(100, 2, 223, 1) 9%,
+    rgba(133, 26, 186, 1) 54%,
+    rgba(0, 212, 255, 1) 100%
+  );
   color: #fff;
   cursor: pointer;
 }
