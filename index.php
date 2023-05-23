@@ -20,10 +20,11 @@ if (isset($_SESSION['username'])) {
 </head>
 
 <body>
-    <header class="header"><img src="./logos/gearingLogo.gif" class="logo">
+    <header class="header">
+        <img src="./logos/gearingLogo.gif" class="logo">
         <h1 class="titulo">Gearing</h1>
     </header>
-    
+
     <section class="sessao-principal">
         <div class="apresentacao">
             <h2 class="bemvindo">Bem Vindos!</h2>
