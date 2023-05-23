@@ -1,9 +1,6 @@
 <template>
   <nav class="menu">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/usuarios/10">usuarios</router-link> |
-    <router-link to="/servicos">serviços</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/">Home</router-link>
   </nav>
   <router-view/>
 </template>
