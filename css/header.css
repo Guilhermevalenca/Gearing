@@ -1,0 +1,81 @@
+@import url("https://fonts.cdnfonts.com/css/share-tech-mono");
+@import url("https://fonts.cdnfonts.com/css/source-sans-pro");
+
+* {
+  border: none;
+}
+
+body {
+  margin: 0;
+}
+
+#cabecalho {
+  display: flex;
+  justify-content: center;
+  /* alinhar os itens para o centro da div */
+  align-items: center;
+  /* alinhar os itens verticalmente */
+  align-content: center;
+  flex-flow: row wrap;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  box-sizing: border-box;
+  background-color: transparent;
+  border: none;
+  background-color: rgb(0, 0, 0);
+  margin-bottom: 40px;
+}
+
+.cabecalho {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+#expandir {
+  width: 0%;
+  height: 0%;
+}
+
+button {
+  margin: 0 10px;
+  /* espaço entre os botões */
+  font-family: "Share Tech Mono", sans-serif;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  width: 180px;
+  height: 52px;
+  border-radius: 5px;
+  background: linear-gradient(
+    80deg,
+    rgba(100, 2, 223, 1) 9%,
+    rgba(133, 26, 186, 1) 54%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  color: #fff;
+  cursor: pointer;
+}
+
+#expandir {
+  position: fixed;
+}
+
+@media (max-width: 640px) {
+  #cabecalho {
+    display: none;
+    justify-content: end;
+    position: fixed;
+    margin: 0em;
+    padding: 0em;
+  }
+
+  button.cabecalho {
+    margin: 0px;
+    padding: 0px;
+    width: 6em;
+    height: 6em;
+  }
+}

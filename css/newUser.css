@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+
+.sessao_principal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.formulario_sessao_principal {
+  width: 360px;
+  height: 700px;
+  background-color: #36056e;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  gap: 5px;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  background-image: url(/logos/2.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+}
+
+#formulario {
+  height: 639px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#formulario label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  color: #aaa;
+}
+
+#formulario input[type="text"],
+#formulario input[type="email"],
+#formulario input[type="password"] {
+  width: 300px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f2f2f2;
+  font-size: 14px;
+  padding: 10px;
+  outline: none;
+  font-style: italic;
+  color: #aaa;
+  text-align: center;
+}
+#formulario input[type="email"]::placeholder,
+#formulario input[type="password"]::placeholder {
+  color: #aaa;
+  font-size: 14px;
+  font-style: italic;
+  text-align: center;
+}
+
+#formulario input[type="submit"] {
+  width: 120px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  background-color: #000;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+#formulario input[type="submit"]:hover {
+  background-color: #663399;
+}
+
+#formulario input[type="submit"]:active {
+  background-color: #fff;
+  color: #000;
+}
+
+#formulario input[type="submit"]:focus {
+  outline: none;
+}
+
+button {
+  width: 120px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  background-color: #000;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #663399;
+}
+
+button:active {
+  background-color: #fff;
+  color: #000;
+}
+
+button:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 480px) {
+  #formulario input[type="text"],
+  #formulario input[type="email"],
+  #formulario input[type="password"] {
+    width: 100%;
+  }
+}
+/* comentário */

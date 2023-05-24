@@ -3,18 +3,9 @@
 }
 
 body {
-  /*
-margin: 0;
-padding: 0;
-*/
-font-family: Arial, sans-serif;
-/*
-background-image: url("/logos/wpp2.jpeg");
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-height: 100vh;
-*/
+  margin: 0;
+  font-family: Arial, sans-serif;
+ 
 }
 
 .formulario_sessao_principal {
@@ -24,14 +15,11 @@ height: 100vh;
   align-content: center;
   justify-content: center;
   align-items: center;
-
 }
-
-
 
 .sessao_principal {
   height: 750px;
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
@@ -51,7 +39,8 @@ height: 100vh;
   background-image: url(/logos/2.gif);
 }
 
-input[type="email"], input[type="password"] {
+input[type="email"],
+input[type="password"] {
   width: 200px;
   border: none;
   border-radius: 4px;
@@ -88,11 +77,13 @@ button:focus {
   outline: none;
 }
 
-
 input[type="email"]::placeholder,
 input[type="password"]::placeholder {
   color: #aaa;
   font-size: 14px;
   font-style: italic;
   text-align: center;
+}
+label {
+  color: aliceblue;
 }

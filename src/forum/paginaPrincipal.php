@@ -1,5 +1,5 @@
 <?php
-require('../verificacaoExistSession.php');
+require('../verifyUserAuthentication.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -11,7 +11,7 @@ require('../verificacaoExistSession.php');
     <title><?= $_SESSION['username'] ?></title>
     <link rel="stylesheet" href="/css/forum.css">
     <link rel="stylesheet" href="/css/global.css">
-    <script defer src="/script/cabecalho.js"></script>
+    <script defer src="/script/header.js"></script>
 </head>
 
 <body>
