@@ -6,7 +6,7 @@
 		echo "<a href='/'>Voltar</a>";
 		exit();
 	}
-	$fp = fopen(usuarios,'r');
+	$fp = fopen(users,'r');
 	$backup = fopen("backup.csv",'w');
 	while( ($linha = fgetcsv($fp)) !== false){
 		if(!in_array($linha[0], $apagarUsers)){
@@ -15,6 +15,6 @@
 	}
 	fclose($fp);
 	fclose($backup);
-	rename('backup.csv',usuarios);
+	rename('backup.csv',users);
 	header('location: /src/user/listUsers.php');
 ?>

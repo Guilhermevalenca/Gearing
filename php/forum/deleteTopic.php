@@ -3,7 +3,7 @@
 	session_start();
 	$caminhoDoArquivo = geraTopico . $_SESSION['username'] . ".csv";
 	unlink($caminhoDoArquivo);
-	$fp = fopen(topicos,'r');
+	$fp = fopen(topics,'r');
 	$backup = fopen("backup.csv",'w');
 	while( ($linha = fgetcsv($fp)) !== false){
 		if($_SESSION['username'] != $linha[0]){
@@ -12,6 +12,6 @@
 	}
 	fclose($fp);
 	fclose($backup);
-	rename("backup.csv",topicos);
-	header("location: /src/forum/paginaPrincipal.php");
+	rename("backup.csv",topics);
+	header("location: /src/forum/home.php");
 ?>

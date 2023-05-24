@@ -3,7 +3,7 @@
        exit();
     }
     require("../dataSource.php");
-    $fp = fopen(usuarios,'r');
+    $fp = fopen(users,'r');
     while ( ($linha = fgetcsv($fp)) !== false){
         if ($linha[2] == $_POST['login'] && $linha[3] == $_POST['senha']) {
             if(isset($_POST['script'])){

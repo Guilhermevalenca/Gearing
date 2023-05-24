@@ -17,9 +17,9 @@
             fclose($backup);
             rename('backup.csv',$arquivo);
         }
-        editar(usuarios);
-        editar(topicos);
-        editar(cronograma);
+        editar(users);
+        editar(topics);
+        editar(cronogram);
         editar(session);
         $atualReferenciaTopico = geraTopico . $_SESSION['username'] . ".csv";
         $novaReferenciaTopico = geraTopico . $_POST['userNovo'] . ".csv";
@@ -28,7 +28,7 @@
 
     }else if(isset($_POST['nomeNovo'])){
 
-        $fp = fopen(usuarios,'r');
+        $fp = fopen(users,'r');
         $backup = fopen('backup.csv','w');
         while( ($linha = fgetcsv($fp)) !== false){
             if($linha[1] != $_POST['nomeAtual']){
@@ -40,10 +40,10 @@
         }
         fclose($fp);
         fclose($backup);
-        rename('backup.csv',usuarios);
+        rename('backup.csv',users);
 
     }else if(isset($_POST['emailNovo'])){
-        $fp = fopen(usuarios,'r');
+        $fp = fopen(users,'r');
         $backup = fopen('backup.csv','w');
         while( ($linha = fgetcsv($fp)) !== false){
             if($linha[2] != $_POST['emailAtual']){
@@ -55,7 +55,7 @@
         }
         fclose($fp);
         fclose($backup);
-        rename('backup.csv',usuarios);
+        rename('backup.csv',users);
     }
     header('location: /src/user/showData.php');
 ?>

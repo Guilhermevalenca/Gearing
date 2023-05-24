@@ -9,7 +9,7 @@
 <body>
     <table>
     <?php 
-        $caminhoDoArquivo = "./vizualizarTopicos/" . $_GET['user'] . ".csv";
+        $caminhoDoArquivo = "./viewTopics/" . $_GET['user'] . ".csv";
         $fp = fopen($caminhoDoArquivo,'r');
         while( ($linha = fgetcsv($fp)) !== false):
     ?>

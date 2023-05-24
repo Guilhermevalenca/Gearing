@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script defer src="/script/cabecalho.js"></script>
-    <link rel="stylesheet" href="/css/topicos.css">
+    <script defer src="/script/header.js"></script>
+    <link rel="stylesheet" href="/css/topics.css">
 </head>
 
 <body>
@@ -17,14 +17,14 @@
     $topico = $_GET['topico'];
     ?>
     <h1>Topico: <?= $topico ?></h1>
-    <iframe src="./vizualizarInformacaoTopico.php?user=<?= $user ?>" frameborder="0"></iframe>
-    <form action="/php/forum/adicionarMensagemTopico.php" method="POST">
+    <iframe src="./viewTopicInfo.php?user=<?= $user ?>" frameborder="0"></iframe>
+    <form action="/php/forum/addTopicMessage.php" method="POST">
         <input type="text" placeholder="Escreva sua mensagem" name="mensagem">
         <input type="hidden" name='topico' value="<?= $topico ?>">
         <input type="hidden" name="arquivo" value="<?= $user ?>">
         <input type="submit">
     </form>
-    <button id="voltar" onclick="window.location.href = '/src/forum/paginaPrincipal.php' ">Voltar</button>
+    <button id="voltar" onclick="window.location.href = '/src/forum/home.php' ">Voltar</button>
 </body>
 
 </html>

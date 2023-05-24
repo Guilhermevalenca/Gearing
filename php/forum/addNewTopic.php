@@ -5,8 +5,8 @@
     $fp = fopen($novoTopico,"w");
     fclose($fp);
     
-    $fp = fopen(topicos,"a");
+    $fp = fopen(topics,"a");
     fputcsv($fp,array($_SESSION['username'],$_POST['topico']));
     fclose($fp);
-    header("location: /src/forum/paginaPrincipal.php");
+    header("location: /src/forum/home.php");
     ?>
