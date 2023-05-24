@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="alert">
         <slot />
         <button @click="closeAlert()"> X </button>
     </div>
@@ -21,7 +21,7 @@
 </script>
 
 <style scoped>
-    div{
+    .alert{
         padding: 5px;
         border-radius: 6px;
         color: white;

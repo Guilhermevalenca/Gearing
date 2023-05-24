@@ -24,7 +24,9 @@ export default {
     }
   },
   beforeCreate() {
-    axios.get('http://localhost:8000')
+    axios.post('http://localhost:8000',{
+      
+    })
     .then(response => {
       if(response.data){
         this.$router.push('/menu')

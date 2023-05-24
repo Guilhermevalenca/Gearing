@@ -1,6 +1,11 @@
 <template>
 <div>
-    <form v-if="showForm" @submit.prevent="authUser()">
+    <form class="form" v-if="showForm" @submit.prevent="authUser()">
+        <label v-if="showAlert">
+            <AlertForm class="form-alert" @close="closeAlert()"> 
+                {{ messageAlert }}
+            </AlertForm>
+        </label>
         <label>
             E-mail:
             <input type="email" v-model="loginUser.email" placeholder="E-mail">
@@ -28,14 +33,14 @@
             Confirme sua senha:
             <input type="password" v-model="createUser.confirmPassword" placeholder="digite sua senha novamente">
         </label>
-        <label v-if="alert">
+        <label v-if="showAlert">
             <AlertForm @close="closeAlert()"> 
                 {{ messageAlert }}
             </AlertForm>
         </label>
         <button>criar conta</button>
     </form>
-    <button @click="() => showForm = !showForm">{{ showForm ? 'criar uma nova conta' : 'entra em uma conta existente' }}</button>
+    <button @click="() => {showForm = !showForm; showAlert = false }">{{ showForm ? 'criar uma nova conta' : 'entra em uma conta existente' }}</button>
 </div>
 </template>
 
@@ -58,7 +63,7 @@ export default{
                 confirmPassword: ""
             },
             showForm: true,
-            alert: false,
+            showAlert: false,
             messageAlert: ''
         };
     },
@@ -75,10 +80,25 @@ export default{
             });
         },
         newUser() {
-            axios.post("htpp://localhost:8080/user/createUser.php", {});
+            if(this.createUser.password == this.createUser.confirmPassword){
+                axios.post("http://localhost:8000/user/createUser.php", {
+                    username: this.createUser.username,
+                    email: this.createUser.email,
+                    password: this.createUser.password
+                })
+                .then(response => {
+                    if(response.data){
+                        this.showForm = true;
+                        this.messageAlert = "Sua conta foi criada com sucesso"
+                    }else{
+                        this.showAlert = true;
+                        this.messageAlert = "Essa conta ja estar cadastrada"
+                    }
+                })
+            }
         },
         closeAlert() {
-            this.alert = false;
+            this.showAlert = false;
         }
     },
     components: { 
@@ -88,10 +108,10 @@ export default{
         createUser: {
             handler() {
                 if( this.createUser.confirmPassword && (this.createUser.password != this.createUser.confirmPassword) ){
-                    this.alert = true;
+                    this.showAlert = true;
                     this.messageAlert = "Senhas diferentes"
                 }else{
-                    this.alert = false;
+                    this.showAlert = false;
                 }
             },
             deep: true
@@ -108,5 +128,8 @@ export default{
     }
     input{
         width: 25em;
+    }
+    .form-alert{
+        background-color: green;
     }
 </style>

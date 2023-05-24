@@ -14,21 +14,24 @@
 import axios from 'axios'
 
 export default{
-    methods: {
-    test() {
-      axios.get('http://localhost:8000')
-      .then(response=> {
-        console.log(response.data);
-      })
+  data() {
+    return{
+      testandoEssaPoha: ''
     }
   },
-  beforeCreate() {
-    axios.get('http://localhost:8000')
-    .then(response => {
-      if(!response.data){
-        this.$router.push('/')
-      }
-    })
+    methods: {
+    test() {
+      axios.post('http://localhost:8000',{
+        email: 'guilherm3vrp@gmail.com'
+      })
+      .then(response=> {
+        if(response.data){
+          console.log('conseguiu');
+        }else{
+          console.log('você é incompetente para um karalho')
+        }
+      })
+    }
   }
 }
 </script>
