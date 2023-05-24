@@ -1,7 +1,11 @@
 <?php 
     session_start();
     require('./accept.php');
-    if(!isset($_SESSION['auth'] || !$_SESSION['auth'])){
-        echo "unauthenticated user";
+    if($_SESSION['auth']){
+        echo true;
+    }else{
+        echo false;
     }
+    $data = json_encode($_SESSION['auth']);
+    echo $data;
 ?>

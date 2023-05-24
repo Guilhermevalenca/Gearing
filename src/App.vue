@@ -1,7 +1,4 @@
 <template>
-  <nav class="menu">
-    <router-link to="/">Home</router-link>
-  </nav>
   <router-view/>
 </template>
 
@@ -12,7 +9,7 @@ export default{
     return {
       
     }
-  }
+  },
 }
 </script>
 
