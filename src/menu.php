@@ -1,6 +1,6 @@
 <?php 
     require("./verifyUserAuthentication.php");
-    if($_SESSION['executeOne']){
+    if($_SESSION['executeOne']) {
         require("./session/session.php");
         $_SESSION['executeOne'] = false;
     }
@@ -31,7 +31,7 @@
         <br>
         <button onclick="window.location.href = '/src/user/showData.php' ">Informações da conta</button>
         <br>
-        <button onclick="window.location.href = '/src/forum/paginaPrincipal.php' ">Acesse o forum</button>
+        <button onclick="window.location.href = '/src/forum/home.php' ">Acesse o forum</button>
         <br>
         <button onclick="window.location.href = '/src/exit.php' ">Sair da conta</button>
     </section>

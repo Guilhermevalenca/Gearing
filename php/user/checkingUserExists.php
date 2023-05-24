@@ -1,22 +1,17 @@
 <?php 
     if($_SERVER['REQUEST_METHOD'] != 'POST'){
-       exit();
+        exit();
     }
-    require("../dataSource.php");
+    if(!isset($_POST['login']) || !isset($_POST['senha'])){
+        exit();
+    }
+    require('../dataSource.php');
     $fp = fopen(users,'r');
-    while ( ($linha = fgetcsv($fp)) !== false){
-        if ($linha[2] == $_POST['login'] && $linha[3] == $_POST['senha']) {
-            if(isset($_POST['script'])){
-                echo "tudoCerto";
-                exit();
-            }
-            session_start();
-            $_SESSION['username'] = $linha[0];
-            $_SESSION['executeOne'] = true;
-            header("location: /src/menu.php");
+    while( ($linha = fgetcsv($fp)) !== false ){
+        if($_POST['login'] == $linha[2] && $_POST['senha'] == $linha[3]){
+            echo "tudoCerto";
             exit();
         }
     }
     echo "tudoErrado";
-    return;
 ?>
