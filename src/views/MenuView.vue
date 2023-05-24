@@ -1,19 +1,35 @@
 <template>
   <div>
-    <PresentationGearingUp />
+    <Presentation />
+  </div>
+  
+  <div v-show="showForm">
+    <FormLogin />
+  </div>
+
+  <div v-show="!showForm">
+    <FormCreate />
+  </div>
+  <div>
+    <button @click="() => showForm = !showForm" v-show="showForm">Criar conta</button>
+    <button @click="() => showForm = !showForm" v-show="!showForm">Login</button>
   </div>
 </template>
 
 <script>
-import PresentationGearingUp from '@/components/MenuView/PresentationGearingUp.vue'
+import Presentation from '@/components/MenuView/PresentationGearingUp.vue'
+import  FormLogin from '@/components/MenuView/FormLogin.vue'
+import FormCreate from '@/components/MenuView/FormCreate.vue'
 
 export default {
   components: {
-    PresentationGearingUp
+    Presentation,
+    FormLogin,
+    FormCreate
   },
   data() {
     return{
-      showPresentation: true
+      showForm: true,
     }
   }
 }
