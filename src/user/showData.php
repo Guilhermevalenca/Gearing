@@ -60,9 +60,8 @@
         <?php endwhile ?>
     </table>
     <script defer src="/script/user/showData.js"></script>
-    <h2>Deseja apaga sua conta? 
-        <button id="buttonApagaConta" onclick="window.location.href='/php/user/deleteUser.php?user=<?= $user ?>'">Apagar sua conta</button>
-    </h2>
+    <h2>Deseja apagar sua conta?</h2> <br>
+      <button id="buttonApagaConta" onclick="window.location.href='/php/user/deleteUser.php?user=<?= $user ?>'">Apagar conta</button>
 </div>
 </body>
 </html>

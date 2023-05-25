@@ -17,7 +17,7 @@
 <?php
     require('../../php/cronogram/viewCronogram.php');
 ?>
-<h2><?= $user ?>, Aqui estar seu cronograma:</h2>
+<h2><?= $user ?>, Aqui estão seus cronogramas:</h2>
 <!-- 
     Gerando tabelas dos cronograma do usuario
  -->
