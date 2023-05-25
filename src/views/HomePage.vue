@@ -10,7 +10,6 @@
 <script>
 import Presentation from '@/components/homePage/PresentationGearingUp.vue'
 import AccessForm from '@/components/homePage/AccessForm.vue'
-import axios from 'axios'
 
 export default {
   components: {
@@ -22,16 +21,6 @@ export default {
       showForm: true,
       testandoEssaPoha: ''
     }
-  },
-  beforeCreate() {
-    axios.post('http://localhost:8000',{
-      
-    })
-    .then(response => {
-      if(response.data){
-        this.$router.push('/menu')
-      }
-    })
   }
 }
 </script>
