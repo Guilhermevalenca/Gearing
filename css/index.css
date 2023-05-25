@@ -1,4 +1,24 @@
-@import url("https://fonts.cdnfonts.com/css/share-tech-mono");
+@import url('https://fonts.cdnfonts.com/css/share-tech-mono');
+@import url('https://fonts.cdnfonts.com/css/yielding-timber');
+
+body {
+  margin: 0;
+}
+
+.header-home-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.main-content-home-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row;
+  margin: 40px;
+}
 
 .titulo {
   text-align: center;
@@ -6,34 +26,19 @@
   font-size: 4vw;
 }
 
-.bemvindo {
+.bem-vindo {
+  font-family: 'Share Tech Mono', sans-serif;
   font-size: 50px;
+  margin-bottom: -0.2em;
 }
 
-.sessao-principal {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  flex-flow: row;
-  margin-right: 50px;
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  flex-flow: row wrap;
-}
-
-h1 {
-  text-shadow: -2px 5px #36a5e6;
-  color: #601aed;
-  font-family: "Share Tech Mono", sans-serif;
+.titulo {
+  font-family: 'Yielding Timber',sans-serif; 
   text-align: center;
   font-style: italic;
-  font-size: 8vw;
+  width: 22%;
+  margin-left: -1em;
+  font-size: 4em;
   background: -webkit-linear-gradient(
     318deg,
     rgba(133, 26, 186, 1) 18%,
@@ -46,6 +51,10 @@ h1 {
 }
 
 .apresentacao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
   color: rgb(254, 252, 255);
   border-style: solid;
   border-width: 0.1vw;
@@ -57,10 +66,6 @@ h1 {
   padding: 0px;
 }
 
-body {
-  margin: 0;
-  font-family: "Share Tech Mono", sans-serif;
-}
 
 .criarRealizarLogin {
   background-image: linear-gradient(
@@ -93,10 +98,8 @@ body {
   align-content: center;
   flex-flow: column wrap;
   gap: 15px;
-  width: 300px;
-  height: 400px;
-  background-image: url(/logos/gearing.gif);
-  box-shadow: rgba(207, 207, 207, 0.2) 0px 18px 50px -10px;
+  min-width: 400px;
+  min-height: 400px;
   border-radius: 10px;
   border: 5px white;
 }
@@ -115,10 +118,13 @@ body {
   outline: none;
 }
 .logo {
-  width: 200px;
+  width: 150px;
+  margin-left: -2em;
+  margin-top: -2em;
   margin-bottom: 20px;
 }
 .descricao {
+  font-family: "Share Tech Mono", sans-serif;
   margin-top: 2vw;
   margin-left: 2vw;
   margin-right: 2.5vw;
