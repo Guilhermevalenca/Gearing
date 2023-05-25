@@ -12,26 +12,26 @@
         </label>
         <label>
             Senha:
-            <input type="password" v-model="loginUser.password" placeholder="Senha">
+            <input type="password" v-model="loginUser.password" placeholder="Senha"> 
         </label>
             <button>entrar</button>
     </form>
-    <form v-if="!showForm" @submit.prevent="newUser()">
+    <form class="form" v-if="!showForm" @submit.prevent="newUser()">
         <label>
             Usuario:
             <input type="text" v-model="createUser.username" placeholder="digite seu nome de usuario">
         </label>
         <label>
             E-mail:
-            <input type="email" v-model="createUser.email" placeholder="digite seu email">
+            <input :class="{'form-email' : emailRegistered}" type="email" v-model="createUser.email" placeholder="digite seu email">
         </label>
         <label>
             Senha:
-            <input type="password" v-model="createUser.password" placeholder="digite sua senha">
+            <input :class="{'form-password' : differentPasswords}" type="password" v-model="createUser.password" placeholder="digite sua senha">
         </label>
         <label>
             Confirme sua senha:
-            <input type="password" v-model="createUser.confirmPassword" placeholder="digite sua senha novamente">
+            <input :class="{'form-password' : differentPasswords}" type="password" v-model="createUser.confirmPassword" placeholder="digite sua senha novamente">
         </label>
         <label v-if="showAlert">
             <AlertForm @close="closeAlert()"> 
@@ -64,7 +64,9 @@ export default{
             },
             showForm: true,
             showAlert: false,
-            messageAlert: ''
+            messageAlert: '',
+            emailRegistered: false,
+            differentPasswords: false
         };
     },
     methods: {
@@ -81,7 +83,9 @@ export default{
         },
         newUser() {
             if(this.createUser.password == this.createUser.confirmPassword){
-                axios.post("http://localhost:8000/user/createUser.php", {
+
+                axios
+                .post("http://localhost:8000/user/createUser.php", {
                     username: this.createUser.username,
                     email: this.createUser.email,
                     password: this.createUser.password
@@ -93,6 +97,8 @@ export default{
                     }else{
                         this.showAlert = true;
                         this.messageAlert = "Essa conta ja estar cadastrada"
+                        this.emailRegistered = true;
+
                     }
                 })
             }
@@ -110,9 +116,12 @@ export default{
                 if( this.createUser.confirmPassword && (this.createUser.password != this.createUser.confirmPassword) ){
                     this.showAlert = true;
                     this.messageAlert = "Senhas diferentes"
+                    this.differentPasswords = true;
                 }else{
                     this.showAlert = false;
+                    this.differentPasswords = false;
                 }
+                this.emailRegistered = false;
             },
             deep: true
         }
@@ -131,5 +140,8 @@ export default{
     }
     .form-alert{
         background-color: green;
+    }
+    .form-email, .form-password{
+        color: red;
     }
 </style>
