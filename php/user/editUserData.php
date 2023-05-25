@@ -21,8 +21,8 @@
         editar(topics);
         editar(cronogram);
         editar(session);
-        $atualReferenciaTopico = geraTopico . $_SESSION['username'] . ".csv";
-        $novaReferenciaTopico = geraTopico . $_POST['userNovo'] . ".csv";
+        $atualReferenciaTopico = generateTopic . $_SESSION['username'] . ".csv";
+        $novaReferenciaTopico = generateTopic . $_POST['userNovo'] . ".csv";
         rename($atualReferenciaTopico,$novaReferenciaTopico);
         $_SESSION['username'] = $_POST['userNovo'];
 

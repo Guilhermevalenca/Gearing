@@ -1,7 +1,7 @@
 <?php 
     require("../dataSource.php");
     session_start();
-    $caminhoDoArquivo = geraTopico . $_POST['arquivo'] . ".csv";
+    $caminhoDoArquivo = generateTopic . $_POST['arquivo'] . ".csv";
     $fp = fopen($caminhoDoArquivo,'a');
     fputcsv($fp,array($_SESSION['username'],$_POST['mensagem']));
     fclose($fp);

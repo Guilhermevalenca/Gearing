@@ -10,3 +10,9 @@ Cl4udAnne,0,materia,quimica,0,1,fisica,1,2
 Cl4udAnne,0,turnos,Manhã,Tarde,Noite
 Cl4udAnne,1,materia,Programação,2,1
 Cl4udAnne,1,turnos,Manhã,Tarde
+Cl4udAnne,2,materia,biologia,quimica
+Cl4udAnne,1,dias
+Cl4udAnne,1,tempoMateria
+Cl4udAnne,2,turnos,Manhã,Tarde
+Cl4udAnne,3,materia,quimica,0,0,fisica,0,1,matematica,1,2
+Cl4udAnne,3,turnos,Manhã,Tarde,Noite

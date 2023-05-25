@@ -1,7 +1,7 @@
 <?php 
 	require("../dataSource.php");
 	session_start();
-	$caminhoDoArquivo = geraTopico . $_SESSION['username'] . ".csv";
+	$caminhoDoArquivo = generateTopic . $_SESSION['username'] . ".csv";
 	unlink($caminhoDoArquivo);
 	$fp = fopen(topics,'r');
 	$backup = fopen("backup.csv",'w');

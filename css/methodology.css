@@ -19,7 +19,20 @@ body {
   height: 100vh;
   margin: 0;
 }
-h1,
+h1{
+  font-size: 30px;
+  margin-bottom: 3em;
+  text-align: center;
+    background: -webkit-linear-gradient(
+    90deg,
+    rgba(188, 251, 255, 1) 47%,
+    rgba(24, 237, 242, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 h2 {
   font-family: "Share Tech Mono", sans-serif;
   font-size: 24px;

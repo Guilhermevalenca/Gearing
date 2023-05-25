@@ -7,11 +7,13 @@ require("../verifyUserAuthentication.php") ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<script defer src="/script/header.js"></script>
+	<link rel="stylesheet" href="/css/listUsers.css">
+    <link rel="stylesheet" href="/css/global.css">
 </head>
 <body>
 	<div id="cabecalho"></div><br><br><br>
 	<h1>Gerenciando usuarios:</h1>
-	<?php $usuarios = fopen('usuarios.csv','r') ?>
+	<?php $usuarios = fopen('users.csv','r') ?>
 	<form action="/php/user/deleteMultipleUsers.php" method="POST">
 		<table>
 			<tr>
@@ -25,7 +27,7 @@ require("../verifyUserAuthentication.php") ?>
 			</tr>
 			<?php while( ($linha = fgetcsv($usuarios)) !== false): ?>
 				<tr>
-					<th><?= $linha[0] ?></th>
+					<th id= "usernames"><?= $linha[0] ?></th>
 					<td>
 						<input type="checkbox" name="usuariosSelecionados[]" value="<?= $linha[0] ?>">
 						Selecionar usuario

@@ -1,0 +1,25 @@
+h1,
+h2 {
+  font-size: 24px;
+  margin-top: 50px;
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(188, 251, 255, 1) 47%,
+    rgba(24, 237, 242, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#usernames, td{
+   font-size: 20px;
+  margin-top: 50px;
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(188, 251, 255, 1) 47%,
+    rgba(24, 237, 242, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

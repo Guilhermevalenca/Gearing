@@ -21,14 +21,14 @@
     <h1>Aqui estão suas informações:</h1>
     <table>
     <?php
-        $fp = fopen('usuarios.csv','r');
+        $fp = fopen('users.csv','r');
         while( ($linha = fgetcsv($fp)) !== false ): ?>
         <?php if($linha[0] == $user): ?>
             <tr>
                 <th>Username:</th>
                 <td><?= $linha[0] ?></td>
                 <td>
-                    <form id="formularioUser" action="/php/user/editarDadosUser.php" method="POST">
+                    <form id="formularioUser" action="/php/user/editUserData.php" method="POST">
                     <input id="editarUser" type="text" name='userNovo' placeholder="Escreva aqui para editar" required>
                     <input type="submit" value="editar">
                 </form>
