@@ -103,8 +103,8 @@
 
         <?php endforeach ?>
     </tbody>
-</table>
-<input type="submit" value="Salvar cronograma">
+</table><br>
+<button>Salvar</button>
 </form>
 <script defer src="/script/cronogram/moveSubjects.js"></script>
 </body>
