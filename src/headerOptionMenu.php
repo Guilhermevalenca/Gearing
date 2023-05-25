@@ -7,6 +7,6 @@
 <button onclick="window.location.href = '/src/cronogram/createCronogram.php'">Crie aqui seu cronograma</button>
 <button onclick="window.location.href = '/src/cronogram/viewCronogram.php' " >Ver meus cronogramas</button>
 <button onclick="window.location.href = '/src/user/showData.php' ">Informações da conta</button>
-<button onclick="window.location.href = '/src/forum/mainPage.php' ">Acesse o forum</button>
-<button onclick="window.location.href = '/src/toGoOut.php' ">Sair da conta</button>
+<button onclick="window.location.href = '/src/forum/home.php' ">Acesse o forum</button>
+<button onclick="window.location.href = '/src/exit.php' ">Sair da conta</button>
 </header>

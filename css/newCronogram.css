@@ -17,6 +17,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  margin: 0;
 }
 h1,
 h2 {
@@ -34,6 +35,7 @@ h2 {
 }
 label {
   font-family: "Share Tech Mono", sans-serif;
+  font-size: 24px;
   background: -webkit-linear-gradient(
     90deg,
     rgba(188, 251, 255, 1) 47%,
@@ -58,6 +60,11 @@ label {
   -webkit-background-clip: text;
   -webkit-text-fill-color: rgb(255, 255, 255);
 }
+table {
+  color: aliceblue;
+}
+
+th,
 td {
   border-style: solid;
   width: 9em;

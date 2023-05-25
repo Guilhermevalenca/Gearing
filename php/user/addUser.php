@@ -3,8 +3,9 @@
         exit();
     }
     require("../dataSource.php");
-    $fp = fopen(usuarios,'a');
-    fputcsv($fp,array($_POST['user'],$_POST['nome'],$_POST['email'],$_POST['senha']));
+    $nome = $_POST['nome'];
+    $fp = fopen(users,'a');
+    fputcsv($fp,array($_POST['user'],$nome,$_POST['email'],$_POST['senha']));
     fclose($fp);
     session_start();
     $_SESSION['username'] = $_POST['user'];

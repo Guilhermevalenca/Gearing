@@ -1,5 +1,5 @@
 <?php
-require("../verifyUserAuthentication.php");
+require('../verifyUserAuthentication.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -10,6 +10,7 @@ require("../verifyUserAuthentication.php");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $_SESSION['username'] ?></title>
     <link rel="stylesheet" href="/css/forum.css">
+    <link rel="stylesheet" href="/css/global.css">
     <script defer src="/script/header.js"></script>
 </head>
 
@@ -24,9 +25,9 @@ require("../verifyUserAuthentication.php");
             <input type="text" placeholder="Qual assunto você deseja aborda?" name="topico">
             <input type="submit">
         </form>
-        <script defer src="/script/forum/checkingUserTopicExists.js"></script>
+        <script defer src="/script/forum/checkUserTopicExists.js"></script>
         <table>
-            <?php if (file_exists("./viewTopic/" . $_SESSION['username'] . ".csv")) : ?>
+            <?php if (file_exists("./viewTopics/" . $_SESSION['username'] . ".csv")) : ?>
                 <?php $fp = fopen("topics.csv", 'r') ?>
                 <tr>
                     <th>Seu topico:</th>
@@ -60,7 +61,7 @@ require("../verifyUserAuthentication.php");
 
         </table>
         <h2>Veja aqui topicos gerenciados pelos criadores/administradores:</h2>
-        <button onclick="window.location.href = '/src/user/listUsers.php' ">Listar usuarios</button>
+        <button onclick="window.location.href = '../user/listUsers.php' ">Listar usuarios</button>
         <button id="voltar" onclick="window.location.href = '/src/menu.php' ">Voltar</button>
     </section>
 </body>

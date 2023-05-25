@@ -17,14 +17,14 @@
     $topico = $_GET['topico'];
     ?>
     <h1>Topico: <?= $topico ?></h1>
-    <iframe src="./viewTopicInformation.php?user=<?= $user ?>" frameborder="0"></iframe>
-    <form action="/php/forum/adicionarMensagemTopico.php" method="POST">
+    <iframe src="./viewTopicInfo.php?user=<?= $user ?>" frameborder="0"></iframe>
+    <form action="/php/forum/addTopicMessage.php" method="POST">
         <input type="text" placeholder="Escreva sua mensagem" name="mensagem">
         <input type="hidden" name='topico' value="<?= $topico ?>">
         <input type="hidden" name="arquivo" value="<?= $user ?>">
         <input type="submit">
     </form>
-    <button id="voltar" onclick="window.location.href = '/src/forum/mainPage.php' ">Voltar</button>
+    <button id="voltar" onclick="window.location.href = '/src/forum/home.php' ">Voltar</button>
 </body>
 
 </html>

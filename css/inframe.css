@@ -5,23 +5,14 @@
   font-size: 30px;
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: (
-    90deg,
-    rgba(188, 251, 255, 1) 47%,
-    rgba(24, 237, 242, 1) 100%
-  );
+  -webkit-text-fill-color: rgb(0, 0, 0);
 }
+
 .message {
   font-family: "Share Tech Mono", sans-serif;
-  font-size: 30px;
-  background-clip: text;
-  background: -webkit-linear-gradient(
-    90deg,
-    rgba(188, 251, 255, 1) 47%,
-    rgba(24, 237, 242, 1) 100%
-  );
+  font-size: 25px;
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: red;
+  -webkit-text-fill-color: rebeccapurple;
   background-size: 100px;
 }

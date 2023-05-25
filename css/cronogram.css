@@ -5,6 +5,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+  margin: 0;
 }
 
 h1,
@@ -23,4 +24,11 @@ h2 {
 }
 table {
   color: aliceblue;
+}
+
+th,
+td {
+  border-style: solid;
+  width: 9em;
+  height: 1.5em;
 }

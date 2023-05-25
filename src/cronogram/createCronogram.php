@@ -21,7 +21,7 @@ require("../verifyUserAuthentication.php");
     <div class="div">
     <h1>Aqui você irá criar seu cronograma</h1><br>
 
-    <form id="form" method="GET" action="./viewCronogram.php">
+    <form id="form" method="GET" action="./viewNewCronogram.php">
        
         <h2>Em quais matérias você sente ter mais dificuldade?</h2>
         <label>
@@ -68,22 +68,17 @@ require("../verifyUserAuthentication.php");
             <input type="checkbox" name="materia[]" value='Ingles'>
             Inglês
         </label>
-        <br>
+        <br><br>
         <label>
         Outras materias:
         </label>
         <label id="gerarInputs">
-
-         <button id="outrasMaterias" type="text" onclick="novoInput()">Adicionar uma nova materia</button>
+        <button id="outrasMaterias" type="text" onclick="novoInput()">Adicionar uma nova materia</button>
          <button id="apagarNovaMateria" onclick="deletarInput()">Apagar Materia</button><br>
 
         </label>
         <label class="novosInput"></label>
-        <h2>Quanto tempo você pretende estudar para cada materia?</h2>
-        <label class="textBug"> 
-            <input type="number" name="tempoMateria[]" min="15" max="60" step="5" required>
-        </label>
-        <label>minutos</label>
+
         <h2>Qual turno você tem disponivel para estudar?</h2>
         <label>
             <input type="checkbox" name="turnos[]" value='Manhã'>
@@ -101,7 +96,7 @@ require("../verifyUserAuthentication.php");
             <input type="checkbox" name="turnos[]" value='Madrugada'>
             Madrugada
         </label><br><br>
-        <input type="submit">
+        <button type="submit">Pronto</button>
     </form>
     </div>
     <script defer src="/script/cronogram/checkValidCronogram.js"></script>
