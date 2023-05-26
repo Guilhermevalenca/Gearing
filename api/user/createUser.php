@@ -8,9 +8,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     $fp = fopen('dataUsers.csv','r');
     while( ( $row = fgetcsv($fp) ) !== false ){
-        if($row[0] == $dataNewUser['email']){
+        if($row[1] == $dataNewUser['email']){
             exit();
         }
     }
-    
+    fclose($fp);
+    array_push($dataNewUser,"false");
+
+    $fp = fopen('dataUsers.csv','a');
+    fputcsv($fp, $dataNewUser);
+    fclose($fp);
+
+    echo "sucess";
 }

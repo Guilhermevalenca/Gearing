@@ -13,14 +13,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $fp = fopen('dataUsers.csv','r');
     $dataUser = [];
     while( ( $row = fgetcsv($fp) ) !== false ){
-        if($row[0] == $formData['email'] && $row[1] == $formData['password']){
+        if($row[1] == $formData['email'] && $row[2] == $formData['password']){
 
             $dataUser = [
-                'username' => $row[2],
-                'email' => $row[0]
+                'username' => $row[0],
+                'email' => $row[1]
             ];
             echo json_encode($dataUser);
-            authorizing($row[0]);
+            authorizing($row[1]);
             exit();
         }
     }
