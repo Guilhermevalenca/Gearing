@@ -14,6 +14,11 @@ const routes = [
     name: 'menu',
     component: () => import('@/views/MenuPage.vue')
   },
+  {
+    path: '/cronogram',
+    name: 'cronogram',
+    component: () => import('@/views/CronogramPage.vue')
+  }
 ]
 
 const router = createRouter({

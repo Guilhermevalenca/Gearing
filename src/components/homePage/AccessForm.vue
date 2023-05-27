@@ -2,24 +2,25 @@
 <div>
     <form class="form" v-if="showForm" @submit.prevent="authUser()">
         <label v-if="showAlert">
-            <AlertForm class="form-alert" @close="closeAlert()"> 
+            <AlertForm :class="{'form-alert-success' : createSuccess, 'form-alert-failed': failedLogin}" @close="closeAlert()"> 
                 {{ messageAlert }}
             </AlertForm>
         </label>
         <label>
             E-mail:
-            <input type="email" v-model="loginUser.email" placeholder="E-mail">
+            <input type="email" v-model="loginUser.email" maxlength="45" placeholder="E-mail">
+            {{ loginUser.email.length }}
         </label>
         <label>
             Senha:
-            <input type="password" v-model="loginUser.password" placeholder="Senha"> 
+            <input type="password" v-model="loginUser.password" minlength="6" placeholder="Senha"> 
         </label>
             <button>entrar</button>
     </form>
     <form class="form" v-if="!showForm" @submit.prevent="newUser()">
         <label>
             Usuario:
-            <input type="text" v-model="createUser.username" placeholder="digite seu nome de usuario">
+            <input type="text" v-model="createUser.username" maxlength="20" placeholder="digite seu nome de usuario">
         </label>
         <label>
             E-mail:
@@ -27,11 +28,11 @@
         </label>
         <label>
             Senha:
-            <input :class="{'form-password' : differentPasswords}" type="password" v-model="createUser.password" placeholder="digite sua senha">
+            <input :class="{'form-password' : differentPasswords}" type="password" minlength="6" v-model="createUser.password" placeholder="digite sua senha">
         </label>
         <label>
             Confirme sua senha:
-            <input :class="{'form-password' : differentPasswords}" type="password" v-model="createUser.confirmPassword" placeholder="digite sua senha novamente">
+            <input :class="{'form-password' : differentPasswords}" type="password" minlength="6" v-model="createUser.confirmPassword" placeholder="digite sua senha novamente">
         </label>
         <label v-if="showAlert">
             <AlertForm @close="closeAlert()"> 
@@ -66,7 +67,9 @@ export default{
             showAlert: false,
             messageAlert: '',
             emailRegistered: false,
-            differentPasswords: false
+            differentPasswords: false,
+            createSuccess: false,
+            failedLogin: false
         };
     },
     methods: {
@@ -77,7 +80,12 @@ export default{
             })
                 .then(response => {
                 if(response.data){
+                    this.$store.dispatch('changeUser',response.data);
                     this.$router.push('/menu')
+                }else{
+                    this.showAlert = true;
+                    this.messageAlert = "Não foi possivel efetivar seu login"
+                    this.failedLogin = true;
                 }
             });
         },
@@ -95,6 +103,7 @@ export default{
                         this.showForm = true;
                         this.messageAlert = "Sua conta foi criada com sucesso"
                         this.showAlert = true;
+                        this.createSuccess = true;
                     }else{
                         this.showAlert = true;
                         this.messageAlert = "Essa conta ja estar cadastrada"
@@ -139,8 +148,11 @@ export default{
     input{
         width: 25em;
     }
-    .form-alert{
+    .form-alert-success{
         background-color: green;
+    }
+    .form-alert-failed{
+        background-color: red;
     }
     .form-email, .form-password{
         color: red;

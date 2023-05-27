@@ -21,6 +21,9 @@ export default {
       showForm: true,
       testandoEssaPoha: ''
     }
+  },
+  beforeCreate() {
+    this.$store.dispatch('signOutOfAccount')
   }
 }
 </script>

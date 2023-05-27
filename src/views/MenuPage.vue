@@ -1,13 +1,10 @@
 <template>
-    <nav class="menu">
-        <router-link to="/menu">Home</router-link> |
-        <RouterLink to="/cronogram">cronograma</RouterLink> |
-        <RouterLink to="/">Sair da conta</RouterLink>
-    </nav>
-
   <div>
     <button @click="test()">testar</button>
     {{ testandoEssaPoha }}
+  </div>
+  <div>
+    {{ this.$store.state.user }}
   </div>
 </template>
 
@@ -15,6 +12,7 @@
 import axios from 'axios'
 
 export default{
+  inject: ['goBack'],
   data() {
     return{
       testandoEssaPoha: ''
@@ -23,7 +21,7 @@ export default{
     methods: {
     test() {
       axios.post('http://localhost:8000',{
-        email: 'guilherm3vrp@gmail.com'
+        email: this.$store.state.user.email
       })
       .then(response=> {
         if(response.data){
@@ -31,6 +29,7 @@ export default{
         }else{
           console.log('você é incompetente para um karalho')
         }
+        console.log(this.$store.state.user)
       })
     }
   }

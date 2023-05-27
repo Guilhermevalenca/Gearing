@@ -1,4 +1,9 @@
 <template>
+  <nav class="menu" v-if="this.$store.state.user.email">
+        <router-link to="/menu">Home</router-link> |
+        <RouterLink to="/cronogram">cronograma</RouterLink> |
+        <RouterLink to="/">Sair da conta</RouterLink>
+    </nav>
   <router-view/>
 </template>
 
@@ -7,9 +12,16 @@ export default{
   name: 'App',
   data() {
     return {
-      
+      checking: this.$store.state.user.email
     }
   },
+  watch: {
+    checking() {
+      if(!this.checking){
+        this.$router.push('/')
+      }
+    }
+  }
 }
 </script>
 
