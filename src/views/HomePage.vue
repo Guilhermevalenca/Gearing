@@ -23,7 +23,7 @@ export default {
     }
   },
   beforeCreate() {
-    this.$store.dispatch('signOutOfAccount')
+    this.$checkAuthentication();
   }
 }
 </script>

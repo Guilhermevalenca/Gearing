@@ -18,6 +18,11 @@ const routes = [
     path: '/cronogram',
     name: 'cronogram',
     component: () => import('@/views/CronogramPage.vue')
+  },
+  {
+    path: '/userData',
+    name: 'userData',
+    component: () => import('@/views/UserDataPage.vue')
   }
 ]
 

@@ -9,7 +9,6 @@
         <label>
             E-mail:
             <input type="email" v-model="loginUser.email" maxlength="45" placeholder="E-mail">
-            {{ loginUser.email.length }}
         </label>
         <label>
             Senha:
@@ -81,6 +80,7 @@ export default{
                 .then(response => {
                 if(response.data){
                     this.$store.dispatch('changeUser',response.data);
+                    localStorage.setItem('idSession',(response.data).id);
                     this.$router.push('/menu')
                 }else{
                     this.showAlert = true;

@@ -9,7 +9,9 @@ export default createStore({
   },
   mutations: {
     changeUser(state,data){
-      state.user = data;
+      state.user.username = data.username;
+      state.user.email = data.email;
+      
     }
   },
   getters: {
@@ -17,14 +19,6 @@ export default createStore({
   actions: {
     changeUser( {commit}, data) {
       commit('changeUser',data)
-    },
-    signOutOfAccount( {commit}){
-      commit('changeUser',{
-        user: {
-          username: '',
-          email: ''
-        }
-      })
     }
   }
 })
