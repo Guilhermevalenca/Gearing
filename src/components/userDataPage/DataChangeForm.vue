@@ -1,5 +1,4 @@
 <template>
-    <h1>Seus dados:</h1>
     <div v-if="checkingPassword">
         <label v-if="showAlert">
             <AlertPassword @close="closeAlert()" />

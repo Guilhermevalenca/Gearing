@@ -1,11 +1,11 @@
 <template>
 <div>
+    <label v-if="showAlert">
+        <AlertForm :class="{'form-alert-success' : createSuccess, 'form-alert-failed': failedLogin}" @close="closeAlert()"> 
+            {{ messageAlert }}
+        </AlertForm>
+    </label>
     <form class="form" v-if="showForm" @submit.prevent="authUser()">
-        <label v-if="showAlert">
-            <AlertForm :class="{'form-alert-success' : createSuccess, 'form-alert-failed': failedLogin}" @close="closeAlert()"> 
-                {{ messageAlert }}
-            </AlertForm>
-        </label>
         <label>
             E-mail:
             <input type="email" v-model="loginUser.email" maxlength="45" placeholder="E-mail">
