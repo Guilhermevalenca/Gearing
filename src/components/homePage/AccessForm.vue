@@ -12,7 +12,7 @@
         </label>
         <label>
             Senha:
-            <input type="password" v-model="loginUser.password" minlength="6" placeholder="Senha"> 
+            <input type="password" v-model="loginUser.password" placeholder="Senha"> 
         </label>
             <button>entrar</button>
     </form>

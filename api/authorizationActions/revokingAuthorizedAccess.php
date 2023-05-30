@@ -2,7 +2,6 @@
 //accepting request
 require '../accept.php';
 
-
 //decoding data
 $json = file_get_contents('php://input');
 $switchingSession = json_decode($json,true);

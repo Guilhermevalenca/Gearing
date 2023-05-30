@@ -1,6 +1,6 @@
 <template>
-  <nav class="menu" v-if="this.$route.path != '/'">
-    <router-link to="/menu">Pagina inicial</router-link> |
+  <nav class="navigation-option" v-if="this.$route.path != '/'">
+    <router-link to="/menu">Pagina inicial</router-link> | 
     <RouterLink to="/cronogram">cronograma</RouterLink> |
     <RouterLink to="/userData">Seus dados</RouterLink> | 
     <RouterLink @click="this.$logoutUser()" to="/">Sair da conta</RouterLink>
