@@ -13,7 +13,7 @@ CREATE TABLE GEA_USER(
 );
 CREATE TABLE GEA_CRONOGRAM(
 	cro_id INT NOT NULL,
-    cro_shifts VARCHAR(45) NOT NULL,
+    cro_shifts VARCHAR(10) NOT NULL,
     user_email VARCHAR(45) NOT NULL,
     PRIMARY KEY (cro_id, user_email),
     FOREIGN KEY (user_email) REFERENCES GEA_USER(user_email)
