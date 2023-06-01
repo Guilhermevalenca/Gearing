@@ -31,7 +31,7 @@
         <br>
         <button onclick="window.location.href = '/src/user/showData.php' ">Informações da conta</button>
         <br>
-        <button onclick="window.location.href = '/src/forum/home.php' ">Acesse o forum</button>
+        <button onclick="window.location.href = '/src/forum/home.php' ">Acesse o fórum</button>
         <br>
         <button onclick="window.location.href = '/src/exit.php' ">Sair da conta</button>
     </section>
