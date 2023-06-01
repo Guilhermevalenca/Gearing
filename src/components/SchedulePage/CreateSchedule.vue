@@ -55,13 +55,12 @@
     <div>
         <label>
             turnos
-            <select v-model="turno">
+            <select v-model="turns" :class="{'turns' : fillIn}">
                 <option value="manha">manha</option>
                 <option value="tarde">tarde</option>
                 <option value="noite">noite</option>
                 <option value="madrugada">madrugada</option>
             </select>
-            {{ turno }}
         </label>
     </div>
     <div>
@@ -72,7 +71,7 @@
 </form>
 
 <div class="content">
-    Materias adicionadas:
+    <div v-if="matters.length == 1">Materia adicionada:</div><div v-if="matters.length > 1">Materias adicionadas:</div>
     <div class="content-list" v-if="this.matters.length != 0">
         <div class="content-list-subjects" v-for="(matter, index) in matters" :key="index">
            <div class="content-list-subjects-individually">
@@ -89,6 +88,7 @@
 </div>
 </template>
 <script>
+import Swal from 'sweetalert2'
 
 export default{
     components: {} ,
@@ -96,25 +96,47 @@ export default{
         return {
             matters: [],
             otherMatter: '',
-            turno: ''
+            turns: '',
+            fillIn: false
         }
     },
     methods: {
         addOtherMatter() {
-            this.matters.push(this.otherMatter),
+            if(this.otherMatter){
+                this.matters.push(this.otherMatter)
+            }
             this.otherMatter = ''
         },
         removeMatters(index) {
             this.matters.splice(index,1)
         },
         savingMaterialsTemporarily(){
-            this.$store.dispatch('addMatter',this.matters);
-            this.$emit('saveMatters');
+            if(this.turns){
+                if(this.matters.length != 0){
+                    this.$store.dispatch('addingTemporaryDataSchedule',{matter: this.matters, turns: this.turns});
+                    this.$emit('saveMatters');
+                }else{
+                    Swal.fire('Nenhuma materia','Não é possivel montar um cronograma sem ter ao menos uma materia adiciona!')
+                }
+            }else{
+                this.fillIn = true
+            }
+        }
+    },
+    watch: {
+        turns() {
+            if(this.turns){
+                this.fillIn = false;
+            }
         }
     }
 }
 </script>
 <style scoped>
+.turns{
+    background-color: red;
+    color: white;
+}
 .content{
     display: grid;
     justify-content: center;

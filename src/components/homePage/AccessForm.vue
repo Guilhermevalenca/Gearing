@@ -1,10 +1,10 @@
 <template>
 <div>
-    <label v-if="showAlert">
-        <AlertForm :class="{'form-alert-success' : createSuccess, 'form-alert-failed': failedLogin}" @close="closeAlert()"> 
-            {{ messageAlert }}
-        </AlertForm>
-    </label>
+        <label v-if="showAlert">
+            <AlertForm :class="{'form-alert-success' : createSuccess, 'form-alert-failed': failedLogin}" @close="closeAlert()"> 
+                {{ messageAlert }}
+            </AlertForm>
+        </label>
     <form class="form" v-if="showForm" @submit.prevent="authUser()">
         <label>
             E-mail:
@@ -32,11 +32,6 @@
         <label>
             Confirme sua senha:
             <input :class="{'form-password' : differentPasswords}" type="password" minlength="6" v-model="createUser.confirmPassword" placeholder="digite sua senha novamente">
-        </label>
-        <label v-if="showAlert">
-            <AlertForm @close="closeAlert()"> 
-                {{ messageAlert }}
-            </AlertForm>
         </label>
         <button>criar conta</button>
     </form>

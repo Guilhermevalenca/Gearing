@@ -6,7 +6,8 @@ export default createStore({
       username: '',
       email: ''
     },
-    subjects: []
+    subjects: [],
+    turns: ''
   },
   mutations: {
     changeUser(state,data) {
@@ -16,6 +17,9 @@ export default createStore({
     },
     addMatter(state,data) {
       state.subjects = data; 
+    },
+    addTurns(state,data){
+      state.turns = data;
     }
   },
   getters: {
@@ -24,8 +28,9 @@ export default createStore({
     changeUser( {commit}, data) {
       commit('changeUser',data)
     },
-    addMatter( {commit}, data) {
-      commit('addMatter',data)
+    addingTemporaryDataSchedule( {commit}, data) {
+      commit('addMatter',data.matter);
+      commit('addTurns',data.turns);
     }
   }
 })

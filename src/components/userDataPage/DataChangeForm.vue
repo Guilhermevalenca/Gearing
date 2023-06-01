@@ -22,11 +22,11 @@
             </label>
             <label>
                 nova senha:
-                <input :class="{'form-password' : differentPasswords}" type="password" v-model="newUserData.password" placeholder="Nova senha" minlength="6" required>
+                <input :class="{'form-password' : differentPasswords}" type="password" v-model="newUserData.password" placeholder="Nova senha" minlength="6">
             </label>
             <label>
                 Confirme sua nova senha:
-                <input :class="{'form-password' : differentPasswords}" type="password" v-model="newUserData.confirmePassword" placeholder="confirme sua nova senha" required> 
+                <input :class="{'form-password' : differentPasswords}" type="password" v-model="newUserData.confirmePassword" placeholder="confirme sua nova senha"> 
             </label>
             <input type="submit" value="alterar dados">
         </form>
@@ -56,7 +56,7 @@ export default{
             },
             checkingPassword: true,
             showAlert: false,
-            differentPasswords: false
+            differentPasswords: false,
         }
     },
     methods: {
@@ -86,6 +86,9 @@ export default{
                 })
                 .then(result => {
                     if(result.isConfirmed){
+                        if(!this.newUserData.password){
+                            this.newUserData.password = this.user.password; 
+                        }
                         axios.post('http://localhost:8000/user/updateUserData.php',{
                             email: this.$store.state.user.email,
                             name: this.newUserData.username,
@@ -100,6 +103,8 @@ export default{
                                     erro: (response.data).problem
                                 })
                             }
+                            this.newUserData.password = ''
+                            this.newUserData.confirmePassword = ''
                         })
                     }
                 })

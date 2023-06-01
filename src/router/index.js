@@ -17,7 +17,7 @@ const routes = [
   {
     path: '/cronogram',
     name: 'cronogram',
-    component: () => import('@/views/CronogramPage.vue')
+    component: () => import('@/views/SchedulePage.vue')
   },
   {
     path: '/userData',

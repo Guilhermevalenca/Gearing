@@ -13,9 +13,9 @@
     </div>
 </template>
 <script>
-import CreateCronogram from '@/components/cronogramPage/CreateCronogram.vue';
-import MountedCronogram from '@/components/cronogramPage/MountedCronogram.vue';
-import ViewCronogram from '@/components/cronogramPage/ViewCronogram.vue';
+import CreateCronogram from '@/components/SchedulePage/CreateSchedule.vue';
+import MountedCronogram from '@/components/SchedulePage/MountedSchedule.vue';
+import ViewCronogram from '@/components/SchedulePage/ViewSchedule.vue';
 import Swal from 'sweetalert2';
 
 export default{
