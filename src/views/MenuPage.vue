@@ -31,10 +31,16 @@ export default{
           // Executar a ação de exclusão
           this.confirm()
         }
+        if(result.isDismissed){
+          this.deny()
+        }
       })
     },
     confirm() {
       Swal.fire('Ja foi?','seu misera!!!')
+    },
+    deny(){
+      Swal.fire('Oia','preguiçoso de merda!')
     }
   }
 }
