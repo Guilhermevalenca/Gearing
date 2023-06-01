@@ -36,7 +36,12 @@ body {
   align-content: center;
   align-items: center;
   justify-content: center;
-  background-image: url(/logos/gearing.gif);
+  background: -webkit-linear-gradient(
+    318deg,
+    rgba(133, 26, 186, 1) 18%,
+    rgb(133, 26, 186, 1) 46%,
+    rgba(100, 2, 223, 1) 81%
+  );
 }
 
 input[type="email"],

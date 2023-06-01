@@ -39,11 +39,11 @@ input[type="submit"] {
 }
 
 input[type="submit"] {
-  background: linear-gradient(
-    80deg,
-    rgba(100, 2, 223, 1) 9%,
-    rgba(133, 26, 186, 1) 54%,
-    rgba(0, 212, 255, 1) 100%
+  background: -webkit-linear-gradient(
+    318deg,
+    rgba(133, 26, 186, 1) 18%,
+    rgb(133, 26, 186, 1) 46%,
+    rgba(100, 2, 223, 1) 81%
   );
   color: #fff;
   cursor: pointer;
@@ -51,11 +51,11 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background: linear-gradient(
-    80deg,
-    rgba(100, 2, 223, 1) 9%,
-    rgba(133, 26, 186, 1) 54%,
-    rgba(0, 212, 255, 1) 100%
+  background: -webkit-linear-gradient(
+    318deg,
+    rgba(133, 26, 186, 1) 18%,
+    rgb(133, 26, 186, 1) 46%,
+    rgba(100, 2, 223, 1) 81%
   );
 }
 
@@ -73,11 +73,11 @@ td {
 }
 
 th {
-  background: linear-gradient(
-    80deg,
-    rgba(100, 2, 223, 1) 9%,
-    rgba(133, 26, 186, 1) 54%,
-    rgba(0, 212, 255, 1) 100%
+  background: -webkit-linear-gradient(
+    318deg,
+    rgba(133, 26, 186, 1) 18%,
+    rgb(133, 26, 186, 1) 46%,
+    rgba(100, 2, 223, 1) 81%
   );
   color: white;
 }
@@ -87,11 +87,11 @@ tr:hover {
 }
 
 button {
-  background: linear-gradient(
-    80deg,
-    rgba(100, 2, 223, 1) 9%,
-    rgba(133, 26, 186, 1) 54%,
-    rgba(0, 212, 255, 1) 100%
+  background: -webkit-linear-gradient(
+    318deg,
+    rgba(133, 26, 186, 1) 18%,
+    rgb(133, 26, 186, 1) 46%,
+    rgba(100, 2, 223, 1) 81%
   );
   color: white;
   border: none;

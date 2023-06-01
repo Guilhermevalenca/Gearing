@@ -18,3 +18,11 @@ Cl4udAnne,3,materia,quimica,0,0,fisica,0,1,matematica,1,2
 Cl4udAnne,3,turnos,Manhã,Tarde,Noite
 Guilherm3vrp,4,materia,filosofia,0,2,asdasdsadasdsad,0,3,sociologia,0,3,sadasdasdasd,0,3,quimica,1,2,fisica,2,3,matematica,3,1
 Guilherm3vrp,4,turnos,Manhã,Tarde,Noite
+RodriguesClaudiane,0,materia,matematica,0,6,biologia,1,2,fisica,2,0,portugues,2,1,quimica,2,2
+RodriguesClaudiane,0,turnos,Manhã
+RodriguesClaudiane,1,materia,matematica,1,0,Ingles,1,0,fisica,1,0
+RodriguesClaudiane,1,turnos,Tarde
+RodriguesClaudiane,2,materia,fisica,1,0
+RodriguesClaudiane,2,turnos,Tarde
+RodriguesClaudiane,3,materia,quimica,0,0,fisica,2,0
+RodriguesClaudiane,3,turnos,Manhã

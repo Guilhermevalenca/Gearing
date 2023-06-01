@@ -45,11 +45,11 @@ input[type="submit"] {
 
 /* Estilo para o botão de envio do formulário */
 input[type="submit"] {
-  background: linear-gradient(
-    80deg,
-    rgba(100, 2, 223, 1) 9%,
-    rgba(133, 26, 186, 1) 54%,
-    rgba(0, 212, 255, 1) 100%
+  background: -webkit-linear-gradient(
+    318deg,
+    rgba(133, 26, 186, 1) 18%,
+    rgb(133, 26, 186, 1) 46%,
+    rgba(100, 2, 223, 1) 81%
   );
   color: white;
   border: none;
@@ -58,11 +58,11 @@ input[type="submit"] {
 
 /* Estilo para os botões dos tópicos */
 button {
-  background: linear-gradient(
-    80deg,
-    rgba(100, 2, 223, 1) 9%,
-    rgba(133, 26, 186, 1) 54%,
-    rgba(0, 212, 255, 1) 100%
+  background: -webkit-linear-gradient(
+    318deg,
+    rgba(133, 26, 186, 1) 18%,
+    rgb(133, 26, 186, 1) 46%,
+    rgba(100, 2, 223, 1) 81%
   );
   color: white;
   border: none;
@@ -97,11 +97,11 @@ td {
 
 /* Estilo para o botão de listar usuários */
 button.listar-usuarios {
-  background: linear-gradient(
-    80deg,
-    rgba(100, 2, 223, 1) 9%,
-    rgba(133, 26, 186, 1) 54%,
-    rgba(0, 212, 255, 1) 100%
+  background: -webkit-linear-gradient(
+    318deg,
+    rgba(133, 26, 186, 1) 18%,
+    rgb(133, 26, 186, 1) 46%,
+    rgba(100, 2, 223, 1) 81%
   );
   color: white;
   border: none;

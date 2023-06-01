@@ -13,7 +13,7 @@ body {
 
 .formulario_sessao_principal {
   width: 360px;
-  height: 700px;
+  height: 400px;
   background-color: #36056e;
   border-radius: 10px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
@@ -23,7 +23,13 @@ body {
   align-content: center;
   align-items: center;
   justify-content: center;
-  background-image: url(/logos/gearing.gif);
+  background: -webkit-linear-gradient(
+    318deg,
+    rgba(133, 26, 186, 1) 18%,
+    rgb(133, 26, 186, 1) 46%,
+    rgba(100, 2, 223, 1) 81%
+  )
+  ;
   background-repeat: no-repeat;
   background-size: cover;
   height: 80vh;
@@ -41,7 +47,7 @@ body {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
-  color: #aaa;
+  color:white;
 }
 
 #formulario input[type="text"],
@@ -55,14 +61,12 @@ body {
   padding: 10px;
   outline: none;
   font-style: italic;
-  color: #aaa;
+  color:black;
   text-align: center;
 }
 #formulario input[type="email"]::placeholder,
 #formulario input[type="password"]::placeholder {
-  color: #aaa;
   font-size: 14px;
-  font-style: italic;
   text-align: center;
 }
 
@@ -72,7 +76,7 @@ body {
   border: none;
   border-radius: 20px;
   background-color: #000;
-  color: #fff;
+  color: black;
   font-size: 16px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -130,5 +134,10 @@ button:focus {
   #formulario input[type="password"] {
     width: 100%;
   }
+}
+#butao{
+  display: grid;
+  justify-content: center;
+  align-items: center;
 }
 /* comentário */

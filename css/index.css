@@ -68,10 +68,10 @@ body {
 
 
 .criarRealizarLogin {
-  background-image: linear-gradient(
+  background: -webkit-linear-gradient(
     318deg,
     rgba(133, 26, 186, 1) 18%,
-    rgba(0, 212, 255, 1) 46%,
+    rgb(133, 26, 186, 1) 46%,
     rgba(100, 2, 223, 1) 81%
   );
   width: 20vw;
@@ -105,10 +105,10 @@ body {
 }
 
 .criarRealizarLogin:active {
-  background-image: linear-gradient(
+  background: -webkit-linear-gradient(
     318deg,
     rgba(133, 26, 186, 1) 18%,
-    rgba(0, 212, 255, 1) 46%,
+    rgb(133, 26, 186, 1) 46%,
     rgba(100, 2, 223, 1) 81%
   );
   color: black;
