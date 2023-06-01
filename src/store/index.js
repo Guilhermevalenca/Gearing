@@ -6,7 +6,7 @@ export default createStore({
       username: '',
       email: ''
     },
-    subject: []
+    subjects: []
   },
   mutations: {
     changeUser(state,data) {
@@ -15,7 +15,7 @@ export default createStore({
       
     },
     addMatter(state,data) {
-      state.subject = data; 
+      state.subjects = data; 
     }
   },
   getters: {

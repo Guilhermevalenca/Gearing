@@ -1,6 +1,9 @@
 <template>
 <div>
-<form @submit.prevent="">
+<form @submit.prevent="savingMaterialsTemporarily()">
+    <div>
+        <input type="submit" value="prosseguir">
+    </div>
     <label> 
         <input v-model="matters" type="checkbox" value="matematica">
         Matematica
@@ -50,18 +53,35 @@
         Espanhol
     </label>
     <div>
+        <label>
+            turnos
+            <select v-model="turno">
+                <option value="manha">manha</option>
+                <option value="tarde">tarde</option>
+                <option value="noite">noite</option>
+                <option value="madrugada">madrugada</option>
+            </select>
+            {{ turno }}
+        </label>
+    </div>
+    <div>
         Outras materias:
         <input type="text" v-model="otherMatter" placeholder="nova materia">
         <button @click.prevent="addOtherMatter()">Adicionar materias</button>
     </div>
-    <input type="submit">
 </form>
-<div>
+
+<div class="content">
     Materias adicionadas:
-    <div class="list" v-if="this.matters.length != 0">
-        <div class="list-subjects" v-for="(matter, index) in matters" :key="index">
-           <div class="list-subjects-individually">
-                <p>{{ matter }}</p><button>remover</button>
+    <div class="content-list" v-if="this.matters.length != 0">
+        <div class="content-list-subjects" v-for="(matter, index) in matters" :key="index">
+           <div class="content-list-subjects-individually">
+                <tr>
+                    <td>{{ matter }}</td> 
+                    <td>
+                    <button class="content-list-subjects-individually-button-remove" @click.prevent="removeMatters(index)">remover materia</button>
+                    </td>
+                </tr>
            </div>
         </div>
     </div>
@@ -75,26 +95,41 @@ export default{
     data() {
         return {
             matters: [],
-            otherMatter: ''
+            otherMatter: '',
+            turno: ''
         }
     },
     methods: {
         addOtherMatter() {
             this.matters.push(this.otherMatter),
             this.otherMatter = ''
+        },
+        removeMatters(index) {
+            this.matters.splice(index,1)
+        },
+        savingMaterialsTemporarily(){
+            this.$store.dispatch('addMatter',this.matters);
+            this.$emit('saveMatters');
         }
     }
 }
 </script>
 <style scoped>
-.list{
+.content{
     display: grid;
-    border-style: solid;
-    width: 25%;
     justify-content: center;
 }
-.list-subjects-individually{
-    display: flex;
+.content-list{
+    display: grid;
+    border-style: solid;
+    width: 25em;
     justify-content: center;
+}
+.content-list-subjects-individually{
+    display: flex;
+}
+.content-list-subjects-individually-button-remove{
+    width: 9em;
+    height: 3em;
 }
 </style>
