@@ -12,10 +12,10 @@ CREATE TABLE GEA_USER(
     FOREIGN KEY (meth_name) REFERENCES GEA_METHODOLOGY(meth_name)
 );
 CREATE TABLE GEA_CRONOGRAM(
-	cro_id INT NOT NULL,
+	cro_title VARCHAR(45) NOT NULL,
     cro_shifts VARCHAR(10) NOT NULL,
     user_email VARCHAR(45) NOT NULL,
-    PRIMARY KEY (cro_id, user_email),
+    PRIMARY KEY (cro_title, user_email),
     FOREIGN KEY (user_email) REFERENCES GEA_USER(user_email)
 );
 CREATE TABLE GEA_MATTER(

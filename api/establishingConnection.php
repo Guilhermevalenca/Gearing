@@ -1,5 +1,5 @@
 <?php
-$servername = "localhost:3307";
+$servername = "localhost:3306";
 $username = "root"; //Nome de usuario do seu mysql
 $password = "root"; //senha do usuario do mysql
 $dbname = "GEARING"; //nome da sua DATABASE
