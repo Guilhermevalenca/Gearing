@@ -96,9 +96,9 @@ export default{
                 .then(response => {
                     if(response.data){
                         this.showForm = true;
+                        this.createSuccess = true;
                         this.messageAlert = "Sua conta foi criada com sucesso"
                         this.showAlert = true;
-                        this.createSuccess = true;
                     }else{
                         this.showAlert = true;
                         this.messageAlert = "Essa conta ja estar cadastrada"

@@ -2,49 +2,50 @@
     <div>
         <h1>Hello, i am cronogram</h1>
     </div>
-    <div v-if="cronogramStates.currentStates == 1">
-        <CreateCronogram @saveMatters="nextStage()" />
+
+    <div>
+        <button @click="showCreateSchedule()">criar cronograma</button>
+        <button @click="showViewSchedule()">vizualizar cronogramas criados</button>
     </div>
-    <div v-if="cronogramStates.currentStates == 2">
-        <MountedCronogram />
-    </div>
-    <div v-if="cronogramStates.currentStates == 3">
-        <ViewCronogram />
+
+    <div>
+        <div v-if="createSchedule">
+            <CreateSchedule @saveMatters="nextStage()" />
+        </div>
+        <div v-if="createSchedule">
+            <MountedSchedule />
+        </div>
+        <div v-if="viewSchedule">
+            <ViewSchedule />
+        </div>
     </div>
 </template>
 <script>
-import CreateCronogram from '@/components/SchedulePage/CreateSchedule.vue';
-import MountedCronogram from '@/components/SchedulePage/MountedSchedule.vue';
-import ViewCronogram from '@/components/SchedulePage/ViewSchedule.vue';
-import Swal from 'sweetalert2';
+import CreateSchedule from '@/components/SchedulePage/CreateSchedule.vue';
+import MountedSchedule from '@/components/SchedulePage/MountedSchedule.vue';
+import ViewSchedule from '@/components/SchedulePage/ViewSchedule.vue';
 
 export default{
     beforeCreate() {
         this.$authUser();
     },
-    components: { CreateCronogram, ViewCronogram, MountedCronogram },
+    components: { CreateSchedule, ViewSchedule, MountedSchedule },
     data() {
         return {
-            cronogramStates: {
-                stages: [1,2,3], //the attribute stage exists to remember the stages
-                currentStates: 1
-            }
+            createSchedule: false,
+            viewSchedule: false
         }
     },
     methods: {
-        nextStage() {
-            Swal.fire({
-                title: 'Proximo etada!!!',
-                text: 'Vamos para proxima etapa, a etapa de montagem do cronograma, nesta etapa não é possivel adicionar novas materias e nem alterar o turno',
-                showCancelButton: true,
-                confirmButtonText: 'OK',
-                cancelButtonText: 'cancelar'
-            })
-            .then(response => {
-                if(response.isConfirmed){
-                    this.cronogramStates.currentStates++
-                }
-            })
+        showCreateSchedule() {
+            if(this.viewSchedule){
+                this.viewSchedule = false;
+            }this.createSchedule = !this.createSchedule;
+        },
+        showViewSchedule() {
+            if(this.createSchedule){
+                this.createSchedule = false;
+            }this.viewSchedule = !this.viewSchedule;
         }
     }
     

@@ -1,9 +1,6 @@
 <template>
 <div>
-<form @submit.prevent="savingMaterialsTemporarily()">
-    <div>
-        <input type="submit" value="prosseguir">
-    </div>
+<section>
     <label> 
         <input v-model="matters" type="checkbox" value="matematica">
         Matematica
@@ -56,10 +53,10 @@
         <label>
             turnos
             <select v-model="turns" :class="{'turns' : fillIn}">
-                <option value="manha">manha</option>
-                <option value="tarde">tarde</option>
-                <option value="noite">noite</option>
-                <option value="madrugada">madrugada</option>
+                <option value="morning">manha</option>
+                <option value="afternoon">tarde</option>
+                <option value="night">noite</option>
+                <option value="dawn">madrugada</option>
             </select>
         </label>
     </div>
@@ -68,27 +65,11 @@
         <input type="text" v-model="otherMatter" placeholder="nova materia">
         <button @click.prevent="addOtherMatter()">Adicionar materias</button>
     </div>
-</form>
+</section>
 
-<div class="content">
-    <div v-if="matters.length == 1">Materia adicionada:</div><div v-if="matters.length > 1">Materias adicionadas:</div>
-    <div class="content-list" v-if="this.matters.length != 0">
-        <div class="content-list-subjects" v-for="(matter, index) in matters" :key="index">
-           <div class="content-list-subjects-individually">
-                <tr>
-                    <td>{{ matter }}</td> 
-                    <td>
-                    <button class="content-list-subjects-individually-button-remove" @click.prevent="removeMatters(index)">remover materia</button>
-                    </td>
-                </tr>
-           </div>
-        </div>
-    </div>
-</div>
 </div>
 </template>
 <script>
-import Swal from 'sweetalert2'
 
 export default{
     components: {} ,
@@ -109,49 +90,24 @@ export default{
         },
         removeMatters(index) {
             this.matters.splice(index,1)
-        },
-        savingMaterialsTemporarily(){
-            if(this.turns){
-                if(this.matters.length != 0){
-                    this.$store.dispatch('addingTemporaryDataSchedule',{matter: this.matters, turns: this.turns});
-                    this.$emit('saveMatters');
-                }else{
-                    Swal.fire('Nenhuma materia','Não é possivel montar um cronograma sem ter ao menos uma materia adiciona!')
-                }
-            }else{
-                this.fillIn = true
-            }
         }
     },
     watch: {
-        turns() {
-            if(this.turns){
-                this.fillIn = false;
-            }
+        matters: {
+            handler() {
+                this.$store.dispatch('addingTemporaryDataSchedule',{matter: this.matters, turns: this.turns})
+            },
+            deep: true
+        },
+        turns: {
+            handler() {
+                this.$store.dispatch('addingTemporaryDataSchedule',{matter: this.matters, turns: this.turns})
+            },
+            deep: true
         }
     }
 }
 </script>
 <style scoped>
-.turns{
-    background-color: red;
-    color: white;
-}
-.content{
-    display: grid;
-    justify-content: center;
-}
-.content-list{
-    display: grid;
-    border-style: solid;
-    width: 25em;
-    justify-content: center;
-}
-.content-list-subjects-individually{
-    display: flex;
-}
-.content-list-subjects-individually-button-remove{
-    width: 9em;
-    height: 3em;
-}
+
 </style>
