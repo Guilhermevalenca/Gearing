@@ -9,6 +9,7 @@ const app = createApp(App);
 app.use(store);
 app.use(router);
 
+//checks if the user is authenticated, if not he is redirected to the home page
 app.config.globalProperties.$authUser = async () => {
     let idSession = localStorage.getItem('idSession');
     if(!idSession){
@@ -40,6 +41,7 @@ app.config.globalProperties.$logoutUser = async () => {
         })
     }
 }
+//checks if the user is authenticated and sends it to the menu
 app.config.globalProperties.$checkAuthentication = async () => {
     let idSession = localStorage.getItem('idSession');
     if(idSession){

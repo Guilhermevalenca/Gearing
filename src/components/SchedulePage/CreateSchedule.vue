@@ -1,113 +1,217 @@
 <template>
-<div>
+
 <section>
-    <label> 
-        <input v-model="matters" type="checkbox" value="matematica">
-        Matematica
-    </label>
+<div class="define-title">
+    Adicione um titulo ao seu cronograma
+    <input class="define-title-text" v-model="title" type="text" placeholder="digite o titulo aqui">
+</div> 
+<div>
     <label>
-        <input v-model="matters" type="checkbox" value="fisica">
-        Fisica
+        turnos
+        <select v-model="turns">
+            <option value="morning">manha</option>
+            <option value="afternoon">tarde</option>
+            <option value="night">noite</option>
+            <option value="dawn">madrugada</option>
+        </select>
     </label>
-    <label>
-        <input v-model="matters" type="checkbox" value="quimica">
-        Quimica
-    </label>
-    <label>
-        <input v-model="matters" type="checkbox" value="biologia">
-        Biologia
-    </label>
-    <label>
-        <input v-model="matters" type="checkbox" value="historia">
-        Historia
-    </label>
-    <label> 
-        <input v-model="matters" type="checkbox" value="portugues">
-        Portugues
-    </label>
-    <label> 
-        <input v-model="matters" type="checkbox" value="geografia">
-        Geografia
-    </label>
-    <label> 
-        <input v-model="matters" type="checkbox" value="filosofia">
-        Filosofia
-    </label>
-    <label> 
-        <input v-model="matters" type="checkbox" value="sociologia">
-        Sociologia
-    </label>
-    <label> 
-        <input v-model="matters" type="checkbox" value="artes">
-        Artes
-    </label>
-    <label> 
-        <input v-model="matters" type="checkbox" value="Ingles">
-        Ingles
-    </label>
-    <label> 
-        <input v-model="matters" type="checkbox" value="espanhol">
-        Espanhol
-    </label>
-    <div>
-        <label>
-            turnos
-            <select v-model="turns" :class="{'turns' : fillIn}">
-                <option value="morning">manha</option>
-                <option value="afternoon">tarde</option>
-                <option value="night">noite</option>
-                <option value="dawn">madrugada</option>
-            </select>
-        </label>
-    </div>
-    <div>
-        Outras materias:
-        <input type="text" v-model="otherMatter" placeholder="nova materia">
-        <button @click.prevent="addOtherMatter()">Adicionar materias</button>
-    </div>
+</div>
+</section>
+<section>
+<div>
+    <h1>Montando cronograma</h1>
+</div>
+<div>
+    <button @click="addShedule()">salvar cronograma</button>
+</div>
 </section>
 
+<section class="schedule">
+<div>
+    Adicionar outras materias:
+    <input type="text" v-model="otherMatter" placeholder="nova materia">
+    <button @click.prevent="addOtherMatter()">Adicionar materias</button>
 </div>
+<div class="schedule-matters" ref="sortableSubject">
+    <ul @mouseup="giveBackSubject(subject)" ref="subject" class="shedule-matters-subject" v-for="(subject, index) in matters" :key="index">
+        {{ subject }}
+    </ul>
+</div>
+</section>
+
+<section class="schedule">
+<table v-show="turns">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Domingo</th>
+            <th>Segunda</th>
+            <th>Terça</th>
+            <th>Quarta</th>
+            <th>Quinta</th>
+            <th>Sexta</th>
+            <th>Sabado</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr v-for="(hour, index) in currentTime" :key="index">
+            <td>{{ hour }}</td>
+            <td class="shedule-receiving" v-for="(receiving,row) in receivingSubjects[index]" :key="row">
+                <div class="shedule-receiving-subjects" ref="sortableReceiving"></div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</section>
+
 </template>
+
 <script>
+import axios from 'axios';
+import Sortable from 'sortablejs';
+import Swal from 'sweetalert2';
 
 export default{
-    components: {} ,
     data() {
         return {
-            matters: [],
-            otherMatter: '',
+            matters: ["matematica","fisica","quimica","biologia","historia","portugues","geografia","filosofia","sociologia","artes","Ingles","espanhol"],
             turns: '',
-            fillIn: false
+            title: '',
+            otherMatter: '',
+            morningShift: ["06:00","07:00","08:00","09:00","10:00","11:00"],
+            afternoonShift: ["12:00","13:00","14:00","15:00","16:00","17:00"],
+            nightShift: ["18:00","19:00","20:00","21:00","22:00","23:00"],
+            dawnShift: ["00:00","01:00","02:00","03:00","04:00","05:00"],
+            receivingSubjects: [],
+            currentTime: ["06:00","07:00","08:00","09:00","10:00","11:00"]
+        }
+    },
+    mounted() {
+        for(let i = 0; i < 6; i++){
+            this.receivingSubjects[i] = []
+            this.receivingSubjects[i].length = 7
+        }
+        new Sortable(this.$refs.sortableSubject, {
+            group: 'shared'
+        });
+        const elements = this.$refs.sortableReceiving;
+        if(elements){
+            elements.forEach(element => {
+                new Sortable(element, {
+                    group: 'shared'
+                })
+            })
         }
     },
     methods: {
+        addShedule() {
+            let i = 0;
+            let j = 0;
+            
+            this.$refs.sortableReceiving.forEach( (element) => {
+                if(element.textContent){
+                    this.receivingSubjects[i][j] = element.textContent
+                }
+                j++
+                if(j == 7){
+                    i++
+                    j = 0;
+                }
+            })
+            axios.post('http://localhost:8000/schedule/addSchedule.php', {
+                schedule: this.receivingSubjects,
+                title: this.title,
+                shift: this.turns,
+                id: localStorage.getItem('idSession')
+            })
+            .then(response => {
+                if(response.data.result){
+                    Swal.fire("cronograma salvo",'Seu cronograma foi salvo com sucesso').then(result => {
+                        if(result.isConfirmed){
+                            this.$router.push('/schedule')
+                        }
+                    })
+                }else if(response.data.problem == "existTitle"){
+                    Swal.fire('titulo existente','o titulo que voce deseja adicionar ao seu novo cronograma ja estar sendo usado em um dos seus outros cronogramas');
+                }
+            })
+        },
+        giveBackSubject(subject) {
+            var check = true
+            const checkSubject = (this.$refs.sortableSubject).querySelectorAll('ul')
+        
+            checkSubject.forEach(element => {
+                if(element.textContent == subject){
+                    check = false
+                }
+            })
+            if(check){
+                this.matters.push(subject)
+            }
+        },
         addOtherMatter() {
             if(this.otherMatter){
                 this.matters.push(this.otherMatter)
             }
             this.otherMatter = ''
-        },
-        removeMatters(index) {
-            this.matters.splice(index,1)
         }
     },
     watch: {
-        matters: {
-            handler() {
-                this.$store.dispatch('addingTemporaryDataSchedule',{matter: this.matters, turns: this.turns})
-            },
-            deep: true
-        },
         turns: {
             handler() {
-                this.$store.dispatch('addingTemporaryDataSchedule',{matter: this.matters, turns: this.turns})
+                if(this.turns == "morning"){
+                    this.currentTime = this.morningShift;
+                }else if(this.turns == "afternoon"){
+                    this.currentTime = this.afternoonShift;
+                }else if(this.turns == "night"){
+                    this.currentTime = this.nightShift;
+                }else if(this.turns == "dawn"){
+                    this.currentTime = this.dawnShift;
+                }
+                const elements = this.$refs.sortableReceiving;
+                if(elements){
+                    elements.forEach(element => {
+                        new Sortable(element, {
+                            group: 'shared'
+                        })
+                    })
+                }
             },
             deep: true
         }
+    },
+    computed: {
+        
     }
 }
 </script>
-<style scoped>
 
+<style scoped>
+.schedule{
+    display: grid;
+    justify-content: center;
+}
+.schedule-matters{
+    display: flex;
+    justify-content: center;
+    width: 50em;
+    flex-wrap: wrap;
+}
+.shedule-matters-subject{
+    margin: 0px;
+    padding: 1em;
+    list-style: none;
+}
+.shedule-receiving{
+    border-style: solid;
+    width: 3em;
+    height: 1.5em;
+}
+.shedule-receiving-subjects{
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    flex-wrap: wrap;
+}
 </style>
+

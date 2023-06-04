@@ -15,7 +15,6 @@
     "sweetalert2": "^11.4.8",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
-    "vuedraggable": "^2.24.3",
     "vuex": "^4.0.0"
   },
   "devDependencies": {

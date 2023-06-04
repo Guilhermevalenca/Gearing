@@ -10,10 +10,7 @@
 
     <div>
         <div v-if="createSchedule">
-            <CreateSchedule @saveMatters="nextStage()" />
-        </div>
-        <div v-if="createSchedule">
-            <MountedSchedule />
+            <CreateSchedule />
         </div>
         <div v-if="viewSchedule">
             <ViewSchedule />
@@ -22,18 +19,17 @@
 </template>
 <script>
 import CreateSchedule from '@/components/SchedulePage/CreateSchedule.vue';
-import MountedSchedule from '@/components/SchedulePage/MountedSchedule.vue';
 import ViewSchedule from '@/components/SchedulePage/ViewSchedule.vue';
 
 export default{
     beforeCreate() {
         this.$authUser();
     },
-    components: { CreateSchedule, ViewSchedule, MountedSchedule },
+    components: { CreateSchedule, ViewSchedule },
     data() {
         return {
             createSchedule: false,
-            viewSchedule: false
+            viewSchedule: true
         }
     },
     methods: {

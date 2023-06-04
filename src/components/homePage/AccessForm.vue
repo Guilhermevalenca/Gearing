@@ -1,42 +1,50 @@
 <template>
-<div>
-        <label v-if="showAlert">
-            <AlertForm :class="{'form-alert-success' : createSuccess, 'form-alert-failed': failedLogin}" @close="closeAlert()"> 
-                {{ messageAlert }}
-            </AlertForm>
-        </label>
-    <form class="form" v-if="showForm" @submit.prevent="authUser()">
-        <label>
-            E-mail:
-            <input type="email" v-model="loginUser.email" maxlength="45" placeholder="E-mail">
-        </label>
-        <label>
-            Senha:
-            <input type="password" v-model="loginUser.password" placeholder="Senha"> 
-        </label>
-            <button>entrar</button>
-    </form>
-    <form class="form" v-if="!showForm" @submit.prevent="newUser()">
-        <label>
-            Usuario:
-            <input type="text" v-model="createUser.username" maxlength="20" placeholder="digite seu nome de usuario">
-        </label>
-        <label>
-            E-mail:
-            <input :class="{'form-email' : emailRegistered}" type="email" v-model="createUser.email" placeholder="digite seu email">
-        </label>
-        <label>
-            Senha:
-            <input :class="{'form-password' : differentPasswords}" type="password" minlength="6" v-model="createUser.password" placeholder="digite sua senha">
-        </label>
-        <label>
-            Confirme sua senha:
-            <input :class="{'form-password' : differentPasswords}" type="password" minlength="6" v-model="createUser.confirmPassword" placeholder="digite sua senha novamente">
-        </label>
-        <button>criar conta</button>
-    </form>
-    <button @click="() => {showForm = !showForm; showAlert = false }">{{ showForm ? 'criar uma nova conta' : 'entra em uma conta existente' }}</button>
+
+<section>
+<div v-if="showAlert">
+    <AlertForm :class="{'form-alert-success' : createSuccess, 'form-alert-failed': failedLogin}" @close="closeAlert()"> 
+        {{ messageAlert }}
+    </AlertForm>
 </div>
+</section>
+<section>
+<form class="form" v-if="showForm" @submit.prevent="authUser()">
+    <label>
+        E-mail:
+        <input type="email" v-model="loginUser.email" maxlength="45" placeholder="E-mail">
+    </label>
+    <label>
+        Senha:
+        <input type="password" v-model="loginUser.password" placeholder="Senha"> 
+    </label>
+        <button>entrar</button>
+</form>
+</section>
+<section>
+<form class="form" v-if="!showForm" @submit.prevent="newUser()">
+    <label>
+        Usuario:
+        <input type="text" v-model="createUser.username" maxlength="20" placeholder="digite seu nome de usuario">
+    </label>
+    <label>
+        E-mail:
+        <input :class="{'form-email' : emailRegistered}" type="email" v-model="createUser.email" placeholder="digite seu email">
+    </label>
+    <label>
+        Senha:
+        <input :class="{'form-password' : differentPasswords}" type="password" minlength="6" v-model="createUser.password" placeholder="digite sua senha">
+    </label>
+    <label>
+        Confirme sua senha:
+        <input :class="{'form-password' : differentPasswords}" type="password" minlength="6" v-model="createUser.confirmPassword" placeholder="digite sua senha novamente">
+    </label>
+    <button>criar conta</button>
+</form>
+</section>
+<section>
+    <button @click="() => {showForm = !showForm; showAlert = false }">{{ showForm ? 'criar uma nova conta' : 'entra em uma conta existente' }}</button>
+</section>
+
 </template>
 
 <script>
@@ -75,7 +83,7 @@ export default{
                 .then(response => {
                 if(response.data.id){
                     this.$store.dispatch('changeUser',response.data);
-                    localStorage.setItem('idSession',(response.data).id);
+                    localStorage.setItem('idSession',response.data.id);
                     this.$router.push('/menu')
                 }else{
                     this.showAlert = true;
@@ -135,7 +143,7 @@ export default{
 </script>
 
 <style scoped>
-    label{
+    label, div{
         display: grid;
         justify-content: center;
         text-align: center;

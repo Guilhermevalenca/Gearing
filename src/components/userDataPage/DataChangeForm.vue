@@ -1,5 +1,5 @@
 <template>
-    <div v-if="checkingPassword">
+    <section v-if="checkingPassword">
         <label v-if="showAlert">
             <AlertPassword @close="closeAlert()" />
         </label>
@@ -9,12 +9,12 @@
             </label>
             <input type="submit">
         </form>
-    </div>
-    <div v-if="!checkingPassword">
-            <label>
+    </section>
+    <section v-if="!checkingPassword">
+            <div>
                 E-mail:
                 {{ $store.state.user.email }}
-            </label>
+            </div>
         <form class="form" @submit.prevent="updateData()">
             <label>
                 Nome de usuario:
@@ -31,7 +31,7 @@
             <input type="submit" value="alterar dados">
         </form>
         <button @click="deleteUser()">deletar conta</button>
-    </div>
+    </section>
 </template>
 
 <script>

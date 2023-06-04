@@ -11,20 +11,20 @@ CREATE TABLE GEA_USER(
     meth_name VARCHAR(45),
     FOREIGN KEY (meth_name) REFERENCES GEA_METHODOLOGY(meth_name)
 );
-CREATE TABLE GEA_CRONOGRAM(
-	cro_title VARCHAR(45) NOT NULL,
-    cro_shifts VARCHAR(10) NOT NULL,
+CREATE TABLE GEA_SCHEDULE(
+	sche_title VARCHAR(45) NOT NULL,
+    sche_shifts VARCHAR(10) NOT NULL,
     user_email VARCHAR(45) NOT NULL,
-    PRIMARY KEY (cro_title, user_email),
+    PRIMARY KEY (sche_title, user_email),
     FOREIGN KEY (user_email) REFERENCES GEA_USER(user_email)
 );
-CREATE TABLE GEA_MATTER(
-    mat_id INT PRIMARY KEY NOT NULL,
-    mat_name VARCHAR(30) NOT NULL,
-    mat_day INT NOT NULL,
-    mat_hour INT NOT NULL,
-    cro_title VARCHAR(45) NOT NULL,
-    FOREIGN KEY (cro_title) REFERENCES GEA_CRONOGRAM(cro_title)
+CREATE TABLE GEA_SUBJECT(
+    sub_id INT PRIMARY KEY NOT NULL,
+    sub_name VARCHAR(30) NOT NULL,
+    sub_day INT NOT NULL,
+    sub_hour INT NOT NULL,
+    sche_title VARCHAR(45) NOT NULL,
+    FOREIGN KEY (sche_title) REFERENCES GEA_SCHEDULE(sche_title)
 );
 CREATE TABLE GEA_TOPIC(
 	top_name VARCHAR(45) PRIMARY KEY NOT NULL,
