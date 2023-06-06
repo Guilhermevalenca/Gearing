@@ -4,7 +4,7 @@
 
 <script>
 
-import QuizLearningStyles from '@/components/LearningStyles/QuizLearningStyles.vue';
+import QuizLearningStyles from '@/components/LearningStylesPage/QuizLearningStyles.vue';
 
 export default{
     name: 'LearningStylesPage',

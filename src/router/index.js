@@ -27,7 +27,7 @@ const routes = [
   {
     path: '/learningStyles',
     name:'learningStyles',
-    component: () => import('@views/LearningStyles.vue')
+    component: () => import('@/views/LearningStylesPage.vue')
   }
 ]
 

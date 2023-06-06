@@ -325,9 +325,10 @@ export default{
             let respostasOR = [];
             let respostasEA = [];
 
-          question.forEach((question,index) => {
+          this.question.forEach((question,index) => {
+            console.log(question,index)
             });
-
+            console.log(EA,CA,EC,OR,respostasCA,respostasEA,respostasEC,respostasOR)
             }
           }
         }
@@ -335,7 +336,7 @@ export default{
 
       }
     }
-  };
+
 </script>
 <style>
 
