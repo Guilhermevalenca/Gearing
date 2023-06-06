@@ -58,11 +58,7 @@ try{
     exit();
 }
 
-//show data in terminal
-ob_start();
-print_r($response);
-$output = ob_get_clean();
-error_log($output);
+
 
 //responsing
 echo json_encode($response);
