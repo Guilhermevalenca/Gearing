@@ -5,6 +5,7 @@
     <router-link to="/menu">Pagina inicial</router-link> | 
     <RouterLink to="/schedule">cronograma</RouterLink> |
     <RouterLink to="/userData">Seus dados</RouterLink> | 
+    <RouterLink to="/learningStyles">Quiz Estilos de Aprendizagem</RouterLink>|
     <RouterLink @click="this.$logoutUser()" to="/">Sair da conta</RouterLink>
   </nav>
 </header>

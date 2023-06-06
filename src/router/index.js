@@ -23,6 +23,11 @@ const routes = [
     path: '/userData',
     name: 'userData',
     component: () => import('@/views/UserDataPage.vue')
+  },
+  {
+    path: '/learningStyles',
+    name:'learningStyles',
+    component: () => import('@views/LearningStyles.vue')
   }
 ]
 
