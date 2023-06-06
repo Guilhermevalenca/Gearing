@@ -32,6 +32,7 @@ try{
                 'username' => $userData['user_name'],
                 'email' => $userData['user_email']
             ];
+            $_SESSION['email'] = $userData['user_email'];
             echo json_encode($responseData);
             exit();
         }

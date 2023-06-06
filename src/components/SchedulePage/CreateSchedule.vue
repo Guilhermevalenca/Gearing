@@ -110,7 +110,10 @@ export default{
             
             this.$refs.sortableReceiving.forEach( (element) => {
                 if(element.textContent){
-                    this.receivingSubjects[i][j] = element.textContent
+                    this.receivingSubjects[i][j] = ''
+                    element.querySelectorAll('ul').forEach(subject => {
+                        this.receivingSubjects[i][j] += subject.textContent + " "
+                    })
                 }
                 j++
                 if(j == 7){
@@ -125,14 +128,23 @@ export default{
                 id: localStorage.getItem('idSession')
             })
             .then(response => {
-                if(response.data.result){
-                    Swal.fire("cronograma salvo",'Seu cronograma foi salvo com sucesso').then(result => {
-                        if(result.isConfirmed){
-                            this.$router.push('/schedule')
-                        }
-                    })
-                }else if(response.data.problem == "existTitle"){
+                if(response.data.existTitle){
                     Swal.fire('titulo existente','o titulo que voce deseja adicionar ao seu novo cronograma ja estar sendo usado em um dos seus outros cronogramas');
+                }else if(response.data.failedCreatedSchedule){
+                    Swal.fire('criação falhou','Não foi possivel criar seu cronograma, tente novamente mais tarde');
+                }else{
+                    if(response.data.addSubjectFailed){
+                        Swal.fire('falha ao adicionar materia','uma ou mais materias não foram adicionadas');
+                    }
+                    if(response.data.success){
+                        Swal.fire('cronograma criado','seu cronograma foi criado, boa sorte com seus estudos!!!')
+                        .then(result => {
+                            if(result.isConfirmed){
+                                this.$router.push('/');
+                                this.$router.push('/schedule');
+                            }
+                        })
+                    }
                 }
             })
         },

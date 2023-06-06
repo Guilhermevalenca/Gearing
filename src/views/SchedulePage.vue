@@ -3,7 +3,7 @@
         <h1>Hello, i am cronogram</h1>
     </div>
 
-    <div>
+    <div class="options">
         <button @click="showCreateSchedule()">criar cronograma</button>
         <button @click="showViewSchedule()">vizualizar cronogramas criados</button>
     </div>
@@ -47,3 +47,9 @@ export default{
     
 }
 </script>
+
+<style scoped>
+.options{
+    margin: 2em;
+}
+</style>
