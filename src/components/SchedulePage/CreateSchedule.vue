@@ -33,7 +33,7 @@
     <button @click.prevent="addOtherMatter()">Adicionar materias</button>
 </div>
 <div class="schedule-matters" ref="sortableSubject">
-    <ul @mouseup="giveBackSubject(subject)" ref="subject" class="shedule-matters-subject" v-for="(subject, index) in matters" :key="index">
+    <ul @mouseover="giveBackSubject(subject)" ref="subject" class="shedule-matters-subject" v-for="(subject, index) in matters" :key="index">
         {{ subject }}
     </ul>
 </div>
