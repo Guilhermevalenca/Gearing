@@ -64,6 +64,7 @@ export default{
                     this.viewSchedule = false;
                 }else{
                     this.showEditSchedule = false;
+                    this.viewSchedule = true;
                 }
             },
             deep:true

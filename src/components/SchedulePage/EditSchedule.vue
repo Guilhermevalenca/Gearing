@@ -6,7 +6,7 @@
         <h3>{{ currentTitle }}</h3>
     </div>
     <div class="schedule">
-        <table>
+        <table @mouseover="moveElements()">
         <thead>
             <tr>
                 <th></th>
@@ -26,14 +26,22 @@
                 </td>
                 <td class="schedule-subjects" v-for="(subject, row) in subjects[index]" :key="row">
                     <div v-if="subject">
-                        <div ref="sortableModifying" v-for="(separated,column) in subject.split(' ')" :key="column">
-                            <div @click="moveElements()" v-if="separated">{{ separated }}</div>
+                        <div class="schedule-subjects-alocated" v-for="(separated,column) in subject.split(' ')" :key="column">
+                            <div v-if="separated">{{ separated }}</div>
                         </div>
                     </div>
                 </td>
             </tr>
         </tbody>
         </table>
+    </div>
+</section>
+<section>
+    <div>
+        <button @click="updateSchedule()">alterar cronograma</button>
+    </div>
+    <div>
+        <button @click="() => {this.$store.dispatch('changeSchedule','')}">cancelar</button>
     </div>
 </section>
 </template>
@@ -47,7 +55,8 @@ export default{
         return {
             currentTitle: this.$store.state.schedule.editTitle,
             turn: [],
-            subjects: []
+            subjects: [],
+            actionSortable: true
         }
     },
     methods: {
@@ -81,15 +90,31 @@ export default{
             })
         },
         moveElements() {
-            this.$refs.sortableModifying.forEach(element => {
-                new Sortable(element, {
-                    group: 'shared'
+            if(this.actionSortable){
+                const sortableElements = document.querySelectorAll('.schedule-subjects-alocated');
+                sortableElements.forEach(element => {
+                    new Sortable(element, {
+                        group: 'shared'
+                    })
                 })
-            })
+                const sortableAll = document.querySelectorAll('.schedule-subjects');
+                sortableAll.forEach(element => {
+                    new Sortable(element, {
+                        group: 'shared'
+                    })
+                })
+                this.actionSortable = false
+            }
+        },
+        updateSchedule() {
+            console.log('e eu la sei oq é pra fazer KKKKKKKKk')
         }
     },
     created() {
         this.mountedSchedule()
+    },
+    mounted() {
+        
     }
 }
 </script>
