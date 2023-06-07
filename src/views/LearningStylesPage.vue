@@ -1,15 +1,16 @@
 <template>
-    <QuizLearningStyles/>
+    <!--<QuizLearningStyles/>-->
+    <div></div>
 </template>
 
 <script>
 
-import QuizLearningStyles from '@/components/LearningStylesPage/QuizLearningStyles.vue';
+//import QuizLearningStyles from '@/components/LearningStylesPage/QuizLearningStyles.vue';
 
 export default{
     name: 'LearningStylesPage',
     components:{
-        QuizLearningStyles,
+  //      QuizLearningStyles,
     }
 }
 </script>

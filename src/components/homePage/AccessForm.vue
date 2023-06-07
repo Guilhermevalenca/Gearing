@@ -81,7 +81,11 @@ export default{
                 password: this.loginUser.password
             })
                 .then(response => {
-                if(response.data.id){
+                if(!response.data.email){
+                    this.messageAlert = "Precisa digita seu email para acessar sua conta";
+                    this.showAlert = true;
+                    this.failedLogin = true;
+                }else if(response.data.id){
                     this.$store.dispatch('changeUser',response.data);
                     localStorage.setItem('idSession',response.data.id);
                     this.$router.push('/menu')
