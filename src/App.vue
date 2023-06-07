@@ -2,11 +2,11 @@
 
 <header>
   <nav class="navigation-option" v-if="this.$route.path != '/'">
-    <router-link to="/menu">Pagina inicial</router-link> | 
-    <RouterLink to="/schedule">cronograma</RouterLink> |
-    <RouterLink to="/userData">Seus dados</RouterLink> | 
-    <RouterLink to="/learningStyles">Quiz Estilos de Aprendizagem</RouterLink>|
-    <RouterLink @click="this.$logoutUser()" to="/">Sair da conta</RouterLink>
+    <router-link to="/menu">Pagina Inicial</router-link> |
+    <RouterLink to="/learningStyles">Quiz Estilos de Aprendizagem</RouterLink> | 
+    <RouterLink to="/schedule">Cronograma</RouterLink> |
+    <RouterLink to="/userData">Seus Dados</RouterLink> | 
+    <RouterLink @click="this.$logoutUser()" to="/">Sair da Conta</RouterLink>
   </nav>
 </header>
 

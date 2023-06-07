@@ -39,10 +39,10 @@
     </div>
     <div>
         <div>
-            <button>Editar cronograma</button>
+            <button @click="editSchedule()">Editar cronograma</button>
         </div>
         <div>
-            <button @click="deleteSchedule(currentTitle)">Deletar cronograma</button>
+            <button @click="deleteSchedule()">Deletar cronograma</button>
         </div>
     </div>
 </section>
@@ -107,10 +107,10 @@ export default{
                 console.error(response)
             })
         },
-        deleteSchedule(title) {
+        deleteSchedule() {
             axios.post('http://localhost:8000/schedule/deleteSchedule.php', {
                 id: localStorage.getItem('idSession'),
-                title: title
+                title: this.currentTitle
             })
             .then(response => {
                 if(response.data.result){
@@ -127,6 +127,9 @@ export default{
                     Swal.fire('erro','não foi possivel deletar seu cronograma, tente novamente!!!');
                 }
             })
+        },
+        editSchedule() {
+            this.$store.dispatch('changeSchedule',this.currentTitle);            
         }
     },
     beforeMount() {
