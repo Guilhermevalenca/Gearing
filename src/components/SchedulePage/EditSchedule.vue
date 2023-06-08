@@ -109,6 +109,10 @@ export default{
             }
         },
         updateSchedule() {
+            this.updateSubjects = []
+            for(let i = 0; i < 6; i++){
+                this.updateSubjects[i] = [];
+            }
             let i = 0;
             let j = 0;
             this.$refs.row.forEach(element => {
@@ -128,17 +132,28 @@ export default{
                     j = 0;
                 }
             })
-            Swal.fire('funcionou',`so imprimindo msm ${this.updateSubjects}`)
+            let list = () => {
+                    let response = [];
+                    this.updateSubjects.forEach( (elements,row) => {
+                        elements.forEach( (element,column) => {
+                            if(element){
+                                response.push(`elemento:${element},linha:${row},coluna:${column}`)
+                            }
+                        })
+                    })
+                    return response
+                }
+            Swal.fire({
+                title:'desgraça',
+                text: `${list()}`
+            })
         }
     },
     created() {
         this.mountedSchedule()
     },
     mounted() {
-        for(let i = 0; i < 6; i++){
-            this.updateSubjects[i] = [];
-            this.updateSubjects.length = 7;
-        }
+        
     }
 }
 </script>
