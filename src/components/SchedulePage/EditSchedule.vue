@@ -24,7 +24,7 @@
                 <td>
                     <div>{{ hour }}</div>
                 </td>
-                <td class="schedule-subjects" v-for="(subject, row) in subjects[index]" :key="row">
+                <td ref="row" class="schedule-subjects" v-for="(subject, row) in subjects[index]" :key="row">
                     <div v-if="subject">
                         <div class="schedule-subjects-alocated" v-for="(separated,column) in subject.split(' ')" :key="column">
                             <div v-if="separated">{{ separated }}</div>
@@ -49,6 +49,7 @@
 <script>
 import axios from 'axios';
 import Sortable from 'sortablejs';
+import Swal from 'sweetalert2';
 
 export default{
     data() {
@@ -56,7 +57,8 @@ export default{
             currentTitle: this.$store.state.schedule.editTitle,
             turn: [],
             subjects: [],
-            actionSortable: true
+            actionSortable: true,
+            updateSubjects: []
         }
     },
     methods: {
@@ -107,14 +109,36 @@ export default{
             }
         },
         updateSchedule() {
-            console.log('e eu la sei oq é pra fazer KKKKKKKKk')
+            let i = 0;
+            let j = 0;
+            this.$refs.row.forEach(element => {
+                if(element.textContent){
+                    this.updateSubjects[i][j] = ''
+                    console.log("text element:", element.textContent)
+                    console.log("element:", element)
+                    element.querySelectorAll('div').forEach(subject => {
+                        this.updateSubjects[i][j] += subject.textContent + " "
+                        console.log("text subject:", subject.textContent)
+                        console.log("subject:", subject)
+                    })
+                }
+                j++
+                if(j == 7){
+                    i++
+                    j = 0;
+                }
+            })
+            Swal.fire('funcionou',`so imprimindo msm ${this.updateSubjects}`)
         }
     },
     created() {
         this.mountedSchedule()
     },
     mounted() {
-        
+        for(let i = 0; i < 6; i++){
+            this.updateSubjects[i] = [];
+            this.updateSubjects.length = 7;
+        }
     }
 }
 </script>
