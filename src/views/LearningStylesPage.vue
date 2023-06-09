@@ -10,7 +10,7 @@ import QuizLearningStyles from '@/components/LearningStylesPage/QuizLearningStyl
 export default{
     name: 'LearningStylesPage',
     components:{
-        QuizLearningStyles,
+     QuizLearningStyles,
     }
 }
 </script>

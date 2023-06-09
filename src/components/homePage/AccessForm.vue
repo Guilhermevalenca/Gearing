@@ -81,7 +81,7 @@ export default{
                 password: this.loginUser.password
             })
                 .then(response => {
-                if(response.data.id){
+                if(response.data.id && response.data.email){
                     this.$store.dispatch('changeUser',response.data);
                     localStorage.setItem('idSession',response.data.id);
                     this.$router.push('/menu')
