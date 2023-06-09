@@ -16,283 +16,285 @@
 </div>
 
 <section>
-<h2>1. Enquanto estou estudando gosto de:</h2>
+<h2>1. Enquanto estou estudando gosto de ...</h2>
   <label>
-  Lidar com meus sentimentos - Gerenciar e compreender as emoções que surgem durante o processo de aprendizagem
-    <input v-model="question.question1" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Lidar com meus sentimentos - Gerenciar e compreender as emoções que surgem durante o processo de aprendizagem<br>
+    <input v-model="question.question1[0]" type="range"  min="1" max="4">
+    {{ question.question1[0] }}
+  </label><br>
   <label>
-  Desenvolver idéias
-    <input v-model="question.question1" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Desenvolver idéias<br>
+    <input v-model="question.question1[1]" type="range"  min="1" max="4">
+    {{ question.question1[1] }}
+  </label><br>
   <label>
-  Práticar
-    <input v-model="question.question1" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Práticar<br>
+    <input v-model="question.question1[2]" type="range"  min="1" max="4">
+    {{ question.question1[2] }}
+  </label><br>
   <label>
-  Observar e ouvir
-    <input v-model="question.question1" type="range" value="1" min="1" max="4">
-    {{ value }}
+  Observar e ouvir<br>
+    <input v-model="question.question1[3]" type="range"  min="1" max="4">
+    {{ question.question1[3] }}
   </label><br><br>
 
-<h2>2. Costumo ter facilidade de aprender, principalmente quando: </h2>
+<h2>2. Costumo ter facilidade de aprender, principalmente quando ... </h2>
   <label>
-  Ouço e observo com atenção
-    <input v-model="question.question2" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Ouço e observo com atenção<br>
+    <input v-model="question.question2[0]" type="range"  min="1" max="4">
+    {{ question.question2[0] }}
+  </label><br>
   <label>
-  Utilizo racioncínio lógico 
-    <input v-model="question.question2" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Utilizo racioncínio lógico<br> 
+    <input v-model="question.question2[1]" type="range"  min="1" max="4">
+    {{ question.question2[1] }}
+  </label><br>
   <label>
-  Me baseio em meus palpites e impressões
-    <input v-model="question.question2" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Me baseio em meus palpites e impressões<br>
+    <input v-model="question.question2[2]" type="range"  min="1" max="4">
+    {{ question.question2[2] }}
+  </label><br>
   <label>
-  Executando o que aprendi
-    <input v-model="question.question2" type="range" value="1" min="1" max="4">
-    {{ value }}
+  Executando o que aprendi<br>
+    <input v-model="question.question2[3]" type="range"  min="1" max="4">
+    {{ question.question2[3] }}
   </label><br><br>
 
-<h2>3. Quando estou aprendeno costumo:</h2>
+<h2>3. Quando estou aprendendo costumo ...</h2>
 
   <label>
-  Buscar explicações para os tópicos estudados
-    <input v-model="question.question3" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Buscar explicações para os tópicos estudados<br>
+    <input v-model="question.question3[0]" type="range"  min="1" max="4">
+    {{ question.question3[0] }}
+  </label><br>
   <label>
-  Ser responsável a cerca das coisas - disciplinado(a)
-    <input v-model="question.question3" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Ser responsável a cerca das coisas - disciplinado(a)<br>
+    <input v-model="question.question3[1]" type="range"  min="1" max="4">
+    {{ question.question3[1] }}
+  </label><br>
   <label>
-  Ficar quieto e me concentrar
-    <input v-model="question.question3" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Ficar quieto e me concentrar<br>
+    <input v-model="question.question3[2]" type="range"  min="1" max="4">
+    {{ question.question3[2] }}
+  </label><br>
   <label>
-  Ter sentimentos e reações fortes
-    <input v-model="question.question3" type="range" value="1" min="1" max="4">
-    {{ value }}
+  Ter sentimentos e reações fortes<br>
+    <input v-model="question.question3[3]" type="range"  min="1" max="4">
+    {{ question.question3[3] }}
   </label><br><br>
 
-<h2>4. Aprendo:</h2>
+<h2>4. Aprendo ...</h2>
 
   <label>
-  Sentindo (raiva, tristeza, admiração, curiosidade, etc.)
-    <input v-model="question.question4" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Sentindo (raiva, tristeza, admiração, curiosidade, etc.)<br>
+    <input v-model="question.question4[0]" type="range"  min="1" max="4">
+    {{ question.question4[0] }}
+  </label><br>
   <label>
-  Fazendo
-    <input v-model="question.question4" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Fazendo<br>
+    <input v-model="question.question4[1]" type="range"  min="1" max="4">
+    {{ question.question4[1] }}
+  </label><br>
   <label>
-  Observando
-    <input v-model="question.question4" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Observando<br>
+    <input v-model="question.question4[2]" type="range"  min="1" max="4">
+    {{ question.question4[2] }}
+  </label><br>
   <label>
-  Pensando
-    <input v-model="question.question4" type="range" value="1" min="1" max="4">
-    {{ value }}
+  Pensando<br>
+    <input v-model="question.question4[3]" type="range"  min="1" max="4">
+    {{ question.question4[3] }}
   </label><br><br>
 
-<h2>5. Enquanto aprendo gosto de:</h2>
+<h2>5. Enquanto aprendo gosto de ...</h2>
 
   <label>
-  Me abrir a novas experiências
-    <input v-model="question.question5" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Me abrir a novas experiências<br>
+    <input v-model="question.question5[0]" type="range"  min="1" max="4">
+    {{ question.question5[0] }}
+  </label><br>
   <label>
-  Examinar todos os ângulos da questão
-    <input v-model="question.question5" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Examinar todos os ângulos da questão<br>
+    <input v-model="question.question5[1]" type="range"  min="1" max="4">
+    {{ question.question5[1] }}
+  </label><br>
   <label>
-  Analisar as coisas - Desdobrá-las em partes para entendê-las/resolvê-las
-    <input v-model="question.question5" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Analisar as coisas - Desdobrá-las em partes para entendê-las/resolvê-las<br>
+    <input v-model="question.question5[2]" type="range"  min="1" max="4">
+    {{ question.question5[2] }}
+  </label><br>
   <label>
-  Testar as coisas (Práticas, métodos, etc.)
-    <input v-model="question.question5" type="range" value="1" min="1" max="4"> 
-    {{ value }}
+  Testar as coisas (Práticas, métodos, etc.)<br>
+    <input v-model="question.question5[3]" type="range"  min="1" max="4"> 
+    {{ question.question5[3] }}
   </label><br><br>
 
-<h2>6. Enquanto estudo sou:</h2>
+<h2>6. Enquanto estudo sou ...</h2>
 
   <label>
-  Alguém que prefere observar
-    <input v-model="question.question6" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Alguém que prefere observar<br>
+    <input v-model="question.question6[0]" type="range"  min="1" max="4">
+    {{ question.question6[0] }}
+  </label><br>
   <label>
-  Ativo(a) - Utilizo mais de um método de estudo
-    <input v-model="question.question6" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Ativo(a) - Utilizo mais de um método de estudo<br>
+    <input v-model="question.question6[1]" type="range"  min="1" max="4">
+    {{ question.question6[1] }}
+  </label><br>
   <label>
-  Intuitivo(a) - Entender quais são as suas dificuldades e conseguir identificar o que se encaixa melhor para o seu processo de aprendizagem
-    <input v-model="question.question6" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Intuitivo(a) - Entender quais são as suas dificuldades e conseguir identificar o que se encaixa melhor para o seu processo de aprendizagem<br>
+    <input v-model="question.question6[2]" type="range"  min="1" max="4">
+    {{ question.question6[2] }}
+  </label><br>
   <label>
-  Lógico(a) - Utilizar a lógica e a razão para entender o tema abordado
-    <input v-model="question.question6" type="range" value="1" min="1" max="4">
-    {{ value }}
+  Lógico(a) - Utilizar a lógica e a razão para entender o tema abordado<br>
+    <input v-model="question.question6[3]" type="range"  min="1" max="4">
+    {{ question.question6[3] }}
   </label><br><br>
 
-<h2>7. Aprendo melhor através de:</h2>
+<h2>7. Aprendo melhor através de ...</h2>
 
   <label>
-  Observação
-    <input v-model="question.question7" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Observação<br>
+    <input v-model="question.question7[0]" type="range"  min="1" max="4">
+    {{ question.question7[0] }}
+  </label><br>
   <label>
-  Interações pessoais - Adquirir conhecimento por meio de interações com outras pessoas
-    <input v-model="question.question7" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Interações pessoais - Adquirir conhecimento por meio de interações com outras pessoas<br>
+    <input v-model="question.question7[1]" type="range"  min="1" max="4">
+    {{ question.question7[1] }}
+  </label><br>
   <label>
-  Teorias racionais - Modelos conceituais baseados em princípios lógicos e raciocínio dedutivo
-    <input v-model="question.question7" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>  
+  Teorias racionais - Modelos conceituais baseados em princípios lógicos e raciocínio dedutivo<br>
+    <input v-model="question.question7[2]" type="range"  min="1" max="4">
+    {{ question.question7[2] }}
+  </label><br>
   <label>
-  Oportunidades para experimentar e práticar
-    <input v-model="question.question7" type="range" value="1" min="1" max="4">
-    {{ value }}
+  Oportunidades para experimentar e práticar<br>
+    <input v-model="question.question7[3]" type="range"  min="1" max="4">
+    {{ question.question7[3] }}
   </label><br><br>
 
-<h2>8. Enquanto aprendo:</h2>
+<h2>8. Enquanto aprendo ...</h2>
 
   <label>
-  Gosto de ver o resultado do meu trabalho
-    <input v-model="question.question8" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Gosto de ver o resultado do meu trabalho<br>
+    <input v-model="question.question8[0]" type="range"  min="1" max="4">
+    {{ question.question8[0] }}
+  </label><br>
   <label>
-  Me interesso em ter/conhecer idéias e teorias
-    <input v-model="question.question8" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Me interesso em ter/conhecer idéias e teorias<br>
+    <input v-model="question.question8[1]" type="range"  min="1" max="4">
+    {{ question.question8[1] }}
+  </label><br>
   <label>
-  Penso antes de agir - planejar-se
-    <input v-model="question.question8" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Penso antes de agir - planejar-se<br>
+    <input v-model="question.question8[2]" type="range"  min="1" max="4">
+    {{ question.question8[2] }}
+  </label><br>
   <label>
-  Sinto-me pessoalmente envolvido(a) nos assuntos
-    <input v-model="question.question8" type="range" value="1" min="1" max="4">
-    {{ value }}
+  Sinto-me pessoalmente envolvido(a) nos assuntos<br>
+    <input v-model="question.question8[3]" type="range"  min="1" max="4">
+    {{ question.question8[3] }}
   </label><br><br>
 
-<h2>9. Aprendo melhor quando me apóio em:</h2>
+<h2>9. Aprendo melhor quando me apóio em ...</h2>
 
   <label>
-  Minhas observações
-    <input v-model="question.question9" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Minhas observações<br>
+    <input v-model="question.question9[0]" type="range"  min="1" max="4">
+    {{ question.question9[0] }}
+  </label><br>
   <label>
-  Minhas impressões
-    <input v-model="question.question9" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Minhas impressões<br>
+    <input v-model="question.question9[1]" type="range"  min="1" max="4">
+    {{ question.question9[1] }}
+  </label><br>
   <label>
-  Posso experimentar coisas por mim mesmo(a)
-    <input v-model="question.question9" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Posso experimentar coisas por mim mesmo(a)<br>
+    <input v-model="question.question9[2]" type="range"  min="1" max="4">
+    {{ question.question9[2] }}
+  </label><br>
   <label>
-  Me apóio em minhas idéias   
-    <input v-model="question.question9" type="range" value="1" min="1" max="4">
-    {{ value }}
+  Me apóio em minhas idéias<br>   
+    <input v-model="question.question9[3]" type="range"  min="1" max="4">
+    {{ question.question9[3] }}
   </label><br><br>
 
-<h2>10. Quando estou aprendendo costumo ser:</h2>
+<h2>10. Quando estou aprendendo costumo ser ...</h2>
 
   <label>
-  Compenetrado(a) - muito atento, concentrado
-    <input v-model="question.question10" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Compenetrado(a) - muito atento, concentrado<br>
+    <input v-model="question.question10[0]" type="range"  min="1" max="4">
+    {{ question.question10[0] }}
+  </label><br>
   <label>
-  Fléxivel
-    <input v-model="question.question10" type="range" value="1" min="1" max="4">    
-    {{ value }}
-  </label>
+  Fléxivel<br>
+    <input v-model="question.question10[1]" type="range"  min="1" max="4">    
+    {{ question.question10[1] }}
+  </label><br>
   <label>
-  Responsável
-    <input v-model="question.question10" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Responsável<br>
+    <input v-model="question.question10[2]" type="range"  min="1" max="4">
+    {{ question.question10[2] }}
+  </label><br>
   <label>
-  Racional
-    <input v-model="question.question10" type="range" value="1" min="1" max="4">
-    {{ value }}
+  Racional<br>
+    <input v-model="question.question10[3]" type="range"  min="1" max="4">
+    {{ question.question10[3] }}
   </label><br><br>
 
-<h2>11. Enquanto aprendo costumo:</h2>
+<h2>11. Enquanto aprendo costumo ...</h2>
 
   <label>
-  Me envolver totalmente
-    <input v-model="question.question11" type="range" value="1" min="1" max="4">    
-    {{ value }}
-  </label>
+  Me envolver totalmente<br>
+    <input v-model="question.question11[0]" type="range"  min="1" max="4">    
+    {{ question.question11[0] }}
+  </label><br>
   <label>
-  Gostar de observar
-    <input v-model="question.question11" type="range" value="1" min="1" max="4">  
-    {{ value }}
-  </label>
+  Gostar de observar<br>
+    <input v-model="question.question11[1]" type="range"  min="1" max="4">  
+    {{ question.question11[1] }}
+  </label><br>
   <label>
-  Avaliar as coisas
-    <input v-model="question.question11" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Avaliar as coisas<br>
+    <input v-model="question.question11[2]" type="range"  min="1" max="4">
+    {{ question.question11[2] }}
+  </label><br>
   <label>
-   Estar ativo(a)
-    <input v-model="question.question11" type="range" value="1" min="1" max="4">
-    {{ value }}
+   Estar ativo(a)<br>
+    <input v-model="question.question11[3]" type="range"  min="1" max="4">
+    {{ question.question11[3] }}
   </label><br><br>
 
-<h2>12. Aprendo melhor quando:</h2>
+<h2>12. Aprendo melhor quando ...</h2>
 
   <label>
-  Analiso as idéias 
-    <input v-model="question.question12" type="range" value="1" min="1" max="4">  
-    {{ value }}
-  </label>
+  Analiso as idéias<br>
+    <input v-model="question.question12[0]" type="range"  min="1" max="4">  
+    {{ question.question12[0] }}
+  </label><br>
   <label>
-  Sou receptivo(a) e mente aberta
-    <input v-model="question.question12" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Sou receptivo(a) e mente aberta<br>
+    <input v-model="question.question12[1]" type="range"  min="1" max="4">
+    {{ question.question12[1] }}
+  </label><br>
   <label>
-  Sou cuidadoso(a) - Tomar decisões para garantir que a aprendizagem aconteça de forma precisa, sem erros
-    <input v-model="question.question12" type="range" value="1" min="1" max="4">
-    {{ value }}
-  </label>
+  Sou cuidadoso(a) - Tomar decisões para garantir que a aprendizagem aconteça de forma precisa, sem erros<br>
+    <input v-model="question.question12[2]" type="range"  min="1" max="4">
+    {{ question.question12[2] }}
+  </label><br>
   <label>
-  Sou prático(a) - Buscar formas de tornar o aprendizado mais significativo e relevante, e aplico o que está sendo estudado na prática 
-    <input v-model="question.question12" type="range" value="1" min="1" max="4">
-    {{ value }}
+  Sou prático(a) - Buscar formas de tornar o aprendizado mais significativo e relevante, e aplico o que está sendo estudado na prática<br> 
+    <input v-model="question.question12[3]" type="range"  min="1" max="4">
+    {{ question.question12[3] }}
   </label>
+  <button @click='result()'>Calcular resultado</button>
 </section>
 </template>
 
 <script>
+
 export default{
   name: 'QuestionLearningStyles',
   data() {
@@ -311,31 +313,89 @@ export default{
           question10: [],
           question11: [],
           question12: [],
-        },
-        methods:{
-          calculateResult(){
+        }
+      }
+    },
+        methods: {
+            result() {
             //Variable to stire response weights
-            let EC = 0;
-            let CA = 0;
-            let OR = 0;
-            let EA = 0;
-            //combination arrays
-            let respostasEC = [];
-            let respostasCA = [];
-            let respostasOR = [];
-            let respostasEA = [];
+            let EC = 
+               parseInt(this.question.question1[0]) 
+             + parseInt(this.question.question2[2]) 
+             + parseInt(this.question.question3[3]) 
+             + parseInt(this.question.question4[0]) 
+             + parseInt(this.question.question5[0])
+             + parseInt(this.question.question6[2])
+             + parseInt(this.question.question7[1])
+             + parseInt(this.question.question8[3])
+             + parseInt(this.question.question9[1])
+             + parseInt(this.question.question10[1])
+             + parseInt(this.question.question11[0])
+             + parseInt(this.question.question12[1]);
+             let CA = 
+               parseInt(this.question.question1[1]) 
+             + parseInt(this.question.question2[1]) 
+             + parseInt(this.question.question3[0]) 
+             + parseInt(this.question.question4[3]) 
+             + parseInt(this.question.question5[2])
+             + parseInt(this.question.question6[3])
+             + parseInt(this.question.question7[2])
+             + parseInt(this.question.question8[1])
+             + parseInt(this.question.question9[3])
+             + parseInt(this.question.question10[3])
+             + parseInt(this.question.question11[2])
+             + parseInt(this.question.question12[0]);
+             let OR = 
+              parseInt(this.question.question1[3]) 
+             + parseInt(this.question.question2[0]) 
+             + parseInt(this.question.question3[2]) 
+             + parseInt(this.question.question4[2]) 
+             + parseInt(this.question.question5[1])
+             + parseInt(this.question.question6[0])
+             + parseInt(this.question.question7[0])
+             + parseInt(this.question.question8[2])
+             + parseInt(this.question.question9[0])
+             + parseInt(this.question.question10[0])
+             + parseInt(this.question.question11[1])
+             + parseInt(this.question.question12[2]);
+             let EA = 
+               parseInt(this.question.question1[2]) 
+             + parseInt(this.question.question2[3]) 
+             + parseInt(this.question.question3[1]) 
+             + parseInt(this.question.question4[1]) 
+             + parseInt(this.question.question5[3])
+             + parseInt(this.question.question6[1])
+             + parseInt(this.question.question7[3])
+             + parseInt(this.question.question8[0])
+             + parseInt(this.question.question9[2])
+             + parseInt(this.question.question10[2])
+             + parseInt(this.question.question11[3])
+             + parseInt(this.question.question12[3]);
 
-          this.question.forEach((question,index) => {
-            console.log(question,index)
-            });
-            console.log(EA,CA,EC,OR,respostasCA,respostasEA,respostasEC,respostasOR)
+      
+              let divergente = (EC + OR);
+              let assimilador = (OR + CA);
+              let convergente = (CA + EA);
+              let acomodador = (EA + EC);
+              let resultsum = Math.max(divergente,assimilador,convergente,acomodador)
+
+              if(resultsum == divergente) {
+              console.log("estilo:DIVERGENTE")
+							}else if(resultsum == assimilador) {
+								console.log("estilo:ASSIMILADOR") 
+              }else if(resultsum == convergente) {
+								console.log("estilo:CONVERGENTE") 
+							}else if (resultsum == acomodador) {
+								console.log("estilo:ACOMODADOR")
+							}
+
+               console.log("EC:",EC,"CA:",CA,"OR:",OR,"EA:",EA)
+
+  
+          
             }
           }
         }
-
-
-      }
-    }
 
 </script>
 <style>
