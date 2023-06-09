@@ -27,7 +27,7 @@
                 <td ref="row" class="schedule-subjects" v-for="(subject, row) in subjects[index]" :key="row">
                     <div v-if="subject">
                         <div class="schedule-subjects-alocated" v-for="(separated,column) in subject.split(' ')" :key="column">
-                            <div v-if="separated">{{ separated }}</div>
+                            <div class="schedule-subjects-alocated-true" v-if="separated">{{ separated }}</div>
                         </div>
                     </div>
                 </td>
@@ -118,12 +118,8 @@ export default{
             this.$refs.row.forEach(element => {
                 if(element.textContent){
                     this.updateSubjects[i][j] = ''
-                    console.log("text element:", element.textContent)
-                    console.log("element:", element)
-                    element.querySelectorAll('div').forEach(subject => {
+                    element.querySelectorAll('.schedule-subjects-alocated-true').forEach(subject => {
                         this.updateSubjects[i][j] += subject.textContent + " "
-                        console.log("text subject:", subject.textContent)
-                        console.log("subject:", subject)
                     })
                 }
                 j++
@@ -132,21 +128,46 @@ export default{
                     j = 0;
                 }
             })
-            let list = () => {
-                    let response = [];
-                    this.updateSubjects.forEach( (elements,row) => {
-                        elements.forEach( (element,column) => {
-                            if(element){
-                                response.push(`elemento:${element},linha:${row},coluna:${column}`)
-                            }
-                        })
-                    })
-                    return response
-                }
             Swal.fire({
-                title:'desgraça',
-                text: `${list()}`
+              title: 'Atualizando cronograma',
+              showConfirmButton: false,
+              allowOutsideClick: false,
+              willOpen: () => {
+                Swal.showLoading();
+              }
+            });
+            axios.post('http://localhost:8000/schedule/updateSchedule.php',{
+                id: localStorage.getItem('idSession'),
+                update: this.updateSubjects,
+                title: this.currentTitle
             })
+            .then(response => {
+                Swal.hideLoading();
+                Swal.update({
+                    showConfirmButton: true,
+                    allowOutsideClick: true
+                })
+                if(response.data.success){
+                    Swal.update({
+                        title: 'cronograma atualizado com sucesso',
+                        text: 'seu cronograma foi alterado com sucesso',
+                    })
+                }else if(response.data.saveSubjectError){
+                    Swal.update({
+                        title: 'atualização parcial',
+                        text: 'tivemos um problema ao atualizar o seu cronograma, talvez exista algumas materias fora do seu devido lugar'
+                    })
+                }else if(response.data.error){
+                    Swal.update({
+                        title: 'ERROR',
+                        text: 'por razões ainda desconhecidas nao pudemos atualizar seu cronograma'
+                    })
+                }
+            })
+            .catch(error => {
+                Swal.fire('erro',error)
+            })
+            
         }
     },
     created() {
