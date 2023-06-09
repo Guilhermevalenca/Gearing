@@ -1,16 +1,16 @@
 <template>
-    <!--<QuizLearningStyles/>-->
-    <div></div>
+    <div> ai </div>
+    <QuizLearningStyles/>
 </template>
 
 <script>
 
-//import QuizLearningStyles from '@/components/LearningStylesPage/QuizLearningStyles.vue';
+import QuizLearningStyles from '@/components/LearningStylesPage/QuizLearningStyles.vue';
 
 export default{
     name: 'LearningStylesPage',
     components:{
-  //      QuizLearningStyles,
+     QuizLearningStyles,
     }
 }
 </script>
