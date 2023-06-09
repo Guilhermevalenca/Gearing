@@ -121,6 +121,13 @@ export default{
                     j = 0;
                 }
             })
+            Swal.fire({
+                title: 'Criando cronograma',
+                text: 'porfavor aguarde, dentro de alguns segundos seu cronograma será criado',
+                showConfirmButton: false,
+                allowOutsideClick: false
+            });
+            Swal.showLoading();
             axios.post('http://localhost:8000/schedule/addSchedule.php', {
                 schedule: this.receivingSubjects,
                 title: this.title,
@@ -133,17 +140,12 @@ export default{
                 }else if(response.data.failedCreatedSchedule){
                     Swal.fire('criação falhou','Não foi possivel criar seu cronograma, tente novamente mais tarde');
                 }else{
+                    this.$store.dispatch('changeSchedule','')
                     if(response.data.addSubjectFailed){
                         Swal.fire('falha ao adicionar materia','uma ou mais materias não foram adicionadas');
                     }
                     if(response.data.success){
                         Swal.fire('cronograma criado','seu cronograma foi criado, boa sorte com seus estudos!!!')
-                        .then(result => {
-                            if(result.isConfirmed){
-                                this.$router.push('/');
-                                this.$router.push('/schedule');
-                            }
-                        })
                     }
                 }
             })

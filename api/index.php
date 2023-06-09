@@ -1,4 +1,8 @@
 <?php
+require './accept.php';
 
 session_start();
-echo session_id();
+$response = [];
+$response['id'] = session_id();
+$response['message'] = 'vai se fuder';
+echo json_encode($response);

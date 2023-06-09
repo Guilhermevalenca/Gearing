@@ -108,19 +108,27 @@ export default{
             })
         },
         deleteSchedule() {
+            
+            Swal.fire({
+                title: 'deletando cronograma',
+                showConfirmButton: false,
+                allowOutsideClick: false
+            })
+            Swal.showLoading();
             axios.post('http://localhost:8000/schedule/deleteSchedule.php', {
                 id: localStorage.getItem('idSession'),
                 title: this.currentTitle
             })
             .then(response => {
+                Swal.hideLoading();
                 if(response.data.result){
+                    this.subjects = [];
+                    this.currentTitle = '';
+                    this.turns = ''
                     Swal.fire('deletado','Seu cronograma foi deletado com sucesso')
                     .then(result =>{
                         if(result.isConfirmed){
                             this.searchSchedules();
-                            this.subjects = [];
-                            this.currentTitle = '';
-                            this.turns = ''
                         }
                     })
                 }else{
