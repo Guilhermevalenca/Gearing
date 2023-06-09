@@ -3,12 +3,12 @@
 <section>
 <div class="define-title">
     Adicione um titulo ao seu cronograma
-    <input class="define-title-text" v-model="title" type="text" placeholder="digite o titulo aqui">
+    <input :class="['define-title-text',{'select-title' : this.checks.title}]" v-model="title" type="text" placeholder="digite o titulo aqui" required>
 </div> 
 <div>
     <label>
         turnos
-        <select v-model="turns">
+        <select :class="{'select-turn' : this.checks.turn}" v-model="turns">
             <option value="morning">manha</option>
             <option value="afternoon">tarde</option>
             <option value="night">noite</option>
@@ -83,7 +83,11 @@ export default{
             nightShift: ["18:00","19:00","20:00","21:00","22:00","23:00"],
             dawnShift: ["00:00","01:00","02:00","03:00","04:00","05:00"],
             receivingSubjects: [],
-            currentTime: ["06:00","07:00","08:00","09:00","10:00","11:00"]
+            currentTime: ["06:00","07:00","08:00","09:00","10:00","11:00"],
+            checks: {
+                title: false,
+                turn: false
+            }
         }
     },
     mounted() {
@@ -105,14 +109,24 @@ export default{
     },
     methods: {
         addShedule() {
+            if(!this.title || !this.turns){
+                this.checks.title = () => {return !this.title}
+                this.checks.turn = () => {return !this.turns}
+                return
+            }
             let i = 0;
             let j = 0;
             
+            let check = true;
+
             this.$refs.sortableReceiving.forEach( (element) => {
                 if(element.textContent){
                     this.receivingSubjects[i][j] = ''
                     element.querySelectorAll('ul').forEach(subject => {
                         this.receivingSubjects[i][j] += subject.textContent + " "
+                        if(subject.textContent){
+                            check = false;
+                        }
                     })
                 }
                 j++
@@ -121,6 +135,14 @@ export default{
                     j = 0;
                 }
             })
+            
+            if(check){
+                Swal.fire({
+                    title: 'deve ser adicionado ao menos uma materia ao seu cronograma'
+                })
+                return
+            }
+
             Swal.fire({
                 title: 'Criando cronograma',
                 text: 'porfavor aguarde, dentro de alguns segundos seu cronograma será criado',
@@ -140,11 +162,15 @@ export default{
                 }else if(response.data.failedCreatedSchedule){
                     Swal.fire('criação falhou','Não foi possivel criar seu cronograma, tente novamente mais tarde');
                 }else{
-                    this.$store.dispatch('changeSchedule','')
+                    this.$emit('quitCreatingSchedule');
                     if(response.data.addSubjectFailed){
-                        Swal.fire('falha ao adicionar materia','uma ou mais materias não foram adicionadas');
-                    }
-                    if(response.data.success){
+                        Swal.fire('falha ao adicionar materia','uma ou mais materias não foram adicionadas')
+                        .then(result => {
+                            if(result.isConfirmed){
+                                Swal.fire('cronograma criado','seu cronograma foi criado, boa sorte com seus estudos!!!')        
+                            }
+                        })
+                    }else if(response.data.success){
                         Swal.fire('cronograma criado','seu cronograma foi criado, boa sorte com seus estudos!!!')
                     }
                 }
@@ -182,6 +208,7 @@ export default{
                 }else if(this.turns == "dawn"){
                     this.currentTime = this.dawnShift;
                 }
+                this.checks.turn = false
                 const elements = this.$refs.sortableReceiving;
                 if(elements){
                     elements.forEach(element => {
@@ -190,6 +217,12 @@ export default{
                         })
                     })
                 }
+            },
+            deep: true
+        },
+        title: {
+            handler() {
+                this.checks.title = false;
             },
             deep: true
         }
@@ -201,6 +234,9 @@ export default{
 </script>
 
 <style scoped>
+.select-turn,.select-title{
+    background-color: red;
+}
 .schedule{
     display: grid;
     justify-content: center;

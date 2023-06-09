@@ -13,7 +13,7 @@
 <section>
     <div>
         <div v-if="createSchedule">
-            <CreateSchedule />
+            <CreateSchedule @quitCreatingSchedule="showViewSchedule()" />
         </div>
         <div v-if="viewSchedule">
             <ViewSchedule />
