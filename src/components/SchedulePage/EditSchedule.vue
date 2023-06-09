@@ -150,8 +150,8 @@ export default{
                 if(response.data.success){
                     Swal.update({
                         title: 'cronograma atualizado com sucesso',
-                        text: 'seu cronograma foi alterado com sucesso',
-                    })
+                        text: 'seu cronograma foi alterado com sucesso'
+                    });this.$store.dispatch('changeSchedule','')
                 }else if(response.data.saveSubjectError){
                     Swal.update({
                         title: 'atualização parcial',
