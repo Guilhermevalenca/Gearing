@@ -16,7 +16,7 @@ CREATE TABLE GEA_SCHEDULE(
     sche_shifts VARCHAR(10) NOT NULL,
     sche_user_email VARCHAR(45) NOT NULL,
     PRIMARY KEY (sche_title, sche_user_email),
-    CONSTRAINT sche_user_email FOREIGN KEY (sche_user_email) REFERENCES GEA_USER(user_email)
+    CONSTRAINT sche_user_email FOREIGN KEY (sche_user_email) REFERENCES GEA_USER(user_email) ON DELETE CASCADE
 );
 CREATE TABLE GEA_SUBJECT(
     sub_id INT NOT NULL AUTO_INCREMENT,

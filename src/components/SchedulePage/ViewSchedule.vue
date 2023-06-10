@@ -137,7 +137,7 @@ export default{
             })
         },
         editSchedule() {
-            this.$store.dispatch('changeSchedule',this.currentTitle);            
+            this.$store.dispatch('changeSchedule',this.currentTitle);     
         }
     },
     beforeMount() {

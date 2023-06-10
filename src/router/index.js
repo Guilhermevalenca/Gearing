@@ -28,6 +28,11 @@ const routes = [
     path: '/learningStyles',
     name:'learningStyles',
     component: () => import('@/views/LearningStylesPage.vue')
+  },
+  {
+    path: '/forum',
+    name: 'forum',
+    component: () => import('@/views/ForumPage.vue')
   }
 ]
 
