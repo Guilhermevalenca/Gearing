@@ -123,7 +123,7 @@ export default{
                 if(element.textContent){
                     this.receivingSubjects[i][j] = ''
                     element.querySelectorAll('ul').forEach(subject => {
-                        this.receivingSubjects[i][j] += subject.textContent + " "
+                        this.receivingSubjects[i][j] += subject.textContent + ","
                         if(subject.textContent){
                             check = false;
                         }

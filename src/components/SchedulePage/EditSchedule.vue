@@ -26,7 +26,7 @@
                 </td>
                 <td ref="row" class="schedule-subjects" v-for="(subject, row) in subjects[index]" :key="row">
                     <div v-if="subject">
-                        <div class="schedule-subjects-alocated" v-for="(separated,column) in subject.split(' ')" :key="column">
+                        <div class="schedule-subjects-alocated" v-for="(separated,column) in subject.split(',')" :key="column">
                             <div class="schedule-subjects-alocated-true" v-if="separated">{{ separated }}</div>
                         </div>
                     </div>
@@ -119,7 +119,7 @@ export default{
                 if(element.textContent){
                     this.updateSubjects[i][j] = ''
                     element.querySelectorAll('.schedule-subjects-alocated-true').forEach(subject => {
-                        this.updateSubjects[i][j] += subject.textContent + " "
+                        this.updateSubjects[i][j] += subject.textContent + ","
                     })
                 }
                 j++

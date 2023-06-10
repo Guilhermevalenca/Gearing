@@ -28,7 +28,7 @@
                 </td>
                 <td class="schedule-subjects" v-for="(subject, row) in subjects[index]" :key="row">
                     <div v-if="subject">
-                        <div v-for="(separated,column) in subject.split(' ')" :key="column">
+                        <div v-for="(separated,column) in subject.split(',')" :key="column">
                             <div v-if="separated">{{ separated }}</div>
                         </div>
                     </div>
