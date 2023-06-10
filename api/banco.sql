@@ -1,6 +1,7 @@
 CREATE TABLE GEA_METHODOLOGY(
 	meth_name VARCHAR(45) PRIMARY KEY NOT NULL,
-    meth_description VARCHAR(45) NOT NULL
+    meth_description TEXT NOT NULL, /*TEXT attribute is from MySQL not SQL */
+    meth_reference_style VARCHAR(45) NOT NULL
 );
 CREATE TABLE GEA_USER(
 	user_email VARCHAR(45) PRIMARY KEY NOT NULL,
@@ -30,15 +31,19 @@ CREATE TABLE GEA_SUBJECT(
     CONSTRAINT sub_sche_user_email FOREIGN KEY (sub_sche_user_email) REFERENCES GEA_SCHEDULE(sche_user_email) 
 );
 CREATE TABLE GEA_TOPIC(
-	top_name VARCHAR(45) PRIMARY KEY NOT NULL,
+    top_id INT NOT NULL AUTO_INCREMENT,
+	top_name VARCHAR(45) NOT NULL,
+    CONSTRAINT top_name UNIQUE (top_name),
+    PRIMARY KEY (top_id,top_name),
+    top_description TEXT NOT NULL,
     top_user_email VARCHAR(45) NOT NULL,
     CONSTRAINT top_user_email FOREIGN KEY (top_user_email) REFERENCES GEA_USER(user_email)
 );
-CREATE TABLE GEA_CHAT(
-	chat_message VARCHAR(45) NOT NULL,
-    chat_top_name VARCHAR(45) NOT NULL,
-    chat_top_user_email VARCHAR(45) NOT NULL,
-    PRIMARY KEY (chat_top_name, chat_top_user_email),
-    CONSTRAINT chat_top_name FOREIGN KEY (chat_top_name) REFERENCES GEA_TOPIC(top_name),
-    CONSTRAINT chat_top_user_email FOREIGN KEY (chat_top_user_email) REFERENCES GEA_TOPIC(top_user_email)
+CREATE TABLE GEA_COMMENTS(
+	com_message TEXT NOT NULL,
+    com_top_name VARCHAR(45) NOT NULL,
+    com_top_user_email VARCHAR(45) NOT NULL,
+    PRIMARY KEY (com_top_name, com_top_user_email),
+    CONSTRAINT com_top_name FOREIGN KEY (com_top_name) REFERENCES GEA_TOPIC(top_name),
+    CONSTRAINT com_top_user_email FOREIGN KEY (com_top_user_email) REFERENCES GEA_TOPIC(top_user_email)
 );
