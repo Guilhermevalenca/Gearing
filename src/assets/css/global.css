@@ -1,15 +1,76 @@
+@import url("https://fonts.cdnfonts.com/css/share-tech-mono");
+@import url('https://fonts.cdnfonts.com/css/yielding-timber');
+
 body {
     background-image: url("./backgrounds/gearingBackground.jpeg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    margin: 0;
 }
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Share Tech Mono", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  margin: 2em 6em 2em 6em;
+  color:aquamarine;
+}
+h1,h2,p{
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(188, 251, 255, 1) 47%,
+    rgba(24, 237, 242, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+p{
+  text-align:justify;
+  text-align-last:center;
+}
+
+button {
+  background: -webkit-linear-gradient(
+    318deg,
+    rgba(133, 26, 186, 1) 18%,
+    rgb(133, 26, 186, 1) 46%,
+    rgba(100, 2, 223, 1) 81%
+  );
+  border-style: solid;
+  border-color: black;
+  border-width: -5vw;
+  border-radius: 8px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 2em;
+  text-align: center;
+}
+button:hover {
+  background-color: #663399;
+}
+
+button:active {
+  background-color: #fff;
+  color: #000;
+}
+
+button:focus {
+  outline: none;
+}
+input[type=text]{
+  border-style: solid;
+  border-radius: 8px;
+  border-color: #000;
+  height: 1.5em;
+  width: 15em;
+}
+input[type=text]::-webkit-input-placeholder{
+  text-align: center;
+}
+input[type=text]::-moz-placeholder{
+  text-align: center;
 }

@@ -1,8 +1,8 @@
 <template>
 <section>
     <div>
-        <h2>Bem vindo</h2>
-        <h3>aqui é onde você poderá criar seus cronogramas de estudo</h3>
+        <h2>Bem-vindo(a) à página de cronogramas</h2>
+        <p>Aqui você poderá visualizar seus cronogramas ou criar novos cronogramas.</p>
     </div>
 
     <div class="options">

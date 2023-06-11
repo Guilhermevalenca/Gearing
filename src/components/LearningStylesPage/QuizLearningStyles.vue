@@ -7,13 +7,11 @@
     O objetivo desse teste é te ajudar a descobrir qual métodologia se encaixa melhor para 
     o eu estilo de aprendizagem.
   </p>
-<br>
 <p>
    Cada pergunta tem quatro opções, você deverar dar uma nota para cada opção de acordo com
    o que você mais se idêntifica, sendo 4 a nota máxima(o item pelo qual você mais se 
    identifica) e 1 a nota mínima (o item pelo qual você menos se identifica).
 </p>
-<br>
   <span>Atenção: Dois itens de uma mesma pergunta não podem ter notas iguais</span>
 </div>
 
@@ -613,9 +611,8 @@ export default{
 
 <style scoped>
 section{
-  margin: 50px;
+  margin-top: 4em;
 }
-@import url("https://fonts.cdnfonts.com/css/share-tech-mono");
 input{
 -webkit-appearance: none;
 appearance: none;
@@ -636,7 +633,7 @@ background-color:red;
   width: 1em;
   font-size: 20px;
 }
-h2 , label , .valueColor , p , span {
+  label , .valueColor ,span {
   font-family: "Share Tech Mono", sans-serif;
   color: aqua;
   background: -webkit-linear-gradient(
@@ -655,6 +652,9 @@ label {
   font-family: "Share Tech Mono", sans-serif;
   font-size: 16px;
   margin: 1em;
+}
+span{
+  color:red;
 }
 
 

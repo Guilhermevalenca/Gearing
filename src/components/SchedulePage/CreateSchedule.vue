@@ -234,6 +234,9 @@ export default{
 </script>
 
 <style scoped>
+label{
+    color:white;
+}
 .select-turn,.select-title{
     background-color: red;
 }
