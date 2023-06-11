@@ -35,15 +35,29 @@ export default{
                 },
                 willClose: () => {
                     Swal.hideLoading();
-                }
+                },
+                showConfirmButton: false,
+                allowOutsideClick: false
             })
             axios.post('http://localhost:8000/forum/addTopic.php',{
-                id: localStorage('idSession'),
+                id: localStorage.getItem('idSession'),
                 name: this.name,
                 description: this.description
             })
             .then(response => {
-                if(response.data.success){
+                if(response.data.error){
+                    Swal.fire({
+                        title:'Erro',
+                        text: 'Não foi possivel adicionar seu topico',
+                        confirmButtonText: 'tente novamente',
+                        showCancelButton: true
+                    })
+                    .then(result => {
+                        if(result.isConfirmed){
+                            this.createTopic()
+                        }
+                    })
+                }else if(response.data.success){
                     Swal.fire({
                         title: 'Seu topico foi adicionado com sucesso ao forum',
                         confirmButtonText: 'vizualizar outros topicos'
