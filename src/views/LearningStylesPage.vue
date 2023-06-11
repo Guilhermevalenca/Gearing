@@ -11,6 +11,9 @@ export default{
     name: 'LearningStylesPage',
     components:{
      QuizLearningStyles,
+    },
+    beforeCreate(){
+        this.$authUser()
     }
 }
 </script>

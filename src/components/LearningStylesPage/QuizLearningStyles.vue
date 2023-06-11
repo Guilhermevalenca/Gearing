@@ -18,277 +18,325 @@
 <section>
 <h2>1. Enquanto estou estudando gosto de ...</h2>
   <label>
-  Lidar com meus sentimentos - Gerenciar e compreender as emoções que surgem durante o processo de aprendizagem<br>
-    <input v-model="question.question1[0]" type="range"  min="1" max="4">
+  Lidar com meus sentimentos - Gerenciar e compreender as emoções que surgem durante o processo de aprendizagem
+  </label><br>
+  <input :class="{'equal':classEqual[0]}" v-model="question.question1[0]" type="range"  min="1" max="4">
     {{ question.question1[0] }}
-  </label><br>
+    <br>
   <label>
-  Desenvolver idéias<br>
-    <input v-model="question.question1[1]" type="range"  min="1" max="4">
+  Desenvolver idéias
+  </label><br>
+  <input :class="{'equal':classEqual[0]}" v-model="question.question1[1]" type="range"  min="1" max="4">
     {{ question.question1[1] }}
-  </label><br>
+    <br>
   <label>
-  Práticar<br>
-    <input v-model="question.question1[2]" type="range"  min="1" max="4">
+  Práticar
+  </label><br>
+  <input :class="{'equal':classEqual[0]}" v-model="question.question1[2]" type="range"  min="1" max="4">
     {{ question.question1[2] }}
-  </label><br>
+    <br>
   <label>
-  Observar e ouvir<br>
-    <input v-model="question.question1[3]" type="range"  min="1" max="4">
+  Observar e ouvir
+  </label><br>
+  <input :class="{'equal':classEqual[0]}" v-model="question.question1[3]" type="range"  min="1" max="4">
     {{ question.question1[3] }}
-  </label><br><br>
+  <br><br>
 
 <h2>2. Costumo ter facilidade de aprender, principalmente quando ... </h2>
   <label>
-  Ouço e observo com atenção<br>
-    <input v-model="question.question2[0]" type="range"  min="1" max="4">
+  Ouço e observo com atenção
+  </label><br>
+  <input :class="{'equal':classEqual[1]}" v-model="question.question2[0]" type="range"  min="1" max="4">
     {{ question.question2[0] }}
-  </label><br>
+    <br>
   <label>
-  Utilizo racioncínio lógico<br> 
-    <input v-model="question.question2[1]" type="range"  min="1" max="4">
-    {{ question.question2[1] }}
-  </label><br>
+  Utilizo racioncínio lógico
+</label><br>
+<input :class="{'equal':classEqual[1]}" v-model="question.question2[1]" type="range"  min="1" max="4">
+{{ question.question2[1] }}
+<br>
   <label>
-  Me baseio em meus palpites e impressões<br>
-    <input v-model="question.question2[2]" type="range"  min="1" max="4">
+  Me baseio em meus palpites e impressões
+  </label><br>
+  <input :class="{'equal':classEqual[1]}" v-model="question.question2[2]" type="range"  min="1" max="4">
     {{ question.question2[2] }}
-  </label><br>
+    <br>
   <label>
-  Executando o que aprendi<br>
-    <input v-model="question.question2[3]" type="range"  min="1" max="4">
+  Executando o que aprendi
+  </label><br>
+  <input :class="{'equal':classEqual[1]}" v-model="question.question2[3]" type="range"  min="1" max="4">
     {{ question.question2[3] }}
-  </label><br><br>
+  <br><br>
 
 <h2>3. Quando estou aprendendo costumo ...</h2>
 
   <label>
-  Buscar explicações para os tópicos estudados<br>
-    <input v-model="question.question3[0]" type="range"  min="1" max="4">
+  Buscar explicações para os tópicos estudados
+  </label><br>
+  <input :class="{'equal':classEqual[2]}" v-model="question.question3[0]" type="range"  min="1" max="4">
     {{ question.question3[0] }}
-  </label><br>
+    <br>
   <label>
-  Ser responsável a cerca das coisas - disciplinado(a)<br>
-    <input v-model="question.question3[1]" type="range"  min="1" max="4">
+  Ser responsável a cerca das coisas - disciplinado(a)
+  </label><br>
+  <input :class="{'equal':classEqual[2]}" v-model="question.question3[1]" type="range"  min="1" max="4">
     {{ question.question3[1] }}
-  </label><br>
+    <br>
   <label>
-  Ficar quieto e me concentrar<br>
-    <input v-model="question.question3[2]" type="range"  min="1" max="4">
+  Ficar quieto e me concentrar
+  </label><br>
+  <input :class="{'equal':classEqual[2]}" v-model="question.question3[2]" type="range"  min="1" max="4">
     {{ question.question3[2] }}
-  </label><br>
+    <br>
   <label>
-  Ter sentimentos e reações fortes<br>
-    <input v-model="question.question3[3]" type="range"  min="1" max="4">
+  Ter sentimentos e reações fortes
+  </label><br>
+  <input :class="{'equal':classEqual[2]}" v-model="question.question3[3]" type="range"  min="1" max="4">
     {{ question.question3[3] }}
-  </label><br><br>
+  <br><br>
 
 <h2>4. Aprendo ...</h2>
 
   <label>
-  Sentindo (raiva, tristeza, admiração, curiosidade, etc.)<br>
-    <input v-model="question.question4[0]" type="range"  min="1" max="4">
+  Sentindo (raiva, tristeza, admiração, curiosidade, etc.)
+  </label><br>
+  <input :class="{'equal':classEqual[3]}" v-model="question.question4[0]" type="range"  min="1" max="4">
     {{ question.question4[0] }}
-  </label><br>
+    <br>
   <label>
-  Fazendo<br>
-    <input v-model="question.question4[1]" type="range"  min="1" max="4">
+  Fazendo
+  </label><br>
+  <input :class="{'equal':classEqual[3]}" v-model="question.question4[1]" type="range"  min="1" max="4">
     {{ question.question4[1] }}
-  </label><br>
+    <br>
   <label>
-  Observando<br>
-    <input v-model="question.question4[2]" type="range"  min="1" max="4">
+  Observando
+  </label><br>
+  <input :class="{'equal':classEqual[3]}" v-model="question.question4[2]" type="range"  min="1" max="4">
     {{ question.question4[2] }}
-  </label><br>
+    <br>
   <label>
-  Pensando<br>
-    <input v-model="question.question4[3]" type="range"  min="1" max="4">
+  Pensando
+  </label><br>
+  <input :class="{'equal':classEqual[3]}" v-model="question.question4[3]" type="range"  min="1" max="4">
     {{ question.question4[3] }}
-  </label><br><br>
+  <br><br>
 
 <h2>5. Enquanto aprendo gosto de ...</h2>
 
   <label>
-  Me abrir a novas experiências<br>
-    <input v-model="question.question5[0]" type="range"  min="1" max="4">
+  Me abrir a novas experiências
+  </label><br>
+  <input :class="{'equal':classEqual[4]}" v-model="question.question5[0]" type="range"  min="1" max="4">
     {{ question.question5[0] }}
-  </label><br>
+    <br>
   <label>
-  Examinar todos os ângulos da questão<br>
-    <input v-model="question.question5[1]" type="range"  min="1" max="4">
+  Examinar todos os ângulos da questão
+  </label><br>
+  <input :class="{'equal':classEqual[4]}" v-model="question.question5[1]" type="range"  min="1" max="4">
     {{ question.question5[1] }}
-  </label><br>
+    <br>
   <label>
-  Analisar as coisas - Desdobrá-las em partes para entendê-las/resolvê-las<br>
-    <input v-model="question.question5[2]" type="range"  min="1" max="4">
+  Analisar as coisas - Desdobrá-las em partes para entendê-las/resolvê-las
+  </label><br>
+  <input :class="{'equal':classEqual[4]}" v-model="question.question5[2]" type="range"  min="1" max="4">
     {{ question.question5[2] }}
-  </label><br>
+    <br>
   <label>
-  Testar as coisas (Práticas, métodos, etc.)<br>
-    <input v-model="question.question5[3]" type="range"  min="1" max="4"> 
+  Testar as coisas (Práticas, métodos, etc.)
+  </label><br>
+  <input :class="{'equal':classEqual[4]}" v-model="question.question5[3]" type="range"  min="1" max="4"> 
     {{ question.question5[3] }}
-  </label><br><br>
+  <br><br>
 
 <h2>6. Enquanto estudo sou ...</h2>
 
   <label>
-  Alguém que prefere observar<br>
-    <input v-model="question.question6[0]" type="range"  min="1" max="4">
+  Alguém que prefere observar
+  </label><br>
+  <input :class="{'equal':classEqual[5]}" v-model="question.question6[0]" type="range"  min="1" max="4">
     {{ question.question6[0] }}
-  </label><br>
+    <br>
   <label>
-  Ativo(a) - Utilizo mais de um método de estudo<br>
-    <input v-model="question.question6[1]" type="range"  min="1" max="4">
+  Ativo(a) - Utilizo mais de um método de estudo
+  </label><br>
+  <input :class="{'equal':classEqual[5]}" v-model="question.question6[1]" type="range"  min="1" max="4">
     {{ question.question6[1] }}
-  </label><br>
+    <br>
   <label>
-  Intuitivo(a) - Entender quais são as suas dificuldades e conseguir identificar o que se encaixa melhor para o seu processo de aprendizagem<br>
-    <input v-model="question.question6[2]" type="range"  min="1" max="4">
+  Intuitivo(a) - Entender quais são as suas dificuldades e conseguir identificar o que se encaixa melhor para o seu processo de aprendizagem
+  </label><br>
+  <input :class="{'equal':classEqual[5]}" v-model="question.question6[2]" type="range"  min="1" max="4">
     {{ question.question6[2] }}
-  </label><br>
+    <br>
   <label>
-  Lógico(a) - Utilizar a lógica e a razão para entender o tema abordado<br>
-    <input v-model="question.question6[3]" type="range"  min="1" max="4">
+  Lógico(a) - Utilizar a lógica e a razão para entender o tema abordado
+  </label><br>
+  <input :class="{'equal':classEqual[5]}" v-model="question.question6[3]" type="range"  min="1" max="4">
     {{ question.question6[3] }}
-  </label><br><br>
+  <br><br>
 
 <h2>7. Aprendo melhor através de ...</h2>
 
   <label>
-  Observação<br>
-    <input v-model="question.question7[0]" type="range"  min="1" max="4">
+  Observação
+  </label><br>
+  <input :class="{'equal':classEqual[6]}" v-model="question.question7[0]" type="range"  min="1" max="4">
     {{ question.question7[0] }}
-  </label><br>
+    <br>
   <label>
-  Interações pessoais - Adquirir conhecimento por meio de interações com outras pessoas<br>
-    <input v-model="question.question7[1]" type="range"  min="1" max="4">
+  Interações pessoais - Adquirir conhecimento por meio de interações com outras pessoas
+  </label><br>
+  <input :class="{'equal':classEqual[6]}" v-model="question.question7[1]" type="range"  min="1" max="4">
     {{ question.question7[1] }}
-  </label><br>
+    <br>
   <label>
-  Teorias racionais - Modelos conceituais baseados em princípios lógicos e raciocínio dedutivo<br>
-    <input v-model="question.question7[2]" type="range"  min="1" max="4">
+  Teorias racionais - Modelos conceituais baseados em princípios lógicos e raciocínio dedutivo
+  </label><br>
+  <input :class="{'equal':classEqual[6]}" v-model="question.question7[2]" type="range"  min="1" max="4">
     {{ question.question7[2] }}
-  </label><br>
+    <br>
   <label>
-  Oportunidades para experimentar e práticar<br>
-    <input v-model="question.question7[3]" type="range"  min="1" max="4">
+  Oportunidades para experimentar e práticar
+  </label><br>
+  <input :class="{'equal':classEqual[6]}" v-model="question.question7[3]" type="range"  min="1" max="4">
     {{ question.question7[3] }}
-  </label><br><br>
+  <br><br>
 
 <h2>8. Enquanto aprendo ...</h2>
 
   <label>
   Gosto de ver o resultado do meu trabalho<br>
-    <input v-model="question.question8[0]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[7]}" v-model="question.question8[0]" type="range"  min="1" max="4">
     {{ question.question8[0] }}
+    <br>
   </label><br>
   <label>
-  Me interesso em ter/conhecer idéias e teorias<br>
-    <input v-model="question.question8[1]" type="range"  min="1" max="4">
+  Me interesso em ter/conhecer idéias e teorias
+  </label><br>
+  <input :class="{'equal':classEqual[7]}" v-model="question.question8[1]" type="range"  min="1" max="4">
     {{ question.question8[1] }}
-  </label><br>
+    <br>
   <label>
-  Penso antes de agir - planejar-se<br>
-    <input v-model="question.question8[2]" type="range"  min="1" max="4">
+  Penso antes de agir - planejar-se
+  </label><br>
+  <input :class="{'equal':classEqual[7]}" v-model="question.question8[2]" type="range"  min="1" max="4">
     {{ question.question8[2] }}
-  </label><br>
+    <br>
   <label>
-  Sinto-me pessoalmente envolvido(a) nos assuntos<br>
-    <input v-model="question.question8[3]" type="range"  min="1" max="4">
+  Sinto-me pessoalmente envolvido(a) nos assuntos
+  </label><br>
+  <input :class="{'equal':classEqual[7]}" v-model="question.question8[3]" type="range"  min="1" max="4">
     {{ question.question8[3] }}
-  </label><br><br>
+  <br><br>
 
 <h2>9. Aprendo melhor quando me apóio em ...</h2>
 
   <label>
-  Minhas observações<br>
-    <input v-model="question.question9[0]" type="range"  min="1" max="4">
+  Minhas observações
+  </label><br>
+  <input :class="{'equal':classEqual[8]}" v-model="question.question9[0]" type="range"  min="1" max="4">
     {{ question.question9[0] }}
-  </label><br>
+    <br>
   <label>
-  Minhas impressões<br>
-    <input v-model="question.question9[1]" type="range"  min="1" max="4">
+  Minhas impressões
+  </label><br>
+  <input :class="{'equal':classEqual[8]}" v-model="question.question9[1]" type="range"  min="1" max="4">
     {{ question.question9[1] }}
-  </label><br>
+    <br>
   <label>
-  Posso experimentar coisas por mim mesmo(a)<br>
-    <input v-model="question.question9[2]" type="range"  min="1" max="4">
+  Posso experimentar coisas por mim mesmo(a)
+  </label><br>
+  <input :class="{'equal':classEqual[8]}" v-model="question.question9[2]" type="range"  min="1" max="4">
     {{ question.question9[2] }}
-  </label><br>
+    <br>
   <label>
-  Me apóio em minhas idéias<br>   
-    <input v-model="question.question9[3]" type="range"  min="1" max="4">
+  Me apóio em minhas idéias
+  </label><br>
+  <input :class="{'equal':classEqual[8]}" v-model="question.question9[3]" type="range"  min="1" max="4">
     {{ question.question9[3] }}
-  </label><br><br>
+  <br><br>
 
 <h2>10. Quando estou aprendendo costumo ser ...</h2>
 
   <label>
-  Compenetrado(a) - muito atento, concentrado<br>
-    <input v-model="question.question10[0]" type="range"  min="1" max="4">
-    {{ question.question10[0] }}
-  </label><br>
+  Compenetrado(a) - muito atento, concentrado
+</label><br>
+  <input :class="{'equal':classEqual[9]}"  v-model="question.question10[0]" type="range"  min="1" max="4">
+  {{ question.question10[0] }}
+  <br>
+<label>
+  Fléxivel
+</label><br>
+  <input :class="{'equal':classEqual[9]}"  v-model="question.question10[1]" type="range"  min="1" max="4">    
+  {{ question.question10[1] }}
+  <br>
   <label>
-  Fléxivel<br>
-    <input v-model="question.question10[1]" type="range"  min="1" max="4">    
-    {{ question.question10[1] }}
-  </label><br>
+  Responsável
+</label><br>
+  <input :class="{'equal':classEqual[9]}"  v-model="question.question10[2]" type="range"  min="1" max="4">
+  {{ question.question10[2] }}
+  <br>
   <label>
-  Responsável<br>
-    <input v-model="question.question10[2]" type="range"  min="1" max="4">
-    {{ question.question10[2] }}
-  </label><br>
-  <label>
-  Racional<br>
-    <input v-model="question.question10[3]" type="range"  min="1" max="4">
-    {{ question.question10[3] }}
-  </label><br><br>
+  Racional
+</label><br>
+  <input :class="{'equal':classEqual[9]}"  v-model="question.question10[3]" type="range"  min="1" max="4">
+  {{ question.question10[3] }}
+<br><br>
 
 <h2>11. Enquanto aprendo costumo ...</h2>
 
   <label>
-  Me envolver totalmente<br>
-    <input v-model="question.question11[0]" type="range"  min="1" max="4">    
-    {{ question.question11[0] }}
-  </label><br>
+  Me envolver totalmente
+</label><br>
+  <input :class="{'equal':classEqual[10]}"  v-model="question.question11[0]" type="range"  min="1" max="4">    
+  {{ question.question11[0] }}
+  <br>
   <label>
-  Gostar de observar<br>
-    <input v-model="question.question11[1]" type="range"  min="1" max="4">  
-    {{ question.question11[1] }}
-  </label><br>
+  Gostar de observar
+</label><br>
+  <input :class="{'equal':classEqual[10]}"  v-model="question.question11[1]" type="range"  min="1" max="4">  
+  {{ question.question11[1] }}
+  <br>
   <label>
-  Avaliar as coisas<br>
-    <input v-model="question.question11[2]" type="range"  min="1" max="4">
-    {{ question.question11[2] }}
-  </label><br>
+  Avaliar as coisas
+</label><br>
+  <input :class="{'equal':classEqual[10]}"  v-model="question.question11[2]" type="range"  min="1" max="4">
+  {{ question.question11[2] }}
+  <br>
   <label>
-   Estar ativo(a)<br>
-    <input v-model="question.question11[3]" type="range"  min="1" max="4">
-    {{ question.question11[3] }}
-  </label><br><br>
+   Estar ativo(a)
+  </label><br>
+   <input :class="{'equal':classEqual[10]}"  v-model="question.question11[3]" type="range"  min="1" max="4">
+   {{ question.question11[3] }}
+<br><br>
 
 <h2>12. Aprendo melhor quando ...</h2>
 
   <label>
-  Analiso as idéias<br>
-    <input v-model="question.question12[0]" type="range"  min="1" max="4">  
-    {{ question.question12[0] }}
-  </label><br>
+  Analiso as idéias
+</label><br>
+  <input :class="{'equal':classEqual[11]}"  v-model="question.question12[0]" type="range"  min="1" max="4">  
+  {{ question.question12[0] }}
+  <br>
   <label>
-  Sou receptivo(a) e mente aberta<br>
-    <input v-model="question.question12[1]" type="range"  min="1" max="4">
-    {{ question.question12[1] }}
-  </label><br>
+  Sou receptivo(a) e mente aberta
+</label><br>
+  <input :class="{'equal':classEqual[11]}"  v-model="question.question12[1]" type="range"  min="1" max="4">
+  {{ question.question12[1] }}
+  <br>
   <label>
-  Sou cuidadoso(a) - Tomar decisões para garantir que a aprendizagem aconteça de forma precisa, sem erros<br>
-    <input v-model="question.question12[2]" type="range"  min="1" max="4">
-    {{ question.question12[2] }}
-  </label><br>
+  Sou cuidadoso(a) - Tomar decisões para garantir que a aprendizagem aconteça de forma precisa, sem erros
+</label><br>
+  <input :class="{'equal':classEqual[11]}"  v-model="question.question12[2]" type="range"  min="1" max="4">
+  {{ question.question12[2] }}
+  <br>
   <label>
-  Sou prático(a) - Buscar formas de tornar o aprendizado mais significativo e relevante, e aplico o que está sendo estudado na prática<br> 
-    <input v-model="question.question12[3]" type="range"  min="1" max="4">
-    {{ question.question12[3] }}
-  </label>
+  Sou prático(a) - Buscar formas de tornar o aprendizado mais significativo e relevante, e aplico o que está sendo estudado na prática
+</label><br>
+<input :class="{'equal':classEqual[11]}"  v-model="question.question12[3]" type="range"  min="1" max="4">
+{{ question.question12[3] }}
+<br><br>
   <button @click='result()'>Calcular resultado</button>
 </section>
 </template>
@@ -299,20 +347,20 @@ export default{
   name: 'QuestionLearningStyles',
   data() {
       return{
-
+        classEqual:[false,false,false,false,false,false,false,false,false,false,false,false],
         question:{
-          question1: [],
-          question2: [],
-          question3: [],
-          question4: [],
-          question5: [],
-          question6: [],
-          question7: [],
-          question8: [],
-          question9: [],
-          question10: [],
-          question11: [],
-          question12: [],
+          question1: [1,1,1,1],
+          question2: [1,1,1,1],
+          question3: [1,1,1,1],
+          question4: [1,1,1,1],
+          question5: [1,1,1,1],
+          question6: [1,1,1,1],
+          question7: [1,1,1,1],
+          question8: [1,1,1,1],
+          question9: [1,1,1,1],
+          question10: [1,1,1,1],
+          question11: [1,1,1,1],
+          question12: [1,1,1,1],
         }
       }
     },
@@ -380,24 +428,195 @@ export default{
               let resultsum = Math.max(divergente,assimilador,convergente,acomodador)
 
               if(resultsum == divergente) {
-              console.log("estilo:DIVERGENTE")
+                alert("Seu estilo predominante é DIVERGENTE")
 							}else if(resultsum == assimilador) {
-								console.log("estilo:ASSIMILADOR") 
+								alert("Seu estilo predominante é ASSIMILADOR") 
               }else if(resultsum == convergente) {
-								console.log("estilo:CONVERGENTE") 
+								alert("Seu estilo predominante é CONVERGENTE") 
 							}else if (resultsum == acomodador) {
-								console.log("estilo:ACOMODADOR")
+								alert("Seu estilo predominante é ACOMODADOR")
 							}
 
                console.log("EC:",EC,"CA:",CA,"OR:",OR,"EA:",EA)
 
-  
+              
           
             }
+        },
+        watch :{
+          question :{
+            handler(){
+              const question = Object.keys(this.question);
+              for(let questions of question){
+
+                if(this.question[questions] == this.question.question1){
+                  if(this.question[questions][0] == this.question[questions][1] ||this.question[questions][0] == this.question[questions][2] || this.question[questions][0] == this.question[questions][3]){
+                    this.classEqual[0] = true
+                  }else if(this.question[questions][1] == this.question[questions][2] || this.question[questions][1] == this.question[questions][3]){
+                    this.classEqual[0] = true
+                  }else if(this.question[questions][2] == this.question[questions][3]){
+                    this.classEqual[0] = true
+                  }else{
+                    this.classEqual[0] = false
+                  }
+                }
+                if(this.question[questions] == this.question.question2){
+                  if(this.question[questions][0] == this.question[questions][1] ||this.question[questions][0] == this.question[questions][2] || this.question[questions][0] == this.question[questions][3]){
+                    this.classEqual[1] = true
+                  }else if(this.question[questions][1] == this.question[questions][2] || this.question[questions][1] == this.question[questions][3]){
+                    this.classEqual[1] = true
+                  }else if(this.question[questions][2] == this.question[questions][3]){
+                    this.classEqual[1] = true
+                  }else{
+                    this.classEqual[1] = false
+                  }
+                }
+                if(this.question[questions] == this.question.question3){
+                  if(this.question[questions][0] == this.question[questions][1] ||this.question[questions][0] == this.question[questions][2] || this.question[questions][0] == this.question[questions][3]){
+                    this.classEqual[2] = true
+                  }else if(this.question[questions][1] == this.question[questions][2] || this.question[questions][1] == this.question[questions][3]){
+                    this.classEqual[2] = true
+                  }else if(this.question[questions][2] == this.question[questions][3]){
+                    this.classEqual[2] = true
+                  }else{
+                    this.classEqual[2] = false
+                  }
+                }
+                if(this.question[questions] == this.question.question4){
+                  if(this.question[questions][0] == this.question[questions][1] ||this.question[questions][0] == this.question[questions][2] || this.question[questions][0] == this.question[questions][3]){
+                    this.classEqual[3] = true
+                  }else if(this.question[questions][1] == this.question[questions][2] || this.question[questions][1] == this.question[questions][3]){
+                    this.classEqual[3] = true
+                  }else if(this.question[questions][2] == this.question[questions][3]){
+                    this.classEqual[3] = true
+                  }else{
+                    this.classEqual[3] = false
+                  }
+                }
+                if(this.question[questions] == this.question.question5){
+                  if(this.question[questions][0] == this.question[questions][1] ||this.question[questions][0] == this.question[questions][2] || this.question[questions][0] == this.question[questions][3]){
+                    this.classEqual[4] = true
+                  }else if(this.question[questions][1] == this.question[questions][2] || this.question[questions][1] == this.question[questions][3]){
+                    this.classEqual[4] = true
+                  }else if(this.question[questions][2] == this.question[questions][3]){
+                    this.classEqual[4] = true
+                  }else{
+                    this.classEqual[4] = false
+                  }
+                }
+                if(this.question[questions] == this.question.question6){
+                  if(this.question[questions][0] == this.question[questions][1] ||this.question[questions][0] == this.question[questions][2] || this.question[questions][0] == this.question[questions][3]){
+                    this.classEqual[5] = true
+                  }else if(this.question[questions][1] == this.question[questions][2] || this.question[questions][1] == this.question[questions][3]){
+                    this.classEqual[5] = true
+                  }else if(this.question[questions][2] == this.question[questions][3]){
+                    this.classEqual[5] = true
+                  }else{
+                    this.classEqual[5] = false
+                  }
+                }
+                if(this.question[questions] == this.question.question7){
+                  if(this.question[questions][0] == this.question[questions][1] ||this.question[questions][0] == this.question[questions][2] || this.question[questions][0] == this.question[questions][3]){
+                    this.classEqual[6] = true
+                  }else if(this.question[questions][1] == this.question[questions][2] || this.question[questions][1] == this.question[questions][3]){
+                    this.classEqual[6] = true
+                  }else if(this.question[questions][2] == this.question[questions][3]){
+                    this.classEqual[6] = true
+                  }else{
+                    this.classEqual[6] = false
+                  }
+                }
+                if(this.question[questions] == this.question.question8){
+                  if(this.question[questions][0] == this.question[questions][1] ||this.question[questions][0] == this.question[questions][2] || this.question[questions][0] == this.question[questions][3]){
+                    this.classEqual[7] = true
+                  }else if(this.question[questions][1] == this.question[questions][2] || this.question[questions][1] == this.question[questions][3]){
+                    this.classEqual[7] = true
+                  }else if(this.question[questions][2] == this.question[questions][3]){
+                    this.classEqual[7] = true
+                  }else{
+                    this.classEqual[7] = false
+                  }
+                }
+                if(this.question[questions] == this.question.question9){
+                  if(this.question[questions][0] == this.question[questions][1] ||this.question[questions][0] == this.question[questions][2] || this.question[questions][0] == this.question[questions][3]){
+                    this.classEqual[8] = true
+                  }else if(this.question[questions][1] == this.question[questions][2] || this.question[questions][1] == this.question[questions][3]){
+                    this.classEqual[8] = true
+                  }else if(this.question[questions][2] == this.question[questions][3]){
+                    this.classEqual[8] = true
+                  }else{
+                    this.classEqual[8] = false
+                  }
+                }
+                if(this.question[questions] == this.question.question10){
+                  if(this.question[questions][0] == this.question[questions][1] ||this.question[questions][0] == this.question[questions][2] || this.question[questions][0] == this.question[questions][3]){
+                    this.classEqual[9] = true
+                  }else if(this.question[questions][1] == this.question[questions][2] || this.question[questions][1] == this.question[questions][3]){
+                    this.classEqual[9] = true
+                  }else if(this.question[questions][2] == this.question[questions][3]){
+                    this.classEqual[9] = true
+                  }else{
+                    this.classEqual[9] = false
+                  }
+                }
+                if(this.question[questions] == this.question.question11){
+                  if(this.question[questions][0] == this.question[questions][1] ||this.question[questions][0] == this.question[questions][2] || this.question[questions][0] == this.question[questions][3]){
+                    this.classEqual[10] = true
+                  }else if(this.question[questions][1] == this.question[questions][2] || this.question[questions][1] == this.question[questions][3]){
+                    this.classEqual[10] = true
+                  }else if(this.question[questions][2] == this.question[questions][3]){
+                    this.classEqual[10] = true
+                  }else{
+                    this.classEqual[10] = false
+                  }
+                }
+                if(this.question[questions] == this.question.question12){
+                  if(this.question[questions][0] == this.question[questions][1] ||this.question[questions][0] == this.question[questions][2] || this.question[questions][0] == this.question[questions][3]){
+                    this.classEqual[11] = true
+                  }else if(this.question[questions][1] == this.question[questions][2] || this.question[questions][1] == this.question[questions][3]){
+                    this.classEqual[11] = true
+                  }else if(this.question[questions][2] == this.question[questions][3]){
+                    this.classEqual[11] = true
+                  }else{
+                    this.classEqual[11] = false
+                  }
+                }
+              }
+            },
+            deep: true
           }
+        }
         }
 
 </script>
-<style>
+<style scoped>
+section{
+  margin: 100px;
+}
+input{
+-webkit-appearance: none;
+appearance: none;
+border-color: black;
+border-style: inherit;
+border: 1px;
+border-radius: 9px;
+background-color: aliceblue;
+
+}
+input ::-webkit-slider-thumb{
+-webkit-appearance: none;
+appearance: none;
+background-color: black;
+}
+input ::-moz-range-thumb{
+-webkit-appearance: none;
+appearance: none;
+  background-color:black;
+}
+.equal{
+-webkit-appearance: none;
+appearance: none;
+background-color:red;
+}
 
 </style>
