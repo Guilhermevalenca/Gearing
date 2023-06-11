@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost:3306";
-$username = "gearing"; //Nome de usuario do seu mysql
-$password = "gearing123"; //senha do usuario do mysql
+$username = "Nix"; //Nome de usuario do seu mysql
+$password = "exist"; //senha do usuario do mysql
 $dbname = "GEARING"; //nome da sua DATABASE
 
 try {

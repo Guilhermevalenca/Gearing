@@ -7,7 +7,7 @@
             <label>Digite sua senha para visualizar seus dados:
                 <input type="password" v-model="user.password" placeholder="Digite sua senha">
             </label>
-            <input type="submit">
+            <button type="submit">Enviar</button>
         </form>
     </section>
     <section v-if="!checkingPassword">
@@ -17,20 +17,20 @@
             </div>
         <form class="form" @submit.prevent="updateData()">
             <label>
-                Nome de usuario:
+                Nome de usuário:
                 <input type="text" v-model="newUserData.username" placeholder="digite seu novo nome de usuario">
             </label>
             <label>
-                nova senha:
+                Nova senha:
                 <input :class="{'form-password' : differentPasswords}" type="password" v-model="newUserData.password" placeholder="Nova senha" minlength="6">
             </label>
             <label>
                 Confirme sua nova senha:
                 <input :class="{'form-password' : differentPasswords}" type="password" v-model="newUserData.confirmePassword" placeholder="confirme sua nova senha"> 
             </label>
-            <input type="submit" value="alterar dados">
+            <button type="submit">Alterar dados</button>
         </form>
-        <button @click="deleteUser()">deletar conta</button>
+        <button @click="deleteUser()">Deletar conta</button>
     </section>
 </template>
 
@@ -79,7 +79,7 @@ export default{
             if(this.newUserData.password == this.newUserData.confirmePassword){
                 Swal.fire({
                     title: 'Dados prontos para serem alterados',
-                    text: 'Seus dados serão alterados, mas não se preocupe que em qualquer momento você poderá alteralos novamente!',
+                    text: 'Seus dados serão alterados, mas não se preocupe, a qualquer momento você poderá altera-los novamente!',
                     showCancelButton: true,
                     confirmButtonText: 'Tenho certeza',
                     cancelButtonText: 'Não tenho certeza'
@@ -165,4 +165,21 @@ label{
 .form-password{
     color: red;
 }
+    form{
+        justify-content: center;
+    }
+    input{
+        text-align: center;
+        border-style: solid;
+        border-radius: 8px;
+        border-color: #000;
+        height: 1.5em;
+        width: 15em;
+    }
+    input::-webkit-input-placeholder{
+        text-align: center;
+    }
+    input::-moz-placeholder{
+        text-align: center;
+    }
 </style>

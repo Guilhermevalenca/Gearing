@@ -1,5 +1,5 @@
 <template>
-
+ <div class='box' >
 <section>
 <div v-if="showAlert">
     <AlertForm :class="{'form-alert-success' : createSuccess, 'form-alert-failed': failedLogin}" @close="closeAlert()"> 
@@ -11,40 +11,40 @@
 <form class="form" v-if="showForm" @submit.prevent="authUser()">
     <label>
         E-mail:
-        <input type="email" v-model="loginUser.email" maxlength="45" placeholder="E-mail">
+        <input type="email" v-model="loginUser.email" maxlength="45" placeholder="Digite seu email">
     </label>
     <label>
         Senha:
-        <input type="password" v-model="loginUser.password" placeholder="Senha"> 
+        <input type="password" v-model="loginUser.password" placeholder="Digite sua senha"> 
     </label>
-        <button>entrar</button>
+        <button>Login</button>
 </form>
 </section>
 <section>
 <form class="form" v-if="!showForm" @submit.prevent="newUser()">
     <label>
-        Usuario:
-        <input type="text" v-model="createUser.username" maxlength="20" placeholder="digite seu nome de usuario">
+        Usuário:
+        <input type="text" v-model="createUser.username" maxlength="20" placeholder="Escolha seu nome de usuario">
     </label>
     <label>
         E-mail:
-        <input :class="{'form-email' : emailRegistered}" type="email" v-model="createUser.email" placeholder="digite seu email">
+        <input :class="{'form-email' : emailRegistered}" type="email" v-model="createUser.email" placeholder="Digite seu email">
     </label>
     <label>
         Senha:
-        <input :class="{'form-password' : differentPasswords}" type="password" minlength="6" v-model="createUser.password" placeholder="digite sua senha">
+        <input :class="{'form-password' : differentPasswords}" type="password" minlength="6" v-model="createUser.password" placeholder="Digite sua senha">
     </label>
     <label>
         Confirme sua senha:
-        <input :class="{'form-password' : differentPasswords}" type="password" minlength="6" v-model="createUser.confirmPassword" placeholder="digite sua senha novamente">
+        <input :class="{'form-password' : differentPasswords}" type="password" minlength="6" v-model="createUser.confirmPassword" placeholder="Digite sua senha novamente">
     </label>
-    <button>criar conta</button>
+    <button>Criar conta</button>
 </form>
 </section>
 <section>
-    <button @click="() => {showForm = !showForm; showAlert = false }">{{ showForm ? 'criar uma nova conta' : 'entra em uma conta existente' }}</button>
+    <button @click="() => {showForm = !showForm; showAlert = false }">{{ showForm ? 'Criar conta' : 'Login' }}</button>
 </section>
-
+</div>
 </template>
 
 <script>
@@ -87,7 +87,7 @@ export default{
                     this.$router.push('/menu')
                 }else{
                     this.showAlert = true;
-                    this.messageAlert = "Não foi possivel efetivar seu login"
+                    this.messageAlert = "Não foi possível efetivar seu login"
                     this.failedLogin = true;
                 }
             });
@@ -109,7 +109,7 @@ export default{
                         this.showAlert = true;
                     }else{
                         this.showAlert = true;
-                        this.messageAlert = "Essa conta ja estar cadastrada"
+                        this.messageAlert = "Essa conta já está cadastrada"
                         this.emailRegistered = true;
 
                     }
@@ -143,13 +143,26 @@ export default{
 </script>
 
 <style scoped>
+    label{
+    color:#fff;   
+    }
     label, div{
         display: grid;
         justify-content: center;
         text-align: center;
     }
     input{
+        border-style: solid;
+        border-radius: 8px;
+        border-color: #000;
+        height: 1.5em;
         width: 25em;
+    }
+    input::-webkit-input-placeholder{
+        text-align: center;
+    }
+    input::-moz-placeholder{
+        text-align: center;
     }
     .form-alert-success{
         background-color: green;

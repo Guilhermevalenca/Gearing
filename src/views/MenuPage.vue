@@ -1,7 +1,7 @@
 <template>
   <section>
-    <h1>Destaques:</h1>
-    <div>
+    <h2>Destaques:</h2>
+    <div :class="congratulations">
       {{ this.$store.state.user }}
     </div>
   </section>
@@ -12,7 +12,7 @@
 export default{
   data() {
     return{
-      
+      congratulations: 'congratulations',
     }
   },
   beforeCreate() {
@@ -23,3 +23,18 @@ export default{
   }
 }
 </script>
+<style>
+.congratulations{
+  font-family: "Share Tech Mono", sans-serif;
+  color: aqua;
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(188, 251, 255, 1) 47%,
+    rgba(24, 237, 242, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 24px;
+}
+</style>

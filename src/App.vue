@@ -1,11 +1,12 @@
 <template>
-<h1>GEARING</h1>
+   <img src="./assets/css/backgrounds/gearingLogo.gif" class="logo">
+      <h1 class="gearing">Gearing</h1>
 <header>
   <nav class="navigation-option" v-if="this.$route.path != '/'">
-    <router-link to="/menu">Pagina Inicial</router-link> |
-    <RouterLink to="/learningStyles">Quiz Estilos de Aprendizagem</RouterLink> |
+    <router-link to="/menu">Página Inicial</router-link> |
+    <RouterLink to="/learningStyles">Estilos de Aprendizagem</RouterLink> |
     <RouterLink to="/schedule">Cronograma</RouterLink> |
-    <RouterLink to="/forum">Forum</RouterLink> |
+    <RouterLink to="/forum">Fórum</RouterLink> |
     <RouterLink to="/userData">Seus Dados</RouterLink> | 
     <RouterLink @click="this.$logoutUser()" to="/">Sair da Conta</RouterLink>
   </nav>
@@ -75,6 +76,45 @@ export default{
 </script>
 
 <style scoped>
+@import url('https://fonts.cdnfonts.com/css/yielding-timber');
+.gearing{
+  font-family: 'Yielding Timber',sans-serif; 
+  font-style: italic;
+  width: 22%;
+  text-align: center;
+  position: relative;
+  margin-inline: auto;
+  margin-top: 1vw;
+  font-size: 2em;
+  background: -webkit-linear-gradient(
+    318deg,
+    rgba(133, 26, 186, 1) 18%,
+    rgb(133, 26, 186, 1) 46%,
+    rgba(100, 2, 223, 1) 81%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.logo {
+  position: absolute;
+  width: 4em;
+  margin-left: -8em;
+  margin-top: -1.3em;
+  margin-bottom: 20px;
+}
+nav{
+  margin-bottom:6em;
+  background: -webkit-linear-gradient(
+    318deg,
+    rgba(133, 26, 186, 1) 18%,
+    rgb(133, 26, 186, 1) 46%,
+    rgba(100, 2, 223, 1) 81%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 nav a {
   font-weight: bold;
   color: #2c3e50;
