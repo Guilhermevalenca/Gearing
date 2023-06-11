@@ -18,13 +18,6 @@ session_start();
 
 $email = $_SESSION['email'];
 
-/*
-//show data in terminal
-ob_start();
-print_r($email);
-$output = ob_get_clean();
-error_log($output);
-*/
 //deleting subjects of schedule
 try{
     $sql = "DELETE FROM GEA_SUBJECT WHERE sub_sche_title = '$title' AND sub_sche_user_email = '$email';";

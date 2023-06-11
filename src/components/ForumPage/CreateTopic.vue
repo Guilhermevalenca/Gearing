@@ -3,15 +3,19 @@
         <div>i'm create topic</div>
     </section>
     <section>
+    <form @submit.prevent="createTopic()">
         <div class="info">
             <label class="info-name">
-                Nome do topico: <input v-model="name" type="text">
+                Nome do topico: <input v-model="name" type="text" required>
             </label>
             <label class="info-description">
-                Descrição: <textarea v-model="description" rows="3" cols="20">DESCREVA AQUI</textarea>
+                Descrição: <textarea v-model="description" rows="30" cols="100" required></textarea>
             </label>
-            <button @click="createTopic()">Criar topico</button>
         </div>
+        <div>
+            <button>Criar topico</button>
+        </div>
+    </form>
     </section>
 </template>
 
@@ -69,7 +73,13 @@ export default{
                     })
                 }
             })
+        },
+        increment() {
+            this.row++
         }
+    },
+    computed: {
+        
     }
 }
 </script>

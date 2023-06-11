@@ -8,23 +8,9 @@ require '../establishingConnection.php';
 $json = file_get_contents('php://input');
 $topicData = json_decode($json, true);
 
-function imprimir($element){
-
-    ob_start();
-    print_r($element);
-    $output = ob_get_clean();
-    error_log($output);
-
-}
-
 $id = $topicData['id'];
 $name = $topicData['name'];
 $description = $topicData['description'];
-imprimir($topicData);
-imprimir($id);
-imprimir($name);
-imprimir($description);
-
 
 session_write_close();
 session_id($id);
@@ -54,11 +40,10 @@ try{
 
 try{
     $sql = "INSERT INTO GEA_TOPIC (top_name,top_description,top_user_email)
-            VALUES ('$name','$description', '$email';";
+            VALUES ('$name','$description', '$email');";
     $result = $conn->exec($sql);
-}
-catch (PDOException $e){
-    $response['erro'] = 'true';
+}catch (PDOException $e){
+    $response['error'] = 'true';
     $response['problem'] =$e->getMessage();
     echo json_encode($response);
     exit();
