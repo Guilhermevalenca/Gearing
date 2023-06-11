@@ -28,7 +28,7 @@
                 </td>
                 <td class="schedule-subjects" v-for="(subject, row) in subjects[index]" :key="row">
                     <div v-if="subject">
-                        <div v-for="(separated,column) in subject.split(' ')" :key="column">
+                        <div v-for="(separated,column) in subject.split(',')" :key="column">
                             <div v-if="separated">{{ separated }}</div>
                         </div>
                     </div>
@@ -108,19 +108,27 @@ export default{
             })
         },
         deleteSchedule() {
+            
+            Swal.fire({
+                title: 'deletando cronograma',
+                showConfirmButton: false,
+                allowOutsideClick: false
+            })
+            Swal.showLoading();
             axios.post('http://localhost:8000/schedule/deleteSchedule.php', {
                 id: localStorage.getItem('idSession'),
                 title: this.currentTitle
             })
             .then(response => {
+                Swal.hideLoading();
                 if(response.data.result){
+                    this.subjects = [];
+                    this.currentTitle = '';
+                    this.turns = ''
                     Swal.fire('deletado','Seu cronograma foi deletado com sucesso')
                     .then(result =>{
                         if(result.isConfirmed){
                             this.searchSchedules();
-                            this.subjects = [];
-                            this.currentTitle = '';
-                            this.turns = ''
                         }
                     })
                 }else{
@@ -129,7 +137,7 @@ export default{
             })
         },
         editSchedule() {
-            this.$store.dispatch('changeSchedule',this.currentTitle);            
+            this.$store.dispatch('changeSchedule',this.currentTitle);     
         }
     },
     beforeMount() {

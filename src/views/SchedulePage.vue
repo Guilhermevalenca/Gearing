@@ -1,7 +1,8 @@
 <template>
 <section>
     <div>
-        <h1>Hello, i am cronogram</h1>
+        <h2>Bem vindo</h2>
+        <h3>aqui é onde você poderá criar seus cronogramas de estudo</h3>
     </div>
 
     <div class="options">
@@ -12,7 +13,7 @@
 <section>
     <div>
         <div v-if="createSchedule">
-            <CreateSchedule />
+            <CreateSchedule @quitCreatingSchedule="showViewSchedule()" />
         </div>
         <div v-if="viewSchedule">
             <ViewSchedule />
@@ -64,13 +65,16 @@ export default{
                     this.viewSchedule = false;
                 }else{
                     this.showEditSchedule = false;
+                    this.createSchedule = false;
                     this.viewSchedule = true;
                 }
             },
             deep:true
         }
+    },
+    computed: {
+
     }
-    
 }
 </script>
 
