@@ -46,14 +46,14 @@ export default{
             if(this.viewSchedule){
                 this.viewSchedule = false;
             }
-            this.createSchedule = !this.createSchedule;
+            this.createSchedule = true;
             this.$store.dispatch('changeSchedule','')
         },
         showViewSchedule() {
             if(this.createSchedule){
                 this.createSchedule = false;
             }
-            this.viewSchedule = !this.viewSchedule;
+            this.viewSchedule = true;
             this.$store.dispatch('changeSchedule','')
         }
     },

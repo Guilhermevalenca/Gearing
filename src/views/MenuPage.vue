@@ -1,11 +1,14 @@
 <template>
-  <h1>Destaques:</h1>
-  <div>
-    {{ this.$store.state.user }}
-  </div>
+  <section>
+    <h1>Destaques:</h1>
+    <div>
+      {{ this.$store.state.user }}
+    </div>
+  </section>
 </template>
 
 <script>
+
 export default{
   data() {
     return{

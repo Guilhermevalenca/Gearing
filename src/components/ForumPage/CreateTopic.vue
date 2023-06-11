@@ -8,13 +8,15 @@
                 Nome do topico: <input v-model="name" type="text">
             </label>
             <label class="info-description">
-                Descrição: <textarea v-model="description" rows="3" cols="20" maxlength="9999">DESCREVA AQUI</textarea>
+                Descrição: <textarea v-model="description" rows="3" cols="20">DESCREVA AQUI</textarea>
             </label>
+            <button @click="createTopic()">Criar topico</button>
         </div>
     </section>
 </template>
 
 <script>
+import axios from 'axios';
 import Swal from 'sweetalert2';
 
 export default{
@@ -24,14 +26,35 @@ export default{
             description: ''
         }
     },
-    watch: {
-        description: {
-            handler(){
-                if(this.description.length === 9999){
-                    Swal.fire('limite de caracteres atingido')
+    methods: {
+        createTopic() {
+            Swal.fire({
+                title: 'adicionando seu topico',
+                willOpen: () => {
+                    Swal.showLoading();
+                },
+                willClose: () => {
+                    Swal.hideLoading();
                 }
-            },
-            deep: true
+            })
+            axios.post('http://localhost:8000/forum/addTopic.php',{
+                id: localStorage('idSession'),
+                name: this.name,
+                description: this.description
+            })
+            .then(response => {
+                if(response.data.success){
+                    Swal.fire({
+                        title: 'Seu topico foi adicionado com sucesso ao forum',
+                        confirmButtonText: 'vizualizar outros topicos'
+                    })
+                    .then(result => {
+                        if(result.isConfirmed){
+                            this.$emit('viewTopics')
+                        }
+                    })
+                }
+            })
         }
     }
 }
