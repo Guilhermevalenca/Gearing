@@ -91,12 +91,5 @@ nav a {
 nav a.router-link-exact-active {
   color: #42b983;
 }
-body {
-    background-image: url("/public/backgrounds/gearingBackground.jpeg");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    margin: 0;
-  }
+
 </style>

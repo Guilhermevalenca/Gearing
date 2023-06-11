@@ -1,5 +1,5 @@
 body {
-    background-image: url("/public/backgrounds/gearingBackground.jpeg");
+    background-image: url("./backgrounds/gearingBackground.jpeg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;

@@ -8,9 +8,23 @@ require '../establishingConnection.php';
 $json = file_get_contents('php://input');
 $topicData = json_decode($json, true);
 
+function imprimir($element){
+
+    ob_start();
+    print_r($element);
+    $output = ob_get_clean();
+    error_log($output);
+
+}
+
 $id = $topicData['id'];
 $name = $topicData['name'];
 $description = $topicData['description'];
+imprimir($topicData);
+imprimir($id);
+imprimir($name);
+imprimir($description);
+
 
 session_write_close();
 session_id($id);
