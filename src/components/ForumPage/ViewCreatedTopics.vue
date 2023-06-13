@@ -2,29 +2,35 @@
     <section>
         <div v-for="(elementos, index) in topics" :key="index">
             <div>
-                <a>{{ elementos[1] }}</a>
+                <a @click="showTopicComments(elementos[1])">{{ elementos[1] }}</a>
             </div>
         </div>
-        <v-dialog v-model="dialogOpen">
-            <v-card>
-                <v-bnt>
-                    fechar
-                </v-bnt>
-            </v-card>
-        </v-dialog>
+        <div>
+            <Comments @closeComments="hideTopicComments()" v-if="showComments" />
+        </div>
     </section>
 </template>
 <script>
+import Comments from './ViewTopicComments.vue'
 import axios from 'axios'
 
 export default{
+    components: {Comments},
     data() {
         return {
             topics: [],
-            dialogOpen: false
+            showComments: false,
+            checkTopic: null
         }
     },
     methods: {
+        hideTopicComments() {
+            this.showComments = false
+        },
+        showTopicComments(topic) {
+            this.showComments = true;
+            this.checkTopic = topic
+        },
         updateTopics() {
             axios.get('http://localhost:8000/forum/allTopic.php')
             .then(response => {
@@ -33,7 +39,7 @@ export default{
                     this.topics = this.topics.reverse();
                 }
             })
-        }    
+        }
     },
     beforeMount() {
         this.updateTopics()

@@ -6,7 +6,7 @@
     <form @submit.prevent="createTopic()">
         <div class="info">
             <label class="info-name">
-                Nome do topico: <input v-model="name" type="text" required>
+                Nome do topico: <input v-model="name" placeholder="Nome do topico" type="text" required>
             </label>
             <label class="info-description">
                 Descrição: <textarea v-model="description" rows="30" cols="100" required></textarea>
