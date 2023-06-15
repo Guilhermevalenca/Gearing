@@ -21,9 +21,6 @@
 <div>
     <h1>Montando cronograma</h1>
 </div>
-<div>
-    <button @click="addShedule()">salvar cronograma</button>
-</div>
 </section>
 
 <section class="schedule">
@@ -39,8 +36,8 @@
 </div>
 </section>
 
-<section class="schedule">
-<table v-show="turns">
+<section v-show="turns" class="schedule">
+<table>
     <thead>
         <tr>
             <th></th>
@@ -62,6 +59,9 @@
         </tr>
     </tbody>
 </table>
+<div>
+    <button @click="addShedule()">salvar cronograma</button>
+</div>
 </section>
 
 </template>
@@ -249,6 +249,7 @@ label{
     justify-content: center;
     width: 50em;
     flex-wrap: wrap;
+    border-style: solid;
 }
 .shedule-matters-subject{
     margin: 0px;
