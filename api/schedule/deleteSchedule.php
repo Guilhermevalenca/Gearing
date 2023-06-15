@@ -18,27 +18,11 @@ session_start();
 
 $email = $_SESSION['email'];
 
-//deleting subjects of schedule
-try{
-    $sql = "DELETE FROM GEA_SUBJECT WHERE sub_sche_title = '$title' AND sub_sche_user_email = '$email';";
-    $result = $conn->query($sql);
-}catch (PDOException $e){
-    exit();
-}
-
 //deleting schedule
 $response = [];
-$sequenceSql = [
-    "START TRANSACTION;",
-    "SET FOREIGN_KEY_CHECKS = 0;",
-    "DELETE FROM GEA_SCHEDULE WHERE sche_title = '$title' AND sche_user_email = '$email';",
-    "SET FOREIGN_KEY_CHECKS = 1;",
-    "COMMIT;"
-];
 try{
-    foreach($sequenceSql as $sql){
-        $result = $conn->query($sql);
-    }
+    $sql = "DELETE FROM GEA_SCHEDULE WHERE sche_title = '$title' AND sche_user_email = '$email';";
+    $result = $conn->query($sql);
 }
 catch (PDOException $e){
     exit();
