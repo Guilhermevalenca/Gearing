@@ -7,8 +7,11 @@
     </AlertForm>
 </div>
 </section>
-<section>
-<form class="form" v-if="showForm" @submit.prevent="authUser()">
+
+<div v-if="actionsForms">
+
+<section v-if="!showForm">
+<form class="form" @submit.prevent="authUser()">
     <label>
         E-mail:
         <input type="email" v-model="loginUser.email" maxlength="45" placeholder="Digite seu email">
@@ -20,8 +23,8 @@
         <button>Login</button>
 </form>
 </section>
-<section>
-<form class="form" v-if="!showForm" @submit.prevent="newUser()">
+<section v-if="showForm">
+<form class="form" @submit.prevent="newUser()">
     <label>
         Usuário:
         <input type="text" v-model="createUser.username" maxlength="20" placeholder="Escolha seu nome de usuario">
@@ -41,8 +44,13 @@
     <button>Criar conta</button>
 </form>
 </section>
+
+</div>
+
 <section>
-    <button @click="() => {showForm = !showForm; showAlert = false }">{{ showForm ? 'Desejo criar uma nova conta' : 'Tela de login' }}</button>
+    <div>
+        <button @click="() => {showForm = !showForm; actionsForms = true}">{{ showForm ? "Tela de login" : "Criar uma nova conta" }}</button>
+    </div>
 </section>
 </div>
 </template>
@@ -67,6 +75,7 @@ export default{
             },
             showForm: true,
             showAlert: false,
+            actionsForms: false,
             messageAlert: '',
             emailRegistered: false,
             differentPasswords: false,
@@ -103,10 +112,11 @@ export default{
                 })
                 .then(response => {
                     if(response.data){
-                        this.showForm = true;
+                        this.showForm = false;
                         this.createSuccess = true;
                         this.messageAlert = "Sua conta foi criada com sucesso"
                         this.showAlert = true;
+                        this.failedLogin = false;
                     }else{
                         this.showAlert = true;
                         this.messageAlert = "Essa conta já está cadastrada"

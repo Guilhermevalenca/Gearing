@@ -17,7 +17,7 @@ CREATE TABLE GEA_SCHEDULE(
     sche_shifts VARCHAR(10) NOT NULL,
     sche_user_email VARCHAR(45) NOT NULL,
     PRIMARY KEY (sche_title, sche_user_email),
-    CONSTRAINT sche_user_email FOREIGN KEY (sche_user_email) REFERENCES GEA_USER(user_email) ON DELETE CASCADE
+    CONSTRAINT sche_user_email FOREIGN KEY (sche_user_email) REFERENCES GEA_USER(user_email)
 );
 CREATE TABLE GEA_SUBJECT(
     sub_id INT NOT NULL AUTO_INCREMENT,
@@ -27,8 +27,7 @@ CREATE TABLE GEA_SUBJECT(
     sub_sche_title VARCHAR(45) NOT NULL,
     sub_sche_user_email VARCHAR(45) NOT NULL,
     PRIMARY KEY (sub_id,sub_sche_title,sub_sche_user_email),
-    CONSTRAINT sub_sche_title FOREIGN KEY (sub_sche_title) REFERENCES GEA_SCHEDULE(sche_title),
-    CONSTRAINT sub_sche_user_email FOREIGN KEY (sub_sche_user_email) REFERENCES GEA_SCHEDULE(sche_user_email) 
+    CONSTRAINT sub_sche_title__sub_sche_user_email FOREIGN KEY (sub_sche_title, sub_sche_user_email) REFERENCES GEA_SCHEDULE(sche_title, sche_user_email) ON DELETE CASCADE
 );
 CREATE TABLE GEA_TOPIC(
     top_id INT NOT NULL AUTO_INCREMENT,
