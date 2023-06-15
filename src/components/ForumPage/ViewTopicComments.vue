@@ -38,7 +38,6 @@ export default {
 }
 
 .window-interaction-content {
-    background-color: #fff;
     padding: 20px;
 }
 

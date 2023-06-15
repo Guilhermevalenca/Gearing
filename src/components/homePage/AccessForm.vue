@@ -42,7 +42,7 @@
 </form>
 </section>
 <section>
-    <button @click="() => {showForm = !showForm; showAlert = false }">{{ showForm ? 'Criar conta' : 'Login' }}</button>
+    <button @click="() => {showForm = !showForm; showAlert = false }">{{ showForm ? 'Desejo criar uma nova conta' : 'Tela de login' }}</button>
 </section>
 </div>
 </template>
