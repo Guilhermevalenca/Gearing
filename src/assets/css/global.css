@@ -8,6 +8,7 @@ body {
     background-size: cover;
     height: 100vh;
 }
+
 #app {
   font-family: "Share Tech Mono", sans-serif;
   -webkit-font-smoothing: antialiased;
