@@ -21,9 +21,8 @@ try{
             VALUES ('$email','$name','$password');";
     $rowCount = $conn->exec($sql);
     $response['success'] = "true";
-    echo json_encode($response);
 }catch (PDOException $e) {
     $response['success'] = "false";
-    exit();
     //echo "Dados do usuario não foram adicionados " . $e->getMessage(); 
 }
+echo json_encode($response);
