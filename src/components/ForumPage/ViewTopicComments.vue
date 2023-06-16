@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     data() {
         return {
@@ -23,6 +25,9 @@ export default {
         closeWindowsInteraction() {
             this.$emit("closeComments")
         }
+  },
+  created() {
+    axios.post('http://localhost:8000/')
   }
 };
 </script>

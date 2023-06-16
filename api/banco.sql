@@ -1,3 +1,9 @@
+CREATE USER 'gearing'@'localhost' IDENTIFIED BY 'gearing123';
+GRANT ALL PRIVILEGES ON *.* TO 'gearing'@'localhost' WITH GRANT OPTION;
+
+CREATE DATABASE GEARING;
+USE GEARING;
+
 CREATE TABLE GEA_METHODOLOGY(
 	meth_name VARCHAR(45) PRIMARY KEY NOT NULL,
     meth_description TEXT NOT NULL, /*TEXT attribute is from MySQL not SQL */
@@ -46,3 +52,6 @@ CREATE TABLE GEA_COMMENTS(
     CONSTRAINT com_top_name FOREIGN KEY (com_top_name) REFERENCES GEA_TOPIC(top_name),
     CONSTRAINT com_top_user_email FOREIGN KEY (com_top_user_email) REFERENCES GEA_TOPIC(top_user_email)
 );
+
+INSERT INTO GEA_USER (user_email,user_name,user_password) VALUES ('gearing@gmail.com','gearing','gearing');
+
