@@ -10,7 +10,7 @@ CREATE TABLE GEA_METHODOLOGY(
     meth_reference_style VARCHAR(45) NOT NULL
 );
 CREATE TABLE GEA_USER(
-	user_email VARCHAR(45) PRIMARY KEY NOT NULL,
+	user_email VARCHAR(45) PRIMARY KEY NOT NULL UNIQUE,
     user_name VARCHAR(45) NOT NULL,
     user_password VARCHAR(45) NOT NULL,
     user_controller BOOLEAN,
