@@ -95,7 +95,7 @@ export default{
   position: relative;
   margin-inline: auto;
   margin-top: 1vw;
-  font-size: 2em;
+  font-size: 3em;
   background: -webkit-linear-gradient(
     318deg,
     rgba(133, 26, 186, 1) 18%,
@@ -108,8 +108,8 @@ export default{
 }
 .logo {
   position: absolute;
-  width: 4em;
-  margin-left: -8em;
+  width: 5em;
+  margin-left: -10.5em;
   margin-top: -1.3em;
   margin-bottom: 20px;
 }
