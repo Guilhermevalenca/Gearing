@@ -4,9 +4,8 @@
             <AlertPassword @close="closeAlert()" />
         </label>
         <form @submit.prevent="check()">
-            <label>Digite sua senha para visualizar seus dados:
-                <input type="password" v-model="user.password" placeholder="Digite sua senha">
-            </label>
+            <label>Digite sua senha para visualizar seus dados:</label>
+            <input type="password" v-model="user.password" placeholder="Digite sua senha">
             <button type="submit">Enviar</button>
         </form>
     </section>
@@ -191,21 +190,20 @@ export default{
 </script>
 
 <style scoped>
-label{
-        display: grid;
-        justify-content: center;
-        text-align: center;
-    }
 .form-password{
     color: red;
 }
     form{
+        display: flex;
         justify-content: center;
+        align-items: center;
+        flex-flow: column wrap;
+        gap: 1em;
     }
     input{
         text-align: center;
         border-style: solid;
-        border-radius: 8px;
+        border-radius: 0.5em;
         border-color: #000;
         height: 1.5em;
         width: 15em;
