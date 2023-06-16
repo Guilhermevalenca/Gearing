@@ -204,10 +204,10 @@ label{
         justify-content: center;
         align-items: center;
         flex-flow: column wrap;
-        gap: 1em;
+        gap: 0em;
     }
     input{
-        padding-top: 0em;
+        padding-top: 0.25em;
         text-align: center;
         border-style: solid;
         border-radius: 0.5em;
