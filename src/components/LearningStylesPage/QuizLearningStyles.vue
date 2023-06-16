@@ -1,18 +1,21 @@
 <template>
 <div>
 <h2>Questionário de Estilo de aprendizagem</h2>
-  <p>
-    Respondendo este quéstionário você descobrirá qual é o seu estilo de aprendizagem, ou seja,
+  <p class="intro">
+    Respondendo a este quéstionário você descobrirá qual é o seu estilo de aprendizagem, ou seja,
     a forma como você melhor aprende. 
     O objetivo desse teste é te ajudar a descobrir qual métodologia se encaixa melhor para 
-    o eu estilo de aprendizagem.
+    o seu estilo de aprendizagem.
   </p>
-<p>
+  <div class="instructions">
+    <h1>Instruções</h1>
+<p class="attention">
    Cada pergunta tem quatro opções, você deverar dar uma nota para cada opção de acordo com
    o que você mais se idêntifica, sendo 4 a nota máxima(o item pelo qual você mais se 
    identifica) e 1 a nota mínima (o item pelo qual você menos se identifica).
 </p>
-  <span>Atenção: Dois itens de uma mesma pergunta não podem ter notas iguais</span>
+  <p class="attention">Atenção: Dois itens de uma mesma pergunta não podem ter notas iguais</p>
+</div>
 </div>
 
 <section>
@@ -480,7 +483,7 @@ export default{
                 })
 							}else if (resultsum == acomodador) {
                 Swal.fire ({
-                  title: "Seu estilo predominante é Assimilador", 
+                  title: "Seu estilo predominante é Acomodador", 
                   text: "Você aprende melhor experimentando e realizando, como, por exemplo, através de atividades práticas, apresentações, role-plays e debates. Combina o gosto de colocar “a mão na massa” com atividades concretas. Tem capacidade de se sobressair e acomodar ou adaptar a circunstâncias imediatas específicas. Utiliza mais a intuição do que a lógica e tem a tendência a se arriscar mais a ousar mais. Costuma utilizar a opinião de outras pessoas ao invés das suas próprias, por isso geralmente faz muitas perguntas. Assume uma abordagem prática e vivencial. É sociável e gosta de trabalhar em equipe. Geralmente exerce um papel importante em situações onde são necessárias ações e iniciativas para a realização de tarefas. Por terem pouca habilidade analítica são impulsivas e as vezes é percebido como impaciente e pressionador. Esse estilo também é conhecido como ATIVISTA.",
                   showConfirmButton: true,
                        customClass: {
@@ -654,6 +657,18 @@ export default{
 section{
   margin-top: 4em;
 }
+.instructions{
+  margin: 3em;
+  border-style:solid;
+  border-color:aquamarine;
+  border-radius:9px;
+  border-width: 1px;
+  background: transparent;
+}
+.attention{
+  margin: 1em;
+}
+
 input{
 -webkit-appearance: none;
 appearance:none;
@@ -668,7 +683,12 @@ input[type="range"]::-webkit-slider-thumb {
   appearance: none;
   width: 20px;
   height: 20px;
-  background: #333;
+  background: -webkit-linear-gradient(
+    318deg,
+    rgba(133, 26, 186, 1) 18%,
+    rgb(133, 26, 186, 1) 46%,
+    rgba(100, 2, 223, 1) 81%
+  );
   border-radius: 50%;
   cursor: pointer;
 }
@@ -700,6 +720,9 @@ background-color:red;
 }
 h2{
   font-size: 24px;
+}
+.intro{
+  font-size: 20px;
 }
 label {
   font-family: "Share Tech Mono", sans-serif;
