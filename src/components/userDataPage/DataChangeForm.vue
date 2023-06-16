@@ -17,16 +17,16 @@
         <form class="form" @submit.prevent="updateData()">
             <label>
                 Nome de usuário:
-                <input type="text" v-model="newUserData.username" placeholder="Digite seu novo nome de usuario">
             </label>
+            <input type="text" v-model="newUserData.username" placeholder="Digite seu novo nome de usuário">
             <label>
                 Nova senha:
-                <input :class="{'form-password' : differentPasswords}" type="password" v-model="newUserData.password" placeholder="Nova senha" minlength="6">
             </label>
+            <input :class="{'form-password' : differentPasswords}" type="password" v-model="newUserData.password" placeholder="Nova senha" minlength="6">
             <label>
                 Confirme sua nova senha:
-                <input :class="{'form-password' : differentPasswords}" type="password" v-model="newUserData.confirmePassword" placeholder="confirme sua nova senha"> 
             </label>
+            <input :class="{'form-password' : differentPasswords}" type="password" v-model="newUserData.confirmePassword" placeholder="Confirme sua nova senha"> 
             <button type="submit">Alterar dados</button>
         </form>
         <button @click="deleteUser()">Deletar conta</button>
@@ -190,6 +190,12 @@ export default{
 </script>
 
 <style scoped>
+div{
+    padding: 2em;
+}
+label{
+    padding: 0em;
+}
 .form-password{
     color: red;
 }
@@ -201,6 +207,7 @@ export default{
         gap: 1em;
     }
     input{
+        padding-top: 0em;
         text-align: center;
         border-style: solid;
         border-radius: 0.5em;
