@@ -26,7 +26,8 @@ foreach($result as $comparing){
 
 try{
     //adding user data
-    $sql = "INSERT INTO GEA_USER (user_email,user_name,user_password) VALUES ('$email','$name','$password');";
+    $sql = "INSERT INTO GEA_USER (user_email,user_name,user_password) 
+            VALUES ('$email','$name','$password');";
     $rowCount = $conn->exec($sql);
     echo "Dados adicionados com sucesso";
 }catch (PDOException $e) {
