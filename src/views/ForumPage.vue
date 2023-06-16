@@ -1,8 +1,8 @@
 <template>
 <section>
-    <h2>Bem vindo ao forum</h2>
-    <button @click="showCreate()">criar topico</button>
-    <button @click="showTopics()">vizualizar topicos</button>
+    <h2>Seja bem-vindo(a) ao fórum</h2>
+    <button @click="showCreate()">Criar tópico</button>
+    <button @click="showTopics()">Vizualizar tópicos</button>
 </section>
 
 <section>

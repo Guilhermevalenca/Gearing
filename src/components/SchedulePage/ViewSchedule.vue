@@ -13,12 +13,12 @@
             <tr>
                 <th></th>
                 <th>Domingo</th>
-                <th>segunda</th>
-                <th>terça</th>
-                <th>quarta</th>
-                <th>quinta</th>
-                <th>sexta</th>
-                <th>sabado</th>
+                <th>Segunda</th>
+                <th>Terça</th>
+                <th>Quarta</th>
+                <th>Quinta</th>
+                <th>Sexta</th>
+                <th>Sábado</th>
             </tr>
         </thead>
         <tbody>
@@ -110,9 +110,14 @@ export default{
         deleteSchedule() {
             
             Swal.fire({
-                title: 'deletando cronograma',
+                title: 'Deletando cronograma',
                 showConfirmButton: false,
-                allowOutsideClick: false
+                allowOutsideClick: false,
+                customClass: {
+                                popup: 'swal-popup-custom',
+                                title: 'swal-title-custom',
+                                htmlContainer: 'swal-html-container-custom',
+                            }
             })
             Swal.showLoading();
             axios.post('http://localhost:8000/schedule/deleteSchedule.php', {
@@ -125,14 +130,29 @@ export default{
                     this.subjects = [];
                     this.currentTitle = '';
                     this.turns = ''
-                    Swal.fire('deletado','Seu cronograma foi deletado com sucesso')
+                    Swal.fire({
+                    title:'Deletado',
+                    text:'Seu cronograma foi deletado com sucesso',
+                    customClass: {
+                                popup: 'swal-popup-custom',
+                                title: 'swal-title-custom',
+                                htmlContainer: 'swal-html-container-custom',
+                            }})
                     .then(result =>{
                         if(result.isConfirmed){
                             this.searchSchedules();
                         }
                     })
                 }else{
-                    Swal.fire('erro','não foi possivel deletar seu cronograma, tente novamente!!!');
+                    Swal.fire({
+                    title:'Erro',
+                    text:'Não foi possível deletar seu cronograma, tente novamente!',
+                    customClass: {
+                                popup: 'swal-popup-custom',
+                                title: 'swal-title-custom',
+                                htmlContainer: 'swal-html-container-custom',
+                            }
+                });
                 }
             })
         },

@@ -11,12 +11,12 @@
             <tr>
                 <th></th>
                 <th>Domingo</th>
-                <th>segunda</th>
-                <th>terça</th>
-                <th>quarta</th>
-                <th>quinta</th>
-                <th>sexta</th>
-                <th>sabado</th>
+                <th>Segunda</th>
+                <th>Terça</th>
+                <th>Quarta</th>
+                <th>Quinta</th>
+                <th>Sexta</th>
+                <th>Sábado</th>
             </tr>
         </thead>
         <tbody>
@@ -38,7 +38,7 @@
 </section>
 <section>
     <div>
-        <button @click="updateSchedule()">alterar cronograma</button>
+        <button @click="updateSchedule()">Alterar cronograma</button>
     </div>
     <div>
         <button @click="() => {this.$store.dispatch('changeSchedule','')}">cancelar</button>
@@ -132,6 +132,11 @@ export default{
               title: 'Atualizando cronograma',
               showConfirmButton: false,
               allowOutsideClick: false,
+              customClass: {
+                                popup: 'swal-popup-custom',
+                                title: 'swal-title-custom',
+                                htmlContainer: 'swal-html-container-custom',
+                            },
               willOpen: () => {
                 Swal.showLoading();
               }
@@ -145,22 +150,42 @@ export default{
                 Swal.hideLoading();
                 Swal.update({
                     showConfirmButton: true,
-                    allowOutsideClick: true
+                    allowOutsideClick: true,
+                    customClass: {
+                                popup: 'swal-popup-custom',
+                                title: 'swal-title-custom',
+                                htmlContainer: 'swal-html-container-custom',
+                            }
                 })
                 if(response.data.success){
                     Swal.update({
-                        title: 'cronograma atualizado com sucesso',
-                        text: 'seu cronograma foi alterado com sucesso'
+                        title: 'Cronograma atualizado com sucesso',
+                        text: 'Seu cronograma foi alterado com sucesso',
+                        customClass: {
+                                popup: 'swal-popup-custom',
+                                title: 'swal-title-custom',
+                                htmlContainer: 'swal-html-container-custom',
+                            }
                     });this.$store.dispatch('changeSchedule','')
                 }else if(response.data.saveSubjectError){
                     Swal.update({
-                        title: 'atualização parcial',
-                        text: 'tivemos um problema ao atualizar o seu cronograma, talvez exista algumas materias fora do seu devido lugar'
+                        title: 'Atualização parcial',
+                        text: 'Houve um problema ao atualizar o seu cronograma, talvez exista alguma matéria fora do seu devido lugar',
+                        customClass: {
+                                popup: 'swal-popup-custom',
+                                title: 'swal-title-custom',
+                                htmlContainer: 'swal-html-container-custom',
+                            }
                     })
                 }else if(response.data.error){
                     Swal.update({
-                        title: 'ERROR',
-                        text: 'por razões ainda desconhecidas nao pudemos atualizar seu cronograma'
+                        title: 'Erro',
+                        text: 'Por razões ainda desconhecidas não foi possível atualizar seu cronograma',
+                        customClass: {
+                                popup: 'swal-popup-custom',
+                                title: 'swal-title-custom',
+                                htmlContainer: 'swal-html-container-custom',
+                            }
                     })
                 }
             })

@@ -1,8 +1,5 @@
 <template>
     <section>
-        <div>i'm create topic</div>
-    </section>
-    <section>
     <form @submit.prevent="createTopic()">
         <div class="info">
             <label class="info-name">
@@ -13,7 +10,7 @@
             </label>
         </div>
         <div>
-            <button>Criar topico</button>
+            <button>Criar tópico</button>
         </div>
     </form>
     </section>
@@ -33,7 +30,12 @@ export default{
     methods: {
         createTopic() {
             Swal.fire({
-                title: 'adicionando seu topico',
+                title: 'Adicionando seu tópico',
+                customClass: {
+                                popup: 'swal-popup-custom',
+                                title: 'swal-title-custom',
+                                htmlContainer: 'swal-html-container-custom',
+                            },
                 willOpen: () => {
                     Swal.showLoading();
                 },
@@ -52,9 +54,14 @@ export default{
                 if(response.data.error){
                     Swal.fire({
                         title:'Erro',
-                        text: 'Não foi possivel adicionar seu topico',
-                        confirmButtonText: 'tente novamente',
-                        showCancelButton: true
+                        text: 'Não foi possível adicionar seu tópico',
+                        confirmButtonText: 'Tente novamente',
+                        showCancelButton: true,
+                        customClass: {
+                                popup: 'swal-popup-custom',
+                                title: 'swal-title-custom',
+                                htmlContainer: 'swal-html-container-custom',
+                            }
                     })
                     .then(result => {
                         if(result.isConfirmed){
@@ -63,8 +70,13 @@ export default{
                     })
                 }else if(response.data.success){
                     Swal.fire({
-                        title: 'Seu topico foi adicionado com sucesso ao forum',
-                        confirmButtonText: 'vizualizar outros topicos'
+                        title: 'Seu tópico foi adicionado com sucesso ao fórum',
+                        confirmButtonText: 'vizualizar outros tópicos',
+                        customClass: {
+                                popup: 'swal-popup-custom',
+                                title: 'swal-title-custom',
+                                htmlContainer: 'swal-html-container-custom',
+                            }
                     })
                     .then(result => {
                         if(result.isConfirmed){

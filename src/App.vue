@@ -29,9 +29,14 @@ export default{
       mountPage: false,
       tryingConnection: () => {
         Swal.fire({
-          title: 'conectando-se ao servidor',
+          title: 'Conectando-se ao servidor',
           showConfirmButton: false,
           allowOutsideClick: false,
+          customClass: {
+                                popup: 'swal-popup-custom',
+                                title: 'swal-title-custom',
+                                htmlContainer: 'swal-html-container-custom',
+                            },
           willOpen: () => {
             Swal.showLoading();
           },
@@ -53,11 +58,16 @@ export default{
       })
       .catch( () => {
         Swal.fire({
-          title: 'erro',
-          text: 'Não foi possivel conectar-se ao servidor',
-          confirmButtonText: 'tenta novamente',
+          title: 'Erro',
+          text: 'Não foi possível conectar-se ao servidor',
+          confirmButtonText: 'Tente novamente',
           allowOutsideClick: false,
-          showConfirmButton: true
+          showConfirmButton: true,
+          customClass: {
+                    popup: 'swal-popup-custom',
+                    title: 'swal-title-custom',
+                    htmlContainer: 'swal-html-container-custom',
+                            }
         })
         .then(result => {
           if(result.isConfirmed){

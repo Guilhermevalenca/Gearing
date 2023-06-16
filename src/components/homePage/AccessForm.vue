@@ -49,7 +49,7 @@
 
 <section>
     <div>
-        <button @click="() => {showForm = !showForm; actionsForms = true}">{{ showForm ? "Tela de login" : "Criar uma nova conta" }}</button>
+        <button @click="() => {showForm = !showForm; actionsForms = true}">{{ showForm ? "Fazer login" : "Criar uma nova conta" }}</button>
     </div>
 </section>
 </div>

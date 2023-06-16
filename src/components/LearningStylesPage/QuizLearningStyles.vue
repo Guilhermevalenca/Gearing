@@ -375,12 +375,12 @@ export default{
                 Swal.fire ({
                   title: "Atenção",
                   text: "Para calcular o seu resultado é necessário que todas as perguntas estejam respondidas",
-                  showConfirmButton: true,
-                  showCancelButton: false,
+                  confirmButtonText: "OK",
                       customClass: {
                       popup: 'swal-popup-custom',
                       title: 'swal-title-custom',
                       htmlContainer: 'swal-html-container-custom',
+                      actions:'swal-actions-custom'
                   }
                 })
                 return
@@ -656,13 +656,25 @@ section{
 }
 input{
 -webkit-appearance: none;
-appearance: none;
+appearance:none;
 border-color: black;
 border-style: inherit;
 border: 1px;
 border-radius: 9px;
-background-color: aliceblue;
+background-color: white;
 margin: 5px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #333;
+  border-radius: 50%;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb:hover,
+input[type="range"]::-moz-range-thumb:hover {
+  background-color: black;
 }
 .equal{
 -webkit-appearance: none;
