@@ -1,12 +1,25 @@
 <template>
 
-<section>
+<section @mouseover="moveElements()">
     <div>
         <h2>Editando cronograma:</h2>
-        <h3>{{ currentTitle }}</h3>
+        <h2>{{ currentTitle }}</h2>
+    </div>
+    <div class="subjects" ref="sortableSubject">
+        <div v-for="(elementos, i) in subjects" :key="i">
+            <div v-for="(subject, j) in elementos" :key="j">
+                <div v-if="subject">
+                    <div ref="subject" v-for="separated in subject.split(',')" :key="separated">
+                        <ul>
+                            {{ separated }}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="schedule">
-        <table @mouseover="moveElements()">
+        <table>
         <thead>
             <tr>
                 <th></th>
@@ -102,6 +115,15 @@ export default{
                 const sortableAll = document.querySelectorAll('.schedule-subjects');
                 sortableAll.forEach(element => {
                     new Sortable(element, {
+                        group: 'shared'
+                    })
+                })
+                new Sortable(this.$refs.sortableSubject,{
+                    group: 'shared'
+                })
+                const subject = this.$refs.subject;
+                subject.forEach(element => {
+                    new Sortable(element,{
                         group: 'shared'
                     })
                 })
@@ -212,5 +234,9 @@ export default{
 .schedule-subjects{
     border-style: solid;
     width: 100px;
+}
+.subjects{
+    display: grid;
+    justify-content: center;
 }
 </style>

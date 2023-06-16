@@ -4,8 +4,9 @@
         <h3>Comentários</h3>
         <!-- Conteúdo dos comentários -->
         <p>So adicionando textos aleatorios</p>
-        <p>vishkk</p>
-        
+        <p>essa desgraça nao ta legal</p>
+        <input type="text" >
+
     </div>
     <button class="window-interaction-close" @click="closeWindowsInteraction()">X</button>
   </div>             
