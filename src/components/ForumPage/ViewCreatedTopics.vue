@@ -3,7 +3,7 @@
         <div v-for="(elementos, index) in topics" :key="index">
             <div>
                 <a @click="showTopicComments(elementos[1])">{{ elementos[1] }}</a>
-                <Comments title="{{elementos[1]}}" email="" @closeComments="hideTopicComments()" v-if="showComments" />
+                <Comments @closeComments="hideTopicComments()" v-if="showComments" />
             </div>
         </div>
     </section>

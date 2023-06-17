@@ -2,7 +2,6 @@
   <div class="window-interaction">
     <div class="window-interaction-content">
         <div>
-          <h1>{{ title }}</h1>
           <p>by: {{ creatorName }}</p>
         </div>
         <div>
@@ -48,10 +47,6 @@ export default {
     .then(response => {
       console.log(response);
     })
-  },
-  props: {
-    title: '',
-    email: ''
   }
 };
 </script>
