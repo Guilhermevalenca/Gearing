@@ -25,40 +25,27 @@ $response = [];
 
 //save response subjects
 $response['subject'] = [];
-
-try{
-    $sql = "SELECT * FROM GEA_SUBJECT WHERE sub_sche_title = '$title' AND sub_sche_user_email = '$email';";
-    $result = $conn->query($sql);
-    if(isset($result)){
-        foreach($result as $dataSubjects){
-            //save hour
-            $row = $dataSubjects['sub_hour'];
-            //save day
-            $column = $dataSubjects['sub_day'];
-            //save respective subject
-            $response['subject'][$row][$column] = $dataSubjects['sub_name'];
-        }
-    }
-}catch (PDOException $e){
-    exit();
-}
-
 //save response turn
 $response['turn'] = [];
 
 try{
-    $sql = "SELECT sche_shifts FROM GEA_SCHEDULE WHERE sche_user_email = '$email' AND sche_title = '$title';";
+    $sql = "SELECT sub_hour, sub_day, sub_name, sche_shifts FROM GEA_SUBJECT,GEA_SCHEDULE 
+    WHERE sub_sche_user_email = '$email' AND sub_sche_title = '$title' AND sche_title = sub_sche_title AND
+    sche_user_email = sub_sche_user_email;";
     $result = $conn->query($sql);
     if(isset($result)){
-        foreach($result as $turn){
-            $response['turn'] = $turn['sche_shifts'];
+        foreach($result as $data){
+            //save hour
+            $row = $data['sub_hour'];
+            //save day
+            $column = $data['sub_day'];
+            //save respective subject
+            $response['subject'][$row][$column] = $data['sub_name'];
+            $response['turn'] = $data['sche_shifts'];
         }
     }
 }catch (PDOException $e){
     exit();
 }
-
-
-
 //responsing
 echo json_encode($response);

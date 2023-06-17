@@ -21,33 +21,13 @@ $email = $_SESSION['email'];
 $response = [];
 
 try{
-    $sql = "SELECT top_name, top_user_email FROM GEA_TOPIC 
-            WHERE top_name = '$name' AND top_user_email = '$email';";
-    $result = $conn->query($sql);
-    foreach($result as $data){
-        if($data['top_name'] && $data['top_user_email']){
-            $response['topicExist'] = 'true';
-            echo json_encode($response);
-            exit();
-        }
-    }
-}catch (PDOException $e) {
-    $response['error'] = 'true';
-    $response['problem'] = $e->getMessage();
-    echo json_encode($response);
-    exit();
-}
-
-try{
     $sql = "INSERT INTO GEA_TOPIC (top_name,top_description,top_user_email)
             VALUES ('$name','$description', '$email');";
     $result = $conn->exec($sql);
+    $response['success'] = 'true';
 }catch (PDOException $e){
     $response['error'] = 'true';
     $response['problem'] =$e->getMessage();
-    echo json_encode($response);
-    exit();
 }
-
-$response['success'] = 'true';
 echo json_encode($response);
+echo "hello world";
