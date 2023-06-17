@@ -239,4 +239,35 @@ export default{
     display: grid;
     justify-content: center;
 }
+.schedule-subjects{
+    border-style: solid;
+    width: 100px;
+}
+.schedule{
+    display: grid;
+    justify-content: center;
+}
+table {
+  font-family: "Share Tech Mono", sans-serif;
+  font-size: 0.90em;
+  color:blueviolet;
+  background-color: #000000;
+}
+
+th,
+td {
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(188, 251, 255, 1) 47%,
+    rgba(24, 237, 242, 1) 100%
+  );
+  font-weight: bold;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-style: solid;
+  border-width: 0.1em;
+  width: 9em;
+  height: 1.5em;
+}
 </style>

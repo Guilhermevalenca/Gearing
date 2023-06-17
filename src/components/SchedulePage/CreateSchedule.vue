@@ -9,10 +9,10 @@
     <label>
         turnos
         <select :class="{'select-turn' : this.checks.turn}" v-model="turns">
-            <option value="morning">manha</option>
-            <option value="afternoon">tarde</option>
-            <option value="night">noite</option>
-            <option value="dawn">madrugada</option>
+            <option value="morning">Manhã</option>
+            <option value="afternoon">Tarde</option>
+            <option value="night">Noite</option>
+            <option value="dawn">Madrugada</option>
         </select>
     </label>
 </div>
@@ -289,7 +289,7 @@ export default{
 
 <style scoped>
 label{
-    color:white;
+    color: rgba(188, 251, 255, 1);
 }
 .select-turn,.select-title{
     background-color: red;
@@ -297,6 +297,7 @@ label{
 .schedule{
     display: grid;
     justify-content: center;
+    margin:1em;
 }
 .schedule-matters{
     display: flex;
@@ -304,6 +305,14 @@ label{
     width: 50em;
     flex-wrap: wrap;
     border-style: solid;
+    border-width: 0.1em;
+    border-radius: 0.8em;
+    border-color: blueviolet;
+    gap:0.1em;
+    margin: 5em;
+   background-color: #000000;
+   color:   rgba(188, 251, 255, 1);
+   font-weight: bold;
 }
 .shedule-matters-subject{
     margin: 0px;
@@ -320,6 +329,40 @@ label{
     justify-content: center;
     width: 100px;
     flex-wrap: wrap;
+}
+.schedule-subjects{
+    border-style: solid;
+    width: 100px;
+}
+.schedule{
+    display: grid;
+    justify-content: center;
+}
+.addNewMatters{
+    margin:1em;
+}
+table {
+  font-family: "Share Tech Mono", sans-serif;
+  font-size: 0.90em;
+  color:blueviolet;
+  background-color: #000000;
+}
+
+th,
+td {
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(188, 251, 255, 1) 47%,
+    rgba(24, 237, 242, 1) 100%
+  );
+  font-weight: bold;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-style: solid;
+  border-width: 0.1em;
+  width: 9em;
+  height: 1.5em;
 }
 </style>
 

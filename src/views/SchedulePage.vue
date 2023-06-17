@@ -6,8 +6,8 @@
     </div>
 
     <div class="options">
-        <button @click="showCreateSchedule()">criar cronograma</button>
-        <button @click="showViewSchedule()">vizualizar cronogramas criados</button>
+        <button @click="showCreateSchedule()">Criar cronograma</button>
+        <button @click="showViewSchedule()">Vizualizar cronogramas criados</button>
     </div>
 </section>
 <section>

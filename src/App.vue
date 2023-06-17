@@ -167,7 +167,6 @@ a:nth-child(6){
   width: 140px;
 }
 nav .start-menu, a:nth-child(1):hover~.animation {
-  color: red;
 	width: 140px;
 	left: 0;
   background: -webkit-linear-gradient(
