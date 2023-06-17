@@ -2,14 +2,14 @@
     <section v-if="!showComments">
         <div v-for="(elements, index) in topics" :key="index">
             <div>
-                <a @click="showTopicComments(elements.title,elements.email,elements.description)">
+                <a @click="showTopicComments(elements.title,elements.email,elements.description,elements.name)">
                     {{ elements.title }}
                 </a>
             </div>
         </div>
     </section>
     <section v-else>
-        <Comments :title="comments.title" :email="comments.email" :description="comments.description" 
+        <Comments :name="comments.name" :title="comments.title" :email="comments.email" :description="comments.description" 
                 @closeComments="hideTopicComments()" />
     </section>
 </template>
@@ -34,17 +34,19 @@ export default{
         hideTopicComments() {
             this.showComments = false
         },
-        showTopicComments(newTitle,newEmail,newDescription) {
+        showTopicComments(newTitle,newEmail,newDescription,newName) {
             this.showComments = true;
             this.comments.title = newTitle;
             this.comments.email = newEmail;
             this.comments.description = newDescription;
+            this.comments.name = newName;
         },
         updateTopics() {
             axios.get('http://localhost:8000/forum/allTopic.php')
             .then(response => {
                 if(response.data){
-                    this.topics = response.data
+                    this.topics = response.data.topic
+                    console.log(this.topics);
                     this.topics = this.topics.reverse();
                 }
             })

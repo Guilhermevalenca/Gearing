@@ -11,6 +11,7 @@ $topicData = json_decode($json, true);
 $id = $topicData['id'];
 $name = $topicData['name'];
 $description = $topicData['description'];
+$title = $topicData['title'];
 
 session_write_close();
 session_id($id);
@@ -21,8 +22,8 @@ $email = $_SESSION['email'];
 $response = [];
 
 try{
-    $sql = "INSERT INTO GEA_TOPIC (top_name,top_description,top_user_email)
-            VALUES ('$name','$description', '$email');";
+    $sql = "INSERT INTO GEA_TOPIC (top_title,top_description,top_user_email,top_user_name)
+            VALUES ('$title','$description', '$email','$name');";
     $result = $conn->exec($sql);
     $response['success'] = 'true';
 }catch (PDOException $e){

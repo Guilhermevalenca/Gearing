@@ -47,8 +47,9 @@ export default{
             })
             axios.post('http://localhost:8000/forum/addTopic.php',{
                 id: localStorage.getItem('idSession'),
-                name: this.name,
-                description: this.description
+                title: this.name,
+                description: this.description,
+                name: this.$store.state.user.username
             })
             .then(response => {
                 console.log(response.data);

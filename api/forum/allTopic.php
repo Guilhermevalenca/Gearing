@@ -8,16 +8,20 @@ require '../establishingConnection.php';
 $response = [];
 
 try{
-    $sql = "SELECT top_name,top_description,top_user_email FROM GEA_TOPIC;";
+    $sql = "SELECT top_title,top_description,top_user_email,top_user_name FROM GEA_TOPIC;";
     $result = $conn->query($sql);
+    $response['topic'] = [];
     foreach($result as $data){
-        array_push($response,array(
-            "title" => $data['top_name'],
+        array_push($response['topic'],array(
+            "title" => $data['top_title'],
             "description" => $data['top_description'],
-            "email" => $data['top_user_email']
+            "email" => $data['top_user_email'],
+            "name" => $data['top_user_name']
         ));
     } 
+    $response['success'] = "true";
 }catch (PDOException $e){
-    exit();
+    $response['success'] = "false";
+    $response['error'] = $e->getMessage();
 }
 echo json_encode($response);

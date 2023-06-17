@@ -36,21 +36,24 @@ CREATE TABLE GEA_SUBJECT(
 );
 CREATE TABLE GEA_TOPIC(
     top_id INT NOT NULL AUTO_INCREMENT,
-	top_name VARCHAR(45) NOT NULL UNIQUE,
-    PRIMARY KEY (top_id,top_name),
+	top_title VARCHAR(45) NOT NULL UNIQUE,
+    PRIMARY KEY (top_id,top_title),
     top_description TEXT NOT NULL,
     top_user_email VARCHAR(45) NOT NULL,
+    top_user_name VARCHAR(45) NOT NULL,
     CONSTRAINT top_user_email FOREIGN KEY (top_user_email) REFERENCES GEA_USER(user_email)
 );
 CREATE TABLE GEA_COMMENTS(
 	com_message TEXT NOT NULL,
-    com_top_name VARCHAR(45) NOT NULL,
+    com_user_name VARCHAR(45) NOT NULL,
+    com_top_title VARCHAR(45) NOT NULL,
     com_top_user_email VARCHAR(45) NOT NULL,
-    PRIMARY KEY (com_top_name, com_top_user_email),
-    CONSTRAINT com_top_name FOREIGN KEY (com_top_name) REFERENCES GEA_TOPIC(top_name),
+    PRIMARY KEY (com_top_title, com_top_user_email),
+    CONSTRAINT com_top_title FOREIGN KEY (com_top_title) REFERENCES GEA_TOPIC(top_title),
     CONSTRAINT com_top_user_email FOREIGN KEY (com_top_user_email) REFERENCES GEA_TOPIC(top_user_email)
 );
 
-INSERT INTO GEA_USER (user_email,user_name,user_password) VALUES ('gearing@gmail.com','gearing','gearing');
-INSERT INTO GEA_USER (user_email,user_name,user_password) VALUES ('gui@gmail.com','gui','123');
+INSERT INTO GEA_USER (user_email,user_name,user_password) 
+VALUES ('gearing@gmail.com','gearing','gearing'), ('gui@gmail.com','gui','123'),
+('cra@discente.ifpe.edu.br','nix','zeroum'), ('assie@gmail.com','assíria','123');
 SELECT * FROM GEA_USER;
