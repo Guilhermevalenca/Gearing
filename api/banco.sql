@@ -21,6 +21,7 @@ CREATE TABLE GEA_SCHEDULE(
     sche_shifts VARCHAR(10) NOT NULL,
     sche_user_email VARCHAR(45) NOT NULL,
     PRIMARY KEY (sche_title, sche_user_email),
+    UNIQUE (sche_title, sche_user_email),
     CONSTRAINT sche_user_email FOREIGN KEY (sche_user_email) REFERENCES GEA_USER(user_email)
 );
 CREATE TABLE GEA_SUBJECT(
@@ -35,8 +36,7 @@ CREATE TABLE GEA_SUBJECT(
 );
 CREATE TABLE GEA_TOPIC(
     top_id INT NOT NULL AUTO_INCREMENT,
-	top_name VARCHAR(45) NOT NULL,
-    CONSTRAINT top_name UNIQUE (top_name),
+	top_name VARCHAR(45) NOT NULL UNIQUE,
     PRIMARY KEY (top_id,top_name),
     top_description TEXT NOT NULL,
     top_user_email VARCHAR(45) NOT NULL,
@@ -52,6 +52,5 @@ CREATE TABLE GEA_COMMENTS(
 );
 
 INSERT INTO GEA_USER (user_email,user_name,user_password) VALUES ('gearing@gmail.com','gearing','gearing');
-INSERT INTO GEA_USER(user_email,user_name,user_password,user_controller) VALUES ('root@','root','root',TRUE);
 
 SELECT * FROM GEA_USER;

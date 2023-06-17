@@ -193,6 +193,7 @@ export default{
                 }else{
                     this.$emit('quitCreatingSchedule');
                     if(response.data.addSubjectFailed){
+                        console.log(response.data.addSubjectFailed);
                         Swal.fire({
                             title:'Falha ao adicionar matéria',
                             text:'Uma ou mais materias não foram adicionadas',
