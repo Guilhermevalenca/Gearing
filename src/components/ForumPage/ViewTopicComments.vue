@@ -1,12 +1,16 @@
 <template>
   <div class="window-interaction">
     <div class="window-interaction-content">
-        <h3>Comentários</h3>
-        <!-- Conteúdo dos comentários -->
-        <p>So adicionando textos aleatorios</p>
-        <p>testando novos textos</p>
-        <input type="text" placeholder="seu comentario">
-
+        <div>
+          <h1>{{ title }}</h1>
+          <p>by: {{ creatorName }}</p>
+        </div>
+        <div>
+          <ul v-for="(user,index) in comments" :key="index">
+            <th>{{ user.name }}:</th>
+            <td>{{ user.comment }}</td>
+          </ul>
+        </div>
     </div>
     <button class="window-interaction-close" @click="closeWindowsInteraction()">X</button>
   </div>             
@@ -18,8 +22,18 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            
-        };
+            creatorName: '',
+            comments: [
+              {
+                name: 'Guilherme',
+                comment: 'nao entendi sua pergunta, mas...'
+              },
+              {
+                name: 'Claudiane',
+                comment: 'ta aqui su aresposta'
+              }
+            ]
+        }
     },
   methods: {
         closeWindowsInteraction() {
@@ -27,7 +41,17 @@ export default {
         }
   },
   created() {
-    axios.post('http://localhost:8000/')
+    axios.post('http://localhost:8000/forum/chatTopic.php', {
+      id: localStorage('idSession'),
+       
+    })
+    .then(response => {
+      console.log(response);
+    })
+  },
+  props: {
+    title: '',
+    email: ''
   }
 };
 </script>

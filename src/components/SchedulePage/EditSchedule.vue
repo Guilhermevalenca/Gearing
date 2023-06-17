@@ -5,17 +5,17 @@
         <h2>Editando cronograma:</h2>
         <h2>{{ currentTitle }}</h2>
     </div>
-    <div class="subjects" ref="sortableSubject">
-        <div v-for="(elementos, i) in subjects" :key="i">
-            <div v-for="(subject, j) in elementos" :key="j">
-                <div v-if="subject">
-                    <div ref="subject" v-for="separated in subject.split(',')" :key="separated">
-                        <ul>
-                            {{ separated }}
-                        </ul>
-                    </div>
-                </div>
-            </div>
+    <div>
+        <label>Adicione novas materias:</label>
+        <input type="text" placeholder="nova materia" v-model="newSubject">
+        <button @click="() => {addNewSubject()}">Adicionar materia</button>
+    </div>
+    <div v-show="storeNewSubjects.length != 0" class="store">
+        <h3>Descarte + novas materias</h3>
+        <div class="store-box" ref="newSubjects">
+            <ul class="store-box-newSubjects" v-for="(subject, index) in storeNewSubjects" :key="index">
+                {{ subject }}
+            </ul>
         </div>
     </div>
     <div class="schedule">
@@ -71,10 +71,19 @@ export default{
             turn: [],
             subjects: [],
             actionSortable: true,
-            updateSubjects: []
+            updateSubjects: [],
+            newSubject: '',
+            storeNewSubjects: []
         }
     },
     methods: {
+        addNewSubject() {
+            this.storeNewSubjects.push(this.newSubject);
+            this.newSubject = '';
+            new Sortable(this.$refs.newSubjects, {
+                group: 'shared'
+            })
+        },
         mountedSchedule() {
             axios.post('http://localhost:8000/schedule/searchSchedule.php', {
                 id: localStorage.getItem('idSession'),
@@ -118,15 +127,7 @@ export default{
                         group: 'shared'
                     })
                 })
-                new Sortable(this.$refs.sortableSubject,{
-                    group: 'shared'
-                })
-                const subject = this.$refs.subject;
-                subject.forEach(element => {
-                    new Sortable(element,{
-                        group: 'shared'
-                    })
-                })
+                
                 this.actionSortable = false
             }
         },
@@ -227,6 +228,19 @@ export default{
 </script>
 
 <style scoped>
+
+.store-box{
+    display: flex;
+    justify-content: center;
+    border-style: solid;
+}
+.store-box-newSubjects{
+    margin: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
 .schedule{
     display: grid;
     justify-content: center;
