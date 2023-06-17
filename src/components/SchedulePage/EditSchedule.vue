@@ -5,17 +5,14 @@
         <h2>Editando cronograma:</h2>
         <h2>{{ currentTitle }}</h2>
     </div>
-    <div class="subjects" ref="sortableSubject">
-        <div v-for="(elementos, i) in subjects" :key="i">
-            <div v-for="(subject, j) in elementos" :key="j">
-                <div v-if="subject">
-                    <div ref="subject" v-for="separated in subject.split(',')" :key="separated">
-                        <ul>
-                            {{ separated }}
-                        </ul>
-                    </div>
-                </div>
-            </div>
+    <div>
+        <label>Adicione novas materias:</label>
+        <input type="text" placeholder="nova materia" v-model="newSubject">
+        <button @click="() => {storeNewSubjects.push(newSubject);newSubject = ''}">Adicionar materia</button>
+        <div>
+            <ul v-for="(subject, index) in storeNewSubjects" :key="index">
+                {{ subject }}
+            </ul>
         </div>
     </div>
     <div class="schedule">
@@ -71,7 +68,9 @@ export default{
             turn: [],
             subjects: [],
             actionSortable: true,
-            updateSubjects: []
+            updateSubjects: [],
+            newSubject: '',
+            storeNewSubjects: []
         }
     },
     methods: {
@@ -118,15 +117,7 @@ export default{
                         group: 'shared'
                     })
                 })
-                new Sortable(this.$refs.sortableSubject,{
-                    group: 'shared'
-                })
-                const subject = this.$refs.subject;
-                subject.forEach(element => {
-                    new Sortable(element,{
-                        group: 'shared'
-                    })
-                })
+                
                 this.actionSortable = false
             }
         },
