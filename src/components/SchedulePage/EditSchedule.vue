@@ -8,9 +8,12 @@
     <div>
         <label>Adicione novas materias:</label>
         <input type="text" placeholder="nova materia" v-model="newSubject">
-        <button @click="() => {storeNewSubjects.push(newSubject);newSubject = ''}">Adicionar materia</button>
-        <div>
-            <ul v-for="(subject, index) in storeNewSubjects" :key="index">
+        <button @click="() => {addNewSubject()}">Adicionar materia</button>
+    </div>
+    <div v-show="storeNewSubjects.length != 0" class="store">
+        <h3>Descarte + novas materias</h3>
+        <div class="store-box" ref="newSubjects">
+            <ul class="store-box-newSubjects" v-for="(subject, index) in storeNewSubjects" :key="index">
                 {{ subject }}
             </ul>
         </div>
@@ -74,6 +77,13 @@ export default{
         }
     },
     methods: {
+        addNewSubject() {
+            this.storeNewSubjects.push(this.newSubject);
+            this.newSubject = '';
+            new Sortable(this.$refs.newSubjects, {
+                group: 'shared'
+            })
+        },
         mountedSchedule() {
             axios.post('http://localhost:8000/schedule/searchSchedule.php', {
                 id: localStorage.getItem('idSession'),
@@ -218,6 +228,19 @@ export default{
 </script>
 
 <style scoped>
+
+.store-box{
+    display: flex;
+    justify-content: center;
+    border-style: solid;
+}
+.store-box-newSubjects{
+    margin: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
 .schedule{
     display: grid;
     justify-content: center;
@@ -225,9 +248,5 @@ export default{
 .schedule-subjects{
     border-style: solid;
     width: 100px;
-}
-.subjects{
-    display: grid;
-    justify-content: center;
 }
 </style>
