@@ -51,6 +51,7 @@ export default{
                 description: this.description
             })
             .then(response => {
+                console.log(response.data);
                 if(response.data.error){
                     Swal.fire({
                         title:'Erro',

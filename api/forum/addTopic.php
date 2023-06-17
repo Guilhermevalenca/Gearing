@@ -30,4 +30,3 @@ try{
     $response['problem'] =$e->getMessage();
 }
 echo json_encode($response);
-echo "hello world";

@@ -12,7 +12,7 @@ try{
     $result = $conn->query($sql);
     foreach($result as $data){
         array_push($response,array(
-            "name" => $data['top_name'],
+            "title" => $data['top_name'],
             "description" => $data['top_description'],
             "email" => $data['top_user_email']
         ));

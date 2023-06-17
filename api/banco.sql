@@ -52,5 +52,5 @@ CREATE TABLE GEA_COMMENTS(
 );
 
 INSERT INTO GEA_USER (user_email,user_name,user_password) VALUES ('gearing@gmail.com','gearing','gearing');
-
+INSERT INTO GEA_USER (user_email,user_name,user_password) VALUES ('gui@gmail.com','gui','123');
 SELECT * FROM GEA_USER;

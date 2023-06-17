@@ -1,7 +1,8 @@
 <template>
-  <div class="window-interaction">
-    <div class="window-interaction-content">
-        <section>
+    <div class="session">
+      <button class="session-close" @click="closeComment()">X</button>
+        <section class="session-topic">
+          <h4>Topico e descrição</h4>
           <table>
             <thead>
               <tr>
@@ -19,23 +20,26 @@
             </tbody>
           </table>
         </section>
-        <section>
-          <table>
+        <section class="session-comment">
+          <h4>Sessão de comentarios</h4>
+          <table v-for="(dataComments, index) in comments" :key="index">
             <thead>
-              <tr>By:</tr>
-              <td>Nome da pessoa</td>
+              <tr>
+                <th>By:</th>
+                <td>{{ dataComments.by }}</td>
+              </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Comentario</td>
+                <td>{{ dataComments.comment }}</td>
               </tr>
             </tbody>
           </table>
-          <textarea cols="30" rows="10"></textarea>
+          <h4>Adicionar comentario</h4>
+          <textarea v-model="newComments" cols="30" rows="10"></textarea><br>
+          <button>Adicionar comentario</button>
         </section>
-    </div>
-    <button class="window-interaction-close" @click="closeWindowsInteraction()">X</button>
-  </div>             
+    </div>            
 </template>
 
 <script>
@@ -44,21 +48,21 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            creatorName: '',
+            newComments: '',
             comments: [
               {
-                name: 'Guilherme',
+                by: 'Guilherme',
                 comment: 'nao entendi sua pergunta, mas...'
               },
               {
-                name: 'Claudiane',
+                by: 'Claudiane',
                 comment: 'ta aqui sua resposta'
               }
             ]
         }
     },
   methods: {
-        closeWindowsInteraction() {
+        closeComment() {
             this.$emit("closeComments")
         }
   },
@@ -80,32 +84,5 @@ export default {
 </script>
   
 <style scoped>
-.window-interaction {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.window-interaction-content {
-    background-image: url("@/assets/css/backgrounds/gearingBackground.jpeg");
-    background-size: 100%;
-    padding: 20px;
-}
-
-.window-interaction-close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 18px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-}
 </style>
   
