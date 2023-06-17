@@ -2,8 +2,9 @@
     <section>
         <div v-for="(elementos, index) in topics" :key="index">
             <div>
-                <a @click="showTopicComments(elementos[1])">{{ elementos[1] }}</a>
-                <Comments @closeComments="hideTopicComments()" v-if="showComments" />
+                <a @click="showTopicComments(elementos[1])">{{ elementos.name }}</a>
+                <Comments :title="elementos.name" :email="elementos.email" :description="elementos.description" 
+                @closeComments="hideTopicComments()" v-if="showComments" />
             </div>
         </div>
     </section>
@@ -35,7 +36,6 @@ export default{
                 if(response.data){
                     this.topics = response.data
                     this.topics = this.topics.reverse();
-                    console.log(this.topics)
                 }
             })
         }

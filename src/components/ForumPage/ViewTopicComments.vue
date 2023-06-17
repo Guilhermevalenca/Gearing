@@ -1,15 +1,38 @@
 <template>
   <div class="window-interaction">
     <div class="window-interaction-content">
-        <div>
-          <p>by: {{ creatorName }}</p>
-        </div>
-        <div>
-          <ul v-for="(user,index) in comments" :key="index">
-            <th>{{ user.name }}:</th>
-            <td>{{ user.comment }}</td>
-          </ul>
-        </div>
+        <section>
+          <table>
+            <thead>
+              <tr>
+                <th>{{ title }}</th>
+              </tr>
+              <tr>
+                <th>By:</th>
+                <td>{{ email }}</td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ description }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <section>
+          <table>
+            <thead>
+              <tr>By:</tr>
+              <td>Nome da pessoa</td>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Comentario</td>
+              </tr>
+            </tbody>
+          </table>
+          <textarea cols="30" rows="10"></textarea>
+        </section>
     </div>
     <button class="window-interaction-close" @click="closeWindowsInteraction()">X</button>
   </div>             
@@ -29,7 +52,7 @@ export default {
               },
               {
                 name: 'Claudiane',
-                comment: 'ta aqui su aresposta'
+                comment: 'ta aqui sua resposta'
               }
             ]
         }
@@ -40,13 +63,18 @@ export default {
         }
   },
   created() {
-    axios.post('http://localhost:8000/forum/chatTopic.php', {
-      id: localStorage('idSession'),
-       
-    })
+    axios.get('http://localhost:8000/forum/chatTopic.php')
     .then(response => {
       console.log(response);
     })
+    .catch (error => {
+      console.log(error)
+    })
+  },
+  props: {
+    title: String,
+    email: String,
+    description: String
   }
 };
 </script>
