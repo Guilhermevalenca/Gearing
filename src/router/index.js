@@ -33,6 +33,11 @@ const routes = [
     path: '/forum',
     name: 'forum',
     component: () => import('@/views/ForumPage.vue')
+  },
+  {
+    path: '/exit',
+    name: 'exit',
+    component: () => import('@/views/HomePage.vue'),
   }
 ]
 
