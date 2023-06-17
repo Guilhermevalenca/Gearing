@@ -1,6 +1,4 @@
-CREATE USER 'gearing'@'localhost' IDENTIFIED BY 'gearing123';
-GRANT ALL PRIVILEGES ON *.* TO 'gearing'@'localhost' WITH GRANT OPTION;
-
+DROP DATABASE GEARING;
 CREATE DATABASE GEARING;
 USE GEARING;
 
@@ -54,4 +52,6 @@ CREATE TABLE GEA_COMMENTS(
 );
 
 INSERT INTO GEA_USER (user_email,user_name,user_password) VALUES ('gearing@gmail.com','gearing','gearing');
+INSERT INTO GEA_USER(user_email,user_name,user_password,user_controller) VALUES ('root@','root','root',TRUE);
 
+SELECT * FROM GEA_USER;
