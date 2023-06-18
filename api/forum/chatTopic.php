@@ -17,7 +17,8 @@ try{
     foreach($result as $data) {
         array_push($response['comments'],array(
             "by" => $data['com_user_name'],
-            "comment" => $data['com_message']
+            "comment" => $data['com_message'],
+            "date" => $data['com_date']
         ));
     }
     $response['success'] = true;

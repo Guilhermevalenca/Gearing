@@ -10,7 +10,7 @@
         <input type="text" placeholder="nova materia" v-model="newSubject">
         <button @click="() => {addNewSubject()}">Adicionar materia</button>
     </div>
-    <div v-show="storeNewSubjects.length != 0" class="store">
+    <div class="store">
         <h3>Descarte + novas materias</h3>
         <div class="store-box" ref="newSubjects">
             <ul class="store-box-newSubjects" v-for="(subject, index) in storeNewSubjects" :key="index">
@@ -127,7 +127,9 @@ export default{
                         group: 'shared'
                     })
                 })
-                
+                new Sortable(this.$refs.newSubjects, {
+                    group: 'shared'
+                })
                 this.actionSortable = false
             }
         },
@@ -143,6 +145,11 @@ export default{
                     this.updateSubjects[i][j] = ''
                     element.querySelectorAll('.schedule-subjects-alocated-true').forEach(subject => {
                         this.updateSubjects[i][j] += subject.textContent + ","
+                        console.log('subject:',subject.textContent)
+                    })
+                    element.querySelectorAll('.store-box-newSubjects').forEach(subject => {
+                        this.updateSubjects[i][j] += subject.textContent + ',';
+                        console.log('newSubject:',subject.textContent)
                     })
                 }
                 j++
@@ -233,6 +240,8 @@ export default{
     display: flex;
     justify-content: center;
     border-style: solid;
+    height: 5em;
+    flex-wrap: wrap;
 }
 .store-box-newSubjects{
     margin: 0px;

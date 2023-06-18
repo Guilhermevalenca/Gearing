@@ -38,6 +38,7 @@ CREATE TABLE GEA_TOPIC(
     top_id INT NOT NULL AUTO_INCREMENT,
 	top_title VARCHAR(45) NOT NULL UNIQUE,
     top_description TEXT NOT NULL,
+    top_date DATETIME DEFAULT NOW(),
     top_user_email VARCHAR(45) NOT NULL,
     top_user_name VARCHAR(45) NOT NULL,
     PRIMARY KEY (top_id,top_title),
@@ -46,6 +47,7 @@ CREATE TABLE GEA_TOPIC(
 CREATE TABLE GEA_COMMENTS(
     com_id INT AUTO_INCREMENT,
 	com_message TEXT NOT NULL,
+    com_date DATETIME DEFAULT NOW(),
     com_user_name VARCHAR(45) NOT NULL,
     com_top_title VARCHAR(45) NOT NULL,
     com_user_email VARCHAR(45) NOT NULL,

@@ -8,7 +8,7 @@ require '../establishingConnection.php';
 $response = [];
 
 try{
-    $sql = "SELECT top_title,top_description,top_user_email,top_user_name FROM GEA_TOPIC;";
+    $sql = "SELECT top_title,top_description,top_user_email,top_user_name,top_date FROM GEA_TOPIC;";
     $result = $conn->query($sql);
     $response['topic'] = [];
     foreach($result as $data){
@@ -16,7 +16,8 @@ try{
             "title" => $data['top_title'],
             "description" => $data['top_description'],
             "email" => $data['top_user_email'],
-            "name" => $data['top_user_name']
+            "name" => $data['top_user_name'],
+            "date" => $data['top_date']
         ));
     } 
     $response['success'] = true;
