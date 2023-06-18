@@ -19,8 +19,9 @@ try{
             "name" => $data['top_user_name']
         ));
     } 
-    $response['success'] = "true";
+    $response['success'] = true;
 }catch (PDOException $e){
+    $response['success'] = true;
     $response['error'] = $e->getMessage();
 }
 echo json_encode($response);

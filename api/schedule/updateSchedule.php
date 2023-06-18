@@ -46,5 +46,5 @@ foreach($updateSubjects as $row => $listSubjects){
         }
     }
 }
-$response['success'] = "true";
+$response['success'] = true;
 echo json_encode($response);

@@ -37,10 +37,10 @@ CREATE TABLE GEA_SUBJECT(
 CREATE TABLE GEA_TOPIC(
     top_id INT NOT NULL AUTO_INCREMENT,
 	top_title VARCHAR(45) NOT NULL UNIQUE,
-    PRIMARY KEY (top_id,top_title),
     top_description TEXT NOT NULL,
     top_user_email VARCHAR(45) NOT NULL,
     top_user_name VARCHAR(45) NOT NULL,
+    PRIMARY KEY (top_id,top_title),
     CONSTRAINT top_user_email FOREIGN KEY (top_user_email) REFERENCES GEA_USER(user_email)
 );
 CREATE TABLE GEA_COMMENTS(
@@ -48,13 +48,20 @@ CREATE TABLE GEA_COMMENTS(
 	com_message TEXT NOT NULL,
     com_user_name VARCHAR(45) NOT NULL,
     com_top_title VARCHAR(45) NOT NULL,
-    com_top_user_email VARCHAR(45) NOT NULL,
-    PRIMARY KEY (com_id, com_top_title, com_top_user_email),
+    com_user_email VARCHAR(45) NOT NULL,
+    PRIMARY KEY (com_id, com_top_title, com_user_email),
     CONSTRAINT com_top_title FOREIGN KEY (com_top_title) REFERENCES GEA_TOPIC(top_title),
-    CONSTRAINT com_top_user_email FOREIGN KEY (com_top_user_email) REFERENCES GEA_TOPIC(top_user_email)
+    CONSTRAINT com_user_email FOREIGN KEY (com_user_email) REFERENCES GEA_USER(user_email)
 );
 
+/* ADICIONANDO USUARIOS POR PADRÃO*/
 INSERT INTO GEA_USER (user_email,user_name,user_password) 
 VALUES ('gearing@gmail.com','gearing','gearing'), ('gui@gmail.com','gui','123'),
 ('cra@discente.ifpe.edu.br','nix','zeroum'), ('assie@gmail.com','assíria','123');
+/* ADICIONANDO TOPICO NO FORUM POR PADRÃO */
+INSERT INTO GEA_TOPIC (top_title,top_description,top_user_email,top_user_name)
+VALUES ('titulo de teste','apenas uma descrição qualquer para realizar um teste qualquer', 'gearing@gmail.com','gearing');
+/* INSERINDO COMENTARIO POR PADRÃO */
+INSERT INTO GEA_COMMENTS (com_message,com_user_name,com_top_title,com_user_email) 
+VALUES ('apenas uma mensagem de texto','gearing','titulo de teste','gearing@gmail.com');
 SELECT * FROM GEA_USER;

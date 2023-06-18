@@ -25,9 +25,9 @@ try{
     $sql = "INSERT INTO GEA_TOPIC (top_title,top_description,top_user_email,top_user_name)
             VALUES ('$title','$description', '$email','$name');";
     $result = $conn->exec($sql);
-    $response['success'] = 'true';
+    $response['success'] = true;
 }catch (PDOException $e){
-    $response['error'] = 'true';
+    $response['error'] = true;
     $response['problem'] =$e->getMessage();
 }
 echo json_encode($response);

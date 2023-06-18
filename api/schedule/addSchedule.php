@@ -52,9 +52,10 @@ $sql .= ";";
 imprimir($sql);
 try{
     $execute = $conn->exec($sql);
-    $response['success'] = 'true';
+    $response['success'] = true;
 }
 catch (PDOException $e) {
+    $response['success'] = false;
     $response['addSubjectFailed'] = $e->getMessage();
 }
 
