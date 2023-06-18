@@ -22,7 +22,7 @@ try{
     $rowCount = $conn->exec($sql);
     $response['success'] = "true";
 }catch (PDOException $e) {
-    $response['success'] = "false";
+    $response['error'] = $e->getMessage();
     //echo "Dados do usuario não foram adicionados " . $e->getMessage(); 
 }
 echo json_encode($response);

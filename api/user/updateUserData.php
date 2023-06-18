@@ -29,7 +29,6 @@ $responseData = [
 }catch (PDOException $e){
     $problem = $e->getMessage();
     $responseData = [
-        'result' => 'false',
         'problem' => "$problem"
     ];
 }

@@ -44,11 +44,12 @@ CREATE TABLE GEA_TOPIC(
     CONSTRAINT top_user_email FOREIGN KEY (top_user_email) REFERENCES GEA_USER(user_email)
 );
 CREATE TABLE GEA_COMMENTS(
+    com_id INT AUTO_INCREMENT,
 	com_message TEXT NOT NULL,
     com_user_name VARCHAR(45) NOT NULL,
     com_top_title VARCHAR(45) NOT NULL,
     com_top_user_email VARCHAR(45) NOT NULL,
-    PRIMARY KEY (com_top_title, com_top_user_email),
+    PRIMARY KEY (com_id, com_top_title, com_top_user_email),
     CONSTRAINT com_top_title FOREIGN KEY (com_top_title) REFERENCES GEA_TOPIC(top_title),
     CONSTRAINT com_top_user_email FOREIGN KEY (com_top_user_email) REFERENCES GEA_TOPIC(top_user_email)
 );

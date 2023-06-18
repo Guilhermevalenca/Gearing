@@ -1,5 +1,6 @@
 <template>
     <div class="session">
+      <button @click="() => {showAddComment = true}">adicionar comentario</button>
       <button class="session-close" @click="closeComment()">X</button>
         <section class="session-topic">
           <h4>Topico e descrição</h4>
@@ -41,9 +42,15 @@
               </tr>
             </tbody>
           </table>
-          <h4>Adicionar comentario</h4>
-          <textarea v-model="newComments" cols="30" rows="10"></textarea><br>
-          <button @click="addComment()">Adicionar comentario</button>
+        </section>
+        <section class="window-interaction" v-if="showAddComment">
+          <div class="window-content">
+            <button class="window-close" @click="() => {showAddComment = false}">X</button>
+            <h2>Adicionar comentario</h2>
+            <h4>aqui voce adiciona seu comentario sobre o assunto {{ title }}</h4>
+            <textarea v-model="newComments" cols="30" rows="10"></textarea><br>
+            <button @click="addComment()">Adicionar comentario</button>        
+          </div>
         </section>
     </div>            
 </template>
@@ -56,7 +63,8 @@ export default {
     data() {
         return {
             newComments: '',
-            comments: []
+            comments: [],
+            showAddComment: false
         }
     },
   methods: {
@@ -77,6 +85,9 @@ export default {
             comment: this.newComments
           })
           this.newComments = '';
+          this.showAddComment = false;
+        }else{
+          console.log(response);
         }
       })
       .catch(error => {
@@ -124,5 +135,25 @@ export default {
 </script>
   
 <style scoped>
+.window-interaction {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.window-content {
+  background-image: url("@/assets/css/backgrounds/gearingBackground.jpeg");
+  padding: 20px;
+}
+.window-close, .session-close{
+  position: relative;
+  left: 15em;
+  width: 2.5em;
+}
 </style>
   

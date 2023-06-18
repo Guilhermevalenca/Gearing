@@ -24,7 +24,6 @@ try{
     $result = $conn->exec($sql);
     $response['success'] = "true";
 }catch (PDOException $e) {
-    $response['success'] = "false";
     $response['error'] = $e->getMessage();
 }
 echo json_encode($response);
