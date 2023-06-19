@@ -85,12 +85,12 @@ export default{
     this.establishingConnection()
   },
   watch: {
-    actionAuthUser: {
+    $router: {
       handler() {
-        if(this.actionAuthUser != '/'){
-          this.$authUser();
+        if(this.$router.path != '/'){
+            this.$authUser();
         }else{
-          this.$checkAuthentication();
+            this.$checkAuthentication();
         }
       },
       deep: true
