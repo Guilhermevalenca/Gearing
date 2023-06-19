@@ -1,9 +1,19 @@
 <template>
     <section v-if="!showComments">
         <div v-for="(elements, index) in topics" :key="index">
-            <div>
+            <div class="box">
                 <a @click="showTopicComments(elements.title,elements.email,elements.description,elements.name,elements.date)">
-                    {{ elements.title }}
+                    <div>
+                        <ul>
+                            {{ elements.title }}
+                        </ul>
+                        <ul>
+                            <strong>Criado por:</strong>
+                            <span>{{ elements.name }}</span>
+                            <strong>em:</strong>
+                            <span>{{ elements.date }}</span>
+                        </ul>
+                    </div>
                 </a>
             </div>
         </div>
@@ -48,8 +58,9 @@ export default{
             .then(response => {
                 if(response.data){
                     this.topics = response.data.topic
-                    console.log(this.topics);
+                    console.log(response.data.topic);
                     this.topics = this.topics.reverse();
+                    console.log(this.topics)
                 }
             })
         }
@@ -60,5 +71,7 @@ export default{
 }
 </script>
 <style scoped>
-
+.box{
+    border-style: solid;
+}
 </style>
