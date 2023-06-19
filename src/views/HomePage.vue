@@ -21,9 +21,6 @@ export default {
       showForm: true,
       testandoEssaPoha: ''
     }
-  },
-  beforeCreate() {
-    this.$checkAuthentication();
   }
 }
 </script>

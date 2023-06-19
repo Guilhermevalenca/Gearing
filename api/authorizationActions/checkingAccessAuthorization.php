@@ -23,7 +23,7 @@ if( (!isset($_SESSION['AUTH']) || !$_SESSION['AUTH']) && $_SERVER['REQUEST_METHO
 $email = $_SESSION['email'];
 
 try{
-    $sql = "SELECT user_email,user_password,user_name FROM GEA_USER WHERE user_email = '$email';";
+    $sql = "SELECT user_email,user_name FROM GEA_USER WHERE user_email = '$email';";
     $result = $conn->query($sql);
     if(isset($result)){
         foreach($result as $userData){

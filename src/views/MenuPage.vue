@@ -15,9 +15,6 @@ export default{
       congratulations: 'congratulations',
     }
   },
-  beforeCreate() {
-    this.$authUser();
-  },
   methods: {
       
   }

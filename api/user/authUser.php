@@ -14,7 +14,7 @@ $email = $testingData['email'];
 $password = $testingData['password'];
 
 //looking for user
-$sql = "SELECT user_email,user_password,user_name FROM GEA_USER WHERE user_email = '$email' AND user_password = '$password';";
+$sql = "SELECT user_email,user_name FROM GEA_USER WHERE user_email = '$email' AND user_password = '$password';";
 $result = $conn->query($sql);
 if(isset($result)){
     foreach($result as $userData){

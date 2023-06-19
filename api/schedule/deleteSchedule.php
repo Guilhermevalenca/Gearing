@@ -21,7 +21,7 @@ $email = $_SESSION['email'];
 //deleting schedule
 $response = [];
 try{
-    $sql = "DELETE FROM GEA_SCHEDULE WHERE sche_title = '$title' AND sche_user_email = '$email';";
+    $sql = "DELETE FROM GEA_SCHEDULE WHERE sche_user_email = '$email' AND sche_title = '$title';";
     $result = $conn->query($sql);
 }
 catch (PDOException $e){

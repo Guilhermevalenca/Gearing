@@ -16,9 +16,6 @@ export default{
     },
     components: {
         DataChangeForm
-    },
-    beforeCreate() {
-        this.$authUser()
     }
 }
 </script>
