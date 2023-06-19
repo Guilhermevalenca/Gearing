@@ -8,16 +8,14 @@
           <table>
             <thead>
               <tr>
-                <th>{{ title }}</th>
+                <th class="title-topic">{{ title }}</th>
               </tr>
               <tr>
                 <th class="nickname">
-                  <strong>Criado por:</strong>
-                  <span>{{ name }}</span>
-                </th>
-                <th>
-                  <strong>Data de criação:</strong>
-                  <span>{{ date }}</span>
+                  <strong class="username">Criado por </strong>
+                  <span class="data">{{ name }}</span> <br>
+                  <strong class="date">Em </strong>
+                  <span class="data">{{ date }}</span>
                 </th>
               </tr>
             </thead>
@@ -36,12 +34,10 @@
             <thead>
               <tr>
                 <th>
-                  <strong>Resposta de:</strong>
-                  <span>{{ dataComments.by }}</span>
-                </th>
-                <th>
-                  <strong>Data:</strong>
-                  <span>{{ dataComments.date }}</span>
+                  <strong class="username">Resposta de </strong>
+                  <span class="data">{{ dataComments.by }}</span> <br>
+                  <strong class="date">Em </strong>
+                  <span class="data">{{ dataComments.date }}</span>
                 </th>
               </tr>
             </thead>
@@ -181,6 +177,9 @@ tbody{
   text-align: center;
   background-color: black;
 }
+th{
+  padding-left: 1em;
+}
 td{
   max-width: 40em;
   text-align: center;
@@ -188,7 +187,7 @@ td{
   border-style: solid;
   border-radius: 0.6em;
   border-width: 0.1em;
-  border-color: aqua;
+  border-color:  rgba(100, 2, 223, 1) ;
 }
 .session-topic{
   position:relative;
@@ -199,7 +198,7 @@ td{
 .topic-description-container table{
  background-color: black;
  border-style: solid;
- border-color: aqua;
+ border-color: rgba(100, 2, 223, 1) ;
  border-width: 0.1em;
  border-radius: 0.8em;
  min-width: 50em; 
@@ -211,12 +210,27 @@ td{
 }
 
 .comment-box-container table{
+background-color: black;
+ border-style: solid;
+ border-color: rgba(100, 2, 223, 1) ;
+ border-width: 0.1em;
+ border-radius: 0.8em;
  min-width: 50em; 
  min-height: 5em;
  max-width: 50em;
  max-height: none; 
  word-wrap: break-word;
  word-break: keep-all;
+}
+.data{
+  font-size: 0.8em;
+  color:  rgba(100, 2, 223, 1) ;
+}
+.username, .date{
+  font-size: 0.8em;
+}
+.title-topic{
+  font-size: 1.2em;
 }
 </style>
   
