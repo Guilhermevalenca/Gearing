@@ -88,9 +88,11 @@ methods: {
     })
     .then(response => {
       if(response.data.success){
+        let newDate = new Date()
         this.comments.push({
           by: this.$store.state.user.username,
-          comment: this.newComments
+          comment: this.newComments,
+          date: `${newDate.getFullYear()}-0${(newDate.getMonth() + 1)}-${newDate.getDate()} ${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getSeconds()}`
         })
         this.newComments = '';
         this.showAddComment = false;
