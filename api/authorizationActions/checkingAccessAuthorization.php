@@ -12,12 +12,11 @@ $switchingSession = json_decode($json,true);
 //changing session to user session
 session_write_close();
 session_id($switchingSession['id']);
+session_set_cookie_params(7 * 24 * 60 * 60); //time set in seconds
 session_start();
 
-if(!isset($_SESSION['AUTH']) || !$_SESSION['AUTH']){
-    exit();
-}
-if($_SERVER['REQUEST_METHOD'] != 'POST'){
+if( (!isset($_SESSION['AUTH']) || !$_SESSION['AUTH']) && $_SERVER['REQUEST_METHOD'] != 'POST'){
+    session_destroy();
     exit();
 }
 

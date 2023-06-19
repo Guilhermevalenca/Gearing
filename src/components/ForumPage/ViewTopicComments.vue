@@ -15,6 +15,10 @@
                   <strong>Criado por:</strong>
                   <span>{{ name }}</span>
                 </th>
+                <th>
+                  <strong>Data de criação:</strong>
+                  <span>{{ date }}</span>
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -34,6 +38,10 @@
                 <th>
                   <strong>Resposta de:</strong>
                   <span>{{ dataComments.by }}</span>
+                </th>
+                <th>
+                  <strong>Data:</strong>
+                  <span>{{ dataComments.date }}</span>
                 </th>
               </tr>
             </thead>
@@ -133,7 +141,8 @@ export default {
     title: String,
     email: String,
     description: String,
-    name: String
+    name: String,
+    date: Date
   }
 };
 </script>

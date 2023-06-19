@@ -120,16 +120,16 @@ export default{
                     new Sortable(element, {
                         group: 'shared'
                     })
-                })
+                });
                 const sortableAll = document.querySelectorAll('.schedule-subjects');
                 sortableAll.forEach(element => {
                     new Sortable(element, {
                         group: 'shared'
                     })
-                })
+                });
                 new Sortable(this.$refs.newSubjects, {
                     group: 'shared'
-                })
+                });
                 this.actionSortable = false
             }
         },
@@ -240,8 +240,6 @@ export default{
     display: flex;
     justify-content: center;
     border-style: solid;
-    height: 5em;
-    flex-wrap: wrap;
 }
 .store-box-newSubjects{
     margin: 0px;

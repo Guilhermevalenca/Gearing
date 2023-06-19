@@ -65,5 +65,5 @@ INSERT INTO GEA_TOPIC (top_title,top_description,top_user_email,top_user_name)
 VALUES ('titulo de teste','apenas uma descrição qualquer para realizar um teste qualquer', 'gearing@gmail.com','gearing');
 /* INSERINDO COMENTARIO POR PADRÃO */
 INSERT INTO GEA_COMMENTS (com_message,com_user_name,com_top_title,com_user_email) 
-VALUES ('apenas uma mensagem de texto','gearing','titulo de teste','gearing@gmail.com');
+VALUES ('apenas uma mensagem de texto','gui','titulo de teste','gui@gmail.com');
 SELECT * FROM GEA_USER;

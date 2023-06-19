@@ -23,7 +23,7 @@ export default{
   }
 }
 </script>
-<style>
+<style scoped>
 .congratulations{
   font-family: "Share Tech Mono", sans-serif;
   color: aqua;

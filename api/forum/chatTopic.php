@@ -10,7 +10,7 @@ $email = $dataTopic['searchByEmail'];
 $title = $dataTopic['searchByTitle'];
 $response = [];
 try{
-    $sql = "SELECT com_message,com_user_name FROM GEA_COMMENTS 
+    $sql = "SELECT com_message,com_user_name,com_date FROM GEA_COMMENTS 
             WHERE com_top_title = '$title';";
     $result = $conn->query($sql);
     $response['comments'] = [];
