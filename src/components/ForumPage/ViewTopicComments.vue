@@ -2,16 +2,17 @@
     <div class="session">
       <button @click="() => {showAddComment = true}">adicionar comentario</button>
       <button class="session-close" @click="closeComment()">X</button>
-        <section class="session-topic">
-          <h4>Topico e descrição</h4>
+      <h1>.Tópico.</h1>
+      <section class="session-topic">
+          <div class="topic-description-container">      
           <table>
             <thead>
               <tr>
                 <th>{{ title }}</th>
               </tr>
               <tr>
-                <th>
-                  <strong>By:</strong>
+                <th class="nickname">
+                  <strong>Criado por:</strong>
                   <span>{{ name }}</span>
                 </th>
               </tr>
@@ -22,14 +23,16 @@
               </tr>
             </tbody>
           </table>
+        </div>
         </section>
+        <h1>.Respostas.</h1>
         <section class="session-comment">
-          <h4>Sessão de comentarios</h4>
-          <table v-for="(dataComments, index) in comments" :key="index">
+          <div class="comment-box-container">
+          <table class="comment-box" v-for="(dataComments, index) in comments" :key="index">
             <thead>
               <tr>
                 <th>
-                  <strong>By:</strong>
+                  <strong>Resposta de:</strong>
                   <span>{{ dataComments.by }}</span>
                 </th>
               </tr>
@@ -42,6 +45,7 @@
               </tr>
             </tbody>
           </table>
+        </div>
         </section>
         <section class="window-interaction" v-if="showAddComment">
           <div class="window-content">
@@ -135,6 +139,7 @@ export default {
 </script>
   
 <style scoped>
+
 .window-interaction {
   position: fixed;
   top: 0;
@@ -154,6 +159,55 @@ export default {
   position: relative;
   left: 15em;
   width: 2.5em;
+}
+.session-comment{
+  display: inline-block;
+  position:relative;
+  text-align: justify;
+}
+h1{
+  font-size: 1.2em;
+}
+tbody{
+  text-align: center;
+  background-color: black;
+}
+td{
+  max-width: 40em;
+  text-align: center;
+  padding: 1em;
+  border-style: solid;
+  border-radius: 0.6em;
+  border-width: 0.1em;
+  border-color: aqua;
+}
+.session-topic{
+  position:relative;
+  align-content: center;
+  padding-top: 1em;
+  padding-bottom: 2em;
+}
+.topic-description-container table{
+ background-color: black;
+ border-style: solid;
+ border-color: aqua;
+ border-width: 0.1em;
+ border-radius: 0.8em;
+ min-width: 50em; 
+ min-height: 5em;
+ max-width: 50em;
+ max-height: none; 
+ word-wrap: break-word;
+ word-break: keep-all;
+}
+
+.comment-box-container table{
+ min-width: 50em; 
+ min-height: 5em;
+ max-width: 50em;
+ max-height: none; 
+ word-wrap: break-word;
+ word-break: keep-all;
 }
 </style>
   
