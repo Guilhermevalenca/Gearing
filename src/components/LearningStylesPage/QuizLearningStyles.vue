@@ -23,25 +23,25 @@
   <label>
   Lidar com meus sentimentos - Gerenciar e compreender as emoções que surgem durante o processo de aprendizagem
   </label><br>
-    <input :class="{'equal':classEqual[0]}" v-model="question.question1[0]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[0]}" v-model.number="question.question1[0]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question1[0] }}</span>    
 <br>
   <label>
   Desenvolver idéias
   </label><br>
-    <input :class="{'equal':classEqual[0]}" v-model="question.question1[1]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[0]}" v-model.number="question.question1[1]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question1[1] }}</span>    
 <br>
   <label>
   Práticar
   </label><br>
-    <input :class="{'equal':classEqual[0]}" v-model="question.question1[2]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[0]}" v-model.number="question.question1[2]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question1[2] }}</span>    
 <br>
   <label>
   Observar e ouvir
   </label><br>
-    <input :class="{'equal':classEqual[0]}" v-model="question.question1[3]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[0]}" v-model.number="question.question1[3]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question1[3] }}</span>  
 <br><br>
 
@@ -49,25 +49,25 @@
   <label>
   Ouço e observo com atenção
   </label><br>
-    <input :class="{'equal':classEqual[1]}" v-model="question.question2[0]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[1]}" v-model.number="question.question2[0]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question2[0] }}</span>    
 <br>
   <label>
   Utilizo racioncínio lógico
 </label><br>
-  <input :class="{'equal':classEqual[1]}" v-model="question.question2[1]" type="range"  min="1" max="4">
+  <input :class="{'equal':classEqual[1]}" v-model.number="question.question2[1]" type="range"  min="1" max="4">
   <span :class="valueColor">{{ question.question2[1] }}</span>
 <br>
   <label>
   Me baseio em meus palpites e impressões
   </label><br>
-  <input :class="{'equal':classEqual[1]}" v-model="question.question2[2]" type="range"  min="1" max="4">
+  <input :class="{'equal':classEqual[1]}" v-model.number="question.question2[2]" type="range"  min="1" max="4">
     <span :class="valueColor">{{ question.question2[2] }}</span>    
 <br>
   <label>
   Executando o que aprendi
   </label><br>
-    <input :class="{'equal':classEqual[1]}" v-model="question.question2[3]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[1]}" v-model.number="question.question2[3]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question2[3] }}</span>  
 <br><br>
 
@@ -76,25 +76,25 @@
   <label>
   Buscar explicações para os tópicos estudados
   </label><br>
-    <input :class="{'equal':classEqual[2]}" v-model="question.question3[0]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[2]}" v-model.number="question.question3[0]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question3[0] }}</span>    
 <br>
   <label>
   Ser responsável a cerca das coisas - disciplinado(a)
   </label><br>
-    <input :class="{'equal':classEqual[2]}" v-model="question.question3[1]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[2]}" v-model.number="question.question3[1]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question3[1] }}</span>    
 <br>
   <label>
   Ficar quieto e me concentrar
   </label><br>
-    <input :class="{'equal':classEqual[2]}" v-model="question.question3[2]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[2]}" v-model.number="question.question3[2]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question3[2] }}</span>    
 <br>
   <label>
   Ter sentimentos e reações fortes
   </label><br>
-    <input :class="{'equal':classEqual[2]}" v-model="question.question3[3]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[2]}" v-model.number="question.question3[3]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question3[3] }}</span>  
 <br><br>
 
@@ -103,25 +103,25 @@
   <label>
   Sentindo (raiva, tristeza, admiração, curiosidade, etc.)
   </label><br>
-    <input :class="{'equal':classEqual[3]}" v-model="question.question4[0]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[3]}" v-model.number="question.question4[0]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question4[0] }}</span>    
 <br>
   <label>
   Fazendo
   </label><br>
-    <input :class="{'equal':classEqual[3]}" v-model="question.question4[1]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[3]}" v-model.number="question.question4[1]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question4[1] }}</span>    
 <br>
   <label>
   Observando
   </label><br>
-    <input :class="{'equal':classEqual[3]}" v-model="question.question4[2]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[3]}" v-model.number="question.question4[2]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question4[2] }}</span>    
 <br>
   <label>
   Pensando
   </label><br>
-    <input :class="{'equal':classEqual[3]}" v-model="question.question4[3]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[3]}" v-model.number="question.question4[3]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question4[3] }}</span>  
 <br><br>
 
@@ -130,25 +130,25 @@
   <label>
   Me abrir a novas experiências
   </label><br>
-    <input :class="{'equal':classEqual[4]}" v-model="question.question5[0]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[4]}" v-model.number="question.question5[0]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question5[0] }}</span>    
 <br>
   <label>
   Examinar todos os ângulos da questão
   </label><br>
-    <input :class="{'equal':classEqual[4]}" v-model="question.question5[1]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[4]}" v-model.number="question.question5[1]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question5[1] }}</span>    
 <br>
   <label>
   Analisar as coisas - Desdobrá-las em partes para entendê-las/resolvê-las
   </label><br>
-    <input :class="{'equal':classEqual[4]}" v-model="question.question5[2]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[4]}" v-model.number="question.question5[2]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question5[2] }}</span>    
 <br>
   <label>
   Testar as coisas (Práticas, métodos, etc.)
   </label><br>
-    <input :class="{'equal':classEqual[4]}" v-model="question.question5[3]" type="range"  min="1" max="4"> 
+    <input :class="{'equal':classEqual[4]}" v-model.number="question.question5[3]" type="range"  min="1" max="4"> 
       <span :class="valueColor">{{ question.question5[3] }}</span>  
 <br><br>
 
@@ -157,25 +157,25 @@
   <label>
   Alguém que prefere observar
   </label><br>
-    <input :class="{'equal':classEqual[5]}" v-model="question.question6[0]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[5]}" v-model.number="question.question6[0]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question6[0] }}</span>    
 <br>
   <label>
   Ativo(a) - Utilizo mais de um método de estudo
   </label><br>
-    <input :class="{'equal':classEqual[5]}" v-model="question.question6[1]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[5]}" v-model.number="question.question6[1]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question6[1] }}</span>    
 <br>
   <label>
   Intuitivo(a) - Entender quais são as suas dificuldades e conseguir identificar o que se encaixa melhor para o seu processo de aprendizagem
   </label><br>
-    <input :class="{'equal':classEqual[5]}" v-model="question.question6[2]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[5]}" v-model.number="question.question6[2]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question6[2] }}</span>    
 <br>
   <label>
   Lógico(a) - Utilizar a lógica e a razão para entender o tema abordado
   </label><br>
-    <input :class="{'equal':classEqual[5]}" v-model="question.question6[3]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[5]}" v-model.number="question.question6[3]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question6[3] }}</span>  
 <br><br>
 
@@ -184,25 +184,25 @@
   <label>
   Observação
   </label><br>
-    <input :class="{'equal':classEqual[6]}" v-model="question.question7[0]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[6]}" v-model.number="question.question7[0]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question7[0] }}</span>    
 <br>
   <label>
   Interações pessoais - Adquirir conhecimento por meio de interações com outras pessoas
   </label><br>
-    <input :class="{'equal':classEqual[6]}" v-model="question.question7[1]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[6]}" v-model.number="question.question7[1]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question7[1] }}</span>    
 <br>
   <label>
   Teorias racionais - Modelos conceituais baseados em princípios lógicos e raciocínio dedutivo
   </label><br>
-    <input :class="{'equal':classEqual[6]}" v-model="question.question7[2]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[6]}" v-model.number="question.question7[2]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question7[2] }}</span>    
 <br>
   <label>
   Oportunidades para experimentar e práticar
   </label><br>
-    <input :class="{'equal':classEqual[6]}" v-model="question.question7[3]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[6]}" v-model.number="question.question7[3]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question7[3] }}</span>  
 <br><br>
 
@@ -211,25 +211,25 @@
   <label>
   Gosto de ver o resultado do meu trabalho
   </label><br>
-    <input :class="{'equal':classEqual[7]}" v-model="question.question8[0]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[7]}" v-model.number="question.question8[0]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question8[0] }}</span>  
   <br>
   <label>
   Me interesso em ter/conhecer idéias e teorias
   </label><br>
-    <input :class="{'equal':classEqual[7]}" v-model="question.question8[1]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[7]}" v-model.number="question.question8[1]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question8[1] }}</span>    
 <br>
   <label>
   Penso antes de agir - planejar-se
   </label><br>
-    <input :class="{'equal':classEqual[7]}" v-model="question.question8[2]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[7]}" v-model.number="question.question8[2]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question8[2] }}</span>    
 <br>
   <label>
   Sinto-me pessoalmente envolvido(a) nos assuntos
   </label><br>
-    <input :class="{'equal':classEqual[7]}" v-model="question.question8[3]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[7]}" v-model.number="question.question8[3]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question8[3] }}</span>  
 <br><br>
 
@@ -238,25 +238,25 @@
   <label>
   Minhas observações
   </label><br>
-    <input :class="{'equal':classEqual[8]}" v-model="question.question9[0]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[8]}" v-model.number="question.question9[0]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question9[0] }}</span>    
 <br>
   <label>
   Minhas impressões
   </label><br>
-    <input :class="{'equal':classEqual[8]}" v-model="question.question9[1]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[8]}" v-model.number="question.question9[1]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question9[1] }}</span>   
 <br>
   <label>
   Posso experimentar coisas por mim mesmo(a)
   </label><br>
-    <input :class="{'equal':classEqual[8]}" v-model="question.question9[2]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[8]}" v-model.number="question.question9[2]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question9[2] }}</span>    
 <br>
   <label>
   Me apóio em minhas idéias
   </label><br>
-    <input :class="{'equal':classEqual[8]}" v-model="question.question9[3]" type="range"  min="1" max="4">
+    <input :class="{'equal':classEqual[8]}" v-model.number="question.question9[3]" type="range"  min="1" max="4">
       <span :class="valueColor">{{ question.question9[3] }}</span>  
 <br><br>
 
@@ -265,25 +265,25 @@
   <label>
   Compenetrado(a) - muito atento, concentrado
 </label><br>
-  <input :class="{'equal':classEqual[9]}"  v-model="question.question10[0]" type="range"  min="1" max="4">
+  <input :class="{'equal':classEqual[9]}"  v-model.number="question.question10[0]" type="range"  min="1" max="4">
     <span :class="valueColor">{{ question.question10[0] }}</span>
   <br>
 <label>
   Fléxivel
 </label><br>
-  <input :class="{'equal':classEqual[9]}"  v-model="question.question10[1]" type="range"  min="1" max="4">    
+  <input :class="{'equal':classEqual[9]}"  v-model.number="question.question10[1]" type="range"  min="1" max="4">    
     <span :class="valueColor">{{ question.question10[1] }}</span>
   <br>
   <label>
   Responsável
 </label><br>
-  <input :class="{'equal':classEqual[9]}"  v-model="question.question10[2]" type="range"  min="1" max="4">
+  <input :class="{'equal':classEqual[9]}"  v-model.number="question.question10[2]" type="range"  min="1" max="4">
     <span :class="valueColor">{{ question.question10[2] }}</span>
   <br>
   <label>
   Racional
 </label><br>
-  <input :class="{'equal':classEqual[9]}"  v-model="question.question10[3]" type="range"  min="1" max="4">
+  <input :class="{'equal':classEqual[9]}"  v-model.number="question.question10[3]" type="range"  min="1" max="4">
     <span :class="valueColor">{{ question.question10[3] }}</span>
 <br><br>
 
@@ -292,25 +292,25 @@
   <label>
   Me envolver totalmente
 </label><br>
-  <input :class="{'equal':classEqual[10]}"  v-model="question.question11[0]" type="range"  min="1" max="4">    
+  <input :class="{'equal':classEqual[10]}"  v-model.number="question.question11[0]" type="range"  min="1" max="4">    
     <span :class="valueColor">{{ question.question11[0] }}</span>
   <br>
   <label>
   Gostar de observar
 </label><br>
-  <input :class="{'equal':classEqual[10]}"  v-model="question.question11[1]" type="range"  min="1" max="4">  
+  <input :class="{'equal':classEqual[10]}"  v-model.number="question.question11[1]" type="range"  min="1" max="4">  
     <span :class="valueColor">{{ question.question11[1] }}</span>
   <br>
   <label>
   Avaliar as coisas
 </label><br>
-  <input :class="{'equal':classEqual[10]}"  v-model="question.question11[2]" type="range"  min="1" max="4">
+  <input :class="{'equal':classEqual[10]}"  v-model.number="question.question11[2]" type="range"  min="1" max="4">
     <span :class="valueColor">{{ question.question11[2] }}</span>
   <br>
   <label>
    Estar ativo(a)
   </label><br>
-   <input :class="{'equal':classEqual[10]}"  v-model="question.question11[3]" type="range"  min="1" max="4">
+   <input :class="{'equal':classEqual[10]}"  v-model.number="question.question11[3]" type="range"  min="1" max="4">
     <span :class="valueColor">{{ question.question11[3] }}</span>
 <br><br>
 
@@ -319,25 +319,25 @@
   <label>
   Analiso as idéias
 </label><br>
-  <input :class="{'equal':classEqual[11]}"  v-model="question.question12[0]" type="range"  min="1" max="4">  
+  <input :class="{'equal':classEqual[11]}"  v-model.number="question.question12[0]" type="range"  min="1" max="4">  
     <span :class="valueColor">{{ question.question12[0] }}</span>
   <br>
   <label>
   Sou receptivo(a) e mente aberta
 </label><br>
-  <input :class="{'equal':classEqual[11]}"  v-model="question.question12[1]" type="range"  min="1" max="4">
+  <input :class="{'equal':classEqual[11]}"  v-model.number="question.question12[1]" type="range"  min="1" max="4">
     <span :class="valueColor">{{ question.question12[1] }}</span>
   <br>
   <label>
   Sou cuidadoso(a) - Tomar decisões para garantir que a aprendizagem aconteça de forma precisa, sem erros
 </label><br>
-  <input :class="{'equal':classEqual[11]}"  v-model="question.question12[2]" type="range"  min="1" max="4">
+  <input :class="{'equal':classEqual[11]}"  v-model.number="question.question12[2]" type="range"  min="1" max="4">
     <span :class="valueColor">{{ question.question12[2] }}</span>
   <br>
   <label>
   Sou prático(a) - Buscar formas de tornar o aprendizado mais significativo e relevante, e aplico o que está sendo estudado na prática
 </label><br>
-  <input :class="{'equal':classEqual[11]}"  v-model="question.question12[3]" type="range"  min="1" max="4">
+  <input :class="{'equal':classEqual[11]}"  v-model.number="question.question12[3]" type="range"  min="1" max="4">
     <span :class="valueColor">{{ question.question12[3] }}</span>
 <br><br>
       <button @click.prevent='result()'>Calcular resultado</button>
@@ -387,59 +387,60 @@ export default{
                   }
                 })
                 return
-              }else{
-                let EC = 
-               parseInt(this.question.question1[0]) 
-             + parseInt(this.question.question2[2]) 
-             + parseInt(this.question.question3[3]) 
-             + parseInt(this.question.question4[0]) 
-             + parseInt(this.question.question5[0])
-             + parseInt(this.question.question6[2])
-             + parseInt(this.question.question7[1])
-             + parseInt(this.question.question8[3])
-             + parseInt(this.question.question9[1])
-             + parseInt(this.question.question10[1])
-             + parseInt(this.question.question11[0])
-             + parseInt(this.question.question12[1]);
-             let CA = 
-               parseInt(this.question.question1[1]) 
-             + parseInt(this.question.question2[1]) 
-             + parseInt(this.question.question3[0]) 
-             + parseInt(this.question.question4[3]) 
-             + parseInt(this.question.question5[2])
-             + parseInt(this.question.question6[3])
-             + parseInt(this.question.question7[2])
-             + parseInt(this.question.question8[1])
-             + parseInt(this.question.question9[3])
-             + parseInt(this.question.question10[3])
-             + parseInt(this.question.question11[2])
-             + parseInt(this.question.question12[0]);
-             let OR = 
-              parseInt(this.question.question1[3]) 
-             + parseInt(this.question.question2[0]) 
-             + parseInt(this.question.question3[2]) 
-             + parseInt(this.question.question4[2]) 
-             + parseInt(this.question.question5[1])
-             + parseInt(this.question.question6[0])
-             + parseInt(this.question.question7[0])
-             + parseInt(this.question.question8[2])
-             + parseInt(this.question.question9[0])
-             + parseInt(this.question.question10[0])
-             + parseInt(this.question.question11[1])
-             + parseInt(this.question.question12[2]);
-             let EA = 
-               parseInt(this.question.question1[2]) 
-             + parseInt(this.question.question2[3]) 
-             + parseInt(this.question.question3[1]) 
-             + parseInt(this.question.question4[1]) 
-             + parseInt(this.question.question5[3])
-             + parseInt(this.question.question6[1])
-             + parseInt(this.question.question7[3])
-             + parseInt(this.question.question8[0])
-             + parseInt(this.question.question9[2])
-             + parseInt(this.question.question10[2])
-             + parseInt(this.question.question11[3])
-             + parseInt(this.question.question12[3]);
+              }
+            }
+              let EC = 
+                this.question.question1[0] 
+              + this.question.question2[2] 
+              + this.question.question3[3] 
+              + this.question.question4[0] 
+              + this.question.question5[0]
+              + this.question.question6[2]
+              + this.question.question7[1]
+              + this.question.question8[3]
+              + this.question.question9[1]
+              + this.question.question10[1]
+              + this.question.question11[0]
+              + this.question.question12[1];
+              let CA = 
+                this.question.question1[1] 
+              + this.question.question2[1] 
+              + this.question.question3[0] 
+              + this.question.question4[3] 
+              + this.question.question5[2]
+              + this.question.question6[3]
+              + this.question.question7[2]
+              + this.question.question8[1]
+              + this.question.question9[3]
+              + this.question.question10[3]
+              + this.question.question11[2]
+              + this.question.question12[0];
+              let OR = 
+                this.question.question1[3] 
+              + this.question.question2[0] 
+              + this.question.question3[2] 
+              + this.question.question4[2] 
+              + this.question.question5[1]
+              + this.question.question6[0]
+              + this.question.question7[0]
+              + this.question.question8[2]
+              + this.question.question9[0]
+              + this.question.question10[0]
+              + this.question.question11[1]
+              + this.question.question12[2];
+              let EA = 
+                this.question.question1[2] 
+              + this.question.question2[3] 
+              + this.question.question3[1] 
+              + this.question.question4[1] 
+              + this.question.question5[3]
+              + this.question.question6[1]
+              + this.question.question7[3]
+              + this.question.question8[0]
+              + this.question.question9[2]
+              + this.question.question10[2]
+              + this.question.question11[3]
+              + this.question.question12[3];
 
       
               let divergente = (EC + OR);
@@ -494,16 +495,8 @@ export default{
                 })
 							}
 
-               console.log("EC:",EC,"CA:",CA,"OR:",OR,"EA:",EA)
-
-              
-          
-              }
-            }
-        
-          
-            }
-            
+              console.log("EC:",EC,"CA:",CA,"OR:",OR,"EA:",EA)
+            } 
         },
         watch :{
           question :{

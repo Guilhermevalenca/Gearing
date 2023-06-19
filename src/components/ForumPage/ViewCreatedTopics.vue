@@ -17,8 +17,8 @@
         </div>
     </section>
     <section v-else>
-        <Comments :name="comments.name" :title="comments.title" :email="comments.email" :description="comments.description" 
-        :date="comments.date" @closeComments="hideTopicComments()" />
+        <Comments :name="viewComments.name" :title="viewComments.title" :email="viewComments.email" :description="viewComments.description" 
+        :date="viewComments.date" @closeComments="hideTopicComments()" />
     </section>
 </template>
 <script>
@@ -31,7 +31,7 @@ export default{
         return {
             topics: [],
             showComments: false,
-            comments: {
+            viewComments: {
                 title: '',
                 email: '',
                 description: '',
@@ -45,11 +45,11 @@ export default{
         },
         showTopicComments(newTitle,newEmail,newDescription,newName,newDate) {
             this.showComments = true;
-            this.comments.title = newTitle;
-            this.comments.email = newEmail;
-            this.comments.description = newDescription;
-            this.comments.name = newName;
-            this.comments.date = newDate;
+            this.viewComments.title = newTitle;
+            this.viewComments.email = newEmail;
+            this.viewComments.description = newDescription;
+            this.viewComments.name = newName;
+            this.viewComments.date = newDate;
         },
         updateTopics() {
             axios.get('http://localhost:8000/forum/allTopic.php')

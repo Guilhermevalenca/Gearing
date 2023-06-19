@@ -7,7 +7,7 @@
           <thead>
             <tr>
               <th class="title-topic">{{ title }}</th>
-              <button class="add-comment" @click="() => {showAddComment = true}">Responder</button>
+              <button class="add-comment" @click="() => {showWindow.addComment = true}">Responder</button>
               <button class="session-close" @click="closeComment()">✖</button>
             </tr>
             <tr>
@@ -39,6 +39,10 @@
                 <strong class="date">Em </strong>
                 <span class="data">{{ dataComments.date }}</span>
               </th>
+              <th>
+                <button @click="() => {showWindow.EditComment.show = true; showWindow.EditComment.id = dataComments.id}" 
+                v-if="dataComments.email == this.$store.state.user.email">Editar comentario</button>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -51,13 +55,18 @@
         </table>
       </div>
       </section>
-      <section class="window-interaction" v-if="showAddComment">
+      <section class="window-interaction" v-if="showWindow.addComment || showWindow.EditComment.show">
         <div class="window-content">
-          <button class="window-close" @click="() => {showAddComment = false}">X</button>
-          <h2>Adicionar comentario</h2>
-          <h4>aqui voce adiciona seu comentario sobre o assunto {{ title }}</h4>
-          <textarea v-model="newComments" cols="30" rows="10"></textarea><br>
-          <button @click="addComment()">Adicionar comentario</button>        
+          <button class="window-close" @click="() => {showWindow.addComment = false; showWindow.EditComment.show = false}">X</button>
+          <section v-if="showWindow.addComment">
+            <h2>Adicionar comentario</h2>
+            <h4>aqui voce adiciona seu comentario sobre o assunto {{ title }}</h4>
+            <textarea v-model="newComments" cols="30" rows="10"></textarea><br>
+            <button @click="addComment()">Adicionar comentario</button>
+          </section>
+          <section v-if="showWindow.EditComment.show">
+            <EditComment @closeWindow="() => {showWindow.EditComment.show = false; showUpdatedComments()}" :title="title" :id="showWindow.EditComment.id"/>
+          </section>        
         </div>
       </section>
   </div>            
@@ -66,13 +75,21 @@
 <script>
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import EditComment from './EditComment.vue';
 
 export default {
+  components: {EditComment},
   data() {
       return {
           newComments: '',
           comments: [],
-          showAddComment: false
+          showWindow: {
+            addComment: false,
+            EditComment: {
+              show: false,
+              id: ''
+            }
+          }
       }
   },
 methods: {
@@ -88,14 +105,9 @@ methods: {
     })
     .then(response => {
       if(response.data.success){
-        let newDate = new Date()
-        this.comments.push({
-          by: this.$store.state.user.username,
-          comment: this.newComments,
-          date: `${newDate.getFullYear()}-0${(newDate.getMonth() + 1)}-${newDate.getDate()} ${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getSeconds()}`
-        })
+        this.showUpdatedComments()
         this.newComments = '';
-        this.showAddComment = false;
+        this.showWindow.addComment = false;
       }else{
         console.log(response);
       }
@@ -103,37 +115,40 @@ methods: {
     .catch(error => {
       console.log(error)
     })
-  }    
+  },
+  showUpdatedComments() {
+    Swal.fire({
+      title: 'carregando comentarios',
+      willOpen: () => {
+        Swal.showLoading();
+      },
+      willClose: () => {
+        Swal.hideLoading();
+      }
+    })
+    axios.post('http://localhost:8000/forum/chatTopic.php',{
+      id: localStorage.getItem('idsession'),
+      searchByTitle: this.title,
+      searchByEmail: this.email
+    })
+    .then(response => {
+      if(response.data.success){
+        Swal.close();
+        this.comments = response.data.comments
+      }else{
+        Swal.fire({
+          title: 'error'
+        });
+        console.log(response.data.error);
+      }
+    })
+    .catch (error => {
+      console.log(error)
+    })
+  } 
 },
 created() {
-  Swal.fire({
-    title: 'carregando comentarios',
-    willOpen: () => {
-      Swal.showLoading();
-    },
-    willClose: () => {
-      Swal.hideLoading();
-    }
-  })
-  axios.post('http://localhost:8000/forum/chatTopic.php',{
-    id: localStorage.getItem('idsession'),
-    searchByTitle: this.title,
-    searchByEmail: this.email
-  })
-  .then(response => {
-    if(response.data.success){
-      Swal.close();
-      this.comments = response.data.comments
-    }else{
-      Swal.fire({
-        title: 'error'
-      });
-      console.log(response.data.error);
-    }
-  })
-  .catch (error => {
-    console.log(error)
-  })
+  this.showUpdatedComments()
 },
 props: {
   title: String,
