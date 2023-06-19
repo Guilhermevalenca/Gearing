@@ -87,7 +87,7 @@ export default{
   watch: {
     actionAuthUser: {
       handler() {
-        if(actionAuthUser != '/'){
+        if(this.actionAuthUser != '/'){
           this.$authUser();
         }else{
           this.$checkAuthentication();
