@@ -28,6 +28,7 @@ export default{
   data() {
     return {
       mountPage: false,
+      actionAuthUser: this.$route.path,
       tryingConnection: () => {
         Swal.fire({
           title: 'Conectando-se ao servidor',
@@ -82,6 +83,16 @@ export default{
   beforeMount() {
     this.tryingConnection()
     this.establishingConnection()
+  },
+  watch: {
+    actionAuthUser: {
+      handler() {
+        if(actionAuthUser != '/'){
+          this.$authUser();
+        }
+      },
+      deep: true
+    }
   }
 }
 </script>

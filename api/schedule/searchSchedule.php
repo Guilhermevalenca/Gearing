@@ -30,8 +30,8 @@ $response['turn'] = [];
 
 try{
     $sql = "SELECT sub_hour, sub_day, sub_name, sche_shifts FROM GEA_SUBJECT,GEA_SCHEDULE 
-    WHERE sub_sche_user_email = '$email' AND sub_sche_title = '$title' AND sche_title = sub_sche_title AND
-    sche_user_email = sub_sche_user_email;";
+    WHERE sche_user_email = '$email' AND sche_title = '$title' AND sub_sche_title = sche_title AND
+    sub_sche_user_email = sche_user_email;";
     $result = $conn->query($sql);
     if(isset($result)){
         foreach($result as $data){

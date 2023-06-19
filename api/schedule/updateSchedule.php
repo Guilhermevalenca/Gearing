@@ -29,22 +29,26 @@ try{
     echo json_encode($response);
     exit();
 }
+$sql = "INSERT INTO GEA_SUBJECT (sub_name, sub_day, sub_hour, sub_sche_title, sub_sche_user_email)
+        VALUE ";
 
-//update schedule part 2
-foreach($updateSubjects as $row => $listSubjects){
-    foreach($listSubjects as $column => $subject){
+foreach($updateSubjects as $row => $listSubjects) {
+    foreach($listSubjects as $column => $subject) {
         if($subject){
-            try{
-                $sql = "INSERT INTO GEA_SUBJECT (sub_name, sub_day, sub_hour, sub_sche_title, sub_sche_user_email) 
-                VALUE ('$subject','$column','$row','$title','$email');";
-                $execute = $conn->exec($sql);
-            }
-            catch (PDOException $e){
-                $response['saveSubjectError'] = "true";
-                $response['problem'] = $e->getMessage();
-            }
-        }
+            $sql .= "('$subject','$column','$row','$title','$email'),";
+        }        
     }
 }
-$response['success'] = true;
+$sql = substr($sql,0,-1);
+$sql .= ";";
+try{
+    $sql = "INSERT INTO GEA_SUBJECT (sub_name, sub_day, sub_hour, sub_sche_title, sub_sche_user_email) 
+    VALUE ('$subject','$column','$row','$title','$email');";
+    $execute = $conn->exec($sql);
+    $response['success'] = true;
+}
+catch (PDOException $e){
+    $response['saveSubjectError'] = "true";
+    $response['problem'] = $e->getMessage();
+}
 echo json_encode($response);
