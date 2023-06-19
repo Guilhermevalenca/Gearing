@@ -1,21 +1,18 @@
 <template>
   <div>
-    <Presentation />
+    <AccessForm />
   </div>
   <div>
-    <AccessForm />
+    <QuizLearningStyles />
   </div>
 </template>
 
 <script>
-import Presentation from '@/components/homePage/PresentationGearingUp.vue'
-import AccessForm from '@/components/homePage/AccessForm.vue'
+import AccessForm from '@/components/homePage/AccessForm.vue';
+import QuizLearningStyles from '@/components/LearningStylesPage/QuizLearningStyles.vue';
 
 export default {
-  components: {
-    Presentation,
-    AccessForm,
-  },
+  components: {AccessForm, QuizLearningStyles},
   data() {
     return{
       showForm: true,

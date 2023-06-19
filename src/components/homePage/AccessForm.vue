@@ -1,5 +1,5 @@
 <template>
- <div class='box' >
+ <div :class="{'showing-forms' : actionsForms}">
 <section>
 <div v-if="showAlert">
     <AlertForm :class="{'form-alert-success' : createSuccess, 'form-alert-failed': failedLogin}" @close="closeAlert()"> 
@@ -47,12 +47,12 @@
 
 </div>
 
-<section>
-    <div>
+<section class="showing-options">
+    <div :class="{'showing-forms-button' : actionsForms}">
         <button @click="() => {showForm = !showForm; actionsForms = true}">{{ showForm ? "Realizar login" : "Criar uma nova conta" }}</button>
     </div>
-    <div v-if="!actionsForms">
-        <button @click="() => {actionsForms = true;}">Criar uma nova conta</button>
+    <div>
+        <button @click="() => {actionsForms = !actionsForms;}">{{ actionsForms ? "sair" : "Criar uma nova conta" }}</button>
     </div>
 </section>
 </div>
@@ -156,34 +156,52 @@ export default{
 </script>
 
 <style scoped>
-    label{
-    color:#fff;   
-    }
-    label, div{
-        display: grid;
-        justify-content: center;
-        text-align: center;
-    }
-    input{
-        border-style: solid;
-        border-radius: 8px;
-        border-color: #000;
-        height: 1.5em;
-        width: 25em;
-    }
-    input::-webkit-input-placeholder{
-        text-align: center;
-    }
-    input::-moz-placeholder{
-        text-align: center;
-    }
-    .form-alert-success{
-        background-color: green;
-    }
-    .form-alert-failed{
-        background-color: red;
-    }
-    .form-email, .form-password{
-        color: red;
-    }
+label{
+color:#fff;   
+}
+label, div{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+input{
+    border-style: solid;
+    border-radius: 8px;
+    border-color: #000;
+    height: 1.5em;
+    width: 25em;
+}
+input::-webkit-input-placeholder{
+    text-align: center;
+}
+input::-moz-placeholder{
+    text-align: center;
+}
+.form-alert-success{
+    background-color: green;
+}
+.form-alert-failed{
+    background-color: red;
+}
+.form-email, .form-password{
+    color: red;
+}
+.showing-options{
+    position: fixed;
+    display: flex;
+    right: 5em;
+    top: 1em;
+}
+.showing-forms{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 </style>

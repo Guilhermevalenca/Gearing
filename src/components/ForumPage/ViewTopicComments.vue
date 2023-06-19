@@ -119,6 +119,7 @@ methods: {
   showUpdatedComments() {
     Swal.fire({
       title: 'carregando comentarios',
+      showConfirmButton: false,
       willOpen: () => {
         Swal.showLoading();
       },
@@ -145,7 +146,7 @@ methods: {
     .catch (error => {
       console.log(error)
     })
-  } 
+  }
 },
 created() {
   this.showUpdatedComments()

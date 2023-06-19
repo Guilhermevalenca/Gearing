@@ -31,6 +31,7 @@ export default{
         return {
             topics: [],
             showComments: false,
+            showEditTopic: false,
             viewComments: {
                 title: '',
                 email: '',

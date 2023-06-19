@@ -41,7 +41,7 @@ export default{
                 commentUpdate: this.comment
             })
             .then(response => {
-                console.log(response);
+                Swal.close()
                 if(response.data.success) {
                     this.$emit('closeWindow')
                 }else{
