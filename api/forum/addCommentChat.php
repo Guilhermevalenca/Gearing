@@ -19,11 +19,12 @@ $email = $_SESSION['email'];
 $response = [];
 
 try{
-    $sql = "INSERT INTO GEA_COMMENTS (com_message,com_user_name,com_top_title,com_top_user_email) 
+    $sql = "INSERT INTO GEA_COMMENTS (com_message,com_user_name,com_top_title,com_user_email) 
     VALUES ('$message','$name','$title','$email');";
     $result = $conn->exec($sql);
-    $response['success'] = "true";
+    $response['success'] = true;
 }catch (PDOException $e) {
+    $response['success'] = false;
     $response['error'] = $e->getMessage();
 }
 echo json_encode($response);

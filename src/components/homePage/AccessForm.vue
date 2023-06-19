@@ -49,7 +49,7 @@
 
 <section>
     <div>
-        <button @click="() => {showForm = !showForm; actionsForms = true}">{{ showForm ? "Fazer login" : "Criar uma nova conta" }}</button>
+        <button @click="() => {showForm = !showForm; actionsForms = true}">{{ showForm ? "Realizar login" : "Criar uma nova conta" }}</button>
     </div>
     <div v-if="!actionsForms">
         <button @click="() => {actionsForms = true;}">Criar uma nova conta</button>

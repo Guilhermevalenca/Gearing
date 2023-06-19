@@ -21,7 +21,7 @@ export default{
     data(){
         return{
             createTopic: false,
-            viewTopic: false
+            viewTopic: true
         }
     },
     components: {CreateTopic, ViewTopics},
@@ -36,6 +36,9 @@ export default{
                 this.createTopic = false
             }this.viewTopic = true
         }
+    },
+    beforeCreate() {
+        this.$authUser()
     }
 }
 </script>
