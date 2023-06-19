@@ -89,6 +89,8 @@ export default{
       handler() {
         if(actionAuthUser != '/'){
           this.$authUser();
+        }else{
+          this.$checkAuthentication();
         }
       },
       deep: true

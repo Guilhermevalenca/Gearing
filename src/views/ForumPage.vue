@@ -36,9 +36,6 @@ export default{
                 this.createTopic = false
             }this.viewTopic = true
         }
-    },
-    beforeCreate() {
-        this.$authUser()
     }
 }
 </script>

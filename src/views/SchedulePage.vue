@@ -30,9 +30,6 @@ import ViewSchedule from '@/components/SchedulePage/ViewSchedule.vue';
 import EditSchedule from '@/components/SchedulePage/EditSchedule.vue';
 
 export default{
-    beforeCreate() {
-        this.$authUser();
-    },
     components: { CreateSchedule, ViewSchedule, EditSchedule },
     data() {
         return {
