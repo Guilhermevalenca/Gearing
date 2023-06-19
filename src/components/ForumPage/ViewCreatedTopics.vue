@@ -3,15 +3,13 @@
         <div v-for="(elements, index) in topics" :key="index">
             <div class="box">
                 <a @click="showTopicComments(elements.title,elements.email,elements.description,elements.name,elements.date)">
-                    <div>
+                    <div class="topics">
                         <ul>
                             {{ elements.title }}
                         </ul>
                         <ul>
-                            <strong>Criado por:</strong>
-                            <span>{{ elements.name }}</span>
-                            <strong>em:</strong>
-                            <span>{{ elements.date }}</span>
+                            <strong class="info">Criado por </strong>
+                            <span class="data">{{ elements.name }}</span> <br>
                         </ul>
                     </div>
                 </a>
@@ -71,7 +69,27 @@ export default{
 }
 </script>
 <style scoped>
+
 .box{
+    justify-content: center;
+    max-width: 30em;
+    max-height: 5em;
+    padding: 0.25em;
+    text-align: justify;
+    text-align-last: center;
     border-style: solid;
+    border-radius: 0.8em;
+    border-width: 0.1em;
+
+}
+.topics{
+    padding: 1em;
+}
+.data{
+font-size: 0.8em;
+color:  rgba(100, 2, 223, 1) ;
+}
+.info{
+font-size: 0.8em;
 }
 </style>
