@@ -109,6 +109,18 @@ export default{
     },
     methods: {
         addShedule() {
+            if(!this.$store.state.user.auth){
+                Swal.fire({
+                    title: 'Ação negada',
+                    text: 'Apenas usuarios cadastrados no sistema tem permissão para criar cronograma',
+                    customClass: {
+                        popup: 'swal-popup-custom',
+                        title: 'swal-title-custom',
+                        htmlContainer: 'swal-html-container-custom',
+                    }
+                })
+                return
+            }
             if(!this.title || !this.turns){
                 this.checks.title = () => {return !this.title}
                 this.checks.turn = () => {return !this.turns}
@@ -141,10 +153,10 @@ export default{
                     title: 'Atenção',
                     text: 'Você deve adicionar pelo menos uma matéria ao seu cronograma',
                     customClass: {
-                                popup: 'swal-popup-custom',
-                                title: 'swal-title-custom',
-                                htmlContainer: 'swal-html-container-custom',
-                            }
+                        popup: 'swal-popup-custom',
+                        title: 'swal-title-custom',
+                        htmlContainer: 'swal-html-container-custom',
+                    }
                 })
                 return
             }
@@ -155,10 +167,10 @@ export default{
                 showConfirmButton: false,
                 allowOutsideClick: false,
                 customClass: {
-                            popup: 'swal-popup-custom',
-                            title: 'swal-title-custom',
-                            htmlContainer: 'swal-html-container-custom',
-                            }
+                    popup: 'swal-popup-custom',
+                    title: 'swal-title-custom',
+                    htmlContainer: 'swal-html-container-custom',
+                }
                 
             });
             Swal.showLoading();

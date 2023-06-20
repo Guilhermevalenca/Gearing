@@ -13,3 +13,5 @@ session_start();
 
 //deleting session
 session_destroy();
+$response['success'] = true;
+echo json_encode($response);

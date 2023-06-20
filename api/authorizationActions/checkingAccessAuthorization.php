@@ -29,7 +29,8 @@ try{
         foreach($result as $userData){
             $responseData = [
                 'username' => $userData['user_name'],
-                'email' => $userData['user_email']
+                'email' => $userData['user_email'],
+                'auth' => true
             ];
             $_SESSION['email'] = $userData['user_email'];
             echo json_encode($responseData);

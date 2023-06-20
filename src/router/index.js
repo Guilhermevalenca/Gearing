@@ -10,11 +10,6 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '@/views/HomePage.vue')
   },
   {
-    path: '/menu',
-    name: 'menu',
-    component: () => import('@/views/MenuPage.vue')
-  },
-  {
     path: '/schedule',
     name: 'schedule',
     component: () => import('@/views/SchedulePage.vue')
@@ -33,11 +28,6 @@ const routes = [
     path: '/forum',
     name: 'forum',
     component: () => import('@/views/ForumPage.vue')
-  },
-  {
-    path: '/exit',
-    name: 'exit',
-    component: () => import('@/views/HomePage.vue'),
   }
 ]
 

@@ -7,7 +7,7 @@
           <thead>
             <tr>
               <th class="title-topic">{{ title }}</th>
-              <button class="add-comment" @click="() => {showWindow.addComment = true}">Responder</button>
+              <button class="add-comment" @click="() => {this.$store.state.user.auth ? showWindow.addComment = true : actionDenied()}">Responder</button>
               <button class="session-close" @click="closeComment()">✖</button>
             </tr>
             <tr>
@@ -66,7 +66,7 @@
           </section>
           <section v-if="showWindow.EditComment.show">
             <EditComment @closeWindow="() => {showWindow.EditComment.show = false; showUpdatedComments()}" :title="title" :id="showWindow.EditComment.id"/>
-          </section>        
+          </section>
         </div>
       </section>
   </div>            
@@ -93,6 +93,12 @@ export default {
       }
   },
 methods: {
+  actionDenied() {
+    Swal.fire({
+      title: 'Ação negada',
+      text: 'Apenas usuarios cadastrados tem permissão para interagir com o forum'
+    })
+  },
   closeComment() {
       this.$emit("closeComments")
   },

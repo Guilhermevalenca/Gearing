@@ -4,7 +4,8 @@ export default createStore({
   state: {
     user: {
       username: '',
-      email: ''
+      email: '',
+      auth: false
     },
     schedule: {
       editTitle: ''
@@ -14,6 +15,7 @@ export default createStore({
     changeUser(state,data) {
       state.user.username = data.username;
       state.user.email = data.email;
+      state.user.auth = data.auth;
     },
     changeSchedule(state,data) {
       state.schedule.editTitle = data;

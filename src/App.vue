@@ -2,17 +2,18 @@
    <img src="./assets/css/backgrounds/gearingLogo.gif" class="logo">
       <h1 class="gearing">Gearing</h1>
 <header>
-  <nav class="navigation-option" v-if="this.$route.path != '/'">
-    <router-link to="/menu">Página Inicial</router-link>
+  <nav class="navigation-option">
+    <router-link to="/">Página Inicial</router-link>
     <RouterLink to="/learningStyles">Estilos de Aprendizagem</RouterLink>
+    <RouterLink to="/methodology">Metodologias</RouterLink>
     <RouterLink to="/schedule">Cronograma</RouterLink>
     <RouterLink to="/forum">Fórum</RouterLink>
-    <RouterLink to="/userData">Seus Dados</RouterLink> 
-    <RouterLink @click="this.$logoutUser()" to="/exit">Sair da Conta</RouterLink>
     <div class="animation start-home"></div>
   </nav>
 </header>
-
+  <div>
+    <AccessForm />
+  </div>
 <section v-if="mountPage">
   <router-view/>
 </section>
@@ -20,11 +21,13 @@
 </template>
 
 <script>
+import AccessForm from './components/App/AccessForm.vue';
 import axios from 'axios';
 import Swal from 'sweetalert2';
 
 export default{
   name: 'App',
+  components: {AccessForm},
   data() {
     return {
       mountPage: false,
@@ -83,18 +86,6 @@ export default{
   beforeMount() {
     this.tryingConnection()
     this.establishingConnection()
-  },
-  watch: {
-    $router: {
-      handler() {
-        if(this.$router.path != '/'){
-            this.$authUser();
-        }else{
-            this.$checkAuthentication();
-        }
-      },
-      deep: true
-    }
   }
 }
 </script>
@@ -179,9 +170,9 @@ a:nth-child(5) {
 a:nth-child(6){
   width: 140px;
 }
-nav .start-menu, a:nth-child(1):hover~.animation {
-	width: 140px;
-	left: 0;
+nav .start-paginaInicial, a:nth-child(1):hover~.animation {
+	width: 210px;
+	left: 0px;
   background: -webkit-linear-gradient(
     318deg,
     rgba(133, 26, 186, 1) 18%,
@@ -191,7 +182,17 @@ nav .start-menu, a:nth-child(1):hover~.animation {
 }
 nav .start-learningStyles, a:nth-child(2):hover~.animation {
 	width: 190px;
-	left: 150px;
+	left: 215px;
+  background: -webkit-linear-gradient(
+    318deg,
+    rgba(133, 26, 186, 1) 18%,
+    rgb(133, 26, 186, 1) 46%,
+    rgba(100, 2, 223, 1) 81%
+  );
+}
+nav .start-methodology, a:nth-child(3):hover~.animation {
+	width: 120px;
+	left:  395px;
   background: -webkit-linear-gradient(
     318deg,
     rgba(133, 26, 186, 1) 18%,
@@ -200,18 +201,8 @@ nav .start-learningStyles, a:nth-child(2):hover~.animation {
   );
 }
 nav .start-schedule, a:nth-child(4):hover~.animation {
-	width: 113.3px;
-	left: 423.3px;
-  background: -webkit-linear-gradient(
-    318deg,
-    rgba(133, 26, 186, 1) 18%,
-    rgb(133, 26, 186, 1) 46%,
-    rgba(100, 2, 223, 1) 81%
-  );
-}
-nav .start-forum, a:nth-child(3):hover~.animation {
 	width: 100px;
-	left:  338px;
+	left: 505px;
   background: -webkit-linear-gradient(
     318deg,
     rgba(133, 26, 186, 1) 18%,
@@ -219,29 +210,9 @@ nav .start-forum, a:nth-child(3):hover~.animation {
     rgba(100, 2, 223, 1) 81%
   );
 }
-nav .start-schedule, a:nth-child(4):hover~.animation {
-	width: 113.3px;
-	left: 433.4px;
-  background: -webkit-linear-gradient(
-    318deg,
-    rgba(133, 26, 186, 1) 18%,
-    rgb(133, 26, 186, 1) 46%,
-    rgba(100, 2, 223, 1) 81%
-  );
-}
-nav .start-userData, a:nth-child(5):hover~.animation {
-	width: 123.3px;
-	left: 536.7px;
-  background: -webkit-linear-gradient(
-    318deg,
-    rgba(133, 26, 186, 1) 18%,
-    rgb(133, 26, 186, 1) 46%,
-    rgba(100, 2, 223, 1) 81%
-  );
-}
-nav .start-exit, a:nth-child(6):hover~.animation {
-	width: 140px;
-	left: 660px;
+nav .start-forum, a:nth-child(5):hover~.animation {
+	width: 170px;
+	left: 630px;
   background: -webkit-linear-gradient(
     318deg,
     rgba(133, 26, 186, 1) 18%,

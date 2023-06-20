@@ -21,7 +21,8 @@ if(isset($result)){
         $responseData = [
             'username' => $userData['user_name'],
             'email' => $userData['user_email'],
-            'id' => session_id()
+            'id' => session_id(),
+            'auth' => true
         ];
         $_SESSION['AUTH'] = true;
         $_SESSION['email'] = $userData['user_email'];

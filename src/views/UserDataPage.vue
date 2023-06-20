@@ -16,6 +16,11 @@ export default{
     },
     components: {
         DataChangeForm
+    },
+    beforeCreate() {
+        if(!this.$store.state.user.auth){
+            this.$router.push('/')
+        }
     }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
- <div :class="{'showing-forms' : actionsForms}">
+ <div v-if="!this.$store.state.user.auth" :class="{'showing-forms' : actionsForms}">
 <section>
 <div v-if="showAlert">
     <AlertForm :class="{'form-alert-success' : createSuccess, 'form-alert-failed': failedLogin}" @close="closeAlert()"> 
@@ -47,14 +47,18 @@
 
 </div>
 
-<section class="showing-options">
+<section v-if="!this.$store.state.user.auth" class="showing-options">
     <div :class="{'showing-forms-button' : actionsForms}">
         <button @click="() => {showForm = !showForm; actionsForms = true}">{{ showForm ? "Realizar login" : "Criar uma nova conta" }}</button>
     </div>
     <div>
-        <button @click="() => {actionsForms = !actionsForms;}">{{ actionsForms ? "sair" : "Criar uma nova conta" }}</button>
+        <button @click="() => {actionsForms = !actionsForms; showForm = true}">{{ (actionsForms ) ? "sair" : "Criar uma nova conta" }}</button>
     </div>
 </section>
+</div>
+<div v-if="this.$store.state.user.auth" class="showing-options">
+    <button @click="() => {this.$router.push('/userData')}">Alterar dados</button>
+    <button @click="this.$logoutUser">Sair da conta</button>
 </div>
 </template>
 
@@ -96,7 +100,7 @@ export default{
                 if(response.data.id && response.data.email){
                     this.$store.dispatch('changeUser',response.data);
                     localStorage.setItem('idSession',response.data.id);
-                    this.$router.push('/menu')
+                    this.actionsForms = false
                 }else{
                     this.showAlert = true;
                     this.messageAlert = "Não foi possível efetivar seu login"

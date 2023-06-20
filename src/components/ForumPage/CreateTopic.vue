@@ -29,13 +29,25 @@ export default{
     },
     methods: {
         createTopic() {
+            if(!this.$store.state.user.auth){
+                Swal.fire({
+                    title: 'Ação negada',
+                    text: "Apenas usuarios cadastrados podem criar um topico",
+                    customClass: {
+                        popup: 'swal-popup-custom',
+                        title: 'swal-title-custom',
+                        htmlContainer: 'swal-html-container-custom',
+                    }
+                })
+                return
+            }
             Swal.fire({
                 title: 'Adicionando seu tópico',
                 customClass: {
-                                popup: 'swal-popup-custom',
-                                title: 'swal-title-custom',
-                                htmlContainer: 'swal-html-container-custom',
-                            },
+                    popup: 'swal-popup-custom',
+                    title: 'swal-title-custom',
+                    htmlContainer: 'swal-html-container-custom',
+                },
                 willOpen: () => {
                     Swal.showLoading();
                 },
