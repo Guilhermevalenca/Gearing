@@ -57,8 +57,11 @@
 </section>
 </div>
 <div v-if="this.$store.state.user.auth" class="showing-options">
-    <button @click="() => {this.$router.push('/userData')}">Alterar dados</button>
-    <button @click="this.$logoutUser">Sair da conta</button>
+    <ul>Bem vindo(a), {{ this.$store.state.user.username }}</ul>
+    <ul>
+        <button @click="() => {this.$router.push('/userData')}">Alterar dados</button>
+        <button @click="this.$logoutUser">Sair da conta</button>
+    </ul>
 </div>
 </template>
 
