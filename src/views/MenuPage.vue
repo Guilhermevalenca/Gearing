@@ -1,16 +1,14 @@
 <template>
   <section>
     <div :class="congratulations">
-      <Presentation />
+      {{ this.$store.state.user }}
     </div>
   </section>
 </template>
 
 <script>
-import Presentation from '@/components/homePage/PresentationGearingUp.vue'
 
 export default{
-  components: {Presentation},
   data() {
     return{
       congratulations: 'congratulations',

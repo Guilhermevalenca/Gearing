@@ -8,7 +8,7 @@
 </template>
 <style scoped>
 .presentation{
-    font-size: 1.2em;
+    font-size: 2em;
     margin-left: 5em;
     margin-right: 5em;
     text-align: justify;
