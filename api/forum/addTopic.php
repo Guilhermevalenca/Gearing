@@ -5,6 +5,8 @@ require '../accept.php';
 //establishing connection with the bank
 require '../establishingConnection.php';
 
+require('../functions.php');
+
 $json = file_get_contents('php://input');
 $topicData = json_decode($json, true);
 
@@ -13,9 +15,7 @@ $name = $topicData['name'];
 $description = $topicData['description'];
 $title = $topicData['title'];
 
-session_write_close();
-session_id($id);
-session_start();
+alterSession($id);
 
 $email = $_SESSION['email'];
 

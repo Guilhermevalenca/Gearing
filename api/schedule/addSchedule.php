@@ -5,6 +5,7 @@ require '../accept.php';
 //establishing connection with the bank
 require '../establishingConnection.php';
 
+require('../functions.php');
 //schedule data
 $receivingJson = file_get_contents('php://input');
 $scheduleData = json_decode($receivingJson, true);
@@ -16,9 +17,7 @@ $shift = $scheduleData['shift'];
 $id = $scheduleData['id'];
 
 //altering session
-session_write_close();
-session_id($id);
-session_start();
+alterSession($id);
 
 //search user email
 $email = $_SESSION['email'];

@@ -8,11 +8,6 @@ require '../establishingConnection.php';
 $jsonData = file_get_contents('php://input');
 $newUserData = json_decode($jsonData, true);
 
-//show data in terminal
-ob_start();
-print_r($newUserData);
-$output = ob_get_clean();
-error_log($output);
 
 //user id
 $email = $newUserData['email'];

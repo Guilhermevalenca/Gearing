@@ -5,6 +5,8 @@ require '../accept.php';
 //establishing connection with the bank
 require '../establishingConnection.php';
 
+
+
 //receiving json
 $json = file_get_contents('php://input');
 //decoding json

@@ -1,6 +1,9 @@
 <?php 
 require('../accept.php');
+
 require('../establishingConnection.php');
+
+require('../functions.php');
 
 $json = file_get_contents('php://input');
 $data = json_decode($json,true);
@@ -10,9 +13,7 @@ $title = $data['title'];
 $commentId = $data['commentId'];
 $commentUpdate = $data['commentUpdate'];
 
-session_write_close();
-session_id($id);
-session_start();
+alterSession($id);
 
 $email = $_SESSION['email'];
 
