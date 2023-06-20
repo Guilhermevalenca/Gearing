@@ -96,7 +96,12 @@ methods: {
   actionDenied() {
     Swal.fire({
       title: 'Ação negada',
-      text: 'Apenas usuarios cadastrados tem permissão para interagir com o forum'
+      text: 'Apenas usuarios cadastrados tem permissão para interagir com o forum',
+      customClass: {
+        popup: 'swal-popup-custom',
+        title: 'swal-title-custom',
+        htmlContainer: 'swal-html-container-custom',
+      }
     })
   },
   closeComment() {
@@ -131,6 +136,11 @@ methods: {
       },
       willClose: () => {
         Swal.hideLoading();
+      },
+      customClass: {
+        popup: 'swal-popup-custom',
+        title: 'swal-title-custom',
+        htmlContainer: 'swal-html-container-custom',
       }
     })
     axios.post('http://localhost:8000/forum/chatTopic.php',{

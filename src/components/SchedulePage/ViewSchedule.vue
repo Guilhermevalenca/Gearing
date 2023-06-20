@@ -114,10 +114,10 @@ export default{
                 showConfirmButton: false,
                 allowOutsideClick: false,
                 customClass: {
-                                popup: 'swal-popup-custom',
-                                title: 'swal-title-custom',
-                                htmlContainer: 'swal-html-container-custom',
-                            }
+                    popup: 'swal-popup-custom',
+                    title: 'swal-title-custom',
+                    htmlContainer: 'swal-html-container-custom',
+                }
             })
             Swal.showLoading();
             axios.post('http://localhost:8000/schedule/deleteSchedule.php', {

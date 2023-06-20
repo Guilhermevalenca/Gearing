@@ -32,6 +32,11 @@ export default{
                 },
                 willClose: () => {
                     Swal.hideLoading();
+                },
+                customClass: {
+                    popup: 'swal-popup-custom',
+                    title: 'swal-title-custom',
+                    htmlContainer: 'swal-html-container-custom',
                 }
             })
             axios.post('http://localhost:8000/forum/updateComment.php',{
@@ -61,6 +66,11 @@ export default{
             },
             willClose: () => {
                 Swal.hideLoading();
+            },
+            customClass: {
+                popup: 'swal-popup-custom',
+                title: 'swal-title-custom',
+                htmlContainer: 'swal-html-container-custom',
             }
         })
         axios.post('http://localhost:8000/forum/editComment.php',{
