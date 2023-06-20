@@ -5,11 +5,11 @@
         <h2>Editando cronograma:</h2>
         <h2>{{ currentTitle }}</h2>
     </div>
-    <div>
+    <form @submit.prevent="addNewSubject()">
         <label>Adicione novas materias:</label>
         <input type="text" placeholder="nova materia" v-model="newSubject">
-        <button @click="() => {addNewSubject()}">Adicionar materia</button>
-    </div>
+        <button>Adicionar materia</button>
+    </form>
     <div class="store">
         <h3>Descarte + novas materias</h3>
         <div class="store-box" ref="newSubjects">

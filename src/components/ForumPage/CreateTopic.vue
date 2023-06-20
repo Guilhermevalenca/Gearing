@@ -1,19 +1,21 @@
 <template>
-    <section>
+<section>
     <form @submit.prevent="createTopic()">
         <div class="info">
-            <label class="info-name">
-                Nome do topico: <input v-model="name" placeholder="Nome do topico" type="text" required>
-            </label>
-            <label class="info-description">
-                Descrição: <textarea v-model="description" rows="30" cols="100" required></textarea>
-            </label>
+            <div class="info-name">
+                <label >Nome do topico:</label>
+                <input v-model="name" placeholder="Nome do topico" type="text" required>
+            </div>
+            <div class="info-description">
+                <label>Descrição:</label>
+                <textarea v-model="description" rows="30" cols="100" required></textarea>
+            </div>
         </div>
         <div>
             <button>Criar tópico</button>
         </div>
     </form>
-    </section>
+</section>
 </template>
 
 <script>

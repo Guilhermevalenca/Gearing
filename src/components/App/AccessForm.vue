@@ -12,35 +12,35 @@
 
 <section v-if="!showForm">
 <form class="form" @submit.prevent="authUser()">
-    <label>
-        E-mail:
+    <div>
+        <label>E-mail:</label>
         <input type="email" v-model="loginUser.email" maxlength="45" placeholder="Digite seu email">
-    </label>
-    <label>
-        Senha:
-        <input type="password" v-model="loginUser.password" placeholder="Digite sua senha"> 
-    </label>
-        <button>Login</button>
+    </div>
+    <div>
+        <label>Senha:</label>
+        <input type="password" v-model="loginUser.password" placeholder="Digite sua senha">
+    </div>
+    <button>Login</button>
 </form>
 </section>
 <section v-if="showForm">
 <form class="form" @submit.prevent="newUser()">
-    <label>
-        Usuário:
+    <div>
+        <label>Usuário:</label>
         <input type="text" v-model="createUser.username" maxlength="20" placeholder="Escolha seu nome de usuario">
-    </label>
-    <label>
-        E-mail:
-        <input :class="{'form-email' : emailRegistered}" type="email" v-model="createUser.email" placeholder="Digite seu email">
-    </label>
-    <label>
-        Senha:
+    </div>
+    <div>
+     <label>E-mail:</label>
+     <input :class="{'form-email' : emailRegistered}" type="email" v-model="createUser.email" placeholder="Digite seu email">   
+    </div>
+    <div>
+        <label>Senha:</label>
         <input :class="{'form-password' : differentPasswords}" type="password" minlength="6" v-model="createUser.password" placeholder="Digite sua senha">
-    </label>
-    <label>
-        Confirme sua senha:
+    </div>
+    <div>
+        <label>Confirme sua senha:</label>
         <input :class="{'form-password' : differentPasswords}" type="password" minlength="6" v-model="createUser.confirmPassword" placeholder="Digite sua senha novamente">
-    </label>
+    </div>
     <button>Criar conta</button>
 </form>
 </section>
@@ -52,7 +52,7 @@
         <button @click="() => {showForm = !showForm; actionsForms = true}">{{ showForm ? "Realizar login" : "Criar uma nova conta" }}</button>
     </div>
     <div>
-        <button @click="() => {actionsForms = !actionsForms; showForm = true}">{{ (actionsForms ) ? "sair" : "Criar uma nova conta" }}</button>
+        <button @click="() => {actionsForms = !actionsForms; showForm = true}">{{ actionsForms ? "sair" : "Criar uma nova conta" }}</button>
     </div>
 </section>
 </div>
@@ -152,6 +152,14 @@ export default{
                     this.differentPasswords = false;
                 }
                 this.emailRegistered = false;
+            },
+            deep: true
+        },
+        actionsForms: {
+            handler() {
+                if(!this.actionsForms){
+                    this.showForm = true;
+                }
             },
             deep: true
         }

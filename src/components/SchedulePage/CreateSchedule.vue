@@ -6,15 +6,13 @@
     <input :class="['define-title-text',{'select-title' : this.checks.title}]" v-model="title" type="text" placeholder="digite o titulo aqui" required>
 </div> 
 <div>
-    <label>
-        turnos
-        <select :class="{'select-turn' : this.checks.turn}" v-model="turns">
-            <option value="morning">Manhã</option>
-            <option value="afternoon">Tarde</option>
-            <option value="night">Noite</option>
-            <option value="dawn">Madrugada</option>
-        </select>
-    </label>
+    <label>turno:</label>
+    <select :class="{'select-turn' : this.checks.turn}" v-model="turns">
+        <option value="morning">Manhã</option>
+        <option value="afternoon">Tarde</option>
+        <option value="night">Noite</option>
+        <option value="dawn">Madrugada</option>
+    </select>
 </div>
 </section>
 <section>
@@ -24,11 +22,11 @@
 </section>
 
 <section class="schedule">
-<div>
+<form @submit.prevent="addOtherMatter()">
     Adicionar outras materias:
     <input type="text" v-model="otherMatter" placeholder="nova materia">
-    <button @click.prevent="addOtherMatter()">Adicionar materias</button>
-</div>
+    <button>Adicionar materias</button>
+</form>
 <div class="schedule-matters" ref="sortableSubject">
     <ul @mouseover="giveBackSubject(subject)" ref="subject" class="shedule-matters-subject" v-for="(subject, index) in matters" :key="index">
         {{ subject }}
