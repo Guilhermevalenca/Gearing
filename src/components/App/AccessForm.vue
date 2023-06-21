@@ -66,7 +66,6 @@
 </template>
 
 <script>
-
 import axios from "axios";
 import AlertForm from "./AlertForm.vue";
 
@@ -100,16 +99,20 @@ export default{
                 password: this.loginUser.password
             })
                 .then(response => {
-                if(response.data.id && response.data.email){
-                    this.$store.dispatch('changeUser',response.data);
+                if(response.data.user){
+                    this.$store.dispatch('changeUser',response.data.user);
                     localStorage.setItem('idSession',response.data.id);
                     this.actionsForms = false
                 }else{
                     this.showAlert = true;
                     this.messageAlert = "Não foi possível efetivar seu login"
                     this.failedLogin = true;
+                    console.log("response:", response.data.error)
                 }
-            });
+            })
+            .catch(error => {
+                console.log("error:",error)
+            })
         },
         newUser() {
             if(this.createUser.password == this.createUser.confirmPassword){

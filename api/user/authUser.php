@@ -13,20 +13,27 @@ $testingData = json_decode($receivingJson, true);
 $email = $testingData['email'];
 $password = $testingData['password'];
 
+$responseData = [];
+
 //looking for user
-$sql = "SELECT user_email,user_name FROM GEA_USER WHERE user_email = '$email' AND user_password = '$password';";
-$result = $conn->query($sql);
-if(isset($result)){
-    foreach($result as $userData){
-        $responseData = [
-            'username' => $userData['user_name'],
-            'email' => $userData['user_email'],
-            'id' => session_id(),
-            'auth' => true
-        ];
-        $_SESSION['AUTH'] = true;
-        $_SESSION['email'] = $userData['user_email'];
-        echo json_encode($responseData);
-        exit();
+try{
+    $sql = "SELECT user_email,user_name FROM GEA_USER WHERE user_email = '$email' AND user_password = '$password';";
+    $result = $conn->query($sql);
+    if(isset($result)){
+        foreach($result as $userData){
+            $responseData['user'] = [
+                'username' => $userData['user_name'],
+                'email' => $userData['user_email'],
+                'id' => session_id(),
+                'auth' => true
+            ];
+            $_SESSION['AUTH'] = true;
+            $_SESSION['email'] = $userData['user_email'];
+        }
     }
 }
+catch (PDOException $e) {
+    $responseData['error'] = $e->getMessage();
+}
+
+echo json_encode($responseData);
