@@ -1,12 +1,7 @@
 <?php
 $servername = "localhost:3306";
-<<<<<<< Updated upstream
 $username = "gearing"; //Nome de usuario do seu mysql
 $password = "gearing123"; //senha do usuario do mysql
-=======
-$username = "root"; //Nome de usuario do seu mysql
-$password = "35458453aA@"; //senha do usuario do mysql
->>>>>>> Stashed changes
 $dbname = "GEARING"; //nome da sua DATABASE
 
 try {

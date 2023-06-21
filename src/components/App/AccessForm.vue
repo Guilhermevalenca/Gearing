@@ -1,5 +1,4 @@
 <template>
-<<<<<<< Updated upstream:src/components/App/AccessForm.vue
  <div v-if="!this.$store.state.user.auth" :class="['default-form',{'showing-forms' : actionsForms}]">
 <div>
 <section v-if="showAlert">
@@ -42,66 +41,9 @@
     <button>Criar conta</button>
 </form>
 </section>
-=======
-    <div class="box">
-        <section>
-            <div v-if="showAlert">
-                <AlertForm :class="{ 'form-alert-success': createSuccess, 'form-alert-failed': failedLogin }"
-                    @close="closeAlert()">
-                    {{ messageAlert }}
-                </AlertForm>
-            </div>
-        </section>
 
-        <div v-if="actionsForms">
-            <section v-if="!showForm">
-                <form class="form" @submit.prevent="authUser()">
-                    <label>
-                        E-mail:
-                    </label>
-                        <input type="email" v-model="loginUser.email" maxlength="45" placeholder="Digite seu email">
-                    <label>
-                        Senha:
-                    </label>
-                        <input type="password" v-model="loginUser.password" placeholder="Digite sua senha">
-                    <button>Entrar</button>
-                </form>
-            </section>
+</div>
 
-            <section v-if="showForm">
-                <form class="form" @submit.prevent="newUser()">
-                    <label>
-                        Usuário:
-                    </label>
-                        <input type="text" v-model="createUser.username" maxlength="20"
-                            placeholder="Escolha seu nome de usuario" require>
-                    <label>
-                        E-mail:
-                    </label>
-                        <input :class="{ 'form-email': emailRegistered }" type="email" v-model="createUser.email"
-                            placeholder="Digite seu email" require>
-                    <label>
-                        Senha:
-                    </label>
-                        <input :class="{ 'form-password': differentPasswords }" type="password" minlength="6"
-                            v-model="createUser.password" placeholder="Digite sua senha" require>
-                    <label>
-                        Confirme sua senha:
-                    </label>
-                        <input :class="{ 'form-password': differentPasswords }" type="password" minlength="6"
-                            v-model="createUser.confirmPassword" placeholder="Digite sua senha novamente" require>
-                    <button>Criar conta</button>
-                </form>
-            </section>
->>>>>>> Stashed changes:src/components/homePage/AccessForm.vue
-
-        </div>
-        <section class="homepage-buttons">
-            <button @click="() => { showForm = !showForm; actionsForms = true }">{{ showForm ? "Entre na sua conta" : "Criar uma nova conta" }}</button>
-            <button v-if="!actionsForms" @click="() => { actionsForms = true; }">Criar uma nova conta</button>
-        </section>
-
-<<<<<<< Updated upstream:src/components/App/AccessForm.vue
 <section v-if="!this.$store.state.user.auth" class="showing-options">
     <div :class="{'showing-forms-button' : actionsForms}">
         <button @click="() => {showForm = !showForm; actionsForms = true}">{{ showForm ? "Realizar login" : "Criar uma nova conta" }}</button>
@@ -118,16 +60,13 @@
         <button @click="this.$logoutUser">Sair da conta</button>
     </ul>
 </div>
-=======
-    </div>
->>>>>>> Stashed changes:src/components/homePage/AccessForm.vue
 </template>
 
 <script>
 import axios from "axios";
 import AlertForm from "./AlertForm.vue";
 
-export default {
+export default{
     data() {
         return {
             loginUser: {
@@ -157,7 +96,6 @@ export default {
                 password: this.loginUser.password
             })
                 .then(response => {
-<<<<<<< Updated upstream:src/components/App/AccessForm.vue
                 if(response.data.user){
                     this.$store.dispatch('changeUser',response.data.user);
                     localStorage.setItem('idSession',response.data.user.id);
@@ -172,59 +110,47 @@ export default {
             .catch(error => {
                 console.log("error:",error)
             })
-=======
-                    if (response.data.id && response.data.email) {
-                        this.$store.dispatch('changeUser', response.data);
-                        localStorage.setItem('idSession', response.data.id);
-                        this.$router.push('/menu')
-                    } else {
-                        this.showAlert = true;
-                        this.messageAlert = "Não foi possível efetivar seu login"
-                        this.failedLogin = true;
-                    }
-                });
->>>>>>> Stashed changes:src/components/homePage/AccessForm.vue
         },
         newUser() {
-            if (this.createUser.password == this.createUser.confirmPassword) {
+            if(this.createUser.password == this.createUser.confirmPassword){
 
                 axios
-                    .post("http://localhost:8000/user/createUser.php", {
-                        username: this.createUser.username,
-                        email: this.createUser.email,
-                        password: this.createUser.password
-                    })
-                    .then(response => {
-                        if (response.data) {
-                            this.showForm = false;
-                            this.createSuccess = true;
-                            this.messageAlert = "Sua conta foi criada com sucesso"
-                            this.showAlert = true;
-                            this.failedLogin = false;
-                        } else {
-                            this.showAlert = true;
-                            this.messageAlert = "Essa conta já está cadastrada"
-                            this.emailRegistered = true;
+                .post("http://localhost:8000/user/createUser.php", {
+                    username: this.createUser.username,
+                    email: this.createUser.email,
+                    password: this.createUser.password
+                })
+                .then(response => {
+                    if(response.data){
+                        this.showForm = false;
+                        this.createSuccess = true;
+                        this.messageAlert = "Sua conta foi criada com sucesso"
+                        this.showAlert = true;
+                        this.failedLogin = false;
+                    }else{
+                        this.showAlert = true;
+                        this.messageAlert = "Essa conta já está cadastrada"
+                        this.emailRegistered = true;
 
-                        }
-                    })
+                    }
+                })
             }
         },
         closeAlert() {
             this.showAlert = false;
         }
     },
-    components: {
-        AlertForm
+    components: { 
+        AlertForm 
     },
     watch: {
         createUser: {
             handler() {
-                if (this.createUser.confirmPassword && (this.createUser.password != this.createUser.confirmPassword)) {
+                if( this.createUser.confirmPassword && (this.createUser.password != this.createUser.confirmPassword) ){
                     this.showAlert = true;
                     this.messageAlert = "Senhas diferentes"
                     this.differentPasswords = true;
-                } else {
+                }else{
                     this.showAlert = false;
                     this.differentPasswords = false;
                 }
@@ -245,7 +171,6 @@ export default {
 </script>
 
 <style scoped>
-<<<<<<< Updated upstream:src/components/App/AccessForm.vue
 label{
 color:#fff;   
 }
@@ -255,41 +180,12 @@ label, div{
     text-align: center;
 }
 input{
-=======
-
-.box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column wrap;
-    gap: 0.5em;
-}
-.homepage-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column wrap;
-    gap: 0.5em;
-}
-
-.form {
-    display: flex;
-    flex-flow: column wrap;
-}
-
-label {
-    color: #fff;
-}
-
-input {
->>>>>>> Stashed changes:src/components/homePage/AccessForm.vue
     border-style: solid;
     border-radius: 8px;
     border-color: #000;
     height: 1.5em;
     width: 25em;
 }
-<<<<<<< Updated upstream:src/components/App/AccessForm.vue
 input::-webkit-input-placeholder{
     text-align: center;
 }
@@ -324,27 +220,3 @@ input::-moz-placeholder{
 }
 
 </style>
-=======
-
-input::-webkit-input-placeholder {
-    text-align: center;
-}
-
-input::-moz-placeholder {
-    text-align: center;
-}
-
-.form-alert-success {
-    background-color: green;
-}
-
-.form-alert-failed {
-    background-color: red;
-}
-
-.form-email,
-.form-password {
-    color: red;
-}
-</style>
->>>>>>> Stashed changes:src/components/homePage/AccessForm.vue
