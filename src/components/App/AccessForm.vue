@@ -1,15 +1,12 @@
 <template>
- <div v-if="!this.$store.state.user.auth" :class="{'showing-forms' : actionsForms}">
-<section>
-<div v-if="showAlert">
-    <AlertForm :class="{'form-alert-success' : createSuccess, 'form-alert-failed': failedLogin}" @close="closeAlert()"> 
-        {{ messageAlert }}
-    </AlertForm>
-</div>
+ <div v-if="!this.$store.state.user.auth" :class="['default-form',{'showing-forms' : actionsForms}]">
+<div>
+<section v-if="showAlert">
+    <AlertForm :class="['form-alert',{'form-alert-success' : createSuccess},{ 'form-alert-failed': failedLogin}]" 
+    @close="closeAlert()">{{ messageAlert }}</AlertForm>
 </section>
-
+</div>
 <div v-if="actionsForms">
-
 <section v-if="!showForm">
 <form class="form" @submit.prevent="authUser()">
     <div>

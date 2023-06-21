@@ -15,6 +15,7 @@ $switchingSession = json_decode($json,true);
 alterSession($switchingSession['id']);
 
 if(!isset($_SESSION['AUTH']) || !$_SESSION['AUTH'] || $_SERVER['REQUEST_METHOD'] != 'POST'){
+    echo "NOT AUTH";
     session_destroy();
     exit();
 }

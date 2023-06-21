@@ -27,30 +27,6 @@ app.config.globalProperties.$logoutUser = async () => {
                 email: '',
                 auth: ''
             });
-            router.push('/')
-        }
-    })
-    .catch(() => {
-        router.push('/')
-    })
-    .finally( () => {
-        Swal.close();
-    })
-}
-//checks if the user is authenticated and sends it to the menu
-app.config.globalProperties.$checkAuthentication = async () => {
-    let idSession = localStorage.getItem('idSession');
-
-    Swal.showLoading();
-    axios.post('http://localhost:8000/authorizationActions/checkingAccessAuthorization.php',{
-        id: idSession
-    })
-    .then(response => {
-        console.log(response)
-        if(response.data.success){
-            store.dispatch('changeUser',response.data.user);
-        }else{
-            console.log(response.data.error);
         }
     })
     .catch(error => {
@@ -59,6 +35,32 @@ app.config.globalProperties.$checkAuthentication = async () => {
     .finally( () => {
         Swal.close();
     })
+}
+//checks if the user is authenticated and sends it to the menu
+app.config.globalProperties.$checkAuthentication = async () => {
+    let idSession = localStorage.getItem('idSession');
+    
+    if(idSession){
+        Swal.showLoading();
+        axios.post('http://localhost:8000/authorizationActions/checkingAccessAuthorization.php',{
+            id: idSession
+        })
+        .then(response => {
+            if(response.data.success){
+                store.dispatch('changeUser',response.data.user);
+            }else if(response.data == "NOT AUTH"){
+                localStorage.removeItem('idSession');
+            }else{
+                console.log(response.data.error);
+            }
+        })
+        .catch(error => {
+            console.log(error)
+        })
+        .finally( () => {
+            Swal.close();
+        })
+    }
 }
 
 app.mount('#app')
