@@ -37,20 +37,17 @@ try{
 }
 
 $sql = "INSERT INTO GEA_SUBJECT (sub_name,sub_day,sub_hour,sub_sche_title,sub_sche_user_email)
-        VALUES ";
+        VALUES (?,?,?,?,?);";
 
-foreach($schedule as $row => $listSubjects) {
-    foreach($listSubjects as $column => $subject) {
-        if($subject){
-            $sql .= "('$subject','$column','$row','$titleSchedule','$email'),";
-        }        
-    }
-}
-$sql = substr($sql,0,-1);
-$sql .= ";";
-imprimir($sql);
+$stmt = $conn->prepare($sql);
 try{
-    $execute = $conn->exec($sql);
+    foreach($schedule as $row => $listSubjects) {
+        foreach($listSubjects as $column => $subject) {
+            if($subject){
+                $stmt->execute([$subject,$column,$row,$titleSchedule,$email]);
+            }        
+        }
+    }
     $response['success'] = true;
 }
 catch (PDOException $e) {

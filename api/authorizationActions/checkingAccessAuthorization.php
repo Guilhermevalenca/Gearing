@@ -5,37 +5,40 @@ require '../accept.php';
 //establishing connection with the bank
 require '../establishingConnection.php';
 
+require('../functions.php');
+
 //decoding data
 $json = file_get_contents('php://input');
 $switchingSession = json_decode($json,true);
 
 //changing session to user session
-session_write_close();
-session_id($switchingSession['id']);
-session_start();
+alterSession($switchingSession['id']);
 
-if( (!isset($_SESSION['AUTH']) || !$_SESSION['AUTH']) && $_SERVER['REQUEST_METHOD'] != 'POST'){
+if(!isset($_SESSION['AUTH']) || !$_SESSION['AUTH'] || $_SERVER['REQUEST_METHOD'] != 'POST'){
     session_destroy();
     exit();
 }
 
 $email = $_SESSION['email'];
 
+$responseData = [];
+
 try{
     $sql = "SELECT user_email,user_name FROM GEA_USER WHERE user_email = '$email';";
     $result = $conn->query($sql);
     if(isset($result)){
         foreach($result as $userData){
-            $responseData = [
+            $responseData['user'] = [
                 'username' => $userData['user_name'],
                 'email' => $userData['user_email'],
                 'auth' => true
             ];
             $_SESSION['email'] = $userData['user_email'];
-            echo json_encode($responseData);
-            exit();
+            $responseData['success'] = true;
         }
     }
 }catch (PDOException $e){
-    exit();
+    $responseData['error'] = $e->getMessage();
 }
+imprimir($responseData);
+echo json_encode($responseData);

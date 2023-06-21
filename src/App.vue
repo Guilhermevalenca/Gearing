@@ -86,6 +86,9 @@ export default{
   beforeMount() {
     this.tryingConnection()
     this.establishingConnection()
+  },
+  beforeCreate() {
+    this.$checkAuthentication();
   }
 }
 </script>

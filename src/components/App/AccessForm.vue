@@ -101,7 +101,7 @@ export default{
                 .then(response => {
                 if(response.data.user){
                     this.$store.dispatch('changeUser',response.data.user);
-                    localStorage.setItem('idSession',response.data.id);
+                    localStorage.setItem('idSession',response.data.user.id);
                     this.actionsForms = false
                 }else{
                     this.showAlert = true;
