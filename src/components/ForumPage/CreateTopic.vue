@@ -1,6 +1,6 @@
 <template>
 <section>
-    <form @submit.prevent="createTopic()">
+    <form class="add-topic" @submit.prevent="createTopic()">
         <div class="info">
             <div class="info-name">
                 <label >Nome do topico:</label>
@@ -8,12 +8,10 @@
             </div>
             <div class="info-description">
                 <label>Descrição:</label>
-                <textarea v-model="description" rows="30" cols="100" required></textarea>
+                <textarea v-model="description" rows="25" cols="110" required></textarea>
             </div>
         </div>
-        <div>
             <button>Criar tópico</button>
-        </div>
     </form>
 </section>
 </template>
@@ -113,8 +111,28 @@ export default{
 </script>
 
 <style scoped>
+button{
+    margin: 0.0em;
+    position: relative;
+    bottom: 1.4em;
+}
 .info, .info-description, .info-name{
+    padding: 1em;
     display: grid;
     justify-content: center;
+}
+.add-topic{
+    position: relative;
+    top:6em;
+    display: inline-block;
+    max-width: 50em;
+    min-width:  50em;
+    max-height: 35em;
+    min-height: 32em;
+    border-style: solid;
+    border-radius: 0.8em;
+    border-width: 0.1em;
+    background-color: transparent;
+
 }
 </style>

@@ -70,21 +70,20 @@ export default{
 }
 </script>
 <style scoped>
-
 .box{
-    justify-content: center;
+    position: relative;
+    left: 50em;
+    display: inline-block;
+    min-width: 30em;
     max-width: 30em;
-    max-height: 5em;
-    padding: 0.25em;
+    max-height: 4em;
+    min-height: 4em;
     text-align: justify;
     text-align-last: center;
     border-style: solid;
     border-radius: 0.8em;
     border-width: 0.1em;
-
-}
-.topics{
-    padding: 1em;
+    left: 100em;
 }
 .data{
 font-size: 0.8em;
