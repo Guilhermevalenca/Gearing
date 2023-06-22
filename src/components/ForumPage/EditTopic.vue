@@ -1,14 +1,13 @@
 <template>
     <section>
         <div>
-            <strong>title</strong>
+            <strong>{{title}}</strong>
         </div>
-        <button @click="close()">X</button>
     </section>
     <section>
         <form @submit.prevent="updateTopic()">
             <div>
-                <label>Descrição:</label>
+                <strong>Descrição:</strong><br>
                 <textarea v-model="newMessage" cols="30" rows="10"></textarea>
             </div>
             <button>Editar</button>
@@ -27,9 +26,6 @@ export default{
         }
     },
     methods: {
-        close() {
-            this.$emit('closeEdit');
-        },
         updateTopic() {
             Swal.fire({
                 title: 'editando',
@@ -46,9 +42,15 @@ export default{
                 message: this.newMessage
             })
             .then(response => {
+                console.log(response);
                 if(response.data.success) {
                     Swal.fire({
-                        title: 'Topico editado com sucesso'
+                        title: 'Topico editado com sucesso',
+                        customClass: {
+                          popup: 'swal-popup-custom',
+                          title: 'swal-title-custom',
+                          htmlContainer: 'swal-html-container-custom',
+                        }
                     })
                     .then(result => {
                         if(result.isConfirmed){
@@ -60,9 +62,14 @@ export default{
                     console.log(response.data.error)
                 }
             })
-            .then(error => {
+            .catch(error => {
                 Swal.fire({
-                    title: 'Operação não realizada'
+                    title: 'Operação não realizada',
+                    customClass: {
+                      popup: 'swal-popup-custom',
+                      title: 'swal-title-custom',
+                      htmlContainer: 'swal-html-container-custom',
+                    }
                 })
                 console.log(error);
             })
@@ -74,3 +81,6 @@ export default{
     }
 }
 </script>
+
+<style scoped>
+</style>
