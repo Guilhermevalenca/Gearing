@@ -7,7 +7,11 @@
           <thead>
             <tr>
               <th class="title-topic">{{ title }}</th>
-              <button class="add-comment" @click="() => {this.$store.state.user.auth ? showWindow.addComment = true : actionDenied()}">Responder</button>
+              <button @click="viewEditTopic()">
+                <FA icon="pencil" />
+              </button>
+              <button class="add-comment" @click="() => {this.$store.state.user.auth ? showWindow.addComment = true : actionDenied()}">
+                <FA icon="reply"/></button>
               <button class="session-close" @click="closeComment()">✖</button>
             </tr>
             <tr>
@@ -57,7 +61,7 @@
       </section>
       <section class="window-interaction" v-if="showWindow.addComment || showWindow.EditComment.show">
         <div class="window-content">
-          <button class="window-close" @click="() => {showWindow.addComment = false; showWindow.EditComment.show = false}">X</button>
+          <button class="window-close" @click="() => {}">X</button>
           <section v-if="showWindow.addComment">
             <h2>Adicionar comentario</h2>
             <h4>aqui voce adiciona seu comentario sobre o assunto {{ title }}</h4>
@@ -69,7 +73,7 @@
           </section>
         </div>
       </section>
-  </div>            
+  </div>
 </template>
 
 <script>
@@ -88,7 +92,8 @@ export default {
             EditComment: {
               show: false,
               id: ''
-            }
+            },
+            editTopic: false
           }
       }
   },
@@ -103,6 +108,11 @@ methods: {
         htmlContainer: 'swal-html-container-custom',
       }
     })
+  },
+  closeWindow() {
+    this.showWindow.addComment = false; 
+    this.showWindow.EditComment.show = false;
+    this.showWindow.editTopic = false
   },
   closeComment() {
       this.$emit("closeComments")
