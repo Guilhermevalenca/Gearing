@@ -18,15 +18,9 @@ body {
   color:aquamarine;
 }
 h1,h2,p{
-  background: -webkit-linear-gradient(
-    90deg,
-    rgba(188, 251, 255, 1) 47%,
-    rgba(24, 237, 242, 1) 100%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #E6E6FA;
 }
+
 p{
   text-align:justify;
   text-align-last:center;
@@ -67,7 +61,7 @@ input[type=text]{
   border-radius: 8px;
   border-color: #000;
   height: 1.5em;
-  width: 15em;
+  width: 25em;
 }
 input[type=text]::-webkit-input-placeholder{
   text-align: center;

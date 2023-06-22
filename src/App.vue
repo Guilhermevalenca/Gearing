@@ -1,7 +1,7 @@
 <template>
    <img src="./assets/css/backgrounds/gearingLogo.gif" class="logo">
       <h1 class="gearing">Gearing</h1>
-<header>
+<header class="navbar">
   <nav class="navigation-option">
     <router-link to="/">Página Inicial</router-link>
     <RouterLink to="/learningStyles">Estilos de Aprendizagem</RouterLink>
@@ -95,6 +95,11 @@ export default{
 
 <style scoped>
 @import url('https://fonts.cdnfonts.com/css/yielding-timber');
+
+.navbar {
+  display: flex;
+}
+
 .gearing{
   font-family: 'Yielding Timber',sans-serif; 
   font-style: italic;
