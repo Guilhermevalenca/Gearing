@@ -5,20 +5,18 @@
     </div>
 </template>
   
-  <script>
-import Methodology from '@/components/MethodologyPage/Description.vue';
+<script>
+import Methodology from '@/components/MethodologyPage/ViewsDescriptions.vue';
 
 export default {
     components: {Methodology},
     data() {
       return {
-        methods: {
-            pomodoro: false
-        }
+        
       }
     },
     methods: {
-  
+        
     }
 };
 </script>
