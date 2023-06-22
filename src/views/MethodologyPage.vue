@@ -1,28 +1,25 @@
 <template>
-    <section>
-      <h1>{{ metodologia }}</h1>
-      <button @click="() => {methods.pomodoro = !methods.pomodoro}">Pomodoro</button>
-      <div v-if="methods.pomodoro">
-        faz tal coisa
-      </div>
-    </section>
-  </template>
+    <div>
+        <h1>Bem vindo(a) às Metodologias!</h1>
+        <Methodology />
+    </div>
+</template>
   
   <script>
-  export default {
+import Methodology from '@/components/MethodologyPage/Description.vue';
+
+export default {
+    components: {Methodology},
     data() {
       return {
-        metodologia: 'Bem vindo(a) às Metodologias!',
         methods: {
             pomodoro: false
         }
-      };
+      }
     },
     methods: {
-      changeMessage() {
-        this.message = 'Nova mensagem!';
-      }
+  
     }
-  };
-  </script>
+};
+</script>
   
