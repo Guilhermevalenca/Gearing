@@ -200,6 +200,7 @@ nav .start-forum, a:nth-child(5):hover~.animation {
     rgb(133, 26, 186, 1) 46%,
     rgba(100, 2, 223, 1) 81%
   );
+  
 }
 
 </style>

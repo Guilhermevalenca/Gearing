@@ -1,93 +1,95 @@
 <template>
     <section class="list">
       <div>
-        <button @click="() => {methodology.testespraticos = !methodology.testespraticos}">Testes Práticos</button>
-        <p v-if="methodology.testespraticos">Os testes práticos nada mais são do que a resolução de exercícios, simulados e provas antigas.<br>
-        Este é um dos métodos de estudo mais eficientes, pois força seu cérebro a pensar bastante nas informações previamente estudadas para responder cada uma das perguntas. Além disso, faz com que você consiga medir seu nível de conhecimento atual.</p>
+        <button @click="alert(`Os testes práticos nada mais são do que a resolução de exercícios, simulados e provas antigas.<br>
+        Este é um dos métodos de estudo mais eficientes, pois força seu cérebro a pensar bastante nas informações previamente estudadas para responder cada uma das perguntas.<br> 
+        Além disso, faz com que você consiga medir seu nível de conhecimento atual.`)">Testes Práticos</button>
+        <p v-if="methodology.testespraticos"></p>
 
       </div>
 
       <div>
-        <button @click="() => {methodology.pensamentosdifusos = !methodology.pensamentosdifusos}">Pensamentos Difusos</button>
-        <p v-if="methodology.pensamentosdifusos">O modo difuso, é quando os pensamentos do cérebro podem fluir livremente, criando conexões variadas.<br>
+        <button @click="alert(`O modo difuso, é quando os pensamentos do cérebro podem fluir livremente, criando conexões variadas.<br>
         Ele aparece nos momentos de relaxamento, quando você está jogando, vendo um filme ou fazendo um passeio.<br>
         Investir no pensamento difuso como método de estudo é ideal para as situações em que já leu e releu um material, mas ainda não conseguiu compreendê-lo completamente.<br> 
-        O melhor a fazer nesse caso é se distrair, pois será mais fácil para o cérebro processar as informações novas.</p>
+        O melhor a fazer nesse caso é se distrair, pois será mais fácil para o cérebro processar as informações novas.`)">Pensamentos Difusos</button>
+        <p v-if="methodology.pensamentosdifusos"></p>
 
       </div>
 
       <div>
-        <button @click="() => {methodology.intercalacaodematerias = !methodology.intercalacaodematerias}">Intercalação de Máterias</button>
-        <p v-if="methodology.intercalacaodematerias">O estudo intercalado funciona como o nome sugere, ou seja, alternando as disciplinas que você estuda.<br> 
+        <button @click="alert(`O estudo intercalado funciona como o nome sugere, ou seja, alternando as disciplinas que você estuda.<br> 
         Assim, em vez de passar quatro horas apenas aprendendo matemática, por exemplo, você divide esse tempo: 2h para biologia e 2h para matemática.<br>
         Isso ajuda o cérebro a não se cansar, nem entrar no piloto automático, além de evitar a procrastinação.<br>
-        Outra grande vantagem é que fica possível otimizar seu tempo de estudo ao longo da semana.</p> 
+        Outra grande vantagem é que fica possível otimizar seu tempo de estudo ao longo da semana.`)">Intercalação de Máterias</button>
+        <p v-if="methodology.intercalacaodematerias"></p> 
 
       </div>
 
       <div>
-        <button @click="() => {methodology.resumosefichamentos = !methodology.resumosefichamentos}">Resumos e Fichamentos</button>
-        <p v-if="methodology.resumosefichamentos">Resumo= é um dos métodos de estudo mais populares entre os alunos.<br>
+        <button @click="alert(`Resumo= é um dos métodos de estudo mais populares entre os alunos.<br>
         Ele consiste, basicamente, em apresentar um conteúdo superficialmente, porém mantendo todas as suas ideias principais.<br>
         Fichamentos= reproduzem todo o conteúdo que você acabou de estudar, não apenas as partes principais.<br>
         Todavia, essa “reprodução” precisa ser feita com as suas próprias palavras.<br>
         Então, nada de copiar trechos do livro ou da apostila.<br> 
-        (Outro ponto importante é que o fichamento não é feito em forma de texto corrido. Os blocos de texto devem ser separados por ideias, seguindo a mesma ordem lógica do material original.)</p>
+        (Outro ponto importante é que o fichamento não é feito em forma de texto corrido. Os blocos de texto devem ser separados por ideias, seguindo a mesma ordem lógica do material original.)`)">Resumos e Fichamentos</button>
+        <p v-if="methodology.resumosefichamentos"></p>
 
       </div>
 
       <div>
-        <button @click="() => {methodology.releitura = !methodology.releitura}">Releitura</button>
-        <p v-if="methodology.releitura">A prática da releitura é uma forma interessante de memorizar os conhecimentos vistos, pois ela possibilita que o estudante retorne ao conteúdo com um novo olhar e, possivelmente, com novas ideias em mente.<br> 
-        Assim, ela pode ser muito mais eficaz do que simplesmente grifar ou sublinhar certas partes de um texto.</p>
+        <button @click="alert(`A prática da releitura é uma forma interessante de memorizar os conhecimentos vistos, pois ela possibilita que o estudante retorne ao conteúdo com um novo olhar e, possivelmente, com novas ideias em mente.<br> 
+        Assim, ela pode ser muito mais eficaz do que simplesmente grifar ou sublinhar certas partes de um texto.`)">Releitura</button>
+        <p v-if="methodology.releitura"></p>
 
       </div>
 
       <div>
-        <button @click="() => {methodology.descritiva = !methodology.descritiva}">Descritiva</button>
-        <p v-if="methodology.descritiva">É uma abordagem observacional que se concentra na coleta de dados sobre o que está acontecendo, sem tentar explicar ou interpretar o porquê.<br>
-        Essa metodologia é frequentemente usada em estudos de campo, pesquisas de mercado, pesquisas de opinião pública e em outras áreas em que o objetivo é descrever ou compreender o comportamento humano ou social, a estrutura de uma organização ou um fenômeno natural.</p>
+        <button @click="alert(`É uma abordagem observacional que se concentra na coleta de dados sobre o que está acontecendo, sem tentar explicar ou interpretar o porquê.<br>
+        Essa metodologia é frequentemente usada em estudos de campo, pesquisas de mercado, pesquisas de opinião pública e em outras áreas em que o objetivo é descrever ou compreender o comportamento humano ou social, a estrutura de uma organização ou um fenômeno natural.`)">Descritiva</button>
+        <p v-if="methodology.descritiva"></p>
 
       </div>
 
       <div>
-        <button @click="() => {methodology.exploratoria = !methodology.exploratoria}">Exploratória</button>
-        <p v-if="methodology.exploratoria">A metodologia exploratória é um tipo de metodologia de pesquisa que visa explorar um fenômeno pouco conhecido, pouco estudado ou pouco compreendido, a fim de gerar novas ideias, hipóteses e possibilidades de pesquisa.<br> 
+        <button @click="alert(`A metodologia exploratória é um tipo de metodologia de pesquisa que visa explorar um fenômeno pouco conhecido, pouco estudado ou pouco compreendido, a fim de gerar novas ideias, hipóteses e possibilidades de pesquisa.<br> 
         A metodologia exploratória pode ser usada em diferentes áreas do conhecimento, como ciências sociais, ciências naturais, engenharia e tecnologia, entre outras.<br> 
-        lá geralmente envolve a coleta de dados primários e secundários, como revisão bibliográfica, observação, entrevistas, grupos focais e questionários, e pode ser qualitativa, quantitativa ou uma combinação de ambas.</p>
+        lá geralmente envolve a coleta de dados primários e secundários, como revisão bibliográfica, observação, entrevistas, grupos focais e questionários, e pode ser qualitativa, quantitativa ou uma combinação de ambas.`)">Exploratória</button>
+        <p v-if="methodology.exploratoria"></p>
 
       </div>
 
       <div>
-        <button @click="() => {methodology.transversal = !methodology.transversal}">Transversal</button>
-        <p v-if="methodology.transversal">A transversal é um tipo de metodologia de pesquisa que envolve a coleta de dados em um único momento no tempo, com o objetivo de descrever uma situação, um fenômeno ou um grupo populacional em um determinado momento.<br> 
+        <button @click="alert(`A transversal é um tipo de metodologia de pesquisa que envolve a coleta de dados em um único momento no tempo, com o objetivo de descrever uma situação, um fenômeno ou um grupo populacional em um determinado momento.<br> 
         Em resumo, a metodologia transversal envolve a coleta de dados em um único momento no tempo, com o objetivo de descrever uma situação, um fenômeno ou um grupo populacional em um determinado momento.<br>
-        Ela é amplamente utilizada em estudos descritivos e pesquisas de opinião.</p>
+        Ela é amplamente utilizada em estudos descritivos e pesquisas de opinião.`)">Transversal</button>
+        <p v-if="methodology.transversal"></p>
       </div>
       
       <div>
-        <button @click="() => {methodology.quantitativa = !methodology.quantitativa}">Quantitativa</button>
-        <p v-if="methodology.quantitativa">A Metodologia Quantitativa é uma abordagem de pesquisa que utiliza técnicas estatísticas e matemáticas para coletar e analisar dados numéricos com o objetivo de descrever, explicar ou prever fenômenos sociais, psicológicos ou físicos.<br> 
+        <button @click="alert(`A Metodologia Quantitativa é uma abordagem de pesquisa que utiliza técnicas estatísticas e matemáticas para coletar e analisar dados numéricos com o objetivo de descrever, explicar ou prever fenômenos sociais, psicológicos ou físicos.<br> 
         É amplamente utilizada em áreas como a economia, a medicina, a psicologia, a sociologia e outras ciências.<br> 
         Em resumo, a Metodologia Quantitativa é uma abordagem de pesquisa que utiliza técnicas estatísticas e matemáticas para coletar e analisar dados numéricos com o objetivo de descrever, explicar ou prever fenômenos sociais, psicológicos ou físicos.<br> 
-        Ela se concentra em coletar dados quantificáveis através de técnicas padronizadas e altamente estruturadas e é amplamente utilizada em áreas das ciências exatas e sociais.</p>
+        Ela se concentra em coletar dados quantificáveis através de técnicas padronizadas e altamente estruturadas e é amplamente utilizada em áreas das ciências exatas e sociais.`)">Quantitativa</button>
+        <p v-if="methodology.quantitativa"></p>
 
       </div>
 
       <div>
-        <button @click="() => {methodology.qualitativa = !methodology.qualitativa}">Qualitativa</button>
-        <p v-if="methodology.qualitativa">A Metodologia Qualitativa é uma abordagem de pesquisa que se concentra na compreensão e interpretação dos fenômenos sociais, culturais e psicológicos, utilizando dados não numéricos.<br> 
+        <button @click="alert(`A Metodologia Qualitativa é uma abordagem de pesquisa que se concentra na compreensão e interpretação dos fenômenos sociais, culturais e psicológicos, utilizando dados não numéricos.<br> 
         Ela é amplamente utilizada em áreas das ciências sociais e humanas, como antropologia, sociologia, psicologia e estudos culturais.<br> 
         Ao contrário da Metodologia Quantitativa, que se concentra na medição e análise de dados numéricos, a Metodologia Qualitativa busca explorar a complexidade e a riqueza dos dados qualitativos, como entrevistas, observações e documentos, para identificar padrões, tendências e significados subjacentes aos fenômenos estudados.<br>
-        Em resumo, a Metodologia Qualitativa é uma abordagem de pesquisa que busca entender a complexidade e a riqueza dos fenômenos sociais, culturais e psicológicos, utilizando dados não numéricos e técnicas de análise qualitativa.</p>
+        Em resumo, a Metodologia Qualitativa é uma abordagem de pesquisa que busca entender a complexidade e a riqueza dos fenômenos sociais, culturais e psicológicos, utilizando dados não numéricos e técnicas de análise qualitativa.`)">Qualitativa</button>
+        <p v-if="methodology.qualitativa"></p>
 
       </div>
 
       <div>
-        <button @click="() => {methodology.pomodoro = !methodology.pomodoro}">Pomodoro</button>
-        <p v-if="methodology.pomodoro">O Método Pomodoro é um método de gerenciamento de tempo baseado em períodos de 25 minutos (pomodoros) de estudo ou trabalho focado, interrompidos por intervalos de 5 minutos. <br> 
-        Após quatro intervalos de estudo consecutivos, são geralmente feitos intervalos mais longos, que podem variar de 15 a 30 minutos.</p>
-     
+        <button @click="alert(`O Método Pomodoro é um método de gerenciamento de tempo baseado em períodos de 25 minutos (pomodoros) de estudo ou trabalho focado, interrompidos por intervalos de 5 minutos. <br> 
+        Após quatro intervalos de estudo consecutivos, são geralmente feitos intervalos mais longos, que podem variar de 15 a 30 minutos`)"
+        >Pomodoro</button>
+        <p v-if="methodology.pomodoro"></p>
+
       </div>
 
       <div>
@@ -144,6 +146,12 @@
         <p v-if="methodology.experimentacao"></p>
 
       </div>
+      <div>
+        <button @click="alert(`https://blog.estacio.br/aluno-estacio/metodos-de-estudo/<br> https://cuboup.com/conteudo/metodologia/
+`)">link das páginas usadas:</button>
+        <p v-if="methodology.link"></p>
+
+      </div>
     </section>
 
 </template>
@@ -176,6 +184,7 @@ export default {
           aprendizagemaberta: false,
           waldorf: false,
           experimentação: false,
+          link: false,
       }
     }
   },
@@ -187,19 +196,19 @@ export default {
     }
   }
 }
+
 </script>
 
 <style scoped>
 
 button {
-    width: 14em;
+    width: 13em;
 }
 
 .list{
     display:flex;
     flex-flow: row wrap;
-    gap: 5em;
-    
+    gap: 3.8em;
 }
 
 </style>
