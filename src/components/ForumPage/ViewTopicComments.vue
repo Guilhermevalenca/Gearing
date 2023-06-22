@@ -7,12 +7,19 @@
           <thead>
             <tr>
               <th class="title-topic">{{ title }}</th>
-              <button @click="viewEditTopic()">
-                <FA icon="pencil" />
-              </button>
-              <button class="add-comment" @click="() => {this.$store.state.user.auth ? showWindow.addComment = true : actionDenied()}">
-                <FA icon="reply"/></button>
-              <button class="session-close" @click="closeComment()">✖</button>
+              <th>
+                <button v-if="this.$store.state.user.auth && email == this.$store.state.user.email" @click="viewEditTopic()">
+                  <FA icon="pencil" />
+                </button>
+              </th>
+              <th>
+                <button class="add-comment" @click="() => {this.$store.state.user.auth ? showWindow.addComment = true : actionDenied()}">
+                  <FA icon="reply"/>
+                </button>
+              </th>
+              <th>
+                <button class="session-close" @click="closeComment()">✖</button>
+              </th>
             </tr>
             <tr>
               <th class="nickname">
@@ -59,9 +66,9 @@
         </table>
       </div>
       </section>
-      <section class="window-interaction" v-if="showWindow.addComment || showWindow.EditComment.show">
+      <section class="window-interaction" v-if="showWindow.addComment || showWindow.EditComment.show || showWindow.editTopic">
         <div class="window-content">
-          <button class="window-close" @click="() => {}">X</button>
+          <button class="window-close" @click="closeWindow()">X</button>
           <section v-if="showWindow.addComment">
             <h2>Adicionar comentario</h2>
             <h4>aqui voce adiciona seu comentario sobre o assunto {{ title }}</h4>
@@ -70,6 +77,9 @@
           </section>
           <section v-if="showWindow.EditComment.show">
             <EditComment @closeWindow="() => {showWindow.EditComment.show = false; showUpdatedComments()}" :title="title" :id="showWindow.EditComment.id"/>
+          </section>
+          <section>
+            <EditTopic v-if="showWindow.editTopic" :title="title" :message="description"/>
           </section>
         </div>
       </section>
@@ -80,9 +90,10 @@
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import EditComment from './EditComment.vue';
+import EditTopic from './EditTopic.vue';
 
 export default {
-  components: {EditComment},
+  components: {EditComment, EditTopic},
   data() {
       return {
           newComments: '',
@@ -98,6 +109,9 @@ export default {
       }
   },
 methods: {
+  viewEditTopic() {
+    this.showWindow.editTopic = true;
+  },
   actionDenied() {
     Swal.fire({
       title: 'Ação negada',
@@ -112,7 +126,7 @@ methods: {
   closeWindow() {
     this.showWindow.addComment = false; 
     this.showWindow.EditComment.show = false;
-    this.showWindow.editTopic = false
+    this.showWindow.editTopic = false;
   },
   closeComment() {
       this.$emit("closeComments")
