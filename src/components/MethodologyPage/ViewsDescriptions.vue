@@ -46,7 +46,7 @@ Este é um dos métodos de estudo mais eficientes, pois força seu cérebro a pe
       <button @click="() => {methodology.descritiva = !methodology.descritiva}">Descritiva</button>
       <div v-if="methodology.descritiva">
         É uma abordagem observacional que se concentra na coleta de dados sobre o que está acontecendo, sem tentar explicar ou interpretar o porquê.<br>
-        Essa metodologia é frequentemente usada em estudos de campo, pesquisas de mercado, pesquisas de opinião pública e em outras áreas em que o objetivo é descrever ou compreender o comportamento humano ou social, a estrutura de uma organização ou um fenômeno natural.<br>
+        Essa metodologia é frequentemente usada em estudos de campo, pesquisas de mercado, pesquisas de opinião pública e em outras áreas em que o objetivo é descrever ou compreender o comportamento humano ou social, a estrutura de uma organização ou um fenômeno natural.
 
       </div>
 
@@ -69,22 +69,24 @@ Este é um dos métodos de estudo mais eficientes, pois força seu cérebro a pe
       <div v-if="methodology.quantitativa">
         A Metodologia Quantitativa é uma abordagem de pesquisa que utiliza técnicas estatísticas e matemáticas para coletar e analisar dados numéricos com o objetivo de descrever, explicar ou prever fenômenos sociais, psicológicos ou físicos.<br> 
         É amplamente utilizada em áreas como a economia, a medicina, a psicologia, a sociologia e outras ciências.<br> 
-        Em resumo, a Metodologia Quantitativa é uma abordagem de pesquisa que utiliza técnicas estatísticas e matemáticas para coletar e analisar dados numéricos com o objetivo de descrever, explicar ou prever fenômenos sociais, psicológicos ou físicos. 
+        Em resumo, a Metodologia Quantitativa é uma abordagem de pesquisa que utiliza técnicas estatísticas e matemáticas para coletar e analisar dados numéricos com o objetivo de descrever, explicar ou prever fenômenos sociais, psicológicos ou físicos.<br> 
         Ela se concentra em coletar dados quantificáveis através de técnicas padronizadas e altamente estruturadas e é amplamente utilizada em áreas das ciências exatas e sociais.
 
       </div>
 
       <button @click="() => {methodology.testespraticos = !methodology.testespraticos}">Testes Práticos</button>
       <div v-if="methodology.testespraticos">
-Os testes práticos nada mais são do que a resolução de exercícios, simulados e provas antigas.<br>
-Este é um dos métodos de estudo mais eficientes, pois força seu cérebro a pensar bastante nas informações previamente estudadas para responder cada uma das perguntas. Além disso, faz com que você consiga medir seu nível de conhecimento atual.
+        A Metodologia Qualitativa é uma abordagem de pesquisa que se concentra na compreensão e interpretação dos fenômenos sociais, culturais e psicológicos, utilizando dados não numéricos.<br> 
+        Ela é amplamente utilizada em áreas das ciências sociais e humanas, como antropologia, sociologia, psicologia e estudos culturais.<br> 
+        Ao contrário da Metodologia Quantitativa, que se concentra na medição e análise de dados numéricos, a Metodologia Qualitativa busca explorar a complexidade e a riqueza dos dados qualitativos, como entrevistas, observações e documentos, para identificar padrões, tendências e significados subjacentes aos fenômenos estudados.<br>
+        Em resumo, a Metodologia Qualitativa é uma abordagem de pesquisa que busca entender a complexidade e a riqueza dos fenômenos sociais, culturais e psicológicos, utilizando dados não numéricos e técnicas de análise qualitativa.
 
       </div>
     </section>
 </template>
   
 <script>
-import { faHandSparkles } from '@fortawesome/free-solid-svg-icons';
+//import { faHandSparkles } from '@fortawesome/free-solid-svg-icons';
 
 export default {
   data() {
