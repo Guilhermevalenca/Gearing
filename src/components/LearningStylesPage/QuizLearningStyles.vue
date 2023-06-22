@@ -18,6 +18,10 @@
 </div>
 </div>
 
+<input :class="{'equal':classEqual[2]}" v-model.number="question.question3[1]" type="range"  min="1" max="4">
+
+
+
 <section>
 <h2>1. Enquanto estou estudando gosto de ...</h2>
   <label>
@@ -669,7 +673,7 @@ border-color: black;
 border-style: inherit;
 border: 1px;
 border-radius: 9px;
-background-color: white;
+background-color: rgb(255, 255, 255);
 margin: 5px;
 }
 input[type="range"]::-webkit-slider-thumb {
@@ -690,10 +694,11 @@ input[type="range"]::-moz-range-thumb:hover {
   background-color: black;
 }
 .equal{
--webkit-appearance: none;
-appearance: none;
-background-color:red;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color:red;
 }
+
 .valueColor{
   height: 1em;
   width: 1em;
@@ -725,6 +730,8 @@ label {
 span{
   color:red;
 }
+
+
 
 
 </style>
