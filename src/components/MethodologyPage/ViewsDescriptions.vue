@@ -82,6 +82,78 @@ Este é um dos métodos de estudo mais eficientes, pois força seu cérebro a pe
         Em resumo, a Metodologia Qualitativa é uma abordagem de pesquisa que busca entender a complexidade e a riqueza dos fenômenos sociais, culturais e psicológicos, utilizando dados não numéricos e técnicas de análise qualitativa.
 
       </div>
+
+      <button @click="() => {methodology.pomodoro = !methodology.pomodoro}">Pomodoro</button>
+      <div v-if="methodology.pomodoro">
+        O Método Pomodoro é um método de gerenciamento de tempo baseado em períodos de 25 minutos (pomodoros) de estudo ou trabalho focado, interrompidos por intervalos de 5 minutos. <br> 
+        Após quatro intervalos de estudo consecutivos, são geralmente feitos intervalos mais longos, que podem variar de 15 a 30 minutos.
+     
+      </div>
+
+      <button @click="() => {methodology.mapamental = !methodology.mapamental}">Mapa Mental</button>
+      <div v-if="methodology.mapamental">
+        Consiste em criar resumos cheios de símbolos, cores, setas e frases de efeito com o objetivo de organizar o conteúdo e facilitar associações entre as informações destacadas. <br>
+        Esse material é muito indicado para pessoas que têm facilidade de aprender de forma visual.
+
+      </div>
+
+      <button @click="() => {methodology.construtivista = !methodology.construtivista}">Construtivista</button>
+      <div v-if="methodology.contrutivista">
+        A metodologia construtivista entende que a principal função da sala de aula é estimular o aprendizado dos estudantes e incentivar a participação ativa dos mesmos, <br>
+        seja por meio de intervenções ou exposição de suas respectivas opiniões sobre determinado tema.
+
+      </div>
+
+      <button @click="() => {methodology.logosofica = !methodology.logosofica}">Logosófica</button>
+      <div v-if="methodology.logosofica">
+        Para a pedagogia logosófica, educar é “fazer experimentar”. <br>
+        Os alunos aprendem quando vivenciam aquilo que estão estudando, quando o conhecimento se volta em ação.
+
+      </div>
+
+      <button @click="() => {methodology.intercalado = !methodology.intercalado}">Estudo Intercalado</button>
+      <div v-if="methodology.intercalado">
+        O método de estudo intercalado propõe a distribuição dos conteúdos a serem estudados num mesmo período de tempo. <br>
+        Pode também ser chamado de método de rotação de matérias.<br>
+        Portanto, a técnica é usada por estudantes que se ocupam de muitas matérias ou assuntos de estudo e querem otimizar o tempo dedicado ao aprendizado
+      
+      </div>
+
+      <button @click="() => {methodology.interacionista = !methodology.interacionista}">Sócio Interacionista</button>
+      <div v-if="methodology.interacionista">
+        Este método entende que a pessoa se desenvolve com influências socioculturais, pois o homem é formado também pelo meio em que ele está inserido. <br>
+        Essa teoria coloca que o contato que o indivíduo tem com o meio e com seus iguais é mediado por um conhecimento e/ou experiência assimilado anteriormente e que toda troca e relacionamento gera uma aprendizagem.
+
+      </div>
+
+      <button @click="() => {methodology.autoaprendizagem = !methodology.autoaprendizagem}">Auto Aprendizagem</button>
+      <div v-if="methodology.autoaprendizagem">
+        A autoaprendizagem é uma estratégia pedagógica voltada ao desenvolvimento das habilidades cognitivas dos alunos para que eles possam “aprender a aprender” com autonomia, <br>
+        plenamente conscientes dos procedimentos que estão empregando, sem se limitar às condições impostas pelo ambiente educacional.
+
+      </div>
+
+      <button @click="() => {methodology.aprendizagemaberta = !methodology.aprendizagemaberta}">Aprendizagem Aberta</button>
+      <div v-if="methodology.aprendizagemaberta">
+        Nessa metodologia, o aluno possui autonomia para cursar mais temáticas ao mesmo tempo, <br>
+        fazendo que ele experimente a interdisciplinaridade.
+
+      </div>
+
+      <button @click="() => {methodology.waldorf = !methodology.waldorf}">Waldorf</button>
+      <div v-if="methodology.waldorf">
+        Baseia-se em um processo de ensino-aprendizagem lúdico e inclusivo, onde os alunos têm a oportunidade de aprender por meio de experiências individuais ou de pares. <br>
+        Além disso, o método tem um foco claro nas manifestações artísticas.
+
+      </div>
+
+      <button @click="() => {methodology.experimentacao = !methodology.experimentacao}">Experimentação</button>
+      <div v-if="methodology.experimentacao">
+        Visa desenvolver práticas pedagógicas que possibilitem aos alunos colocar a “mão na massa” resolvendo adversidades, <br>
+        ampliando o seu conhecimento através de projetos, criando e testando soluções reais.
+
+      </div>
+
     </section>
 
 </template>
@@ -103,7 +175,16 @@ export default {
           transversal: false,
           quantitativa: false,
           qualitativa: false,
-
+          mapamental: false,
+          construtivista: false,
+          pomodoro: false,
+          logosofica: false,
+          intercalado: false,
+          interacionista: false,
+          autoaprendizagem: false,
+          aprendizagemaberta: false,
+          waldorf: false,
+          experimentação: false,
       }
     }
   }
