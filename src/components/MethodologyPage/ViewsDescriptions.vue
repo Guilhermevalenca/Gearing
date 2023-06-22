@@ -74,8 +74,8 @@ Este é um dos métodos de estudo mais eficientes, pois força seu cérebro a pe
 
       </div>
 
-      <button @click="() => {methodology.testespraticos = !methodology.testespraticos}">Testes Práticos</button>
-      <div v-if="methodology.testespraticos">
+      <button @click="() => {methodology.qualitativa = !methodology.qualitativa}">Qualitativa</button>
+      <div v-if="methodology.qualitativa">
         A Metodologia Qualitativa é uma abordagem de pesquisa que se concentra na compreensão e interpretação dos fenômenos sociais, culturais e psicológicos, utilizando dados não numéricos.<br> 
         Ela é amplamente utilizada em áreas das ciências sociais e humanas, como antropologia, sociologia, psicologia e estudos culturais.<br> 
         Ao contrário da Metodologia Quantitativa, que se concentra na medição e análise de dados numéricos, a Metodologia Qualitativa busca explorar a complexidade e a riqueza dos dados qualitativos, como entrevistas, observações e documentos, para identificar padrões, tendências e significados subjacentes aos fenômenos estudados.<br>
@@ -83,8 +83,9 @@ Este é um dos métodos de estudo mais eficientes, pois força seu cérebro a pe
 
       </div>
     </section>
+
 </template>
-  
+
 <script>
 //import { faHandSparkles } from '@fortawesome/free-solid-svg-icons';
 
@@ -103,12 +104,8 @@ export default {
           quantitativa: false,
           qualitativa: false,
 
-
-
-
       }
     }
   }
 }
 </script>
-  
