@@ -168,10 +168,14 @@ export default{
                     popup: 'swal-popup-custom',
                     title: 'swal-title-custom',
                     htmlContainer: 'swal-html-container-custom',
+                },
+                willOpen: () => {
+                    Swal.showLoading();
+                },
+                willClose: () => {
+                    Swal.hideLoading();
                 }
-                
             });
-            Swal.showLoading();
             axios.post('http://localhost:8000/schedule/addSchedule.php', {
                 schedule: this.receivingSubjects,
                 title: this.title,
@@ -179,65 +183,27 @@ export default{
                 id: localStorage.getItem('idSession')
             })
             .then(response => {
-                if(response.data.existTitle){
+                if(response.data.success) {
                     Swal.fire({
-                        title:'Título existente',
-                        text:'O título que você deseja adicionar ao seu novo cronograma já está sendo usado em um dos seus outros cronogramas',
+                        title: 'cronograma criado com sucesso',
+                        confirmButtonText: 'Vizualizer cronogramas',
                         customClass: {
-                                popup: 'swal-popup-custom',
-                                title: 'swal-title-custom',
-                                htmlContainer: 'swal-html-container-custom',
-                            }
-                    });
-
-                }else if(response.data.failedCreatedSchedule){
-                    Swal.fire({
-                        title:'Falha ao criar cronograma',
-                        text:'Não foi possível criar seu cronograma, tente novamente mais tarde',
-                        customClass: {
-                                popup: 'swal-popup-custom',
-                                title: 'swal-title-custom',
-                                htmlContainer: 'swal-html-container-custom',
-                            }
-                    });
-                }else{
-                    this.$emit('quitCreatingSchedule');
-                    if(response.data.addSubjectFailed){
-                        console.log(response.data.addSubjectFailed);
-                        Swal.fire({
-                            title:'Falha ao adicionar matéria',
-                            text:'Uma ou mais materias não foram adicionadas',
-                            customClass: {
-                                popup: 'swal-popup-custom',
-                                title: 'swal-title-custom',
-                                htmlContainer: 'swal-html-container-custom',
-                            }
-                                 })
-                        .then(result => {
-                            if(result.isConfirmed){
-                                Swal.fire({
-                                title:'Cronograma criado com sucesso',
-                                text:'Seu cronograma foi criado, boa sorte com seus estudos!',
-                                customClass: {
-                                    popup: 'swal-popup-custom',
-                                    title: 'swal-title-custom',
-                                    htmlContainer: 'swal-html-container-custom',
-                            }
-                            })        
-                            }
-                        })
-                    }else if(response.data.success){
-                        Swal.fire({
-                        title:'Cronograma criado com sucesso',
-                        text:'Seu cronograma foi criado, boa sorte com seus estudos!',
-                                customClass: {
-                                popup: 'swal-popup-custom',
-                                title: 'swal-title-custom',
-                                htmlContainer: 'swal-html-container-custom',
-                            }
+                            popup: 'swal-popup-custom',
+                            title: 'swal-title-custom',
+                            htmlContainer: 'swal-html-container-custom',
+                        }
                     })
-                    }
+                    .then(result => {
+                        if(result.isConfirmed){
+                            this.$emit('viewShedules');
+                        }
+                    })
+                }else{
+                    console.log(response.data.error);
                 }
+            })
+            .then(error => {
+                console.log(error);
             })
         },
         giveBackSubject(subject) {

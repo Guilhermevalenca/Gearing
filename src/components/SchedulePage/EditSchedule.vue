@@ -145,11 +145,9 @@ export default{
                     this.updateSubjects[i][j] = ''
                     element.querySelectorAll('.schedule-subjects-alocated-true').forEach(subject => {
                         this.updateSubjects[i][j] += subject.textContent + ","
-                        console.log('subject:',subject.textContent)
                     })
                     element.querySelectorAll('.store-box-newSubjects').forEach(subject => {
                         this.updateSubjects[i][j] += subject.textContent + ',';
-                        console.log('newSubject:',subject.textContent)
                     })
                 }
                 j++
@@ -159,17 +157,20 @@ export default{
                 }
             })
             Swal.fire({
-              title: 'Atualizando cronograma',
-              showConfirmButton: false,
-              allowOutsideClick: false,
-              customClass: {
-                                popup: 'swal-popup-custom',
-                                title: 'swal-title-custom',
-                                htmlContainer: 'swal-html-container-custom',
-                            },
-              willOpen: () => {
-                Swal.showLoading();
-              }
+                title: 'Atualizando cronograma',
+                showConfirmButton: false,
+                allowOutsideClick: false,
+                customClass: {
+                    popup: 'swal-popup-custom',
+                    title: 'swal-title-custom',
+                    htmlContainer: 'swal-html-container-custom',
+                },
+                willOpen: () => {
+                    Swal.showLoading();
+                },
+                willClose: () => {
+                    Swal.hideLoading();
+                }
             });
             axios.post('http://localhost:8000/schedule/updateSchedule.php',{
                 id: localStorage.getItem('idSession'),
@@ -177,50 +178,26 @@ export default{
                 title: this.currentTitle
             })
             .then(response => {
-                Swal.hideLoading();
-                Swal.update({
-                    showConfirmButton: true,
-                    allowOutsideClick: true,
-                    customClass: {
-                                popup: 'swal-popup-custom',
-                                title: 'swal-title-custom',
-                                htmlContainer: 'swal-html-container-custom',
-                            }
-                })
-                if(response.data.success){
-                    Swal.update({
+                if(response.data.success) {
+                    Swal.fire({
                         title: 'Cronograma atualizado com sucesso',
-                        text: 'Seu cronograma foi alterado com sucesso',
                         customClass: {
-                                popup: 'swal-popup-custom',
-                                title: 'swal-title-custom',
-                                htmlContainer: 'swal-html-container-custom',
-                            }
-                    });this.$store.dispatch('changeSchedule','')
-                }else if(response.data.saveSubjectError){
-                    Swal.update({
-                        title: 'Atualização parcial',
-                        text: 'Houve um problema ao atualizar o seu cronograma, talvez exista alguma matéria fora do seu devido lugar',
-                        customClass: {
-                                popup: 'swal-popup-custom',
-                                title: 'swal-title-custom',
-                                htmlContainer: 'swal-html-container-custom',
-                            }
+                            popup: 'swal-popup-custom',
+                            title: 'swal-title-custom',
+                            htmlContainer: 'swal-html-container-custom',
+                        }
                     })
-                }else if(response.data.error){
-                    Swal.update({
-                        title: 'Erro',
-                        text: 'Por razões ainda desconhecidas não foi possível atualizar seu cronograma',
-                        customClass: {
-                                popup: 'swal-popup-custom',
-                                title: 'swal-title-custom',
-                                htmlContainer: 'swal-html-container-custom',
-                            }
+                    .then(result => {
+                        if(result.isConfirmed){
+                            this.$emit('viewSchedule')
+                        }
                     })
+                }else{
+                    console.log(response.data.error)
                 }
             })
             .catch(error => {
-                Swal.fire('erro',error)
+                Swal.fire(error)
             })
             
         }

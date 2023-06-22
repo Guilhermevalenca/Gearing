@@ -25,22 +25,17 @@ $email = $_SESSION['email'];
 //preparing response
 $response = [];
 
-//user created schedule
-try{
-    $sql = "INSERT INTO GEA_SCHEDULE (sche_title,sche_shifts,sche_user_email) 
-    VALUES ('$titleSchedule','$shift','$email');";
-    $execute = $conn->exec($sql);
-}catch (PDOException $e){
-    $response['failedCreatedSchedule'] = $e->getMessage();
-    echo json_encode($response);
-    exit();
-}
+$sqlAddSchedule = "INSERT INTO GEA_SCHEDULE (sche_title,sche_shifts,sche_user_email) 
+VALUES ('$titleSchedule','$shift','$email');"; 
 
-$sql = "INSERT INTO GEA_SUBJECT (sub_name,sub_day,sub_hour,sub_sche_title,sub_sche_user_email)
-        VALUES (?,?,?,?,?);";
+$sqlAddSubjects = "INSERT INTO GEA_SUBJECT (sub_name,sub_day,sub_hour,sub_sche_title,sub_sche_user_email)
+VALUES (?,?,?,?,?);";
 
-$stmt = $conn->prepare($sql);
+$conn->beginTransaction();
+
 try{
+    $conn->exec($sqlAddSchedule);
+    $stmt = $conn->prepare($sqlAddSubjects);
     foreach($schedule as $row => $listSubjects) {
         foreach($listSubjects as $column => $subject) {
             if($subject){
@@ -49,10 +44,10 @@ try{
         }
     }
     $response['success'] = true;
-}
-catch (PDOException $e) {
-    $response['success'] = false;
-    $response['addSubjectFailed'] = $e->getMessage();
+    $conn->commit();
+}catch (PDOException $e){
+    $response['error'] = $e->getMessage();
+    $conn->rollBack();
 }
 
 echo json_encode($response);
