@@ -15,17 +15,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   margin: 2em 6em 2em 6em;
-  color:aquamarine;
+  color:#E6E6FA;
 }
 h1,h2,p{
-  background: -webkit-linear-gradient(
-    90deg,
-    rgba(188, 251, 255, 1) 47%,
-    rgba(24, 237, 242, 1) 100%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color:#E6E6FA;
 }
 p{
   text-align:justify;

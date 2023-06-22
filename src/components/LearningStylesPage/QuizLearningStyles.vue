@@ -1,14 +1,7 @@
 <template>
 <div>
-<h2>Questionário de Estilo de aprendizagem</h2>
-  <p class="intro">
-    Respondendo a este quéstionário você descobrirá qual é o seu estilo de aprendizagem, ou seja,
-    a forma como você melhor aprende. 
-    O objetivo desse teste é te ajudar a descobrir qual métodologia se encaixa melhor para 
-    o seu estilo de aprendizagem.
-  </p>
   <div class="instructions">
-    <h1>Instruções</h1>
+    <h2>Instruções</h2>
 <p class="attention">
    Cada pergunta tem quatro opções, você deverar dar uma nota para cada opção de acordo com
    o que você mais se idêntifica, sendo 4 a nota máxima(o item pelo qual você mais se 
@@ -18,7 +11,7 @@
 </div>
 </div>
 
-<section>
+<section class="test-container">
 <h2>1. Enquanto estou estudando gosto de ...</h2>
   <label>
   Lidar com meus sentimentos - Gerenciar e compreender as emoções que surgem durante o processo de aprendizagem
@@ -646,17 +639,23 @@ export default{
 </script>
 
 <style scoped>
-
+.test-container{
+  display: inline-block;
+  max-width: 60em;
+}
 section{
   margin-top: 4em;
 }
 .instructions{
+  display: inline-block;
+  max-width: 40em;
   margin: 3em;
+  font-size: 1.2em;
   border-style:solid;
-  border-color:aquamarine;
-  border-radius:9px;
-  border-width: 1px;
-  background: transparent;
+  border-color:#E6E6FA;
+  border-radius:0.9em;
+  border-width: 0.1em;
+  background: black;
 }
 .attention{
   margin: 1em;
@@ -701,15 +700,7 @@ background-color:red;
 }
   label , .valueColor ,span {
   font-family: "Share Tech Mono", sans-serif;
-  color: aqua;
-  background: -webkit-linear-gradient(
-    90deg,
-    rgba(188, 251, 255, 1) 47%,
-    rgba(24, 237, 242, 1) 100%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color:#E6E6FA;
 }
 h2{
   font-size: 24px;
@@ -719,7 +710,7 @@ h2{
 }
 label {
   font-family: "Share Tech Mono", sans-serif;
-  font-size: 16px;
+  font-size: 1.2em;
   margin: 1em;
 }
 span{

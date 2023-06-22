@@ -1,6 +1,6 @@
 <template>
 <section>
-    <h2>Seja bem-vindo(a) ao fórum</h2>
+    <h2>O que deseja fazer?</h2>
     <button @click="showCreate()">Criar tópico</button>
     <button @click="showTopics()">Vizualizar tópicos</button>
 </section>
@@ -17,6 +17,7 @@
 <script>
 import CreateTopic from '@/components/ForumPage/CreateTopic.vue';
 import ViewTopics from '@/components/ForumPage/ViewCreatedTopics.vue';
+import Swal from 'sweetalert2';
 export default{
     data(){
         return{
@@ -25,6 +26,18 @@ export default{
         }
     },
     components: {CreateTopic, ViewTopics},
+    created(){
+        Swal.fire({
+            title: 'Seja bem-Vindo ao Fórum',
+            text: 'Aqui você pode interagir com outros estudantes,trocar experiências,sugerir métodos e discutir sobre vários assuntos.Divirta-se e trate todos com respeito ; ',
+            confirmButtonText: 'Vamos lá!',
+                customClass: {
+                      popup: 'swal-popup-custom',
+                      title: 'swal-title-custom',
+                      htmlContainer: 'swal-html-container-custom',
+                  }
+        })
+    },
     methods: {
         showCreate() {
             if(this.viewTopic){
