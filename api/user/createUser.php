@@ -5,6 +5,8 @@ require '../accept.php';
 //establishing connection with the bank
 require '../establishingConnection.php';
 
+require('../functions.php');
+
 //creating user
 $receivingJson = file_get_contents('php://input');
 $userData = json_decode($receivingJson, true);
@@ -14,11 +16,14 @@ $email = $userData['email'];
 $name = $userData['username'];
 $password = $userData['password'];
 
+$cripPass = encryption($password);
+$cripEmail = encryption($email);
+
 $response = [];
 try{
     //adding user data
     $sql = "INSERT INTO GEA_USER (user_email,user_name,user_password) 
-            VALUES ('$email','$name','$password');";
+            VALUES ('$cripEmail','$name','$cripPass');";
     $rowCount = $conn->exec($sql);
     $response['success'] = "true";
 }catch (PDOException $e) {

@@ -19,7 +19,7 @@ $result = $conn->query($sql);
 if(isset($result)){
     foreach($result as $userData){
         $responseData = [
-            'password' => $userData['user_password']
+            'password' => base64_decode($userData['user_password'])
         ];
         echo json_encode($responseData);
         exit();

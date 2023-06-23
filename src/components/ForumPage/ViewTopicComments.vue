@@ -196,7 +196,7 @@ props: {
   email: String,
   description: String,
   name: String,
-  date: Date
+  date: String
 }
 };
 </script>

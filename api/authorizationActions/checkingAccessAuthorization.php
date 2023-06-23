@@ -31,7 +31,7 @@ try{
         foreach($result as $userData){
             $responseData['user'] = [
                 'username' => $userData['user_name'],
-                'email' => $userData['user_email'],
+                'email' => encryption($userData['user_email']),
                 'auth' => true
             ];
             $_SESSION['email'] = $userData['user_email'];

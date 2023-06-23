@@ -23,8 +23,8 @@ $response = [];
 
 try{
     $sql = "INSERT INTO GEA_TOPIC (top_title,top_description,top_user_email,top_user_name)
-            VALUES ('$title','$description', '$email','$name');";
-    $result = $conn->exec($sql);
+    VALUES ('$title','$description', '$email','$name');";
+    $conn->exec($sql);
     $response['success'] = true;
 }catch (PDOException $e){
     $response['error'] = true;

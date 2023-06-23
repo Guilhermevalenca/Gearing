@@ -58,12 +58,12 @@ CREATE TABLE GEA_COMMENTS(
 
 /* ADICIONANDO USUARIOS POR PADRÃO*/
 INSERT INTO GEA_USER (user_email,user_name,user_password) 
-VALUES ('gearing@gmail.com','gearing','gearing'), ('gui@gmail.com','gui','123'),
-('cra@discente.ifpe.edu.br','nix','zeroum'), ('assie@gmail.com','assíria','123');
+VALUES ('2VhcmluZ0BnbWFpbC5jb20=','gearing','Z2VhcmluZw=='), ('Z3VpQGdtYWlsLmNvbQ==','gui','cm9jazExMDk='),
+('Y3JhQGRpc2NlbnRlLmlmcGUuZWR1LmJy','nix','emVyb3Vt'), ('YXNzaWVAZ21haWwuY29t','assíria','MTIz');
 /* ADICIONANDO TOPICO NO FORUM POR PADRÃO */
 INSERT INTO GEA_TOPIC (top_title,top_description,top_user_email,top_user_name)
-VALUES ('titulo de teste','apenas uma descrição qualquer para realizar um teste qualquer', 'gearing@gmail.com','gearing');
+VALUES ('titulo de teste','apenas uma descrição qualquer para realizar um teste qualquer', '2VhcmluZ0BnbWFpbC5jb20=','gearing');
 /* INSERINDO COMENTARIO POR PADRÃO */
 INSERT INTO GEA_COMMENTS (com_message,com_user_name,com_top_title,com_user_email) 
-VALUES ('apenas uma mensagem de texto','gui','titulo de teste','gui@gmail.com');
+VALUES ('apenas uma mensagem de texto','gui','titulo de teste','Z3VpQGdtYWlsLmNvbQ==');
 SELECT * FROM GEA_USER;
