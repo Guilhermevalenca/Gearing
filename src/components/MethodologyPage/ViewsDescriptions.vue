@@ -191,7 +191,12 @@ export default {
   methods: {
     alert(message) {
         Swal.fire({
-            title: message
+            title: message,
+            customClass: {
+              popup: 'swal-popup-custom',
+              title: 'swal-title-custom',
+              htmlContainer: 'swal-html-container-custom',
+            }
         })
     }
   }

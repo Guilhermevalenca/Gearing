@@ -82,7 +82,8 @@ export default{
     border-style: solid;
     border-radius: 0.8em;
     border-width: 0.1em;
-    left: 100em;
+    left: 0em;
+    right: 0em;
 }
 .data{
 font-size: 0.8em;
