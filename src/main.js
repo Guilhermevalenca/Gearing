@@ -6,9 +6,14 @@ import '@/assets/css/global.css';
 import '@/assets/css/globalSwals.css';
 import axios from "axios";
 import Swal from 'sweetalert2';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faPencil,faTrash,faReply } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
+library.add(faPencil,faTrash,faReply);
 //criado pelo vue:
 const app = createApp(App);
+app.component("FA",FontAwesomeIcon)
 app.use(store);
 app.use(router);
 

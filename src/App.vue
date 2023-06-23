@@ -1,7 +1,7 @@
 <template>
    <img src="./assets/css/backgrounds/gearingLogo.gif" class="logo">
       <h1 class="gearing">Gearing</h1>
-<header>
+<header class="navbar">
   <nav class="navigation-option">
     <router-link to="/">Página Inicial</router-link>
     <RouterLink to="/learningStyles">Estilos de Aprendizagem</RouterLink>
@@ -31,25 +31,7 @@ export default{
   data() {
     return {
       mountPage: false,
-      actionAuthUser: this.$route.path,
-      tryingConnection: () => {
-        Swal.fire({
-          title: 'Conectando-se ao servidor',
-          showConfirmButton: false,
-          allowOutsideClick: false,
-          customClass: {
-                                popup: 'swal-popup-custom',
-                                title: 'swal-title-custom',
-                                htmlContainer: 'swal-html-container-custom',
-                            },
-          willOpen: () => {
-            Swal.showLoading();
-          },
-          willClose: () => {
-            Swal.hideLoading();
-          }
-        })
-      }
+      actionAuthUser: this.$route.path
     }
   },
   methods: {
@@ -63,10 +45,8 @@ export default{
       })
       .catch( () => {
         Swal.fire({
-          title: 'Erro',
-          text: 'Não foi possível conectar-se ao servidor',
-          confirmButtonText: 'Tente novamente',
-          allowOutsideClick: false,
+          title: 'Não foi possível conectar-se ao servidor',
+          text: 'Algumas das nossas funcionalidades estarão indisponiveis',
           showConfirmButton: true,
           customClass: {
                     popup: 'swal-popup-custom',
@@ -74,18 +54,11 @@ export default{
                     htmlContainer: 'swal-html-container-custom',
                             }
         })
-        .then(result => {
-          if(result.isConfirmed){
-            this.tryingConnection()
-            this.establishingConnection();
-          }
-        })
       })
     }
   },
   beforeMount() {
-    this.tryingConnection()
-    this.establishingConnection()
+    this.establishingConnection();
   },
   beforeCreate() {
     this.$checkAuthentication();
@@ -95,6 +68,11 @@ export default{
 
 <style scoped>
 @import url('https://fonts.cdnfonts.com/css/yielding-timber');
+
+.navbar {
+  display: flex;
+}
+
 .gearing{
   font-family: 'Yielding Timber',sans-serif; 
   font-style: italic;
@@ -222,6 +200,7 @@ nav .start-forum, a:nth-child(5):hover~.animation {
     rgb(133, 26, 186, 1) 46%,
     rgba(100, 2, 223, 1) 81%
   );
+  
 }
 
 </style>

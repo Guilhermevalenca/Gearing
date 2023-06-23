@@ -26,12 +26,11 @@ import Comments from './ViewTopicComments.vue'
 import axios from 'axios'
 
 export default{
-    components: {Comments},
+    components: { Comments },
     data() {
         return {
             topics: [],
             showComments: false,
-            showEditTopic: false,
             viewComments: {
                 title: '',
                 email: '',
