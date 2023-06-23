@@ -1,37 +1,46 @@
 @import url("https://fonts.cdnfonts.com/css/share-tech-mono");
- 
+@import url('https://fonts.cdnfonts.com/css/larabie-font');
+@import url('https://fonts.cdnfonts.com/css/prime');
+
     .swal-popup-custom{
-    font-family: "Share Tech Mono", sans-serif;
+    font-family: 'Larabiefont Rg', sans-serif;
+    font-size: 1.4em;
     background-image: url('@/assets/css/backgrounds/gearingBackground.jpeg');
     background-size: cover;
     border-style: solid;
     border-width: 1px;
-    border-color:rgba(188, 251, 255, 1);
+    color:#E6E6FA;        
     border-radius: 1em;
     }
     .swal-title-custom{
-        color: rgba(188, 251, 255, 1);
+        color: #E6E6FA      
     }
     .swal-html-container-custom{
+        padding: 0.8em;
         text-align: justify;
         text-align-last:center;
-        background: -webkit-linear-gradient(
-            90deg,
-            rgba(188, 251, 255, 1) 47%,
-            rgba(24, 237, 242, 1) 100%
-          );
-          background-clip: text;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
+        color: #E6E6FA;
     }
         .swal2-styled.swal2-confirm {
-            font-family: "Share Tech Mono", sans-serif;
+            font-family: 'Prime', sans-serif;
             text-align: center;
             color: #fff;
             font-size: 1em;
             border: solid;
             border-width: 1px;
-            border-color: rgba(188, 251, 255, 1);
+            border-color: #E6E6FA;      
+            border-radius: 0.25em;
+            background: initial;
+            background-color: transparent;
+        }
+        .swal2-styled.swal2-cancel {
+            font-family: 'Prime', sans-serif;
+            text-align: center;
+            color: #fff;
+            font-size: 1em;
+            border: solid;
+            border-width: 1px;
+            border-color: #E6E6FA;      
             border-radius: 0.25em;
             background: initial;
             background-color: transparent;

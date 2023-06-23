@@ -265,7 +265,7 @@ export default{
 
 <style scoped>
 label{
-    color: rgba(188, 251, 255, 1);
+    color: #E6E6FA;
 }
 .select-turn,.select-title{
     background-color: red;
@@ -287,7 +287,7 @@ label{
     gap:0.1em;
     margin: 5em;
    background-color: #000000;
-   color:   rgba(188, 251, 255, 1);
+   color: #E6E6FA;
    font-weight: bold;
 }
 .shedule-matters-subject{
@@ -326,15 +326,7 @@ table {
 
 th,
 td {
-  background: -webkit-linear-gradient(
-    90deg,
-    rgba(188, 251, 255, 1) 47%,
-    rgba(24, 237, 242, 1) 100%
-  );
-  font-weight: bold;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color:#E6E6FA;
   border-style: solid;
   border-width: 0.1em;
   width: 9em;

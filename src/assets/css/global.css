@@ -15,10 +15,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   margin: 2em 6em 2em 6em;
-  color:aquamarine;
+  color:#E6E6FA;
 }
 h1,h2,p{
-  color: #E6E6FA;
+  color:#E6E6FA;
 }
 
 p{
