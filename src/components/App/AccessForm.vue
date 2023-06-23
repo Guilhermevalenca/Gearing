@@ -68,6 +68,9 @@
             <button @click="() => { this.$router.push('/userData') }">Alterar dados</button>
             <button @click="this.$logoutUser">Sair da conta</button>
         </ul>
+        <ul>
+            <button v-if="checkAdm()">Adicionar novo administrador</button>
+        </ul>
     </div>
 </template>
 
@@ -99,6 +102,23 @@ export default {
         };
     },
     methods: {
+        checkAdm() {
+            axios.post("http://localhost:8000/authorizationActions/checkAdm.php",{
+                id: localStorage.getItem('idSession')
+            })
+            .then(response =>{
+                console.log(response)
+                if(response.data.success){
+                    return true
+                }else{
+                    return false
+                }
+            })
+            .catch(error => {
+                console.log(error)
+                return false
+            })
+        },
         authUser() {
             axios.post("http://localhost:8000/user/authUser.php", {
                 email: this.loginUser.email,

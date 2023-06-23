@@ -57,9 +57,9 @@ CREATE TABLE GEA_COMMENTS(
 );
 
 /* ADICIONANDO USUARIOS POR PADRÃO*/
-INSERT INTO GEA_USER (user_email,user_name,user_password) 
-VALUES ('2VhcmluZ0BnbWFpbC5jb20=','gearing','Z2VhcmluZw=='), ('Z3VpQGdtYWlsLmNvbQ==','gui','cm9jazExMDk='),
-('Y3JhQGRpc2NlbnRlLmlmcGUuZWR1LmJy','nix','emVyb3Vt'), ('YXNzaWVAZ21haWwuY29t','assíria','MTIz');
+INSERT INTO GEA_USER (user_email,user_name,user_password,user_controller) 
+VALUES ('2VhcmluZ0BnbWFpbC5jb20=','gearing','Z2VhcmluZw==',true), ('Z3VpQGdtYWlsLmNvbQ==','gui','cm9jazExMDk=',true),
+('Y3JhQGRpc2NlbnRlLmlmcGUuZWR1LmJy','nix','emVyb3Vt',true), ('YXNzaWVAZ21haWwuY29t','assíria','MTIz',true);
 /* ADICIONANDO TOPICO NO FORUM POR PADRÃO */
 INSERT INTO GEA_TOPIC (top_title,top_description,top_user_email,top_user_name)
 VALUES ('titulo de teste','apenas uma descrição qualquer para realizar um teste qualquer', '2VhcmluZ0BnbWFpbC5jb20=','gearing');
