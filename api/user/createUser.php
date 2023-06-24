@@ -16,8 +16,8 @@ $email = $userData['email'];
 $name = $userData['username'];
 $password = $userData['password'];
 
-$cripPass = encryption($password);
-$cripEmail = encryption($email);
+$cripPass = encryption($password,$encryptionKey);
+$cripEmail = encryption($email,$encryptionKey);
 
 $response = [];
 try{

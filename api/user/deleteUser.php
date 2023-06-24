@@ -5,11 +5,13 @@ require '../accept.php';
 //establishing connection with the bank
 require '../establishingConnection.php';
 
+require('../functions.php');
+
 $jsonData = file_get_contents('php://input');
 $dataUser = json_decode($jsonData,true);
 
 $userId = $dataUser['email'];
-$deleteSession = $dataUser['idSession'];
+$deleteSession = decryption($dataUser['idSession'],$encryptionKey);
 
 
 //deleting database data

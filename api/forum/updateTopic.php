@@ -6,7 +6,7 @@ require('../functions.php');
 $json = file_get_contents('php://input');
 $data = json_decode($json,true);
 
-alterSession($data['id']);
+alterSession($data['id'],$encryptionKey);
 $email = $_SESSION['email'];
 $message = $data['message'];
 $title = $data['title'];

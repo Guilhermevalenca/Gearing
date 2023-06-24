@@ -13,7 +13,7 @@ $name = $commentData['name'];
 $message = $commentData['message'];
 $title = $commentData['title'];
 
-alterSession($id);
+alterSession($id,$encryptionKey);
 
 $email = $_SESSION['email'];
 
@@ -22,7 +22,7 @@ $response = [];
 try{
     $sql = "INSERT INTO GEA_COMMENTS (com_message,com_user_name,com_top_title,com_user_email) 
     VALUES ('$message','$name','$title','$email');";
-    $result = $conn->exec($sql);
+    $conn->exec($sql);
     $response['success'] = true;
 }catch (PDOException $e) {
     $response['success'] = false;

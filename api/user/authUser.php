@@ -16,8 +16,8 @@ $testingData = json_decode($receivingJson, true);
 $email = $testingData['email'];
 $password = $testingData['password'];
 
-$cripPass = encryption($password);
-$cripEmail = encryption($email);
+$cripPass = encryption($password,$encryptionKey);
+$cripEmail = encryption($email,$encryptionKey);
 
 $responseData = [];
 
@@ -30,7 +30,7 @@ try{
             $responseData['user'] = [
                 'username' => $userData['user_name'],
                 'email' => $userData['user_email'],
-                'id' => encryption(session_id()),
+                'id' => encryption(session_id(),$encryptionKey),
                 'auth' => true
             ];
             $_SESSION['AUTH'] = true;

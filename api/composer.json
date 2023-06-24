@@ -1,0 +1,6 @@
+{
+    "require": {
+        "paragonie/sodium_compat": "^1.20",
+        "paragonie/halite": "5.0.0"
+    }    
+}

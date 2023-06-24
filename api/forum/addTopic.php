@@ -15,7 +15,7 @@ $name = $topicData['name'];
 $description = $topicData['description'];
 $title = $topicData['title'];
 
-alterSession($id);
+alterSession($id,$encryptionKey);
 
 $email = $_SESSION['email'];
 

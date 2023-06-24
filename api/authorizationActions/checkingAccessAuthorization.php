@@ -12,13 +12,7 @@ $json = file_get_contents('php://input');
 $switchingSession = json_decode($json,true);
 
 //changing session to user session
-alterSession($switchingSession['id']);
-
-if(!isset($_SESSION['AUTH']) || !$_SESSION['AUTH'] || $_SERVER['REQUEST_METHOD'] != 'POST'){
-    echo "NOT AUTH";
-    session_destroy();
-    exit();
-}
+alterSession($switchingSession['id'],$encryptionKey);
 
 $email = $_SESSION['email'];
 
@@ -31,7 +25,7 @@ try{
         foreach($result as $userData){
             $responseData['user'] = [
                 'username' => $userData['user_name'],
-                'email' => encryption($userData['user_email']),
+                'email' => encryption($userData['user_email'],$encryptionKey),
                 'auth' => true
             ];
             $_SESSION['email'] = $userData['user_email'];
