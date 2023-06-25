@@ -14,7 +14,7 @@ $updateSubjects = $scheduleData['update'];
 $id = $scheduleData['id'];
 $title = $scheduleData['title'];
 
-alterSession($id,$encryptionKey);
+alterSession("$id",$encryptionKey);
 
 $email = $_SESSION['email'];
 $response = [];

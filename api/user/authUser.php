@@ -16,25 +16,30 @@ $testingData = json_decode($receivingJson, true);
 $email = $testingData['email'];
 $password = $testingData['password'];
 
-$cripPass = encryption($password,$encryptionKey);
-$cripEmail = encryption($email,$encryptionKey);
+$cripPass = encryption("$password",$encryptionKey);
 
 $responseData = [];
 
+$id = session_id();
+
 //looking for user
 try{
-    $sql = "SELECT user_email,user_name FROM GEA_USER WHERE user_email = '$cripEmail' AND user_password = '$cripPass';";
+    $sql = "SELECT user_email,user_name FROM GEA_USER;";
     $result = $conn->query($sql);
     if(isset($result)){
         foreach($result as $userData){
-            $responseData['user'] = [
-                'username' => $userData['user_name'],
-                'email' => $userData['user_email'],
-                'id' => encryption(session_id(),$encryptionKey),
-                'auth' => true
-            ];
-            $_SESSION['AUTH'] = true;
-            $_SESSION['email'] = $userData['user_email'];
+            $testEmail = $userData['user_email']; $testPass = $userData['user_password'];
+            if($email == decryption("$testEmail",$encryptionKey) && $password == decryption($testPass,$encryptionKey)){
+                $responseData['user'] = [
+                    'username' => $userData['user_name'],
+                    'email' => encryption("$email",$encryptionKey),
+                    'id' => encryption("$id",$encryptionKey),
+                    'auth' => true
+                ];
+                $_SESSION['AUTH'] = true;
+                $_SESSION['email'] = $userData['user_email'];
+                $_SESSION['name'] = $userData['user_name'];
+            }
         }
     }
 }

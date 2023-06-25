@@ -8,7 +8,8 @@ $json = file_get_contents('php://input');
 $switchingSession = json_decode($json,true);
 
 //changing session to user session
-alterSession($switchingSession['id'],$encryptionKey);
+$id = $switchingSession['id'];
+alterSession("$id",$encryptionKey);
 
 //deleting session
 session_destroy();

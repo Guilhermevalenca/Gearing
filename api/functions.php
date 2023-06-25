@@ -1,6 +1,6 @@
 <?php
 //biblioteca de criptografia
-require './vendor/autoload.php';
+require '../vendor/autoload.php';
 
 use ParagonIE\HiddenString\HiddenString;
 use ParagonIE\Halite\Symmetric\EncryptionKey;
@@ -39,4 +39,31 @@ function alterSession($idCrip,$encryptionKey) {
         exit();
     }
 }
+/*
+$array = [
+    'gui' => [
+        'email' => 'gui@gmail.com',
+        'senha' => 'rock1109'
+    ],
+    'nix' => [
+        'email' => 'cra@discente.ifpe.edu.br',
+        'senha' => 'zeroum'
+    ],
+    'assie' => [
+        'email' => 'assiria@gmail.com',
+        'senha' => '123'
+    ],
+    'gearing' => [
+        'email' => 'gearing@gmail.com',
+        'senha' => 'gearing'
+    ]
+];
 
+foreach($array as $indice => $user){
+    echo "$indice: ";
+    foreach($user as $row => $data){
+        echo "$row: " . encryption($data,$encryptionKey) . " ";
+    }
+    echo "<br>";
+}
+*/

@@ -11,7 +11,8 @@ $jsonData = file_get_contents('php://input');
 $dataUser = json_decode($jsonData,true);
 
 $userId = $dataUser['email'];
-$deleteSession = decryption($dataUser['idSession'],$encryptionKey);
+$id = $dataUser['idSession'];
+$deleteSession = decryption("$id",$encryptionKey);
 
 
 //deleting database data

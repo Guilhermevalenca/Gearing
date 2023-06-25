@@ -13,7 +13,7 @@ $name = $commentData['name'];
 $message = $commentData['message'];
 $title = $commentData['title'];
 
-alterSession($id,$encryptionKey);
+alterSession("$id",$encryptionKey);
 
 $email = $_SESSION['email'];
 
