@@ -22,8 +22,8 @@ $cripPass = hash('sha256',$password);
 $response = [];
 try{
     //adding user data
-    $sql = "INSERT INTO GEA_USER (user_email,user_name,user_password) 
-            VALUES ('$cripEmail','$name','$cripPass');";
+    $sql = "INSERT INTO GEA_USER (user_email,user_name,user_password,user_controller) 
+            VALUES ('$cripEmail','$name','$cripPass',false);";
     $rowCount = $conn->exec($sql);
     $response['success'] = "true";
 }catch (PDOException $e) {

@@ -24,7 +24,6 @@ app.config.globalProperties.$logoutUser = async () => {
         id: idSession
     })
     .then(response => {
-        console.log(response);
         if(response.data.success){
             localStorage.removeItem('idSession');
             store.dispatch('changeUser',{

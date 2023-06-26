@@ -33,6 +33,11 @@ const routes = [
     path: '/forum',
     name: 'forum',
     component: () => import('@/views/ForumPage.vue')
+  },
+  {
+    path: '/adm',
+    name: 'adm',
+    component: () => import('@/views/AdmPage.vue')
   }
 ]
 

@@ -64,12 +64,12 @@
     </div>
     <div v-if="this.$store.state.user.auth" class="showing-options">
         <ul>Bem vindo(a), {{ this.$store.state.user.username }}</ul>
+        <ul v-if="() => {checkAdm()}">
+            <button @click="() => {this.$router.push('/adm')}">Aba administrativa</button>
+        </ul>
         <ul>
             <button @click="() => { this.$router.push('/userData') }">Alterar dados</button>
             <button @click="this.$logoutUser">Sair da conta</button>
-        </ul>
-        <ul>
-            <button v-if="checkAdm()">Adicionar novo administrador</button>
         </ul>
     </div>
 </template>
@@ -107,11 +107,9 @@ export default {
                 id: localStorage.getItem('idSession')
             })
             .then(response =>{
-                console.log(response)
+                console.log(`check: ${response}`)
                 if(response.data.success){
-                    return true
-                }else{
-                    return false
+                    return response.data.adm
                 }
             })
             .catch(error => {
@@ -256,7 +254,6 @@ input::-webkit-input-placeholder {
 input::-moz-placeholder {
     text-align: center;
 }
-
 .form-alert-success {
     background-color: green;
 }
@@ -273,10 +270,13 @@ input::-moz-placeholder {
 .showing-options {
     position: fixed;
     display: flex;
-    right: 5em;
+    right: 1em;
     top: 1em;
 }
-
+ul{
+    margin: 0px;
+    padding: 0px;
+}
 .showing-forms {
     position: fixed;
     top: 0;

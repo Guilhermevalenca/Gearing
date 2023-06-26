@@ -11,7 +11,7 @@ CREATE TABLE GEA_USER(
 	user_email VARCHAR(700) PRIMARY KEY NOT NULL UNIQUE,
     user_name VARCHAR(45) NOT NULL,
     user_password TEXT NOT NULL,
-    user_controller BOOLEAN,
+    user_controller BOOLEAN NOT NULL,
     user_learning_style VARCHAR(45),
     user_meth_name VARCHAR(45),
     CONSTRAINT user_meth_name 

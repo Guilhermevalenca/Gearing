@@ -15,7 +15,9 @@ $response = [];
 
 $sql = "SELECT user_controller FROM GEA_USER WHERE user_email = '$email';";
 try{
-    $conn->exec($sql);
+    $result = $conn->query($sql);
+    $data = $result->fetchAll(PDO::FETCH_ASSOC);
+    $response['adm'] = $data[0]['user_controller'];
     $response['success'] = true;
 } catch(PDOException $e) {
     $response['error'] = $e->getMessage();
