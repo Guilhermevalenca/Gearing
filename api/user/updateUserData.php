@@ -10,11 +10,11 @@ $newUserData = json_decode($jsonData, true);
 
 
 //user id
-$email = $newUserData['email'];
+$email = hash('sha256',$newUserData['email']);
 
 //new data
 $name = $newUserData['name'];
-$password = $newUserData['password'];
+$password = hash('sha256',$newUserData['password']);
 try{
 $sql = "UPDATE GEA_USER SET user_name = '$name', user_password = '$password' WHERE user_email = '$email' ;";
 $execute = $conn->exec($sql);

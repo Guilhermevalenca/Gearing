@@ -16,13 +16,14 @@ $email = $userData['email'];
 $name = $userData['username'];
 $password = $userData['password'];
 
-$cripPass = encryption("$password",$encryptionKey);
+$cripEmail = hash('sha256',$email);
+$cripPass = hash('sha256',$encryptionKey);
 
 $response = [];
 try{
     //adding user data
     $sql = "INSERT INTO GEA_USER (user_email,user_name,user_password) 
-            VALUES ('$email','$name','$cripPass');";
+            VALUES ('$cripEmail','$name','$cripPass');";
     $rowCount = $conn->exec($sql);
     $response['success'] = "true";
 }catch (PDOException $e) {

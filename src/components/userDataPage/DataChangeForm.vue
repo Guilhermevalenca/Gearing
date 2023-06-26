@@ -61,13 +61,15 @@ export default{
     methods: {
         check() {
             axios.post('http://localhost:8000/user/userData.php', {
-                email: this.$store.state.user.email
+                email: this.$store.state.user.email,
+                password: user.password
             })
             .then(response => {
-                if(response.data.password == this.user.password){
+                if(response.data.success){
                     this.checkingPassword = false;
                 }else{
                     this.showAlert = true;
+                    console.log(response.data.error);
                 }
             })
         },

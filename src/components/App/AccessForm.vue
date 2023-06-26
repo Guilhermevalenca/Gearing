@@ -125,7 +125,6 @@ export default {
                 password: this.loginUser.password
             })
                 .then(response => {
-                    console.log(response)
                     if (response.data.user) {
                         this.$store.dispatch('changeUser', response.data.user);
                         localStorage.setItem('idSession', response.data.user.id);

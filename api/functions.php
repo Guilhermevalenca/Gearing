@@ -1,24 +1,4 @@
 <?php
-//biblioteca de criptografia
-require '../vendor/autoload.php';
-
-use ParagonIE\HiddenString\HiddenString;
-use ParagonIE\Halite\Symmetric\EncryptionKey;
-use ParagonIE\Halite\Symmetric\Crypto as SymmetricCrypto;
-
-$keyMaterial = 'chave_não_definida_ç@..@#$_key';
-$hiddenString = new HiddenString($keyMaterial);
-$encryptionKey = new EncryptionKey($hiddenString);
-
-function encryption($value, $encryptionKey){
-    $hiddenValue = new HiddenString($value);
-    return SymmetricCrypto::encrypt($hiddenValue, $encryptionKey);
-}
-
-function decryption($value, $encryptionKey) {
-    $decryptedValue = SymmetricCrypto::decrypt($value, $encryptionKey);
-    return $decryptedValue->getString();
-}
 
 function imprimir($element){
     ob_start();
@@ -27,9 +7,9 @@ function imprimir($element){
     error_log($output);
 }
 
-function alterSession($idCrip,$encryptionKey) {
+function alterSession($idCrip) {
     session_write_close();
-    $id = decryption($idCrip,$encryptionKey);
+    $id = $idCrip;
     session_id($id);
     session_set_cookie_params(7 * 24 * 60 * 60); //time set in seconds
     session_start();
@@ -39,31 +19,3 @@ function alterSession($idCrip,$encryptionKey) {
         exit();
     }
 }
-/*
-$array = [
-    'gui' => [
-        'email' => 'gui@gmail.com',
-        'senha' => 'rock1109'
-    ],
-    'nix' => [
-        'email' => 'cra@discente.ifpe.edu.br',
-        'senha' => 'zeroum'
-    ],
-    'assie' => [
-        'email' => 'assiria@gmail.com',
-        'senha' => '123'
-    ],
-    'gearing' => [
-        'email' => 'gearing@gmail.com',
-        'senha' => 'gearing'
-    ]
-];
-
-foreach($array as $indice => $user){
-    echo "$indice: ";
-    foreach($user as $row => $data){
-        echo "$row: " . encryption($data,$encryptionKey) . " ";
-    }
-    echo "<br>";
-}
-*/
