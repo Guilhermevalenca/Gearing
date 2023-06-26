@@ -10,11 +10,11 @@
         </form>
     </section>
     <section v-if="!checkingPassword">
-            <div>
-                E-mail:
-                {{ $store.state.user.email }}
-            </div>
         <form class="form" @submit.prevent="updateData()">
+            <label>
+                Email:
+            </label>
+            <input type="email" v-model="newUserData.email" placeholder="Digite seu email">
             <label>
                 Nome de usuário:
             </label>
@@ -49,6 +49,7 @@ export default{
                 password: ''
             },
             newUserData: {
+                email: '',
                 username: this.$store.state.user.username,
                 password: '',
                 confirmePassword: ''
@@ -95,10 +96,14 @@ export default{
                         if(!this.newUserData.password){
                             this.newUserData.password = this.user.password; 
                         }
+                        if(!this.newUserData.email){
+                            this.newUserData.email = this.$store.state.user.email;
+                        }
                         axios.post('http://localhost:8000/user/updateUserData.php',{
-                            email: this.$store.state.user.email,
+                            email: this.newUserData.email,
                             name: this.newUserData.username,
-                            password: this.newUserData.password
+                            password: this.newUserData.password,
+                            id: localStorage.getItem('idSession')
                         })
                         .then(response => {
                             if( (response.data).result == "true"){
@@ -141,8 +146,7 @@ export default{
             .then(result => {
                 if(result.isConfirmed){
                     axios.post('http://localhost:8000/user/deleteUser.php',{
-                        email: this.$store.state.user.email,
-                        idSession: localStorage.getItem('idSession')
+                        id: localStorage.getItem('idSession')
                     })
                     .then(response => {
                         if( (response.data).result == "deleted user"){

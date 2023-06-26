@@ -9,7 +9,7 @@ $switchingSession = json_decode($json,true);
 
 //changing session to user session
 $id = $switchingSession['id'];
-alterSession("$id",$encryptionKey);
+alterSession($id);
 
 //deleting session
 session_destroy();

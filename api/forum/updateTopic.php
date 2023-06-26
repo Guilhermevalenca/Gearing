@@ -8,7 +8,7 @@ $data = json_decode($json,true);
 
 $id = $data['id'];
 
-alterSession("$id",$encryptionKey);
+alterSession($id);
 $email = $_SESSION['email'];
 $message = $data['message'];
 $title = $data['title'];

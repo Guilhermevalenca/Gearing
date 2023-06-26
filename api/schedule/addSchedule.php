@@ -17,7 +17,7 @@ $shift = $scheduleData['shift'];
 $id = $scheduleData['id'];
 
 //altering session
-alterSession("$id",$encryptionKey);
+alterSession($id);
 
 //search user email
 $email = $_SESSION['email'];

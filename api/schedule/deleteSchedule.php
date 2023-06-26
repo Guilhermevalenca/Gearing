@@ -13,7 +13,7 @@ $scheduleData = json_decode($receivingJson, true);
 $id = $scheduleData['id'];
 $title = $scheduleData['title'];
 
-alterSession("$id",$encryptionKey);
+alterSession($id);
 
 $email = $_SESSION['email'];
 

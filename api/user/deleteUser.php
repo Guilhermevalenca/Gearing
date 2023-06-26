@@ -10,14 +10,13 @@ require('../functions.php');
 $jsonData = file_get_contents('php://input');
 $dataUser = json_decode($jsonData,true);
 
-$email = $dataUser['email'];
-$id = $dataUser['idSession'];
-$userId = hash('sha256',$email);
-
+$id = $dataUser['id'];
+alterSession($id);
+$email = $_SESSION['email'];
 
 //deleting database data
 try{
-$sql = "DELETE FROM GEA_USER WHERE user_email = '$userId'";
+$sql = "DELETE FROM GEA_USER WHERE user_email = '$email'";
     $execute = $conn->exec($sql);
     $responseData = [
         'result' => 'deleted user'

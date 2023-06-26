@@ -12,7 +12,7 @@ $id = $data['id'];
 $title = $data['title'];
 $commentId = $data['commentId'];
 
-alterSession("$id",$encryptionKey);
+alterSession($id);
 
 $email = $_SESSION['email'];
 

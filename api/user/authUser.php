@@ -37,6 +37,7 @@ try{
             ];
             $_SESSION['AUTH'] = true;
             $_SESSION['email'] = $userData['user_email'];
+            $_SESSION['name'] = $userData['user_name'];
         }
     }
 }

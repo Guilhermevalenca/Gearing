@@ -13,13 +13,11 @@ $switchingSession = json_decode($json,true);
 
 //changing session to user session
 $id = $switchingSession['id'];
-alterSession("$id",$encryptionKey);
-
-$email = $_SESSION['email'];
+alterSession($id);
 
 $responseData = [
     'user' => [
-        'email' => encryption($email,$encryptionKey),
+        'email' => $_SESSION['email'],
         'username' => $_SESSION['name'],
         'auth' => true
     ]

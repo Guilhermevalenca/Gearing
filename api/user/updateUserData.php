@@ -8,19 +8,24 @@ require '../establishingConnection.php';
 $jsonData = file_get_contents('php://input');
 $newUserData = json_decode($jsonData, true);
 
+$id = $newUserData['id'];
+alterSession($id);
+$email = $_SESSION['email'];
 
 //user id
-$email = hash('sha256',$newUserData['email']);
+$newEmail = hash('sha256',$newUserData['email']);
 
 //new data
 $name = $newUserData['name'];
 $password = hash('sha256',$newUserData['password']);
 try{
-$sql = "UPDATE GEA_USER SET user_name = '$name', user_password = '$password' WHERE user_email = '$email' ;";
-$execute = $conn->exec($sql);
-$responseData = [
-    'result' => 'true'
-];
+    $sql = "UPDATE GEA_USER SET user_name = '$name', user_password = '$password',user_email = '$newEmail' 
+    WHERE user_email = '$email' ;";
+    $execute = $conn->exec($sql);
+    $responseData = [
+        'result' => 'true'
+    ];
+    $_SESSION['email'] = $newEmail;
 }catch (PDOException $e){
     $problem = $e->getMessage();
     $responseData = [
