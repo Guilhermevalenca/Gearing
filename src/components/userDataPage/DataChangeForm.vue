@@ -191,6 +191,17 @@ export default{
             },
             deep: true
         }
+    },
+    mounted() {
+        Swal.fire({
+            title: 'Aviso:',
+            text: 'Dados que não forem alterados permaneceram com o mesmo valor',
+            customClass: {
+                popup: 'swal-popup-custom',
+                title: 'swal-title-custom',
+                htmlContainer: 'swal-html-container-custom',
+            }
+        })
     }
 }
 </script>

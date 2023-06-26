@@ -20,7 +20,8 @@ $responseData = [
         'email' => $_SESSION['email'],
         'username' => $_SESSION['name'],
         'auth' => true
-    ]
+    ],
+    'success' => true
 ];
 
 echo json_encode($responseData);

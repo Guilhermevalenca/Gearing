@@ -19,7 +19,7 @@
                         <label>Senha:</label>
                         <input type="password" v-model="loginUser.password" placeholder="Digite sua senha">
                     </div>
-                    <button class="login-button">Login</button>
+                    <button type="submit" class="login-button">Login</button>
                 </form>
             </section>
             <section v-if="showForm">
@@ -45,7 +45,7 @@
                         <input :class="{ 'form-password': differentPasswords }" type="password" minlength="6"
                             v-model="createUser.confirmPassword" placeholder="Digite sua senha novamente">
                     </div>
-                    <button class="sing-button">Criar conta</button>
+                    <button type="submit" class="sing-button">Criar conta</button>
                 </form>
             </section>
 

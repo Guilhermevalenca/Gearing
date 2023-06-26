@@ -13,7 +13,7 @@ function alterSession($idCrip) {
     session_id($id);
     session_set_cookie_params(7 * 24 * 60 * 60); //time set in seconds
     session_start();
-    if(!isset($_SESSION['AUTH']) || !$_SESSION['AUTH'] || $_SERVER['REQUEST_METHOD'] != 'POST'){
+    if(!isset($_SESSION['AUTH']) || !$_SESSION['AUTH']){
         echo json_encode(array('error' => 'usuario não autenticado'));
         session_destroy();
         exit();
