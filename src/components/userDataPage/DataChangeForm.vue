@@ -63,7 +63,7 @@ export default{
         check() {
             axios.post('http://localhost:8000/user/userData.php', {
                 email: this.$store.state.user.email,
-                password: user.password
+                password: this.user.password
             })
             .then(response => {
                 if(response.data.success){
