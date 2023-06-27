@@ -1,9 +1,5 @@
 <?php 
-//accepting request
-require '../accept.php';
-
-//establishing connection with the bank
-require '../establishingConnection.php';
+require('../conf/init.php');
 
 $response = [];
 

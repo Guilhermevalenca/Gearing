@@ -1,11 +1,6 @@
 <?php 
-//accepting request
-require '../accept.php';
+require('../conf/init.php');
 
-//establishing connection with the bank
-require '../establishingConnection.php';
-
-require('../functions.php');
 //schedule data
 $receivingJson = file_get_contents('php://input');
 $scheduleData = json_decode($receivingJson, true);

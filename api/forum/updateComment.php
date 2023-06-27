@@ -1,9 +1,5 @@
 <?php 
-require('../accept.php');
-
-require('../establishingConnection.php');
-
-require('../functions.php');
+require('../conf/init.php');
 
 $json = file_get_contents('php://input');
 $data = json_decode($json,true);

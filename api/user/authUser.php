@@ -1,12 +1,5 @@
 <?php 
-//accepting request
-require '../accept.php';
-
-//establishing connection with the bank
-require '../establishingConnection.php';
-
-//functions global
-require('../functions.php');
+require('../conf/init.php');
 
 //authenticate user
 $receivingJson = file_get_contents('php://input');

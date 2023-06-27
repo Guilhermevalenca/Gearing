@@ -1,11 +1,5 @@
 <?php 
-//accepting request
-require '../accept.php';
-
-//establishing connection with the bank
-require '../establishingConnection.php';
-
-require('../functions.php');
+require('../conf/init.php');
 
 $json = file_get_contents('php://input');
 $topicData = json_decode($json, true);

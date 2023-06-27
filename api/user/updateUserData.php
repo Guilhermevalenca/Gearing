@@ -1,9 +1,5 @@
 <?php
-//accepting request
-require '../accept.php';
-
-//establishing connection with the bank
-require '../establishingConnection.php';
+require('../conf/init.php');
 
 $jsonData = file_get_contents('php://input');
 $newUserData = json_decode($jsonData, true);
