@@ -3,8 +3,8 @@
     <form class="add-topic" @submit.prevent="createTopic()">
         <div class="info">
             <div class="info-name">
-                <label >Nome do topico:</label>
-                <input v-model="name" placeholder="Nome do topico" type="text" required>
+                <label >Título:</label>
+                <input v-model="name" placeholder="Título do tópico" type="text" required>
             </div>
             <div class="info-description">
                 <label>Descrição:</label>

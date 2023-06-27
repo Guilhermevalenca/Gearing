@@ -2,8 +2,8 @@
     <div>
         <h1>{{ title }}</h1>
         <form @submit.prevent="updateComment">
-            <textarea v-model="comment" cols="30" rows="10"></textarea><br>
-            <button>Atualizar comentario</button>
+            <textarea v-model="comment" cols="110" rows="25"></textarea><br>
+            <button>Atualizar resposta</button>
         </form>
     </div>
 </template>
@@ -25,7 +25,7 @@ export default{
     methods: {
         updateComment() {
             Swal.fire({
-                title: 'aguarde',
+                title: 'Aguarde',
                 showConfirmButton: false,
                 willOpen: () => {
                     Swal.showLoading();
@@ -92,3 +92,8 @@ export default{
     }
 }
 </script>
+<style scoped>
+h1{
+    font-size: 1.2em;
+}
+</style>

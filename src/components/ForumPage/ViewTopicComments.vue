@@ -7,26 +7,20 @@
           <thead>
             <tr>
               <th class="title-topic">{{ title }}</th>
-              <th>
-                <button v-if="this.$store.state.user.auth && email == this.$store.state.user.email" @click="viewEditTopic()">
-                  <FA icon="pencil" />
-                </button>
-              </th>
-              <th>
-                <button class="add-comment" @click="() => {this.$store.state.user.auth ? showWindow.addComment = true : actionDenied()}">
-                  <FA icon="reply"/>
-                </button>
-              </th>
-              <th>
-                <button class="session-close" @click="closeComment()">✖</button>
-              </th>
             </tr>
+                <button class="edit-topic-description" v-if="this.$store.state.user.auth && email == this.$store.state.user.email" @click="viewEditTopic()">
+                  <FA icon="pencil" /> Editar
+                </button>
+                <button class="add-reply" @click="() => {this.$store.state.user.auth ? showWindow.addComment = true : actionDenied()}">
+                  <FA icon="reply"/> Responder
+                </button>
+                <button class="session-close" @click="closeComment()">✖</button>
             <tr>
-              <th class="nickname">
-                <strong class="username">Criado por </strong>
-                <span class="data">{{ name }}</span> <br>
-                <strong class="date">Em </strong>
-                <span class="data">{{ date }}</span>
+              <th>
+                <strong class="topic-author">Criado por </strong>
+                <span class="topic-info">{{ name }}</span> <br>
+                <strong class="topic-author">Em </strong>
+                <span class="topic-info">{{ date }}</span>
               </th>
             </tr>
           </thead>
@@ -39,22 +33,21 @@
       </div>
       </section>
       <h1>.Respostas.</h1>
-      <section class="session-comment">
-        <div class="comment-box-container">
+      <section class="session-reply">
+        <div class="reply-box-container">
         <table class="comment-box" v-for="(dataComments, index) in comments" :key="index">
           <thead>
             <tr>
-              <th>
-                <strong class="username">Resposta de </strong>
-                <span class="data">{{ dataComments.by }}</span> <br>
-                <strong class="date">Em </strong>
-                <span class="data">{{ dataComments.date }}</span>
-              </th>
-              <th>
-                <button @click="() => {showWindow.EditComment.show = true; showWindow.EditComment.id = dataComments.id}" 
-                v-if="dataComments.email == this.$store.state.user.email">Editar comentario</button>
-              </th>
+              <th class="reply-info">
+                <strong class="reply-author">Resposta de </strong>
+                <span class="topic-info">{{ dataComments.by }}</span> <br>
+                <strong class="reply-author">Em </strong>
+                <span class="topic-info">{{ dataComments.date }}</span>
+              </th>  
             </tr>
+            <button class="edit-reply" @click="() => {showWindow.EditComment.show = true; showWindow.EditComment.id = dataComments.id}" 
+            v-if="dataComments.email == this.$store.state.user.email">
+            <FA icon="pencil" /> Editar resposta</button>
           </thead>
           <tbody>
             <tr>
@@ -202,18 +195,30 @@ props: {
 </script>
 
 <style scoped>
-.add-comment{
+.add-reply{
 position:absolute;
-left: 40em;
+left: 48em;
 top: 2em;
 margin:0em;
 }
 .session-close{
 position:absolute;
-left: 50em;
+left: 55.5em;
 top: 2em;
 margin:0em;
 border-radius: 100%;
+}
+.edit-topic-description{
+position:absolute;
+left: 42em;
+top: 2em;
+margin:0em;
+}
+.edit-reply{
+position:absolute;
+left: 48em;
+top: 0.4em;
+margin:0em;
 }
 .window-interaction {
 position: fixed;
@@ -235,23 +240,21 @@ position: relative;
 left: 15em;
 width: 2.5em;
 }
-.session-comment{
+.session-reply{
 display: inline-block;
 position:relative;
+align-content: center;
 text-align: justify;
 }
 h1{
 font-size: 1.2em;
 }
-tbody{
-text-align: center;
-background-color: black;
-}
-th{
-padding-left: 1em;
-}
 td{
-max-width: 40em;
+margin: 0em;
+min-width: 50em; 
+max-width: 50em;
+min-height: 5em;
+max-height: none;
 text-align: center;
 padding: 2em;
 border-style: solid;
@@ -267,37 +270,41 @@ padding-top: 1em;
 padding-bottom: 2em;
 }
 .topic-description-container table{
+min-width: 50em; 
+max-width: 50em;
+min-height: 5em;
+max-height: none;
 background-color: black;
 border-style: solid;
 border-color: rgba(100, 2, 223, 1) ;
 border-width: 0.1em;
 border-radius: 0.8em;
-min-width: 50em; 
-min-height: 5em;
-max-width: 50em;
-max-height: none; 
 word-wrap: break-word;
 word-break: keep-all;
 }
 
-.comment-box-container table{
+.reply-box-container table{
+min-width: 50em; 
+max-width: 50em;
+min-height: 5em;
+max-height: none;
 background-color: black;
 border-style: solid;
 border-color: rgba(100, 2, 223, 1) ;
 border-width: 0.1em;
 border-radius: 0.8em;
-min-width: 50em; 
-min-height: 5em;
-max-width: 50em;
-max-height: none; 
 word-wrap: break-word;
 word-break: keep-all;
 }
-.data{
+.reply-info{
+  position: relative;
+  left: 1em;
+}
+.topic-info{
 font-size: 0.8em;
 color:  rgba(100, 2, 223, 1) ;
 }
-.username, .date{
+.topic-author,.reply-author,.date{
 font-size: 0.8em;
 }
 .title-topic{

@@ -5,11 +5,9 @@
                 <a @click="showTopicComments(elements.title,elements.email,elements.description,elements.name,elements.date)">
                     <div class="topics">
                         <ul>
-                            {{ elements.title }}
-                        </ul>
-                        <ul>
+                            {{ elements.title }} <br>
                             <strong class="info">Criado por </strong>
-                            <span class="data">{{ elements.name }}</span> <br>
+                            <span class="data">{{ elements.name }}</span>
                         </ul>
                     </div>
                 </a>
@@ -70,20 +68,20 @@ export default{
 </script>
 <style scoped>
 .box{
-    position: relative;
-    left: 50em;
-    display: inline-block;
-    min-width: 30em;
-    max-width: 30em;
-    max-height: 4em;
-    min-height: 4em;
-    text-align: justify;
-    text-align-last: center;
+    background-color: #000000;
+    border-color: rgba(100, 2, 223, 1); 
     border-style: solid;
     border-radius: 0.8em;
     border-width: 0.1em;
-    left: 0em;
-    right: 0em;
+    display:inline-block;
+    margin: 0.4em;
+    max-width: 20em;
+    max-height: 4em;
+    min-width: 20em;
+    min-height: 4em;
+    position: relative;
+    text-align: left;
+    top: 2em;
 }
 .data{
 font-size: 0.8em;

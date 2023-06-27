@@ -8,7 +8,7 @@
         <form @submit.prevent="updateTopic()">
             <div>
                 <strong>Descrição:</strong><br>
-                <textarea v-model="newMessage" cols="30" rows="10"></textarea>
+                <textarea v-model="newMessage" cols="110" rows="25"></textarea>
             </div>
             <button>Editar</button>
         </form>
