@@ -1,5 +1,6 @@
 <?php 
 require('../conf/init.php');
+header("Access-Control-Allow-Methods: POST");
 
 $json = file_get_contents('php://input');
 $topicData = json_decode($json, true);
