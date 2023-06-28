@@ -16,8 +16,10 @@ app.get('/', (req, res) => {
 
 io.on('connection', (socket) => {
     console.log('a user connected');
-    socket.on('message', (msg) => {
-        io.emit('new-message',msg)
+    socket.on('new-topic', () => {
+        io.emit('update-topics',() => {
+            console.log('topicos atualizados')
+        })
     })
     socket.on('disconnect', () => {
         console.log('user disconnected');

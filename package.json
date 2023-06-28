@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "api": "php -S localhost:8000 -t api"
+    "api": "php -S localhost:8000 -t api",
+    "ws": "nodemon ./ws/main.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
@@ -14,6 +15,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.0-5",
     "axios": "^1.4.0",
     "core-js": "^3.31.0",
+    "socket.io-client": "^4.7.0",
     "sortablejs": "^1.15.0",
     "sweetalert2": "^11.4.8",
     "vue": "^3.3.4",

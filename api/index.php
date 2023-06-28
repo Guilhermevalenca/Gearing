@@ -1,5 +1,5 @@
 <?php
-require './accept.php';
+require 'conf/init.php';
 
 /*
 $array = [

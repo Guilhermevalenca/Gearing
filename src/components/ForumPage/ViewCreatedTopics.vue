@@ -22,11 +22,13 @@
 <script>
 import Comments from './ViewTopicComments.vue'
 import axios from 'axios'
+import io from 'socket.io-client';
 
 export default{
     components: { Comments },
     data() {
         return {
+            socket: io('http://localhost:3000'),
             topics: [],
             showComments: false,
             viewComments: {
@@ -63,6 +65,14 @@ export default{
     },
     beforeMount() {
         this.updateTopics()
+    },
+    mounted() {
+        this.socket.on('connect',() => {
+            console.log('conectado')
+        });
+        this.socket.on('update-topics',() => {
+            this.updateTopics();
+        })
     }
 }
 </script>

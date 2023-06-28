@@ -19,10 +19,12 @@
 <script>
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import io from 'socket.io-client';
 
 export default{
     data() {
         return {
+            socket: io('http://localhost:3000'),
             name: '',
             description: ''
         }
@@ -83,6 +85,9 @@ export default{
                         }
                     })
                 }else if(response.data.success){
+                    this.socket.emit('new-topic', () => {
+                        console.log('');
+                    });
                     Swal.fire({
                         title: 'Seu tópico foi adicionado com sucesso ao fórum',
                         confirmButtonText: 'vizualizar outros tópicos',
