@@ -49,6 +49,11 @@ export default{
                 this.createTopic = false
             }this.viewTopic = true
         }
+    },
+    mounted() {
+        this.socket.on('connect',() => {
+            console.log('conectado')
+        });
     }
 }
 </script>

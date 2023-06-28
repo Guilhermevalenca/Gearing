@@ -67,9 +67,6 @@ export default{
         this.updateTopics()
     },
     mounted() {
-        this.socket.on('connect',() => {
-            console.log('conectado')
-        });
         this.socket.on('update-topics',() => {
             this.updateTopics();
         })
