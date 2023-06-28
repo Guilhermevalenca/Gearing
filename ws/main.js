@@ -18,8 +18,11 @@ io.on('connection', (socket) => {
     console.log('a user connected');
     socket.on('new-topic', () => {
         io.emit('update-topics',() => {
-            console.log('topicos atualizados')
+            console.log("topicos atualizados")
         })
+    })
+    socket.on('view-comment', (title) => {
+        io.emit('update-comment',title);
     })
     socket.on('disconnect', () => {
         console.log('user disconnected');

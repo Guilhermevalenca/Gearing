@@ -18,9 +18,12 @@
 import CreateTopic from '@/components/ForumPage/CreateTopic.vue';
 import ViewTopics from '@/components/ForumPage/ViewCreatedTopics.vue';
 import Swal from 'sweetalert2';
+import io from 'socket.io-client';
+
 export default{
     data(){
         return{
+            socket: io('http://localhost:3000'),
             createTopic: false,
             viewTopic: true
         }

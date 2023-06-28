@@ -18,10 +18,12 @@
 <script>
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import io from 'socket.io-client';
 
 export default{
     data() {
         return {
+            socket: io('http://localhost:3000'),
             newMessage: this.message
         }
     },
@@ -44,6 +46,9 @@ export default{
             .then(response => {
                 console.log(response);
                 if(response.data.success) {
+                    this.socket.emit('new-topic',() => {
+                        console.log('')
+                    })
                     Swal.fire({
                         title: 'Topico editado com sucesso',
                         customClass: {

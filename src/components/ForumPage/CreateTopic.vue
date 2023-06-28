@@ -85,8 +85,8 @@ export default{
                         }
                     })
                 }else if(response.data.success){
-                    this.socket.emit('new-topic', () => {
-                        console.log('');
+                    this.socket.emit('new-topic',() => {
+                        console.log('')
                     });
                     Swal.fire({
                         title: 'Seu tópico foi adicionado com sucesso ao fórum',

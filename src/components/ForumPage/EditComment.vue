@@ -48,6 +48,7 @@ export default{
             .then(response => {
                 Swal.close()
                 if(response.data.success) {
+                    this.socket.emit('view-comment', this.title);
                     this.$emit('closeWindow')
                 }else{
                     console.log(response.data.error)

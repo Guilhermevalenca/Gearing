@@ -84,11 +84,13 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import EditComment from './EditComment.vue';
 import EditTopic from './EditTopic.vue';
+import io from 'socket.io-client';
 
 export default {
   components: {EditComment, EditTopic},
   data() {
       return {
+          socket: io('http://localhost:3000'),
           newComments: '',
           comments: [],
           showWindow: {
@@ -133,6 +135,7 @@ methods: {
     })
     .then(response => {
       if(response.data.success){
+        this.socket.emit('view-comment', this.title);
         this.showUpdatedComments()
         this.newComments = '';
         this.showWindow.addComment = false;
@@ -182,7 +185,14 @@ methods: {
   }
 },
 created() {
-  this.showUpdatedComments()
+  this.showUpdatedComments();
+},
+mounted() {
+  this.socket.on('update-comment',(title) => {
+    if(title == this.title){
+      this.showUpdatedComments();
+    }
+  })
 },
 props: {
   title: String,
