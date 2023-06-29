@@ -74,8 +74,3 @@ CREATE TABLE GEA_COMMENTS(
         REFERENCES GEA_USER(user_email)
 			ON UPDATE CASCADE
 );
-INSERT INTO GEA_USER (user_email,user_name,user_password,user_controller) VALUES 
-('76d6e21195722bf570e3d0c243fcdd99ce5f5a40502add9a4e51a80bffaab361','gui','2282277651c82f8168b3f2d2b5115c4dc2c8b727775b2db258ceef690383ddf8',true),
-('16abc8ead65b95d7328a1faed7997d7a1610be6e4a3f1e1accb9f660282bc004','nix','dcef48d3cd08c617a706eb6adb22fb05fef13893182e36e5c538d16cccb0a830',true),
-('75647d0d8cabfd0a607b9c869e8856c698da014ff5ffc13627c77e0bba6a3b2c','gearing','e5a633926ae4c600f08b24758b61c60a3a2a806ac76c68ed6c00e5478b426fd7',true),
-('820f91493f4dc1231647cc5a3e073c39a20c1078b04c853f65c59cef1c0e1da1','assíria','a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3',true);

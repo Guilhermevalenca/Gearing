@@ -107,21 +107,21 @@ export default {
                 email: this.loginUser.email,
                 password: this.loginUser.password
             })
-                .then(response => {
-                    if (response.data.user) {
-                        this.$store.dispatch('changeUser', response.data.user);
-                        localStorage.setItem('idSession', response.data.user.id);
-                        this.actionsForms = false
-                    } else {
-                        this.showAlert = true;
-                        this.messageAlert = "Não foi possível efetivar seu login"
-                        this.failedLogin = true;
-                        console.log("response:", response.data.error)
-                    }
-                })
-                .catch(error => {
-                    console.log("error:", error)
-                })
+            .then(response => {
+                if (response.data.success) {
+                    this.$store.dispatch('changeUser', response.data.user);
+                    localStorage.setItem('idSession', response.data.user.id);
+                    this.actionsForms = false
+                } else {
+                    this.showAlert = true;
+                    this.messageAlert = "Não foi possível efetivar seu login"
+                    this.failedLogin = true;
+                    console.log("response:", response);
+                }
+            })
+            .catch(error => {
+                console.log("error:", error)
+            })
         },
         newUser() {
             if (this.createUser.password == this.createUser.confirmPassword) {
