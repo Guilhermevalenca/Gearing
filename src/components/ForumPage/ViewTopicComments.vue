@@ -72,7 +72,7 @@
             <EditComment @closeWindow="() => {showWindow.EditComment.show = false; showUpdatedComments()}" :title="title" :id="showWindow.EditComment.id"/>
           </section>
           <section>
-            <EditTopic v-if="showWindow.editTopic" :title="title" :message="description"/>
+            <EditTopic @closeEditTopic="() => {closeWindow()}" v-if="showWindow.editTopic" :title="title" :message="description"/>
           </section>
         </div>
       </section>
@@ -171,7 +171,7 @@ methods: {
     .then(response => {
       if(response.data.success){
         Swal.close();
-        this.comments = response.data.comments
+        this.comments = response.data.comments;
       }else{
         Swal.fire({
           title: 'error'

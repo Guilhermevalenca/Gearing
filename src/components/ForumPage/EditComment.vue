@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>{{ title }}</h1>
-        <form @submit.prevent="updateComment">
+        <form @submit.prevent="updateComment()">
             <textarea v-model="comment" cols="110" rows="25"></textarea><br>
             <button>Atualizar resposta</button>
         </form>
@@ -49,9 +49,18 @@ export default{
                 Swal.close()
                 if(response.data.success) {
                     this.socket.emit('view-comment', this.title);
-                    this.$emit('closeWindow')
+                    this.$emit('closeWindow');
                 }else{
                     console.log(response.data.error)
+                    Swal.fire({
+                        title: 'error',
+                        text: 'Não foi possivel editar sua resposta',
+                        customClass: {
+                            popup: 'swal-popup-custom',
+                            title: 'swal-title-custom',
+                            htmlContainer: 'swal-html-container-custom',
+                        }
+                    })
                 }
             })
             .catch (error => {
