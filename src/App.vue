@@ -14,7 +14,7 @@
   <div>
     <AccessForm />
   </div>
-<section v-if="mountPage">
+<section>
   <router-view/>
 </section>
 
@@ -30,7 +30,6 @@ export default{
   components: {AccessForm},
   data() {
     return {
-      mountPage: false,
       actionAuthUser: this.$route.path
     }
   },
@@ -39,7 +38,6 @@ export default{
       axios.get('http://localhost:8000')
       .then(response => {
         if(response.data === "OK"){
-          this.mountPage = true
           Swal.close();
         }
       })
@@ -49,10 +47,10 @@ export default{
           text: 'Algumas das nossas funcionalidades estarão indisponiveis',
           showConfirmButton: true,
           customClass: {
-                    popup: 'swal-popup-custom',
-                    title: 'swal-title-custom',
-                    htmlContainer: 'swal-html-container-custom',
-                            }
+            popup: 'swal-popup-custom',
+            title: 'swal-title-custom',
+            htmlContainer: 'swal-html-container-custom',
+          } 
         })
       })
     }
