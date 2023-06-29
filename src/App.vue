@@ -1,5 +1,5 @@
 <template>
-   <img src="./assets/css/backgrounds/gearingLogo.gif" class="logo">
+   <img src="./assets/css/backgrounds/newLogo.gif" class="logo">
       <h1 class="gearing">Gearing</h1>
 <header class="navbar">
   <nav class="navigation-option">
@@ -92,7 +92,9 @@ export default{
 }
 .logo {
   position: absolute;
-  width: 5em;
+  width: 2.8em;
+  left:43.5em;
+  bottom: 50.8em;
   margin-left: -10.5em;
   margin-top: -1.3em;
   margin-bottom: 20px;
