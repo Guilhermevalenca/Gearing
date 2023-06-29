@@ -57,6 +57,11 @@ export default{
         this.socket.on('connect',() => {
             console.log('conectado')
         });
+    },
+    unmounted() {
+        this.socket.on('disconnect',() => {
+            console.log('desconectado')
+        });    
     }
 }
 </script>
