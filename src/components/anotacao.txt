@@ -1,7 +1,7 @@
 Anotando nomes:
 
 export default {
-  name: 'App',
+  name: 'Nome do componente',
   components: {},
   data() {
     return{
