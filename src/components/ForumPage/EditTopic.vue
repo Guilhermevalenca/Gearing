@@ -59,7 +59,7 @@ export default{
                     })
                     .then(result => {
                         if(result.isConfirmed){
-                            this.$emit('closeEdit');
+                            this.$emit('closeEditTopic');
                         }
                     })
                 }else{

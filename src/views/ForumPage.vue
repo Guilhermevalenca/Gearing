@@ -29,18 +29,6 @@ export default{
         }
     },
     components: {CreateTopic, ViewTopics},
-    created(){
-        Swal.fire({
-            title: 'Seja bem-Vindo ao Fórum',
-            text: 'Aqui você pode interagir com outros estudantes,trocar experiências,sugerir métodos e discutir sobre vários assuntos.Divirta-se e trate todos com respeito ; ',
-            confirmButtonText: 'Vamos lá!',
-                customClass: {
-                      popup: 'swal-popup-custom',
-                      title: 'swal-title-custom',
-                      htmlContainer: 'swal-html-container-custom',
-                  }
-        })
-    },
     methods: {
         showCreate() {
             if(this.viewTopic){
@@ -53,6 +41,18 @@ export default{
             }this.viewTopic = true
         }
     },
+    created(){
+        Swal.fire({
+            title: 'Seja bem-Vindo ao Fórum',
+            text: 'Aqui você pode interagir com outros estudantes,trocar experiências,sugerir métodos e discutir sobre vários assuntos.Divirta-se e trate todos com respeito ; ',
+            confirmButtonText: 'Vamos lá!',
+                customClass: {
+                      popup: 'swal-popup-custom',
+                      title: 'swal-title-custom',
+                      htmlContainer: 'swal-html-container-custom',
+                  }
+        })
+    },
     mounted() {
         this.socket.on('connect',() => {
             console.log('conectado')
@@ -60,8 +60,8 @@ export default{
     },
     unmounted() {
         this.socket.on('disconnect',() => {
-            console.log('desconectado')
-        });    
+            console.log('disconectado')
+        });
     }
 }
 </script>

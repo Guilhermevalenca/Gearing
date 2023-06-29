@@ -9,33 +9,32 @@ $testingData = json_decode($receivingJson, true);
 $email = $testingData['email'];
 $password = $testingData['password'];
 
-$cripEmail = hash('sha256',$email);
-$cripPass = hash('sha256',$password);
-
 $responseData = [];
-
 $id = session_id();
-
+$cripId = encryption($id);
 //looking for user
 try{
-    $sql = "SELECT user_email,user_name FROM GEA_USER WHERE user_email = '$cripEmail' AND user_password = '$cripPass';";
-    $result = $conn->query($sql);
-    if(isset($result)){
-        foreach($result as $userData){
+    $sql = "SELECT user_email,user_name,user_password FROM GEA_USER WHERE user_email = '$email';";
+    $stmt = $conn->query($sql);
+    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    if(isset($data)){
+        if($password === decryption($data[0]['user_password'])){
             $responseData['user'] = [
-                'username' => $userData['user_name'],
-                'email' => $userData['user_email'],
-                'id' => $id,
+                'username' => $data[0]['user_name'],
+                'email' => $data[0]['user_email'],
+                'id' => $cripId,
                 'auth' => true
             ];
+            $responseData['success'] = true;
             $_SESSION['AUTH'] = true;
-            $_SESSION['email'] = $userData['user_email'];
-            $_SESSION['name'] = $userData['user_name'];
+            $_SESSION['email'] = $data[0]['user_email'];
+            $_SESSION['name'] = $data[0]['user_name'];
         }
     }
 }
 catch (PDOException $e) {
     $responseData['error'] = $e->getMessage();
+    echo json_encode($responseData);
 }
 
 echo json_encode($responseData);
