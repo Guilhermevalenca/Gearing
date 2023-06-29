@@ -12,6 +12,8 @@ export default {
   created() {},
   beforeMount() {},
   mounted() {},
+  beforeUnmount() {},
+  unmounted() {},
   watch: {},
   computed: {},
   methods: {},
