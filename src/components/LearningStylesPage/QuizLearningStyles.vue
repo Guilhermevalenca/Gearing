@@ -444,7 +444,7 @@ export default{
               if(resultsum == divergente) {
                 Swal.fire ({
                   title: "Seu estilo predominante é Divergente", 
-                  text: "Você aprende melhor combinando sensações com observações, ou seja através de atividades práticas seguidas de um retorno. Possui muita sensibilidade artística e conseguem ver as coisas de perspectivas diferentes. Prefere observar ao invés de agir. Suas estratégias para a solução de problemas iniciam coletando informações para em seguida usarem a criatividade e a inventividade para oferecer mais de uma solução possível. A denominação “divergentes” se dá pelo fato de terem bom desempenho em situações que requerem geração de ideias, como grupos de trabalho e brainstorms. Possuem vasto interesse cultural e gostam de pessoas. Preferem trabalhar em grupo, ouvindo sugestões com mente aberta e recebendo feedbacks pessoais. Gostam de autonomia na busca de conhecimento. Esse estilo também é conhecido como REFLEXIVO.",
+                  text: "${CA} + Você aprende melhor combinando sensações com observações, ou seja através de atividades práticas seguidas de um retorno. Possui muita sensibilidade artística e conseguem ver as coisas de perspectivas diferentes. Prefere observar ao invés de agir. Suas estratégias para a solução de problemas iniciam coletando informações para em seguida usarem a criatividade e a inventividade para oferecer mais de uma solução possível. A denominação “divergentes” se dá pelo fato de terem bom desempenho em situações que requerem geração de ideias, como grupos de trabalho e brainstorms. Possuem vasto interesse cultural e gostam de pessoas. Preferem trabalhar em grupo, ouvindo sugestões com mente aberta e recebendo feedbacks pessoais. Gostam de autonomia na busca de conhecimento. Esse estilo também é conhecido como REFLEXIVO.",
                   showConfirmButton: true,
                       customClass: {
                       popup: 'swal-popup-custom',
@@ -466,7 +466,7 @@ export default{
               }else if(resultsum == convergente) {
                 Swal.fire ({
                   title: "Seu estilo predominante é Convergente", 
-                  text: "Você aprende melhor pensando e realizando. Combina o gosto de colocar “a mão na massa” com aspectos teóricos. Gosta de realizar atividades com indicações sequenciais detalhadas (como aquelas dos manuais de operação de aparelhos), solucionar problemas específicos e testar hipóteses (tentativa e erro). Tem habilidades em encontrar aplicações práticas para ideias e teorias. Pessoas desse estilo possuem poucas habilidades sociais e intrapessoais, preferindo ambientes de aprendizagem mais tranquilos (ex.: gosta de trabalha sozinho realizando tarefas técnicas sem se relacionarem com outras pessoas). Parecem se sair melhor em situações nas quais existe uma única resposta ou solução correta para cada pergunta ou problema. Não tem dificuldades ao experimentar inovações para solucionar problemas práticos. Esse estilo também é conhecido como PRAGMÁTICO.",
+                  text: "Conceituação Abstrata:" + CA+ "\n Você aprende melhor pensando e realizando. Combina o gosto de colocar “a mão na massa” com aspectos teóricos. Gosta de realizar atividades com indicações sequenciais detalhadas (como aquelas dos manuais de operação de aparelhos), solucionar problemas específicos e testar hipóteses (tentativa e erro). Tem habilidades em encontrar aplicações práticas para ideias e teorias. Pessoas desse estilo possuem poucas habilidades sociais e intrapessoais, preferindo ambientes de aprendizagem mais tranquilos (ex.: gosta de trabalha sozinho realizando tarefas técnicas sem se relacionarem com outras pessoas). Parecem se sair melhor em situações nas quais existe uma única resposta ou solução correta para cada pergunta ou problema. Não tem dificuldades ao experimentar inovações para solucionar problemas práticos. Esse estilo também é conhecido como PRAGMÁTICO.",
                   showConfirmButton: true,
                   customClass: {
                       popup: 'swal-popup-custom',
@@ -651,7 +651,7 @@ section{
   margin: 3em;
   font-size: 1.2em;
   border-style:solid;
-  border-color:#E6E6FA;
+  border-color: rgba(100, 2, 223, 1);
   border-radius:0.9em;
   border-width: 0.1em;
   background: black;
@@ -660,38 +660,44 @@ section{
   margin: 1em;
 }
 
-input{
+input[type="range"] {
+outline: 0;
+border: 0;
+border-radius: 50em;
+width: 14em;
+max-width: 100%;
+margin: 24px 0 16px;
+transition: box-shadow 0.2s ease-in-out;
+overflow: hidden;
+height: 2em;
 -webkit-appearance: none;
-appearance:none;
-border-color: black;
-border-style: inherit;
-border: 1px;
-border-radius: 9px;
-background-color: rgb(255, 255, 255);
-margin: 5px;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+height: 2em;
+-webkit-appearance: none;
+transition: box-shadow 0.2s ease-in-out;
 }
 input[type="range"]::-webkit-slider-thumb {
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  background: -webkit-linear-gradient(
-    318deg,
-    rgba(133, 26, 186, 1) 18%,
-    rgb(133, 26, 186, 1) 46%,
-    rgba(100, 2, 223, 1) 81%
-  );
-  border-radius: 50%;
-  cursor: pointer;
+width: 2em;
+-webkit-appearance: none;
+height: 2em;
+cursor: ew-resize;
+background: #fff;
+box-shadow: -340px 0 0 320px rgba(100, 2, 223, 1), inset 0 0 0 40px rgba(100, 2, 223, 1);
+border-radius: 50%;
+transition: box-shadow 0.2s ease-in-out;
+position: relative;
 }
-input[type="range"]::-webkit-slider-thumb:hover,
-input[type="range"]::-moz-range-thumb:hover {
-  background-color: black;
+input[type="range"]:active::-webkit-slider-thumb {
+background: #fff;
+box-shadow: -340px 0 0 320px rgba(100, 2, 223, 1), inset 0 0 0 3px rgba(100, 2, 223, 1);
 }
 .equal{
   -webkit-appearance: none;
   appearance: none;
   background-color:red;
 }
+
 
 .valueColor{
   height: 1em;
