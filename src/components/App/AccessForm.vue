@@ -9,8 +9,8 @@
         </div>
         <div v-if="actionsForms">
             <section v-if="!showForm">
+                <button class="x" @click.prevent="() => {actionsForms = false}">X</button>
                 <form class="form" @submit.prevent="authUser()">
-                    <button @click.prevent="() => {actionsForms = false}">X</button>
                     <div>
                         <label>E-mail:</label>
                         <input type="email" v-model="loginUser.email" maxlength="45" placeholder="Digite seu email">
@@ -23,11 +23,11 @@
                 </form>
             </section>
             <section v-if="showForm">
+                <button class="x" @click.prevent="() => {actionsForms = false}">X</button>
                 <form class="form" @submit.prevent="newUser()">
-                    <button @click.prevent="() => {actionsForms = false}">X</button>
                     <div>
                         <label>Usuário:</label>
-                        <input type="text" v-model="createUser.username" maxlength="20"
+                        <input class="usuario-input" type="text" v-model="createUser.username" maxlength="20"
                             placeholder="Escolha seu nome de usuario">
                     </div>
                     <div>
@@ -186,6 +186,11 @@ export default {
 </script>
 
 <style scoped>
+
+.x {
+    display: flex;
+    justify-content: flex-end;
+}
 .form {
     display: flex;
     background-image: url('@/assets/css/backgrounds/gearingBackground.jpeg');
@@ -215,29 +220,42 @@ export default {
 
 label {
     color: #fff;
+    margin-bottom: 3px;
 }
 
-label,
 div {
     display: grid;
     justify-content: center;
     text-align: center;
 }
 
+.usuario-input {
+    color: black;
+    border-radius: 5px;
+    height: 1.8em;
+}
+
 input {
-    border-style: solid;
-    border-radius: 8px;
-    border-color: #000;
-    height: 1.5em;
+    border-radius: 5px;
+    height: 1.8em;
+    border: 1px solid;
     width: 25em;
+}
+
+input:focus {
+  border: 1px solid #ffffff;
+  background-color: #a7a7a7;
+  width: 25em;
 }
 
 input::-webkit-input-placeholder {
     text-align: center;
+    color: black;
 }
 
 input::-moz-placeholder {
     text-align: center;
+    color: black;
 }
 .form-alert-success {
     background-color: green;
