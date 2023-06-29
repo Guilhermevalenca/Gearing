@@ -291,6 +291,7 @@ border-width: 0.1em;
 border-radius: 0.8em;
 word-wrap: break-word;
 word-break: keep-all;
+white-space: pre-wrap;
 }
 
 .reply-box-container table{
@@ -300,11 +301,12 @@ min-height: 5em;
 max-height: none;
 background-color: black;
 border-style: solid;
-border-color: rgba(100, 2, 223, 1) ;
+border-color: rgba(100, 2, 223, 1);
 border-width: 0.1em;
 border-radius: 0.8em;
 word-wrap: break-word;
 word-break: keep-all;
+white-space: pre-wrap;
 }
 .reply-info{
   position: relative;
@@ -312,7 +314,7 @@ word-break: keep-all;
 }
 .topic-info{
 font-size: 0.8em;
-color:  rgba(100, 2, 223, 1) ;
+color: rgba(133, 26, 186, 1);
 }
 .topic-author,.reply-author,.date{
 font-size: 0.8em;

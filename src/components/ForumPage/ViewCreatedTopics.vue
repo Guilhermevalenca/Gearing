@@ -92,7 +92,7 @@ export default{
 }
 .data{
 font-size: 0.8em;
-color:  rgba(100, 2, 223, 1) ;
+color: rgba(133, 26, 186, 1);
 }
 .info{
 font-size: 0.8em;
