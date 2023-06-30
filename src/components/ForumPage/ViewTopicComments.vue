@@ -69,7 +69,7 @@
             <button @click="addComment()">Adicionar comentario</button>
           </section>
           <section v-if="showWindow.EditComment.show">
-            <EditComment @closeWindow="() => {showWindow.EditComment.show = false; showUpdatedComments()}" :title="title" :id="showWindow.EditComment.id"/>
+            <EditComment @closeWindow="() => {closeWindow()}" :title="title"/>
           </section>
           <section>
             <EditTopic @closeEditTopic="() => {closeWindow()}" v-if="showWindow.editTopic" :title="title" :message="description"/>
@@ -196,6 +196,7 @@ mounted() {
 },
 props: {
   title: String,
+  id: Number,
   email: String,
   description: String,
   name: String,
