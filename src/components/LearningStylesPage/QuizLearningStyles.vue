@@ -675,117 +675,113 @@ export default{
 
 <style scoped>
 .test-container{
-  display: inline-block;
-  max-width: 60em;
+     display: inline-block;
+     max-width: 60em;
 }
-section{
-  margin-top: 4em;
+ section{
+     margin-top: 4em;
 }
-.instructions{
-  display: inline-block;
-  max-width: 40em;
-  margin: 3em;
-  font-size: 1.2em;
-  border-style:solid;
-  border-color: rgba(100, 2, 223, 1);
-  border-radius:0.9em;
-  border-width: 0.1em;
-  background: black;
+ .instructions{
+     display: inline-block;
+     max-width: 40em;
+     margin: 3em;
+     font-size: 1.2em;
+     border-style:solid;
+     border-color: rgba(100, 2, 223, 1);
+     border-radius:0.9em;
+     border-width: 0.1em;
+     background: black;
 }
-.attention{
-  margin: 1em;
+ .attention{
+     margin: 1em;
 }
-
-input[type="range"] {
-outline: 0;
-border: 0;
-border-radius: 50em;
-width: 14em;
-max-width: 100%;
-margin: 24px 0 16px;
-transition: box-shadow 0.2s ease-in-out;
-overflow: hidden;
-height: 2em;
--webkit-appearance: none;
+ input[type="range"] {
+    outline: 0;
+    border: none;
+    border-radius: 50em;
+    width: 14em;
+    max-width: 100%;
+    margin: 24px 0 16px;
+    transition: box-shadow 0.2s ease-in-out;
+    overflow: hidden;
+    height: 2em;
+    -webkit-appearance: none;
 }
-input[type="range"]::-webkit-slider-runnable-track {
-height: 2em;
--webkit-appearance: none;
-transition: box-shadow 0.2s ease-in-out;
+ input[type="range"]::-webkit-slider-runnable-track {
+    width: 50em;
+    height: 2em;
+    -webkit-appearance: none;
+    transition: box-shadow 0.2s ease-in-out;
 }
-input[type="range"]::-webkit-slider-thumb {
-width: 2em;
--webkit-appearance: none;
-height: 2em;
-cursor: ew-resize;
-background: #fff;
-box-shadow: -340px 0 0 320px rgba(100, 2, 223, 1), inset 0 0 0 40px rgba(100, 2, 223, 1);
-border-radius: 50%;
-transition: box-shadow 0.2s ease-in-out;
-position: relative;
+ input[type="range"]::-webkit-slider-thumb {
+    width: 2em;
+    -webkit-appearance: none;
+    height: 2em;
+    cursor: ew-resize;
+    background: rgba(100, 2, 223, 1);
+    box-shadow: -34em 0em 16em 32em rgba(100, 2, 223, 1), inset 0 0 0 2em rgba(100, 2, 223, 1);
+    border-radius: 1em;
+    transition: box-shadow 0.2s ease-in-out;
+    position: relative;
 }
-input[type="range"]:active::-webkit-slider-thumb {
-background: #fff;
-box-shadow: -340px 0 0 320px rgba(100, 2, 223, 1), inset 0 0 0 3px rgba(100, 2, 223, 1);
+ input[type="range"]:active::-webkit-slider-thumb {
+    border-radius: 1em;
+    background: #fff;
+    box-shadow: -34em 0 8em 32em rgba(100, 2, 223, 1), inset 0 0 0 0.3em rgba(100, 2, 223, 1);
 }
-.equal{
-  -webkit-appearance: none;
-  appearance: none;
-  background-color:red;
+ .equal{
+     -webkit-appearance: none;
+     appearance: none;
+     background-color:red;
 }
-
-
-.valueColor{
-  height: 1em;
-  width: 1em;
-  font-size: 20px;
+ .valueColor{
+     height: 1em;
+     width: 1em;
+     font-size: 20px;
 }
-  label , .valueColor ,span {
-  font-family: "Share Tech Mono", sans-serif;
-  color:#E6E6FA;
+ label , .valueColor ,span {
+     font-family: "Share Tech Mono", sans-serif;
+     color:#E6E6FA;
 }
-h2{
-  font-size: 24px;
+ h2{
+     font-size: 24px;
 }
-.intro{
-  font-size: 20px;
+ .intro{
+     font-size: 20px;
 }
-label {
-  font-family: "Share Tech Mono", sans-serif;
-  font-size: 1.2em;
-  margin: 1em;
+ label {
+     font-family: "Share Tech Mono", sans-serif;
+     font-size: 1.2em;
+     margin: 1em;
 }
-span{
-  color:red;
+ span{
+     color:red;
 }
-.swal2-styled.swal2-confirm {
-            font-family: 'Prime', sans-serif;
-            text-align: center;
-            color: #fff;
-            font-size: 1em;
-            border: solid;
-            border-width: 1px;  
-            border-radius: 0.25em;
-            background: initial;
-            background-color: transparent;
-            position: fixed;
-            left: 3em;
-        }
-        .swal2-styled.swal2-cancel {
-            font-family: 'Prime', sans-serif;
-            text-align: center;
-            color: #fff;
-            font-size: 1em;
-            border: solid;
-            border-width: 1px;    
-            border-radius: 0.25em;
-            background: initial;
-            background-color: transparent;
-            position:fixed;
-            left: 10em;
-        }
-
-
-
-
+ .swal2-styled.swal2-confirm {
+     font-family: 'Prime', sans-serif;
+     text-align: center;
+     color: #fff;
+     font-size: 1em;
+     border: solid;
+     border-width: 1px;
+     border-radius: 0.25em;
+     background: initial;
+     background-color: transparent;
+     position: fixed;
+     left: 3em;
+}
+ .swal2-styled.swal2-cancel {
+     font-family: 'Prime', sans-serif;
+     text-align: center;
+     color: #fff;
+     font-size: 1em;
+     border: solid;
+     border-width: 1px;
+     border-radius: 0.25em;
+     background: initial;
+     background-color: transparent;
+     position:fixed;
+     left: 10em;
+}
+ 
 </style>

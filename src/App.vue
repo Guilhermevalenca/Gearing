@@ -93,7 +93,8 @@ export default{
 .logo {
   position: absolute;
   width: 2.8em;
-  left:43.5em;
+  top: 3em;
+  right:50em;
   bottom: 50.8em;
   margin-left: -10.5em;
   margin-top: -1.3em;
