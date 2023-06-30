@@ -1,13 +1,19 @@
 <template>
     <section v-if="!showComments">
-        <div v-for="(elements, index) in topics" :key="index">
-            <div class="box">
+        <div class="box" v-for="(elements, index) in topics" :key="index">
+            <div class="box-topics">
                 <a @click="showTopicComments(elements.title,elements.email,elements.description,elements.name,elements.date)">
-                    <div class="topics">
-                        <ul>
-                            {{ elements.title }} <br>
-                            <strong class="info">Criado por </strong>
-                            <span class="data">{{ elements.name }}</span>
+                    <div>
+                        <ul class="box-topics-title">
+                            <p>{{ elements.title }}</p>
+                            <p>
+                                <strong class="info">Criado por </strong>
+                                <span class="data">{{ elements.name }}</span>
+                            </p>
+                            <p>
+                                <strong class="info">Em: </strong>
+                                <span class="data">{{ elements.date }}</span>
+                            </p>
                         </ul>
                     </div>
                 </a>
@@ -75,26 +81,29 @@ export default{
 </script>
 <style scoped>
 .box{
+    display: flex;
+    justify-content: center;
+}
+.box-topics{
     background-color: #000000;
     border-color: rgba(100, 2, 223, 1); 
     border-style: solid;
     border-radius: 0.8em;
     border-width: 0.1em;
-    display:inline-block;
     margin: 0.4em;
-    max-width: 20em;
-    max-height: 4em;
-    min-width: 20em;
-    min-height: 4em;
+    max-width: 50em;
+    min-width: 50em;
     position: relative;
-    text-align: left;
     top: 2em;
 }
-.data{
-font-size: 0.8em;
-color: rgba(133, 26, 186, 1);
+.box-topics-title{
+    text-align: end;
+    padding: 1.2em;
+    margin: 0em;
+    font-size: 0.9em;
+    text-align:left;
 }
-.info{
-font-size: 0.8em;
+.data{
+    color: rgba(133, 26, 186, 1);
 }
 </style>

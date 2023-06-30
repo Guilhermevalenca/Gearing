@@ -26,7 +26,7 @@
           </thead>
           <tbody>
             <tr>
-              <td>{{ description }}</td>
+              <td class="description-topic">{{ description }}</td>
             </tr>
           </tbody>
         </table>
@@ -51,7 +51,7 @@
           </thead>
           <tbody>
             <tr>
-              <td>
+              <td class="comments-data-description">
                 <span>{{ dataComments.comment }}</span>
               </td>
             </tr>
@@ -321,5 +321,8 @@ font-size: 0.8em;
 }
 .title-topic{
 font-size: 1.2em;
+}
+.description-topic, .comments-data-description{
+  text-align: left;
 }
 </style>
