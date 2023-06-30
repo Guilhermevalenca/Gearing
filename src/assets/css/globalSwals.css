@@ -12,6 +12,10 @@
     border-width: 1px;
     color:#E6E6FA;        
     border-radius: 1em;
+    max-width:50em;
+    min-width: 50em;
+    max-height: 30em;
+    overflow-y: auto;
     }
     .swal-title-custom{
         color: #E6E6FA      
@@ -21,6 +25,7 @@
         text-align: justify;
         text-align-last:center;
         color: #E6E6FA;
+        white-space: pre-wrap;
     }
         .swal2-styled.swal2-confirm {
             font-family: 'Prime', sans-serif;
@@ -32,6 +37,7 @@
             border-radius: 0.25em;
             background: initial;
             background-color: transparent;
+
         }
         .swal2-styled.swal2-cancel {
             font-family: 'Prime', sans-serif;

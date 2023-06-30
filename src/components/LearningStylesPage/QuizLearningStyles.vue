@@ -444,47 +444,83 @@ export default{
               if(resultsum == divergente) {
                 Swal.fire ({
                   title: "Seu estilo predominante é Divergente", 
-                  text: "${CA} + Você aprende melhor combinando sensações com observações, ou seja através de atividades práticas seguidas de um retorno. Possui muita sensibilidade artística e conseguem ver as coisas de perspectivas diferentes. Prefere observar ao invés de agir. Suas estratégias para a solução de problemas iniciam coletando informações para em seguida usarem a criatividade e a inventividade para oferecer mais de uma solução possível. A denominação “divergentes” se dá pelo fato de terem bom desempenho em situações que requerem geração de ideias, como grupos de trabalho e brainstorms. Possuem vasto interesse cultural e gostam de pessoas. Preferem trabalhar em grupo, ouvindo sugestões com mente aberta e recebendo feedbacks pessoais. Gostam de autonomia na busca de conhecimento. Esse estilo também é conhecido como REFLEXIVO.",
+                  text: 'Pontuação\n \n' + "Estilo Acomodador:" + acomodador + "pts" + "\nEstilo Assimilador:" + assimilador + "pts" + "\nEstilo Convergente:" + convergente + "pts" + "\nEstilo Divergente:"+ divergente +"pts"+"\n\nVocê aprende melhor combinando sensações com observações, ou seja através de atividades práticas seguidas de um retorno. Possui muita sensibilidade artística e conseguem ver as coisas de perspectivas diferentes. Prefere observar ao invés de agir. Suas estratégias para a solução de problemas iniciam coletando informações para em seguida usarem a criatividade e a inventividade para oferecer mais de uma solução possível. A denominação “divergentes” se dá pelo fato de terem bom desempenho em situações que requerem geração de ideias, como grupos de trabalho e brainstorms. Possuem vasto interesse cultural e gostam de pessoas. Preferem trabalhar em grupo, ouvindo sugestões com mente aberta e recebendo feedbacks pessoais. Gostam de autonomia na busca de conhecimento. Esse estilo também é conhecido como REFLEXIVO.",
                   showConfirmButton: true,
-                      customClass: {
+                  showCancelButton: true,
+                  allowOutsideClick: false,
+                  allowEscapeKey: false,
+                  cancelButtonText: "Ver metodologias",
+                  customClass: {
                       popup: 'swal-popup-custom',
                       title: 'swal-title-custom',
                       htmlContainer: 'swal-html-container-custom',
                   }
                 })
+                .then((result) => {
+                    if (result.isDismissed) {
+                         window.location.href = '/Methodology';
+               }
+          });
 							}else if(resultsum == assimilador) {
                 Swal.fire ({
                   title: "Seu estilo predominante é Assimilador", 
-                  text: "Você aprende melhor combinando observação e pensamento, por isso suas preferências por palestras, conferências e aulas. Para eles, ideias e conceitos abstratos são mais importantes do que pessoas e pode ser percebido como pouco sociável. Tem facilidade com números e modelos conceituais, preferindo especulações abstratas em detrimento de situações práticas. Compreende as informações de forma ampla e as organizam de forma clara e lógica. Tem propensão para a carreira científica. Gosta de explorar modelos analíticos e de ter tempo para pensar e refletir sobre as coisas. Esse estilo também é conhecido como TEÓRICO.",
+                  text: 'Pontuação\n \n' + "Estilo Acomodador:" + acomodador + "pts" + "\nEstilo Assimilador:" + assimilador + "pts" + "\nEstilo Convergente:" + convergente + "pts" + "\nEstilo Divergente:"+ divergente +"pts"+"\n\nVocê aprende melhor combinando observação e pensamento, por isso suas preferências por palestras, conferências e aulas. Para eles, ideias e conceitos abstratos são mais importantes do que pessoas e pode ser percebido como pouco sociável. Tem facilidade com números e modelos conceituais, preferindo especulações abstratas em detrimento de situações práticas. Compreende as informações de forma ampla e as organizam de forma clara e lógica. Tem propensão para a carreira científica. Gosta de explorar modelos analíticos e de ter tempo para pensar e refletir sobre as coisas. Esse estilo também é conhecido como TEÓRICO.",
                   showConfirmButton: true,
+                  showCancelButton: true,
+                  allowOutsideClick: false,
+                  allowEscapeKey: false,
+                  cancelButtonText: "Ver metodologias",
                   customClass: {
                       popup: 'swal-popup-custom',
                       title: 'swal-title-custom',
                       htmlContainer: 'swal-html-container-custom',
-                  } 
+                  }
                 })
+                .then((result) => {
+                    if (result.isDismissed) {
+                         window.location.href = '/Methodology';
+               }
+          });
               }else if(resultsum == convergente) {
                 Swal.fire ({
                   title: "Seu estilo predominante é Convergente", 
-                  text: "Conceituação Abstrata:" + CA+ "\n Você aprende melhor pensando e realizando. Combina o gosto de colocar “a mão na massa” com aspectos teóricos. Gosta de realizar atividades com indicações sequenciais detalhadas (como aquelas dos manuais de operação de aparelhos), solucionar problemas específicos e testar hipóteses (tentativa e erro). Tem habilidades em encontrar aplicações práticas para ideias e teorias. Pessoas desse estilo possuem poucas habilidades sociais e intrapessoais, preferindo ambientes de aprendizagem mais tranquilos (ex.: gosta de trabalha sozinho realizando tarefas técnicas sem se relacionarem com outras pessoas). Parecem se sair melhor em situações nas quais existe uma única resposta ou solução correta para cada pergunta ou problema. Não tem dificuldades ao experimentar inovações para solucionar problemas práticos. Esse estilo também é conhecido como PRAGMÁTICO.",
+                  text: 'Pontuação\n \n' + "Estilo Acomodador:" + acomodador + "pts" + "\nEstilo Assimilador:" + assimilador + "pts" + "\nEstilo Convergente:" + convergente + "pts" + "\nEstilo Divergente:"+ divergente +"pts"+"\n\nVocê aprende melhor pensando e realizando. Combina o gosto de colocar “a mão na massa” com aspectos teóricos. Gosta de realizar atividades com indicações sequenciais detalhadas (como aquelas dos manuais de operação de aparelhos), solucionar problemas específicos e testar hipóteses (tentativa e erro). Tem habilidades em encontrar aplicações práticas para ideias e teorias. Pessoas desse estilo possuem poucas habilidades sociais e intrapessoais, preferindo ambientes de aprendizagem mais tranquilos (ex.: gosta de trabalha sozinho realizando tarefas técnicas sem se relacionarem com outras pessoas). Parecem se sair melhor em situações nas quais existe uma única resposta ou solução correta para cada pergunta ou problema. Não tem dificuldades ao experimentar inovações para solucionar problemas práticos. Esse estilo também é conhecido como PRAGMÁTICO.",
                   showConfirmButton: true,
+                  showCancelButton: true,
+                  allowOutsideClick: false,
+                  allowEscapeKey: false,
+                  cancelButtonText: "Ver metodologias",
                   customClass: {
                       popup: 'swal-popup-custom',
                       title: 'swal-title-custom',
                       htmlContainer: 'swal-html-container-custom',
                   }
                 })
+                .then((result) => {
+                    if (result.isDismissed) {
+                         window.location.href = '/Methodology';
+               }
+          });
 							}else if (resultsum == acomodador) {
                 Swal.fire ({
                   title: "Seu estilo predominante é Acomodador", 
-                  text: "Você aprende melhor experimentando e realizando, como, por exemplo, através de atividades práticas, apresentações, role-plays e debates. Combina o gosto de colocar “a mão na massa” com atividades concretas. Tem capacidade de se sobressair e acomodar ou adaptar a circunstâncias imediatas específicas. Utiliza mais a intuição do que a lógica e tem a tendência a se arriscar mais a ousar mais. Costuma utilizar a opinião de outras pessoas ao invés das suas próprias, por isso geralmente faz muitas perguntas. Assume uma abordagem prática e vivencial. É sociável e gosta de trabalhar em equipe. Geralmente exerce um papel importante em situações onde são necessárias ações e iniciativas para a realização de tarefas. Por terem pouca habilidade analítica são impulsivas e as vezes é percebido como impaciente e pressionador. Esse estilo também é conhecido como ATIVISTA.",
+                  text: 'Pontuação\n \n' + "Estilo Acomodador:" + acomodador + "pts" + "\nEstilo Assimilador:" + assimilador + "pts" + "\nEstilo Convergente:" + convergente + "pts" + "\nEstilo Divergente:"+ divergente +"pts"+"\n\nVocê aprende melhor experimentando e realizando, como, por exemplo, através de atividades práticas, apresentações, role-plays e debates. Combina o gosto de colocar “a mão na massa” com atividades concretas. Tem capacidade de se sobressair e acomodar ou adaptar a circunstâncias imediatas específicas. Utiliza mais a intuição do que a lógica e tem a tendência a se arriscar mais a ousar mais. Costuma utilizar a opinião de outras pessoas ao invés das suas próprias, por isso geralmente faz muitas perguntas. Assume uma abordagem prática e vivencial. É sociável e gosta de trabalhar em equipe. Geralmente exerce um papel importante em situações onde são necessárias ações e iniciativas para a realização de tarefas. Por terem pouca habilidade analítica são impulsivas e as vezes é percebido como impaciente e pressionador. Esse estilo também é conhecido como ATIVISTA.",
                   showConfirmButton: true,
-                       customClass: {
+                  showCancelButton: true,
+                  allowOutsideClick: false,
+                  allowEscapeKey: false,
+                  cancelButtonText: "Ver metodologias",
+                  customClass: {
                       popup: 'swal-popup-custom',
                       title: 'swal-title-custom',
                       htmlContainer: 'swal-html-container-custom',
                   }
                 })
+                .then((result) => {
+                    if (result.isDismissed) {
+                         window.location.href = '/Methodology';
+               }
+          });
 							}
 
               console.log("EC:",EC,"CA:",CA,"OR:",OR,"EA:",EA)
@@ -722,6 +758,32 @@ label {
 span{
   color:red;
 }
+.swal2-styled.swal2-confirm {
+            font-family: 'Prime', sans-serif;
+            text-align: center;
+            color: #fff;
+            font-size: 1em;
+            border: solid;
+            border-width: 1px;  
+            border-radius: 0.25em;
+            background: initial;
+            background-color: transparent;
+            position: fixed;
+            left: 3em;
+        }
+        .swal2-styled.swal2-cancel {
+            font-family: 'Prime', sans-serif;
+            text-align: center;
+            color: #fff;
+            font-size: 1em;
+            border: solid;
+            border-width: 1px;    
+            border-radius: 0.25em;
+            background: initial;
+            background-color: transparent;
+            position:fixed;
+            left: 10em;
+        }
 
 
 
