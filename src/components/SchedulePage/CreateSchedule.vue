@@ -176,7 +176,7 @@ export default{
                     Swal.hideLoading();
                 }
             });
-            axios.post('http://localhost:8000/schedule/addSchedule.php', {
+            axios.post(`${this.$store.state.req.api}/schedule/addSchedule.php`, {
                 schedule: this.receivingSubjects,
                 title: this.title,
                 shift: this.turns,

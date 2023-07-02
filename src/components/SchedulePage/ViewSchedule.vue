@@ -63,7 +63,7 @@ export default{
     },
     methods: {
         searchSchedules() {
-            axios.post('http://localhost:8000/schedule/searchTitlesSchedules.php', {
+            axios.post(`${this.$store.state.req.api}/schedule/searchTitlesSchedules.php`, {
                 id: localStorage.getItem('idSession')
             })
             .then(response => {
@@ -73,7 +73,7 @@ export default{
             })
         },
         mountedSchedule(title) {
-            axios.post('http://localhost:8000/schedule/searchSchedule.php',{
+            axios.post(`${this.$store.state.req.api}/schedule/searchSchedule.php`,{
                 id: localStorage.getItem('idSession'),
                 title: title
             })
@@ -120,7 +120,7 @@ export default{
                 }
             })
             Swal.showLoading();
-            axios.post('http://localhost:8000/schedule/deleteSchedule.php', {
+            axios.post(`${this.$store.state.req.api}/schedule/deleteSchedule.php`, {
                 id: localStorage.getItem('idSession'),
                 title: this.currentTitle
             })

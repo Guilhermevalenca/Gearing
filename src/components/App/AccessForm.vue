@@ -103,7 +103,7 @@ export default {
     },
     methods: {
         authUser(email,password) {
-            axios.post("http://localhost:8000/user/authUser.php", {
+            axios.post(`${this.$store.state.req.api}/user/authUser.php`, {
                 email: email,
                 password: password
             })
@@ -127,7 +127,7 @@ export default {
             if (this.createUser.password == this.createUser.confirmPassword) {
 
                 axios
-                    .post("http://localhost:8000/user/createUser.php", {
+                    .post(`${this.$store.state.req.api}/user/createUser.php`, {
                         username: this.createUser.username,
                         email: this.createUser.email,
                         password: this.createUser.password

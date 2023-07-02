@@ -39,7 +39,7 @@ export default{
   },
   methods: {
     establishingConnection() {
-      axios.get('http://localhost:8000')
+      axios.get(this.$store.state.req.api)
       .then(response => {
         if(response.data === "OK"){
           Swal.close();

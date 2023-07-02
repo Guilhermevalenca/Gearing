@@ -90,7 +90,7 @@ export default {
   components: {EditComment, EditTopic},
   data() {
       return {
-          socket: io('http://localhost:3000'),
+          socket: io(this.$store.state.req.webSocket),
           topic: {
             title: '',
             name: '',
@@ -112,7 +112,7 @@ export default {
   },
 methods: {
   dataTopic() {
-    axios.post('http://localhost:8000/forum/dataTopic.php',{
+    axios.post(`${this.$store.state.req.api}/forum/dataTopic.php`,{
       idTopic: this.id
     })
     .then(response => {
@@ -152,7 +152,7 @@ methods: {
       this.$emit("closeComments")
   },
   addComment() {
-    axios.post('http://localhost:8000/forum/addCommentChat.php',{
+    axios.post(`${this.$store.state.req.api}/forum/addCommentChat.php`,{
       id: localStorage.getItem('idSession'),
       message: this.newComments,
       name: this.$store.state.user.username,
@@ -188,7 +188,7 @@ methods: {
         htmlContainer: 'swal-html-container-custom',
       }
     })
-    axios.post('http://localhost:8000/forum/chatTopic.php',{
+    axios.post(`${this.$store.state.req.api}/forum/chatTopic.php`,{
       id: localStorage.getItem('idsession'),
       searchByTitle: this.topic.title
     })

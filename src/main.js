@@ -20,7 +20,7 @@ app.use(router);
 app.config.globalProperties.$logoutUser = async () => {
     let idSession = localStorage.getItem('idSession');
     Swal.showLoading();
-    axios.post('http://localhost:8000/authorizationActions/revokingAuthorizedAccess.php',{
+    axios.post(`${store.state.req.api}/authorizationActions/revokingAuthorizedAccess.php`,{
         id: idSession
     })
     .then(response => {
@@ -46,7 +46,7 @@ app.config.globalProperties.$checkAuthentication = async () => {
     
     if(idSession){
         Swal.showLoading();
-        axios.post('http://localhost:8000/authorizationActions/checkingAccessAuthorization.php',{
+        axios.post(`${store.state.req.api}/authorizationActions/checkingAccessAuthorization.php`,{
             id: idSession
         })
         .then(response => {
@@ -68,7 +68,7 @@ app.config.globalProperties.$checkAuthentication = async () => {
 }
 
 app.config.globalProperties.$checkAdm = async function() {
-    axios.post("http://localhost:8000/authorizationActions/checkAdm.php",{
+    axios.post(`${store.state.req.api}/authorizationActions/checkAdm.php`,{
         id: localStorage.getItem('idSession')
     })
     .then(response =>{

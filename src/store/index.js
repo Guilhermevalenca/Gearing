@@ -9,6 +9,10 @@ export default createStore({
     },
     schedule: {
       editTitle: ''
+    },
+    req: {
+      api: 'http://localhost:8000',
+      webSocket: 'http://localhost:3000'
     }
   },
   mutations: {

@@ -61,7 +61,7 @@ export default{
     },
     methods: {
         check() {
-            axios.post('http://localhost:8000/user/userData.php', {
+            axios.post(`${this.$store.state.req.api}/user/userData.php`, {
                 email: this.$store.state.user.email,
                 password: this.user.password
             })
@@ -99,7 +99,7 @@ export default{
                         if(!this.newUserData.email){
                             this.newUserData.email = this.$store.state.user.email;
                         }
-                        axios.post('http://localhost:8000/user/updateUserData.php',{
+                        axios.post(`${this.$store.state.req.api}/user/updateUserData.php`,{
                             email: this.newUserData.email,
                             name: this.newUserData.username,
                             password: this.newUserData.password,
@@ -118,7 +118,7 @@ export default{
                                                 htmlContainer: 'swal-html-container-custom',
                             }
                                 });
-                                axios.post('http://localhost:8000/log/registerErro.php',{
+                                axios.post(`${this.$store.state.req.api}/log/registerErro.php`,{
                                     erro: (response.data).problem
                                 })
                             }
@@ -145,7 +145,7 @@ export default{
             })
             .then(result => {
                 if(result.isConfirmed){
-                    axios.post('http://localhost:8000/user/deleteUser.php',{
+                    axios.post(`${this.$store.state.req.api}/user/deleteUser.php`,{
                         id: localStorage.getItem('idSession')
                     })
                     .then(response => {
@@ -171,7 +171,7 @@ export default{
                                 htmlContainer: 'swal-html-container-custom',
                             }
                             });
-                            axios.post('http://localhost:8000/log/registerErro.php',{
+                            axios.post(`${this.$store.state.req.api}/log/registerErro.php`,{
                                 erro: (response.data).problem
                             })
                         }

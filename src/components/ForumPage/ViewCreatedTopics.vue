@@ -33,7 +33,7 @@ export default{
     components: { Comments },
     data() {
         return {
-            socket: io('http://localhost:3000'),
+            socket: io(this.$store.state.req.webSocket),
             topics: [],
             showComments: false,
             viewComments: {
@@ -50,7 +50,7 @@ export default{
             this.viewComments.id = newId;
         },
         updateTopics() {
-            axios.get('http://localhost:8000/forum/allTopic.php')
+            axios.get(`${this.$store.state.req.api}/forum/allTopic.php`)
             .then(response => {
                 if(response.data){
                     this.topics = response.data.topic

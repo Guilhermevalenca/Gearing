@@ -85,7 +85,7 @@ export default{
             })
         },
         mountedSchedule() {
-            axios.post('http://localhost:8000/schedule/searchSchedule.php', {
+            axios.post(`${this.$store.state.req.api}/schedule/searchSchedule.php`, {
                 id: localStorage.getItem('idSession'),
                 title: this.currentTitle
             })
@@ -172,7 +172,7 @@ export default{
                     Swal.hideLoading();
                 }
             });
-            axios.post('http://localhost:8000/schedule/updateSchedule.php',{
+            axios.post(`${this.$store.state.req.api}/schedule/updateSchedule.php`,{
                 id: localStorage.getItem('idSession'),
                 update: this.updateSubjects,
                 title: this.currentTitle

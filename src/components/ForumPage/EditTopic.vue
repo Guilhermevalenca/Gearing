@@ -23,7 +23,7 @@ import io from 'socket.io-client';
 export default{
     data() {
         return {
-            socket: io('http://localhost:3000'),
+            socket: io(this.$store.state.req.webSocket),
             newMessage: this.message
         }
     },
@@ -38,7 +38,7 @@ export default{
                     Swal.hideLoading();
                 }
             })
-            axios.post('http://localhost:8000/forum/updateTopic.php',{
+            axios.post(`${this.$store.state.req.api}/forum/updateTopic.php`,{
                 id: localStorage.getItem('idSession'),
                 title: this.title,
                 message: this.newMessage

@@ -39,7 +39,7 @@ export default{
                     htmlContainer: 'swal-html-container-custom',
                 }
             })
-            axios.post('http://localhost:8000/forum/updateComment.php',{
+            axios.post(`${this.$store.state.req.api}/forum/updateComment.php`,{
                 id: localStorage.getItem('idSession'),
                 title: this.title,
                 commentId: this.id,
@@ -83,7 +83,7 @@ export default{
                 htmlContainer: 'swal-html-container-custom',
             }
         })
-        axios.post('http://localhost:8000/forum/editComment.php',{
+        axios.post(`${this.$store.state.req.api}/forum/editComment.php`,{
             id: localStorage.getItem('idSession'),
             title: this.title,
             commentId: this.id

@@ -24,7 +24,7 @@ import io from 'socket.io-client';
 export default{
     data() {
         return {
-            socket: io('http://localhost:3000'),
+            socket: io(this.$store.state.req.webSocket),
             name: '',
             description: ''
         }
@@ -59,7 +59,7 @@ export default{
                 showConfirmButton: false,
                 allowOutsideClick: false
             })
-            axios.post('http://localhost:8000/forum/addTopic.php',{
+            axios.post(`${this.$store.state.req.api}/forum/addTopic.php`,{
                 id: localStorage.getItem('idSession'),
                 title: this.name,
                 description: this.description,
