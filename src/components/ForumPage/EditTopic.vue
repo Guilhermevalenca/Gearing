@@ -46,15 +46,15 @@ export default{
             .then(response => {
                 console.log(response);
                 if(response.data.success) {
-                    this.socket.emit('new-topic',() => {
-                        console.log('')
-                    })
                     Swal.fire({
                         title: 'Topico editado com sucesso',
                         customClass: {
                           popup: 'swal-popup-custom',
                           title: 'swal-title-custom',
-                          htmlContainer: 'swal-html-container-custom',
+                          htmlContainer: 'swal-html-container-custom'
+                        },
+                        willClose: () => {
+                            this.socket.emit('edit-topic',this.id);
                         }
                     })
                     .then(result => {
@@ -81,6 +81,7 @@ export default{
         }
     },
     props: {
+        id: Number,
         title: String,
         message: String
     }

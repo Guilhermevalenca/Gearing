@@ -5,12 +5,10 @@ $json = file_get_contents('php://input');
 $dataTopic = json_decode($json,true);
 
 $id = $dataTopic['id'];
-$email = $dataTopic['searchByEmail'];
 $title = $dataTopic['searchByTitle'];
 $response = [];
 try{
-    $sql = "SELECT com_message,com_user_name,com_date,com_user_email,com_id FROM GEA_COMMENTS 
-            WHERE com_top_title = '$title';";
+    $sql = "SELECT com_message,com_user_name,com_date,com_user_email,com_id FROM GEA_COMMENTS WHERE com_top_title = '$title';";
     $result = $conn->query($sql);
     $response['comments'] = [];
     foreach($result as $data) {

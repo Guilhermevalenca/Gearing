@@ -11,11 +11,17 @@
     <div class="animation start-home"></div>
   </nav>
 </header>
-<section class="components">
-  <AccessForm />
-  <router-view />
-</section>
-
+<main>
+  <section>
+    <AccessForm />
+  </section>
+  <section>
+    <router-view />
+  </section>
+</main>
+<footer>
+  <h1>&copy; Rodapé ainda em produção</h1>
+</footer>
 </template>
 
 <script>

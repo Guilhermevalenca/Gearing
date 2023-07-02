@@ -6,9 +6,9 @@
         <table>
           <thead>
             <tr>
-              <th class="title-topic">{{ title }}</th>
+              <th class="title-topic">{{ topic.title }}</th>
             </tr>
-                <button class="edit-topic-description" v-if="this.$store.state.user.auth && email == this.$store.state.user.email" @click="viewEditTopic()">
+                <button class="edit-topic-description" v-if="this.$store.state.user.auth && this.topic.email == this.$store.state.user.email" @click="viewEditTopic()">
                   <FA icon="pencil" /> Editar
                 </button>
                 <button class="add-reply" @click="() => {this.$store.state.user.auth ? showWindow.addComment = true : actionDenied()}">
@@ -18,15 +18,15 @@
             <tr>
               <th>
                 <strong class="topic-author">Criado por </strong>
-                <span class="topic-info">{{ name }}</span> <br>
+                <span class="topic-info">{{ topic.name }}</span> <br>
                 <strong class="topic-author">Em </strong>
-                <span class="topic-info">{{ date }}</span>
+                <span class="topic-info">{{ topic.date }}</span>
               </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="description-topic">{{ description }}</td>
+              <td class="description-topic">{{ topic.description }}</td>
             </tr>
           </tbody>
         </table>
@@ -72,7 +72,7 @@
             <EditComment @closeWindow="() => {closeWindow()}" :title="title"/>
           </section>
           <section>
-            <EditTopic @closeEditTopic="() => {closeWindow()}" v-if="showWindow.editTopic" :title="title" :message="description"/>
+            <EditTopic @closeEditTopic="() => {closeWindow()}" v-if="showWindow.editTopic" :title="this.topic.title" :message="this.topic.description" :id="this.id"/>
           </section>
         </div>
       </section>
@@ -91,6 +91,13 @@ export default {
   data() {
       return {
           socket: io('http://localhost:3000'),
+          topic: {
+            title: '',
+            name: '',
+            date: '',
+            description: '',
+            email: ''
+          },
           newComments: '',
           comments: [],
           showWindow: {
@@ -104,6 +111,24 @@ export default {
       }
   },
 methods: {
+  dataTopic() {
+    axios.post('http://localhost:8000/forum/dataTopic.php',{
+      idTopic: this.id
+    })
+    .then(response => {
+      console.log(response)
+      if(response.data.success){
+        this.topic = response.data.dataTopic
+        this.showUpdatedComments()
+      }else{
+        Swal.fire({
+          title: 'Não é possivel vizualizar este topico'
+        })
+        console.log(response.data.error)
+        this.closeComment()
+      }
+    })
+  },
   viewEditTopic() {
     this.showWindow.editTopic = true;
   },
@@ -131,11 +156,11 @@ methods: {
       id: localStorage.getItem('idSession'),
       message: this.newComments,
       name: this.$store.state.user.username,
-      title: this.title
+      title: this.topic.title
     })
     .then(response => {
       if(response.data.success){
-        this.socket.emit('view-comment', this.title);
+        this.socket.emit('view-comment', this.id);
         this.showUpdatedComments()
         this.newComments = '';
         this.showWindow.addComment = false;
@@ -165,8 +190,7 @@ methods: {
     })
     axios.post('http://localhost:8000/forum/chatTopic.php',{
       id: localStorage.getItem('idsession'),
-      searchByTitle: this.title,
-      searchByEmail: this.email
+      searchByTitle: this.topic.title
     })
     .then(response => {
       if(response.data.success){
@@ -185,22 +209,22 @@ methods: {
   }
 },
 created() {
-  this.showUpdatedComments();
+  this.dataTopic();
 },
 mounted() {
-  this.socket.on('update-comment',(title) => {
-    if(title == this.title){
+  this.socket.on('update-comment',(id) => {
+    if(id == this.id){
       this.showUpdatedComments();
+    }
+  })
+  this.socket.on('update-topic',(id) => {
+    if(id == this.id){
+      this.dataTopic();
     }
   })
 },
 props: {
-  title: String,
-  id: Number,
-  email: String,
-  description: String,
-  name: String,
-  date: String
+  id: Number
 }
 };
 </script>

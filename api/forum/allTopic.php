@@ -4,7 +4,7 @@ require('../conf/init.php');
 $response = [];
 
 try{
-    $sql = "SELECT top_id,top_title,top_description,top_user_email,top_user_name,top_date FROM GEA_TOPIC;";
+    $sql = "SELECT top_id,top_title,top_user_email,top_user_name,top_date FROM GEA_TOPIC;";
     $result = $conn->query($sql);
     $response['topic'] = [];
     foreach($result as $data){

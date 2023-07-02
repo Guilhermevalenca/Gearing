@@ -20,10 +20,13 @@ io.on('connection', (socket) => {
         io.emit('update-topics',() => {
             console.log("topicos atualizados")
         })
-    })
-    socket.on('view-comment', (title) => {
-        io.emit('update-comment',title);
-    })
+    });
+    socket.on('view-comment', (id) => {
+        io.emit('update-comment',id)
+    });
+    socket.on('edit-topic', (id) => {
+        io.emit('update-topic',id)
+    });
     socket.on('disconnect', () => {
         console.log('user disconnected');
     });

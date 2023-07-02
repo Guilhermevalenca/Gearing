@@ -18,12 +18,10 @@
 import CreateTopic from '@/components/ForumPage/CreateTopic.vue';
 import ViewTopics from '@/components/ForumPage/ViewCreatedTopics.vue';
 import Swal from 'sweetalert2';
-import io from 'socket.io-client';
 
 export default{
     data(){
         return{
-            socket: io('http://localhost:3000'),
             createTopic: false,
             viewTopic: true
         }
@@ -46,22 +44,12 @@ export default{
             title: 'Seja bem-Vindo ao Fórum',
             text: 'Aqui você pode interagir com outros estudantes,trocar experiências,sugerir métodos e discutir sobre vários assuntos.Divirta-se e trate todos com respeito ; ',
             confirmButtonText: 'Vamos lá!',
-                customClass: {
-                      popup: 'swal-popup-custom',
-                      title: 'swal-title-custom',
-                      htmlContainer: 'swal-html-container-custom',
-                  }
+            customClass: {
+                popup: 'swal-popup-custom',
+                title: 'swal-title-custom',
+                htmlContainer: 'swal-html-container-custom',
+            }
         })
-    },
-    mounted() {
-        this.socket.on('connect',() => {
-            console.log('conectado')
-        });
-    },
-    unmounted() {
-        this.socket.on('disconnect',() => {
-            console.log('disconectado')
-        });
     }
 }
 </script>

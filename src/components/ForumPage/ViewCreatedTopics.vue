@@ -2,7 +2,7 @@
     <section v-if="!showComments">
         <div class="box" v-for="(elements, index) in topics" :key="index">
             <div class="box-topics">
-                <a @click="showTopicComments(elements.title,elements.email,elements.description,elements.name,elements.date,elements.id)">
+                <a @click="showTopicComments(elements.id)">
                     <div>
                         <ul class="box-topics-title">
                             <p>{{ elements.title }}</p>
@@ -21,8 +21,7 @@
         </div>
     </section>
     <section v-else>
-        <Comments :name="viewComments.name" :title="viewComments.title" :email="viewComments.email" :description="viewComments.description" 
-        :date="viewComments.date" :id="viewComments.id" @closeComments="hideTopicComments()" />
+        <Comments :id="viewComments.id" @closeComments="hideTopicComments()" />
     </section>
 </template>
 <script>
@@ -38,10 +37,6 @@ export default{
             topics: [],
             showComments: false,
             viewComments: {
-                title: '',
-                email: '',
-                description: '',
-                date: '',
                 id: ''
             }
         }
@@ -50,13 +45,8 @@ export default{
         hideTopicComments() {
             this.showComments = false
         },
-        showTopicComments(newTitle,newEmail,newDescription,newName,newDate,newId) {
+        showTopicComments(newId) {
             this.showComments = true;
-            this.viewComments.title = newTitle;
-            this.viewComments.email = newEmail;
-            this.viewComments.description = newDescription;
-            this.viewComments.name = newName;
-            this.viewComments.date = newDate;
             this.viewComments.id = newId;
         },
         updateTopics() {
@@ -75,9 +65,17 @@ export default{
         this.updateTopics()
     },
     mounted() {
+        this.socket.on('connect',() => {
+            console.log('conectado')
+        });
         this.socket.on('update-topics',() => {
             this.updateTopics();
         })
+    },
+    beforeUnmount() {
+        this.socket.on('disconnect',() => {
+            console.log('disconectado')
+        });
     }
 }
 </script>
