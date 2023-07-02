@@ -10,7 +10,7 @@
         <div v-if="actionsForms">
             <section v-if="!showForm">
                 <button class="x" @click.prevent="() => {actionsForms = false}">X</button>
-                <form class="form" @submit.prevent="authUser()">
+                <form class="form" @submit.prevent="authUser(loginUser.email,loginUser.password)">
                     <div>
                         <label>E-mail:</label>
                         <input type="email" v-model="loginUser.email" maxlength="45" placeholder="Digite seu email">
@@ -102,10 +102,10 @@ export default {
         };
     },
     methods: {
-        authUser() {
+        authUser(email,password) {
             axios.post("http://localhost:8000/user/authUser.php", {
-                email: this.loginUser.email,
-                password: this.loginUser.password
+                email: email,
+                password: password
             })
             .then(response => {
                 if (response.data.success) {
@@ -135,10 +135,7 @@ export default {
                     .then(response => {
                         if (response.data.success) {
                             this.showForm = false;
-                            this.createSuccess = true;
-                            this.messageAlert = "Sua conta foi criada com sucesso"
-                            this.showAlert = true;
-                            this.failedLogin = false;
+                            this.authUser(this.createUser.email,this.createUser.password);
                         }else if(response.data.error.code == "23000"){
                             this.showAlert = true;
                             this.messageAlert = "Essa conta já está cadastrada"
