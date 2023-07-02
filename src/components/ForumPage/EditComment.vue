@@ -10,11 +10,13 @@
 
 <script>
 import axios from 'axios';
+import { io } from 'socket.io-client';
 import Swal from 'sweetalert2';
 
 export default{
     data() {
         return {
+            socket: io(this.$store.state.req.webSocket),
             comment: ''
         }
     },
@@ -48,7 +50,7 @@ export default{
             .then(response => {
                 Swal.close()
                 if(response.data.success) {
-                    this.socket.emit('view-comment', this.title);
+                    this.socket.emit('view-comment', this.id);
                     this.$emit('closeWindow');
                 }else{
                     console.log(response.data.error)

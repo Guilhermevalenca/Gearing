@@ -69,7 +69,7 @@
             <button @click="addComment()">Adicionar comentario</button>
           </section>
           <section v-if="showWindow.EditComment.show">
-            <EditComment @closeWindow="() => {closeWindow()}" :title="title"/>
+            <EditComment @closeWindow="() => {closeWindow()}" :id="showWindow.EditComment.id" :title="this.topic.title"/>
           </section>
           <section>
             <EditTopic @closeEditTopic="() => {closeWindow()}" v-if="showWindow.editTopic" :title="this.topic.title" :message="this.topic.description" :id="this.id"/>
