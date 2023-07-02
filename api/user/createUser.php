@@ -20,7 +20,10 @@ try{
     $rowCount = $conn->exec($sql);
     $response['success'] = "true";
 }catch (PDOException $e) {
-    $response['error'] = $e->getMessage();
+    $response['error'] = [
+        'code' => $e->getCode(),
+        'other' => $e
+    ];
     //echo "Dados do usuario não foram adicionados " . $e->getMessage(); 
 }
 echo json_encode($response);

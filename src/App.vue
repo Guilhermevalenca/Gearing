@@ -11,11 +11,9 @@
     <div class="animation start-home"></div>
   </nav>
 </header>
-  <div>
-    <AccessForm />
-  </div>
-<section>
-  <router-view/>
+<section class="components">
+  <AccessForm />
+  <router-view />
 </section>
 
 </template>
@@ -66,7 +64,6 @@ export default{
 
 <style scoped>
 @import url('https://fonts.cdnfonts.com/css/yielding-timber');
-
 .navbar {
   display: flex;
 }

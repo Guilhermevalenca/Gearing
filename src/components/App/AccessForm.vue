@@ -133,18 +133,22 @@ export default {
                         password: this.createUser.password
                     })
                     .then(response => {
-                        if (response.data) {
+                        if (response.data.success) {
                             this.showForm = false;
                             this.createSuccess = true;
                             this.messageAlert = "Sua conta foi criada com sucesso"
                             this.showAlert = true;
                             this.failedLogin = false;
-                        } else {
+                        }else if(response.data.error.code == "23000"){
                             this.showAlert = true;
                             this.messageAlert = "Essa conta já está cadastrada"
                             this.emailRegistered = true;
-
+                        }else{
+                            this.showAlert = true;
+                            this.messageAlert = "Ocorreu um erro não identificado"
+                            this.emailRegistered = true;
                         }
+                        response.data.success ? '' : console.log(response.data.error.other);
                     })
             }
         },
@@ -186,7 +190,9 @@ export default {
 </script>
 
 <style scoped>
-
+.default-form{
+    z-index: 1;
+}
 .x {
     display: flex;
     justify-content: flex-end;

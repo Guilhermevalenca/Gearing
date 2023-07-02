@@ -1,5 +1,5 @@
 <template>
-<section>
+<section class="default-page">
     <form class="add-topic" @submit.prevent="createTopic()">
         <div class="info">
             <div class="info-name">
@@ -116,6 +116,9 @@ export default{
 </script>
 
 <style scoped>
+.default-page{
+    z-index: 2;
+}
 button{
     margin: 0.0em;
     position: relative;
@@ -137,7 +140,5 @@ button{
     border-style: solid;
     border-radius: 0.8em;
     border-width: 0.1em;
-    background-color: transparent;
-
 }
 </style>
