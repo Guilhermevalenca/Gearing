@@ -28,12 +28,14 @@ npm install
 ```
 npm install
 ```
+
 ## Passo 3 (realizando a conexão com o banco de dados):
 
 ### Aparti da raiz do projeto va ate /api/conf/establishingConnection.php
 ### Ao abrir o arquivo terá terá algo mais ou menos assim:
 <!-- imagem de exemplo -->
 ### Apenas altere a porta o usuario e a senha, (por padrão o mysql utiliza a porta 3306)
+
 
 ## Passo 4 (executarndo o projeto):
 
