@@ -13,6 +13,7 @@ try{
     $stmt->bindParam(':title',$title);
     $stmt->execute();
 
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $response['comments'] = [];
     foreach($result as $data) {
         array_push($response['comments'],array(
