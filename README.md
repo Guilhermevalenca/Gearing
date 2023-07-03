@@ -33,7 +33,9 @@ npm install
 
 ### Aparti da raiz do projeto va ate /api/conf/establishingConnection.php
 ### Ao abrir o arquivo terá terá algo mais ou menos assim:
-<!-- imagem de exemplo -->
+
+![Exemplo de como ta o arquivo](README_img/printArchiveConnection.png)
+
 ### Apenas altere a porta o usuario e a senha, (por padrão o mysql utiliza a porta 3306)
 
 
