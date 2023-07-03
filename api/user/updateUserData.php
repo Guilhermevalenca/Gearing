@@ -9,15 +9,20 @@ alterSession($id);
 $email = $_SESSION['email'];
 
 //user id
-$newEmail = hash('sha256',$newUserData['email']);
+$newEmail = $newUserData['email'];
 
 //new data
 $name = $newUserData['name'];
-$password = hash('sha256',$newUserData['password']);
+$password = encryption($newUserData['password']);
 try{
-    $sql = "UPDATE GEA_USER SET user_name = '$name', user_password = '$password',user_email = '$newEmail' 
-    WHERE user_email = '$email' ;";
-    $execute = $conn->exec($sql);
+    $sql = "UPDATE GEA_USER SET user_name = :name, user_password = :password,user_email = :newEmail 
+    WHERE user_email = :email ;";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':name',$name);
+    $stmt->bindParam(':password',$password);
+    $stmt->bindParam(':newEmail',$newEmail);
+    $stmt->bindParam(':email',$email);
+    $stmt->execute();
     $responseData = [
         'result' => 'true'
     ];

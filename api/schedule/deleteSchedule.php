@@ -14,8 +14,11 @@ $email = $_SESSION['email'];
 //deleting schedule
 $response = [];
 try{
-    $sql = "DELETE FROM GEA_SCHEDULE WHERE sche_user_email = '$email' AND sche_title = '$title';";
-    $result = $conn->query($sql);
+    $sql = "DELETE FROM GEA_SCHEDULE WHERE sche_user_email = :email AND sche_title = :title;";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':email',$email);
+    $stmt->bindParam(':title',$title);
+    $stmt->execute();
 }
 catch (PDOException $e){
     exit();

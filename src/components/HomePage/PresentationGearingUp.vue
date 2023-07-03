@@ -11,8 +11,9 @@
         </div>
     </section>
 </template>
+<style>
+</style>
 <style scoped>
-
 .caixa {
     display: flex;
     align-items: center;

@@ -14,8 +14,10 @@ $id = session_id();
 $cripId = encryption($id);
 //looking for user
 try{
-    $sql = "SELECT user_email,user_name,user_password FROM GEA_USER WHERE user_email = '$email';";
-    $stmt = $conn->query($sql);
+    $sql = "SELECT user_email,user_name,user_password FROM GEA_USER WHERE user_email = :email;";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':email',$email);
+    $stmt->execute();
     $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if(isset($data)){
         if($password === decryption($data[0]['user_password'])){

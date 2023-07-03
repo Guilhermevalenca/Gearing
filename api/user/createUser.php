@@ -15,9 +15,13 @@ $cripPass = encryption($password);
 $response = [];
 try{
     //adding user data
-    $sql = "INSERT INTO GEA_USER (user_email,user_name,user_password,user_controller) 
-            VALUES ('$email','$name','$cripPass',false);";
-    $rowCount = $conn->exec($sql);
+    $sql = 'INSERT INTO GEA_USER (user_email,user_name,user_password,user_controller) 
+            VALUES (:email,:name,:password,false);';
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':email',$email);
+    $stmt->bindParam(':name',$name);
+    $stmt->bindParam(':password',$cripPass);
+    $stmt->execute();
     $response['success'] = "true";
 }catch (PDOException $e) {
     $response['error'] = [

@@ -12,12 +12,16 @@ $email = $_SESSION['email'];
 
 $response = [];
 
-$sql = "SELECT user_controller FROM GEA_USER WHERE user_email = '$email';";
+$sql = "SELECT user_controller FROM GEA_USER WHERE user_email = :email;";
 try{
-    $result = $conn->query($sql);
-    $data = $result->fetchAll(PDO::FETCH_ASSOC);
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':email',$email);
+    $stmt->execute();
+    $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
     $response['adm'] = $data[0]['user_controller'];
     $response['success'] = true;
+    
     $_SESSION['controller'] = $data[0]['user_controller'];
 } catch(PDOException $e) {
     $response['error'] = $e->getMessage();

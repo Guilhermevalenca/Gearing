@@ -203,8 +203,9 @@ export default {
         }
     },
     beforeMount() {
-        if(this.$store.state.user.auth){
-            this.checkAdm
+        let idSession = localStorage.getItem('idSession');
+        if(idSession){
+            this.checkAdm();
         }
     }
 }

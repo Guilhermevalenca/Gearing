@@ -13,9 +13,14 @@ $title = $data['title'];
 
 $response = [];
 
-$sql = "UPDATE GEA_TOPIC SET top_description = '$message' WHERE top_user_email = '$email' AND top_title = '$title';";
+$sql = "UPDATE GEA_TOPIC SET top_description = :message WHERE top_user_email = :email AND top_title = :title;";
 try{
-    $conn->exec($sql);
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':message',$message);
+    $stmt->bindParam(':email',$email);
+    $stmt->bindParam(':title',$title);
+    $stmt->execute();
+
     $response['success'] = true;
 }catch (PDOException $e) {
     $response['error'] = $e->getMessage();

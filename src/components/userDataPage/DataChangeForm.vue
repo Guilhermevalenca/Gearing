@@ -107,7 +107,7 @@ export default{
                         })
                         .then(response => {
                             if( (response.data).result == "true"){
-                                this.$router.push('/menu')
+                                this.$router.push('/')
                             }else{
                                 Swal.fire({
                                     title:'Erro',
