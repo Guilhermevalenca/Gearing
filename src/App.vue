@@ -1,6 +1,8 @@
 <template>
+  <div class="logo-container">
    <img src="./assets/css/backgrounds/newLogo.gif" class="logo">
       <h1 class="gearing">Gearing</h1>
+      </div>
 <header class="navbar">
   <nav class="navigation-option">
     <router-link to="/">Página Inicial</router-link>
@@ -93,15 +95,16 @@ export default{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.logo-container{
+display:flex;
+}
 .logo {
+  display:inline-block;
   position: absolute;
-  width: 2.8em;
-  top: 3em;
-  right:50em;
-  bottom: 50.8em;
-  margin-left: -10.5em;
-  margin-top: -1.3em;
-  margin-bottom: 20px;
+  width: 2.6em;
+  top: 2em;
+  right:41.5em;
+  margin: 0em;
 }
 nav{
   border-style: solid;
