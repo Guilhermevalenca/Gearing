@@ -64,7 +64,7 @@
     </div>
     <div v-if="this.$store.state.user.auth" class="showing-options">
         <ul>Bem vindo(a), {{ this.$store.state.user.username }}</ul>
-        <ul v-if="this.$checkAdm()">
+        <ul v-if="checkAdm()">
             <button @click="() => {this.$router.push('/adm')}">Aba administrativa</button>
         </ul>
         <ul>
@@ -151,6 +151,22 @@ export default {
         },
         closeAlert() {
             this.showAlert = false;
+        },
+        checkAdm() {
+            axios.post(`${this.$store.state.req.api}/authorizationActions/checkAdm.php`,{
+                id: localStorage.getItem('idSession')
+            })
+            .then(response =>{
+                if(response.data.success){
+                    return response.data.adm === 1 ? true : false;
+                }
+                console.log(response.data.error)
+                return false
+            })
+            .catch(error => {
+                console.log(error)
+                return false
+            })
         }
     },
     components: {

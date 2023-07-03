@@ -2,3 +2,4 @@ node_modules/
 ./api/establishingConnection.php
 api/vendor/
 ws/node_modules/
+dist/

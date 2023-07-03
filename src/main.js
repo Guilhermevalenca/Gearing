@@ -67,20 +67,4 @@ app.config.globalProperties.$checkAuthentication = async () => {
     }
 }
 
-app.config.globalProperties.$checkAdm = async function() {
-    axios.post(`${store.state.req.api}/authorizationActions/checkAdm.php`,{
-        id: localStorage.getItem('idSession')
-    })
-    .then(response =>{
-        console.log('check:', response)
-        if(response.data.success){
-            return response.data.adm === 1 ? true : false;
-        }
-    })
-    .catch(error => {
-        console.log(error)
-        return false
-    })
-}
-
 app.mount('#app')
