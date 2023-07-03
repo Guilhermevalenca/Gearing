@@ -216,26 +216,26 @@ label{
 .form-password{
     color: red;
 }
-    form{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-flow: column wrap;
-        gap: 0em;
-    }
-    input{
-        padding-top: 0.25em;
-        text-align: center;
-        border-style: solid;
-        border-radius: 0.5em;
-        border-color: #000;
-        height: 1.5em;
-        width: 15em;
-    }
-    input::-webkit-input-placeholder{
-        text-align: center;
-    }
-    input::-moz-placeholder{
-        text-align: center;
-    }
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    gap: 0em;
+}
+input{
+    padding-top: 0.25em;
+    text-align: center;
+    border-style: solid;
+    border-radius: 0.5em;
+    border-color: #000;
+    height: 1.5em;
+    width: 15em;
+}
+input::-webkit-input-placeholder{
+    text-align: center;
+}
+input::-moz-placeholder{
+    text-align: center;
+}
 </style>
