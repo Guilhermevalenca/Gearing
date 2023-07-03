@@ -16,8 +16,11 @@ $email = $_SESSION['email'];
 //seaching title
 $response['title'] = [];
 try{
-    $sql = "SELECT sche_title FROM GEA_SCHEDULE WHERE sche_user_email = '$email';";
-    $result = $conn->query($sql);
+    $sql = "SELECT sche_title FROM GEA_SCHEDULE WHERE sche_user_email = :email;";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':email',$email);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if(isset($result)){
         foreach($result as $titleSchedules){
             array_push($response['title'],$titleSchedules['sche_title']);

@@ -10,8 +10,10 @@ $email = $_SESSION['email'];
 
 //deleting database data
 try{
-$sql = "DELETE FROM GEA_USER WHERE user_email = '$email'";
-    $execute = $conn->exec($sql);
+$sql = "DELETE FROM GEA_USER WHERE user_email = :email";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':email',$email);
+    $stmt->execute();
     $responseData = [
         'result' => 'deleted user'
     ];

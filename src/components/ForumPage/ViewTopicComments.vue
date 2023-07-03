@@ -46,9 +46,9 @@
               </th>  
             </tr>
             <button class="edit-reply" @click="() => {showWindow.EditComment.show = true; showWindow.EditComment.id = dataComments.id}" 
-            v-if="dataComments.email == this.$store.state.user.email">
+            v-if="dataComments.email === this.$store.state.user.email">
             <FA icon="pencil" /> Editar resposta</button>
-          </thead>
+          </thead>  
           <tbody>
             <tr>
               <td class="comments-data-description">
@@ -231,121 +231,121 @@ props: {
 
 <style scoped>
 .add-reply{
-position:absolute;
-left: 48em;
-top: 2em;
-margin:0em;
+  position:absolute;
+  left: 48em;
+  top: 2em;
+  margin:0em;
 }
 .session-close{
-position:absolute;
-left: 55.5em;
-top: 2em;
-margin:0em;
-border-radius: 100%;
+  position:absolute;
+  left: 55.5em;
+  top: 2em;
+  margin:0em;
+  border-radius: 100%;
 }
 .edit-topic-description{
-position:absolute;
-left: 42em;
-top: 2em;
-margin:0em;
+  position:absolute;
+  left: 42em;
+  top: 2em;
+  margin:0em;
 }
 .edit-reply{
-position:absolute;
-left: 48em;
-top: 0.4em;
-margin:0em;
+  position:absolute;
+  left: 48em;
+  top: 0.4em;
+  margin:0em;
 }
 .window-interaction {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background-color: rgba(0, 0, 0, 0.5);
-display: flex;
-align-items: center;
-justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .window-content {
-background-image: url("@/assets/css/backgrounds/gearingBackground.jpeg");
-padding: 20px;
+  background-image: url("@/assets/css/backgrounds/gearingBackground.jpeg");
+  padding: 20px;
 }
 .window-close{
-position: relative;
-left: 15em;
-width: 2.5em;
+  position: relative;
+  left: 15em;
+  width: 2.5em;
 }
 .session-reply{
-display: inline-block;
-position:relative;
-align-content: center;
-text-align: justify;
+  display: inline-block;
+  position:relative;
+  align-content: center;
+  text-align: justify;
 }
 h1{
-font-size: 1.2em;
+  font-size: 1.2em;
 }
 td{
-margin: 0em;
-min-width: 50em; 
-max-width: 50em;
-min-height: 5em;
-max-height: none;
-text-align: center;
-padding: 2em;
-border-style: solid;
-border-radius: 0.6em;
-border-width: 0.1em;
-border-color:  rgba(100, 2, 223, 1) ;
+  margin: 0em;
+  min-width: 50em; 
+  max-width: 50em;
+  min-height: 5em;
+  max-height: none;
+  text-align: center;
+  padding: 2em;
+  border-style: solid;
+  border-radius: 0.6em;
+  border-width: 0.1em;
+  border-color:  rgba(100, 2, 223, 1) ;
 }
 .session-topic{
-display: inline-block;
-position:relative;
-align-content: center;
-padding-top: 1em;
-padding-bottom: 2em;
+  display: inline-block;
+  position:relative;
+  align-content: center;
+  padding-top: 1em;
+  padding-bottom: 2em;
 }
 .topic-description-container table{
-min-width: 50em; 
-max-width: 50em;
-min-height: 5em;
-max-height: none;
-background-color: black;
-border-style: solid;
-border-color: rgba(100, 2, 223, 1) ;
-border-width: 0.1em;
-border-radius: 0.8em;
-word-wrap: break-word;
-word-break: keep-all;
-white-space: pre-wrap;
+  min-width: 50em; 
+  max-width: 50em;
+  min-height: 5em;
+  max-height: none;
+  background-color: black;
+  border-style: solid;
+  border-color: rgba(100, 2, 223, 1) ;
+  border-width: 0.1em;
+  border-radius: 0.8em;
+  word-wrap: break-word;
+  word-break: keep-all;
+  white-space: pre-wrap;
 }
 
 .reply-box-container table{
-min-width: 50em; 
-max-width: 50em;
-min-height: 5em;
-max-height: none;
-background-color: black;
-border-style: solid;
-border-color: rgba(100, 2, 223, 1);
-border-width: 0.1em;
-border-radius: 0.8em;
-word-wrap: break-word;
-word-break: keep-all;
-white-space: pre-wrap;
+  min-width: 50em; 
+  max-width: 50em;
+  min-height: 5em;
+  max-height: none;
+  background-color: black;
+  border-style: solid;
+  border-color: rgba(100, 2, 223, 1);
+  border-width: 0.1em;
+  border-radius: 0.8em;
+  word-wrap: break-word;
+  word-break: keep-all;
+  white-space: pre-wrap;
 }
 .reply-info{
   position: relative;
   left: 1em;
 }
 .topic-info{
-font-size: 0.8em;
-color: rgba(133, 26, 186, 1);
+  font-size: 0.8em;
+  color: rgba(133, 26, 186, 1);
 }
 .topic-author,.reply-author,.date{
-font-size: 0.8em;
+  font-size: 0.8em;
 }
 .title-topic{
-font-size: 1.2em;
+  font-size: 1.2em;
 }
 .description-topic, .comments-data-description{
   text-align: left;

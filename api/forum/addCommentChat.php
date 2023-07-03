@@ -18,8 +18,13 @@ $response = [];
 
 try{
     $sql = "INSERT INTO GEA_COMMENTS (com_message,com_user_name,com_top_title,com_user_email) 
-    VALUES ('$message','$name','$title','$email');";
-    $conn->exec($sql);
+    VALUES (:message, :name, :title, :email);";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':message',$message);
+    $stmt->bindParam(':name',$name);
+    $stmt->bindParam(':title',$title);
+    $stmt->bindParam(':email',$email);
+    $stmt->execute();
     $response['success'] = true;
 }catch (PDOException $e) {
     $response['success'] = false;

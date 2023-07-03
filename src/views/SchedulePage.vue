@@ -2,7 +2,7 @@
 <section>
     <div>
         <h2>Bem-vindo(a) à página de cronogramas</h2>
-        <p>Aqui você poderá visualizar seus cronogramas ou criar novos cronogramas.</p>
+        <p class="explanatory">Aqui você poderá visualizar seus cronogramas ou criar novos cronogramas.</p>
     </div>
 
     <div class="options">
@@ -78,5 +78,8 @@ export default{
 <style scoped>
 .options{
     margin: 2em;
+}
+.explanatory{
+    text-align: center;
 }
 </style>

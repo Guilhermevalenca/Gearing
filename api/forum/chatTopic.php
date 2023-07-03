@@ -8,8 +8,12 @@ $id = $dataTopic['id'];
 $title = $dataTopic['searchByTitle'];
 $response = [];
 try{
-    $sql = "SELECT com_message,com_user_name,com_date,com_user_email,com_id FROM GEA_COMMENTS WHERE com_top_title = '$title';";
-    $result = $conn->query($sql);
+    $sql = "SELECT com_message,com_user_name,com_date,com_user_email,com_id FROM GEA_COMMENTS WHERE com_top_title = :title;";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':title',$title);
+    $stmt->execute();
+
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $response['comments'] = [];
     foreach($result as $data) {
         array_push($response['comments'],array(

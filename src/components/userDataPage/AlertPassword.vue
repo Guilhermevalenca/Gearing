@@ -14,13 +14,13 @@ export default{
 }
 </script>
 <style scoped>
-    div{
-        padding: 5px;
-        border-radius: 6px;
-        color: white;
-        background-color: red;
-        display: flex;
-        justify-content: space-between;
-        width: 20em;
-    }
+div{
+    padding: 5px;
+    border-radius: 6px;
+    color: white;
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+    width: 20em;
+}
 </style>

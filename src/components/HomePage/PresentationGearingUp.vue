@@ -7,36 +7,32 @@
                 sinta-se
                 a vontade para compartilhar as sugestões de metodologias de aprendizagem que você conhece em nosso fórum, e
                 assim, ajudar outros estudantes a montar seu próprio cronograma de estudos.</p>
-        </div>
-        <div>
-            <p>PARTE EM PLANEJAMENTO</p>
+            <p class="planejamento">PARTE EM PLANEJAMENTO</p>
         </div>
     </section>
 </template>
+<style>
+</style>
 <style scoped>
-
 .caixa {
     display: flex;
     align-items: center;
     flex-flow: column wrap;
     justify-content: center;
 }
-
-div {
-    display: flex;
-}
-
 .presentation {
     font-size: 2em;
     padding-left: 5em;
     padding-right: 5em;
     padding-top: 2em;
-    text-align: justify;
 }
-
+.planejamento{
+    text-align: center;
+}
 @media (max-width: 1000px) {
     .presentation {
         font-size: 1.2em;
     }
 }
+
 </style>

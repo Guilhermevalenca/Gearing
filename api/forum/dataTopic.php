@@ -7,11 +7,14 @@ $searchByTopic = $searchDataTopic['idTopic'];
 
 $response = [];
 
-$sql = "SELECT top_title,top_user_name,top_description,top_date,top_user_email FROM GEA_TOPIC WHERE top_id = '$searchByTopic';";
+$sql = "SELECT top_title,top_user_name,top_description,top_date,top_user_email FROM GEA_TOPIC WHERE top_id = :topic;";
 
 try{
-    $result = $conn->query($sql);
-    $dataTopic = $result->fetchAll(PDO::FETCH_ASSOC);
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':topic',$searchByTopic);
+    $stmt->execute();
+
+    $dataTopic = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $response = [
         'success' => true,
         'dataTopic' => [

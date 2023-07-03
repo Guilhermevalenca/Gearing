@@ -64,7 +64,7 @@
     </div>
     <div v-if="this.$store.state.user.auth" class="showing-options">
         <ul>Bem vindo(a), {{ this.$store.state.user.username }}</ul>
-        <ul v-if="checkAdm()">
+        <ul v-if="adm">
             <button @click="() => {this.$router.push('/adm')}">Aba administrativa</button>
         </ul>
         <ul>
@@ -81,6 +81,7 @@ import AlertForm from "./AlertForm.vue";
 export default {
     data() {
         return {
+            adm: false,
             loginUser: {
                 email: "",
                 password: ""
@@ -111,7 +112,8 @@ export default {
                 if (response.data.success) {
                     this.$store.dispatch('changeUser', response.data.user);
                     localStorage.setItem('idSession', response.data.user.id);
-                    this.actionsForms = false
+                    this.actionsForms = false;
+                    this.checkAdm();
                 } else {
                     this.showAlert = true;
                     this.messageAlert = "Não foi possível efetivar seu login"
@@ -152,20 +154,21 @@ export default {
         closeAlert() {
             this.showAlert = false;
         },
-        checkAdm() {
+        async checkAdm() {
             axios.post(`${this.$store.state.req.api}/authorizationActions/checkAdm.php`,{
                 id: localStorage.getItem('idSession')
             })
-            .then(response =>{
+            .then(response => {
                 if(response.data.success){
-                    return response.data.adm === 1 ? true : false;
+                    this.adm = response.data.adm === 1 ? true : false;
+                    if(this.$route.path == '/adm' && !this.adm){
+                        this.$router.push('/')
+                    }
                 }
                 console.log(response.data.error)
-                return false
             })
             .catch(error => {
                 console.log(error)
-                return false
             })
         }
     },
@@ -197,6 +200,12 @@ export default {
                 }
             },
             deep: true
+        }
+    },
+    beforeMount() {
+        let idSession = localStorage.getItem('idSession');
+        if(idSession){
+            this.checkAdm();
         }
     }
 }

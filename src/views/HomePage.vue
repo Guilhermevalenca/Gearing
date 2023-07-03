@@ -4,7 +4,7 @@
   </div>
   <div :class="congratulations">
     <h2>Destaque:</h2>
-    <p>Planejando destaque</p>
+    <p class="planejamento">Planejando destaque</p>
   </div>
 </template>
 
@@ -38,5 +38,8 @@ export default {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 24px;
+}
+.planejamento{
+  text-align: center;
 }
 </style>

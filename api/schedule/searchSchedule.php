@@ -22,10 +22,12 @@ $response['subject'] = [];
 $response['turn'] = [];
 
 try{
-    $sql = "SELECT sub_hour, sub_day, sub_name, sche_shifts FROM GEA_SUBJECT,GEA_SCHEDULE 
-    WHERE sche_user_email = '$email' AND sche_title = '$title' AND sub_sche_title = sche_title AND
-    sub_sche_user_email = sche_user_email;";
-    $result = $conn->query($sql);
+    $sql = "SELECT sub_hour, sub_day, sub_name, sche_shifts FROM GEA_SUBJECT,GEA_SCHEDULE WHERE sche_user_email = :email AND sche_title = :title AND sub_sche_title = sche_title AND sub_sche_user_email = sche_user_email;";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':email',$email);
+    $stmt->bindParam(':title',$title);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if(isset($result)){
         foreach($result as $data){
             //save hour
@@ -38,6 +40,7 @@ try{
         }
     }
 }catch (PDOException $e){
+    imprimir($e);
     exit();
 }
 //responsing

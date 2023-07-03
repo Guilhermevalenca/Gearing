@@ -21,20 +21,28 @@ $email = $_SESSION['email'];
 $response = [];
 
 $sqlAddSchedule = "INSERT INTO GEA_SCHEDULE (sche_title,sche_shifts,sche_user_email) 
-VALUES ('$titleSchedule','$shift','$email');"; 
+VALUES (:title,:shift,:email);"; 
 
-$sqlAddSubjects = "INSERT INTO GEA_SUBJECT (sub_name,sub_day,sub_hour,sub_sche_title,sub_sche_user_email)
-VALUES (?,?,?,?,?);";
+$sqlAddSubjects = "INSERT INTO GEA_SUBJECT (sub_name,sub_day,sub_hour,sub_sche_title,sub_sche_user_email) VALUES (:subject, :days, :hours, :titleSchedule, :email);";
 
 $conn->beginTransaction();
 
 try{
-    $conn->exec($sqlAddSchedule);
+    $stmt = $conn->prepare($sqlAddSchedule);
+    $stmt->bindParam(':title',$titleSchedule);
+    $stmt->bindParam(':shift',$shift);
+    $stmt->bindParam(':email',$email);
+    $stmt->execute();
     $stmt = $conn->prepare($sqlAddSubjects);
     foreach($schedule as $row => $listSubjects) {
         foreach($listSubjects as $column => $subject) {
             if($subject){
-                $stmt->execute([$subject,$column,$row,$titleSchedule,$email]);
+                $stmt->bindParam(':subject',$subject);
+                $stmt->bindParam(':days',$column);
+                $stmt->bindParam(':hours',$row);
+                $stmt->bindParam(':titleSchedule',$titleSchedule);
+                $stmt->bindParam(':email',$email);
+                $stmt->execute();
             }        
         }
     }
