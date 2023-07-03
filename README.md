@@ -39,7 +39,7 @@ npm install
 ### Apenas altere a porta o usuario e a senha, (por padrão o mysql utiliza a porta 3306)
 
 
-## Passo 4 (executarndo o projeto):
+## Passo 4 (executando o projeto):
 
 ### Dentro do diretorio raiz do projeto, execute esses comandos:
 ```
