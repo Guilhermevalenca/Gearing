@@ -18,6 +18,7 @@ try{
     $data = $result->fetchAll(PDO::FETCH_ASSOC);
     $response['adm'] = $data[0]['user_controller'];
     $response['success'] = true;
+    $_SESSION['controller'] = $data[0]['user_controller'];
 } catch(PDOException $e) {
     $response['error'] = $e->getMessage();
 }
