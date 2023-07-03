@@ -15,37 +15,50 @@
     max-width:50em;
     min-width: 50em;
     max-height: 30em;
-    overflow-y: auto;
-}
-.swal-title-custom{
-    color: #E6E6FA      
-}
-.swal-html-container-custom{
-    padding: 0.8em;
-    text-align: justify;
-    text-align-last:center;
-    color: #E6E6FA;
-    white-space: pre-wrap;
-}
-.swal2-styled.swal2-confirm {
-    font-family: 'Prime', sans-serif;
-    text-align: center;
-    color: #fff;
-    font-size: 1em;
-    border: solid;
-    border-width: 1px;  
-    border-radius: 0.25em;
-    background: initial;
-    background-color: transparent
-}
-.swal2-styled.swal2-cancel {
-    font-family: 'Prime', sans-serif;
-    text-align: center;
-    color: #fff;
-    font-size: 1em;
-    border: solid;
-    border-width: 1px;    
-    border-radius: 0.25em;
-    background: initial;
-    background-color: transparent;
-}
+    }
+    .swal-title-custom{
+        color: #E6E6FA      
+    }
+    .swal-html-container-custom{
+        padding: 0.8em;
+        text-align: justify;
+        text-align-last:center;
+        color: #E6E6FA;
+        white-space: pre-wrap;
+    }
+    .swal-html-container-custom ::-webkit-scrollbar{
+        background-color:rgba(100, 2, 223, 1);
+        border-radius: 0.8em;
+        width: 0.2em;
+    }
+    .swal-html-container-custom::-webkit-scrollbar-track {
+        background-color:#000000;
+    }
+    .swall-html-container-custom ::-webkit-scrollbar-thumb{
+        background-color:#000000;
+        height: 1em;
+        width: 5em;
+    }
+        .swal2-styled.swal2-confirm {
+            font-family: 'Prime', sans-serif;
+            text-align: center;
+            color: #fff;
+            font-size: 1em;
+            border: solid;
+            border-width: 1px;  
+            border-radius: 0.25em;
+            background: initial;
+            background-color: transparent;
+
+        }
+        .swal2-styled.swal2-cancel {
+            font-family: 'Prime', sans-serif;
+            text-align: center;
+            color: #fff;
+            font-size: 1em;
+            border: solid;
+            border-width: 1px;    
+            border-radius: 0.25em;
+            background: initial;
+            background-color: transparent;
+        }
