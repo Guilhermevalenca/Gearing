@@ -37,6 +37,9 @@
         <div class="reply-box-container">
         <table class="comment-box" v-for="(dataComments, index) in comments" :key="index">
           <thead>
+            <button class="edit-reply" @click="() => {showWindow.EditComment.show = true; showWindow.EditComment.id = dataComments.id}" 
+            v-if="dataComments.email === this.$store.state.user.email">
+            <FA icon="pencil" /> Editar resposta</button>
             <tr>
               <th class="reply-info">
                 <strong class="reply-author">Resposta de </strong>
@@ -45,9 +48,6 @@
                 <span class="topic-info">{{ dataComments.date }}</span>
               </th>  
             </tr>
-            <button class="edit-reply" @click="() => {showWindow.EditComment.show = true; showWindow.EditComment.id = dataComments.id}" 
-            v-if="dataComments.email === this.$store.state.user.email">
-            <FA icon="pencil" /> Editar resposta</button>
           </thead>  
           <tbody>
             <tr>
@@ -69,7 +69,7 @@
             <button @click="addComment()">Adicionar comentario</button>
           </section>
           <section v-if="showWindow.EditComment.show">
-            <EditComment @closeWindow="() => {closeWindow()}" :id="showWindow.EditComment.id" :title="this.topic.title"/>
+            <EditComment @closeWindow="() => {closeWindow()}" :idTopic="id" :id="showWindow.EditComment.id" :title="this.topic.title"/>
           </section>
           <section>
             <EditTopic @closeEditTopic="() => {closeWindow()}" v-if="showWindow.editTopic" :title="this.topic.title" :message="this.topic.description" :id="this.id"/>
@@ -250,9 +250,8 @@ props: {
   margin:0em;
 }
 .edit-reply{
-  position:absolute;
+  position:relative;
   left: 48em;
-  top: 0.4em;
   margin:0em;
 }
 .window-interaction {

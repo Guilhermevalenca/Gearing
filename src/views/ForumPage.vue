@@ -18,10 +18,12 @@
 import CreateTopic from '@/components/ForumPage/CreateTopic.vue';
 import ViewTopics from '@/components/ForumPage/ViewCreatedTopics.vue';
 import Swal from 'sweetalert2';
+import io from 'socket.io-client';
 
 export default{
     data(){
         return{
+            socket: io(this.$store.state.req.webSocket),
             createTopic: false,
             viewTopic: true
         }
@@ -50,6 +52,14 @@ export default{
                 htmlContainer: 'swal-html-container-custom',
             }
         })
+        this.socket.on('connect',() => {
+            console.log('conectado')
+        });
+    },
+    unmounted() {
+        this.socket.on('disconnect',() => {
+            console.log('disconectado')
+        });
     }
 }
 </script>

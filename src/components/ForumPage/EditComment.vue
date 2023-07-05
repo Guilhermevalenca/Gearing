@@ -22,7 +22,8 @@ export default{
     },
     props: {
         title: String,
-        id: Number
+        id: Number,
+        idTopic: Number
     },
     methods: {
         updateComment() {
@@ -50,7 +51,7 @@ export default{
             .then(response => {
                 Swal.close()
                 if(response.data.success) {
-                    this.socket.emit('view-comment', this.id);
+                    this.socket.emit('view-comment', this.idTopic);
                     this.$emit('closeWindow');
                 }else{
                     console.log(response.data.error)
