@@ -79,8 +79,9 @@ export default{
 .gearing{
   font-family: 'Yielding Timber',sans-serif; 
   font-style: italic;
-  width: 6em;
+  width: 4.5em;
   font-size: 3em;
+  margin-left:0em;
   background: -webkit-linear-gradient(
     318deg,
     rgba(133, 26, 186, 1) 18%,
@@ -96,7 +97,7 @@ display:flex;
 flex-direction: row;
 justify-content: center;
 align-items:baseline;
-gap: -2em;
+padding: 0.1em;
 }
 .logo {
   width: 2.6em;
