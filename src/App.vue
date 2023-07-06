@@ -79,11 +79,7 @@ export default{
 .gearing{
   font-family: 'Yielding Timber',sans-serif; 
   font-style: italic;
-  width: 30%;
-  text-align: center;
-  position: relative;
-  margin-inline: auto;
-  margin-top: 1vw;
+  width: 6em;
   font-size: 3em;
   background: -webkit-linear-gradient(
     318deg,
@@ -97,14 +93,14 @@ export default{
 }
 .logo-container{
 display:flex;
+flex-direction: row;
+justify-content: center;
+align-items:baseline;
+gap: -2em;
 }
 .logo {
-  display:inline-block;
-  position: absolute;
   width: 2.6em;
-  top: 2em;
-  right:41.5em;
-  margin: 0em;
+  margin:0em;
 }
 nav{
   border-style: solid;
