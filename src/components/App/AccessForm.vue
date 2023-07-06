@@ -303,6 +303,7 @@ input::-moz-placeholder {
     display: flex;
     right: 1em;
     top: 1em;
+    z-index: 1;
 }
 ul{
     margin: 0px;

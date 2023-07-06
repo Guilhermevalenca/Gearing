@@ -14,9 +14,9 @@
   </nav>
 </header>
 <main>
-  <section>
+  <article>
     <AccessForm />
-  </section>
+  </article>
   <section>
     <router-view />
   </section>
