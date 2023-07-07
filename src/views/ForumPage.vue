@@ -44,7 +44,7 @@ export default{
     created(){
         Swal.fire({
             title: 'Seja bem-Vindo ao Fórum',
-            text: 'Aqui você pode interagir com outros estudantes,trocar experiências,sugerir métodos e discutir sobre vários assuntos.Divirta-se e trate todos com respeito ; ',
+            text: 'Aqui você pode interagir com outros estudantes, trocar experiências, sugerir métodos e discutir sobre vários assuntos. Divirta-se e trate todos com respeito;',
             confirmButtonText: 'Vamos lá!',
             customClass: {
                 popup: 'swal-popup-custom',

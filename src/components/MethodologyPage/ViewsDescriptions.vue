@@ -170,12 +170,18 @@
       <p v-if="methodology.experimentacao"></p>
 
     </div>
-    <div>
-      <button class="learn-more" @click="alert(`https://blog.estacio.br/aluno-estacio/metodos-de-estudo/https://cuboup.com/conteudo/metodologia/
-`)">link das páginas usadas:</button>
-      <p v-if="methodology.link"></p>
-    </div>
   </section>
+  <footer>
+    <h1>Links usados:</h1>
+    <span>
+      Estacio:
+    </span>
+    <a href="https://blog.estacio.br/aluno-estacio/metodos-de-estudo/" target="_blank" rel="noopener">clique aqui</a><br>
+    <span>
+      Cuboup:
+    </span>
+    <a href="https://cuboup.com/conteudo/metodologia/" target="_blank" rel="noopener">clique aqui</a>
+  </footer>
 </template>
 
 <script>
