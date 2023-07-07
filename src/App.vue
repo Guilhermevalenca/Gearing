@@ -1,8 +1,8 @@
 <template>
-  <div class="logo-container">
-   <img src="./assets/css/backgrounds/newLogo.gif" class="logo">
-      <h1 class="gearing">Gearing</h1>
-      </div>
+<div class="logo-container">
+  <img src="./assets/css/backgrounds/newLogo.gif" class="logo">
+  <h1 class="gearing">Gearing</h1>
+</div>
 <header class="navbar">
   <nav class="navigation-option">
     <router-link to="/">Página Inicial</router-link>
@@ -14,9 +14,9 @@
   </nav>
 </header>
 <main>
-  <section>
+  <article>
     <AccessForm />
-  </section>
+  </article>
   <section>
     <router-view />
   </section>

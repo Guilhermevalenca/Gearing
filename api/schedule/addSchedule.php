@@ -18,21 +18,19 @@ alterSession($id);
 $email = $_SESSION['email'];
 
 //preparing response
-$response = [];
-
-$sqlAddSchedule = "INSERT INTO GEA_SCHEDULE (sche_title,sche_shifts,sche_user_email) 
-VALUES (:title,:shift,:email);"; 
-
-$sqlAddSubjects = "INSERT INTO GEA_SUBJECT (sub_name,sub_day,sub_hour,sub_sche_title,sub_sche_user_email) VALUES (:subject, :days, :hours, :titleSchedule, :email);";
+$response = []; 
 
 $conn->beginTransaction();
 
 try{
+    $sqlAddSchedule = "INSERT INTO GEA_SCHEDULE (sche_title,sche_shifts,sche_user_email) VALUES (:title,:shift,:email);";
     $stmt = $conn->prepare($sqlAddSchedule);
     $stmt->bindParam(':title',$titleSchedule);
     $stmt->bindParam(':shift',$shift);
     $stmt->bindParam(':email',$email);
     $stmt->execute();
+    
+    $sqlAddSubjects = "INSERT INTO GEA_SUBJECT (sub_name,sub_day,sub_hour,sub_sche_title,sub_sche_user_email) VALUES (:subject, :days, :hours, :titleSchedule, :email);";
     $stmt = $conn->prepare($sqlAddSubjects);
     foreach($schedule as $row => $listSubjects) {
         foreach($listSubjects as $column => $subject) {
