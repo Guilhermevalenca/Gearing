@@ -172,15 +172,9 @@
     </div>
   </section>
   <footer>
-    <h1>Links usados:</h1>
-    <span>
-      Estacio:
-    </span>
-    <a href="https://blog.estacio.br/aluno-estacio/metodos-de-estudo/" target="_blank" rel="noopener">clique aqui</a><br>
-    <span>
-      Cuboup:
-    </span>
-    <a href="https://cuboup.com/conteudo/metodologia/" target="_blank" rel="noopener">clique aqui</a>
+    <h1>Referencias:</h1>
+    <a class="links" href="https://blog.estacio.br/aluno-estacio/metodos-de-estudo/" target="_blank" rel="noopener">Estacio metodos de estudo</a><br>
+    <a class="links" href="https://cuboup.com/conteudo/metodologia/" target="_blank" rel="noopener">Cuboup metodologias</a>
   </footer>
 </template>
 
@@ -233,6 +227,9 @@ export default {
 </script>
 
 <style scoped>
+.links{
+  color: blueviolet;
+}
 
 button {
   width: 12em;

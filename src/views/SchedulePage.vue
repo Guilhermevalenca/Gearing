@@ -28,6 +28,7 @@
 import CreateSchedule from '@/components/SchedulePage/CreateSchedule.vue';
 import ViewSchedule from '@/components/SchedulePage/ViewSchedule.vue';
 import EditSchedule from '@/components/SchedulePage/EditSchedule.vue';
+import Swal from 'sweetalert2';
 
 export default{
     components: { CreateSchedule, ViewSchedule, EditSchedule },
@@ -40,6 +41,18 @@ export default{
     },
     methods: {
         showCreateSchedule() {
+            if(!this.$store.state.user.auth){
+                Swal.fire({
+                    title: 'Ação negada',
+                    text: 'Apenas usuarios cadastrados no sistema tem permissão para criar cronograma',
+                    customClass: {
+                        popup: 'swal-popup-custom',
+                        title: 'swal-title-custom',
+                        htmlContainer: 'swal-html-container-custom',
+                    }
+                })
+                return
+            }
             if(this.viewSchedule){
                 this.viewSchedule = false;
             }

@@ -31,6 +31,18 @@ export default{
     components: {CreateTopic, ViewTopics},
     methods: {
         showCreate() {
+            if(!this.$store.state.user.auth){
+                Swal.fire({
+                    title: 'Ação negada',
+                    text: "Apenas usuarios cadastrados podem criar um topico",
+                    customClass: {
+                        popup: 'swal-popup-custom',
+                        title: 'swal-title-custom',
+                        htmlContainer: 'swal-html-container-custom',
+                    }
+                })
+                return
+            }
             if(this.viewTopic){
                 this.viewTopic = false
             }this.createTopic = true
