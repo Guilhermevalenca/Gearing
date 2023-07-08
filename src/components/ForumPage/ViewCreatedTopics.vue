@@ -21,19 +21,20 @@
         </div>
     </section>
     <section v-else>
-        <Comments :id="viewComments.id" @closeComments="hideTopicComments()" />
+        <Comments :socket="socket" :id="viewComments.id" @closeComments="hideTopicComments()" />
     </section>
 </template>
 <script>
 import Comments from './ViewTopicComments.vue'
 import axios from 'axios'
-import io from 'socket.io-client';
 
 export default{
     components: { Comments },
+    props: {
+        socket: Object
+    },
     data() {
         return {
-            socket: io(this.$store.state.req.webSocket),
             topics: [],
             showComments: false,
             viewComments: {
@@ -72,11 +73,6 @@ export default{
             this.updateTopics();
         })
     },
-    beforeUnmount() {
-        this.socket.on('disconnect',() => {
-            console.log('disconectado')
-        });
-    }
 }
 </script>
 <style scoped>

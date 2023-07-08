@@ -10,20 +10,19 @@
 
 <script>
 import axios from 'axios';
-import { io } from 'socket.io-client';
 import Swal from 'sweetalert2';
 
 export default{
     data() {
         return {
-            socket: io(this.$store.state.req.webSocket),
             comment: ''
         }
     },
     props: {
         title: String,
         id: Number,
-        idTopic: Number
+        idTopic: Number,
+        socket: Object
     },
     methods: {
         updateComment() {

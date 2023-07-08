@@ -69,10 +69,10 @@
             <button @click="addComment()">Adicionar comentario</button>
           </section>
           <section v-if="showWindow.EditComment.show">
-            <EditComment @closeWindow="() => {closeWindow()}" :idTopic="id" :id="showWindow.EditComment.id" :title="this.topic.title"/>
+            <EditComment :socket="socket" @closeWindow="() => {closeWindow()}" :idTopic="id" :id="showWindow.EditComment.id" :title="this.topic.title"/>
           </section>
           <section>
-            <EditTopic @closeEditTopic="() => {closeWindow()}" v-if="showWindow.editTopic" :title="this.topic.title" :message="this.topic.description" :id="this.id"/>
+            <EditTopic :socket="socket" @closeEditTopic="() => {closeWindow()}" v-if="showWindow.editTopic" :title="this.topic.title" :message="this.topic.description" :id="this.id"/>
           </section>
         </div>
       </section>
@@ -84,13 +84,11 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import EditComment from './EditComment.vue';
 import EditTopic from './EditTopic.vue';
-import io from 'socket.io-client';
 
 export default {
   components: {EditComment, EditTopic},
   data() {
       return {
-          socket: io(this.$store.state.req.webSocket),
           topic: {
             title: '',
             name: '',
@@ -224,7 +222,8 @@ mounted() {
   })
 },
 props: {
-  id: Number
+  id: Number,
+  socket: Object
 }
 };
 </script>

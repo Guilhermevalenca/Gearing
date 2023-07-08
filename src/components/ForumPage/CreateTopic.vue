@@ -19,12 +19,13 @@
 <script>
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import io from 'socket.io-client';
 
 export default{
+    props: {
+        socket: Object
+    },
     data() {
         return {
-            socket: io(this.$store.state.req.webSocket),
             name: '',
             description: ''
         }

@@ -7,10 +7,10 @@
 
 <section>
     <div v-if="createTopic">
-        <CreateTopic @viewTopics="showTopics()" />
+        <CreateTopic @viewTopics="showTopics()" :socket="socket" />
     </div>
     <div v-if="viewTopic">
-        <ViewTopics />
+        <ViewTopics :socket="socket" />
     </div>
 </section>
 </template>

@@ -18,12 +18,10 @@
 <script>
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import io from 'socket.io-client';
 
 export default{
     data() {
         return {
-            socket: io(this.$store.state.req.webSocket),
             newMessage: this.message
         }
     },
@@ -83,7 +81,8 @@ export default{
     props: {
         id: Number,
         title: String,
-        message: String
+        message: String,
+        socket: Object
     }
 }
 </script>

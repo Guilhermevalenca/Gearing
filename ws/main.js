@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
-    console.log('a user connected');
+    console.log('connected:',socket.id);
     socket.on('new-topic', () => {
         io.emit('update-topics',() => {
             console.log("topicos atualizados")
@@ -27,6 +27,9 @@ io.on('connection', (socket) => {
     socket.on('edit-topic', (id) => {
         io.emit('update-topic',id)
     });
+    socket.on('connected',() => {
+        console.log('connected')
+    })
     socket.on('disconnect', () => {
         console.log('user disconnected');
     });
