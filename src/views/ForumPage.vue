@@ -17,8 +17,8 @@
 <script>
 import CreateTopic from '@/components/ForumPage/CreateTopic.vue';
 import ViewTopics from '@/components/ForumPage/ViewCreatedTopics.vue';
+import { io } from 'socket.io-client';
 import Swal from 'sweetalert2';
-import io from 'socket.io-client';
 
 export default{
     data(){
@@ -65,13 +65,17 @@ export default{
             }
         })
         this.socket.on('connect',() => {
-            console.log('conectado')
+              console.log('connect')
+        });
+        this.socket.on('disconnect',() => {
+            console.log('disconnect')
         });
     },
-    unmounted() {
-        this.socket.on('disconnect',() => {
-            console.log('disconectado')
-        });
+    mounted(){
+        this.socket.connect();
+    },
+    beforeUnmount() {
+        this.socket.disconnect();
     }
 }
 </script>

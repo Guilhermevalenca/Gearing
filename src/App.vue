@@ -36,7 +36,7 @@ export default{
   components: {AccessForm},
   data() {
     return {
-      actionAuthUser: this.$route.path
+
     }
   },
   methods: {

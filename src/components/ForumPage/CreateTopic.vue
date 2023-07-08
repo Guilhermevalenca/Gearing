@@ -96,19 +96,6 @@ export default{
         increment() {
             this.row++
         }
-    },
-    computed: {
-        
-    },
-    mounted() {
-        this.socket.on('connect',() => {
-            console.log('conectado')
-        });
-    },
-    beforeUnmount() {
-        this.socket.on('disconnect',() => {
-            console.log('disconectado')
-        });
     }
 }
 </script>

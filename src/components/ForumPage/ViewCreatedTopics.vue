@@ -61,6 +61,9 @@ export default{
             })
         }
     },
+    created() {
+        
+    },
     beforeMount() {
         this.updateTopics()
     },
@@ -70,7 +73,9 @@ export default{
         })
     },
     beforeUnmount() {
-        
+        this.socket.on('disconnect',() => {
+            console.log('disconectado')
+        });
     }
 }
 </script>
