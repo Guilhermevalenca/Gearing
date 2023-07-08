@@ -1,8 +1,8 @@
 <template>
-    <div>
-        Senha incorreta tente novamente
-        <button @click="closeAlert()"> X </button>
-    </div>
+<div>
+    Senha incorreta tente novamente
+    <button @click="closeAlert()"> X </button>
+</div>
 </template>
 <script>
 export default{

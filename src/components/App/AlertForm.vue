@@ -1,8 +1,8 @@
 <template>
-    <div class="alert">
-        <slot />
-        <button @click="closeAlert()"> X </button>
-    </div>
+<div class="alert">
+    <slot />
+    <button @click="closeAlert()"> X </button>
+</div>
 </template>
 
 <script>

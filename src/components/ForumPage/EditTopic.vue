@@ -1,18 +1,18 @@
 <template>
-    <section>
+<section>
+    <div>
+        <strong>{{title}}</strong>
+    </div>
+</section>
+<section>
+    <form @submit.prevent="updateTopic()">
         <div>
-            <strong>{{title}}</strong>
+            <strong>Descrição:</strong><br>
+            <textarea v-model="newMessage" cols="110" rows="25"></textarea>
         </div>
-    </section>
-    <section>
-        <form @submit.prevent="updateTopic()">
-            <div>
-                <strong>Descrição:</strong><br>
-                <textarea v-model="newMessage" cols="110" rows="25"></textarea>
-            </div>
-            <button>Editar</button>
-        </form>
-    </section>
+        <button>Editar</button>
+    </form>
+</section>
 </template>
 
 <script>

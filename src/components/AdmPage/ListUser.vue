@@ -1,40 +1,40 @@
 <template>
-    <section class="all-users">
-        <div class="all-users-adms">
-            <h2 class="all-users-titles">administradores</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nome:</th>
-                        <th>Email:</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="(adms,  index) in allUsers.adms" :key="index">
-                        <td>{{ adms.user_name }}</td>
-                        <td>{{ adms.user_email }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="all-users-others">
-            <h2 class="all-users-titles">Outros usuarios</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nome:</th>
-                        <th>Email:</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="(others, index) in allUsers.others" :key="index">
-                        <td>{{ others.user_name }}</td>
-                        <td>{{ others.user_email }}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
+<section class="all-users">
+    <div class="all-users-adms">
+        <h2 class="all-users-titles">administradores</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome:</th>
+                    <th>Email:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(adms,  index) in allUsers.adms" :key="index">
+                    <td>{{ adms.user_name }}</td>
+                    <td>{{ adms.user_email }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="all-users-others">
+        <h2 class="all-users-titles">Outros usuarios</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome:</th>
+                    <th>Email:</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(others, index) in allUsers.others" :key="index">
+                    <td>{{ others.user_name }}</td>
+                    <td>{{ others.user_email }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
 </template>
 
 <script>

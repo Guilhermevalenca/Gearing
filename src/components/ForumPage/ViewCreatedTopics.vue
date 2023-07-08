@@ -1,28 +1,28 @@
 <template>
-    <section v-if="!showComments">
-        <div class="box" v-for="(elements, index) in topics" :key="index">
-            <div class="box-topics">
-                <a @click="showTopicComments(elements.id)">
-                    <div>
-                        <ul class="box-topics-title">
-                            <p>{{ elements.title }}</p>
-                            <p>
-                                <strong class="info">Criado por </strong>
-                                <span class="data">{{ elements.name }}</span>
-                            </p>
-                            <p>
-                                <strong class="info">Em: </strong>
-                                <span class="data">{{ elements.date }}</span>
-                            </p>
-                        </ul>
-                    </div>
-                </a>
-            </div>
+<section v-if="!showComments">
+    <div class="box" v-for="(elements, index) in topics" :key="index">
+        <div class="box-topics">
+            <a @click="showTopicComments(elements.id)">
+                <div>
+                    <ul class="box-topics-title">
+                        <p>{{ elements.title }}</p>
+                        <p>
+                            <strong class="info">Criado por </strong>
+                            <span class="data">{{ elements.name }}</span>
+                        </p>
+                        <p>
+                            <strong class="info">Em: </strong>
+                            <span class="data">{{ elements.date }}</span>
+                        </p>
+                    </ul>
+                </div>
+            </a>
         </div>
-    </section>
-    <section v-else>
-        <Comments :socket="socket" :id="viewComments.id" @closeComments="hideTopicComments()" />
-    </section>
+    </div>
+</section>
+<section v-else>
+    <Comments :socket="socket" :id="viewComments.id" @closeComments="hideTopicComments()" />
+</section>
 </template>
 <script>
 import Comments from './ViewTopicComments.vue'

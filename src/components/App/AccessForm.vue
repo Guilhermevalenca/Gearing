@@ -1,77 +1,75 @@
 <template>
-    <div v-if="!this.$store.state.user.auth" :class="['default-form', { 'showing-forms': actionsForms }]">
-        <div>
-            <section v-if="showAlert">
-                <AlertForm
-                    :class="['form-alert', { 'form-alert-success': createSuccess }, { 'form-alert-failed': failedLogin }]"
-                    @close="closeAlert()">{{ messageAlert }}</AlertForm>
-            </section>
-        </div>
-        <div v-if="actionsForms">
-            <section v-if="!showForm">
-                <button class="x" @click.prevent="() => {actionsForms = false}">X</button>
-                <form class="form" @submit.prevent="authUser(loginUser.email,loginUser.password)">
-                    <div>
-                        <label>E-mail:</label>
-                        <input type="email" v-model="loginUser.email" maxlength="45" placeholder="Digite seu email">
-                    </div>
-                    <div>
-                        <label>Senha:</label>
-                        <input type="password" v-model="loginUser.password" placeholder="Digite sua senha">
-                    </div>
-                    <button type="submit" class="login-button">Login</button>
-                </form>
-            </section>
-            <section v-if="showForm">
-                <button class="x" @click.prevent="() => {actionsForms = false}">X</button>
-                <form class="form" @submit.prevent="newUser()">
-                    <div>
-                        <label>Usuário:</label>
-                        <input class="usuario-input" type="text" v-model="createUser.username" maxlength="20"
-                            placeholder="Escolha seu nome de usuario">
-                    </div>
-                    <div>
-                        <label>E-mail:</label>
-                        <input :class="{ 'form-email': emailRegistered }" type="email" v-model="createUser.email"
-                            placeholder="Digite seu email">
-                    </div>
-                    <div>
-                        <label>Senha:</label>
-                        <input :class="{ 'form-password': differentPasswords }" type="password" minlength="6"
-                            v-model="createUser.password" placeholder="Digite sua senha">
-                    </div>
-                    <div>
-                        <label>Confirme sua senha:</label>
-                        <input :class="{ 'form-password': differentPasswords }" type="password" minlength="6"
-                            v-model="createUser.confirmPassword" placeholder="Digite sua senha novamente">
-                    </div>
-                    <button type="submit" class="sing-button">Criar conta</button>
-                </form>
-            </section>
-
-        </div>
-
-        <section v-if="!this.$store.state.user.auth" class="showing-options">
-            <div :class="{ 'showing-forms-button': actionsForms }">
-                <button class="button-form-open" @click="() => { showForm = !showForm; actionsForms = true }">{{ showForm ?
-                    "Realizar login" : "Criar uma nova conta" }}</button>
-            </div>
-            <div>
-                <button class="button-form-open" @click="() => { actionsForms = !actionsForms; showForm = true }">{{
-                    actionsForms ? "Fechar Janela" : "Criar uma nova conta" }}</button>
-            </div>
+<div v-if="!this.$store.state.user.auth" :class="['default-form', { 'showing-forms': actionsForms }]">
+    <div>
+        <section v-if="showAlert">
+            <AlertForm
+                :class="['form-alert', { 'form-alert-success': createSuccess }, { 'form-alert-failed': failedLogin }]"
+                @close="closeAlert()">{{ messageAlert }}</AlertForm>
         </section>
     </div>
-    <div v-if="this.$store.state.user.auth" class="showing-options">
-        <ul>Bem vindo(a), {{ this.$store.state.user.username }}</ul>
-        <ul v-if="adm">
-            <button @click="() => {this.$router.push('/adm')}">Aba administrativa</button>
-        </ul>
-        <ul>
-            <button @click="() => { this.$router.push('/userData') }">Alterar dados</button>
-            <button @click="this.$logoutUser">Sair da conta</button>
-        </ul>
+    <div v-if="actionsForms">
+        <section v-if="!showForm">
+            <button class="x" @click.prevent="() => {actionsForms = false}">X</button>
+            <form class="form" @submit.prevent="authUser(loginUser.email,loginUser.password)">
+                <div>
+                    <label>E-mail:</label>
+                    <input type="email" v-model="loginUser.email" maxlength="45" placeholder="Digite seu email">
+                </div>
+                <div>
+                    <label>Senha:</label>
+                    <input type="password" v-model="loginUser.password" placeholder="Digite sua senha">
+                </div>
+                <button type="submit" class="login-button">Login</button>
+            </form>
+        </section>
+        <section v-if="showForm">
+            <button class="x" @click.prevent="() => {actionsForms = false}">X</button>
+            <form class="form" @submit.prevent="newUser()">
+                <div>
+                    <label>Usuário:</label>
+                    <input class="usuario-input" type="text" v-model="createUser.username" maxlength="20"
+                        placeholder="Escolha seu nome de usuario">
+                </div>
+                <div>
+                    <label>E-mail:</label>
+                    <input :class="{ 'form-email': emailRegistered }" type="email" v-model="createUser.email"
+                        placeholder="Digite seu email">
+                </div>
+                <div>
+                    <label>Senha:</label>
+                    <input :class="{ 'form-password': differentPasswords }" type="password" minlength="6"
+                        v-model="createUser.password" placeholder="Digite sua senha">
+                </div>
+                <div>
+                    <label>Confirme sua senha:</label>
+                    <input :class="{ 'form-password': differentPasswords }" type="password" minlength="6"
+                        v-model="createUser.confirmPassword" placeholder="Digite sua senha novamente">
+                </div>
+                <button type="submit" class="sing-button">Criar conta</button>
+            </form>
+        </section>
     </div>
+    <section v-if="!this.$store.state.user.auth" class="showing-options">
+        <div :class="{ 'showing-forms-button': actionsForms }">
+            <button class="button-form-open" @click="() => { showForm = !showForm; actionsForms = true }">{{ showForm ?
+                "Realizar login" : "Criar uma nova conta" }}</button>
+        </div>
+        <div>
+            <button class="button-form-open" @click="() => { actionsForms = !actionsForms; showForm = true }">{{
+                actionsForms ? "Fechar Janela" : "Criar uma nova conta" }}</button>
+        </div>
+    </section>
+</div>
+<div v-if="this.$store.state.user.auth" class="showing-options">
+    <ul>Bem vindo(a), {{ this.$store.state.user.username }}</ul>
+    <ul v-if="adm">
+        <button @click="() => {this.$router.push('/adm')}">Aba administrativa</button>
+    </ul>
+    <ul>
+        <button @click="() => { this.$router.push('/userData') }">Alterar dados</button>
+        <button @click="this.$logoutUser">Sair da conta</button>
+    </ul>
+</div>
 </template>
 
 <script>

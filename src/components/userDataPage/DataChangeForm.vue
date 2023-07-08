@@ -1,36 +1,36 @@
 <template>
-    <section v-if="checkingPassword">
-        <label v-if="showAlert">
-            <AlertPassword @close="closeAlert()" />
+<section v-if="checkingPassword">
+    <label v-if="showAlert">
+        <AlertPassword @close="closeAlert()" />
+    </label>
+    <form @submit.prevent="check()">
+        <label>Digite sua senha para visualizar seus dados:</label>
+        <input type="password" v-model="user.password" placeholder="Digite sua senha">
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+<section v-if="!checkingPassword">
+    <form class="form" @submit.prevent="updateData()">
+        <label>
+            Email:
         </label>
-        <form @submit.prevent="check()">
-            <label>Digite sua senha para visualizar seus dados:</label>
-            <input type="password" v-model="user.password" placeholder="Digite sua senha">
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
-    <section v-if="!checkingPassword">
-        <form class="form" @submit.prevent="updateData()">
-            <label>
-                Email:
-            </label>
-            <input type="email" v-model="newUserData.email" placeholder="Digite seu email">
-            <label>
-                Nome de usuário:
-            </label>
-            <input type="text" v-model="newUserData.username" placeholder="Digite seu novo nome de usuário">
-            <label>
-                Nova senha:
-            </label>
-            <input :class="{'form-password' : differentPasswords}" type="password" v-model="newUserData.password" placeholder="Nova senha" minlength="6">
-            <label>
-                Confirme sua nova senha:
-            </label>
-            <input :class="{'form-password' : differentPasswords}" type="password" v-model="newUserData.confirmePassword" placeholder="Confirme sua nova senha"> 
-            <button type="submit">Alterar dados</button>
-        </form>
-        <button @click="deleteUser()">Deletar conta</button>
-    </section>
+        <input type="email" v-model="newUserData.email" placeholder="Digite seu email">
+        <label>
+            Nome de usuário:
+        </label>
+        <input type="text" v-model="newUserData.username" placeholder="Digite seu novo nome de usuário">
+        <label>
+            Nova senha:
+        </label>
+        <input :class="{'form-password' : differentPasswords}" type="password" v-model="newUserData.password" placeholder="Nova senha" minlength="6">
+        <label>
+            Confirme sua nova senha:
+        </label>
+        <input :class="{'form-password' : differentPasswords}" type="password" v-model="newUserData.confirmePassword" placeholder="Confirme sua nova senha"> 
+        <button type="submit">Alterar dados</button>
+    </form>
+    <button @click="deleteUser()">Deletar conta</button>
+</section>
 </template>
 
 <script>

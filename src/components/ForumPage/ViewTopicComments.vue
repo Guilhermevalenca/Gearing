@@ -1,82 +1,82 @@
 <template>
-  <div class="session">
-    <h1>.Tópico.</h1>
-    <section class="session-topic">
-      <div class="topic-description-container">      
-        <table>
-          <thead>
-            <tr>
-              <th class="title-topic">{{ topic.title }}</th>
-            </tr>
-                <button class="edit-topic-description" v-if="this.$store.state.user.auth && this.topic.email == this.$store.state.user.email" @click="viewEditTopic()">
-                  <FA icon="pencil" /> Editar
-                </button>
-                <button class="add-reply" @click="() => {this.$store.state.user.auth ? showWindow.addComment = true : actionDenied()}">
-                  <FA icon="reply"/> Responder
-                </button>
-                <button class="session-close" @click="closeComment()">✖</button>
-            <tr>
-              <th>
-                <strong class="topic-author">Criado por </strong>
-                <span class="topic-info">{{ topic.name }}</span> <br>
-                <strong class="topic-author">Em </strong>
-                <span class="topic-info">{{ topic.date }}</span>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="description-topic">{{ topic.description }}</td>
-            </tr>
-          </tbody>
-        </table>
+<div class="session">
+  <h1>.Tópico.</h1>
+  <section class="session-topic">
+    <div class="topic-description-container">      
+      <table>
+        <thead>
+          <tr>
+            <th class="title-topic">{{ topic.title }}</th>
+          </tr>
+              <button class="edit-topic-description" v-if="this.$store.state.user.auth && this.topic.email == this.$store.state.user.email" @click="viewEditTopic()">
+                <FA icon="pencil" /> Editar
+              </button>
+              <button class="add-reply" @click="() => {this.$store.state.user.auth ? showWindow.addComment = true : actionDenied()}">
+                <FA icon="reply"/> Responder
+              </button>
+              <button class="session-close" @click="closeComment()">✖</button>
+          <tr>
+            <th>
+              <strong class="topic-author">Criado por </strong>
+              <span class="topic-info">{{ topic.name }}</span> <br>
+              <strong class="topic-author">Em </strong>
+              <span class="topic-info">{{ topic.date }}</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="description-topic">{{ topic.description }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </section>
+    <h1>.Respostas.</h1>
+    <section class="session-reply">
+      <div class="reply-box-container">
+      <table class="comment-box" v-for="(dataComments, index) in comments" :key="index">
+        <thead>
+          <button class="edit-reply" @click="() => {showWindow.EditComment.show = true; showWindow.EditComment.id = dataComments.id}" 
+          v-if="dataComments.email === this.$store.state.user.email">
+          <FA icon="pencil" /> Editar resposta</button>
+          <tr>
+            <th class="reply-info">
+              <strong class="reply-author">Resposta de </strong>
+              <span class="topic-info">{{ dataComments.by }}</span> <br>
+              <strong class="reply-author">Em </strong>
+              <span class="topic-info">{{ dataComments.date }}</span>
+            </th>  
+          </tr>
+        </thead>  
+        <tbody>
+          <tr>
+            <td class="comments-data-description">
+              <span>{{ dataComments.comment }}</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </section>
+    <section class="window-interaction" v-if="showWindow.addComment || showWindow.EditComment.show || showWindow.editTopic">
+      <div class="window-content">
+        <button class="window-close" @click="closeWindow()">X</button>
+        <section v-if="showWindow.addComment">
+          <h2>Adicionar comentario</h2>
+          <h4>aqui voce adiciona seu comentario sobre o assunto {{ title }}</h4>
+          <textarea v-model="newComments" cols="30" rows="10"></textarea><br>
+          <button @click="addComment()">Adicionar comentario</button>
+        </section>
+        <section v-if="showWindow.EditComment.show">
+          <EditComment :socket="socket" @closeWindow="() => {closeWindow()}" :idTopic="id" :id="showWindow.EditComment.id" :title="this.topic.title"/>
+        </section>
+        <section>
+          <EditTopic :socket="socket" @closeEditTopic="() => {closeWindow()}" v-if="showWindow.editTopic" :title="this.topic.title" :message="this.topic.description" :id="this.id"/>
+        </section>
       </div>
-      </section>
-      <h1>.Respostas.</h1>
-      <section class="session-reply">
-        <div class="reply-box-container">
-        <table class="comment-box" v-for="(dataComments, index) in comments" :key="index">
-          <thead>
-            <button class="edit-reply" @click="() => {showWindow.EditComment.show = true; showWindow.EditComment.id = dataComments.id}" 
-            v-if="dataComments.email === this.$store.state.user.email">
-            <FA icon="pencil" /> Editar resposta</button>
-            <tr>
-              <th class="reply-info">
-                <strong class="reply-author">Resposta de </strong>
-                <span class="topic-info">{{ dataComments.by }}</span> <br>
-                <strong class="reply-author">Em </strong>
-                <span class="topic-info">{{ dataComments.date }}</span>
-              </th>  
-            </tr>
-          </thead>  
-          <tbody>
-            <tr>
-              <td class="comments-data-description">
-                <span>{{ dataComments.comment }}</span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      </section>
-      <section class="window-interaction" v-if="showWindow.addComment || showWindow.EditComment.show || showWindow.editTopic">
-        <div class="window-content">
-          <button class="window-close" @click="closeWindow()">X</button>
-          <section v-if="showWindow.addComment">
-            <h2>Adicionar comentario</h2>
-            <h4>aqui voce adiciona seu comentario sobre o assunto {{ title }}</h4>
-            <textarea v-model="newComments" cols="30" rows="10"></textarea><br>
-            <button @click="addComment()">Adicionar comentario</button>
-          </section>
-          <section v-if="showWindow.EditComment.show">
-            <EditComment :socket="socket" @closeWindow="() => {closeWindow()}" :idTopic="id" :id="showWindow.EditComment.id" :title="this.topic.title"/>
-          </section>
-          <section>
-            <EditTopic :socket="socket" @closeEditTopic="() => {closeWindow()}" v-if="showWindow.editTopic" :title="this.topic.title" :message="this.topic.description" :id="this.id"/>
-          </section>
-        </div>
-      </section>
-  </div>
+    </section>
+</div>
 </template>
 
 <script>

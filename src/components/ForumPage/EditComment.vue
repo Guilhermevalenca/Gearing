@@ -1,11 +1,11 @@
 <template>
-    <div>
-        <h1>{{ title }}</h1>
-        <form @submit.prevent="updateComment()">
-            <textarea v-model="comment" cols="110" rows="25"></textarea><br>
-            <button>Atualizar resposta</button>
-        </form>
-    </div>
+<div>
+    <h1>{{ title }}</h1>
+    <form @submit.prevent="updateComment()">
+        <textarea v-model="comment" cols="110" rows="25"></textarea><br>
+        <button>Atualizar resposta</button>
+    </form>
+</div>
 </template>
 
 <script>

@@ -11,7 +11,7 @@
                 <textarea v-model="description" rows="25" cols="110" required></textarea>
             </div>
         </div>
-            <button>Criar tópico</button>
+        <button>Criar tópico</button>
     </form>
 </section>
 </template>
@@ -63,10 +63,10 @@ export default{
                         confirmButtonText: 'Tente novamente',
                         showCancelButton: true,
                         customClass: {
-                                popup: 'swal-popup-custom',
-                                title: 'swal-title-custom',
-                                htmlContainer: 'swal-html-container-custom',
-                            }
+                            popup: 'swal-popup-custom',
+                            title: 'swal-title-custom',
+                            htmlContainer: 'swal-html-container-custom',
+                        }
                     })
                     .then(result => {
                         if(result.isConfirmed){
@@ -81,10 +81,10 @@ export default{
                         title: 'Seu tópico foi adicionado com sucesso ao fórum',
                         confirmButtonText: 'vizualizar outros tópicos',
                         customClass: {
-                                popup: 'swal-popup-custom',
-                                title: 'swal-title-custom',
-                                htmlContainer: 'swal-html-container-custom',
-                            }
+                            popup: 'swal-popup-custom',
+                            title: 'swal-title-custom',
+                            htmlContainer: 'swal-html-container-custom',
+                        }
                     })
                     .then(result => {
                         if(result.isConfirmed){
