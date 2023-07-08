@@ -1,8 +1,8 @@
 <template>
-    <div>
-        <h1>Bem vindo(a) às Metodologias!</h1>
-        <Methodology />
-    </div>
+<div>
+    <h1>Bem vindo(a) às Metodologias!</h1>
+    <Methodology />
+</div>
 </template>
   
 <script>

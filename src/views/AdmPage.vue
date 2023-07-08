@@ -1,24 +1,24 @@
 <template>
-    <div>
-        <h1>Aba administrativar em produção</h1>
-    </div>
-    <div>
-        <button @click="() => {showListUser = !showListUser}">
-            {{ showListUser ? 'Ocultar todos os usuarios' : 'mostrar todos os usuarios'}}
-        </button>
-    </div>
-    <div>
-        <section v-if="showListUser">
-            <h1>Listand usuarios:</h1>
-            <ListUser />
-        </section>
-        <section>
-            <h1>forms para adicionar um novo administrados</h1>
-        </section>
-        <section>
-            <h1>forms para emitir um alert para todos os usuarios</h1>
-        </section>
-    </div>
+<div>
+    <h1>Aba administrativar em produção</h1>
+</div>
+<div>
+    <button @click="() => {showListUser = !showListUser}">
+        {{ showListUser ? 'Ocultar todos os usuarios' : 'mostrar todos os usuarios'}}
+    </button>
+</div>
+<div>
+    <section v-if="showListUser">
+        <h1>Listand usuarios:</h1>
+        <ListUser />
+    </section>
+    <section>
+        <h1>forms para adicionar um novo administrados</h1>
+    </section>
+    <section>
+        <h1>forms para emitir um alert para todos os usuarios</h1>
+    </section>
+</div>
 </template>
 
 <script>

@@ -1,8 +1,8 @@
 <template>
-    <h1>Seus dados:</h1>
-    <div>
-        <DataChangeForm />
-    </div>
+<h1>Seus dados:</h1>
+<div>
+    <DataChangeForm />
+</div>
 </template>
 
 <script>

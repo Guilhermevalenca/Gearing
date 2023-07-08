@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <Presentation />
-  </div>
-  <div :class="congratulations">
-    <h2>Destaque:</h2>
-    <p class="planejamento">Planejando destaque</p>
-  </div>
+<div>
+  <Presentation />
+</div>
+<div :class="congratulations">
+  <h2>Destaque:</h2>
+  <p class="planejamento">Planejando destaque</p>
+</div>
 </template>
 
 <script>
