@@ -11,6 +11,9 @@
               <button class="edit-topic-description" v-if="this.$store.state.user.auth && this.topic.email == this.$store.state.user.email" @click="viewEditTopic()">
                 <FA icon="pencil" /> Editar
               </button>
+              <button @click="deleteTopic()" v-if="this.$store.state.user.auth && this.topic.email == this.$store.state.user.email">
+                Deletar
+              </button>
               <button class="add-reply" @click="() => {this.$store.state.user.auth ? showWindow.addComment = true : actionDenied()}">
                 <FA icon="reply"/> Responder
               </button>
@@ -40,6 +43,9 @@
           <button class="edit-reply" @click="() => {showWindow.EditComment.show = true; showWindow.EditComment.id = dataComments.id}" 
           v-if="dataComments.email === this.$store.state.user.email">
           <FA icon="pencil" /> Editar resposta</button>
+          <button @click="deleteComment(dataComments.id)" v-if="dataComments.email === this.$store.state.user.email">
+            Deletar resposta
+          </button>
           <tr>
             <th class="reply-info">
               <strong class="reply-author">Resposta de </strong>
@@ -202,6 +208,76 @@ methods: {
       }
     })
     .catch (error => {
+      console.log(error)
+    })
+  },
+  deleteTopic() {
+    axios.post(`${this.$store.state.req.api}/forum/deleteTopic.php`,{
+      idTopic: this.id,
+      id: localStorage.getItem('idSession')
+    })
+    .then(response => {
+      if(response.data.success){
+        Swal.fire({
+          title: 'topico deletado com sucesso',
+          customClass: {
+            popup: 'swal-popup-custom',
+            title: 'swal-title-custom',
+            htmlContainer: 'swal-html-container-custom',
+          }
+        })
+        .then(() => {
+          this.$emit("closeComments")
+        })
+      }else{
+        Swal.fire({
+          title: 'Error',
+          text: 'Não foi possivel apagar este topico',
+          customClass: {
+            popup: 'swal-popup-custom',
+            title: 'swal-title-custom',
+            htmlContainer: 'swal-html-container-custom',
+          }
+        })
+        console.log(response.data.error)
+      }
+    })
+    .catch(error => {
+      console.log(error)
+    })
+  },
+  deleteComment(idComment) {
+    axios.post(`${this.$store.state.req.api}/forum/deleteComment.php`,{
+      idComment: idComment,
+      id: localStorage.getItem('idSession')
+    })
+    .then(response => {
+      if(response.data.success){
+        Swal.fire({
+          title: 'Resposta deletada com sucesso',
+          customClass: {
+            popup: 'swal-popup-custom',
+            title: 'swal-title-custom',
+            htmlContainer: 'swal-html-container-custom',
+          }
+        })
+        .then(() => {
+          this.showUpdatedComments();
+        })
+      }else{
+        Swal.fire({
+          title: 'Error',
+          text: 'Não foi possivel apagar esta resposta',
+          customClass: {
+            popup: 'swal-popup-custom',
+            title: 'swal-title-custom',
+            htmlContainer: 'swal-html-container-custom',
+          }
+        })
+        console.log(response.data.error)
+      }
+    })
+    .catch(error => {
       console.log(error)
     })
   }

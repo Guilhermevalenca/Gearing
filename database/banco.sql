@@ -68,7 +68,8 @@ CREATE TABLE GEA_COMMENTS(
     CONSTRAINT com_top_title  
         FOREIGN KEY (com_top_title) 
         REFERENCES GEA_TOPIC(top_title)
-		ON UPDATE CASCADE,
+		ON UPDATE CASCADE
+        ON DELETE CASCADE,
     CONSTRAINT com_user_email 
         FOREIGN KEY (com_user_email)
         REFERENCES GEA_USER(user_email)

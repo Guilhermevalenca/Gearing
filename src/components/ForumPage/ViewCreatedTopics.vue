@@ -44,7 +44,8 @@ export default{
     },
     methods: {
         hideTopicComments() {
-            this.showComments = false
+            this.showComments = false;
+            this.updateTopics();
         },
         showTopicComments(newId) {
             this.showComments = true;
