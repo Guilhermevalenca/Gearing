@@ -796,5 +796,5 @@ export default{
      position:fixed;
      left: 10em;
 }
- 
+
 </style>
