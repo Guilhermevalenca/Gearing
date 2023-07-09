@@ -187,6 +187,15 @@ export default{
                         }
                     })
                 }else{
+                    Swal.fire({
+                        title: 'Error',
+                        text: 'Um erro inesperado aconteceu, tente novamente mais tarde',
+                        customClass: {
+                            popup: 'swal-popup-custom',
+                            title: 'swal-title-custom',
+                            htmlContainer: 'swal-html-container-custom',
+                        }
+                    });
                     console.log(response.data.error);
                 }
             })
