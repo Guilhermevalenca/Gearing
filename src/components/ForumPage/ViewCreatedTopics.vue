@@ -1,5 +1,5 @@
 <template>
-<section v-if="!showComments">
+<section class="main" v-if="!showComments">
     <div class="box" v-for="(elements, index) in topics" :key="index">
         <div class="box-topics">
             <a @click="showTopicComments(elements.id)">
@@ -77,6 +77,10 @@ export default{
 }
 </script>
 <style scoped>
+.main{
+    margin-top: 4em;
+  margin-bottom: 6em;
+}
 .box{
     display: flex;
     justify-content: center;

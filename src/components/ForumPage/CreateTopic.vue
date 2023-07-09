@@ -1,5 +1,6 @@
 <template>
 <section class="default-page">
+    <div class="create-topic">
     <form class="add-topic" @submit.prevent="createTopic()">
         <div class="info">
             <div class="info-name">
@@ -13,6 +14,7 @@
         </div>
         <button>Criar tópico</button>
     </form>
+    </div>
 </section>
 </template>
 
@@ -33,7 +35,7 @@ export default{
     methods: {
         createTopic() {
             Swal.fire({
-                title: 'Adicionando seu tópico',
+                title: 'Tópico adicionado com sucesso!',
                 customClass: {
                     popup: 'swal-popup-custom',
                     title: 'swal-title-custom',
@@ -79,7 +81,7 @@ export default{
                     });
                     Swal.fire({
                         title: 'Seu tópico foi adicionado com sucesso ao fórum',
-                        confirmButtonText: 'vizualizar outros tópicos',
+                        confirmButtonText: 'Vizualizar outros tópicos',
                         customClass: {
                             popup: 'swal-popup-custom',
                             title: 'swal-title-custom',
@@ -106,7 +108,7 @@ export default{
     z-index: 2;
 }
 button{
-    margin: 0.0em;
+    margin: 1em;
     position: relative;
     bottom: 1.4em;
 }
@@ -115,14 +117,15 @@ button{
     display: grid;
     justify-content: center;
 }
-.add-topic{
+.create-topic{
     position: relative;
     top:6em;
     display: inline-block;
     max-width: 50em;
     min-width:  50em;
-    max-height: 35em;
-    min-height: 32em;
+    max-height: 38em;
+    background-color: black;
+    border-color: rgba(100, 2, 223, 1);
     border-style: solid;
     border-radius: 0.8em;
     border-width: 0.1em;
