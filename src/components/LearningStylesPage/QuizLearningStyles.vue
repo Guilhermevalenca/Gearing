@@ -460,7 +460,7 @@ export default{
                 })
                 .then((result) => {
                     if (result.isDismissed) {
-                         window.location.href = '/Methodology';
+                      this.$router.push('/Methodology');
                }
           });
 							}else if(resultsum == assimilador) {
@@ -480,7 +480,7 @@ export default{
                 })
                 .then((result) => {
                     if (result.isDismissed) {
-                         window.location.href = '/Methodology';
+                      this.$router.push('/Methodology');
                }
           });
               }else if(resultsum == convergente) {
@@ -502,7 +502,7 @@ export default{
                 })
                 .then((result) => {
                     if (result.isConfirmed) {
-                         window.location.href = '/Methodology';
+                      this.$router.push('/Methodology');
                }
           });
 							}else if (resultsum == acomodador) {
@@ -522,7 +522,7 @@ export default{
                 })
                 .then((result) => {
                     if (result.isDismissed) {
-                         window.location.href = '/Methodology';
+                        this.$router.push('/Methodology');
                }
           });
 							}
