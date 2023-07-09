@@ -44,7 +44,7 @@
           v-if="dataComments.email === this.$store.state.user.email">
           <FA icon="pencil" /> Editar resposta</button>
           <button @click="deleteComment(dataComments.id)" v-if="dataComments.email === this.$store.state.user.email">
-            Deletar resposta
+            <FA icon="trash" /> Deletar resposta
           </button>
           <tr>
             <th class="reply-info">
@@ -69,10 +69,10 @@
       <div class="window-content">
         <button class="window-close" @click="closeWindow()">X</button>
         <section v-if="showWindow.addComment">
-          <h2>Adicionar comentario</h2>
-          <h4>aqui voce adiciona seu comentario sobre o assunto {{ title }}</h4>
-          <textarea v-model="newComments" cols="30" rows="10"></textarea><br>
-          <button @click="addComment()">Adicionar comentario</button>
+          <h2>Adicionar respostas</h2>
+          <h4>Aqui você adiciona sua resposta para o tópico {{ title }}</h4>
+          <textarea v-model="newComments" cols="110" rows="25"></textarea><br>
+          <button @click="addComment()">Adicionar resposta</button>
         </section>
         <section v-if="showWindow.EditComment.show">
           <EditComment :socket="socket" @closeWindow="() => {closeWindow()}" :idTopic="id" :id="showWindow.EditComment.id" :title="this.topic.title"/>
@@ -126,7 +126,7 @@ methods: {
         this.showUpdatedComments()
       }else{
         Swal.fire({
-          title: 'Não é possivel vizualizar este topico'
+          title: 'Não é possivel vizualizar este tópico'
         })
         console.log(response.data.error)
         this.closeComment()
@@ -139,7 +139,7 @@ methods: {
   actionDenied() {
     Swal.fire({
       title: 'Ação negada',
-      text: 'Apenas usuarios cadastrados tem permissão para interagir com o forum',
+      text: 'Apenas usuários cadastrados tem permissão para interagir com o fórum',
       customClass: {
         popup: 'swal-popup-custom',
         title: 'swal-title-custom',

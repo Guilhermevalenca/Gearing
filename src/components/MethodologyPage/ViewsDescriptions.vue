@@ -172,7 +172,7 @@
     </div>
   </section>
   <footer>
-    <h1>Referencias:</h1>
+    <h1>Referências:</h1>
     <a class="links" href="https://blog.estacio.br/aluno-estacio/metodos-de-estudo/" target="_blank" rel="noopener">Estacio metodos de estudo</a><br>
     <a class="links" href="https://cuboup.com/conteudo/metodologia/" target="_blank" rel="noopener">Cuboup metodologias</a>
   </footer>
@@ -228,9 +228,12 @@ export default {
 
 <style scoped>
 .links{
-  color: blueviolet;
+  color: rgb(157, 78, 253);
 }
-
+ section{
+     margin-top: 4em;
+     margin-bottom: 6em;
+}
 button {
   width: 12em;
   height: 5em;
