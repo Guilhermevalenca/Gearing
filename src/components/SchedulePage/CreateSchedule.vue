@@ -1,6 +1,6 @@
 <template>
 
-<section>
+<section class="main">
 <div class="define-title">
     Adicione um título ao seu cronograma
     <input :class="['define-title-text',{'select-title' : this.checks.title}]" v-model="title" type="text" placeholder="digite o titulo aqui" required>

@@ -5,19 +5,21 @@
     <div class="topic-description-container">      
       <table>
         <thead>
-          <tr>
-            <th class="title-topic">{{ topic.title }}</th>
-          </tr>
+              <div class="topic-control"> 
               <button class="edit-topic-description" v-if="this.$store.state.user.auth && this.topic.email == this.$store.state.user.email" @click="viewEditTopic()">
                 <FA icon="pencil" /> Editar
               </button>
-              <button @click="deleteTopic()" v-if="this.$store.state.user.auth && this.topic.email == this.$store.state.user.email">
-                Deletar
+              <button class="delete-topic" @click="deleteTopic()" v-if="this.$store.state.user.auth && this.topic.email == this.$store.state.user.email">
+                <FA icon="trash"/> Apagar
               </button>
               <button class="add-reply" @click="() => {this.$store.state.user.auth ? showWindow.addComment = true : actionDenied()}">
                 <FA icon="reply"/> Responder
               </button>
               <button class="session-close" @click="closeComment()">✖</button>
+              </div>
+              <tr>
+            <th class="title-topic">{{ topic.title }}</th>
+          </tr>
           <tr>
             <th>
               <strong class="topic-author">Criado por </strong>
@@ -40,12 +42,14 @@
       <div class="reply-box-container">
       <table class="comment-box" v-for="(dataComments, index) in comments" :key="index">
         <thead>
+          <div class="reply-control">
           <button class="edit-reply" @click="() => {showWindow.EditComment.show = true; showWindow.EditComment.id = dataComments.id}" 
           v-if="dataComments.email === this.$store.state.user.email">
-          <FA icon="pencil" /> Editar resposta</button>
-          <button @click="deleteComment(dataComments.id)" v-if="dataComments.email === this.$store.state.user.email">
-            <FA icon="trash" /> Deletar resposta
+          <FA icon="pencil" /> Editar</button>
+          <button class="delete-reply" @click="deleteComment(dataComments.id)" v-if="dataComments.email === this.$store.state.user.email">
+            <FA icon="trash" /> Apagar
           </button>
+          </div>
           <tr>
             <th class="reply-info">
               <strong class="reply-author">Resposta de </strong>
@@ -67,7 +71,7 @@
     </section>
     <section class="window-interaction" v-if="showWindow.addComment || showWindow.EditComment.show || showWindow.editTopic">
       <div class="window-content">
-        <button class="window-close" @click="closeWindow()">X</button>
+        <button class="window-close" @click="closeWindow()">✖</button>
         <section v-if="showWindow.addComment">
           <h2>Adicionar respostas</h2>
           <h4>Aqui você adiciona sua resposta para o tópico {{ title }}</h4>
@@ -178,7 +182,7 @@ methods: {
   },
   showUpdatedComments() {
     Swal.fire({
-      title: 'carregando comentarios',
+      title: 'Carregando comentários',
       showConfirmButton: false,
       willOpen: () => {
         Swal.showLoading();
@@ -305,29 +309,33 @@ props: {
 </script>
 
 <style scoped>
-.add-reply{
-  position:absolute;
-  left: 48em;
-  top: 2em;
-  margin:0em;
+
+.session{
+  margin-top: 4em;
+  margin-bottom: 6em;
+}
+.topic-control{
+  padding: 0.6em;
+  top: 1em;
+  display:flex;
+  flex-flow:row-reverse;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-content:flex-end;
+  gap:0.4em;
+}
+.reply-control{
+  padding: 0.6em;
+  top: 1em;
+  display:flex;
+  flex-flow:row-reverse;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-content:flex-end;
+  gap:0.4em;
 }
 .session-close{
-  position:absolute;
-  left: 55.5em;
-  top: 2em;
-  margin:0em;
-  border-radius: 100%;
-}
-.edit-topic-description{
-  position:absolute;
-  left: 42em;
-  top: 2em;
-  margin:0em;
-}
-.edit-reply{
-  position:relative;
-  left: 48em;
-  margin:0em;
+  border-radius:100%;
 }
 .window-interaction {
   position: fixed;
@@ -339,15 +347,21 @@ props: {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 }
 .window-content {
-  background-image: url("@/assets/css/backgrounds/gearingBackground.jpeg");
+  background-color:black;
+  border-style: solid;
+  border-radius: 0.6em;
+  border-width: 0.1em;
+  border-color:  rgba(100, 2, 223, 1) ;
   padding: 20px;
 }
 .window-close{
+  margin: 0em;
+  border-radius: 100%;
   position: relative;
-  left: 15em;
-  width: 2.5em;
+  left: 28em;
 }
 .session-reply{
   display: inline-block;
