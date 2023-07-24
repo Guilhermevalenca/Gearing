@@ -37,7 +37,6 @@ jobs:
         mv dist/* gh-pages/ # move os arquivos para a pasta gh-pages
         mv api gh-pages/ # move a pasta api para a pasta gh-pages
         mv database gh-pages/ # move a pasta database para a pasta gh-pages
-        mv .htaccess gh-pages/ # se você tiver um arquivo .htaccess, mova-o também
         echo 'Seu site está funcionando no GitHub Pages!' > gh-pages/index.html
       env:
         BASEURL: /Gearing # substitua <repositorio> pelo nome do seu repositório
