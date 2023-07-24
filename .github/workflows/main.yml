@@ -16,7 +16,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '18.x' # Atualize para uma versão suportada, por exemplo, 14.x
+        node-version: '14.x' # Atualize para uma versão suportada, por exemplo, 14.x
 
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
@@ -55,3 +55,27 @@ jobs:
         git push origin main 
       env:
         GH_TOKEN: ${{secrets.GH_TOKEN}}
+
+  dependabot: # Fluxo de trabalho do Dependabot
+    runs-on: ubuntu-latest
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    steps:
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - run: |
+          git config user.name github-actions[bot]
+          git config user.email github-actions[bot]@users.noreply.github.com
+          npm version patch -m "[RELEASE] %s"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
+      - uses: fastify/github-action-merge-dependabot@v2.1.1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
