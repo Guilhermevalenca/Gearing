@@ -33,16 +33,13 @@ jobs:
     - name: Build the application
       run: |
         serve dist/ & # inicia o servidor de arquivos estáticos
-        php -S 0.0.0.0:8000 -t api & # inicia o servidor PHP
+        php -S localhost:8000 -t api & # inicia o servidor PHP
         node ws/main.js & # inicia o servidor WebSocket
 
     - name: Deploy to GitHub Pages
       run: |
-        mkdir gh-pages
-        mv dist/* gh-pages/ # move os arquivos para a pasta gh-pages
-        mv api gh-pages/ # move a pasta api para a pasta gh-pages
-        mv database gh-pages/ # move a pasta database para a pasta gh-pages
-        echo 'Seu site está funcionando no GitHub Pages!' > gh-pages/index.html
+        touch index.html
+        echo 'Seu site está funcionando no GitHub Pages!' > index.html
       env:
         BASEURL: /Gearing # substitua <repositorio> pelo nome do seu repositório
 
