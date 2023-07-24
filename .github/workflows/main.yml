@@ -16,7 +16,12 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '18.16.1' # substitua pela versão do Node.js que você precisa
+        node-version: '18.x' # Atualize para uma versão suportada, por exemplo, 14.x
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.2' # Define a versão do PHP que você precisa
 
     - name: Install dependencies
       run: npm install # ou yarn install, caso esteja usando o yarn
@@ -40,6 +45,7 @@ jobs:
         echo 'Seu site está funcionando no GitHub Pages!' > gh-pages/index.html
       env:
         BASEURL: /Gearing # substitua <repositorio> pelo nome do seu repositório
+
     - name: Deploy
       run: |
         git config --global user.name 'Guilhermevalenca'
@@ -49,4 +55,3 @@ jobs:
         git push origin main 
       env:
         GH_TOKEN: ${{secrets.GH_TOKEN}}
-      
