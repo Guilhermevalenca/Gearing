@@ -45,8 +45,8 @@ jobs:
 
     - name: Deploy
       run: |
-        git config --global user.name 'GitHub Actions'
-        git config --global user.email 'github-actions@github.com'
+        git config --global user.name 'Guilhermevalenca'
+        git config --global user.email 'guilherm3vrp@gmail.com'
         git add .
         git commit -m "Deploy to GitHub Pages"
         git push origin main 
