@@ -47,3 +47,6 @@ jobs:
         git add .
         git commit -m "Deploy to GitHub Pages"
         git push origin main 
+      env:
+        GH_TOKEN: ${{secrets.GH_TOKEN}}
+      
