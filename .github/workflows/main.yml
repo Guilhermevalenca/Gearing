@@ -1,0 +1,50 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # substitua "main" pela sua branch principal
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the repository
+      uses: actions/checkout@v2
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18' # substitua pela versão do Node.js que você precisa
+
+    - name: Install dependencies
+      run: npm install # ou yarn install, caso esteja usando o yarn
+
+    - name: Install dependencies for WebSocket
+      run: npm install # ou yarn install, caso esteja usando o yarn
+      working-directory: ws # Define o diretório para a instalação do pacote
+
+    - name: Build the application
+      run: |
+        serve dist/ & # inicia o servidor de arquivos estáticos
+        php -S localhost:8000 -t api & # inicia o servidor PHP
+        node ws/main.js & # inicia o servidor WebSocket
+
+    - name: Deploy to GitHub Pages
+      run: |
+        mkdir gh-pages
+        mv dist/* gh-pages/ # move os arquivos para a pasta gh-pages
+        mv api gh-pages/ # move a pasta api para a pasta gh-pages
+        mv database gh-pages/ # move a pasta database para a pasta gh-pages
+        mv .htaccess gh-pages/ # se você tiver um arquivo .htaccess, mova-o também
+        echo 'Seu site está funcionando no GitHub Pages!' > gh-pages/index.html
+      env:
+        BASEURL: /Gearing # substitua <repositorio> pelo nome do seu repositório
+    - name: Deploy
+      run: |
+        git config --global user.name 'GitHub Actions'
+        git config --global user.email 'github-actions@github.com'
+        git add .
+        git commit -m "Deploy to GitHub Pages"
+        git push origin main # substitua "main" pela sua branch principal
