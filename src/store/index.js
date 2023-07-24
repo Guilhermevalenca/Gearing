@@ -12,7 +12,7 @@ export default createStore({
     },
     req: {
       api: 'http://localhost:8000',
-      webSocket: 'http://localhost:3000'
+      webSocket: 'http://localhost:5000'
     }
   },
   mutations: {
