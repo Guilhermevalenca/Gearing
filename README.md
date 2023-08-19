@@ -1,4 +1,4 @@
-# Gearing
+# Gearing - primeira versão
 
 ## Passo 1 (instalar os pacotes necessarios para executa o projeto):
 ### npm
