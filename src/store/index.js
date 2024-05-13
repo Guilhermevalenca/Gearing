@@ -11,7 +11,7 @@ export default createStore({
       editTitle: ''
     },
     req: {
-      api: 'http://ec2-3-145-96-182.us-east-2.compute.amazonaws.com/Gearing/api/',
+      api: 'http://ec2-3-145-96-182.us-east-2.compute.amazonaws.com/Gearing/api',
       webSocket: 'http://localhost:5000'
     }
   },
